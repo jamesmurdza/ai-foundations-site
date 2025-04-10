@@ -19,21 +19,15 @@ export function Header() {
             <div className="flex items-center gap-6 flex-1 justify-center">
               <nav className="hidden items-center gap-10 md:flex justify-end">
                 <NavItem href="/about" label="About" />
-                <NavItem href="/docs" label="Docs" />
-                <NavItem href="/blog" label="Blog" />
-                <NavItem href="/pricing" label="Pricing" />
+                <NavItem href="/courses" label="Courses" />
+                <NavItem href="/workshops" label="Workshops" />
               </nav>
             </div>
             <div className="flex items-center gap-10 flex-1 justify-end">
               <div className="hidden items-center gap-2 md:flex">
-                <Button asChild variant="ghost" className="font-semibold">
-                  <Link href="#" className="cursor-pointer">
-                    Log In
-                  </Link>
-                </Button>
                 <Button asChild className="font-semibold">
                   <Link href="#" className="cursor-pointer">
-                    Get Started
+                    Sign Up
                   </Link>
                 </Button>
               </div>
@@ -42,12 +36,11 @@ export function Header() {
               <div className="rounded-b-lg bg-background py-4 container text-foreground shadow-xl mt-6">
                 <nav className="flex flex-col gap-1 pt-2">
                   <MobileNavItem href="/about" label="About" />
-                  <MobileNavItem href="/docs" label="Docs" />
-                  <MobileNavItem href="/blog" label="Blog" />
-                  <MobileNavItem href="/pricing" label="Pricing" />
+                  <MobileNavItem href="/courses" label="Courses" />
+                  <MobileNavItem href="/workshops" label="Workshops" />
                   <Button size="lg" asChild className="mt-2 w-full">
                     <Link href="#" className="cursor-pointer">
-                      Get Started
+                      Sign up
                     </Link>
                   </Button>
                 </nav>
