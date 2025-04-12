@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { YoutubeIcon, GithubIcon } from "lucide-react";
+
 
 export function Hero() {
   return (
@@ -76,12 +76,24 @@ export function Hero() {
               Get updates!
             </Button>
           </div>
-          <div className="flex gap-8 mt-4">
+          <div className="flex items-center justify-center gap-8 mt-4">
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
-              <YoutubeIcon size={36} className="text-zinc-600" />
+              <Image
+              src="/svgs/youtube-brands.svg"
+              alt="YouTube"
+              width={30}
+              height={30}
+              className="text-[#525252]"
+              />
             </a>
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
-              <GithubIcon size={36} className="text-zinc-600" />
+             <Image
+              src="/svgs/github-brands.svg"
+              alt="GitHub"
+              width={30}
+              height={30}
+              className="text-[#525252]"
+              />
             </a>
           </div>
         </div>
