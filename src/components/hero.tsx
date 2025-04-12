@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { YoutubeIcon, GithubIcon } from "lucide-react";
 
 export function Hero() {
   return (
@@ -57,8 +58,32 @@ export function Hero() {
             className="absolute fill-foreground right-0 translate-x-1/2 top-0 -translate-y-1/2"
           />
         </div>
-        <div className="p-10 bg-primary rounded-2xl">
-          <Image alt="Image" src="/images/hero.png" width={1300} height={698} />
+        
+        <div className="p-10  rounded-2xl">
+          <Image alt="Image" src="/images/main-image.avif" width={1300} height={698} />
+        </div>
+        <div className="flex flex-col items-center gap-6 mb-12 text-center">
+          <h2 className="text-xl md:text-2xl font-sans text-[#888888] max-w-2xl mx-auto leading-relaxed font-medium px-4">
+            <span className="text-zinc-700 font-semibold">AI Foundations</span> is an online school where you learn to build AI models from first principles alongside professional mentors and new friends
+          </h2>
+          <div className="flex flex-col sm:flex-row w-full max-w-lg gap-3 px-4">
+            <input
+              type="email"
+              placeholder="name@email.com"
+              className="flex-1 px-4 py-3 bg-muted/50 rounded-lg border text-base min-w-0"
+            />
+            <Button size="lg" className="whitespace-nowrap bg-zinc-800 hover:bg-zinc-700 text-white px-6">
+              Get updates!
+            </Button>
+          </div>
+          <div className="flex gap-8 mt-4">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
+              <YoutubeIcon size={36} className="text-zinc-600" />
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
+              <GithubIcon size={36} className="text-zinc-600" />
+            </a>
+          </div>
         </div>
       </div>
     </section>

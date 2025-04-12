@@ -2,18 +2,20 @@ import { TestimonialCard } from "@/components/testimonial-card";
 
 export function Testimonials() {
   return (
-    <section className="py-20">
-      <div className="container flex flex-col items-center gap-6">
-        <div className="flex flex-col items-center gap-2">
-          <span className="font-bold text-primary">Testimonials</span>
-          <h2 className="font-heading text-3xl font-semibold tracking-tight text-balance text-center sm:text-5xl">
+    <section className="py-24 bg-muted/10">
+      <div className="container flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center gap-4 max-w-2xl text-center">
+          <span className="font-medium text-primary/90 bg-primary/10 px-4 py-1 rounded-full text-sm">
+            Testimonials
+          </span>
+          <h2 className="font-heading text-3xl font-semibold tracking-tight text-balance sm:text-5xl">
             What people say about us
           </h2>
+          <p className="text-muted-foreground text-lg">
+            Join hundreds of students learning AI development through our interactive courses
+          </p>
         </div>
-        <p className="text-muted-foreground text-lg flex-1 max-w-2xl text-center hidden">
-          From freelancers to agencies, Reweb is the best website builder for everyone.
-        </p>
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
           <TestimonialCard
             name="John"
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec ultrices orci. Vivamus ante arcu, hendrerit."
@@ -67,6 +69,18 @@ export function Testimonials() {
             text="Nullam non lorem vitae risus volutpat dictum non sed magna. Aliquam in venenatis quam. Morbi feugiat tristique leo, vel ultrices dolor varius non."
             image="/images/testimonial-6.avif"
             username="thisislinda"
+          />
+          <TestimonialCard
+            name="Miro"
+            text="It's a great series. I appreciate the format. Interactive small group learning seems to keep the speaker grounded and focused on the subject. Thanks!"
+            image="/images/default-avatar.png"
+            username="mirodj"
+          />
+          <TestimonialCard
+            name="Pattern Trader"
+            text="Great initiative James. Look forward to the next class. I am myself a student of M Tech in AI & DS and it's always refreshing to see AI in various perspectives. This only reinforces the learning!"
+            image="/images/default-avatar.png"
+            username="patterntrader"
           />
         </div>
       </div>
