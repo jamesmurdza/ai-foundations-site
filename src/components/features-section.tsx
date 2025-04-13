@@ -1,4 +1,5 @@
 import { FeatureCard } from "@/components/feature-card";
+import Link from "next/link";
 
 export function Features() {
   return (
@@ -13,18 +14,24 @@ export function Features() {
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 grid-cols-1">
-          <FeatureCard
-            image="/images/filters.png"
-            title="Machine Learning"
-          />
-          <FeatureCard
-            image="/images/calendar.png"
-            title="AI Agent Camp (Python)"
-          />
-          <FeatureCard
-            image="/images/notification.png"
-            title="AI Agent Camp (No code)"
-          />
+          <Link href="/courses/ml-python" className="block">
+            <FeatureCard
+              image="/images/filters.png"
+              title="Machine Learning"
+            />
+          </Link>
+          <Link href="/courses/ai-agent-camp" className="block">
+            <FeatureCard
+              image="/images/calendar.png"
+              title="AI Agent Camp (Python)"
+            />
+          </Link>
+          <Link href="/courses/ai-agent-camp-nocode" className="block">
+            <FeatureCard
+              image="/images/notification.png"
+              title="AI Agent Camp (No code)"
+            />
+          </Link>
         </div>
       </div>
     </section>

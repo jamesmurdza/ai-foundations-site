@@ -1,11 +1,49 @@
+"use client";
+
 import { Zap, LineChart, DollarSign, Sparkle } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+async function joinWaitlist(email: string) {
+  return fetch("https://api.getwaitlist.com/api/v1/waiter/", {
+    method: "POST",
+    headers: {
+      "accept": "application/json",
+      "content-type": "application/json"
+    },
+    body: JSON.stringify({
+      "api_key": "19252",
+      "email": email,
+      "referral_link": "https://aifoundations.school/"
+    })
+  });
+}
 
 export function Hero() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus("loading");
+    try {
+      const response = await joinWaitlist(email);
+      if (response.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  };
+
   return (
     <section className="pb-10">
       <div className="container">
@@ -59,40 +97,56 @@ export function Hero() {
           />
         </div>
         
-        <div className="p-10  rounded-2xl">
+        <div className="p-10 rounded-2xl">
           <Image alt="Image" src="/images/main-image.avif" width={1300} height={698} />
         </div>
         <div className="flex flex-col items-center gap-6 mb-12 text-center">
           <h2 className="text-xl md:text-2xl font-sans text-[#888888] max-w-2xl mx-auto leading-relaxed font-medium px-4">
             <span className="text-zinc-700 font-semibold">AI Foundations</span> is an online school where you learn to build AI models from first principles alongside professional mentors and new friends
           </h2>
-          <div className="flex flex-col sm:flex-row w-full max-w-lg gap-3 px-4">
-            <input
-              type="email"
-              placeholder="name@email.com"
-              className="flex-1 px-4 py-3 bg-muted/50 rounded-lg border text-base min-w-0"
-            />
-            <Button size="lg" className="whitespace-nowrap bg-zinc-800 hover:bg-zinc-700 text-white px-6">
-              Get updates!
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row w-full max-w-lg gap-3 px-4">
+            <div className="flex-1 relative">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="name@email.com"
+                className="w-full px-4 py-3 bg-muted/50 rounded-lg border text-base min-w-0"
+                required
+              />
+              {status === "error" && (
+                <p className="absolute text-sm text-red-500 mt-1">Something went wrong. Please try again.</p>
+              )}
+              {status === "success" && (
+                <p className="absolute text-sm text-green-500 mt-1">You'll be notified of updates!</p>
+              )}
+            </div>
+            <Button 
+              type="submit" 
+              size="lg" 
+              disabled={status === "loading"}
+              className="whitespace-nowrap bg-zinc-800 hover:bg-zinc-700 text-white px-6"
+            >
+              {status === "loading" ? "Subscribing..." : "Get updates!"}
             </Button>
-          </div>
+          </form>
           <div className="flex items-center justify-center gap-8 mt-4">
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
               <Image
-              src="/svgs/youtube-brands.svg"
-              alt="YouTube"
-              width={30}
-              height={30}
-              className="text-[#525252]"
+                src="/svgs/youtube-brands.svg"
+                alt="YouTube"
+                width={30}
+                height={30}
+                className="text-[#525252]"
               />
             </a>
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
-             <Image
-              src="/svgs/github-brands.svg"
-              alt="GitHub"
-              width={30}
-              height={30}
-              className="text-[#525252]"
+              <Image
+                src="/svgs/github-brands.svg"
+                alt="GitHub"
+                width={30}
+                height={30}
+                className="text-[#525252]"
               />
             </a>
           </div>
