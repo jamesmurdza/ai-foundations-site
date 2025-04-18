@@ -12,7 +12,7 @@ export function Testimonials() {
             What people say about us
           </h2>
           <p className="text-muted-foreground text-lg">
-            Join hundreds of students learning AI development through our interactive courses
+          Outcomes from students in our learning community
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">

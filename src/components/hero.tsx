@@ -1,6 +1,6 @@
 "use client";
 
-import { Zap, LineChart, DollarSign, Sparkle } from "lucide-react";
+import { Brain, Code, CircuitBoard, Sparkle } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -47,44 +47,27 @@ export function Hero() {
   return (
     <section className="pb-10">
       <div className="container">
-        <div className="flex flex-col items-center gap-6 pt-20 border border-t-0 mx-2 md:mx-10 relative">
-          <Badge
-            variant="outline"
-            className="pl-1 rounded-md text-secondary-foreground bg-card text-card-foreground"
-          >
-            <span className="mr-2 bg-primary text-primary-foreground rounded-sm py-0.5 px-1.5">
-              New
-            </span>
-            Announcing our seed round →
-          </Badge>
+        <div className="flex flex-col items-center gap-6 pt-20 mb-4 border border-t-0 mx-2 md:mx-10 relative">
+          
           <h1 className="text-center font-heading font-semibold tracking-tight text-balance max-w-3xl md:text-7xl text-5xl sm:text-6xl">
             Learn AI From the Ground Up
           </h1>
-          <p className="text-center text-lg text-muted-foreground sm:text-xl max-w-md">
-            Providing advanced analytics solutions for businesses to make smarter decisions.
-          </p>
-          <div className="flex items-center gap-4 mb-16 grid grid-cols-2">
-            <Button size="lg" className="gap-2 font-semibold">
-              Get started now
-            </Button>
-            <Button size="lg" variant="outline" className="gap-2 font-semibold">
-              Book a free demo
-            </Button>
-          </div>
+          
+          
         </div>
-        <div className="flex items-center justify-center gap-12 py-6 border-x mx-2 md:mx-10 relative">
+        <div className="flex items-center justify-center gap-12 mt-8 py-6 border-x mx-2 md:mx-10 relative">
           <div className="flex flex-wrap gap-y-4 justify-center gap-x-16">
             <div className="flex items-center gap-2 justify-center">
-              <Zap className="w-5 h-5 text-muted-foreground" />
-              <span className="text-muted-foreground">Setup in 5 minutes</span>
+              <Brain className="w-5 h-5 text-purple-500" />
+              <span className="text-muted-foreground">Machine Learning</span>
             </div>
             <div className="flex items-center gap-2 justify-center">
-              <LineChart className="w-5 h-5 text-muted-foreground" />
-              <span className="text-muted-foreground">Scales infinitely</span>
+              <Code className="w-5 h-5 text-purple-500" />
+              <span className="text-muted-foreground">AI Automation</span>
             </div>
             <div className="flex items-center gap-2 justify-center">
-              <DollarSign className="w-5 h-5 text-muted-foreground" />
-              <span className="text-muted-foreground">Transparent pricing</span>
+              <CircuitBoard className="w-5 h-5 text-purple-500" />
+              <span className="text-muted-foreground">AI Engineering</span>
             </div>
           </div>
           <Sparkle
@@ -125,31 +108,12 @@ export function Hero() {
               type="submit" 
               size="lg" 
               disabled={status === "loading"}
-              className="whitespace-nowrap bg-zinc-800 hover:bg-zinc-700 text-white px-6"
+              className="whitespace-nowrap  hover:bg-primary/80 text-white px-6"
             >
               {status === "loading" ? "Subscribing..." : "Get updates!"}
             </Button>
           </form>
-          <div className="flex items-center justify-center gap-8 mt-4">
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
-              <Image
-                src="/svgs/youtube-brands.svg"
-                alt="YouTube"
-                width={30}
-                height={30}
-                className="text-[#525252]"
-              />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
-              <Image
-                src="/svgs/github-brands.svg"
-                alt="GitHub"
-                width={30}
-                height={30}
-                className="text-[#525252]"
-              />
-            </a>
-          </div>
+          
         </div>
       </div>
     </section>

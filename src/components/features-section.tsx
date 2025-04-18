@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Features() {
   return (
-    <section className="relative bg-background py-20">
+    <section className="relative bg-background py-20" id="courses">
       <div className="container mx-auto flex flex-col gap-12">
         <div className="flex justify-between w-full flex-col lg:flex-row gap-4 lg:items-end">
           <h2 className="font-heading tracking-tight sm:text-5xl text-3xl text-balance font-semibold text-left flex-1">
