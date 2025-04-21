@@ -20,7 +20,7 @@ export function Faq() {
           </p>
           <Button className="mt-4 gap-2 font-semibold">
             <Users size={16} />
-            Join Community
+            Contact us
           </Button>
         </div>
         <Accordion type="single" collapsible className="w-full max-w-3xl flex flex-col gap-4">
