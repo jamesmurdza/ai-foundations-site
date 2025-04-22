@@ -10,7 +10,7 @@ export function Teachers() {
         <div className="grid md:grid-cols-2 gap-20 max-w-4xl mx-auto">
           {/* Naveed Card */}
           <div className="flex flex-col items-center">
-            <div className="relative w-[260px] h-[260px] mb-8">
+            <div className="relative w-[200px] h-[200px] mb-8">
               <Image
                 src="/images/Naveed.avif"
                 alt="Naveed Kahn"
@@ -18,7 +18,7 @@ export function Teachers() {
                 className="object-cover rounded-full"
               />
             </div>
-            <div className="flex flex-col gap-3 text-center max-w-[300px]">
+            <div className="flex flex-col gap-3 text-center">
               <p className="text-[17px] leading-[1.6] font-normal text-[#525252]">
                 <strong>Naveed Khan</strong> is a machine learning researcher who has worked on dozens of machine learning project.
               </p>
@@ -71,7 +71,7 @@ export function Teachers() {
 
           {/* James Card */}
           <div className="flex flex-col items-center">
-            <div className="relative w-[260px] h-[260px] mb-8">
+            <div className="relative w-[200px] h-[200px] mb-8">
               <Image
                 src="/images/James.avif"
                 alt="James Murdza"
@@ -79,7 +79,7 @@ export function Teachers() {
                 className="object-cover rounded-full"
               />
             </div>
-            <div className="flex flex-col gap-3 text-center max-w-[300px]">
+            <div className="flex flex-col gap-3 text-center">
               <p className="text-[17px] leading-[1.6] font-normal text-[#525252]">
                 <strong>James Murdza </strong>is a software developer and online educator who has taught coding to thousands through videos and livestreams.
               </p>
