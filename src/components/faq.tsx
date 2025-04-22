@@ -1,3 +1,4 @@
+'use client';
 import { Users } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -18,10 +19,12 @@ export function Faq() {
           <p className="text-muted-foreground text-lg flex-1 max-w-2xl mt-2 hidden">
             From freelancers to agencies, Divhunt is the best website builder for{" "}
           </p>
-          <Button className="mt-4 gap-2 font-semibold">
-            <Users size={16} />
-            Contact us
-          </Button>
+          <a href="mailto:contact@aifoundations.school">
+            <Button className="mt-4 gap-2 font-semibold">
+              <Users size={16} />
+              Contact us
+            </Button>
+          </a>
         </div>
         <Accordion type="single" collapsible className="w-full max-w-3xl flex flex-col gap-4">
           <FaqItem

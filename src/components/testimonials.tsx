@@ -34,6 +34,18 @@ export function Testimonials() {
             image="/images/ankur.avif"
             username="sandaankur"
           />
+          <TestimonialCard
+            name="Miro"
+            text="It's a great series. I appreciate the format. Interactive small group learning seems to keep the speaker grounded and focused on the subject. Thanks!"
+            image="/images/default-avatar.png"
+            username="mirodj"
+          />
+          <TestimonialCard
+            name="Pattern Trader"
+            text="Great initiative James. Look forward to the next class. I am myself a student of M Tech in AI & DS and it's always refreshing to see AI in various perspectives. This only reinforces the learning!"
+            image="/images/default-avatar.png"
+            username="patterntrader"
+          />
         </div>
       </div>
     </section>
