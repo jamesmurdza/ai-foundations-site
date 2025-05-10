@@ -15,7 +15,7 @@ export function FeatureCard({ title, image, className }: FeatureCardProps) {
   return (
     <Card className={cn("p-6 rounded-2xl border shadow-none", className)}>
       <div className="mb-6 w-full h-64 relative">
-        <Image alt="Purpose-built icon" src={image} fill className="rounded-md object-contain" />
+        <Image alt="Purpose-built icon" src={image} fill className="rounded-md object-cover" />
       </div>
       <div className="flex justify-between items-end gap-2">
         <h3 className="font-heading text-xl font-semibold">{title}</h3>
