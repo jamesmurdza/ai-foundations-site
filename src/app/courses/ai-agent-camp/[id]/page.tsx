@@ -1,13 +1,11 @@
+'use client';
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-export const metadata: Metadata = {
-  title: "AI Agent Camp Video",
-  description: "Watch the AI Agent Camp course video",
-};
+import { Transcript } from '@/components/Transcript';
+import React, { useRef } from 'react';
 
 const videos = {
   "1": {
@@ -44,15 +42,31 @@ const videos = {
 
 export default function VideoPlayer({ params }: { params: { id: string } }) {
   const video = videos[params.id as keyof typeof videos];
-  
+  const playerRef = useRef<HTMLIFrameElement>(null);
+
   if (!video) {
     notFound();
   }
 
+  // Function to seek the YouTube video using postMessage API
+  const handleSeek = (seconds: number) => {
+    const iframe = playerRef.current;
+    if (iframe) {
+      iframe.contentWindow?.postMessage(
+        JSON.stringify({
+          event: 'command',
+          func: 'seekTo',
+          args: [seconds, true],
+        }),
+        '*'
+      );
+    }
+  };
+
   return (
     <div className="min-h-screen bg-muted/10">
       <div className="container py-24">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-8">
             <Link href="/courses/ai-agent-camp">
               <Button variant="ghost" size="sm" className="gap-2">
@@ -65,33 +79,39 @@ export default function VideoPlayer({ params }: { params: { id: string } }) {
           <div className="bg-white rounded-xl border shadow-sm p-8">
             <h1 className="text-3xl font-bold mb-6">{video.title}</h1>
 
-            <div className="aspect-video w-full bg-black rounded-lg overflow-hidden mb-8">
-              <iframe
-                src={`https://www.youtube.com/embed/${video.videoId}`}
-                title={video.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="w-full h-full"
-                style={{ border: 0 }}
-              />
-            </div>
-
-            <div className="prose prose-zinc max-w-none">
-              <h2 className="text-2xl font-semibold mb-4">About this video</h2>
-              <p className="text-lg text-muted-foreground mb-8">{video.description}</p>
-              
-              <div className="flex flex-col gap-4">
-                <a
-                  href={video.colabLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium"
-                >
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
-                    <path d="M1.292 5.856L11.54 0v24l-10.25-5.856V5.856zm21.416 11.288V5.856L12.46 0v24l10.25-5.856z"/>
-                  </svg>
-                  Open in Google Colab
-                </a>
+            <div className="flex flex-col lg:flex-row gap-8">
+              <div className="flex-1 min-w-0">
+                <div className="aspect-video w-full bg-black rounded-lg overflow-hidden mb-8 lg:mb-0">
+                  <iframe
+                    ref={playerRef}
+                    src={`https://www.youtube.com/embed/${video.videoId}?enablejsapi=1`}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                    style={{ border: 0 }}
+                  />
+                </div>
+                <div className="prose prose-zinc max-w-none mt-8">
+                  <h2 className="text-2xl font-semibold mb-4">About this video</h2>
+                  <p className="text-lg text-muted-foreground mb-8">{video.description}</p>
+                  <div className="flex flex-col gap-4">
+                    <a
+                      href={video.colabLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium"
+                    >
+                      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+                        <path d="M1.292 5.856L11.54 0v24l-10.25-5.856V5.856zm21.416 11.288V5.856L12.46 0v24l10.25-5.856z"/>
+                      </svg>
+                      Open in Google Colab
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full lg:w-[380px] xl:w-[420px] shrink-0">
+                <Transcript videoId={video.videoId} onSeek={handleSeek} />
               </div>
             </div>
           </div>

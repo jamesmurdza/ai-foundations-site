@@ -1,0 +1,9027 @@
+[
+  {
+    "text": "all right uh good morning everyone and",
+    "start": 1.36,
+    "duration": 4.2
+  },
+  {
+    "text": "welcome to the second session of um AI",
+    "start": 3.24,
+    "duration": 3.96
+  },
+  {
+    "text": "foundations today&#39;s going to be the",
+    "start": 5.56,
+    "duration": 4.76
+  },
+  {
+    "text": "first session where we&#39;re actually um",
+    "start": 7.2,
+    "duration": 4.68
+  },
+  {
+    "text": "building models and we&#39;re going to start",
+    "start": 10.32,
+    "duration": 4.76
+  },
+  {
+    "text": "with the simplest um machine learning",
+    "start": 11.88,
+    "duration": 7.48
+  },
+  {
+    "text": "model which is progression and um yeah",
+    "start": 15.08,
+    "duration": 7.56
+  },
+  {
+    "text": "that&#39;s it so I&#39;ll I&#39;ll give it over to",
+    "start": 19.36,
+    "duration": 6.2
+  },
+  {
+    "text": "noit so we can get",
+    "start": 22.64,
+    "duration": 2.92
+  },
+  {
+    "text": "started yeah hello",
+    "start": 26.12,
+    "duration": 5.44
+  },
+  {
+    "text": "everyone um so just like we said in the",
+    "start": 28.2,
+    "duration": 5.56
+  },
+  {
+    "text": "previous session we are going to begin",
+    "start": 31.56,
+    "duration": 5.2
+  },
+  {
+    "text": "with the linear regression which is",
+    "start": 33.76,
+    "duration": 5.48
+  },
+  {
+    "text": "usually the first algorithm that is",
+    "start": 36.76,
+    "duration": 5.88
+  },
+  {
+    "text": "taught at um almost any machine learning",
+    "start": 39.24,
+    "duration": 6.12
+  },
+  {
+    "text": "101 class even in deep learning this is",
+    "start": 42.64,
+    "duration": 4.88
+  },
+  {
+    "text": "taught at the beginning um the reason",
+    "start": 45.36,
+    "duration": 4.44
+  },
+  {
+    "text": "for it is because of",
+    "start": 47.52,
+    "duration": 5.28
+  },
+  {
+    "text": "the the basic learning principles that",
+    "start": 49.8,
+    "duration": 8.04
+  },
+  {
+    "text": "linear regression uses is almost same",
+    "start": 52.8,
+    "duration": 7.28
+  },
+  {
+    "text": "across like a wide variety of tthms",
+    "start": 57.84,
+    "duration": 4.44
+  },
+  {
+    "text": "particularly in deep learning it is",
+    "start": 60.08,
+    "duration": 5.08
+  },
+  {
+    "text": "throughout the same uh and for some of",
+    "start": 62.28,
+    "duration": 6.8
+  },
+  {
+    "text": "the traditional learning algorithms um",
+    "start": 65.16,
+    "duration": 6.12
+  },
+  {
+    "text": "procedure is also the same so that&#39;s why",
+    "start": 69.08,
+    "duration": 3.84
+  },
+  {
+    "text": "um this is something that is thought at",
+    "start": 71.28,
+    "duration": 3.04
+  },
+  {
+    "text": "the",
+    "start": 72.92,
+    "duration": 2.96
+  },
+  {
+    "text": "beginning",
+    "start": 74.32,
+    "duration": 6.0
+  },
+  {
+    "text": "so let me share my screen and I&#39;ll try",
+    "start": 75.88,
+    "duration": 6.76
+  },
+  {
+    "text": "to build the intuition behind what is",
+    "start": 80.32,
+    "duration": 6.04
+  },
+  {
+    "text": "linear aggression and why do we do",
+    "start": 82.64,
+    "duration": 3.72
+  },
+  {
+    "text": "it how many people here are familiar",
+    "start": 88.6,
+    "duration": 4.72
+  },
+  {
+    "text": "with linear regression",
+    "start": 90.96,
+    "duration": 4.92
+  },
+  {
+    "text": "already uh I took a college course on it",
+    "start": 93.32,
+    "duration": 3.88
+  },
+  {
+    "text": "but I definitely didn&#39;t pay attention to",
+    "start": 95.88,
+    "duration": 3.72
+  },
+  {
+    "text": "that part of",
+    "start": 97.2,
+    "duration": 2.4
+  },
+  {
+    "text": "it I think I learned in statistics but",
+    "start": 102.28,
+    "duration": 4.84
+  },
+  {
+    "text": "that&#39;s pretty much",
+    "start": 105.36,
+    "duration": 5.52
+  },
+  {
+    "text": "it yeah so this is usually borrowed from",
+    "start": 107.12,
+    "duration": 5.96
+  },
+  {
+    "text": "statistics linear regression existed",
+    "start": 110.88,
+    "duration": 5.6
+  },
+  {
+    "text": "long time before um someone even toss",
+    "start": 113.08,
+    "duration": 4.6
+  },
+  {
+    "text": "the term machine",
+    "start": 116.48,
+    "duration": 6.2
+  },
+  {
+    "text": "learning um so so this is something that",
+    "start": 117.68,
+    "duration": 7.92
+  },
+  {
+    "text": "statisticians they usually make these uh",
+    "start": 122.68,
+    "duration": 7.16
+  },
+  {
+    "text": "memes on machine learning um that it was",
+    "start": 125.6,
+    "duration": 7.12
+  },
+  {
+    "text": "statistics and that they",
+    "start": 129.84,
+    "duration": 5.52
+  },
+  {
+    "text": "frame like decorated and then they",
+    "start": 132.72,
+    "duration": 4.6
+  },
+  {
+    "text": "stopped calling it machine learning",
+    "start": 135.36,
+    "duration": 4.68
+  },
+  {
+    "text": "while under the word it is statistic at",
+    "start": 137.32,
+    "duration": 5.92
+  },
+  {
+    "text": "play so that&#39;s something that",
+    "start": 140.04,
+    "duration": 5.76
+  },
+  {
+    "text": "usually uh say about machine",
+    "start": 143.24,
+    "duration": 6.04
+  },
+  {
+    "text": "learning anyways um so linear aggression",
+    "start": 145.8,
+    "duration": 6.08
+  },
+  {
+    "text": "uh if you remember the nomenclature that",
+    "start": 149.28,
+    "duration": 5.4
+  },
+  {
+    "text": "we discussed the taxonomy of uh uh",
+    "start": 151.88,
+    "duration": 5.0
+  },
+  {
+    "text": "machine learning This falls under the",
+    "start": 154.68,
+    "duration": 4.8
+  },
+  {
+    "text": "supervised learning um and particularly",
+    "start": 156.88,
+    "duration": 5.72
+  },
+  {
+    "text": "linear regression deals with uh",
+    "start": 159.48,
+    "duration": 6.12
+  },
+  {
+    "text": "regression problems so regression is a",
+    "start": 162.6,
+    "duration": 4.88
+  },
+  {
+    "text": "type of problems where the goal is to",
+    "start": 165.6,
+    "duration": 5.04
+  },
+  {
+    "text": "predict a continuous variable um whose",
+    "start": 167.48,
+    "duration": 5.48
+  },
+  {
+    "text": "values uh are continuous and doesn&#39;t",
+    "start": 170.64,
+    "duration": 6.0
+  },
+  {
+    "text": "come from any predefined um",
+    "start": 172.96,
+    "duration": 7.68
+  },
+  {
+    "text": "classes so the",
+    "start": 176.64,
+    "duration": 5.92
+  },
+  {
+    "text": "basic idea is that if you have some",
+    "start": 180.64,
+    "duration": 5.6
+  },
+  {
+    "text": "historical data let&#39;s call it X and Y",
+    "start": 182.56,
+    "duration": 5.84
+  },
+  {
+    "text": "where X contains",
+    "start": 186.24,
+    "duration": 5.76
+  },
+  {
+    "text": "the features which are impacting the",
+    "start": 188.4,
+    "duration": 6.0
+  },
+  {
+    "text": "Target or which are going to contribute",
+    "start": 192.0,
+    "duration": 4.88
+  },
+  {
+    "text": "towards the target which is why so these",
+    "start": 194.4,
+    "duration": 4.68
+  },
+  {
+    "text": "are the features this called the",
+    "start": 196.88,
+    "duration": 6.52
+  },
+  {
+    "text": "label um our goal is to come up with a",
+    "start": 199.08,
+    "duration": 7.04
+  },
+  {
+    "text": "function which approximates or which",
+    "start": 203.4,
+    "duration": 5.56
+  },
+  {
+    "text": "Maps this input to Output if we can",
+    "start": 206.12,
+    "duration": 4.64
+  },
+  {
+    "text": "somehow model that relationship between",
+    "start": 208.96,
+    "duration": 4.2
+  },
+  {
+    "text": "input and output we can then make use of",
+    "start": 210.76,
+    "duration": 7.6
+  },
+  {
+    "text": "that function um to make predictions for",
+    "start": 213.16,
+    "duration": 9.6
+  },
+  {
+    "text": "for unseen data so suppose we have like",
+    "start": 218.36,
+    "duration": 6.36
+  },
+  {
+    "text": "we&#39;ll typically take a hypothetical",
+    "start": 222.76,
+    "duration": 3.92
+  },
+  {
+    "text": "problem of house price prediction so",
+    "start": 224.72,
+    "duration": 5.64
+  },
+  {
+    "text": "suppose X is the area of the house and Y",
+    "start": 226.68,
+    "duration": 5.84
+  },
+  {
+    "text": "is the corresponding price of the house",
+    "start": 230.36,
+    "duration": 4.4
+  },
+  {
+    "text": "for now we just taking one feature but",
+    "start": 232.52,
+    "duration": 6.04
+  },
+  {
+    "text": "this uh principle can be uh applied or",
+    "start": 234.76,
+    "duration": 6.92
+  },
+  {
+    "text": "the the equation stays the same for even",
+    "start": 238.56,
+    "duration": 6.28
+  },
+  {
+    "text": "uh any number of uh features but just",
+    "start": 241.68,
+    "duration": 4.96
+  },
+  {
+    "text": "for Simplicity let&#39;s take just the area",
+    "start": 244.84,
+    "duration": 4.64
+  },
+  {
+    "text": "of the house so we have some historical",
+    "start": 246.64,
+    "duration": 8.04
+  },
+  {
+    "text": "data um we have areas for it let&#39;s just",
+    "start": 249.48,
+    "duration": 8.6
+  },
+  {
+    "text": "put some random values there 10 prices",
+    "start": 254.68,
+    "duration": 5.4
+  },
+  {
+    "text": "let&#39;s say",
+    "start": 258.08,
+    "duration": 5.28
+  },
+  {
+    "text": "50 20 and 100 and",
+    "start": 260.08,
+    "duration": 6.32
+  },
+  {
+    "text": "whatever um and now the goal is to make",
+    "start": 263.36,
+    "duration": 6.2
+  },
+  {
+    "text": "use of this data um in order to learn",
+    "start": 266.4,
+    "duration": 4.0
+  },
+  {
+    "text": "the",
+    "start": 269.56,
+    "duration": 3.12
+  },
+  {
+    "text": "relationship or to learn the mapping",
+    "start": 270.4,
+    "duration": 4.92
+  },
+  {
+    "text": "between this input and output now how",
+    "start": 272.68,
+    "duration": 5.84
+  },
+  {
+    "text": "can we do that there are a wide variety",
+    "start": 275.32,
+    "duration": 5.72
+  },
+  {
+    "text": "of ways that we can do this um linear",
+    "start": 278.52,
+    "duration": 4.88
+  },
+  {
+    "text": "regression is just one way of doing it",
+    "start": 281.04,
+    "duration": 5.36
+  },
+  {
+    "text": "so if I try to plot this um this",
+    "start": 283.4,
+    "duration": 5.48
+  },
+  {
+    "text": "hypothetical data what I could see would",
+    "start": 286.4,
+    "duration": 4.48
+  },
+  {
+    "text": "be somewhat like this so I&#39;m trying to",
+    "start": 288.88,
+    "duration": 4.96
+  },
+  {
+    "text": "plot a scale plot of it so on the xaxis",
+    "start": 290.88,
+    "duration": 4.52
+  },
+  {
+    "text": "we have the",
+    "start": 293.84,
+    "duration": 4.88
+  },
+  {
+    "text": "area which is X and on the y- axis we",
+    "start": 295.4,
+    "duration": 5.8
+  },
+  {
+    "text": "have the price",
+    "start": 298.72,
+    "duration": 4.96
+  },
+  {
+    "text": "so if I have a bunch of such historical",
+    "start": 301.2,
+    "duration": 5.52
+  },
+  {
+    "text": "data we can just simply put an area in",
+    "start": 303.68,
+    "duration": 5.08
+  },
+  {
+    "text": "the corresponding price and we could get",
+    "start": 306.72,
+    "duration": 4.64
+  },
+  {
+    "text": "something like",
+    "start": 308.76,
+    "duration": 2.6
+  },
+  {
+    "text": "this so what linear regression the basic",
+    "start": 312.76,
+    "duration": 7.0
+  },
+  {
+    "text": "idea is we need to model this",
+    "start": 316.52,
+    "duration": 5.88
+  },
+  {
+    "text": "relationship using a function and the",
+    "start": 319.76,
+    "duration": 4.52
+  },
+  {
+    "text": "function that linear regression uses is",
+    "start": 322.4,
+    "duration": 5.12
+  },
+  {
+    "text": "a is a function of a straight line so",
+    "start": 324.28,
+    "duration": 6.28
+  },
+  {
+    "text": "equation of linear regression say says",
+    "start": 327.52,
+    "duration": 6.36
+  },
+  {
+    "text": "something like this uh Y8 which is the",
+    "start": 330.56,
+    "duration": 7.84
+  },
+  {
+    "text": "output equals to WX + B and I&#39;m sure you",
+    "start": 333.88,
+    "duration": 7.04
+  },
+  {
+    "text": "people recognize this equation this is",
+    "start": 338.4,
+    "duration": 5.88
+  },
+  {
+    "text": "an equation of a straight line",
+    "start": 340.92,
+    "duration": 3.36
+  },
+  {
+    "text": "right what is w here can anyone tell",
+    "start": 344.68,
+    "duration": 9.2
+  },
+  {
+    "text": "me the slope is the slope and B is the Y",
+    "start": 347.96,
+    "duration": 9.96
+  },
+  {
+    "text": "intercept so if I take a AN arbitary",
+    "start": 353.88,
+    "duration": 7.8
+  },
+  {
+    "text": "line and just put it in",
+    "start": 357.92,
+    "duration": 7.92
+  },
+  {
+    "text": "here this is just one way of modeling",
+    "start": 361.68,
+    "duration": 8.12
+  },
+  {
+    "text": "this data using um a straight line but",
+    "start": 365.84,
+    "duration": 6.52
+  },
+  {
+    "text": "of course there are numerous ways uh",
+    "start": 369.8,
+    "duration": 4.28
+  },
+  {
+    "text": "that we can draw this straight line so",
+    "start": 372.36,
+    "duration": 4.52
+  },
+  {
+    "text": "this is also a fit to this data this",
+    "start": 374.08,
+    "duration": 4.96
+  },
+  {
+    "text": "could be also fit to this data and so on",
+    "start": 376.88,
+    "duration": 4.84
+  },
+  {
+    "text": "there are numerous ways um the question",
+    "start": 379.04,
+    "duration": 5.84
+  },
+  {
+    "text": "is which one is the best fit line to",
+    "start": 381.72,
+    "duration": 5.6
+  },
+  {
+    "text": "this data and how do we come up with",
+    "start": 384.88,
+    "duration": 6.4
+  },
+  {
+    "text": "such a line um and that&#39;s the that&#39;s the",
+    "start": 387.32,
+    "duration": 6.32
+  },
+  {
+    "text": "whole job of training a linear",
+    "start": 391.28,
+    "duration": 3.96
+  },
+  {
+    "text": "regression in order to come up with a",
+    "start": 393.64,
+    "duration": 4.68
+  },
+  {
+    "text": "line which B fits this data once we come",
+    "start": 395.24,
+    "duration": 6.04
+  },
+  {
+    "text": "up with a line which best fits this data",
+    "start": 398.32,
+    "duration": 5.0
+  },
+  {
+    "text": "uh we can then just simply make use of",
+    "start": 401.28,
+    "duration": 6.44
+  },
+  {
+    "text": "that equation of the line in order to um",
+    "start": 403.32,
+    "duration": 7.04
+  },
+  {
+    "text": "predict the price for any house so this",
+    "start": 407.72,
+    "duration": 4.56
+  },
+  {
+    "text": "x here is the area of the house we just",
+    "start": 410.36,
+    "duration": 4.64
+  },
+  {
+    "text": "simply have to put the area and then",
+    "start": 412.28,
+    "duration": 5.52
+  },
+  {
+    "text": "using making use of this W andp it would",
+    "start": 415.0,
+    "duration": 6.96
+  },
+  {
+    "text": "be um it would tell us the price of the",
+    "start": 417.8,
+    "duration": 8.28
+  },
+  {
+    "text": "of the house so initially uh this W and",
+    "start": 421.96,
+    "duration": 6.92
+  },
+  {
+    "text": "B we don&#39;t know what should be the slope",
+    "start": 426.08,
+    "duration": 4.16
+  },
+  {
+    "text": "of the line what should be the Y",
+    "start": 428.88,
+    "duration": 3.2
+  },
+  {
+    "text": "intercept that&#39;s why these are randomly",
+    "start": 430.24,
+    "duration": 4.24
+  },
+  {
+    "text": "initialized we just simply put them put",
+    "start": 432.08,
+    "duration": 5.48
+  },
+  {
+    "text": "some values uh for them uh but because",
+    "start": 434.48,
+    "duration": 5.6
+  },
+  {
+    "text": "we put random values for them the",
+    "start": 437.56,
+    "duration": 4.24
+  },
+  {
+    "text": "obvious thing is that the line that we",
+    "start": 440.08,
+    "duration": 4.0
+  },
+  {
+    "text": "are going to have would not be the best",
+    "start": 441.8,
+    "duration": 5.64
+  },
+  {
+    "text": "factor to this data so then the question",
+    "start": 444.08,
+    "duration": 5.88
+  },
+  {
+    "text": "is how do we refine this line such that",
+    "start": 447.44,
+    "duration": 4.36
+  },
+  {
+    "text": "it becomes the best fit to this SL in",
+    "start": 449.96,
+    "duration": 4.6
+  },
+  {
+    "text": "order to do that we introduced some",
+    "start": 451.8,
+    "duration": 6.32
+  },
+  {
+    "text": "other um terminologies one of it is",
+    "start": 454.56,
+    "duration": 6.2
+  },
+  {
+    "text": "called the cost",
+    "start": 458.12,
+    "duration": 2.64
+  },
+  {
+    "text": "function so the job of the cost function",
+    "start": 462.12,
+    "duration": 7.52
+  },
+  {
+    "text": "is whatever the line",
+    "start": 465.72,
+    "duration": 6.6
+  },
+  {
+    "text": "predicts and whatever the true output is",
+    "start": 469.64,
+    "duration": 4.48
+  },
+  {
+    "text": "which comes from the data",
+    "start": 472.32,
+    "duration": 4.88
+  },
+  {
+    "text": "itself compute the difference between",
+    "start": 474.12,
+    "duration": 4.16
+  },
+  {
+    "text": "those",
+    "start": 477.2,
+    "duration": 4.88
+  },
+  {
+    "text": "two which which is what your cost is now",
+    "start": 478.28,
+    "duration": 5.8
+  },
+  {
+    "text": "initially because these are random",
+    "start": 482.08,
+    "duration": 3.8
+  },
+  {
+    "text": "initialized the cost is going to be very",
+    "start": 484.08,
+    "duration": 4.64
+  },
+  {
+    "text": "high and our job is to somehow reduce",
+    "start": 485.88,
+    "duration": 4.72
+  },
+  {
+    "text": "this cost",
+    "start": 488.72,
+    "duration": 6.28
+  },
+  {
+    "text": "um uh the value for this cost and if we",
+    "start": 490.6,
+    "duration": 7.2
+  },
+  {
+    "text": "manage to reduce the cost for this um in",
+    "start": 495.0,
+    "duration": 5.24
+  },
+  {
+    "text": "other words we would be trying to make",
+    "start": 497.8,
+    "duration": 4.76
+  },
+  {
+    "text": "this y hat as close as possible to Y",
+    "start": 500.24,
+    "duration": 4.2
+  },
+  {
+    "text": "because in that way the difference",
+    "start": 502.56,
+    "duration": 4.24
+  },
+  {
+    "text": "between them would be reduced now for",
+    "start": 504.44,
+    "duration": 4.12
+  },
+  {
+    "text": "different tasks different loss functions",
+    "start": 506.8,
+    "duration": 3.36
+  },
+  {
+    "text": "are used we are current ly dealing with",
+    "start": 508.56,
+    "duration": 4.24
+  },
+  {
+    "text": "regression so for regression the typical",
+    "start": 510.16,
+    "duration": 5.24
+  },
+  {
+    "text": "loss function that is used is called",
+    "start": 512.8,
+    "duration": 5.6
+  },
+  {
+    "text": "MSC mean squared error and I&#39;m very sure",
+    "start": 515.4,
+    "duration": 5.08
+  },
+  {
+    "text": "you all know",
+    "start": 518.4,
+    "duration": 5.08
+  },
+  {
+    "text": "this so I&#39;ll just put the equation for",
+    "start": 520.48,
+    "duration": 5.76
+  },
+  {
+    "text": "it mean Square just simply",
+    "start": 523.48,
+    "duration": 5.76
+  },
+  {
+    "text": "says",
+    "start": 526.24,
+    "duration": 3.0
+  },
+  {
+    "text": "this take the prediction of the line um",
+    "start": 532.72,
+    "duration": 5.72
+  },
+  {
+    "text": "take the true output subtract it from it",
+    "start": 536.0,
+    "duration": 5.0
+  },
+  {
+    "text": "Square the difference Sumit or all the",
+    "start": 538.44,
+    "duration": 4.88
+  },
+  {
+    "text": "examples that you have and then divide",
+    "start": 541.0,
+    "duration": 3.68
+  },
+  {
+    "text": "it by the total number of examples so",
+    "start": 543.32,
+    "duration": 3.72
+  },
+  {
+    "text": "this in here is the total number of",
+    "start": 544.68,
+    "duration": 4.04
+  },
+  {
+    "text": "examples that you have in your",
+    "start": 547.04,
+    "duration": 4.2
+  },
+  {
+    "text": "historical",
+    "start": 548.72,
+    "duration": 2.52
+  },
+  {
+    "text": "data do you have anything to ask till",
+    "start": 551.64,
+    "duration": 3.76
+  },
+  {
+    "text": "this",
+    "start": 554.32,
+    "duration": 4.52
+  },
+  {
+    "text": "point uh yeah the cost function that you",
+    "start": 555.4,
+    "duration": 5.84
+  },
+  {
+    "text": "mention here is that equal to the loss",
+    "start": 558.84,
+    "duration": 5.28
+  },
+  {
+    "text": "function like is that the same just",
+    "start": 561.24,
+    "duration": 5.56
+  },
+  {
+    "text": "different word yeah so usually they&#39;re",
+    "start": 564.12,
+    "duration": 7.32
+  },
+  {
+    "text": "used interchangeably but um I had I",
+    "start": 566.8,
+    "duration": 7.8
+  },
+  {
+    "text": "heard it from one of the tutors",
+    "start": 571.44,
+    "duration": 6.36
+  },
+  {
+    "text": "somewhere that cost is usually the term",
+    "start": 574.6,
+    "duration": 6.0
+  },
+  {
+    "text": "that is given to the entire sumission",
+    "start": 577.8,
+    "duration": 5.52
+  },
+  {
+    "text": "that you get um at the end so this is",
+    "start": 580.6,
+    "duration": 7.56
+  },
+  {
+    "text": "cost while loss is counted um for a",
+    "start": 583.32,
+    "duration": 7.4
+  },
+  {
+    "text": "single example so if I make a prediction",
+    "start": 588.16,
+    "duration": 5.36
+  },
+  {
+    "text": "for a single example let&#39;s say this one",
+    "start": 590.72,
+    "duration": 5.48
+  },
+  {
+    "text": "and I get some prediction from it and I",
+    "start": 593.52,
+    "duration": 5.92
+  },
+  {
+    "text": "didn&#39;t um comput the difference between",
+    "start": 596.2,
+    "duration": 5.2
+  },
+  {
+    "text": "the prediction and the true output that",
+    "start": 599.44,
+    "duration": 4.44
+  },
+  {
+    "text": "is the loss for this example but when",
+    "start": 601.4,
+    "duration": 4.76
+  },
+  {
+    "text": "you accumulate it were across the entire",
+    "start": 603.88,
+    "duration": 5.24
+  },
+  {
+    "text": "data then it is called the cost function",
+    "start": 606.16,
+    "duration": 5.12
+  },
+  {
+    "text": "but this distinction is not very solid",
+    "start": 609.12,
+    "duration": 6.32
+  },
+  {
+    "text": "so people usually use this",
+    "start": 611.28,
+    "duration": 4.16
+  },
+  {
+    "text": "interchangeably",
+    "start": 616.76,
+    "duration": 6.0
+  },
+  {
+    "text": "okay okay another quick question so in",
+    "start": 619.32,
+    "duration": 6.6
+  },
+  {
+    "text": "in this case uh the the cost or the loss",
+    "start": 622.76,
+    "duration": 7.36
+  },
+  {
+    "text": "could be uh either on the the",
+    "start": 625.92,
+    "duration": 7.88
+  },
+  {
+    "text": "x axis or on the y axis right like and",
+    "start": 630.12,
+    "duration": 8.32
+  },
+  {
+    "text": "so so is are there two two um values",
+    "start": 633.8,
+    "duration": 8.32
+  },
+  {
+    "text": "that you get um as a cost or is it is it",
+    "start": 638.44,
+    "duration": 4.72
+  },
+  {
+    "text": "just one",
+    "start": 642.12,
+    "duration": 4.76
+  },
+  {
+    "text": "value no it&#39;s just one value so if you",
+    "start": 643.16,
+    "duration": 5.44
+  },
+  {
+    "text": "let&#39;s say we take a line let&#39;s say this",
+    "start": 646.88,
+    "duration": 5.56
+  },
+  {
+    "text": "is our uh initial um the value for w",
+    "start": 648.6,
+    "duration": 6.12
+  },
+  {
+    "text": "andb that we random initialize it got us",
+    "start": 652.44,
+    "duration": 4.88
+  },
+  {
+    "text": "this line what is the cost here well the",
+    "start": 654.72,
+    "duration": 5.52
+  },
+  {
+    "text": "cost is this line for instance we take",
+    "start": 657.32,
+    "duration": 6.0
+  },
+  {
+    "text": "this particular example here and this is",
+    "start": 660.24,
+    "duration": 5.24
+  },
+  {
+    "text": "the corresponding area what we do is we",
+    "start": 663.32,
+    "duration": 6.32
+  },
+  {
+    "text": "take that area we plug it um inside the",
+    "start": 665.48,
+    "duration": 5.8
+  },
+  {
+    "text": "equation of a line this line is going to",
+    "start": 669.64,
+    "duration": 3.52
+  },
+  {
+    "text": "produce something whose value would be",
+    "start": 671.28,
+    "duration": 5.52
+  },
+  {
+    "text": "this right and the true output or the",
+    "start": 673.16,
+    "duration": 6.56
+  },
+  {
+    "text": "true value for that is this now what is",
+    "start": 676.8,
+    "duration": 4.92
+  },
+  {
+    "text": "cost here cost is this difference here",
+    "start": 679.72,
+    "duration": 3.08
+  },
+  {
+    "text": "that you",
+    "start": 681.72,
+    "duration": 4.0
+  },
+  {
+    "text": "see you take that difference you square",
+    "start": 682.8,
+    "duration": 5.68
+  },
+  {
+    "text": "it that is the difference and you",
+    "start": 685.72,
+    "duration": 4.56
+  },
+  {
+    "text": "compute it not just for this one you",
+    "start": 688.48,
+    "duration": 4.48
+  },
+  {
+    "text": "also comput it for this one for this one",
+    "start": 690.28,
+    "duration": 6.12
+  },
+  {
+    "text": "for that one and so on for the entire",
+    "start": 692.96,
+    "duration": 6.52
+  },
+  {
+    "text": "data and then you accumulate all of them",
+    "start": 696.4,
+    "duration": 5.08
+  },
+  {
+    "text": "together and then divide it by the total",
+    "start": 699.48,
+    "duration": 4.6
+  },
+  {
+    "text": "number of examples which is what this",
+    "start": 701.48,
+    "duration": 5.6
+  },
+  {
+    "text": "mean represents in this MSC so mean is",
+    "start": 704.08,
+    "duration": 5.68
+  },
+  {
+    "text": "because you are averaging squared is",
+    "start": 707.08,
+    "duration": 4.76
+  },
+  {
+    "text": "because you are squaring the difference",
+    "start": 709.76,
+    "duration": 5.6
+  },
+  {
+    "text": "and error is the error that is the",
+    "start": 711.84,
+    "duration": 6.28
+  },
+  {
+    "text": "difference between the",
+    "start": 715.36,
+    "duration": 7.4
+  },
+  {
+    "text": "two uh um now if we take a close look at",
+    "start": 718.12,
+    "duration": 7.44
+  },
+  {
+    "text": "this cost function um what do we have",
+    "start": 722.76,
+    "duration": 5.16
+  },
+  {
+    "text": "here inside this cost function we have Y",
+    "start": 725.56,
+    "duration": 3.88
+  },
+  {
+    "text": "which comes from the data itself and",
+    "start": 727.92,
+    "duration": 3.48
+  },
+  {
+    "text": "then we have y height which is the",
+    "start": 729.44,
+    "duration": 3.96
+  },
+  {
+    "text": "prediction from the model if I try to",
+    "start": 731.4,
+    "duration": 3.8
+  },
+  {
+    "text": "plug in that equation here what I would",
+    "start": 733.4,
+    "duration": 5.08
+  },
+  {
+    "text": "see is this",
+    "start": 735.2,
+    "duration": 3.28
+  },
+  {
+    "text": "thing uh",
+    "start": 741.16,
+    "duration": 10.0
+  },
+  {
+    "text": "WX + b - y^ 2",
+    "start": 744.2,
+    "duration": 6.96
+  },
+  {
+    "text": "the change the layout that&#39;s better can",
+    "start": 753.2,
+    "duration": 4.28
+  },
+  {
+    "text": "you see",
+    "start": 756.28,
+    "duration": 6.48
+  },
+  {
+    "text": "now yeah that&#39;s good thank you",
+    "start": 757.48,
+    "duration": 5.28
+  },
+  {
+    "text": "okay okay so just like I said initially",
+    "start": 765.08,
+    "duration": 4.8
+  },
+  {
+    "text": "the value for this cost is very high and",
+    "start": 768.32,
+    "duration": 3.8
+  },
+  {
+    "text": "the goal is to reduce this cost this",
+    "start": 769.88,
+    "duration": 4.52
+  },
+  {
+    "text": "value now what can we do in order to",
+    "start": 772.12,
+    "duration": 4.56
+  },
+  {
+    "text": "reduce this thing can we change y here",
+    "start": 774.4,
+    "duration": 6.4
+  },
+  {
+    "text": "in order to reduce the value",
+    "start": 776.68,
+    "duration": 4.12
+  },
+  {
+    "text": "this is a question uh no because Y is",
+    "start": 782.16,
+    "duration": 5.8
+  },
+  {
+    "text": "determined by well Y is like the actual",
+    "start": 785.44,
+    "duration": 5.16
+  },
+  {
+    "text": "value right exactly why comes from the",
+    "start": 787.96,
+    "duration": 5.12
+  },
+  {
+    "text": "data we cannot change that what can we",
+    "start": 790.6,
+    "duration": 4.16
+  },
+  {
+    "text": "change can we change this n in order to",
+    "start": 793.08,
+    "duration": 5.4
+  },
+  {
+    "text": "do to reduce the",
+    "start": 794.76,
+    "duration": 6.08
+  },
+  {
+    "text": "value no and it&#39;s given by the number of",
+    "start": 798.48,
+    "duration": 6.2
+  },
+  {
+    "text": "data point yep X also comes from data we",
+    "start": 800.84,
+    "duration": 5.96
+  },
+  {
+    "text": "cannot change that as well what are we",
+    "start": 804.68,
+    "duration": 4.28
+  },
+  {
+    "text": "left with we are left with these two w",
+    "start": 806.8,
+    "duration": 3.12
+  },
+  {
+    "text": "and",
+    "start": 808.96,
+    "duration": 4.36
+  },
+  {
+    "text": "B we can only change these two in order",
+    "start": 809.92,
+    "duration": 6.36
+  },
+  {
+    "text": "to reduce the value for this entire",
+    "start": 813.32,
+    "duration": 6.88
+  },
+  {
+    "text": "function um and that&#39;s what training a",
+    "start": 816.28,
+    "duration": 6.68
+  },
+  {
+    "text": "model is these are called the parameters",
+    "start": 820.2,
+    "duration": 4.08
+  },
+  {
+    "text": "we need to set the values for these",
+    "start": 822.96,
+    "duration": 4.76
+  },
+  {
+    "text": "parameters such that whatever output",
+    "start": 824.28,
+    "duration": 6.24
+  },
+  {
+    "text": "this model is producing becomes as close",
+    "start": 827.72,
+    "duration": 4.64
+  },
+  {
+    "text": "as possible to the true output so that",
+    "start": 830.52,
+    "duration": 5.12
+  },
+  {
+    "text": "the differences minimized and the entire",
+    "start": 832.36,
+    "duration": 5.2
+  },
+  {
+    "text": "cost function is minimized that&#39;s the",
+    "start": 835.64,
+    "duration": 5.36
+  },
+  {
+    "text": "whole goal and and if someone is from",
+    "start": 837.56,
+    "duration": 5.92
+  },
+  {
+    "text": "mathematical uh mathematics background",
+    "start": 841.0,
+    "duration": 5.28
+  },
+  {
+    "text": "they would recognize this um it&#39;s a very",
+    "start": 843.48,
+    "duration": 6.28
+  },
+  {
+    "text": "well-known problem mathematics called",
+    "start": 846.28,
+    "duration": 3.48
+  },
+  {
+    "text": "optimization so optimization in",
+    "start": 850.32,
+    "duration": 5.64
+  },
+  {
+    "text": "mathematics just simply means maximizing",
+    "start": 853.88,
+    "duration": 3.84
+  },
+  {
+    "text": "or minimizing the value of a function",
+    "start": 855.96,
+    "duration": 2.96
+  },
+  {
+    "text": "based on some",
+    "start": 857.72,
+    "duration": 3.8
+  },
+  {
+    "text": "parameters here the function that we",
+    "start": 858.92,
+    "duration": 5.6
+  },
+  {
+    "text": "have whose value we need to minimize is",
+    "start": 861.52,
+    "duration": 4.84
+  },
+  {
+    "text": "this cost function usually represented",
+    "start": 864.52,
+    "duration": 2.96
+  },
+  {
+    "text": "by",
+    "start": 866.36,
+    "duration": 5.16
+  },
+  {
+    "text": "J or c whatever doesn&#39;t matter and the",
+    "start": 867.48,
+    "duration": 7.96
+  },
+  {
+    "text": "parameters that we have are W and",
+    "start": 871.52,
+    "duration": 7.04
+  },
+  {
+    "text": "B so this cost function is parameterized",
+    "start": 875.44,
+    "duration": 5.64
+  },
+  {
+    "text": "by W and B we need to change the values",
+    "start": 878.56,
+    "duration": 4.92
+  },
+  {
+    "text": "for w and B such that the or value of",
+    "start": 881.08,
+    "duration": 4.4
+  },
+  {
+    "text": "this cost is",
+    "start": 883.48,
+    "duration": 5.0
+  },
+  {
+    "text": "reduced now since I said this is a very",
+    "start": 885.48,
+    "duration": 5.4
+  },
+  {
+    "text": "well-known problem in mathematics which",
+    "start": 888.48,
+    "duration": 4.68
+  },
+  {
+    "text": "means there are well suited Tools in",
+    "start": 890.88,
+    "duration": 4.88
+  },
+  {
+    "text": "mathematics already out there which we",
+    "start": 893.16,
+    "duration": 5.0
+  },
+  {
+    "text": "can make use of in order to reduce the",
+    "start": 895.76,
+    "duration": 5.0
+  },
+  {
+    "text": "value of this cost function can anyone",
+    "start": 898.16,
+    "duration": 5.24
+  },
+  {
+    "text": "tell me any",
+    "start": 900.76,
+    "duration": 2.64
+  },
+  {
+    "text": "method well maybe we could use",
+    "start": 908.68,
+    "duration": 7.0
+  },
+  {
+    "text": "um gradient Ascent",
+    "start": 912.32,
+    "duration": 6.48
+  },
+  {
+    "text": "perhaps yeah so gring descent",
+    "start": 915.68,
+    "duration": 6.52
+  },
+  {
+    "text": "is um a very",
+    "start": 918.8,
+    "duration": 6.44
+  },
+  {
+    "text": "popular optimization algorithm that is",
+    "start": 922.2,
+    "duration": 5.48
+  },
+  {
+    "text": "used um in almost all the machine",
+    "start": 925.24,
+    "duration": 6.0
+  },
+  {
+    "text": "learning um optimization problems what",
+    "start": 927.68,
+    "duration": 6.08
+  },
+  {
+    "text": "is the idea behind gradient descent so",
+    "start": 931.24,
+    "duration": 5.0
+  },
+  {
+    "text": "let me write the equation for gradient",
+    "start": 933.76,
+    "duration": 5.92
+  },
+  {
+    "text": "descent and then we&#39;ll talk about its",
+    "start": 936.24,
+    "duration": 7.24
+  },
+  {
+    "text": "conceptual uh background so",
+    "start": 939.68,
+    "duration": 7.36
+  },
+  {
+    "text": "the the equation of gradient",
+    "start": 943.48,
+    "duration": 7.44
+  },
+  {
+    "text": "descent says that you need to update the",
+    "start": 947.04,
+    "duration": 6.52
+  },
+  {
+    "text": "values for w and B in this way in order",
+    "start": 950.92,
+    "duration": 3.64
+  },
+  {
+    "text": "to",
+    "start": 953.56,
+    "duration": 5.48
+  },
+  {
+    "text": "reduce the value for the cost function",
+    "start": 954.56,
+    "duration": 5.76
+  },
+  {
+    "text": "this is for",
+    "start": 959.04,
+    "duration": 5.0
+  },
+  {
+    "text": "w and this is for",
+    "start": 960.32,
+    "duration": 3.72
+  },
+  {
+    "text": "B there are a few terms um that we need",
+    "start": 968.08,
+    "duration": 7.16
+  },
+  {
+    "text": "to talk about here let&#39;s first take this",
+    "start": 971.56,
+    "duration": 6.72
+  },
+  {
+    "text": "ter so in the previous session I told",
+    "start": 975.24,
+    "duration": 6.72
+  },
+  {
+    "text": "you to take a look into derivatives",
+    "start": 978.28,
+    "duration": 5.92
+  },
+  {
+    "text": "here&#39;s where they are used what we are",
+    "start": 981.96,
+    "duration": 4.16
+  },
+  {
+    "text": "simply doing here is that we are taking",
+    "start": 984.2,
+    "duration": 4.92
+  },
+  {
+    "text": "the derivative of the cost function with",
+    "start": 986.12,
+    "duration": 6.0
+  },
+  {
+    "text": "respect to W Now can anyone tell me what",
+    "start": 989.12,
+    "duration": 5.0
+  },
+  {
+    "text": "does a derivative",
+    "start": 992.12,
+    "duration": 4.88
+  },
+  {
+    "text": "do so J is the cost function right is",
+    "start": 994.12,
+    "duration": 5.08
+  },
+  {
+    "text": "that just a normal um symbol used for",
+    "start": 997.0,
+    "duration": 6.52
+  },
+  {
+    "text": "cost normal J yeah this is I&#39;ve seen it",
+    "start": 999.2,
+    "duration": 7.36
+  },
+  {
+    "text": "in in a few places um you can use C if",
+    "start": 1003.52,
+    "duration": 4.88
+  },
+  {
+    "text": "this confuses you but that doesn&#39;t",
+    "start": 1006.56,
+    "duration": 3.88
+  },
+  {
+    "text": "really matter wanted to clarify that",
+    "start": 1008.4,
+    "duration": 5.6
+  },
+  {
+    "text": "yeah but what is the",
+    "start": 1010.44,
+    "duration": 3.56
+  },
+  {
+    "text": "derivative so the derivative here would",
+    "start": 1017.84,
+    "duration": 6.92
+  },
+  {
+    "text": "be if we change W by a tiny amount how",
+    "start": 1020.08,
+    "duration": 7.6
+  },
+  {
+    "text": "much does that affect the larger cost",
+    "start": 1024.76,
+    "duration": 4.0
+  },
+  {
+    "text": "function",
+    "start": 1027.68,
+    "duration": 4.64
+  },
+  {
+    "text": "J yeah we&#39;ll talk about that but the",
+    "start": 1028.76,
+    "duration": 8.24
+  },
+  {
+    "text": "concept of derivative it is just",
+    "start": 1032.32,
+    "duration": 7.72
+  },
+  {
+    "text": "um like it it computes the instantaneous",
+    "start": 1037.0,
+    "duration": 5.44
+  },
+  {
+    "text": "change in one quantity or one function",
+    "start": 1040.04,
+    "duration": 5.84
+  },
+  {
+    "text": "with respect to another quantity so here",
+    "start": 1042.44,
+    "duration": 8.2
+  },
+  {
+    "text": "the first uh function that we want to",
+    "start": 1045.88,
+    "duration": 7.04
+  },
+  {
+    "text": "com compute the change in with respect",
+    "start": 1050.64,
+    "duration": 4.88
+  },
+  {
+    "text": "to uh the other one the first one is the",
+    "start": 1052.92,
+    "duration": 5.44
+  },
+  {
+    "text": "cost and another one is the W in other",
+    "start": 1055.52,
+    "duration": 5.6
+  },
+  {
+    "text": "words we want to see what happens to the",
+    "start": 1058.36,
+    "duration": 6.32
+  },
+  {
+    "text": "cost if we change this W now why do we",
+    "start": 1061.12,
+    "duration": 5.32
+  },
+  {
+    "text": "want to compute that well because the",
+    "start": 1064.68,
+    "duration": 3.44
+  },
+  {
+    "text": "goal is to reduce the value for the cost",
+    "start": 1066.44,
+    "duration": 3.12
+  },
+  {
+    "text": "function and if you want to reduce the",
+    "start": 1068.12,
+    "duration": 3.0
+  },
+  {
+    "text": "value for something you need to first",
+    "start": 1069.56,
+    "duration": 3.68
+  },
+  {
+    "text": "know how does the value of it changes",
+    "start": 1071.12,
+    "duration": 3.84
+  },
+  {
+    "text": "with respect to that because if you",
+    "start": 1073.24,
+    "duration": 4.52
+  },
+  {
+    "text": "don&#39;t know how the value changes um you",
+    "start": 1074.96,
+    "duration": 4.64
+  },
+  {
+    "text": "cannot change you cannot reduce the",
+    "start": 1077.76,
+    "duration": 5.28
+  },
+  {
+    "text": "value of it um I gave this example in",
+    "start": 1079.6,
+    "duration": 6.6
+  },
+  {
+    "text": "some previous session that it&#39;s like",
+    "start": 1083.04,
+    "duration": 5.4
+  },
+  {
+    "text": "there&#39;s a water tank and there&#39;s a knob",
+    "start": 1086.2,
+    "duration": 5.92
+  },
+  {
+    "text": "um um and someone asks you to turn the",
+    "start": 1088.44,
+    "duration": 6.64
+  },
+  {
+    "text": "knob in such a way so that the flow of",
+    "start": 1092.12,
+    "duration": 6.28
+  },
+  {
+    "text": "water is reduced uh now before you are",
+    "start": 1095.08,
+    "duration": 5.44
+  },
+  {
+    "text": "able to turn the knob in such a way to",
+    "start": 1098.4,
+    "duration": 3.56
+  },
+  {
+    "text": "reduce the flow of water you would first",
+    "start": 1100.52,
+    "duration": 3.28
+  },
+  {
+    "text": "need to know what happens if I turn the",
+    "start": 1101.96,
+    "duration": 3.28
+  },
+  {
+    "text": "knob towards the left or towards the",
+    "start": 1103.8,
+    "duration": 4.72
+  },
+  {
+    "text": "right um if you figure out that turning",
+    "start": 1105.24,
+    "duration": 5.16
+  },
+  {
+    "text": "the towards the left increases the flow",
+    "start": 1108.52,
+    "duration": 3.92
+  },
+  {
+    "text": "of water you automatically know that I",
+    "start": 1110.4,
+    "duration": 3.32
+  },
+  {
+    "text": "need to turn it towards the right in",
+    "start": 1112.44,
+    "duration": 3.64
+  },
+  {
+    "text": "order to reduce the flow of water this",
+    "start": 1113.72,
+    "duration": 4.36
+  },
+  {
+    "text": "is exactly the same thing at play here",
+    "start": 1116.08,
+    "duration": 3.84
+  },
+  {
+    "text": "we first want to know how does the cost",
+    "start": 1118.08,
+    "duration": 4.8
+  },
+  {
+    "text": "changes with respect to changing W if we",
+    "start": 1119.92,
+    "duration": 5.04
+  },
+  {
+    "text": "can figure out that we can then make use",
+    "start": 1122.88,
+    "duration": 4.96
+  },
+  {
+    "text": "of that information in order to change W",
+    "start": 1124.96,
+    "duration": 4.28
+  },
+  {
+    "text": "in such a way which would reduce the",
+    "start": 1127.84,
+    "duration": 3.88
+  },
+  {
+    "text": "world value of the cost function let&#39;s",
+    "start": 1129.24,
+    "duration": 5.96
+  },
+  {
+    "text": "see how how this turns out um",
+    "start": 1131.72,
+    "duration": 4.96
+  },
+  {
+    "text": "graphically",
+    "start": 1135.2,
+    "duration": 3.8
+  },
+  {
+    "text": "so I&#39;ll just simply plot the these",
+    "start": 1136.68,
+    "duration": 5.96
+  },
+  {
+    "text": "equations um plot these plots although",
+    "start": 1139.0,
+    "duration": 5.84
+  },
+  {
+    "text": "these are arbitary but if you try to",
+    "start": 1142.64,
+    "duration": 3.8
+  },
+  {
+    "text": "repeat this experiment with a computer",
+    "start": 1144.84,
+    "duration": 3.6
+  },
+  {
+    "text": "you&#39;d see the exact same phenomena so",
+    "start": 1146.44,
+    "duration": 4.56
+  },
+  {
+    "text": "let&#39;s take this W on the x-axis and the",
+    "start": 1148.44,
+    "duration": 4.64
+  },
+  {
+    "text": "cost on the y- axis so I&#39;m just simply",
+    "start": 1151.0,
+    "duration": 4.92
+  },
+  {
+    "text": "plotting the cost against the value of w",
+    "start": 1153.08,
+    "duration": 6.2
+  },
+  {
+    "text": "in other words I&#39;m taking this function",
+    "start": 1155.92,
+    "duration": 6.32
+  },
+  {
+    "text": "here this and plugging in some values",
+    "start": 1159.28,
+    "duration": 8.04
+  },
+  {
+    "text": "for w and plotting the the resultant",
+    "start": 1162.24,
+    "duration": 8.0
+  },
+  {
+    "text": "values for J um you&#39;d ask me we don&#39;t",
+    "start": 1167.32,
+    "duration": 5.0
+  },
+  {
+    "text": "know B here let&#39;s just forget about B",
+    "start": 1170.24,
+    "duration": 3.32
+  },
+  {
+    "text": "for a second we are just Simply",
+    "start": 1172.32,
+    "duration": 3.16
+  },
+  {
+    "text": "Computing fixing the value for B and",
+    "start": 1173.56,
+    "duration": 6.36
+  },
+  {
+    "text": "just Computing the cost against W so the",
+    "start": 1175.48,
+    "duration": 6.16
+  },
+  {
+    "text": "natural obvious thing is for some values",
+    "start": 1179.92,
+    "duration": 3.56
+  },
+  {
+    "text": "of w the cost is going to be very high",
+    "start": 1181.64,
+    "duration": 3.4
+  },
+  {
+    "text": "and for other values of w the cost is",
+    "start": 1183.48,
+    "duration": 3.96
+  },
+  {
+    "text": "going to be very low and if you plot",
+    "start": 1185.04,
+    "duration": 5.64
+  },
+  {
+    "text": "this across a wide range of w values you",
+    "start": 1187.44,
+    "duration": 6.76
+  },
+  {
+    "text": "would see something like",
+    "start": 1190.68,
+    "duration": 3.52
+  },
+  {
+    "text": "this which just simply tells you that",
+    "start": 1195.2,
+    "duration": 4.88
+  },
+  {
+    "text": "for some values of w the cost is",
+    "start": 1197.64,
+    "duration": 5.28
+  },
+  {
+    "text": "low for instance here for other values",
+    "start": 1200.08,
+    "duration": 5.72
+  },
+  {
+    "text": "of w for instance here cost is high or",
+    "start": 1202.92,
+    "duration": 7.24
+  },
+  {
+    "text": "here and so on let&#39;s just assume that um",
+    "start": 1205.8,
+    "duration": 6.72
+  },
+  {
+    "text": "the so remember we random initialize the",
+    "start": 1210.16,
+    "duration": 4.6
+  },
+  {
+    "text": "values for w and B let&#39;s say that the",
+    "start": 1212.52,
+    "duration": 5.36
+  },
+  {
+    "text": "random initialization of w got us here",
+    "start": 1214.76,
+    "duration": 5.68
+  },
+  {
+    "text": "we just arbitr put a value of w which",
+    "start": 1217.88,
+    "duration": 5.48
+  },
+  {
+    "text": "was here and if we compute the value for",
+    "start": 1220.44,
+    "duration": 5.12
+  },
+  {
+    "text": "the cost function at that W the",
+    "start": 1223.36,
+    "duration": 6.2
+  },
+  {
+    "text": "corresponding cost is here",
+    "start": 1225.56,
+    "duration": 5.24
+  },
+  {
+    "text": "now let&#39;s see what happens when we",
+    "start": 1229.56,
+    "duration": 3.0
+  },
+  {
+    "text": "compute the derivative of this cost with",
+    "start": 1230.8,
+    "duration": 3.8
+  },
+  {
+    "text": "respect to W so if you would have",
+    "start": 1232.56,
+    "duration": 4.84
+  },
+  {
+    "text": "studied the concept of derivatives",
+    "start": 1234.6,
+    "duration": 5.36
+  },
+  {
+    "text": "derivative is nothing but the slope of a",
+    "start": 1237.4,
+    "duration": 5.24
+  },
+  {
+    "text": "tangent line drawn to the curve at that",
+    "start": 1239.96,
+    "duration": 4.24
+  },
+  {
+    "text": "exact",
+    "start": 1242.64,
+    "duration": 4.08
+  },
+  {
+    "text": "location you people know this already",
+    "start": 1244.2,
+    "duration": 5.52
+  },
+  {
+    "text": "right",
+    "start": 1246.72,
+    "duration": 3.0
+  },
+  {
+    "text": "no one knows about",
+    "start": 1259.36,
+    "duration": 6.64
+  },
+  {
+    "text": "it yeah I think I saw people on their",
+    "start": 1261.72,
+    "duration": 4.28
+  },
+  {
+    "text": "heads because I don&#39;t see your heads",
+    "start": 1266.36,
+    "duration": 4.64
+  },
+  {
+    "text": "when I&#39;m sharing my screen so that&#39;s why",
+    "start": 1268.72,
+    "duration": 5.68
+  },
+  {
+    "text": "I&#39;m just blank oh okay",
+    "start": 1271.0,
+    "duration": 6.56
+  },
+  {
+    "text": "yeah okay so what did you say James no",
+    "start": 1274.4,
+    "duration": 5.6
+  },
+  {
+    "text": "one knows about it no I think I see",
+    "start": 1277.56,
+    "duration": 5.96
+  },
+  {
+    "text": "people nodding their heads in agreement",
+    "start": 1280.0,
+    "duration": 6.92
+  },
+  {
+    "text": "with the concept yeah I remember it",
+    "start": 1283.52,
+    "duration": 7.0
+  },
+  {
+    "text": "from Al",
+    "start": 1286.92,
+    "duration": 3.6
+  },
+  {
+    "text": "okay so if we start talking about",
+    "start": 1291.84,
+    "duration": 3.6
+  },
+  {
+    "text": "derivatives I think the rest of the",
+    "start": 1293.76,
+    "duration": 4.08
+  },
+  {
+    "text": "decision would be consumed by that um",
+    "start": 1295.44,
+    "duration": 3.48
+  },
+  {
+    "text": "that&#39;s why",
+    "start": 1297.84,
+    "duration": 5.24
+  },
+  {
+    "text": "I um suggested to watch something on on",
+    "start": 1298.92,
+    "duration": 6.52
+  },
+  {
+    "text": "the concept of derivatives so I&#39;ll just",
+    "start": 1303.08,
+    "duration": 4.96
+  },
+  {
+    "text": "briefly touch upon it um but if",
+    "start": 1305.44,
+    "duration": 4.88
+  },
+  {
+    "text": "something confuses you uh you can ask me",
+    "start": 1308.04,
+    "duration": 4.76
+  },
+  {
+    "text": "questions as well maybe that would leave",
+    "start": 1310.32,
+    "duration": 7.0
+  },
+  {
+    "text": "us um like that would take some time but",
+    "start": 1312.8,
+    "duration": 8.24
+  },
+  {
+    "text": "um if if you would prefer otherwise like",
+    "start": 1317.32,
+    "duration": 5.36
+  },
+  {
+    "text": "you can then later on study the concept",
+    "start": 1321.04,
+    "duration": 4.36
+  },
+  {
+    "text": "of derivatives and this whole story that",
+    "start": 1322.68,
+    "duration": 4.68
+  },
+  {
+    "text": "I&#39;m telling here would make much more",
+    "start": 1325.4,
+    "duration": 5.32
+  },
+  {
+    "text": "sense um then but what a derivative",
+    "start": 1327.36,
+    "duration": 5.48
+  },
+  {
+    "text": "simply does is it can it is like the",
+    "start": 1330.72,
+    "duration": 3.72
+  },
+  {
+    "text": "slope of tangent line what do I mean by",
+    "start": 1332.84,
+    "duration": 3.68
+  },
+  {
+    "text": "that let&#39;s let&#39;s just take an example",
+    "start": 1334.44,
+    "duration": 6.2
+  },
+  {
+    "text": "let&#39;s say we have a function",
+    "start": 1336.52,
+    "duration": 4.12
+  },
+  {
+    "text": "here let&#39;s say",
+    "start": 1343.2,
+    "duration": 8.52
+  },
+  {
+    "text": "um a car starts from some point and it",
+    "start": 1347.0,
+    "duration": 6.88
+  },
+  {
+    "text": "um it",
+    "start": 1351.72,
+    "duration": 3.72
+  },
+  {
+    "text": "travels",
+    "start": 1353.88,
+    "duration": 4.28
+  },
+  {
+    "text": "um and it covers some",
+    "start": 1355.44,
+    "duration": 4.32
+  },
+  {
+    "text": "distance",
+    "start": 1358.16,
+    "duration": 6.12
+  },
+  {
+    "text": "so let&#39;s say the distance is on",
+    "start": 1359.76,
+    "duration": 7.76
+  },
+  {
+    "text": "the y- axis and the time is on the",
+    "start": 1364.28,
+    "duration": 5.56
+  },
+  {
+    "text": "x-axis",
+    "start": 1367.52,
+    "duration": 5.2
+  },
+  {
+    "text": "so maybe the distance that it",
+    "start": 1369.84,
+    "duration": 5.12
+  },
+  {
+    "text": "covers I don&#39;t know if it is making much",
+    "start": 1372.72,
+    "duration": 6.04
+  },
+  {
+    "text": "sense but let&#39;s say um for some",
+    "start": 1374.96,
+    "duration": 5.92
+  },
+  {
+    "text": "durations of times the car is traveling",
+    "start": 1378.76,
+    "duration": 4.68
+  },
+  {
+    "text": "at one speed and for other durations of",
+    "start": 1380.88,
+    "duration": 4.04
+  },
+  {
+    "text": "time the car is traveling at a different",
+    "start": 1383.44,
+    "duration": 3.56
+  },
+  {
+    "text": "speed and that&#39;s why the distance it is",
+    "start": 1384.92,
+    "duration": 5.0
+  },
+  {
+    "text": "scoring at different instances of time",
+    "start": 1387.0,
+    "duration": 7.0
+  },
+  {
+    "text": "um is different now if someone asks you",
+    "start": 1389.92,
+    "duration": 5.56
+  },
+  {
+    "text": "what is the speed of this car you can",
+    "start": 1394.0,
+    "duration": 4.0
+  },
+  {
+    "text": "just simply take the total",
+    "start": 1395.48,
+    "duration": 6.52
+  },
+  {
+    "text": "distance and divide it by the total",
+    "start": 1398.0,
+    "duration": 7.28
+  },
+  {
+    "text": "time so total distance divided by total",
+    "start": 1402.0,
+    "duration": 5.28
+  },
+  {
+    "text": "time and this would give you the speed",
+    "start": 1405.28,
+    "duration": 4.64
+  },
+  {
+    "text": "of of the car in other words it would",
+    "start": 1407.28,
+    "duration": 5.08
+  },
+  {
+    "text": "tell you a change in distance with",
+    "start": 1409.92,
+    "duration": 4.32
+  },
+  {
+    "text": "respect to time but this is called the",
+    "start": 1412.36,
+    "duration": 4.8
+  },
+  {
+    "text": "average speed because we clearly see",
+    "start": 1414.24,
+    "duration": 5.24
+  },
+  {
+    "text": "that when the car starts it is slow it",
+    "start": 1417.16,
+    "duration": 5.92
+  },
+  {
+    "text": "then gain speed and then while reaching",
+    "start": 1419.48,
+    "duration": 6.12
+  },
+  {
+    "text": "at the destination at again slows down",
+    "start": 1423.08,
+    "duration": 4.72
+  },
+  {
+    "text": "so at different instances of time the",
+    "start": 1425.6,
+    "duration": 4.2
+  },
+  {
+    "text": "speed of the car is different it doesn&#39;t",
+    "start": 1427.8,
+    "duration": 5.12
+  },
+  {
+    "text": "it&#39;s not average across the whole uh",
+    "start": 1429.8,
+    "duration": 5.48
+  },
+  {
+    "text": "journey and and that&#39;s where derivatives",
+    "start": 1432.92,
+    "duration": 4.16
+  },
+  {
+    "text": "comes into play so derivatives are not",
+    "start": 1435.28,
+    "duration": 3.72
+  },
+  {
+    "text": "Computing the average right of change it",
+    "start": 1437.08,
+    "duration": 3.96
+  },
+  {
+    "text": "is Computing the instantaneous rate of",
+    "start": 1439.0,
+    "duration": 3.68
+  },
+  {
+    "text": "change or the instantaneous change in",
+    "start": 1441.04,
+    "duration": 3.04
+  },
+  {
+    "text": "one quantity with respect to another",
+    "start": 1442.68,
+    "duration": 3.76
+  },
+  {
+    "text": "quantity and instantaneous change is",
+    "start": 1444.08,
+    "duration": 4.92
+  },
+  {
+    "text": "what we are very much interested in so",
+    "start": 1446.44,
+    "duration": 4.48
+  },
+  {
+    "text": "suppose if I am interested in figuring",
+    "start": 1449.0,
+    "duration": 3.96
+  },
+  {
+    "text": "out the instantaneous change what can I",
+    "start": 1450.92,
+    "duration": 4.16
+  },
+  {
+    "text": "do well what I can do is instead of",
+    "start": 1452.96,
+    "duration": 4.04
+  },
+  {
+    "text": "taking the total distance covered and",
+    "start": 1455.08,
+    "duration": 4.6
+  },
+  {
+    "text": "divided by the total time taken I can",
+    "start": 1457.0,
+    "duration": 5.88
+  },
+  {
+    "text": "zoom into a particular region uh where I",
+    "start": 1459.68,
+    "duration": 4.76
+  },
+  {
+    "text": "would shrink the time so much that the",
+    "start": 1462.88,
+    "duration": 3.64
+  },
+  {
+    "text": "times become very small so I take let&#39;s",
+    "start": 1464.44,
+    "duration": 5.16
+  },
+  {
+    "text": "say this time let&#39;s call it T1 and I at",
+    "start": 1466.52,
+    "duration": 6.04
+  },
+  {
+    "text": "a very small quantity of time in it like",
+    "start": 1469.6,
+    "duration": 7.24
+  },
+  {
+    "text": "very tiny um at this time the distance",
+    "start": 1472.56,
+    "duration": 6.72
+  },
+  {
+    "text": "that it was",
+    "start": 1476.84,
+    "duration": 2.44
+  },
+  {
+    "text": "covering was the change in distance I&#39;m",
+    "start": 1479.36,
+    "duration": 6.88
+  },
+  {
+    "text": "sorry for this is this much and at that",
+    "start": 1481.96,
+    "duration": 7.92
+  },
+  {
+    "text": "very tiny addition of time the distance",
+    "start": 1486.24,
+    "duration": 5.12
+  },
+  {
+    "text": "it",
+    "start": 1489.88,
+    "duration": 4.84
+  },
+  {
+    "text": "covered slightly increased now how can",
+    "start": 1491.36,
+    "duration": 6.0
+  },
+  {
+    "text": "we compute the speed or the rate of",
+    "start": 1494.72,
+    "duration": 4.24
+  },
+  {
+    "text": "change of distance",
+    "start": 1497.36,
+    "duration": 3.4
+  },
+  {
+    "text": "um with respect to time for this",
+    "start": 1498.96,
+    "duration": 3.76
+  },
+  {
+    "text": "particular region what I can just simply",
+    "start": 1500.76,
+    "duration": 6.16
+  },
+  {
+    "text": "take the rational distance let&#39;s uh call",
+    "start": 1502.72,
+    "duration": 7.44
+  },
+  {
+    "text": "it s and the change in distance let&#39;s",
+    "start": 1506.92,
+    "duration": 7.56
+  },
+  {
+    "text": "call that delt s and I can just simply",
+    "start": 1510.16,
+    "duration": 7.56
+  },
+  {
+    "text": "do something like this um",
+    "start": 1514.48,
+    "duration": 8.64
+  },
+  {
+    "text": "s+ Delta s minus s /",
+    "start": 1517.72,
+    "duration": 11.24
+  },
+  {
+    "text": "by T 1 + delta T minus t",
+    "start": 1523.12,
+    "duration": 8.56
+  },
+  {
+    "text": "one in other words I&#39;m just taking that",
+    "start": 1528.96,
+    "duration": 6.24
+  },
+  {
+    "text": "small change in distance and dividing it",
+    "start": 1531.68,
+    "duration": 5.12
+  },
+  {
+    "text": "by the small change in",
+    "start": 1535.2,
+    "duration": 5.96
+  },
+  {
+    "text": "time and that would give me the rate of",
+    "start": 1536.8,
+    "duration": 6.28
+  },
+  {
+    "text": "change of distance with respect to time",
+    "start": 1541.16,
+    "duration": 5.12
+  },
+  {
+    "text": "for that particular region it&#39;s not it&#39;s",
+    "start": 1543.08,
+    "duration": 5.64
+  },
+  {
+    "text": "currently not taking the entire Journey",
+    "start": 1546.28,
+    "duration": 4.36
+  },
+  {
+    "text": "it&#39;s just focusing or zooming in on that",
+    "start": 1548.72,
+    "duration": 3.8
+  },
+  {
+    "text": "particular",
+    "start": 1550.64,
+    "duration": 4.92
+  },
+  {
+    "text": "region and in other words and this is",
+    "start": 1552.52,
+    "duration": 4.4
+  },
+  {
+    "text": "derivative this is the whole concept of",
+    "start": 1555.56,
+    "duration": 3.4
+  },
+  {
+    "text": "derivative you just have to roduce",
+    "start": 1556.92,
+    "duration": 4.92
+  },
+  {
+    "text": "limits here so you say",
+    "start": 1558.96,
+    "duration": 7.72
+  },
+  {
+    "text": "limit delta T approaches zero and then",
+    "start": 1561.84,
+    "duration": 6.84
+  },
+  {
+    "text": "suddenly this definition is called",
+    "start": 1566.68,
+    "duration": 3.88
+  },
+  {
+    "text": "derivatives in",
+    "start": 1568.68,
+    "duration": 5.16
+  },
+  {
+    "text": "calculus now if you haven&#39;t seen this",
+    "start": 1570.56,
+    "duration": 5.52
+  },
+  {
+    "text": "anywhere before I don&#39;t assume you to",
+    "start": 1573.84,
+    "duration": 5.08
+  },
+  {
+    "text": "learn this instantly just by the small",
+    "start": 1576.08,
+    "duration": 5.56
+  },
+  {
+    "text": "description that I&#39;ve gave you given you",
+    "start": 1578.92,
+    "duration": 4.6
+  },
+  {
+    "text": "but if you have seen this before then I",
+    "start": 1581.64,
+    "duration": 4.64
+  },
+  {
+    "text": "expected you would recall these Concepts",
+    "start": 1583.52,
+    "duration": 5.32
+  },
+  {
+    "text": "somehow uh we are just introducing",
+    "start": 1586.28,
+    "duration": 5.12
+  },
+  {
+    "text": "tiny changes into the time um which",
+    "start": 1588.84,
+    "duration": 4.88
+  },
+  {
+    "text": "corresponds tiny changes in the distance",
+    "start": 1591.4,
+    "duration": 5.44
+  },
+  {
+    "text": "and then we just Computing the or",
+    "start": 1593.72,
+    "duration": 5.52
+  },
+  {
+    "text": "dividing the distance or time now I&#39;m",
+    "start": 1596.84,
+    "duration": 4.08
+  },
+  {
+    "text": "explaining this in terms of distance and",
+    "start": 1599.24,
+    "duration": 4.16
+  },
+  {
+    "text": "time but you can apply the same concept",
+    "start": 1600.92,
+    "duration": 5.72
+  },
+  {
+    "text": "across um any two quantities so you take",
+    "start": 1603.4,
+    "duration": 7.56
+  },
+  {
+    "text": "first quantity um whose a rate of change",
+    "start": 1606.64,
+    "duration": 7.4
+  },
+  {
+    "text": "you want to um calculate and then you",
+    "start": 1610.96,
+    "duration": 4.68
+  },
+  {
+    "text": "just simply introduce a very tiny change",
+    "start": 1614.04,
+    "duration": 4.48
+  },
+  {
+    "text": "in it now a very tiny is what we are",
+    "start": 1615.64,
+    "duration": 5.52
+  },
+  {
+    "text": "saying um like what human says but in",
+    "start": 1618.52,
+    "duration": 4.48
+  },
+  {
+    "text": "the language of mathematics we use",
+    "start": 1621.16,
+    "duration": 4.6
+  },
+  {
+    "text": "limits for that so we say that limit",
+    "start": 1623.0,
+    "duration": 4.48
+  },
+  {
+    "text": "delta T approaches zero meaning the",
+    "start": 1625.76,
+    "duration": 4.4
+  },
+  {
+    "text": "change is so small that is almost zero",
+    "start": 1627.48,
+    "duration": 6.44
+  },
+  {
+    "text": "but it&#39;s not zero um and in other words",
+    "start": 1630.16,
+    "duration": 7.2
+  },
+  {
+    "text": "if you then graphically see this thing",
+    "start": 1633.92,
+    "duration": 6.12
+  },
+  {
+    "text": "the definition of slope",
+    "start": 1637.36,
+    "duration": 4.32
+  },
+  {
+    "text": "is",
+    "start": 1640.04,
+    "duration": 5.28
+  },
+  {
+    "text": "the rise over",
+    "start": 1641.68,
+    "duration": 7.68
+  },
+  {
+    "text": "run simply meaning change in",
+    "start": 1645.32,
+    "duration": 8.84
+  },
+  {
+    "text": "y ided by change in X this is",
+    "start": 1649.36,
+    "duration": 7.88
+  },
+  {
+    "text": "slope do you know uh you people know",
+    "start": 1654.16,
+    "duration": 5.32
+  },
+  {
+    "text": "what a slope is",
+    "start": 1657.24,
+    "duration": 8.52
+  },
+  {
+    "text": "right yeah yes okay so why do we say",
+    "start": 1659.48,
+    "duration": 8.68
+  },
+  {
+    "text": "that our derivative is nothing but the",
+    "start": 1665.76,
+    "duration": 5.2
+  },
+  {
+    "text": "slope of the tangent line well because",
+    "start": 1668.16,
+    "duration": 4.64
+  },
+  {
+    "text": "if you see here this is exactly what we",
+    "start": 1670.96,
+    "duration": 5.0
+  },
+  {
+    "text": "are doing we are taking a slightly",
+    "start": 1672.8,
+    "duration": 6.36
+  },
+  {
+    "text": "introduced change in y which here is",
+    "start": 1675.96,
+    "duration": 6.44
+  },
+  {
+    "text": "Distance by the way and dividing it by a",
+    "start": 1679.16,
+    "duration": 6.12
+  },
+  {
+    "text": "slightly introduced change in X which is",
+    "start": 1682.4,
+    "duration": 4.0
+  },
+  {
+    "text": "here",
+    "start": 1685.28,
+    "duration": 3.32
+  },
+  {
+    "text": "time and that&#39;s why it is said that",
+    "start": 1686.4,
+    "duration": 4.92
+  },
+  {
+    "text": "derivatives is nothing but the slope of",
+    "start": 1688.6,
+    "duration": 6.2
+  },
+  {
+    "text": "the tangent drawn to that",
+    "start": 1691.32,
+    "duration": 7.32
+  },
+  {
+    "text": "particular um particular instant that we",
+    "start": 1694.8,
+    "duration": 7.16
+  },
+  {
+    "text": "are looking into I hope it is making",
+    "start": 1698.64,
+    "duration": 6.08
+  },
+  {
+    "text": "some sense to",
+    "start": 1701.96,
+    "duration": 2.76
+  },
+  {
+    "text": "you can I move on from this towards our",
+    "start": 1706.52,
+    "duration": 5.56
+  },
+  {
+    "text": "original discussion or do you have",
+    "start": 1709.76,
+    "duration": 4.92
+  },
+  {
+    "text": "anything to ask here I have a quick",
+    "start": 1712.08,
+    "duration": 4.12
+  },
+  {
+    "text": "question I don&#39;t know if this makes any",
+    "start": 1714.68,
+    "duration": 5.72
+  },
+  {
+    "text": "sense but um so isn&#39;t the basically the",
+    "start": 1716.2,
+    "duration": 6.56
+  },
+  {
+    "text": "the section the the size of the section",
+    "start": 1720.4,
+    "duration": 5.76
+  },
+  {
+    "text": "that you&#39;re taking uh would that relate",
+    "start": 1722.76,
+    "duration": 6.6
+  },
+  {
+    "text": "to the resolution of the data um I&#39;m",
+    "start": 1726.16,
+    "duration": 5.28
+  },
+  {
+    "text": "just thinking if let&#39;s say there is some",
+    "start": 1729.36,
+    "duration": 3.16
+  },
+  {
+    "text": "measurement",
+    "start": 1731.44,
+    "duration": 3.68
+  },
+  {
+    "text": "error um or something like that if you",
+    "start": 1732.52,
+    "duration": 5.8
+  },
+  {
+    "text": "take a if the the the section that",
+    "start": 1735.12,
+    "duration": 5.92
+  },
+  {
+    "text": "you&#39;re picking is too small then that",
+    "start": 1738.32,
+    "duration": 6.0
+  },
+  {
+    "text": "could basically result in a in a",
+    "start": 1741.04,
+    "duration": 6.28
+  },
+  {
+    "text": "wrong uh result",
+    "start": 1744.32,
+    "duration": 5.76
+  },
+  {
+    "text": "right uh which section are you talking",
+    "start": 1747.32,
+    "duration": 5.28
+  },
+  {
+    "text": "about here so so you you you mentioned",
+    "start": 1750.08,
+    "duration": 4.52
+  },
+  {
+    "text": "that you have this this tiny section",
+    "start": 1752.6,
+    "duration": 3.56
+  },
+  {
+    "text": "that you&#39;re taking and in this example",
+    "start": 1754.6,
+    "duration": 4.16
+  },
+  {
+    "text": "for example the distance traveled you",
+    "start": 1756.16,
+    "duration": 5.04
+  },
+  {
+    "text": "you&#39;re you&#39;re taking this you&#39;re zooming",
+    "start": 1758.76,
+    "duration": 6.12
+  },
+  {
+    "text": "in on this tiny tiny part uh this tiny",
+    "start": 1761.2,
+    "duration": 6.48
+  },
+  {
+    "text": "change and um I&#39;m just wondering if if",
+    "start": 1764.88,
+    "duration": 5.04
+  },
+  {
+    "text": "that&#39;s something that you need to set",
+    "start": 1767.68,
+    "duration": 6.04
+  },
+  {
+    "text": "according to the resolution of the",
+    "start": 1769.92,
+    "duration": 3.8
+  },
+  {
+    "text": "data yeah so what I understand from your",
+    "start": 1774.04,
+    "duration": 6.08
+  },
+  {
+    "text": "questions you saying that if you like",
+    "start": 1777.32,
+    "duration": 5.48
+  },
+  {
+    "text": "the when I said that the change is very",
+    "start": 1780.12,
+    "duration": 6.64
+  },
+  {
+    "text": "small now of course you and like if you",
+    "start": 1782.8,
+    "duration": 6.28
+  },
+  {
+    "text": "are the if you are talking about",
+    "start": 1786.76,
+    "duration": 4.56
+  },
+  {
+    "text": "derivatives they assume this change to",
+    "start": 1789.08,
+    "duration": 4.68
+  },
+  {
+    "text": "be when you apply limits it says that",
+    "start": 1791.32,
+    "duration": 5.32
+  },
+  {
+    "text": "the change is so small that it is almost",
+    "start": 1793.76,
+    "duration": 5.84
+  },
+  {
+    "text": "zero but we know that if if you are",
+    "start": 1796.64,
+    "duration": 6.48
+  },
+  {
+    "text": "talking about computers um computers",
+    "start": 1799.6,
+    "duration": 5.68
+  },
+  {
+    "text": "wouldn&#39;t know how small we are talking",
+    "start": 1803.12,
+    "duration": 3.76
+  },
+  {
+    "text": "about you still have to fix some value",
+    "start": 1805.28,
+    "duration": 3.48
+  },
+  {
+    "text": "for it so when it is Computing the",
+    "start": 1806.88,
+    "duration": 4.32
+  },
+  {
+    "text": "derivative it would still take this",
+    "start": 1808.76,
+    "duration": 6.48
+  },
+  {
+    "text": "change to be some real number um and of",
+    "start": 1811.2,
+    "duration": 7.88
+  },
+  {
+    "text": "course if if you make that resolution if",
+    "start": 1815.24,
+    "duration": 7.28
+  },
+  {
+    "text": "the resolution is is not that much um",
+    "start": 1819.08,
+    "duration": 4.6
+  },
+  {
+    "text": "you are",
+    "start": 1822.52,
+    "duration": 4.76
+  },
+  {
+    "text": "introducing some error into it um but if",
+    "start": 1823.68,
+    "duration": 5.52
+  },
+  {
+    "text": "you then increase the resolution meaning",
+    "start": 1827.28,
+    "duration": 4.48
+  },
+  {
+    "text": "if you if you make the change very small",
+    "start": 1829.2,
+    "duration": 4.24
+  },
+  {
+    "text": "suppose initially you set the change to",
+    "start": 1831.76,
+    "duration": 2.6
+  },
+  {
+    "text": "be",
+    "start": 1833.44,
+    "duration": 3.4
+  },
+  {
+    "text": "0.01 because that&#39;s all the memory that",
+    "start": 1834.36,
+    "duration": 5.52
+  },
+  {
+    "text": "you want to assign to it now if you",
+    "start": 1836.84,
+    "duration": 5.68
+  },
+  {
+    "text": "increase it you make it 0.00 and let&#39;s",
+    "start": 1839.88,
+    "duration": 4.92
+  },
+  {
+    "text": "say a 10 number of zeros and then one",
+    "start": 1842.52,
+    "duration": 4.68
+  },
+  {
+    "text": "the memory it&#39;s going to take would be",
+    "start": 1844.8,
+    "duration": 4.08
+  },
+  {
+    "text": "larger than what the first one was",
+    "start": 1847.2,
+    "duration": 4.24
+  },
+  {
+    "text": "taking because now you would need more",
+    "start": 1848.88,
+    "duration": 5.48
+  },
+  {
+    "text": "storage in order to store such a such a",
+    "start": 1851.44,
+    "duration": 6.76
+  },
+  {
+    "text": "number um so it depends on that but if",
+    "start": 1854.36,
+    "duration": 5.72
+  },
+  {
+    "text": "you like this is this is a discussion",
+    "start": 1858.2,
+    "duration": 7.36
+  },
+  {
+    "text": "that is way off than what um we are like",
+    "start": 1860.08,
+    "duration": 7.92
+  },
+  {
+    "text": "it has nothing to do with our data here",
+    "start": 1865.56,
+    "duration": 4.68
+  },
+  {
+    "text": "um I&#39;m I&#39;m not sure if you are asking",
+    "start": 1868.0,
+    "duration": 5.6
+  },
+  {
+    "text": "this in in that context or not but here",
+    "start": 1870.24,
+    "duration": 5.52
+  },
+  {
+    "text": "what we are simply doing",
+    "start": 1873.6,
+    "duration": 6.84
+  },
+  {
+    "text": "in in this plot here is we are having",
+    "start": 1875.76,
+    "duration": 7.52
+  },
+  {
+    "text": "some we are having some values for w and",
+    "start": 1880.44,
+    "duration": 5.0
+  },
+  {
+    "text": "we are Computing the corresponding cost",
+    "start": 1883.28,
+    "duration": 4.8
+  },
+  {
+    "text": "according to this equation here and the",
+    "start": 1885.44,
+    "duration": 4.92
+  },
+  {
+    "text": "goal is now to reduce the value for this",
+    "start": 1888.08,
+    "duration": 4.56
+  },
+  {
+    "text": "cost function how can we do that now",
+    "start": 1890.36,
+    "duration": 4.04
+  },
+  {
+    "text": "whatever I&#39;m explaining here this is",
+    "start": 1892.64,
+    "duration": 4.44
+  },
+  {
+    "text": "something that existed for centuries",
+    "start": 1894.4,
+    "duration": 3.88
+  },
+  {
+    "text": "this is not something that machine",
+    "start": 1897.08,
+    "duration": 3.0
+  },
+  {
+    "text": "learning introduced optimization is",
+    "start": 1898.28,
+    "duration": 4.48
+  },
+  {
+    "text": "something that was widely used in across",
+    "start": 1900.08,
+    "duration": 6.24
+  },
+  {
+    "text": "many different areas um gradient descent",
+    "start": 1902.76,
+    "duration": 6.32
+  },
+  {
+    "text": "is is one way of optimizing the values",
+    "start": 1906.32,
+    "duration": 8.08
+  },
+  {
+    "text": "of equations the basic uh concept is you",
+    "start": 1909.08,
+    "duration": 8.28
+  },
+  {
+    "text": "take the function you compute its",
+    "start": 1914.4,
+    "duration": 4.88
+  },
+  {
+    "text": "derivative",
+    "start": 1917.36,
+    "duration": 4.4
+  },
+  {
+    "text": "and then once you have the derivative",
+    "start": 1919.28,
+    "duration": 5.04
+  },
+  {
+    "text": "derivative is nothing but the slope of a",
+    "start": 1921.76,
+    "duration": 5.32
+  },
+  {
+    "text": "tangent line drawn to that particular",
+    "start": 1924.32,
+    "duration": 5.44
+  },
+  {
+    "text": "point that you are interested in here",
+    "start": 1927.08,
+    "duration": 6.2
+  },
+  {
+    "text": "the slope would look somewhat like",
+    "start": 1929.76,
+    "duration": 3.52
+  },
+  {
+    "text": "this um we know that lines who appears",
+    "start": 1933.8,
+    "duration": 7.44
+  },
+  {
+    "text": "like this their slope is zero because",
+    "start": 1938.6,
+    "duration": 5.6
+  },
+  {
+    "text": "it&#39;s a perfectly horizontal line lines",
+    "start": 1941.24,
+    "duration": 6.2
+  },
+  {
+    "text": "appears like this your slope is infinity",
+    "start": 1944.2,
+    "duration": 6.28
+  },
+  {
+    "text": "because it&#39;s a perfectly vertical line",
+    "start": 1947.44,
+    "duration": 5.28
+  },
+  {
+    "text": "anything that falls on this side is",
+    "start": 1950.48,
+    "duration": 3.88
+  },
+  {
+    "text": "having a positive slope anything that",
+    "start": 1952.72,
+    "duration": 3.32
+  },
+  {
+    "text": "falls on this side is having a negative",
+    "start": 1954.36,
+    "duration": 5.6
+  },
+  {
+    "text": "slope this is known to everyone",
+    "start": 1956.04,
+    "duration": 3.92
+  },
+  {
+    "text": "right yeah yeah got it okay so let&#39;s see",
+    "start": 1960.4,
+    "duration": 8.0
+  },
+  {
+    "text": "how this slope and this discussion plays",
+    "start": 1965.44,
+    "duration": 5.4
+  },
+  {
+    "text": "out here in the gradient descent here we",
+    "start": 1968.4,
+    "duration": 4.32
+  },
+  {
+    "text": "see that the slope of this line is",
+    "start": 1970.84,
+    "duration": 4.6
+  },
+  {
+    "text": "positive we are not interested or we are",
+    "start": 1972.72,
+    "duration": 5.2
+  },
+  {
+    "text": "not right now looking into exact values",
+    "start": 1975.44,
+    "duration": 5.44
+  },
+  {
+    "text": "this is just conceptual um understanding",
+    "start": 1977.92,
+    "duration": 6.16
+  },
+  {
+    "text": "so we would just zoom this some positive",
+    "start": 1980.88,
+    "duration": 5.76
+  },
+  {
+    "text": "value now let&#39;s see what happens so this",
+    "start": 1984.08,
+    "duration": 5.24
+  },
+  {
+    "text": "is the current value of w this is going",
+    "start": 1986.64,
+    "duration": 5.44
+  },
+  {
+    "text": "to give us some positive value we saw it",
+    "start": 1989.32,
+    "duration": 5.8
+  },
+  {
+    "text": "from here what happens to this updated",
+    "start": 1992.08,
+    "duration": 4.92
+  },
+  {
+    "text": "value for w so we just simply take the",
+    "start": 1995.12,
+    "duration": 5.6
+  },
+  {
+    "text": "previous W subtract from it let&#39;s just",
+    "start": 1997.0,
+    "duration": 5.52
+  },
+  {
+    "text": "fix this to be one I&#39;ll talk about this",
+    "start": 2000.72,
+    "duration": 3.64
+  },
+  {
+    "text": "Alpha term what it is but let&#39;s just say",
+    "start": 2002.52,
+    "duration": 6.96
+  },
+  {
+    "text": "it is one for now 1 * this some positive",
+    "start": 2004.36,
+    "duration": 8.44
+  },
+  {
+    "text": "value um let&#39;s say the initial value was",
+    "start": 2009.48,
+    "duration": 6.56
+  },
+  {
+    "text": "n and this small positive value was",
+    "start": 2012.8,
+    "duration": 4.16
+  },
+  {
+    "text": "let&#39;s say",
+    "start": 2016.04,
+    "duration": 6.68
+  },
+  {
+    "text": "three so this is 9 - 3 the new value for",
+    "start": 2016.96,
+    "duration": 9.2
+  },
+  {
+    "text": "it is six so if you look at here where",
+    "start": 2022.72,
+    "duration": 5.6
+  },
+  {
+    "text": "would six appear on this plot it would",
+    "start": 2026.16,
+    "duration": 5.48
+  },
+  {
+    "text": "appear somewhere below that this is nine",
+    "start": 2028.32,
+    "duration": 6.4
+  },
+  {
+    "text": "this might be 8 7 and six what is the",
+    "start": 2031.64,
+    "duration": 4.76
+  },
+  {
+    "text": "current so this is the updated value of",
+    "start": 2034.72,
+    "duration": 3.52
+  },
+  {
+    "text": "w let&#39;s call it w",
+    "start": 2036.4,
+    "duration": 4.12
+  },
+  {
+    "text": "updated you what is the corresponding",
+    "start": 2038.24,
+    "duration": 5.08
+  },
+  {
+    "text": "value for the cost now well the",
+    "start": 2040.52,
+    "duration": 3.96
+  },
+  {
+    "text": "corresponding value for the cost for",
+    "start": 2043.32,
+    "duration": 4.0
+  },
+  {
+    "text": "this updated W is now this one so if you",
+    "start": 2044.48,
+    "duration": 5.72
+  },
+  {
+    "text": "see the initial value for the cost was",
+    "start": 2047.32,
+    "duration": 6.28
+  },
+  {
+    "text": "this one and now after updating it",
+    "start": 2050.2,
+    "duration": 5.48
+  },
+  {
+    "text": "through this equation the current value",
+    "start": 2053.6,
+    "duration": 3.96
+  },
+  {
+    "text": "for w is this one and we have reduced",
+    "start": 2055.68,
+    "duration": 5.2
+  },
+  {
+    "text": "the cost this",
+    "start": 2057.56,
+    "duration": 6.96
+  },
+  {
+    "text": "much does this make",
+    "start": 2060.88,
+    "duration": 3.64
+  },
+  {
+    "text": "sense yeah yep yeah yes perfect now as",
+    "start": 2065.44,
+    "duration": 7.56
+  },
+  {
+    "text": "you can see this has reduced the the",
+    "start": 2070.48,
+    "duration": 4.64
+  },
+  {
+    "text": "value for the cost function um but this",
+    "start": 2073.0,
+    "duration": 5.56
+  },
+  {
+    "text": "is not a one-step solution so that&#39;s why",
+    "start": 2075.12,
+    "duration": 6.48
+  },
+  {
+    "text": "gring descent algorithm is iterative you",
+    "start": 2078.56,
+    "duration": 5.32
+  },
+  {
+    "text": "have to repeat this",
+    "start": 2081.6,
+    "duration": 5.2
+  },
+  {
+    "text": "operation um some number of times before",
+    "start": 2083.88,
+    "duration": 6.12
+  },
+  {
+    "text": "you reach uh a minimum value let&#39;s see",
+    "start": 2086.8,
+    "duration": 4.88
+  },
+  {
+    "text": "what happens if we do this again well we",
+    "start": 2090.0,
+    "duration": 3.8
+  },
+  {
+    "text": "just simply again compute the derivative",
+    "start": 2091.68,
+    "duration": 4.36
+  },
+  {
+    "text": "of the cost with respect to W which",
+    "start": 2093.8,
+    "duration": 5.08
+  },
+  {
+    "text": "would again give us the slope of another",
+    "start": 2096.04,
+    "duration": 5.2
+  },
+  {
+    "text": "tangent drawn at that point we would",
+    "start": 2098.88,
+    "duration": 5.08
+  },
+  {
+    "text": "again take that slope that value of",
+    "start": 2101.24,
+    "duration": 5.0
+  },
+  {
+    "text": "slope plug it in this equation which",
+    "start": 2103.96,
+    "duration": 4.24
+  },
+  {
+    "text": "would subtract something from W the new",
+    "start": 2106.24,
+    "duration": 4.88
+  },
+  {
+    "text": "value of w might be this one and the",
+    "start": 2108.2,
+    "duration": 4.48
+  },
+  {
+    "text": "corresponding value for the loss would",
+    "start": 2111.12,
+    "duration": 3.4
+  },
+  {
+    "text": "be this one what happens if we reach at",
+    "start": 2112.68,
+    "duration": 3.88
+  },
+  {
+    "text": "this point well at that point if you",
+    "start": 2114.52,
+    "duration": 4.96
+  },
+  {
+    "text": "compute the derivative again the slope",
+    "start": 2116.56,
+    "duration": 4.8
+  },
+  {
+    "text": "of the tangent drawn at that point would",
+    "start": 2119.48,
+    "duration": 4.0
+  },
+  {
+    "text": "appear a perfectly horizontal line and",
+    "start": 2121.36,
+    "duration": 3.64
+  },
+  {
+    "text": "we know that the slope of a horizontal",
+    "start": 2123.48,
+    "duration": 4.4
+  },
+  {
+    "text": "line is zero so if you plug in zero here",
+    "start": 2125.0,
+    "duration": 5.36
+  },
+  {
+    "text": "in this equation you would be just",
+    "start": 2127.88,
+    "duration": 5.96
+  },
+  {
+    "text": "simply uh doing this Alpha time 0 which",
+    "start": 2130.36,
+    "duration": 6.88
+  },
+  {
+    "text": "is W itself so at this stage W is no",
+    "start": 2133.84,
+    "duration": 5.76
+  },
+  {
+    "text": "longer updated it is fixed which makes",
+    "start": 2137.24,
+    "duration": 4.68
+  },
+  {
+    "text": "sense because if you see look at this",
+    "start": 2139.6,
+    "duration": 5.72
+  },
+  {
+    "text": "entire plot here this is the point where",
+    "start": 2141.92,
+    "duration": 6.6
+  },
+  {
+    "text": "the loss is minimum you cannot go beyond",
+    "start": 2145.32,
+    "duration": 6.04
+  },
+  {
+    "text": "that you cannot further reduce it and",
+    "start": 2148.52,
+    "duration": 4.2
+  },
+  {
+    "text": "once you reach at this point you say",
+    "start": 2151.36,
+    "duration": 3.4
+  },
+  {
+    "text": "that my algorithm has converged it is",
+    "start": 2152.72,
+    "duration": 4.28
+  },
+  {
+    "text": "now you can say it is strained I can",
+    "start": 2154.76,
+    "duration": 4.96
+  },
+  {
+    "text": "make use of it to make predictions now",
+    "start": 2157.0,
+    "duration": 4.88
+  },
+  {
+    "text": "of course there is still some cost here",
+    "start": 2159.72,
+    "duration": 4.56
+  },
+  {
+    "text": "um you would never reach anything that",
+    "start": 2161.88,
+    "duration": 4.16
+  },
+  {
+    "text": "would be completely zero if you look at",
+    "start": 2164.28,
+    "duration": 4.16
+  },
+  {
+    "text": "this plot here no matter whatever line",
+    "start": 2166.04,
+    "duration": 5.2
+  },
+  {
+    "text": "you put here it cannot cover all the",
+    "start": 2168.44,
+    "duration": 4.4
+  },
+  {
+    "text": "points if you try to cover all the",
+    "start": 2171.24,
+    "duration": 3.36
+  },
+  {
+    "text": "points it would be no longer a straight",
+    "start": 2172.84,
+    "duration": 4.84
+  },
+  {
+    "text": "line it would become a curve so that&#39;s",
+    "start": 2174.6,
+    "duration": 5.92
+  },
+  {
+    "text": "why there always going to be um some",
+    "start": 2177.68,
+    "duration": 4.96
+  },
+  {
+    "text": "cost but the goal is to reduce it as",
+    "start": 2180.52,
+    "duration": 4.64
+  },
+  {
+    "text": "minimum as possible and that&#39;s how gr",
+    "start": 2182.64,
+    "duration": 5.64
+  },
+  {
+    "text": "IND descent help us do this",
+    "start": 2185.16,
+    "duration": 5.56
+  },
+  {
+    "text": "now I&#39;ll talk about this Alpha term and",
+    "start": 2188.28,
+    "duration": 4.96
+  },
+  {
+    "text": "then you can ask me as many questions uh",
+    "start": 2190.72,
+    "duration": 6.24
+  },
+  {
+    "text": "as you can and I would love to uh remove",
+    "start": 2193.24,
+    "duration": 5.8
+  },
+  {
+    "text": "your confusions from any any part of",
+    "start": 2196.96,
+    "duration": 4.48
+  },
+  {
+    "text": "this discussion that that we had what is",
+    "start": 2199.04,
+    "duration": 4.84
+  },
+  {
+    "text": "Alpha this is called The Learning",
+    "start": 2201.44,
+    "duration": 7.92
+  },
+  {
+    "text": "rate so um learning rate or Alpha",
+    "start": 2203.88,
+    "duration": 7.48
+  },
+  {
+    "text": "controls how much change you would like",
+    "start": 2209.36,
+    "duration": 4.6
+  },
+  {
+    "text": "to introduce into this W if you set the",
+    "start": 2211.36,
+    "duration": 5.6
+  },
+  {
+    "text": "value for this Alpha let&#39;s say some high",
+    "start": 2213.96,
+    "duration": 5.64
+  },
+  {
+    "text": "number so maybe initially you were here",
+    "start": 2216.96,
+    "duration": 4.68
+  },
+  {
+    "text": "you computed the slope it was some value",
+    "start": 2219.6,
+    "duration": 4.08
+  },
+  {
+    "text": "you multiply it with a very positive a",
+    "start": 2221.64,
+    "duration": 4.6
+  },
+  {
+    "text": "very large value and that&#39;s why the",
+    "start": 2223.68,
+    "duration": 4.36
+  },
+  {
+    "text": "change that it introduced into the W",
+    "start": 2226.24,
+    "duration": 4.48
+  },
+  {
+    "text": "would be huge so maybe from here instead",
+    "start": 2228.04,
+    "duration": 4.6
+  },
+  {
+    "text": "of coming here it dropped you down to",
+    "start": 2230.72,
+    "duration": 3.72
+  },
+  {
+    "text": "this point",
+    "start": 2232.64,
+    "duration": 5.04
+  },
+  {
+    "text": "directly um but again if",
+    "start": 2234.44,
+    "duration": 6.32
+  },
+  {
+    "text": "you do the computation again you compute",
+    "start": 2237.68,
+    "duration": 4.92
+  },
+  {
+    "text": "their derivative uh multiplied with a",
+    "start": 2240.76,
+    "duration": 5.48
+  },
+  {
+    "text": "very large number instead of making you",
+    "start": 2242.6,
+    "duration": 6.52
+  },
+  {
+    "text": "come here this would may maybe remove a",
+    "start": 2246.24,
+    "duration": 4.64
+  },
+  {
+    "text": "very large chunk from it and it could",
+    "start": 2249.12,
+    "duration": 4.6
+  },
+  {
+    "text": "shift you towards this side so instead",
+    "start": 2250.88,
+    "duration": 4.88
+  },
+  {
+    "text": "of converging to this minimum point it",
+    "start": 2253.72,
+    "duration": 5.6
+  },
+  {
+    "text": "would diverge from that and again if you",
+    "start": 2255.76,
+    "duration": 5.96
+  },
+  {
+    "text": "U update this so like if you look at",
+    "start": 2259.32,
+    "duration": 5.8
+  },
+  {
+    "text": "this um left side here the tangent the",
+    "start": 2261.72,
+    "duration": 5.36
+  },
+  {
+    "text": "slope of tangent would appear negative",
+    "start": 2265.12,
+    "duration": 3.4
+  },
+  {
+    "text": "because it would be a falling line",
+    "start": 2267.08,
+    "duration": 4.24
+  },
+  {
+    "text": "somewhat like this um the slope would be",
+    "start": 2268.52,
+    "duration": 5.08
+  },
+  {
+    "text": "negative if you take that negative value",
+    "start": 2271.32,
+    "duration": 4.08
+  },
+  {
+    "text": "here negative and negative becomes",
+    "start": 2273.6,
+    "duration": 4.32
+  },
+  {
+    "text": "positive and you are adding something to",
+    "start": 2275.4,
+    "duration": 4.16
+  },
+  {
+    "text": "which would again push it towards the",
+    "start": 2277.92,
+    "duration": 3.92
+  },
+  {
+    "text": "right um so so that&#39;s what happens on",
+    "start": 2279.56,
+    "duration": 3.44
+  },
+  {
+    "text": "the negative side but the point that I&#39;m",
+    "start": 2281.84,
+    "duration": 2.88
+  },
+  {
+    "text": "trying to tell you here is that if Alpha",
+    "start": 2283.0,
+    "duration": 3.52
+  },
+  {
+    "text": "is very large instead of coming at this",
+    "start": 2284.72,
+    "duration": 4.72
+  },
+  {
+    "text": "point it would be diverging or",
+    "start": 2286.52,
+    "duration": 5.12
+  },
+  {
+    "text": "fluctuating across this minimum value so",
+    "start": 2289.44,
+    "duration": 3.88
+  },
+  {
+    "text": "that&#39;s why two large values for learning",
+    "start": 2291.64,
+    "duration": 4.48
+  },
+  {
+    "text": "rates are not good um but what happens",
+    "start": 2293.32,
+    "duration": 4.56
+  },
+  {
+    "text": "if you set it too small so if you set it",
+    "start": 2296.12,
+    "duration": 4.28
+  },
+  {
+    "text": "too small that&#39;s also not good because",
+    "start": 2297.88,
+    "duration": 4.24
+  },
+  {
+    "text": "it would take longer for you to reach",
+    "start": 2300.4,
+    "duration": 3.44
+  },
+  {
+    "text": "this minimum point because it will be",
+    "start": 2302.12,
+    "duration": 4.16
+  },
+  {
+    "text": "taking baby steps to reach that point so",
+    "start": 2303.84,
+    "duration": 3.96
+  },
+  {
+    "text": "at the initial iteration it might update",
+    "start": 2306.28,
+    "duration": 3.2
+  },
+  {
+    "text": "it to this point and then this point and",
+    "start": 2307.8,
+    "duration": 3.76
+  },
+  {
+    "text": "this point and something that could have",
+    "start": 2309.48,
+    "duration": 4.24
+  },
+  {
+    "text": "been achieved after let&#39;s say 10",
+    "start": 2311.56,
+    "duration": 3.8
+  },
+  {
+    "text": "iterations it could now check 30",
+    "start": 2313.72,
+    "duration": 3.08
+  },
+  {
+    "text": "iterations because of the very small",
+    "start": 2315.36,
+    "duration": 3.52
+  },
+  {
+    "text": "learning rate so that&#39;s why this cannot",
+    "start": 2316.8,
+    "duration": 4.2
+  },
+  {
+    "text": "be set too small cannot be set too large",
+    "start": 2318.88,
+    "duration": 3.36
+  },
+  {
+    "text": "there should be a sweet spot that you",
+    "start": 2321.0,
+    "duration": 4.24
+  },
+  {
+    "text": "should put this value for in order to um",
+    "start": 2322.24,
+    "duration": 5.48
+  },
+  {
+    "text": "balance the equation the question is how",
+    "start": 2325.24,
+    "duration": 4.4
+  },
+  {
+    "text": "do we know what should be the sweet spot",
+    "start": 2327.72,
+    "duration": 3.56
+  },
+  {
+    "text": "we don&#39;t know that this is why it&#39;s",
+    "start": 2329.64,
+    "duration": 3.4
+  },
+  {
+    "text": "called a hyper parameter and you",
+    "start": 2331.28,
+    "duration": 4.08
+  },
+  {
+    "text": "experiment with this thing so you try",
+    "start": 2333.04,
+    "duration": 5.08
+  },
+  {
+    "text": "multiple learning rates usually the",
+    "start": 2335.36,
+    "duration": 4.92
+  },
+  {
+    "text": "learning rate that is tried like by",
+    "start": 2338.12,
+    "duration": 4.4
+  },
+  {
+    "text": "default in tens of flow or in Cy L this",
+    "start": 2340.28,
+    "duration": 5.64
+  },
+  {
+    "text": "is set at around 0.01 but for some",
+    "start": 2342.52,
+    "duration": 4.84
+  },
+  {
+    "text": "problems that would not work so you",
+    "start": 2345.92,
+    "duration": 4.36
+  },
+  {
+    "text": "didn&#39;t have to change this maybe to 0.02",
+    "start": 2347.36,
+    "duration": 5.16
+  },
+  {
+    "text": "or three or maybe further reduce it to",
+    "start": 2350.28,
+    "duration": 4.72
+  },
+  {
+    "text": "0.001 so you you can experiment with",
+    "start": 2352.52,
+    "duration": 4.52
+  },
+  {
+    "text": "this thing but for majority of the",
+    "start": 2355.0,
+    "duration": 6.04
+  },
+  {
+    "text": "problem 0.1 would work um there are also",
+    "start": 2357.04,
+    "duration": 7.56
+  },
+  {
+    "text": "other variations of of how to set this",
+    "start": 2361.04,
+    "duration": 5.16
+  },
+  {
+    "text": "learning rate we might talk about that",
+    "start": 2364.6,
+    "duration": 4.16
+  },
+  {
+    "text": "some other time um because I think I",
+    "start": 2366.2,
+    "duration": 4.2
+  },
+  {
+    "text": "have already introduced lots of Concepts",
+    "start": 2368.76,
+    "duration": 4.6
+  },
+  {
+    "text": "here so I would now leave the floor to",
+    "start": 2370.4,
+    "duration": 5.84
+  },
+  {
+    "text": "you to ask me",
+    "start": 2373.36,
+    "duration": 2.88
+  },
+  {
+    "text": "questions I just want to throw out there",
+    "start": 2379.28,
+    "duration": 4.84
+  },
+  {
+    "text": "we are running like a little bit behind",
+    "start": 2381.52,
+    "duration": 5.72
+  },
+  {
+    "text": "so um do people have like five or 10",
+    "start": 2384.12,
+    "duration": 5.12
+  },
+  {
+    "text": "minutes extra so we can finish the",
+    "start": 2387.24,
+    "duration": 3.88
+  },
+  {
+    "text": "coding",
+    "start": 2389.24,
+    "duration": 5.24
+  },
+  {
+    "text": "part that&#39;s good for me soul are you",
+    "start": 2391.12,
+    "duration": 5.76
+  },
+  {
+    "text": "okay that okay good I know Soul has to",
+    "start": 2394.48,
+    "duration": 4.84
+  },
+  {
+    "text": "work okay",
+    "start": 2396.88,
+    "duration": 2.44
+  },
+  {
+    "text": "um I have a quick question uhuh so",
+    "start": 2401.68,
+    "duration": 6.92
+  },
+  {
+    "text": "basically the derivative is some number",
+    "start": 2405.6,
+    "duration": 4.4
+  },
+  {
+    "text": "that we&#39;re getting right so it&#39;s either",
+    "start": 2408.6,
+    "duration": 3.52
+  },
+  {
+    "text": "like on we have the minimum and then",
+    "start": 2410.0,
+    "duration": 3.6
+  },
+  {
+    "text": "we&#39;re either on one side of the minimum",
+    "start": 2412.12,
+    "duration": 3.96
+  },
+  {
+    "text": "or the other side minimum and then",
+    "start": 2413.6,
+    "duration": 4.12
+  },
+  {
+    "text": "because we&#39;re updating it with the",
+    "start": 2416.08,
+    "duration": 4.0
+  },
+  {
+    "text": "negative sign we&#39;re basically taking",
+    "start": 2417.72,
+    "duration": 3.64
+  },
+  {
+    "text": "like the inverse of that slope and",
+    "start": 2420.08,
+    "duration": 2.76
+  },
+  {
+    "text": "updating it to W so like whatever the",
+    "start": 2421.36,
+    "duration": 3.88
+  },
+  {
+    "text": "sign of that of that slope is we&#39;re",
+    "start": 2422.84,
+    "duration": 5.28
+  },
+  {
+    "text": "inverting that and then adding that to w",
+    "start": 2425.24,
+    "duration": 5.44
+  },
+  {
+    "text": "so that it becomes closer to the minimum",
+    "start": 2428.12,
+    "duration": 5.08
+  },
+  {
+    "text": "Point",
+    "start": 2430.68,
+    "duration": 6.28
+  },
+  {
+    "text": "yep that&#39;s what&#39;s",
+    "start": 2433.2,
+    "duration": 3.76
+  },
+  {
+    "text": "happening",
+    "start": 2438.44,
+    "duration": 5.96
+  },
+  {
+    "text": "um yeah so since I&#39;m not getting very",
+    "start": 2440.68,
+    "duration": 6.56
+  },
+  {
+    "text": "much uh a lot of questions here uh I",
+    "start": 2444.4,
+    "duration": 5.0
+  },
+  {
+    "text": "would just conclude this discussion so",
+    "start": 2447.24,
+    "duration": 4.32
+  },
+  {
+    "text": "this is what we do for w the same",
+    "start": 2449.4,
+    "duration": 5.68
+  },
+  {
+    "text": "concept is applied for b as well um we",
+    "start": 2451.56,
+    "duration": 6.24
+  },
+  {
+    "text": "are uhhuh",
+    "start": 2455.08,
+    "duration": 4.52
+  },
+  {
+    "text": "sorry s",
+    "start": 2457.8,
+    "duration": 4.92
+  },
+  {
+    "text": "um can I ask a question regarding the",
+    "start": 2459.6,
+    "duration": 4.76
+  },
+  {
+    "text": "Lear",
+    "start": 2462.72,
+    "duration": 4.12
+  },
+  {
+    "text": "sure I know you have mentioned that is",
+    "start": 2464.36,
+    "duration": 3.4
+  },
+  {
+    "text": "an",
+    "start": 2466.84,
+    "duration": 3.72
+  },
+  {
+    "text": "experimentation uh side but I will be",
+    "start": 2467.76,
+    "duration": 5.64
+  },
+  {
+    "text": "interesting if if what what is your",
+    "start": 2470.56,
+    "duration": 5.28
+  },
+  {
+    "text": "logic on how to find",
+    "start": 2473.4,
+    "duration": 7.28
+  },
+  {
+    "text": "the The Sweet Spot again I I know you",
+    "start": 2475.84,
+    "duration": 7.4
+  },
+  {
+    "text": "mentioned like what will be the default",
+    "start": 2480.68,
+    "duration": 5.92
+  },
+  {
+    "text": "that we can test but just what&#39;s your",
+    "start": 2483.24,
+    "duration": 7.84
+  },
+  {
+    "text": "logic upon that you can expand more okay",
+    "start": 2486.6,
+    "duration": 8.48
+  },
+  {
+    "text": "so yeah so there&#39;s like no mathematical",
+    "start": 2491.08,
+    "duration": 8.68
+  },
+  {
+    "text": "way of coming up at a at a good I know",
+    "start": 2495.08,
+    "duration": 10.12
+  },
+  {
+    "text": "uh learning rate but yeah so so the the",
+    "start": 2499.76,
+    "duration": 7.52
+  },
+  {
+    "text": "logic like",
+    "start": 2505.2,
+    "duration": 5.72
+  },
+  {
+    "text": "um if you try to if you try to this uh",
+    "start": 2507.28,
+    "duration": 7.44
+  },
+  {
+    "text": "implement this uh um gr descent equation",
+    "start": 2510.92,
+    "duration": 5.64
+  },
+  {
+    "text": "like if you particularly see the values",
+    "start": 2514.72,
+    "duration": 3.72
+  },
+  {
+    "text": "for it usually the values that you get",
+    "start": 2516.56,
+    "duration": 7.04
+  },
+  {
+    "text": "for the slope are very high very um",
+    "start": 2518.44,
+    "duration": 7.88
+  },
+  {
+    "text": "large numbers now if you remove let&#39;s",
+    "start": 2523.6,
+    "duration": 4.32
+  },
+  {
+    "text": "say for a second you don&#39;t want to use",
+    "start": 2526.32,
+    "duration": 4.32
+  },
+  {
+    "text": "this learning rate the values for the",
+    "start": 2527.92,
+    "duration": 4.68
+  },
+  {
+    "text": "slope are so large that if you start",
+    "start": 2530.64,
+    "duration": 3.4
+  },
+  {
+    "text": "plugging in them",
+    "start": 2532.6,
+    "duration": 4.04
+  },
+  {
+    "text": "directly the original values for the W&#39;s",
+    "start": 2534.04,
+    "duration": 5.04
+  },
+  {
+    "text": "would be very small compared to that and",
+    "start": 2536.64,
+    "duration": 5.48
+  },
+  {
+    "text": "that&#39;s why the the changes that you will",
+    "start": 2539.08,
+    "duration": 7.08
+  },
+  {
+    "text": "be introducing would never um bring you",
+    "start": 2542.12,
+    "duration": 7.16
+  },
+  {
+    "text": "to to the this point of convergence it",
+    "start": 2546.16,
+    "duration": 5.12
+  },
+  {
+    "text": "would always diverge sometimes it would",
+    "start": 2549.28,
+    "duration": 4.4
+  },
+  {
+    "text": "blow up and give you a value which would",
+    "start": 2551.28,
+    "duration": 5.2
+  },
+  {
+    "text": "be completely insane that&#39;s why in order",
+    "start": 2553.68,
+    "duration": 5.88
+  },
+  {
+    "text": "to control those values you have to put",
+    "start": 2556.48,
+    "duration": 5.44
+  },
+  {
+    "text": "some number in there which would kind of",
+    "start": 2559.56,
+    "duration": 5.64
+  },
+  {
+    "text": "control the the the amount of change",
+    "start": 2561.92,
+    "duration": 6.72
+  },
+  {
+    "text": "that you are introducing now when you",
+    "start": 2565.2,
+    "duration": 6.8
+  },
+  {
+    "text": "see these values yourself like solving",
+    "start": 2568.64,
+    "duration": 5.92
+  },
+  {
+    "text": "it and and um updating the values for",
+    "start": 2572.0,
+    "duration": 4.4
+  },
+  {
+    "text": "W&#39;s and you see those values it",
+    "start": 2574.56,
+    "duration": 3.64
+  },
+  {
+    "text": "automatically makes sense that I need to",
+    "start": 2576.4,
+    "duration": 4.72
+  },
+  {
+    "text": "put this value some small value I cannot",
+    "start": 2578.2,
+    "duration": 4.76
+  },
+  {
+    "text": "put it to be a large value the slopes",
+    "start": 2581.12,
+    "duration": 4.04
+  },
+  {
+    "text": "are already getting me very large Valu",
+    "start": 2582.96,
+    "duration": 4.52
+  },
+  {
+    "text": "suppose there&#39;s a very sharp turn in the",
+    "start": 2585.16,
+    "duration": 4.24
+  },
+  {
+    "text": "cost function so if you look at this",
+    "start": 2587.48,
+    "duration": 3.96
+  },
+  {
+    "text": "point for instance and you compute the",
+    "start": 2589.4,
+    "duration": 5.52
+  },
+  {
+    "text": "slope at that point it would be a very",
+    "start": 2591.44,
+    "duration": 5.44
+  },
+  {
+    "text": "uh a line that would be very close to a",
+    "start": 2594.92,
+    "duration": 4.0
+  },
+  {
+    "text": "perfectly vertical line we know that the",
+    "start": 2596.88,
+    "duration": 3.56
+  },
+  {
+    "text": "slope of a vertical line is infinity",
+    "start": 2598.92,
+    "duration": 3.92
+  },
+  {
+    "text": "it&#39;s a huge number so that&#39;s why the",
+    "start": 2600.44,
+    "duration": 4.2
+  },
+  {
+    "text": "slopes are always getting you numbers",
+    "start": 2602.84,
+    "duration": 4.84
+  },
+  {
+    "text": "that are very large compared to what the",
+    "start": 2604.64,
+    "duration": 6.12
+  },
+  {
+    "text": "weight numbers are or what the values",
+    "start": 2607.68,
+    "duration": 5.8
+  },
+  {
+    "text": "for those weights are that&#39;s why it",
+    "start": 2610.76,
+    "duration": 4.92
+  },
+  {
+    "text": "makes logical sense that this slope",
+    "start": 2613.48,
+    "duration": 4.4
+  },
+  {
+    "text": "value has to be something smaller it has",
+    "start": 2615.68,
+    "duration": 5.32
+  },
+  {
+    "text": "to be something that would control or",
+    "start": 2617.88,
+    "duration": 7.2
+  },
+  {
+    "text": "reduce the the the the amount of um the",
+    "start": 2621.0,
+    "duration": 8.12
+  },
+  {
+    "text": "the original uh derivative value um how",
+    "start": 2625.08,
+    "duration": 5.68
+  },
+  {
+    "text": "do we come up with this exact value this",
+    "start": 2629.12,
+    "duration": 4.0
+  },
+  {
+    "text": "is not something that um like I wouldn&#39;t",
+    "start": 2630.76,
+    "duration": 4.76
+  },
+  {
+    "text": "know myself if I&#39;m trying to train a",
+    "start": 2633.12,
+    "duration": 4.96
+  },
+  {
+    "text": "learning algorithm uh and and I would",
+    "start": 2635.52,
+    "duration": 4.72
+  },
+  {
+    "text": "have no idea what should I put this",
+    "start": 2638.08,
+    "duration": 5.2
+  },
+  {
+    "text": "value for that&#39;s why literature studies",
+    "start": 2640.24,
+    "duration": 5.16
+  },
+  {
+    "text": "becomes handy when you see other Al",
+    "start": 2643.28,
+    "duration": 4.0
+  },
+  {
+    "text": "other people training the algorithms",
+    "start": 2645.4,
+    "duration": 4.52
+  },
+  {
+    "text": "they have already like there&#39;s a ton of",
+    "start": 2647.28,
+    "duration": 4.64
+  },
+  {
+    "text": "knowledge already exist in machine",
+    "start": 2649.92,
+    "duration": 3.48
+  },
+  {
+    "text": "learning space you don&#39;t have to start",
+    "start": 2651.92,
+    "duration": 5.12
+  },
+  {
+    "text": "from something completely blind and uh",
+    "start": 2653.4,
+    "duration": 5.88
+  },
+  {
+    "text": "work your way towards this particular",
+    "start": 2657.04,
+    "duration": 4.88
+  },
+  {
+    "text": "value that&#39;s why these values are put",
+    "start": 2659.28,
+    "duration": 4.96
+  },
+  {
+    "text": "there on default but if you if they are",
+    "start": 2661.92,
+    "duration": 4.48
+  },
+  {
+    "text": "not there on default if you study some",
+    "start": 2664.24,
+    "duration": 4.32
+  },
+  {
+    "text": "of the implementations you see that",
+    "start": 2666.4,
+    "duration": 3.84
+  },
+  {
+    "text": "people are using learning RS closer to",
+    "start": 2668.56,
+    "duration": 3.52
+  },
+  {
+    "text": "these ones and that&#39;s where you get an",
+    "start": 2670.24,
+    "duration": 5.12
+  },
+  {
+    "text": "idea of what should I be doing the same",
+    "start": 2672.08,
+    "duration": 5.44
+  },
+  {
+    "text": "discussions would be true for a lot of",
+    "start": 2675.36,
+    "duration": 3.76
+  },
+  {
+    "text": "other hyperparameters so this is just",
+    "start": 2677.52,
+    "duration": 3.08
+  },
+  {
+    "text": "one hyper parameter that we are talking",
+    "start": 2679.12,
+    "duration": 3.36
+  },
+  {
+    "text": "about that we have to tune ourself",
+    "start": 2680.6,
+    "duration": 3.96
+  },
+  {
+    "text": "algorithm is not going to do that for us",
+    "start": 2682.48,
+    "duration": 5.8
+  },
+  {
+    "text": "automatically um we can uh like what",
+    "start": 2684.56,
+    "duration": 6.36
+  },
+  {
+    "text": "kind of features we would like to use um",
+    "start": 2688.28,
+    "duration": 4.6
+  },
+  {
+    "text": "should we include Square features or",
+    "start": 2690.92,
+    "duration": 3.32
+  },
+  {
+    "text": "like if we talk about new networks",
+    "start": 2692.88,
+    "duration": 3.24
+  },
+  {
+    "text": "should we introduce three layers or four",
+    "start": 2694.24,
+    "duration": 4.48
+  },
+  {
+    "text": "layers should we make the number of new",
+    "start": 2696.12,
+    "duration": 4.64
+  },
+  {
+    "text": "neurons should be decreasing as we",
+    "start": 2698.72,
+    "duration": 3.72
+  },
+  {
+    "text": "progresses towards the network or should",
+    "start": 2700.76,
+    "duration": 3.52
+  },
+  {
+    "text": "they be increasing all of these",
+    "start": 2702.44,
+    "duration": 3.6
+  },
+  {
+    "text": "questions are questions which have no",
+    "start": 2704.28,
+    "duration": 3.64
+  },
+  {
+    "text": "like definite mathematical answers for",
+    "start": 2706.04,
+    "duration": 3.72
+  },
+  {
+    "text": "them that&#39;s why you build upon the",
+    "start": 2707.92,
+    "duration": 3.36
+  },
+  {
+    "text": "knowledge that already exists in",
+    "start": 2709.76,
+    "duration": 3.72
+  },
+  {
+    "text": "literature you study people solving",
+    "start": 2711.28,
+    "duration": 3.84
+  },
+  {
+    "text": "different problems using various",
+    "start": 2713.48,
+    "duration": 3.48
+  },
+  {
+    "text": "techniques you identify problems which",
+    "start": 2715.12,
+    "duration": 3.76
+  },
+  {
+    "text": "are similar to yours and then you look",
+    "start": 2716.96,
+    "duration": 4.04
+  },
+  {
+    "text": "into the their implementations of what",
+    "start": 2718.88,
+    "duration": 4.16
+  },
+  {
+    "text": "worked for them and then you apply the",
+    "start": 2721.0,
+    "duration": 4.28
+  },
+  {
+    "text": "same knowledge in your own domain to see",
+    "start": 2723.04,
+    "duration": 4.28
+  },
+  {
+    "text": "how it works or how it turns out in in",
+    "start": 2725.28,
+    "duration": 4.16
+  },
+  {
+    "text": "your case and maybe if it doesn&#39;t you",
+    "start": 2727.32,
+    "duration": 4.2
+  },
+  {
+    "text": "then slightly change those randomly to",
+    "start": 2729.44,
+    "duration": 4.08
+  },
+  {
+    "text": "see to do this hit and trial method in",
+    "start": 2731.52,
+    "duration": 3.16
+  },
+  {
+    "text": "order to come up with something that",
+    "start": 2733.52,
+    "duration": 3.52
+  },
+  {
+    "text": "would work for you so majority of the",
+    "start": 2734.68,
+    "duration": 3.56
+  },
+  {
+    "text": "time that&#39;s what happens for",
+    "start": 2737.04,
+    "duration": 3.52
+  },
+  {
+    "text": "hyperparameters um and you just juggle",
+    "start": 2738.24,
+    "duration": 4.28
+  },
+  {
+    "text": "or use exercise with with with these",
+    "start": 2740.56,
+    "duration": 3.88
+  },
+  {
+    "text": "things spend a lot of time in order to",
+    "start": 2742.52,
+    "duration": 5.04
+  },
+  {
+    "text": "come up with something that would",
+    "start": 2744.44,
+    "duration": 3.12
+  },
+  {
+    "text": "work okay so so basically what you",
+    "start": 2748.24,
+    "duration": 4.92
+  },
+  {
+    "text": "saying is like if you identify properly",
+    "start": 2751.16,
+    "duration": 3.92
+  },
+  {
+    "text": "the problems that you are having you",
+    "start": 2753.16,
+    "duration": 4.8
+  },
+  {
+    "text": "will be able to use historical data from",
+    "start": 2755.08,
+    "duration": 4.96
+  },
+  {
+    "text": "other people&#39;s solutions to have a",
+    "start": 2757.96,
+    "duration": 3.32
+  },
+  {
+    "text": "better",
+    "start": 2760.04,
+    "duration": 6.08
+  },
+  {
+    "text": "approach yeah for majority of the times",
+    "start": 2761.28,
+    "duration": 6.4
+  },
+  {
+    "text": "yeah",
+    "start": 2766.12,
+    "duration": 4.56
+  },
+  {
+    "text": "perfect",
+    "start": 2767.68,
+    "duration": 3.0
+  },
+  {
+    "text": "yeah okay",
+    "start": 2772.56,
+    "duration": 5.32
+  },
+  {
+    "text": "um so yeah the same thing is done for b",
+    "start": 2775.0,
+    "duration": 5.6
+  },
+  {
+    "text": "as well and then once you come up with",
+    "start": 2777.88,
+    "duration": 6.52
+  },
+  {
+    "text": "the values for w and B that like the",
+    "start": 2780.6,
+    "duration": 5.96
+  },
+  {
+    "text": "further iterations no longer reduces the",
+    "start": 2784.4,
+    "duration": 5.56
+  },
+  {
+    "text": "cost value you know that my algorithm",
+    "start": 2786.56,
+    "duration": 5.84
+  },
+  {
+    "text": "has converged to some minimum point and",
+    "start": 2789.96,
+    "duration": 5.68
+  },
+  {
+    "text": "now it is I&#39;m um ready to to make",
+    "start": 2792.4,
+    "duration": 4.8
+  },
+  {
+    "text": "predictions on it now how do we know",
+    "start": 2795.64,
+    "duration": 4.08
+  },
+  {
+    "text": "that one way of like you you set these",
+    "start": 2797.2,
+    "duration": 5.96
+  },
+  {
+    "text": "number of iterations um um in advance so",
+    "start": 2799.72,
+    "duration": 5.44
+  },
+  {
+    "text": "you say I need to train my algorithm for",
+    "start": 2803.16,
+    "duration": 4.24
+  },
+  {
+    "text": "100 number of iterations how do I know",
+    "start": 2805.16,
+    "duration": 4.28
+  },
+  {
+    "text": "if by the 100 iteration I would have",
+    "start": 2807.4,
+    "duration": 3.72
+  },
+  {
+    "text": "reached this minimum value will we don&#39;t",
+    "start": 2809.44,
+    "duration": 4.56
+  },
+  {
+    "text": "know that so what we do is we take this",
+    "start": 2811.12,
+    "duration": 5.28
+  },
+  {
+    "text": "um cost and we plot it against the",
+    "start": 2814.0,
+    "duration": 5.04
+  },
+  {
+    "text": "number of ations if I see a plot that",
+    "start": 2816.4,
+    "duration": 5.6
+  },
+  {
+    "text": "appears somewhat like",
+    "start": 2819.04,
+    "duration": 2.96
+  },
+  {
+    "text": "this um this is this is called a",
+    "start": 2823.4,
+    "duration": 5.28
+  },
+  {
+    "text": "learning curve of a of an algorithm so",
+    "start": 2826.08,
+    "duration": 4.44
+  },
+  {
+    "text": "at initial iterations the cost is very",
+    "start": 2828.68,
+    "duration": 4.72
+  },
+  {
+    "text": "high and as you",
+    "start": 2830.52,
+    "duration": 5.64
+  },
+  {
+    "text": "train um as the iterations progresses",
+    "start": 2833.4,
+    "duration": 5.04
+  },
+  {
+    "text": "the cost is reducing let&#39;s say this is",
+    "start": 2836.16,
+    "duration": 3.96
+  },
+  {
+    "text": "at the 90",
+    "start": 2838.44,
+    "duration": 4.28
+  },
+  {
+    "text": "iterations um and let&#39;s say this is at",
+    "start": 2840.12,
+    "duration": 4.32
+  },
+  {
+    "text": "the 100 iteration so at this point you",
+    "start": 2842.72,
+    "duration": 4.6
+  },
+  {
+    "text": "see that the Lost is the the loss is",
+    "start": 2844.44,
+    "duration": 4.76
+  },
+  {
+    "text": "pretty much minimum and it&#39;s no longer",
+    "start": 2847.32,
+    "duration": 4.72
+  },
+  {
+    "text": "decreasing it&#39;s kind of appearing flat",
+    "start": 2849.2,
+    "duration": 5.4
+  },
+  {
+    "text": "after that point so this automatically",
+    "start": 2852.04,
+    "duration": 4.24
+  },
+  {
+    "text": "tells you that there&#39;s no point forther",
+    "start": 2854.6,
+    "duration": 3.88
+  },
+  {
+    "text": "training this model because the loss",
+    "start": 2856.28,
+    "duration": 6.04
+  },
+  {
+    "text": "appears flat um not much significance",
+    "start": 2858.48,
+    "duration": 6.16
+  },
+  {
+    "text": "reduction is happening after 100 rtion",
+    "start": 2862.32,
+    "duration": 4.52
+  },
+  {
+    "text": "so that&#39;s why I need to turn it till 100",
+    "start": 2864.64,
+    "duration": 5.0
+  },
+  {
+    "text": "rations but suppose if by the 100",
+    "start": 2866.84,
+    "duration": 4.6
+  },
+  {
+    "text": "rations the loss didn&#39;t appear like this",
+    "start": 2869.64,
+    "duration": 4.36
+  },
+  {
+    "text": "it appeared somewhat like",
+    "start": 2871.44,
+    "duration": 5.6
+  },
+  {
+    "text": "this so I know this is not not the",
+    "start": 2874.0,
+    "duration": 6.28
+  },
+  {
+    "text": "correct way but if at the 100 iterations",
+    "start": 2877.04,
+    "duration": 4.56
+  },
+  {
+    "text": "it seems like the loss is still",
+    "start": 2880.28,
+    "duration": 3.08
+  },
+  {
+    "text": "decreasing then it gives you the",
+    "start": 2881.6,
+    "duration": 3.36
+  },
+  {
+    "text": "information that maybe I would need to",
+    "start": 2883.36,
+    "duration": 3.72
+  },
+  {
+    "text": "further train the model maybe change",
+    "start": 2884.96,
+    "duration": 5.0
+  },
+  {
+    "text": "this 100 to 200 because I was still",
+    "start": 2887.08,
+    "duration": 5.96
+  },
+  {
+    "text": "seeing a significant drop in the loss as",
+    "start": 2889.96,
+    "duration": 5.72
+  },
+  {
+    "text": "I was training and I have uh stopped the",
+    "start": 2893.04,
+    "duration": 4.2
+  },
+  {
+    "text": "training earlier I shouldn&#39;t be doing",
+    "start": 2895.68,
+    "duration": 3.28
+  },
+  {
+    "text": "that so you can then increase the number",
+    "start": 2897.24,
+    "duration": 3.68
+  },
+  {
+    "text": "of iterations in order to further reduce",
+    "start": 2898.96,
+    "duration": 4.92
+  },
+  {
+    "text": "uh the number of uh the amount of cost",
+    "start": 2900.92,
+    "duration": 4.56
+  },
+  {
+    "text": "this is one way but there are other ways",
+    "start": 2903.88,
+    "duration": 4.88
+  },
+  {
+    "text": "as well you can also so um put early",
+    "start": 2905.48,
+    "duration": 5.8
+  },
+  {
+    "text": "stopping criteria so you say um you set",
+    "start": 2908.76,
+    "duration": 4.96
+  },
+  {
+    "text": "an advanced Criterion that if my cost is",
+    "start": 2911.28,
+    "duration": 4.12
+  },
+  {
+    "text": "let&#39;s say below",
+    "start": 2913.72,
+    "duration": 4.12
+  },
+  {
+    "text": "0.001 I think it would do a reasonable",
+    "start": 2915.4,
+    "duration": 4.4
+  },
+  {
+    "text": "job i&#39; no longer need to Trend further",
+    "start": 2917.84,
+    "duration": 3.44
+  },
+  {
+    "text": "so even though my initial number of",
+    "start": 2919.8,
+    "duration": 4.16
+  },
+  {
+    "text": "iterations that I have set was 300 but I",
+    "start": 2921.28,
+    "duration": 6.4
+  },
+  {
+    "text": "saw that 150th iteration the cost was",
+    "start": 2923.96,
+    "duration": 6.56
+  },
+  {
+    "text": "0.1 um which was what my threshold was",
+    "start": 2927.68,
+    "duration": 5.4
+  },
+  {
+    "text": "so I no longer need to do further",
+    "start": 2930.52,
+    "duration": 4.32
+  },
+  {
+    "text": "training I can stop there this is called",
+    "start": 2933.08,
+    "duration": 3.88
+  },
+  {
+    "text": "early stopping criteria so you can put",
+    "start": 2934.84,
+    "duration": 4.6
+  },
+  {
+    "text": "such criterian as well um which would",
+    "start": 2936.96,
+    "duration": 4.8
+  },
+  {
+    "text": "save you time and uh you wouldn&#39;t have",
+    "start": 2939.44,
+    "duration": 4.12
+  },
+  {
+    "text": "to train it for the rest of number of",
+    "start": 2941.76,
+    "duration": 5.44
+  },
+  {
+    "text": "itations Z just some ways of of fixing",
+    "start": 2943.56,
+    "duration": 6.64
+  },
+  {
+    "text": "how should my algorithm",
+    "start": 2947.2,
+    "duration": 6.88
+  },
+  {
+    "text": "train but I think that is pretty much it",
+    "start": 2950.2,
+    "duration": 6.92
+  },
+  {
+    "text": "um I think James we don&#39;t have time to",
+    "start": 2954.08,
+    "duration": 5.12
+  },
+  {
+    "text": "now go towards the",
+    "start": 2957.12,
+    "duration": 5.04
+  },
+  {
+    "text": "coding or if you still want",
+    "start": 2959.2,
+    "duration": 7.16
+  },
+  {
+    "text": "to introduce at least some of the stuff",
+    "start": 2962.16,
+    "duration": 7.24
+  },
+  {
+    "text": "you can do that or otherwise we can also",
+    "start": 2966.36,
+    "duration": 4.88
+  },
+  {
+    "text": "entertain",
+    "start": 2969.4,
+    "duration": 4.2
+  },
+  {
+    "text": "questions I am almost jumping out of my",
+    "start": 2971.24,
+    "duration": 6.12
+  },
+  {
+    "text": "seat to do some coding um what I what I",
+    "start": 2973.6,
+    "duration": 5.88
+  },
+  {
+    "text": "don&#39;t want is like um that people are",
+    "start": 2977.36,
+    "duration": 4.64
+  },
+  {
+    "text": "bored because um they haven&#39;t gotten to",
+    "start": 2979.48,
+    "duration": 5.16
+  },
+  {
+    "text": "do anything yet so far",
+    "start": 2982.0,
+    "duration": 6.76
+  },
+  {
+    "text": "right so let&#39;s do some coding we",
+    "start": 2984.64,
+    "duration": 7.68
+  },
+  {
+    "text": "have if we have 20 minutes now I could",
+    "start": 2988.76,
+    "duration": 4.84
+  },
+  {
+    "text": "probably still",
+    "start": 2992.32,
+    "duration": 3.68
+  },
+  {
+    "text": "introduce uh the next get to the point",
+    "start": 2993.6,
+    "duration": 4.0
+  },
+  {
+    "text": "where we see that where you guys can",
+    "start": 2996.0,
+    "duration": 3.32
+  },
+  {
+    "text": "actually start working on your next mini",
+    "start": 2997.6,
+    "duration": 3.6
+  },
+  {
+    "text": "project what do you think what do you",
+    "start": 2999.32,
+    "duration": 3.92
+  },
+  {
+    "text": "think naid I don&#39;t want to rush it",
+    "start": 3001.2,
+    "duration": 3.8
+  },
+  {
+    "text": "either that&#39;s the other",
+    "start": 3003.24,
+    "duration": 5.44
+  },
+  {
+    "text": "thing okay can you repeat that I said I",
+    "start": 3005.0,
+    "duration": 5.36
+  },
+  {
+    "text": "want people to be able to start getting",
+    "start": 3008.68,
+    "duration": 3.8
+  },
+  {
+    "text": "coding already but I also I also don&#39;t",
+    "start": 3010.36,
+    "duration": 3.64
+  },
+  {
+    "text": "want to rush it you know I also want to",
+    "start": 3012.48,
+    "duration": 3.4
+  },
+  {
+    "text": "rush through the code explanation but",
+    "start": 3014.0,
+    "duration": 4.0
+  },
+  {
+    "text": "maybe if we have 20 minutes now that I",
+    "start": 3015.88,
+    "duration": 5.44
+  },
+  {
+    "text": "think in 20 minutes I can get through I",
+    "start": 3018.0,
+    "duration": 4.4
+  },
+  {
+    "text": "can get through",
+    "start": 3021.32,
+    "duration": 4.04
+  },
+  {
+    "text": "it yeah so let&#39;s do it I mean I&#39;m okay",
+    "start": 3022.4,
+    "duration": 4.76
+  },
+  {
+    "text": "with it okay cool",
+    "start": 3025.36,
+    "duration": 3.92
+  },
+  {
+    "text": "let&#39;s do that and then if something that",
+    "start": 3027.16,
+    "duration": 4.68
+  },
+  {
+    "text": "I do now seems a bit rushed or whatever",
+    "start": 3029.28,
+    "duration": 4.08
+  },
+  {
+    "text": "like we can always have like I can",
+    "start": 3031.84,
+    "duration": 3.88
+  },
+  {
+    "text": "always have like office hours uh at some",
+    "start": 3033.36,
+    "duration": 4.08
+  },
+  {
+    "text": "point over the weekend or whatever to",
+    "start": 3035.72,
+    "duration": 4.44
+  },
+  {
+    "text": "explain parts of the code or we can do",
+    "start": 3037.44,
+    "duration": 4.24
+  },
+  {
+    "text": "that through through the group if",
+    "start": 3040.16,
+    "duration": 5.2
+  },
+  {
+    "text": "something&#39;s not clear but um yeah let&#39;s",
+    "start": 3041.68,
+    "duration": 7.04
+  },
+  {
+    "text": "just get to it so today we are actually",
+    "start": 3045.36,
+    "duration": 6.28
+  },
+  {
+    "text": "going to be uh training a linear",
+    "start": 3048.72,
+    "duration": 6.6
+  },
+  {
+    "text": "regression model um and the code that",
+    "start": 3051.64,
+    "duration": 5.28
+  },
+  {
+    "text": "we&#39;re using for this like the the the",
+    "start": 3055.32,
+    "duration": 3.2
+  },
+  {
+    "text": "general workflow and the process is not",
+    "start": 3056.92,
+    "duration": 2.64
+  },
+  {
+    "text": "going to be so much different than",
+    "start": 3058.52,
+    "duration": 3.92
+  },
+  {
+    "text": "training a much more complex uh machine",
+    "start": 3059.56,
+    "duration": 5.2
+  },
+  {
+    "text": "learning model as you saw like what n is",
+    "start": 3062.44,
+    "duration": 5.4
+  },
+  {
+    "text": "explaining with uh loss functions and",
+    "start": 3064.76,
+    "duration": 5.52
+  },
+  {
+    "text": "optimization a lot of this is the the",
+    "start": 3067.84,
+    "duration": 6.32
+  },
+  {
+    "text": "same for a neural network um or you know",
+    "start": 3070.28,
+    "duration": 5.44
+  },
+  {
+    "text": "any architecture of machine learning",
+    "start": 3074.16,
+    "duration": 3.8
+  },
+  {
+    "text": "model as it is for a um linear",
+    "start": 3075.72,
+    "duration": 5.24
+  },
+  {
+    "text": "regression model so this stuff that I&#39;m",
+    "start": 3077.96,
+    "duration": 4.92
+  },
+  {
+    "text": "going to show you is",
+    "start": 3080.96,
+    "duration": 4.36
+  },
+  {
+    "text": "here on the",
+    "start": 3082.88,
+    "duration": 7.52
+  },
+  {
+    "text": "um on the uh GitHub uh repository for",
+    "start": 3085.32,
+    "duration": 6.88
+  },
+  {
+    "text": "the course outline but the first thing",
+    "start": 3090.4,
+    "duration": 3.6
+  },
+  {
+    "text": "that we&#39;re going to do now which is just",
+    "start": 3092.2,
+    "duration": 4.96
+  },
+  {
+    "text": "some examples um it&#39;s fine if you just",
+    "start": 3094.0,
+    "duration": 6.68
+  },
+  {
+    "text": "want to uh follow follow along for this",
+    "start": 3097.16,
+    "duration": 7.8
+  },
+  {
+    "text": "part so let me just split my screen",
+    "start": 3100.68,
+    "duration": 9.36
+  },
+  {
+    "text": "properly cool so you all can see this uh",
+    "start": 3104.96,
+    "duration": 5.76
+  },
+  {
+    "text": "this",
+    "start": 3110.04,
+    "duration": 4.12
+  },
+  {
+    "text": "notebook and um everyone here has done a",
+    "start": 3110.72,
+    "duration": 6.84
+  },
+  {
+    "text": "bit of python before right",
+    "start": 3114.16,
+    "duration": 6.48
+  },
+  {
+    "text": "yeah yep okay so the stuff like this",
+    "start": 3117.56,
+    "duration": 4.36
+  },
+  {
+    "text": "like",
+    "start": 3120.64,
+    "duration": 6.52
+  },
+  {
+    "text": "import um is is not unfamiliar to you um",
+    "start": 3121.92,
+    "duration": 7.68
+  },
+  {
+    "text": "numpy is probably people have seen this",
+    "start": 3127.16,
+    "duration": 3.8
+  },
+  {
+    "text": "before",
+    "start": 3129.6,
+    "duration": 4.88
+  },
+  {
+    "text": "hopefully y if you haven&#39;t it&#39;s fine um",
+    "start": 3130.96,
+    "duration": 7.6
+  },
+  {
+    "text": "numpy is is literally just um a library",
+    "start": 3134.48,
+    "duration": 6.24
+  },
+  {
+    "text": "that helps you to do math and it helps",
+    "start": 3138.56,
+    "duration": 4.52
+  },
+  {
+    "text": "you to you can do things like you can",
+    "start": 3140.72,
+    "duration": 4.04
+  },
+  {
+    "text": "take vectors you can multiply vectors",
+    "start": 3143.08,
+    "duration": 4.88
+  },
+  {
+    "text": "you can multiply arrays you can take",
+    "start": 3144.76,
+    "duration": 6.08
+  },
+  {
+    "text": "everything in in or in Python it&#39;s",
+    "start": 3147.96,
+    "duration": 5.68
+  },
+  {
+    "text": "sometimes a list but in in numpy it",
+    "start": 3150.84,
+    "duration": 5.32
+  },
+  {
+    "text": "would be called a vector or a matrix and",
+    "start": 3153.64,
+    "duration": 5.2
+  },
+  {
+    "text": "you can for example do basic math on",
+    "start": 3156.16,
+    "duration": 7.08
+  },
+  {
+    "text": "this we are going to use um matte plot",
+    "start": 3158.84,
+    "duration": 6.44
+  },
+  {
+    "text": "lib to make the charts and we&#39;re going",
+    "start": 3163.24,
+    "duration": 4.0
+  },
+  {
+    "text": "to use caborn to make the charts look",
+    "start": 3165.28,
+    "duration": 4.0
+  },
+  {
+    "text": "nicer and to add a little bit more",
+    "start": 3167.24,
+    "duration": 3.04
+  },
+  {
+    "text": "charting",
+    "start": 3169.28,
+    "duration": 3.48
+  },
+  {
+    "text": "functionality and then we&#39;re going to",
+    "start": 3170.28,
+    "duration": 7.52
+  },
+  {
+    "text": "use um um sklearn which is is called um",
+    "start": 3172.76,
+    "duration": 6.36
+  },
+  {
+    "text": "scikit",
+    "start": 3177.8,
+    "duration": 4.56
+  },
+  {
+    "text": "learn which is basically just a library",
+    "start": 3179.12,
+    "duration": 7.2
+  },
+  {
+    "text": "that has a bunch of useful um a bunch of",
+    "start": 3182.36,
+    "duration": 7.04
+  },
+  {
+    "text": "useful tools for doing traditional",
+    "start": 3186.32,
+    "duration": 5.32
+  },
+  {
+    "text": "machine learning so no deep learning",
+    "start": 3189.4,
+    "duration": 7.28
+  },
+  {
+    "text": "stuff let me just go to uh Google and I",
+    "start": 3191.64,
+    "duration": 10.64
+  },
+  {
+    "text": "will search for scikit learn uh here in",
+    "start": 3196.68,
+    "duration": 8.44
+  },
+  {
+    "text": "Chrome and let me just go like here&#39;s",
+    "start": 3202.28,
+    "duration": 6.32
+  },
+  {
+    "text": "the website right here and I I click",
+    "start": 3205.12,
+    "duration": 6.04
+  },
+  {
+    "text": "here and I go to oh perfect there&#39;s a",
+    "start": 3208.6,
+    "duration": 3.96
+  },
+  {
+    "text": "whole section on",
+    "start": 3211.16,
+    "duration": 4.8
+  },
+  {
+    "text": "regression and the first thing there&#39;s a",
+    "start": 3212.56,
+    "duration": 6.48
+  },
+  {
+    "text": "lot of different types of regression we",
+    "start": 3215.96,
+    "duration": 5.68
+  },
+  {
+    "text": "just want um",
+    "start": 3219.04,
+    "duration": 6.2
+  },
+  {
+    "text": "linear linear regression so if we would",
+    "start": 3221.64,
+    "duration": 5.84
+  },
+  {
+    "text": "you know look through here we&#39;ll find",
+    "start": 3225.24,
+    "duration": 5.68
+  },
+  {
+    "text": "the example code which is exactly the",
+    "start": 3227.48,
+    "duration": 6.36
+  },
+  {
+    "text": "same thing uh that I&#39;m doing here in",
+    "start": 3230.92,
+    "duration": 7.24
+  },
+  {
+    "text": "this uh example is from ssit learn I&#39;m",
+    "start": 3233.84,
+    "duration": 7.48
+  },
+  {
+    "text": "importing the linear regression and then",
+    "start": 3238.16,
+    "duration": 4.6
+  },
+  {
+    "text": "this part forget about this for now",
+    "start": 3241.32,
+    "duration": 2.56
+  },
+  {
+    "text": "we&#39;re really just doing linear",
+    "start": 3242.76,
+    "duration": 4.04
+  },
+  {
+    "text": "regression right now",
+    "start": 3243.88,
+    "duration": 8.92
+  },
+  {
+    "text": "so um we need to have some X and Y um",
+    "start": 3246.8,
+    "duration": 8.04
+  },
+  {
+    "text": "you know to train any model we need to",
+    "start": 3252.8,
+    "duration": 5.16
+  },
+  {
+    "text": "have some X and Y values for our data",
+    "start": 3254.84,
+    "duration": 7.56
+  },
+  {
+    "text": "points and this here is um it looks kind",
+    "start": 3257.96,
+    "duration": 6.36
+  },
+  {
+    "text": "of weird but this is literally just",
+    "start": 3262.4,
+    "duration": 6.8
+  },
+  {
+    "text": "making I the wrong screen yeah oops",
+    "start": 3264.32,
+    "duration": 7.8
+  },
+  {
+    "text": "happens to me every",
+    "start": 3269.2,
+    "duration": 2.92
+  },
+  {
+    "text": "time so where was I um so here uh We&#39;ve",
+    "start": 3272.2,
+    "duration": 7.52
+  },
+  {
+    "text": "imported the linear regression from pyit",
+    "start": 3277.04,
+    "duration": 8.48
+  },
+  {
+    "text": "learn right um and that&#39;s just called",
+    "start": 3279.72,
+    "duration": 7.44
+  },
+  {
+    "text": "import line regression this part ignore",
+    "start": 3285.52,
+    "duration": 5.0
+  },
+  {
+    "text": "this for now and here is where I&#39;m",
+    "start": 3287.16,
+    "duration": 7.36
+  },
+  {
+    "text": "setting up the data points so um this",
+    "start": 3290.52,
+    "duration": 5.4
+  },
+  {
+    "text": "this part looks a bit strange but",
+    "start": 3294.52,
+    "duration": 4.2
+  },
+  {
+    "text": "basically what it is is just um creating",
+    "start": 3295.92,
+    "duration": 7.44
+  },
+  {
+    "text": "a list from zero to um 0 to 10 of X so x",
+    "start": 3298.72,
+    "duration": 7.44
+  },
+  {
+    "text": "is 0 1 2 3 4 5 six 7 nine 10 and then",
+    "start": 3303.36,
+    "duration": 4.72
+  },
+  {
+    "text": "for y we&#39;re taking those values and",
+    "start": 3306.16,
+    "duration": 4.0
+  },
+  {
+    "text": "squaring so that&#39;s I&#39;ve just created",
+    "start": 3308.08,
+    "duration": 4.56
+  },
+  {
+    "text": "like a nice little um data set that I",
+    "start": 3310.16,
+    "duration": 7.28
+  },
+  {
+    "text": "want to that I want to train a linear uh",
+    "start": 3312.64,
+    "duration": 8.76
+  },
+  {
+    "text": "regression on so let&#39;s clear everything",
+    "start": 3317.44,
+    "duration": 6.56
+  },
+  {
+    "text": "to not give",
+    "start": 3321.4,
+    "duration": 7.12
+  },
+  {
+    "text": "away anything before we train the model",
+    "start": 3324.0,
+    "duration": 8.8
+  },
+  {
+    "text": "so in the next step what I&#39;m going to do",
+    "start": 3328.52,
+    "duration": 6.4
+  },
+  {
+    "text": "and this is all that you have to do in",
+    "start": 3332.8,
+    "duration": 5.84
+  },
+  {
+    "text": "Python uh to train a to train a linear",
+    "start": 3334.92,
+    "duration": 6.32
+  },
+  {
+    "text": "regression you don&#39;t need to understand",
+    "start": 3338.64,
+    "duration": 5.44
+  },
+  {
+    "text": "anything about the optimization actually",
+    "start": 3341.24,
+    "duration": 7.0
+  },
+  {
+    "text": "or um even about the uh the loss",
+    "start": 3344.08,
+    "duration": 8.24
+  },
+  {
+    "text": "function uh in order to perform this",
+    "start": 3348.24,
+    "duration": 7.16
+  },
+  {
+    "text": "operation um there&#39;s a little bit of",
+    "start": 3352.32,
+    "duration": 4.64
+  },
+  {
+    "text": "weirdness right here",
+    "start": 3355.4,
+    "duration": 4.84
+  },
+  {
+    "text": "which is just converting a um which is",
+    "start": 3356.96,
+    "duration": 6.52
+  },
+  {
+    "text": "just converting this into a vector um",
+    "start": 3360.24,
+    "duration": 5.88
+  },
+  {
+    "text": "for the the function for the format that",
+    "start": 3363.48,
+    "duration": 4.84
+  },
+  {
+    "text": "this function needs but really you can",
+    "start": 3366.12,
+    "duration": 4.52
+  },
+  {
+    "text": "just consider this to just be an",
+    "start": 3368.32,
+    "duration": 4.96
+  },
+  {
+    "text": "annoying um annoying part of python this",
+    "start": 3370.64,
+    "duration": 6.84
+  },
+  {
+    "text": "reshape it&#39;s not important um but it&#39;s",
+    "start": 3373.28,
+    "duration": 6.36
+  },
+  {
+    "text": "we&#39;re creating a linear regression and",
+    "start": 3377.48,
+    "duration": 6.44
+  },
+  {
+    "text": "then we&#39;re running a fit on the X and",
+    "start": 3379.64,
+    "duration": 5.36
+  },
+  {
+    "text": "the Y",
+    "start": 3383.92,
+    "duration": 2.96
+  },
+  {
+    "text": "values and",
+    "start": 3385.0,
+    "duration": 5.12
+  },
+  {
+    "text": "um that&#39;s that&#39;s it so my question for",
+    "start": 3386.88,
+    "duration": 4.96
+  },
+  {
+    "text": "you all is what do you think this will",
+    "start": 3390.12,
+    "duration": 3.68
+  },
+  {
+    "text": "look like this linear regression if I",
+    "start": 3391.84,
+    "duration": 6.52
+  },
+  {
+    "text": "would plot that over",
+    "start": 3393.8,
+    "duration": 4.56
+  },
+  {
+    "text": "this any guesses at",
+    "start": 3403.2,
+    "duration": 7.76
+  },
+  {
+    "text": "all I already looked at it so I&#39;d be",
+    "start": 3406.64,
+    "duration": 4.32
+  },
+  {
+    "text": "cheating what do you mean like I guess a",
+    "start": 3411.48,
+    "duration": 4.72
+  },
+  {
+    "text": "straight line just through the uhhuh",
+    "start": 3413.72,
+    "duration": 4.2
+  },
+  {
+    "text": "through the points yeah so it&#39;s got to",
+    "start": 3416.2,
+    "duration": 3.4
+  },
+  {
+    "text": "be a straight line because it&#39;s a linear",
+    "start": 3417.92,
+    "duration": 4.52
+  },
+  {
+    "text": "regression and it&#39;s going to be it&#39;s",
+    "start": 3419.6,
+    "duration": 3.96
+  },
+  {
+    "text": "probably not going to it&#39;s probably",
+    "start": 3422.44,
+    "duration": 2.6
+  },
+  {
+    "text": "going to go somewhere through these",
+    "start": 3423.56,
+    "duration": 4.04
+  },
+  {
+    "text": "points right let&#39;s try it I actually",
+    "start": 3425.04,
+    "duration": 4.76
+  },
+  {
+    "text": "wouldn&#39;t intuitively I actually think",
+    "start": 3427.6,
+    "duration": 5.48
+  },
+  {
+    "text": "it&#39;s a little bit difficult and um you",
+    "start": 3429.8,
+    "duration": 7.12
+  },
+  {
+    "text": "end up with something like this okay so",
+    "start": 3433.08,
+    "duration": 6.96
+  },
+  {
+    "text": "the idea of this of this",
+    "start": 3436.92,
+    "duration": 6.52
+  },
+  {
+    "text": "line um put the sorry can you put the",
+    "start": 3440.04,
+    "duration": 5.28
+  },
+  {
+    "text": "layout just on the left side so we can",
+    "start": 3443.44,
+    "duration": 3.28
+  },
+  {
+    "text": "see the",
+    "start": 3445.32,
+    "duration": 4.56
+  },
+  {
+    "text": "okay oh uh oh you want to see is the",
+    "start": 3446.72,
+    "duration": 4.8
+  },
+  {
+    "text": "chart too",
+    "start": 3449.88,
+    "duration": 4.0
+  },
+  {
+    "text": "big like I can&#39;t see the bottom no he&#39;s",
+    "start": 3451.52,
+    "duration": 4.68
+  },
+  {
+    "text": "saying the we are appearing on the",
+    "start": 3453.88,
+    "duration": 4.28
+  },
+  {
+    "text": "bottom so that&#39;s why can&#39;t",
+    "start": 3456.2,
+    "duration": 5.24
+  },
+  {
+    "text": "see not like that you like it like this",
+    "start": 3458.16,
+    "duration": 6.04
+  },
+  {
+    "text": "right yeah it&#39;s good okay sure that",
+    "start": 3461.44,
+    "duration": 4.72
+  },
+  {
+    "text": "works better for Jupiter notebook I",
+    "start": 3464.2,
+    "duration": 7.36
+  },
+  {
+    "text": "think um and then I can even",
+    "start": 3466.16,
+    "duration": 5.4
+  },
+  {
+    "text": "do one sec",
+    "start": 3474.16,
+    "duration": 4.32
+  },
+  {
+    "text": "how&#39;s",
+    "start": 3477.52,
+    "duration": 3.72
+  },
+  {
+    "text": "that yeah",
+    "start": 3478.48,
+    "duration": 4.32
+  },
+  {
+    "text": "okay",
+    "start": 3481.24,
+    "duration": 4.0
+  },
+  {
+    "text": "so",
+    "start": 3482.8,
+    "duration": 6.44
+  },
+  {
+    "text": "um where was I yeah so the idea of this",
+    "start": 3485.24,
+    "duration": 7.36
+  },
+  {
+    "text": "line is that it&#39;s minimized you know the",
+    "start": 3489.24,
+    "duration": 6.36
+  },
+  {
+    "text": "the square the total square of all these",
+    "start": 3492.6,
+    "duration": 8.08
+  },
+  {
+    "text": "distances L as n explained really well",
+    "start": 3495.6,
+    "duration": 8.0
+  },
+  {
+    "text": "um let&#39;s do another",
+    "start": 3500.68,
+    "duration": 7.12
+  },
+  {
+    "text": "one this one actually is is random um",
+    "start": 3503.6,
+    "duration": 6.92
+  },
+  {
+    "text": "I&#39;ve just created some random points and",
+    "start": 3507.8,
+    "duration": 4.52
+  },
+  {
+    "text": "what do you think the the fit line would",
+    "start": 3510.52,
+    "duration": 4.24
+  },
+  {
+    "text": "look like for something like",
+    "start": 3512.32,
+    "duration": 6.76
+  },
+  {
+    "text": "this any guesses probably go somewh to",
+    "start": 3514.76,
+    "duration": 7.8
+  },
+  {
+    "text": "the middle like almost flat yeah and is",
+    "start": 3519.08,
+    "duration": 5.36
+  },
+  {
+    "text": "it going to be like we going to get like",
+    "start": 3522.56,
+    "duration": 3.76
+  },
+  {
+    "text": "a vertical line or horizontal",
+    "start": 3524.44,
+    "duration": 5.16
+  },
+  {
+    "text": "line if it&#39;s totally random it probably",
+    "start": 3526.32,
+    "duration": 6.52
+  },
+  {
+    "text": "horizontal I guess",
+    "start": 3529.6,
+    "duration": 5.16
+  },
+  {
+    "text": "right yeah it should be pretty",
+    "start": 3532.84,
+    "duration": 5.0
+  },
+  {
+    "text": "horizontal because",
+    "start": 3534.76,
+    "duration": 6.04
+  },
+  {
+    "text": "um because moving the line making it",
+    "start": 3537.84,
+    "duration": 6.08
+  },
+  {
+    "text": "steeper in either direction is going to",
+    "start": 3540.8,
+    "duration": 5.56
+  },
+  {
+    "text": "basically increase the square of those",
+    "start": 3543.92,
+    "duration": 6.24
+  },
+  {
+    "text": "distances more sort of intuitively okay",
+    "start": 3546.36,
+    "duration": 6.44
+  },
+  {
+    "text": "now let&#39;s do one",
+    "start": 3550.16,
+    "duration": 2.64
+  },
+  {
+    "text": "more",
+    "start": 3554.48,
+    "duration": 5.2
+  },
+  {
+    "text": "okay what will we get",
+    "start": 3557.4,
+    "duration": 5.44
+  },
+  {
+    "text": "now will it go right down the middle or",
+    "start": 3559.68,
+    "duration": 7.92
+  },
+  {
+    "text": "no you mean vertically yeah",
+    "start": 3562.84,
+    "duration": 4.76
+  },
+  {
+    "text": "nope but I don&#39;t want to",
+    "start": 3569.2,
+    "duration": 4.88
+  },
+  {
+    "text": "say Bren Bren knows what it",
+    "start": 3577.24,
+    "duration": 6.72
+  },
+  {
+    "text": "is yeah well I&#39;m looking at the code but",
+    "start": 3581.0,
+    "duration": 5.84
+  },
+  {
+    "text": "I guess the Intuition or yeah intuition",
+    "start": 3583.96,
+    "duration": 5.72
+  },
+  {
+    "text": "like if it were to try to be vertical M",
+    "start": 3586.84,
+    "duration": 6.08
+  },
+  {
+    "text": "like you&#39;re basically you have both you",
+    "start": 3589.68,
+    "duration": 4.56
+  },
+  {
+    "text": "have all the points right if it would to",
+    "start": 3592.92,
+    "duration": 3.76
+  },
+  {
+    "text": "be a vertical line mhm like",
+    "start": 3594.24,
+    "duration": 5.8
+  },
+  {
+    "text": "your like the distance between I don&#39;t",
+    "start": 3596.68,
+    "duration": 6.6
+  },
+  {
+    "text": "know how to explain it but like yeah it",
+    "start": 3600.04,
+    "duration": 5.48
+  },
+  {
+    "text": "like that&#39;s just not how great descent",
+    "start": 3603.28,
+    "duration": 4.04
+  },
+  {
+    "text": "works I don&#39;t say like it would try to",
+    "start": 3605.52,
+    "duration": 4.44
+  },
+  {
+    "text": "be like going this way towards the",
+    "start": 3607.32,
+    "duration": 4.12
+  },
+  {
+    "text": "vertical line and",
+    "start": 3609.96,
+    "duration": 4.72
+  },
+  {
+    "text": "that I don&#39;t know I don&#39;t know I can",
+    "start": 3611.44,
+    "duration": 5.64
+  },
+  {
+    "text": "kind of see what what a vertical where",
+    "start": 3614.68,
+    "duration": 4.2
+  },
+  {
+    "text": "the intuition behind that would be if if",
+    "start": 3617.08,
+    "duration": 3.8
+  },
+  {
+    "text": "let&#39;s say you had like an actual circle",
+    "start": 3618.88,
+    "duration": 3.12
+  },
+  {
+    "text": "of",
+    "start": 3620.88,
+    "duration": 4.04
+  },
+  {
+    "text": "points then you can imagine that any",
+    "start": 3622.0,
+    "duration": 5.72
+  },
+  {
+    "text": "line with any slope would be just as bad",
+    "start": 3624.92,
+    "duration": 4.68
+  },
+  {
+    "text": "as the others but it&#39;s not a function to",
+    "start": 3627.72,
+    "duration": 3.68
+  },
+  {
+    "text": "have a vertical line it&#39;s going to come",
+    "start": 3629.6,
+    "duration": 4.44
+  },
+  {
+    "text": "up with a with an actual function that",
+    "start": 3631.4,
+    "duration": 5.6
+  },
+  {
+    "text": "has a value for every point on the x-",
+    "start": 3634.04,
+    "duration": 5.6
+  },
+  {
+    "text": "axis so a vertical line wouldn&#39;t",
+    "start": 3637.0,
+    "duration": 5.52
+  },
+  {
+    "text": "wouldn&#39;t satisfy that that&#39;s exactly",
+    "start": 3639.64,
+    "duration": 5.12
+  },
+  {
+    "text": "what I was about to say if you put a",
+    "start": 3642.52,
+    "duration": 5.28
+  },
+  {
+    "text": "vertical line here um it&#39;s like it&#39;s",
+    "start": 3644.76,
+    "duration": 5.92
+  },
+  {
+    "text": "generating the same value for no matter",
+    "start": 3647.8,
+    "duration": 5.24
+  },
+  {
+    "text": "whatever you put there so I don&#39;t see if",
+    "start": 3650.68,
+    "duration": 4.2
+  },
+  {
+    "text": "you can come up with any set of",
+    "start": 3653.04,
+    "duration": 4.12
+  },
+  {
+    "text": "distribution which would lead to a",
+    "start": 3654.88,
+    "duration": 5.88
+  },
+  {
+    "text": "linear regression line which is vertical",
+    "start": 3657.16,
+    "duration": 5.92
+  },
+  {
+    "text": "vertically fitted to it you could have",
+    "start": 3660.76,
+    "duration": 4.04
+  },
+  {
+    "text": "one that looks almost vertical because",
+    "start": 3663.08,
+    "duration": 3.08
+  },
+  {
+    "text": "it&#39;s so",
+    "start": 3664.8,
+    "duration": 5.28
+  },
+  {
+    "text": "steep yeah right yeah but it could never",
+    "start": 3666.16,
+    "duration": 6.52
+  },
+  {
+    "text": "be like in yeah in the other examples",
+    "start": 3670.08,
+    "duration": 4.72
+  },
+  {
+    "text": "when it was perfectly horizontal you you",
+    "start": 3672.68,
+    "duration": 4.48
+  },
+  {
+    "text": "would never get something like",
+    "start": 3674.8,
+    "duration": 5.0
+  },
+  {
+    "text": "that um another explanation for that is",
+    "start": 3677.16,
+    "duration": 5.36
+  },
+  {
+    "text": "because it would remember we are using",
+    "start": 3679.8,
+    "duration": 5.6
+  },
+  {
+    "text": "so what are we simply doing behind the",
+    "start": 3682.52,
+    "duration": 5.16
+  },
+  {
+    "text": "scene what&#39;s happening is it is trying",
+    "start": 3685.4,
+    "duration": 5.68
+  },
+  {
+    "text": "to reduce the square differences if you",
+    "start": 3687.68,
+    "duration": 5.48
+  },
+  {
+    "text": "put a vertical line there the",
+    "start": 3691.08,
+    "duration": 6.6
+  },
+  {
+    "text": "differences are very huge and one of the",
+    "start": 3693.16,
+    "duration": 7.0
+  },
+  {
+    "text": "characteristics of squared loss function",
+    "start": 3697.68,
+    "duration": 6.4
+  },
+  {
+    "text": "is that outliers are penalized heavily",
+    "start": 3700.16,
+    "duration": 5.52
+  },
+  {
+    "text": "because you&#39;re not just taking the",
+    "start": 3704.08,
+    "duration": 3.8
+  },
+  {
+    "text": "difference you&#39;re also squaring it so if",
+    "start": 3705.68,
+    "duration": 4.44
+  },
+  {
+    "text": "even there&#39;s just one point but which is",
+    "start": 3707.88,
+    "duration": 4.96
+  },
+  {
+    "text": "way out there the line would try to",
+    "start": 3710.12,
+    "duration": 6.24
+  },
+  {
+    "text": "cover that thing so that&#39;s why what line",
+    "start": 3712.84,
+    "duration": 5.88
+  },
+  {
+    "text": "would introduce huge differences that&#39;s",
+    "start": 3716.36,
+    "duration": 4.56
+  },
+  {
+    "text": "why it would never it would be always",
+    "start": 3718.72,
+    "duration": 5.0
+  },
+  {
+    "text": "pushed to become a little bit horizontal",
+    "start": 3720.92,
+    "duration": 4.48
+  },
+  {
+    "text": "somehow yeah because if you had a",
+    "start": 3723.72,
+    "duration": 3.76
+  },
+  {
+    "text": "vertical line then you&#39;d have like",
+    "start": 3725.4,
+    "duration": 5.16
+  },
+  {
+    "text": "almost vertical line then the the point",
+    "start": 3727.48,
+    "duration": 6.24
+  },
+  {
+    "text": "the distance between this and the bottom",
+    "start": 3730.56,
+    "duration": 5.88
+  },
+  {
+    "text": "would just would be huge enormous",
+    "start": 3733.72,
+    "duration": 6.84
+  },
+  {
+    "text": "enormous so um a d got the right answer",
+    "start": 3736.44,
+    "duration": 6.36
+  },
+  {
+    "text": "um which is a straight line cutting",
+    "start": 3740.56,
+    "duration": 6.64
+  },
+  {
+    "text": "through Center so let&#39;s just run that",
+    "start": 3742.8,
+    "duration": 9.12
+  },
+  {
+    "text": "um and yeah um this is a great example",
+    "start": 3747.2,
+    "duration": 7.12
+  },
+  {
+    "text": "of where like it&#39;s a great example of",
+    "start": 3751.92,
+    "duration": 4.2
+  },
+  {
+    "text": "how a linear regression is not a great",
+    "start": 3754.32,
+    "duration": 7.12
+  },
+  {
+    "text": "tool for a lot of different um nonlinear",
+    "start": 3756.12,
+    "duration": 9.32
+  },
+  {
+    "text": "functions but for something like",
+    "start": 3761.44,
+    "duration": 8.08
+  },
+  {
+    "text": "this um it might be okay um and for the",
+    "start": 3765.44,
+    "duration": 5.48
+  },
+  {
+    "text": "examp for the next example that we&#39;re",
+    "start": 3769.52,
+    "duration": 4.04
+  },
+  {
+    "text": "going to do for the project it also",
+    "start": 3770.92,
+    "duration": 5.4
+  },
+  {
+    "text": "works pretty well",
+    "start": 3773.56,
+    "duration": 6.28
+  },
+  {
+    "text": "when does that make",
+    "start": 3776.32,
+    "duration": 3.52
+  },
+  {
+    "text": "sense yeah yeah and when you have a um",
+    "start": 3780.04,
+    "duration": 6.76
+  },
+  {
+    "text": "you know something that&#39;s maybe",
+    "start": 3785.04,
+    "duration": 4.24
+  },
+  {
+    "text": "polom then we will try something else",
+    "start": 3786.8,
+    "duration": 5.76
+  },
+  {
+    "text": "you know like we try using the polom",
+    "start": 3789.28,
+    "duration": 6.88
+  },
+  {
+    "text": "features um of pyit learn and that&#39;ll be",
+    "start": 3792.56,
+    "duration": 5.72
+  },
+  {
+    "text": "really similar but then you can add",
+    "start": 3796.16,
+    "duration": 4.12
+  },
+  {
+    "text": "something like an X squ term and then",
+    "start": 3798.28,
+    "duration": 4.04
+  },
+  {
+    "text": "you get you know for this it would be a",
+    "start": 3800.28,
+    "duration": 3.84
+  },
+  {
+    "text": "perfect fit because this is a perfect",
+    "start": 3802.32,
+    "duration": 4.48
+  },
+  {
+    "text": "polom but that&#39;s not really the topic of",
+    "start": 3804.12,
+    "duration": 5.56
+  },
+  {
+    "text": "today um for today we are really going",
+    "start": 3806.8,
+    "duration": 5.32
+  },
+  {
+    "text": "to stick with the the linear",
+    "start": 3809.68,
+    "duration": 6.04
+  },
+  {
+    "text": "regression um and just wanted to show",
+    "start": 3812.12,
+    "duration": 6.32
+  },
+  {
+    "text": "you that after this is trained so so",
+    "start": 3815.72,
+    "duration": 4.28
+  },
+  {
+    "text": "like for one of these examples here",
+    "start": 3818.44,
+    "duration": 5.16
+  },
+  {
+    "text": "we&#39;ve done we&#39;ve literally just done lr.",
+    "start": 3820.0,
+    "duration": 7.16
+  },
+  {
+    "text": "fit the X values and the Y values and",
+    "start": 3823.6,
+    "duration": 7.04
+  },
+  {
+    "text": "after you&#39;ve done that we end up with",
+    "start": 3827.16,
+    "duration": 7.48
+  },
+  {
+    "text": "lr. co. coefficient and LR which is the",
+    "start": 3830.64,
+    "duration": 7.76
+  },
+  {
+    "text": "the weight um or the W and then we end",
+    "start": 3834.64,
+    "duration": 7.2
+  },
+  {
+    "text": "up with lr. intercept which is the um",
+    "start": 3838.4,
+    "duration": 6.24
+  },
+  {
+    "text": "the Y intercept or I guess maybe the",
+    "start": 3841.84,
+    "duration": 7.56
+  },
+  {
+    "text": "bias you could call it um in some in a",
+    "start": 3844.64,
+    "duration": 6.52
+  },
+  {
+    "text": "machine learning context so we end up",
+    "start": 3849.4,
+    "duration": 4.44
+  },
+  {
+    "text": "with these two uh constants always which",
+    "start": 3851.16,
+    "duration": 7.6
+  },
+  {
+    "text": "we can get uh just in the code after",
+    "start": 3853.84,
+    "duration": 7.76
+  },
+  {
+    "text": "running",
+    "start": 3858.76,
+    "duration": 7.64
+  },
+  {
+    "text": "the after running the",
+    "start": 3861.6,
+    "duration": 4.8
+  },
+  {
+    "text": "yeah",
+    "start": 3868.64,
+    "duration": 4.04
+  },
+  {
+    "text": "exactly so",
+    "start": 3870.4,
+    "duration": 6.28
+  },
+  {
+    "text": "um so that is how we do this in Python I",
+    "start": 3872.68,
+    "duration": 6.36
+  },
+  {
+    "text": "know I&#39;m going like a little fast",
+    "start": 3876.68,
+    "duration": 6.68
+  },
+  {
+    "text": "because uh we are running a bit out of",
+    "start": 3879.04,
+    "duration": 5.84
+  },
+  {
+    "text": "time",
+    "start": 3883.36,
+    "duration": 4.52
+  },
+  {
+    "text": "but I think I want to show you guys the",
+    "start": 3884.88,
+    "duration": 7.0
+  },
+  {
+    "text": "you guys are all like um really um",
+    "start": 3887.88,
+    "duration": 6.12
+  },
+  {
+    "text": "capable so I think if I show you the",
+    "start": 3891.88,
+    "duration": 4.48
+  },
+  {
+    "text": "project now",
+    "start": 3894.0,
+    "duration": 5.2
+  },
+  {
+    "text": "um you all can have a look at it and you",
+    "start": 3896.36,
+    "duration": 3.6
+  },
+  {
+    "text": "can",
+    "start": 3899.2,
+    "duration": 3.12
+  },
+  {
+    "text": "see um yeah you can see how far you get",
+    "start": 3899.96,
+    "duration": 6.44
+  },
+  {
+    "text": "with it and um I&#39;m sure that in like",
+    "start": 3902.32,
+    "duration": 5.84
+  },
+  {
+    "text": "given like an hour an hour and a half",
+    "start": 3906.4,
+    "duration": 3.8
+  },
+  {
+    "text": "actually a lot of you will be able to to",
+    "start": 3908.16,
+    "duration": 4.68
+  },
+  {
+    "text": "do it even with a a brief intro right",
+    "start": 3910.2,
+    "duration": 8.2
+  },
+  {
+    "text": "now so let me go back to this page and",
+    "start": 3912.84,
+    "duration": 8.6
+  },
+  {
+    "text": "let me show let me just send the link to",
+    "start": 3918.4,
+    "duration": 5.76
+  },
+  {
+    "text": "everyone I&#39;ll send it both in",
+    "start": 3921.44,
+    "duration": 5.72
+  },
+  {
+    "text": "the in the what",
+    "start": 3924.16,
+    "duration": 10.04
+  },
+  {
+    "text": "app and then also here in the",
+    "start": 3927.16,
+    "duration": 7.04
+  },
+  {
+    "text": "chat yeah so you can open",
+    "start": 3935.52,
+    "duration": 7.12
+  },
+  {
+    "text": "that",
+    "start": 3941.08,
+    "duration": 3.56
+  },
+  {
+    "text": "and",
+    "start": 3942.64,
+    "duration": 5.28
+  },
+  {
+    "text": "okay and",
+    "start": 3944.64,
+    "duration": 3.28
+  },
+  {
+    "text": "so this",
+    "start": 3948.36,
+    "duration": 8.6
+  },
+  {
+    "text": "is oops so this is your your task",
+    "start": 3951.12,
+    "duration": 8.96
+  },
+  {
+    "text": "um your task is going to",
+    "start": 3956.96,
+    "duration": 6.28
+  },
+  {
+    "text": "be here we have this uh mini project",
+    "start": 3960.08,
+    "duration": 5.12
+  },
+  {
+    "text": "linear regression mini",
+    "start": 3963.24,
+    "duration": 6.56
+  },
+  {
+    "text": "project and your task is going to",
+    "start": 3965.2,
+    "duration": 8.52
+  },
+  {
+    "text": "be to choose any data set that you want",
+    "start": 3969.8,
+    "duration": 5.92
+  },
+  {
+    "text": "so we have come up with a list of data",
+    "start": 3973.72,
+    "duration": 4.76
+  },
+  {
+    "text": "sets here for you we have the housing we",
+    "start": 3975.72,
+    "duration": 5.76
+  },
+  {
+    "text": "have one which is houses based on like",
+    "start": 3978.48,
+    "duration": 4.72
+  },
+  {
+    "text": "what&#39;s the price of a house based on",
+    "start": 3981.48,
+    "duration": 3.6
+  },
+  {
+    "text": "where it is how big is the house how",
+    "start": 3983.2,
+    "duration": 3.24
+  },
+  {
+    "text": "many floors",
+    "start": 3985.08,
+    "duration": 3.32
+  },
+  {
+    "text": "or you know we have something with like",
+    "start": 3986.44,
+    "duration": 3.92
+  },
+  {
+    "text": "forest fires some of these are in",
+    "start": 3988.4,
+    "duration": 4.96
+  },
+  {
+    "text": "different formats um so you have so you",
+    "start": 3990.36,
+    "duration": 5.84
+  },
+  {
+    "text": "have to maybe use chat GPT or mess",
+    "start": 3993.36,
+    "duration": 5.52
+  },
+  {
+    "text": "around a little bit um to get it into",
+    "start": 3996.2,
+    "duration": 4.96
+  },
+  {
+    "text": "the same format possibly some might be",
+    "start": 3998.88,
+    "duration": 6.12
+  },
+  {
+    "text": "in the right format or like fish um you",
+    "start": 4001.16,
+    "duration": 6.36
+  },
+  {
+    "text": "know what&#39;s the weight of a fish um",
+    "start": 4005.0,
+    "duration": 8.16
+  },
+  {
+    "text": "based off of its uh diameter we have um",
+    "start": 4007.52,
+    "duration": 8.28
+  },
+  {
+    "text": "you know on a given um Tuesday you know",
+    "start": 4013.16,
+    "duration": 4.68
+  },
+  {
+    "text": "how many bikes are being rented so all",
+    "start": 4015.8,
+    "duration": 5.52
+  },
+  {
+    "text": "sorts of really interesting data sets um",
+    "start": 4017.84,
+    "duration": 6.16
+  },
+  {
+    "text": "which are you know their their tabular",
+    "start": 4021.32,
+    "duration": 6.16
+  },
+  {
+    "text": "data so I think n just go through the",
+    "start": 4024.0,
+    "duration": 5.92
+  },
+  {
+    "text": "the single variable linear regression",
+    "start": 4027.48,
+    "duration": 5.8
+  },
+  {
+    "text": "right that makes more sense for today",
+    "start": 4029.92,
+    "duration": 7.04
+  },
+  {
+    "text": "right yeah that would make more",
+    "start": 4033.28,
+    "duration": 6.16
+  },
+  {
+    "text": "sense",
+    "start": 4036.96,
+    "duration": 6.88
+  },
+  {
+    "text": "so here&#39;s the um here&#39;s the project and",
+    "start": 4039.44,
+    "duration": 6.88
+  },
+  {
+    "text": "all you have to do is oop let me share",
+    "start": 4043.84,
+    "duration": 4.08
+  },
+  {
+    "text": "this so I clicked on the single variable",
+    "start": 4046.32,
+    "duration": 4.2
+  },
+  {
+    "text": "ingression all you have to do is to take",
+    "start": 4047.92,
+    "duration": 6.24
+  },
+  {
+    "text": "this project and you will probably have",
+    "start": 4050.52,
+    "duration": 6.56
+  },
+  {
+    "text": "to make a copy of it so save a copy in",
+    "start": 4054.16,
+    "duration": 8.68
+  },
+  {
+    "text": "drive and um you&#39;ll have to import um a",
+    "start": 4057.08,
+    "duration": 8.24
+  },
+  {
+    "text": "CSV into the project of the data that",
+    "start": 4062.84,
+    "duration": 7.36
+  },
+  {
+    "text": "you want to use and um and um yeah",
+    "start": 4065.32,
+    "duration": 6.88
+  },
+  {
+    "text": "follow along as I just go through the",
+    "start": 4070.2,
+    "duration": 4.32
+  },
+  {
+    "text": "project right now and see if there are",
+    "start": 4072.2,
+    "duration": 4.28
+  },
+  {
+    "text": "any uh any",
+    "start": 4074.52,
+    "duration": 4.08
+  },
+  {
+    "text": "questions",
+    "start": 4076.48,
+    "duration": 4.72
+  },
+  {
+    "text": "so skipping through these",
+    "start": 4078.6,
+    "duration": 5.8
+  },
+  {
+    "text": "Imports I&#39;ve added in sort of a terminal",
+    "start": 4081.2,
+    "duration": 6.2
+  },
+  {
+    "text": "command here which downloads a",
+    "start": 4084.4,
+    "duration": 6.2
+  },
+  {
+    "text": "CSV um from the internet of the data",
+    "start": 4087.4,
+    "duration": 5.76
+  },
+  {
+    "text": "that I want to use another way you can",
+    "start": 4090.6,
+    "duration": 5.44
+  },
+  {
+    "text": "do this is on",
+    "start": 4093.16,
+    "duration": 6.52
+  },
+  {
+    "text": "files um and then upload and then you",
+    "start": 4096.04,
+    "duration": 6.2
+  },
+  {
+    "text": "can just drag a CSV into here that will",
+    "start": 4099.68,
+    "duration": 4.44
+  },
+  {
+    "text": "be deleted a little bit after you close",
+    "start": 4102.24,
+    "duration": 3.76
+  },
+  {
+    "text": "the window so you have to upload again",
+    "start": 4104.12,
+    "duration": 3.76
+  },
+  {
+    "text": "when you want to run the notebook again",
+    "start": 4106.0,
+    "duration": 6.12
+  },
+  {
+    "text": "but it&#39;s it&#39;s really no problem um I&#39;ve",
+    "start": 4107.88,
+    "duration": 6.68
+  },
+  {
+    "text": "here I&#39;ve just downloaded it directly so",
+    "start": 4112.12,
+    "duration": 5.48
+  },
+  {
+    "text": "when I run this cell it downloads the",
+    "start": 4114.56,
+    "duration": 4.96
+  },
+  {
+    "text": "file and the file ends up here that&#39;s",
+    "start": 4117.6,
+    "duration": 4.4
+  },
+  {
+    "text": "just a little shortcut for",
+    "start": 4119.52,
+    "duration": 4.28
+  },
+  {
+    "text": "me",
+    "start": 4122.0,
+    "duration": 3.64
+  },
+  {
+    "text": "now with",
+    "start": 4123.8,
+    "duration": 4.2
+  },
+  {
+    "text": "pandas we can read that",
+    "start": 4125.64,
+    "duration": 5.44
+  },
+  {
+    "text": "CSV and we can Rune head which gets us",
+    "start": 4128.0,
+    "duration": 6.64
+  },
+  {
+    "text": "the first um which gets us the first",
+    "start": 4131.08,
+    "duration": 5.4
+  },
+  {
+    "text": "five rows",
+    "start": 4134.64,
+    "duration": 3.52
+  },
+  {
+    "text": "we also see from here all of the",
+    "start": 4136.48,
+    "duration": 4.44
+  },
+  {
+    "text": "different columns in the data set so",
+    "start": 4138.16,
+    "duration": 5.28
+  },
+  {
+    "text": "this is a list of houses for this",
+    "start": 4140.92,
+    "duration": 4.36
+  },
+  {
+    "text": "particular data set and each house has a",
+    "start": 4143.44,
+    "duration": 4.56
+  },
+  {
+    "text": "price and has all of this interesting",
+    "start": 4145.28,
+    "duration": 4.4
+  },
+  {
+    "text": "information about the house you know",
+    "start": 4148.0,
+    "duration": 5.32
+  },
+  {
+    "text": "what&#39;s the um the size of the of the",
+    "start": 4149.68,
+    "duration": 6.68
+  },
+  {
+    "text": "living room of the living area um you",
+    "start": 4153.32,
+    "duration": 5.32
+  },
+  {
+    "text": "know is it what&#39;s the ZIP code the",
+    "start": 4156.36,
+    "duration": 4.8
+  },
+  {
+    "text": "latitude the longitude and if we&#39;re",
+    "start": 4158.64,
+    "duration": 4.88
+  },
+  {
+    "text": "confused because it&#39;s not labeled very",
+    "start": 4161.16,
+    "duration": 5.72
+  },
+  {
+    "text": "well there&#39;s a there&#39;s a page here that",
+    "start": 4163.52,
+    "duration": 6.28
+  },
+  {
+    "text": "you can go to for example this one is",
+    "start": 4166.88,
+    "duration": 3.8
+  },
+  {
+    "text": "from",
+    "start": 4169.8,
+    "duration": 5.12
+  },
+  {
+    "text": "kaggle and we have like about this data",
+    "start": 4170.68,
+    "duration": 6.12
+  },
+  {
+    "text": "set and we",
+    "start": 4174.92,
+    "duration": 5.48
+  },
+  {
+    "text": "have somewhere under here we&#39;re going to",
+    "start": 4176.8,
+    "duration": 6.36
+  },
+  {
+    "text": "have",
+    "start": 4180.4,
+    "duration": 2.76
+  },
+  {
+    "text": "explanation",
+    "start": 4183.44,
+    "duration": 3.4
+  },
+  {
+    "text": "normally okay here there&#39;s no",
+    "start": 4185.04,
+    "duration": 4.4
+  },
+  {
+    "text": "description for the one but typically",
+    "start": 4186.84,
+    "duration": 5.08
+  },
+  {
+    "text": "you&#39;ll have a little bit better um",
+    "start": 4189.44,
+    "duration": 4.12
+  },
+  {
+    "text": "information here and maybe it&#39;s because",
+    "start": 4191.92,
+    "duration": 5.32
+  },
+  {
+    "text": "this is not the original um kaggle data",
+    "start": 4193.56,
+    "duration": 6.24
+  },
+  {
+    "text": "set maybe one of these other ones would",
+    "start": 4197.24,
+    "duration": 6.28
+  },
+  {
+    "text": "have uh better documentation they should",
+    "start": 4199.8,
+    "duration": 7.16
+  },
+  {
+    "text": "so so",
+    "start": 4203.52,
+    "duration": 3.44
+  },
+  {
+    "text": "um we we checked out the first five rows",
+    "start": 4208.2,
+    "duration": 4.68
+  },
+  {
+    "text": "you could check out the last you know",
+    "start": 4211.08,
+    "duration": 2.96
+  },
+  {
+    "text": "the last five",
+    "start": 4212.88,
+    "duration": 6.28
+  },
+  {
+    "text": "rows um and we can look at all of the",
+    "start": 4214.04,
+    "duration": 6.72
+  },
+  {
+    "text": "colums in the data",
+    "start": 4219.16,
+    "duration": 3.72
+  },
+  {
+    "text": "set and we can see what are the",
+    "start": 4220.76,
+    "duration": 3.16
+  },
+  {
+    "text": "different",
+    "start": 4222.88,
+    "duration": 3.8
+  },
+  {
+    "text": "types um you know some are integers some",
+    "start": 4223.92,
+    "duration": 4.88
+  },
+  {
+    "text": "are decimal that&#39;s what the floating is",
+    "start": 4226.68,
+    "duration": 5.44
+  },
+  {
+    "text": "the float is and then this date is is",
+    "start": 4228.8,
+    "duration": 6.12
+  },
+  {
+    "text": "neither and that&#39;s why actually I remove",
+    "start": 4232.12,
+    "duration": 5.76
+  },
+  {
+    "text": "the date in this case because if I don&#39;t",
+    "start": 4234.92,
+    "duration": 5.44
+  },
+  {
+    "text": "convert that to a number or remove it",
+    "start": 4237.88,
+    "duration": 4.96
+  },
+  {
+    "text": "it&#39;s going to cause an error during the",
+    "start": 4240.36,
+    "duration": 5.16
+  },
+  {
+    "text": "during the training or at least um",
+    "start": 4242.84,
+    "duration": 5.04
+  },
+  {
+    "text": "during one of these",
+    "start": 4245.52,
+    "duration": 5.12
+  },
+  {
+    "text": "steps this is probably what confused",
+    "start": 4247.88,
+    "duration": 6.12
+  },
+  {
+    "text": "people the most this chart it looks",
+    "start": 4250.64,
+    "duration": 6.2
+  },
+  {
+    "text": "crazy but the only thing that&#39;s going on",
+    "start": 4254.0,
+    "duration": 5.68
+  },
+  {
+    "text": "here is it&#39;s",
+    "start": 4256.84,
+    "duration": 6.28
+  },
+  {
+    "text": "taking every column",
+    "start": 4259.68,
+    "duration": 6.28
+  },
+  {
+    "text": "here comparing it to every other column",
+    "start": 4263.12,
+    "duration": 5.72
+  },
+  {
+    "text": "and looking for a correlation between",
+    "start": 4265.96,
+    "duration": 5.04
+  },
+  {
+    "text": "those values and it&#39;s doing that",
+    "start": 4268.84,
+    "duration": 4.76
+  },
+  {
+    "text": "automatically in charting it for you so",
+    "start": 4271.0,
+    "duration": 4.72
+  },
+  {
+    "text": "the way that and this is just one line",
+    "start": 4273.6,
+    "duration": 4.52
+  },
+  {
+    "text": "of code um here you&#39;re just making a",
+    "start": 4275.72,
+    "duration": 4.84
+  },
+  {
+    "text": "heat map of the correlations this isn&#39;t",
+    "start": 4278.12,
+    "duration": 4.36
+  },
+  {
+    "text": "the this isn&#39;t the linear regression",
+    "start": 4280.56,
+    "duration": 3.68
+  },
+  {
+    "text": "this isn&#39;t the training this is just the",
+    "start": 4282.48,
+    "duration": 6.2
+  },
+  {
+    "text": "way of exploring the data to feel out",
+    "start": 4284.24,
+    "duration": 8.12
+  },
+  {
+    "text": "what&#39;s going on and the way that you",
+    "start": 4288.68,
+    "duration": 5.88
+  },
+  {
+    "text": "kind of want to read this is we&#39;re",
+    "start": 4292.36,
+    "duration": 4.48
+  },
+  {
+    "text": "interested in what variables affect the",
+    "start": 4294.56,
+    "duration": 7.28
+  },
+  {
+    "text": "price so here&#39;s a price uh column here",
+    "start": 4296.84,
+    "duration": 7.32
+  },
+  {
+    "text": "and when something is has a huge effect",
+    "start": 4301.84,
+    "duration": 4.8
+  },
+  {
+    "text": "on the price it&#39;s going to",
+    "start": 4304.16,
+    "duration": 6.72
+  },
+  {
+    "text": "be maybe um one if it&#39;s positively",
+    "start": 4306.64,
+    "duration": 5.6
+  },
+  {
+    "text": "correlated something&#39;s negatively",
+    "start": 4310.88,
+    "duration": 4.08
+  },
+  {
+    "text": "correlated it may be negative one so",
+    "start": 4312.24,
+    "duration": 6.2
+  },
+  {
+    "text": "very dark um so in general looks like",
+    "start": 4314.96,
+    "duration": 6.0
+  },
+  {
+    "text": "things are more positively correlated so",
+    "start": 4318.44,
+    "duration": 4.12
+  },
+  {
+    "text": "we&#39;re kind of looking I&#39;m kind of",
+    "start": 4320.96,
+    "duration": 4.08
+  },
+  {
+    "text": "looking for things that are far from",
+    "start": 4322.56,
+    "duration": 4.88
+  },
+  {
+    "text": "zero here so either close to one or",
+    "start": 4325.04,
+    "duration": 5.4
+  },
+  {
+    "text": "negative one which means correlated with",
+    "start": 4327.44,
+    "duration": 3.72
+  },
+  {
+    "text": "the",
+    "start": 4330.44,
+    "duration": 3.36
+  },
+  {
+    "text": "price and we can look through all of",
+    "start": 4331.16,
+    "duration": 4.92
+  },
+  {
+    "text": "these but you know for example as you",
+    "start": 4333.8,
+    "duration": 6.28
+  },
+  {
+    "text": "would guess like the area of the house a",
+    "start": 4336.08,
+    "duration": 8.72
+  },
+  {
+    "text": "larger house is more expensive so we see",
+    "start": 4340.08,
+    "duration": 8.36
+  },
+  {
+    "text": "like 0.7 that&#39;s pretty high correlation",
+    "start": 4344.8,
+    "duration": 6.04
+  },
+  {
+    "text": "uh with the price of the",
+    "start": 4348.44,
+    "duration": 5.96
+  },
+  {
+    "text": "house so we&#39;re going to go with that and",
+    "start": 4350.84,
+    "duration": 7.48
+  },
+  {
+    "text": "I&#39;m going to make a linear regression",
+    "start": 4354.4,
+    "duration": 5.48
+  },
+  {
+    "text": "model",
+    "start": 4358.32,
+    "duration": 4.76
+  },
+  {
+    "text": "that models the price of a house based",
+    "start": 4359.88,
+    "duration": 5.16
+  },
+  {
+    "text": "off the size in square",
+    "start": 4363.08,
+    "duration": 7.76
+  },
+  {
+    "text": "feet and this is just code to take the",
+    "start": 4365.04,
+    "duration": 9.8
+  },
+  {
+    "text": "um to",
+    "start": 4370.84,
+    "duration": 4.0
+  },
+  {
+    "text": "here xal square foot living and Y equals",
+    "start": 4375.32,
+    "duration": 7.36
+  },
+  {
+    "text": "price so and using the houses data that",
+    "start": 4379.2,
+    "duration": 6.84
+  },
+  {
+    "text": "we just imported just to plot that we",
+    "start": 4382.68,
+    "duration": 6.32
+  },
+  {
+    "text": "can see there&#39;s a pretty strong linear",
+    "start": 4386.04,
+    "duration": 5.92
+  },
+  {
+    "text": "correlation here",
+    "start": 4389.0,
+    "duration": 6.6
+  },
+  {
+    "text": "so I won&#39;t go through oh",
+    "start": 4391.96,
+    "duration": 7.76
+  },
+  {
+    "text": "yeah so we take this data and we use",
+    "start": 4395.6,
+    "duration": 6.72
+  },
+  {
+    "text": "train test split we&#39;ll probably have to",
+    "start": 4399.72,
+    "duration": 4.32
+  },
+  {
+    "text": "explain this a little bit further in",
+    "start": 4402.32,
+    "duration": 4.32
+  },
+  {
+    "text": "another lesson but BAS basically we are",
+    "start": 4404.04,
+    "duration": 6.52
+  },
+  {
+    "text": "taking some of the data um and then not",
+    "start": 4406.64,
+    "duration": 5.92
+  },
+  {
+    "text": "training the model on that data",
+    "start": 4410.56,
+    "duration": 4.08
+  },
+  {
+    "text": "specifically so that we can use it just",
+    "start": 4412.56,
+    "duration": 5.16
+  },
+  {
+    "text": "for testing the model um which will",
+    "start": 4414.64,
+    "duration": 5.48
+  },
+  {
+    "text": "which will prove if we have if the model",
+    "start": 4417.72,
+    "duration": 3.4
+  },
+  {
+    "text": "has really",
+    "start": 4420.12,
+    "duration": 5.32
+  },
+  {
+    "text": "learned um how to um how to predict the",
+    "start": 4421.12,
+    "duration": 7.8
+  },
+  {
+    "text": "data um versus it&#39;s just memorizing uh",
+    "start": 4425.44,
+    "duration": 5.52
+  },
+  {
+    "text": "the data but basically we&#39;re just saving",
+    "start": 4428.92,
+    "duration": 4.96
+  },
+  {
+    "text": "we&#39;re just taking 80% here see",
+    "start": 4430.96,
+    "duration": 6.2
+  },
+  {
+    "text": "0.2 um is what we&#39;re putting aside and",
+    "start": 4433.88,
+    "duration": 5.4
+  },
+  {
+    "text": "we&#39;re going to train the model on 80% of",
+    "start": 4437.16,
+    "duration": 3.84
+  },
+  {
+    "text": "this data and then afterwards we&#39;re",
+    "start": 4439.28,
+    "duration": 4.92
+  },
+  {
+    "text": "going to test it on the remaining",
+    "start": 4441.0,
+    "duration": 3.2
+  },
+  {
+    "text": "20%",
+    "start": 4444.52,
+    "duration": 5.76
+  },
+  {
+    "text": "and as far as the training this is all",
+    "start": 4446.88,
+    "duration": 7.24
+  },
+  {
+    "text": "you have to do um X",
+    "start": 4450.28,
+    "duration": 7.2
+  },
+  {
+    "text": "train y train and that&#39;s the that&#39;s",
+    "start": 4454.12,
+    "duration": 6.84
+  },
+  {
+    "text": "basically taken from this X and Y which",
+    "start": 4457.48,
+    "duration": 5.96
+  },
+  {
+    "text": "is taken from the two features we were",
+    "start": 4460.96,
+    "duration": 4.68
+  },
+  {
+    "text": "interested in the size and the price",
+    "start": 4463.44,
+    "duration": 3.92
+  },
+  {
+    "text": "which then goes through the train test",
+    "start": 4465.64,
+    "duration": 4.04
+  },
+  {
+    "text": "split so taking aside some data for",
+    "start": 4467.36,
+    "duration": 4.32
+  },
+  {
+    "text": "testing and then that goes into the",
+    "start": 4469.68,
+    "duration": 5.52
+  },
+  {
+    "text": "fit once that&#39;s once that&#39;s",
+    "start": 4471.68,
+    "duration": 6.0
+  },
+  {
+    "text": "run you just get these parameters right",
+    "start": 4475.2,
+    "duration": 5.0
+  },
+  {
+    "text": "out of it and that&#39;s gonna that&#39;s G to",
+    "start": 4477.68,
+    "duration": 6.04
+  },
+  {
+    "text": "be the intercept and the",
+    "start": 4480.2,
+    "duration": 6.68
+  },
+  {
+    "text": "coefficient and then you can plot the",
+    "start": 4483.72,
+    "duration": 6.0
+  },
+  {
+    "text": "data and and you can you can plot the",
+    "start": 4486.88,
+    "duration": 5.52
+  },
+  {
+    "text": "you can plot the regression",
+    "start": 4489.72,
+    "duration": 5.68
+  },
+  {
+    "text": "and you can test it on you know an",
+    "start": 4492.4,
+    "duration": 5.68
+  },
+  {
+    "text": "example size of a house and guess what",
+    "start": 4495.4,
+    "duration": 5.44
+  },
+  {
+    "text": "the price would be for that",
+    "start": 4498.08,
+    "duration": 6.52
+  },
+  {
+    "text": "house we can calculate the um the mean",
+    "start": 4500.84,
+    "duration": 6.36
+  },
+  {
+    "text": "squared error um which is what nid",
+    "start": 4504.6,
+    "duration": 4.2
+  },
+  {
+    "text": "explained before and the mean absolute",
+    "start": 4507.2,
+    "duration": 3.4
+  },
+  {
+    "text": "error which he didn&#39;t explain but it&#39;s",
+    "start": 4508.8,
+    "duration": 5.88
+  },
+  {
+    "text": "very similar and that&#39;s pretty much it",
+    "start": 4510.6,
+    "duration": 8.64
+  },
+  {
+    "text": "so I hope that um I know we are really",
+    "start": 4514.68,
+    "duration": 6.32
+  },
+  {
+    "text": "out of time but I hope that that would",
+    "start": 4519.24,
+    "duration": 6.24
+  },
+  {
+    "text": "be enough um for you all to get get",
+    "start": 4521.0,
+    "duration": 8.32
+  },
+  {
+    "text": "started and um yeah we&#39;ll go over the",
+    "start": 4525.48,
+    "duration": 5.64
+  },
+  {
+    "text": "we&#39;ll we&#39;ll try it over the weekend and",
+    "start": 4529.32,
+    "duration": 3.52
+  },
+  {
+    "text": "then on Monday we&#39;ll come back together",
+    "start": 4531.12,
+    "duration": 3.12
+  },
+  {
+    "text": "and we&#39;ll see like who learned something",
+    "start": 4532.84,
+    "duration": 4.16
+  },
+  {
+    "text": "interesting about houses or forest fires",
+    "start": 4534.24,
+    "duration": 6.36
+  },
+  {
+    "text": "or fish and um what they want James",
+    "start": 4537.0,
+    "duration": 5.44
+  },
+  {
+    "text": "there just a small question can you go",
+    "start": 4540.6,
+    "duration": 5.2
+  },
+  {
+    "text": "to the intercept and the slope values",
+    "start": 4542.44,
+    "duration": 7.2
+  },
+  {
+    "text": "again yeah for sure so uh oh you mean",
+    "start": 4545.8,
+    "duration": 5.96
+  },
+  {
+    "text": "where it prints them out right here yeah",
+    "start": 4549.64,
+    "duration": 5.48
+  },
+  {
+    "text": "so if you look at the value here the",
+    "start": 4551.76,
+    "duration": 7.32
+  },
+  {
+    "text": "slope is 281 but the Y intercept it is",
+    "start": 4555.12,
+    "duration": 8.84
+  },
+  {
+    "text": "huge negative number yeah negative",
+    "start": 4559.08,
+    "duration": 10.04
+  },
+  {
+    "text": "44831 I would like to ask um I have some",
+    "start": 4563.96,
+    "duration": 7.44
+  },
+  {
+    "text": "idea about why it is such a negative",
+    "start": 4569.12,
+    "duration": 4.8
+  },
+  {
+    "text": "number but do you any other do you have",
+    "start": 4571.4,
+    "duration": 5.52
+  },
+  {
+    "text": "any idea of of why is this such a big",
+    "start": 4573.92,
+    "duration": 4.52
+  },
+  {
+    "text": "negative number that we are getting for",
+    "start": 4576.92,
+    "duration": 2.8
+  },
+  {
+    "text": "The Intercept",
+    "start": 4578.44,
+    "duration": 3.4
+  },
+  {
+    "text": "time yeah that&#39;s super interesting",
+    "start": 4579.72,
+    "duration": 5.2
+  },
+  {
+    "text": "actually let me let me run everything",
+    "start": 4581.84,
+    "duration": 6.28
+  },
+  {
+    "text": "I&#39;ll run it again just to make sure that",
+    "start": 4584.92,
+    "duration": 7.24
+  },
+  {
+    "text": "that&#39;s this is the value um I noticed it",
+    "start": 4588.12,
+    "duration": 7.48
+  },
+  {
+    "text": "in my own notebook as well I&#39;m just yeah",
+    "start": 4592.16,
+    "duration": 5.44
+  },
+  {
+    "text": "curious to see what everyone thinks",
+    "start": 4595.6,
+    "duration": 4.96
+  },
+  {
+    "text": "about it yeah looking the first thing I",
+    "start": 4597.6,
+    "duration": 4.24
+  },
+  {
+    "text": "do is look at the chart and I think",
+    "start": 4600.56,
+    "duration": 5.12
+  },
+  {
+    "text": "looking at the chart I",
+    "start": 4601.84,
+    "duration": 3.84
+  },
+  {
+    "text": "think",
+    "start": 4605.76,
+    "duration": 3.32
+  },
+  {
+    "text": "at",
+    "start": 4607.48,
+    "duration": 4.76
+  },
+  {
+    "text": "here the chart like the scale is like",
+    "start": 4609.08,
+    "duration": 6.36
+  },
+  {
+    "text": "it&#39;s one to the one to the E6 like",
+    "start": 4612.24,
+    "duration": 7.04
+  },
+  {
+    "text": "100,000 so that&#39;s just something",
+    "start": 4615.44,
+    "duration": 3.84
+  },
+  {
+    "text": "not yeah my idea is I don&#39;t know the",
+    "start": 4619.6,
+    "duration": 4.88
+  },
+  {
+    "text": "exact answer my idea about why we are",
+    "start": 4622.4,
+    "duration": 4.04
+  },
+  {
+    "text": "getting such a Negative such a huge",
+    "start": 4624.48,
+    "duration": 3.44
+  },
+  {
+    "text": "negative number is because if you look",
+    "start": 4626.44,
+    "duration": 4.56
+  },
+  {
+    "text": "at the square feet living it is area now",
+    "start": 4627.92,
+    "duration": 7.08
+  },
+  {
+    "text": "area is a it&#39;s a huge number and you are",
+    "start": 4631.0,
+    "duration": 6.12
+  },
+  {
+    "text": "multiplying it with the slope which is",
+    "start": 4635.0,
+    "duration": 4.28
+  },
+  {
+    "text": "also a huge number together both of them",
+    "start": 4637.12,
+    "duration": 4.48
+  },
+  {
+    "text": "are giving you something which is a huge",
+    "start": 4639.28,
+    "duration": 4.12
+  },
+  {
+    "text": "number now the output that we want to",
+    "start": 4641.6,
+    "duration": 4.72
+  },
+  {
+    "text": "have is the price",
+    "start": 4643.4,
+    "duration": 6.48
+  },
+  {
+    "text": "um what the bom is doing not just in",
+    "start": 4646.32,
+    "duration": 5.44
+  },
+  {
+    "text": "linear regression or any other algorithm",
+    "start": 4649.88,
+    "duration": 4.72
+  },
+  {
+    "text": "is it&#39;s Shifting the entire curve either",
+    "start": 4651.76,
+    "duration": 4.0
+  },
+  {
+    "text": "up or",
+    "start": 4654.6,
+    "duration": 4.64
+  },
+  {
+    "text": "down U it is accounting for",
+    "start": 4655.76,
+    "duration": 5.32
+  },
+  {
+    "text": "any",
+    "start": 4659.24,
+    "duration": 5.56
+  },
+  {
+    "text": "any um I don&#39;t know how how should I say",
+    "start": 4661.08,
+    "duration": 6.36
+  },
+  {
+    "text": "this but because of the huge area",
+    "start": 4664.8,
+    "duration": 4.56
+  },
+  {
+    "text": "numbers and because of the huge",
+    "start": 4667.44,
+    "duration": 4.4
+  },
+  {
+    "text": "slope the price is not going to be that",
+    "start": 4669.36,
+    "duration": 6.2
+  },
+  {
+    "text": "high and it is for these matters that b",
+    "start": 4671.84,
+    "duration": 6.72
+  },
+  {
+    "text": "stems comes into play they shift this",
+    "start": 4675.56,
+    "duration": 7.52
+  },
+  {
+    "text": "entire curve in order to bring things to",
+    "start": 4678.56,
+    "duration": 7.4
+  },
+  {
+    "text": "the scale again if you would increase",
+    "start": 4683.08,
+    "duration": 7.24
+  },
+  {
+    "text": "other features here that is going to um",
+    "start": 4685.96,
+    "duration": 6.6
+  },
+  {
+    "text": "that is going to make the value for the",
+    "start": 4690.32,
+    "duration": 5.28
+  },
+  {
+    "text": "B stum greatly different from what you",
+    "start": 4692.56,
+    "duration": 4.44
+  },
+  {
+    "text": "are getting maybe we&#39;ll see that in",
+    "start": 4695.6,
+    "duration": 3.32
+  },
+  {
+    "text": "multi- Recreation when you would be",
+    "start": 4697.0,
+    "duration": 3.96
+  },
+  {
+    "text": "explaining what happens if you take the",
+    "start": 4698.92,
+    "duration": 5.32
+  },
+  {
+    "text": "rest of the features and and and those",
+    "start": 4700.96,
+    "duration": 4.96
+  },
+  {
+    "text": "um",
+    "start": 4704.24,
+    "duration": 3.64
+  },
+  {
+    "text": "in that notebook the the value for The",
+    "start": 4705.92,
+    "duration": 3.64
+  },
+  {
+    "text": "Intercept that we would be getting would",
+    "start": 4707.88,
+    "duration": 4.52
+  },
+  {
+    "text": "be significantly smaller than what we",
+    "start": 4709.56,
+    "duration": 5.04
+  },
+  {
+    "text": "are seeing here it&#39;s just a thought that",
+    "start": 4712.4,
+    "duration": 4.0
+  },
+  {
+    "text": "I wanted to",
+    "start": 4714.6,
+    "duration": 4.24
+  },
+  {
+    "text": "share does anyone have any questions",
+    "start": 4716.4,
+    "duration": 5.52
+  },
+  {
+    "text": "about this um about this little project",
+    "start": 4718.84,
+    "duration": 5.68
+  },
+  {
+    "text": "and how to do",
+    "start": 4721.92,
+    "duration": 2.6
+  },
+  {
+    "text": "it I think just a summary just make sure",
+    "start": 4724.76,
+    "duration": 5.36
+  },
+  {
+    "text": "I understand we&#39;re taking a data set",
+    "start": 4727.16,
+    "duration": 5.08
+  },
+  {
+    "text": "we&#39;re going to figure out like we&#39;re",
+    "start": 4730.12,
+    "duration": 3.6
+  },
+  {
+    "text": "going to like basic data set has a bunch",
+    "start": 4732.24,
+    "duration": 3.16
+  },
+  {
+    "text": "of columns like a bunch of features that",
+    "start": 4733.72,
+    "duration": 3.76
+  },
+  {
+    "text": "will all affect the the one variable",
+    "start": 4735.4,
+    "duration": 3.8
+  },
+  {
+    "text": "that we&#39;re trying to calculate and then",
+    "start": 4737.48,
+    "duration": 3.0
+  },
+  {
+    "text": "we&#39;re picking the one that the most",
+    "start": 4739.2,
+    "duration": 3.4
+  },
+  {
+    "text": "correlated with that thing and then",
+    "start": 4740.48,
+    "duration": 5.44
+  },
+  {
+    "text": "seeing how that affects the the output",
+    "start": 4742.6,
+    "duration": 6.6
+  },
+  {
+    "text": "value yeah that&#39;s a really good um",
+    "start": 4745.92,
+    "duration": 4.88
+  },
+  {
+    "text": "that&#39;s really good overview the one",
+    "start": 4749.2,
+    "duration": 4.76
+  },
+  {
+    "text": "thing I would say is that and we noticed",
+    "start": 4750.8,
+    "duration": 5.36
+  },
+  {
+    "text": "this before when doing this assignment",
+    "start": 4753.96,
+    "duration": 4.72
+  },
+  {
+    "text": "is that the most correlated you said the",
+    "start": 4756.16,
+    "duration": 4.76
+  },
+  {
+    "text": "most correlated yeah well other than",
+    "start": 4758.68,
+    "duration": 5.56
+  },
+  {
+    "text": "itself the most yeah well of course yeah",
+    "start": 4760.92,
+    "duration": 4.92
+  },
+  {
+    "text": "um otherwise that will be a straight",
+    "start": 4764.24,
+    "duration": 4.8
+  },
+  {
+    "text": "line but um the most correlated value",
+    "start": 4765.84,
+    "duration": 5.8
+  },
+  {
+    "text": "might not always be the most interesting",
+    "start": 4769.04,
+    "duration": 5.76
+  },
+  {
+    "text": "value um like for example let&#39;s say we",
+    "start": 4771.64,
+    "duration": 5.68
+  },
+  {
+    "text": "were doing we had we wanted to",
+    "start": 4774.8,
+    "duration": 5.36
+  },
+  {
+    "text": "predict um I don&#39;t know let&#39;s say",
+    "start": 4777.32,
+    "duration": 4.88
+  },
+  {
+    "text": "property tax was on there of course that",
+    "start": 4780.16,
+    "duration": 3.88
+  },
+  {
+    "text": "would be like way too obvious to",
+    "start": 4782.2,
+    "duration": 4.84
+  },
+  {
+    "text": "correlate that with price um or for",
+    "start": 4784.04,
+    "duration": 5.08
+  },
+  {
+    "text": "example let&#39;s say we wanted to predict",
+    "start": 4787.04,
+    "duration": 5.88
+  },
+  {
+    "text": "the size of a house and you also had",
+    "start": 4789.12,
+    "duration": 7.08
+  },
+  {
+    "text": "like the size of the the yard of the of",
+    "start": 4792.92,
+    "duration": 6.32
+  },
+  {
+    "text": "the backyard of the house well maybe it&#39;",
+    "start": 4796.2,
+    "duration": 5.72
+  },
+  {
+    "text": "be more more interesting to choose a",
+    "start": 4799.24,
+    "duration": 4.8
+  },
+  {
+    "text": "different variable that&#39;s not so",
+    "start": 4801.92,
+    "duration": 5.24
+  },
+  {
+    "text": "obviously connected so I think it&#39;s it&#39;s",
+    "start": 4804.04,
+    "duration": 6.08
+  },
+  {
+    "text": "also about like oh what&#39;s an interesting",
+    "start": 4807.16,
+    "duration": 5.8
+  },
+  {
+    "text": "use case of this data um not necessarily",
+    "start": 4810.12,
+    "duration": 4.8
+  },
+  {
+    "text": "just looking for the two most correlated",
+    "start": 4812.96,
+    "duration": 5.24
+  },
+  {
+    "text": "things does that make sense yeah Mak",
+    "start": 4814.92,
+    "duration": 6.52
+  },
+  {
+    "text": "sense yeah for for the the ones that are",
+    "start": 4818.2,
+    "duration": 7.28
+  },
+  {
+    "text": "not um correlated as much it&#39;s",
+    "start": 4821.44,
+    "duration": 6.84
+  },
+  {
+    "text": "probably then better to to not use",
+    "start": 4825.48,
+    "duration": 5.36
+  },
+  {
+    "text": "linear regression right because usually",
+    "start": 4828.28,
+    "duration": 4.44
+  },
+  {
+    "text": "if they&#39;re not if they&#39;re less",
+    "start": 4830.84,
+    "duration": 4.44
+  },
+  {
+    "text": "correlated there will be some more comp",
+    "start": 4832.72,
+    "duration": 6.04
+  },
+  {
+    "text": "complex relationship than just a a",
+    "start": 4835.28,
+    "duration": 6.72
+  },
+  {
+    "text": "linear like you can&#39;t really U map it to",
+    "start": 4838.76,
+    "duration": 7.56
+  },
+  {
+    "text": "a linear like to a line yeah that&#39;s",
+    "start": 4842.0,
+    "duration": 7.44
+  },
+  {
+    "text": "that&#39;s often the case for sure um and",
+    "start": 4846.32,
+    "duration": 5.68
+  },
+  {
+    "text": "that&#39;s a really yeah yeah that&#39;s such a",
+    "start": 4849.44,
+    "duration": 7.72
+  },
+  {
+    "text": "great one that uh Felix uh um not it um",
+    "start": 4852.0,
+    "duration": 6.68
+  },
+  {
+    "text": "linear regression helps when you have",
+    "start": 4857.16,
+    "duration": 3.32
+  },
+  {
+    "text": "linear correspondence in the features",
+    "start": 4858.68,
+    "duration": 5.24
+  },
+  {
+    "text": "and targets which is not always the case",
+    "start": 4860.48,
+    "duration": 5.36
+  },
+  {
+    "text": "um sometimes there could be features",
+    "start": 4863.92,
+    "duration": 4.32
+  },
+  {
+    "text": "which where there are no linear cor",
+    "start": 4865.84,
+    "duration": 4.44
+  },
+  {
+    "text": "correspondence what happens is if you",
+    "start": 4868.24,
+    "duration": 5.2
+  },
+  {
+    "text": "combine those features in complex ways",
+    "start": 4870.28,
+    "duration": 5.88
+  },
+  {
+    "text": "maybe then it makes more sense and",
+    "start": 4873.44,
+    "duration": 6.32
+  },
+  {
+    "text": "that&#39;s what new networks do better they",
+    "start": 4876.16,
+    "duration": 7.08
+  },
+  {
+    "text": "take these raw features um and in their",
+    "start": 4879.76,
+    "duration": 5.64
+  },
+  {
+    "text": "hidden layers they combine in certain",
+    "start": 4883.24,
+    "duration": 5.28
+  },
+  {
+    "text": "ways which is not even obvious to us to",
+    "start": 4885.4,
+    "duration": 5.12
+  },
+  {
+    "text": "us is just a blackbox we would never",
+    "start": 4888.52,
+    "duration": 4.24
+  },
+  {
+    "text": "understand what happens inside by the",
+    "start": 4890.52,
+    "duration": 3.72
+  },
+  {
+    "text": "end of it they come up with something",
+    "start": 4892.76,
+    "duration": 3.32
+  },
+  {
+    "text": "which is very important in decision",
+    "start": 4894.24,
+    "duration": 7.0
+  },
+  {
+    "text": "making so yeah that yeah and if you want",
+    "start": 4896.08,
+    "duration": 6.76
+  },
+  {
+    "text": "to do your project on something that&#39;s",
+    "start": 4901.24,
+    "duration": 3.88
+  },
+  {
+    "text": "not very correlated and the result but",
+    "start": 4902.84,
+    "duration": 4.84
+  },
+  {
+    "text": "the result is still",
+    "start": 4905.12,
+    "duration": 4.4
+  },
+  {
+    "text": "interesting maybe it&#39;s something that",
+    "start": 4907.68,
+    "duration": 5.92
+  },
+  {
+    "text": "you can later on use as a um as a more",
+    "start": 4909.52,
+    "duration": 7.24
+  },
+  {
+    "text": "as a using a more comp ta model yeah",
+    "start": 4913.6,
+    "duration": 5.48
+  },
+  {
+    "text": "yeah that would be",
+    "start": 4916.76,
+    "duration": 4.04
+  },
+  {
+    "text": "great",
+    "start": 4919.08,
+    "duration": 4.36
+  },
+  {
+    "text": "cool yeah again sorry we went a little",
+    "start": 4920.8,
+    "duration": 5.6
+  },
+  {
+    "text": "over and um just write in the group if",
+    "start": 4923.44,
+    "duration": 5.04
+  },
+  {
+    "text": "you come even if you come stuck with",
+    "start": 4926.4,
+    "duration": 5.32
+  },
+  {
+    "text": "something small like for example you",
+    "start": 4928.48,
+    "duration": 5.88
+  },
+  {
+    "text": "need to delete a column or some column",
+    "start": 4931.72,
+    "duration": 4.92
+  },
+  {
+    "text": "or is giving you errors or something",
+    "start": 4934.36,
+    "duration": 4.0
+  },
+  {
+    "text": "just write in the in the WhatsApp group",
+    "start": 4936.64,
+    "duration": 3.68
+  },
+  {
+    "text": "and you know I actually I was going to",
+    "start": 4938.36,
+    "duration": 3.76
+  },
+  {
+    "text": "say we but I will get back on anything",
+    "start": 4940.32,
+    "duration": 5.52
+  },
+  {
+    "text": "related with python um I&#39;ll make sure to",
+    "start": 4942.12,
+    "duration": 7.0
+  },
+  {
+    "text": "reply uh to",
+    "start": 4945.84,
+    "duration": 6.36
+  },
+  {
+    "text": "that yeah and the as well will also be",
+    "start": 4949.12,
+    "duration": 5.64
+  },
+  {
+    "text": "available so",
+    "start": 4952.2,
+    "duration": 6.08
+  },
+  {
+    "text": "yeah that&#39;s good thank",
+    "start": 4954.76,
+    "duration": 7.48
+  },
+  {
+    "text": "good cool thanks everyone and thanks",
+    "start": 4958.28,
+    "duration": 7.04
+  },
+  {
+    "text": "everyone see you on Monday yeah bye bye",
+    "start": 4962.24,
+    "duration": 6.28
+  },
+  {
+    "text": "all right good bye see you",
+    "start": 4965.32,
+    "duration": 6.64
+  },
+  {
+    "text": "soon oh",
+    "start": 4968.52,
+    "duration": 3.44
+  }
+]
