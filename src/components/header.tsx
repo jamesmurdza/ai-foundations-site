@@ -18,8 +18,8 @@ export function Header() {
             </div>
             <div className="flex items-center gap-6 flex-1 justify-center">
               <nav className="hidden items-center gap-10 md:flex justify-end">
-                {/* <NavItem href="/about" label="About" /> */}
-                <NavItem href="#courses" label="Courses" />
+                <NavItem href="/about" label="About" />
+                <NavItem href="/#courses" label="Courses" />
                 {/* <NavItem href="/workshops" label="Workshops" /> */}
               </nav>
             </div>
@@ -27,8 +27,8 @@ export function Header() {
             <MobileNavbar>
               <div className="rounded-b-lg bg-background py-4 container text-foreground shadow-xl mt-6">
                 <nav className="flex flex-col gap-1 pt-2">
-                  {/* <MobileNavItem href="/about" label="About" /> */}
-                  <MobileNavItem href="#courses" label="Courses" />
+                  <MobileNavItem href="/about" label="About" />
+                  <MobileNavItem href="/#courses" label="Courses" />
                   {/* <MobileNavItem href="/workshops" label="Workshops" /> */}
                   
                 </nav>
