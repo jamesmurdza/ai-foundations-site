@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CardStage } from "./CardStage";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -25,9 +25,22 @@ export function LongTextCard({
   onContinue,
 }: Props) {
   const [value, setValue] = useState(initial ?? "");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const trimmed = value.trim();
   const isValid = trimmed.length >= minChars && trimmed.length <= maxChars;
   const remaining = maxChars - value.length;
+
+  useEffect(() => {
+    // Defer focus by one tick so a keystroke that triggered the previous
+    // card (e.g. pressing "1" on a multiple-choice card) doesn't bleed
+    // into this textarea.
+    const id = window.setTimeout(() => {
+      textareaRef.current?.focus();
+      textareaRef.current?.setSelectionRange(value.length, value.length);
+    }, 80);
+    return () => window.clearTimeout(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <CardStage>
@@ -42,11 +55,11 @@ export function LongTextCard({
           <p className="text-sm text-muted-foreground mb-4">{helperText}</p>
         )}
         <textarea
+          ref={textareaRef}
           value={value}
           onChange={(e) => setValue(e.target.value.slice(0, maxChars))}
           rows={7}
           className="mt-2 w-full px-4 py-3 bg-background rounded-lg border text-base resize-none leading-relaxed"
-          autoFocus
         />
         <div className="flex items-center justify-between mt-2 text-xs text-muted-foreground">
           <span

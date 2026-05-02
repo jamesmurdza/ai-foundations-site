@@ -34,6 +34,37 @@ import type {
 
 const DYNAMIC_COUNT = 5;
 
+function previousStep(
+  step: Step,
+  cardIndex: number,
+  hasDynamic: boolean,
+): { step: Step; cardIndex: number } | null {
+  switch (step) {
+    case "intro":
+    case "submitted":
+    case "generating":
+      return null;
+    case "contact":
+      return { step: "intro", cardIndex: 0 };
+    case "static":
+      if (cardIndex > 0) return { step: "static", cardIndex: cardIndex - 1 };
+      return { step: "contact", cardIndex: 0 };
+    case "dynamic":
+      if (cardIndex > 0) return { step: "dynamic", cardIndex: cardIndex - 1 };
+      return { step: "static", cardIndex: STATIC_COUNT - 1 };
+    case "why":
+      return hasDynamic
+        ? { step: "dynamic", cardIndex: DYNAMIC_COUNT - 1 }
+        : { step: "static", cardIndex: STATIC_COUNT - 1 };
+    case "project":
+      return { step: "why", cardIndex: 0 };
+    case "links":
+      return { step: "project", cardIndex: 0 };
+    case "review":
+      return { step: "links", cardIndex: 0 };
+  }
+}
+
 function computeProgress(step: Step, cardIndex: number): number {
   switch (step) {
     case "intro":
@@ -369,8 +400,25 @@ export default function ApplyPage() {
         )}
       </header>
       <section className="px-6 pt-6 pb-20 flex items-start justify-center">
-        <div className="w-full" key={cardKey}>
-          {content}
+        <div className="w-full max-w-md mx-auto">
+          {(() => {
+            const prev = previousStep(
+              state.step,
+              state.cardIndex,
+              !!state.dynamicQuestions && state.dynamicQuestions.length > 0,
+            );
+            if (!prev) return <div className="h-7 mb-3" aria-hidden />;
+            return (
+              <button
+                type="button"
+                onClick={() => advance(prev)}
+                className="mb-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <span aria-hidden>←</span> Back
+              </button>
+            );
+          })()}
+          <div key={cardKey}>{content}</div>
         </div>
       </section>
     </main>

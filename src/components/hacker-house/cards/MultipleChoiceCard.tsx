@@ -24,8 +24,11 @@ export function MultipleChoiceCard({
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
       const idx = Number(e.key) - 1;
       if (idx >= 0 && idx < options.length) {
+        e.preventDefault();
+        e.stopPropagation();
         onAnswer(options[idx]);
       }
     };
