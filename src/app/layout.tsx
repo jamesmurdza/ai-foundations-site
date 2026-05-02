@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Schibsted_Grotesk } from "next/font/google";
 
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { cn } from "@/lib/utils";
 
 const fontSans = Inter({
@@ -34,6 +35,7 @@ export default function RootLayout({
           fontHeading.variable
         )}
       >
+        <SmoothScroll />
         {children}
       </body>
     </html>
