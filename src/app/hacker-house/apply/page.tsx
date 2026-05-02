@@ -232,16 +232,31 @@ export default function ApplyPage() {
       break;
     case "static": {
       const q = STATIC_QUESTIONS[state.cardIndex];
-      content = (
-        <MultipleChoiceCard
-          category={`Question ${state.cardIndex + 1} of ${STATIC_COUNT}`}
-          prompt={q.prompt}
-          options={q.options}
-          helperText={q.helperText}
-          current={state.answers[q.id]}
-          onAnswer={(opt) => handleStaticAnswer(q.id, opt)}
-        />
-      );
+      const category = `Question ${state.cardIndex + 1} of ${STATIC_COUNT}`;
+      if (q.type === "longtext") {
+        content = (
+          <LongTextCard
+            category={category}
+            prompt={q.prompt}
+            helperText={q.helperText}
+            initial={state.answers[q.id]}
+            minChars={q.minChars ?? 30}
+            maxChars={q.maxChars ?? 400}
+            onContinue={(text) => handleStaticAnswer(q.id, text)}
+          />
+        );
+      } else {
+        content = (
+          <MultipleChoiceCard
+            category={category}
+            prompt={q.prompt}
+            options={q.options ?? []}
+            helperText={q.helperText}
+            current={state.answers[q.id]}
+            onAnswer={(opt) => handleStaticAnswer(q.id, opt)}
+          />
+        );
+      }
       break;
     }
     case "generating":

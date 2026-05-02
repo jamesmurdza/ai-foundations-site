@@ -1,8 +1,11 @@
 export type StaticQuestion = {
   id: string;
   prompt: string;
-  options: string[];
+  options?: string[];
   helperText?: string;
+  type?: "mcq" | "longtext";
+  minChars?: number;
+  maxChars?: number;
 };
 
 export const STATIC_QUESTIONS: StaticQuestion[] = [
@@ -175,6 +178,15 @@ export const STATIC_QUESTIONS: StaticQuestion[] = [
     ],
     helperText:
       "Some spots are fully funded, some partially. We'd rather know honestly than guess.",
+  },
+  {
+    id: "q17",
+    prompt: "Tell us one cool, weird, or specific fact about you.",
+    helperText:
+      "Anything we wouldn't guess from your answers above — a hobby, a story, something you obsess over. The point is to give us a thread to pull on.",
+    type: "longtext",
+    minChars: 30,
+    maxChars: 400,
   },
 ];
 
