@@ -70,7 +70,17 @@ function buildAnswerSummary(answers: Record<string, string>): string {
   return lines.join("\n").trim();
 }
 
-export async function POST(_req: NextRequest, { params }: RouteCtx) {
+export async function POST(req: NextRequest, { params }: RouteCtx) {
+  let bodyAnswers: Record<string, string> | undefined;
+  try {
+    const body = (await req.json()) as { answers?: Record<string, string> | null };
+    if (body?.answers && typeof body.answers === "object") {
+      bodyAnswers = body.answers;
+    }
+  } catch {
+    /* body optional */
+  }
+
   const rows = await sql`
     SELECT answers, dynamic_questions, status
       FROM hh_applications
@@ -86,11 +96,12 @@ export async function POST(_req: NextRequest, { params }: RouteCtx) {
     return NextResponse.json({ questions: row.dynamic_questions, cached: true });
   }
 
-  const answers = (row.answers ?? {}) as Record<string, string>;
+  const dbAnswers = (row.answers ?? {}) as Record<string, string>;
+  const answers: Record<string, string> = { ...dbAnswers, ...(bodyAnswers ?? {}) };
   const answered = STATIC_QUESTIONS.filter((q) => answers[q.id]).length;
   if (answered < STATIC_COUNT) {
     return NextResponse.json(
-      { error: "incomplete_static", answered },
+      { error: "incomplete_static", answered, expected: STATIC_COUNT },
       { status: 400 },
     );
   }
@@ -145,12 +156,22 @@ export async function POST(_req: NextRequest, { params }: RouteCtx) {
 
   const questions = parsed.data.questions;
 
-  await sql`
-    UPDATE hh_applications
-       SET dynamic_questions = ${JSON.stringify(questions)}::jsonb,
-           updated_at = NOW()
-     WHERE id = ${params.id}
-  `;
+  if (bodyAnswers) {
+    await sql`
+      UPDATE hh_applications
+         SET dynamic_questions = ${JSON.stringify(questions)}::jsonb,
+             answers           = ${JSON.stringify(answers)}::jsonb,
+             updated_at        = NOW()
+       WHERE id = ${params.id}
+    `;
+  } else {
+    await sql`
+      UPDATE hh_applications
+         SET dynamic_questions = ${JSON.stringify(questions)}::jsonb,
+             updated_at        = NOW()
+       WHERE id = ${params.id}
+    `;
+  }
 
   return NextResponse.json({ questions, cached: false });
 }

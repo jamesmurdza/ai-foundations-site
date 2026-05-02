@@ -90,7 +90,7 @@ export default function ApplyPage() {
     }
     let cancelled = false;
     setGenFailed(false);
-    generateDynamicQuestions(state.sessionId)
+    generateDynamicQuestions(state.sessionId, state.answers)
       .then(({ questions }) => {
         if (cancelled) return;
         setState((s) =>

@@ -59,12 +59,22 @@ export async function createSession(state: ApplicationState): Promise<void> {
   });
 }
 
-export async function generateDynamicQuestions(sessionId: string) {
+export async function generateDynamicQuestions(
+  sessionId: string,
+  answers?: Record<string, string>,
+) {
   const res = await fetch(
     `/api/applications/sessions/${sessionId}/dynamic-questions`,
-    { method: "POST" },
+    {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ answers: answers ?? null }),
+    },
   );
-  if (!res.ok) throw new Error(`Generate failed: ${res.status}`);
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    throw new Error(`Generate failed: ${res.status}${text ? " " + text : ""}`);
+  }
   return (await res.json()) as { questions: ApplicationState["dynamicQuestions"] };
 }
 
