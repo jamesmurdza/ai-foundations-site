@@ -20,17 +20,17 @@ const FAQS = [
 
 export function FaqSection() {
   return (
-    <section className="py-24 border-t bg-muted/20">
+    <section className="py-24 md:py-32 border-t bg-muted/20">
       <div className="container">
         <div className="mx-2 md:mx-10 px-6 md:px-12 flex flex-col items-start gap-10 md:flex-row">
           <div className="flex flex-col gap-3 items-start md:w-1/3">
             <p className="text-sm uppercase tracking-[0.2em] text-purple-600">
               FAQ
             </p>
-            <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight">
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight">
               Questions
             </h2>
-            <p className="text-muted-foreground mt-2">
+            <p className="text-muted-foreground leading-relaxed mt-2">
               Got something we didn&apos;t cover?{" "}
               <a
                 href="mailto:contact@aifoundations.school"

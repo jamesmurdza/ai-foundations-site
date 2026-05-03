@@ -79,7 +79,7 @@ export function WhatIsItSection() {
                     <p.icon className="w-4 h-4 flex-shrink-0" />
                     {p.eyebrow}
                   </p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{p.body}</p>
+                  <p className="text-muted-foreground text-base leading-relaxed">{p.body}</p>
                 </div>
               ))}
             </div>
