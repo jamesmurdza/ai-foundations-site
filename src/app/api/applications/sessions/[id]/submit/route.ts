@@ -7,9 +7,9 @@ export const dynamic = "force-dynamic";
 type RouteCtx = { params: { id: string } };
 
 export async function POST(_req: NextRequest, { params }: RouteCtx) {
-  const rows = await sql`
+  const rows = (await sql`
     SELECT status FROM hh_applications WHERE id = ${params.id} LIMIT 1
-  `;
+  `) as Record<string, unknown>[];
   if (rows.length === 0) {
     return NextResponse.json({ error: "not_found" }, { status: 404 });
   }

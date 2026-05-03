@@ -8,14 +8,14 @@ export const dynamic = "force-dynamic";
 type RouteCtx = { params: { id: string } };
 
 export async function GET(_req: NextRequest, { params }: RouteCtx) {
-  const rows = await sql`
-    SELECT id, email, name, answers, dynamic_questions, status, why_text,
-           project_text, portfolio_url, github_url, other_url, step,
+  const rows = (await sql`
+    SELECT id, email, name, answers, dynamic_questions, status,
+           portfolio_url, github_url, other_url, step,
            extract(epoch from updated_at)::bigint * 1000 AS updated_at
       FROM hh_applications
      WHERE id = ${params.id}
      LIMIT 1
-  `;
+  `) as Record<string, unknown>[];
   if (rows.length === 0) {
     return NextResponse.json({ error: "not_found" }, { status: 404 });
   }
@@ -27,8 +27,6 @@ export async function GET(_req: NextRequest, { params }: RouteCtx) {
     answers: r.answers ?? {},
     dynamicQuestions: r.dynamic_questions ?? undefined,
     status: r.status,
-    whyText: r.why_text ?? undefined,
-    projectText: r.project_text ?? undefined,
     portfolioUrl: r.portfolio_url ?? undefined,
     githubUrl: r.github_url ?? undefined,
     otherUrl: r.other_url ?? undefined,
@@ -59,15 +57,15 @@ export async function PATCH(req: NextRequest, { params }: RouteCtx) {
     return NextResponse.json({ error: "id_mismatch" }, { status: 400 });
   }
 
-  const existing = await sql`
+  const existing = (await sql`
     SELECT status FROM hh_applications WHERE id = ${params.id} LIMIT 1
-  `;
+  `) as Record<string, unknown>[];
 
   if (existing.length === 0) {
     await sql`
       INSERT INTO hh_applications (
         id, email, name, answers, dynamic_questions, status,
-        why_text, project_text, portfolio_url, github_url, other_url, step
+        portfolio_url, github_url, other_url, step
       ) VALUES (
         ${s.sessionId},
         ${s.email ?? null},
@@ -75,8 +73,6 @@ export async function PATCH(req: NextRequest, { params }: RouteCtx) {
         ${JSON.stringify(s.answers)}::jsonb,
         ${s.dynamicQuestions ? JSON.stringify(s.dynamicQuestions) : null}::jsonb,
         ${s.status},
-        ${s.whyText ?? null},
-        ${s.projectText ?? null},
         ${s.portfolioUrl ?? null},
         ${s.githubUrl ?? null},
         ${s.otherUrl ?? null},
@@ -96,8 +92,6 @@ export async function PATCH(req: NextRequest, { params }: RouteCtx) {
       name              = ${s.name ?? null},
       answers           = ${JSON.stringify(s.answers)}::jsonb,
       dynamic_questions = ${s.dynamicQuestions ? JSON.stringify(s.dynamicQuestions) : null}::jsonb,
-      why_text          = ${s.whyText ?? null},
-      project_text      = ${s.projectText ?? null},
       portfolio_url     = ${s.portfolioUrl ?? null},
       github_url        = ${s.githubUrl ?? null},
       other_url         = ${s.otherUrl ?? null},
