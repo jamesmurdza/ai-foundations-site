@@ -55,31 +55,32 @@ export function WhatIsItSection() {
           <p className="text-sm uppercase tracking-[0.2em] text-purple-600 mb-3">
             What it is
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mx-auto mb-16">
+          <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mx-auto mb-10">
             Four weeks to learn and build things you care about.
           </h2>
-          <div className="grid md:grid-cols-3 gap-10">
+
+          <div className="hh-pillar mb-16 inline-grid grid-cols-[auto_1fr] gap-x-8 gap-y-3 text-left text-lg">
+            <span className="text-muted-foreground">Dates</span>
+            <span className="font-medium">August 2025</span>
+            <span className="text-muted-foreground">Location</span>
+            <span className="font-medium">Southeast Asia</span>
+          </div>
+
+          <div className="flex flex-col gap-6">
             {PILLARS.map((p) => (
               <div
                 key={p.eyebrow}
-                className="hh-pillar flex flex-col gap-3 p-6 rounded-[var(--radius)] bg-card border"
+                className="hh-pillar flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-[var(--radius)] bg-card border text-left"
               >
-                <p className="text-sm uppercase tracking-widest text-purple-600">
+                <p className="text-sm uppercase tracking-widest text-purple-600 md:w-24 flex-shrink-0">
                   {p.eyebrow}
                 </p>
-                <h3 className="font-heading text-2xl font-semibold leading-tight">
+                <h3 className="font-heading text-xl font-semibold leading-tight md:w-48 flex-shrink-0">
                   {p.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">{p.body}</p>
               </div>
             ))}
-          </div>
-
-          <div className="hh-pillar mt-16 inline-grid grid-cols-[auto_1fr] gap-x-8 gap-y-3 text-left text-lg">
-            <span className="text-muted-foreground">Dates</span>
-            <span className="font-medium">August 2025</span>
-            <span className="text-muted-foreground">Location</span>
-            <span className="font-medium">Southeast Asia</span>
           </div>
         </div>
       </div>
