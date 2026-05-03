@@ -2,6 +2,7 @@
 
 import { Brain, Code, CircuitBoard, Sparkle } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import {toast} from "react-toastify"
 
@@ -51,6 +52,21 @@ export function Hero() {
   return (
     <section className="pb-10">
       <div className="container">
+        <div className="mx-2 md:mx-10 border-x border-t-0 px-4 py-3 flex justify-center">
+          <Link
+            href="/hacker-house"
+            className="group inline-flex items-center gap-2 text-sm hover:text-purple-700 transition-colors"
+          >
+            <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
+            <span className="text-muted-foreground">
+              <span className="font-medium text-foreground">Applications open:</span>{" "}
+              4-week Summer School — applications open
+            </span>
+            <span className="text-purple-600 group-hover:translate-x-0.5 transition-transform">
+              →
+            </span>
+          </Link>
+        </div>
         <div className="flex flex-col items-center gap-6 pt-20 mb-4 border border-t-0 mx-2 md:mx-10 relative">
           <h1 className="text-center font-heading font-semibold tracking-tight text-balance max-w-3xl md:text-7xl text-5xl sm:text-6xl">
             Learn AI From the Ground Up
