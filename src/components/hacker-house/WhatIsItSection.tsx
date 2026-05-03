@@ -62,11 +62,18 @@ export function WhatIsItSection() {
         </div>
 
         <div className="mx-2 md:mx-10 px-6 md:px-12 mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <figure className="hh-pillar relative aspect-[4/3] overflow-hidden rounded-lg border bg-white shadow-sm">
               <img
                 src="/images/sketches/sketch-2.jpg"
                 alt="A solitary boat on quiet water beneath karst mountains"
+                className="object-cover w-full h-full"
+              />
+            </figure>
+            <figure className="hh-pillar relative aspect-[4/3] overflow-hidden rounded-lg border bg-white shadow-sm">
+              <img
+                src="/images/sketches/sketch-4.jpg"
+                alt="Open bamboo balcony with a team coding around a table"
                 className="object-cover w-full h-full"
               />
             </figure>
