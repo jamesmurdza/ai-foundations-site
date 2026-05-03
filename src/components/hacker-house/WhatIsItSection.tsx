@@ -75,7 +75,7 @@ export function WhatIsItSection() {
                   key={p.eyebrow}
                   className="flex flex-col gap-1 p-2 text-left"
                 >
-                  <p className="flex items-center gap-2 text-sm uppercase tracking-widest text-foreground font-medium">
+                  <p className="flex items-center gap-2 text-sm uppercase tracking-widest text-black font-medium">
                     <p.icon className="w-4 h-4 flex-shrink-0" />
                     {p.eyebrow}
                   </p>
