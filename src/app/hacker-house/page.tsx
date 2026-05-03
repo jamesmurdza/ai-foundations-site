@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer";
 
 import { HeroSection } from "@/components/hacker-house/HeroSection";
 import { WhatIsItSection } from "@/components/hacker-house/WhatIsItSection";
+import { DetailsSection } from "@/components/hacker-house/DetailsSection";
+import { PillarsSection } from "@/components/hacker-house/PillarsSection";
 import { WhoItsForSection } from "@/components/hacker-house/WhoItsForSection";
 import { HostsSection } from "@/components/hacker-house/HostsSection";
 import { ApplySection } from "@/components/hacker-house/ApplySection";
@@ -23,6 +25,8 @@ export default function HackerHousePage() {
       <main>
         <HeroSection />
         <WhatIsItSection />
+        <DetailsSection />
+        <PillarsSection />
         <WhoItsForSection />
         <HostsSection />
         <ApplySection />
