@@ -9,20 +9,8 @@ const FAQS = [
     a: "No tuition. We cover travel and accommodation (partially or fully depending on your situation). If cost is an issue, mention it in your application and we'll work something out.",
   },
   {
-    q: "Where is it?",
-    a: "We'll share the location with people we accept. It's somewhere quiet and good for focused work.",
-  },
-  {
-    q: "When is it?",
-    a: "Dates are shared with selected applicants. We pick on a rolling basis, so the sooner you apply, the better.",
-  },
-  {
     q: "Do I need to know how to code?",
-    a: "No. Code, low-code, or no-code — what matters is whether you build. Some of the most interesting people we've met don't write code at all.",
-  },
-  {
-    q: "What's expected of me?",
-    a: "Show up and work on your projects. This isn't a vacation — we expect you to be focused for the four weeks.",
+    a: "No. Code, low-code, or no-code — what matters is whether you build.",
   },
   {
     q: "How do you decide?",
