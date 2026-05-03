@@ -34,7 +34,15 @@ export function DetailsSection() {
     <section ref={root} className="py-24 md:py-32 border-t">
       <div className="container">
         <div className="mx-2 md:mx-10 px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="hh-details text-sm uppercase tracking-[0.2em] text-purple-600 mb-3">
+              When & Where
+            </p>
+            <h2 className="hh-details font-heading text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl mx-auto">
+              Four weeks in Southeast Asia, August 2025
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <figure className="hh-details relative aspect-[4/3] overflow-hidden rounded-lg border bg-white shadow-sm">
               <img
                 src="/images/sketches/sketch-2.jpg"
@@ -42,13 +50,10 @@ export function DetailsSection() {
                 className="object-cover w-full h-full"
               />
             </figure>
-            <div className="hh-details flex flex-col justify-center gap-6 p-8 rounded-lg border bg-card">
-              <div className="grid grid-cols-[auto_1fr] gap-x-8 gap-y-4 text-left text-lg">
-                <span className="text-muted-foreground">Dates</span>
-                <span className="font-medium">August 2025</span>
-                <span className="text-muted-foreground">Location</span>
-                <span className="font-medium">Southeast Asia</span>
-              </div>
+            <div className="hh-details flex flex-col justify-center text-lg text-muted-foreground leading-relaxed">
+              <p>
+                We'll live and work together in a quiet location. Exact details shared with accepted applicants.
+              </p>
             </div>
           </div>
         </div>
