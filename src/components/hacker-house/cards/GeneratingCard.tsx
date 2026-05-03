@@ -6,10 +6,10 @@ import { gsap, registerGsap } from "@/lib/gsap";
 import { CardStage } from "./CardStage";
 
 const STAGES = [
-  "Reading what you wrote…",
-  "Spotting tensions in your answers…",
-  "Drafting your five follow-ups…",
+  "One moment…",
+  "Still working…",
   "Almost there…",
+  "Just a few more seconds…",
 ];
 
 const STAGE_AT = [0, 4, 9, 14];
@@ -76,7 +76,7 @@ export function GeneratingCard({ message }: { message?: string } = {}) {
           </h2>
         </div>
         <p className="text-muted-foreground max-w-sm">
-          We&apos;re generating five questions tailored to your answers.
+          We&apos;re generating a couple of follow-up questions based on your answers.
           Usually about ten seconds.
         </p>
 

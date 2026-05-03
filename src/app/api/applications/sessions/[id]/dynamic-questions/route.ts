@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import type Anthropic from "@anthropic-ai/sdk";
 import { sql } from "@/lib/db";
 import { anthropic, HAIKU_MODEL } from "@/lib/anthropic";
-import { STATIC_COUNT, STATIC_QUESTIONS } from "@/lib/hacker-house/questions";
+import { STATIC_QUESTIONS, getVisibleQuestions } from "@/lib/hacker-house/questions";
 import { dynamicQuestionsResponseSchema } from "@/lib/hacker-house/types";
 
 export const runtime = "nodejs";
@@ -11,44 +11,49 @@ export const maxDuration = 30;
 
 type RouteCtx = { params: { id: string } };
 
-const SYSTEM_PROMPT = `You are an admissions interviewer for a competitive 4-week intensive program where 6 builders from around the world (college students especially welcome, but not required) build their portfolios full-time. The program selects for: real builder energy, eagerness to learn, growth mindset, and willingness to ship hard things in a collaborative environment.
+const SYSTEM_PROMPT = `You are an admissions interviewer for a 4-week summer program where builders work on their portfolios together in Southeast Asia.
 
-You will be given a candidate's multiple-choice answers (about 15-20 questions covering personality, work style, commitment, and logistics). Generate exactly 5 follow-up multiple-choice questions that probe DEEPER, not BROADER. Each question should:
-- Surface a contradiction, tension, or unexamined claim in their answers
-- Be specific to *this* candidate's profile (not generic)
-- Have 4 options of similar plausibility, no obvious "right" answer
-- Be conversational and warm in tone (not corporate)
-- Avoid demographic content (gender, race, religion, age)
-- Avoid asking "why do you want to apply" — that's covered separately
+You will be given a candidate's answers about their background, projects, motivations, and what they'd like to teach. Generate exactly 2 follow-up questions.
 
-Use ids q-dyn-1 through q-dyn-5. Keep each question under 140 characters and each option under 80 characters. Return via the generate_followups tool only.`;
+Question 1 (id: q-dyn-1): About their PROJECTS
+- Dig into what they've actually built or want to build
+- Ask for specifics, examples, or what excited them about a project
+- Reference their answer to "What kind of projects do you like to build?"
+
+Question 2 (id: q-dyn-2): About their MOTIVATION or INTERESTS
+- Dig into why they care about what they do
+- Connect their motivation answer to what they want to teach or learn
+- Reference their answers to "What motivates you most?" and "What would you like to teach others?"
+
+Both questions should:
+- Be open-ended text responses (not multiple choice)
+- Be specific to *this* candidate (reference their actual answers)
+- Be conversational and warm
+- Be under 140 characters
+
+Return via the generate_followups tool only.`;
 
 const TOOL: Anthropic.Tool = {
   name: "generate_followups",
   description:
-    "Return 5 follow-up multiple-choice questions tailored to the candidate.",
+    "Return 2 follow-up text questions tailored to the candidate.",
   input_schema: {
     type: "object",
     properties: {
       questions: {
         type: "array",
-        minItems: 5,
-        maxItems: 5,
+        minItems: 2,
+        maxItems: 2,
         items: {
           type: "object",
-          required: ["id", "question", "options", "probes"],
+          required: ["id", "question", "type", "probes"],
           properties: {
-            id: { type: "string", description: "q-dyn-1 .. q-dyn-5" },
+            id: { type: "string", description: "q-dyn-1 or q-dyn-2" },
             question: { type: "string" },
-            options: {
-              type: "array",
-              minItems: 4,
-              maxItems: 4,
-              items: { type: "string" },
-            },
+            type: { type: "string", enum: ["text"], default: "text" },
             probes: {
               type: "string",
-              description: "Internal: which prior answer or tension this probes",
+              description: "Internal: which prior answer this probes",
             },
           },
         },
@@ -98,10 +103,13 @@ export async function POST(req: NextRequest, { params }: RouteCtx) {
 
   const dbAnswers = (row.answers ?? {}) as Record<string, string>;
   const answers: Record<string, string> = { ...dbAnswers, ...(bodyAnswers ?? {}) };
-  const answered = STATIC_QUESTIONS.filter((q) => answers[q.id]).length;
-  if (answered < STATIC_COUNT) {
+
+  // Check that all visible questions are answered
+  const visibleQuestions = getVisibleQuestions(answers);
+  const answered = visibleQuestions.filter((q) => answers[q.id]).length;
+  if (answered < visibleQuestions.length) {
     return NextResponse.json(
-      { error: "incomplete_static", answered, expected: STATIC_COUNT },
+      { error: "incomplete_static", answered, expected: visibleQuestions.length },
       { status: 400 },
     );
   }
@@ -112,7 +120,7 @@ export async function POST(req: NextRequest, { params }: RouteCtx) {
   try {
     response = await anthropic.messages.create({
       model: HAIKU_MODEL,
-      max_tokens: 2048,
+      max_tokens: 1024,
       system: [
         {
           type: "text",
@@ -125,7 +133,7 @@ export async function POST(req: NextRequest, { params }: RouteCtx) {
       messages: [
         {
           role: "user",
-          content: `Here are the candidate's 15 answers:\n\n${summary}\n\nGenerate 5 follow-up questions via the generate_followups tool.`,
+          content: `Here are the candidate's answers:\n\n${summary}\n\nGenerate 2 follow-up questions via the generate_followups tool.`,
         },
       ],
     });

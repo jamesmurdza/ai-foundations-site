@@ -5,18 +5,16 @@ import { Footer } from "@/components/footer";
 
 import { HeroSection } from "@/components/hacker-house/HeroSection";
 import { WhatIsItSection } from "@/components/hacker-house/WhatIsItSection";
-import { VibeSection } from "@/components/hacker-house/VibeSection";
+import { DetailsSection } from "@/components/hacker-house/DetailsSection";
 import { WhoItsForSection } from "@/components/hacker-house/WhoItsForSection";
-import { OutcomesSection } from "@/components/hacker-house/OutcomesSection";
-import { ScheduleSection } from "@/components/hacker-house/ScheduleSection";
 import { HostsSection } from "@/components/hacker-house/HostsSection";
 import { ApplySection } from "@/components/hacker-house/ApplySection";
 import { FaqSection } from "@/components/hacker-house/FaqSection";
 
 export const metadata: Metadata = {
-  title: "Hacker House — AI Foundations",
+  title: "Summer School — AI Foundations",
   description:
-    "A 4-week, in-person hacker house for six builders — college students especially welcome. Build a real portfolio with James Murdza and Burhan Khatri.",
+    "A 4-week, in-person summer school for builders who want to improve their portfolio. College students welcome.",
 };
 
 export default function HackerHousePage() {
@@ -26,10 +24,8 @@ export default function HackerHousePage() {
       <main>
         <HeroSection />
         <WhatIsItSection />
-        <VibeSection />
+        <DetailsSection />
         <WhoItsForSection />
-        <OutcomesSection />
-        <ScheduleSection />
         <HostsSection />
         <ApplySection />
         <FaqSection />

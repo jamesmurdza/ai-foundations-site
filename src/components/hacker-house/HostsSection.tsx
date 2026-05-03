@@ -36,10 +36,10 @@ export function HostsSection() {
       <div className="container">
         <div className="mx-2 md:mx-10 px-6 md:px-12 text-center">
           <p className="text-sm uppercase tracking-[0.2em] text-purple-600 mb-3">
-            Hosts
+            Guides
           </p>
           <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mb-16 mx-auto">
-            Who you&apos;ll be in the house with.
+            Your guides
           </h2>
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 max-w-4xl mx-auto">
             <div className="hh-host flex flex-col items-center text-center">
@@ -55,17 +55,7 @@ export function HostsSection() {
                 James Murdza
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Software developer and educator. Has taught coding to thousands
-                through videos and livestreams. Co-founder of{" "}
-                <a
-                  href="https://gitwit.dev"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-foreground underline-offset-4 hover:underline"
-                >
-                  gitwit.dev
-                </a>
-                . Will probably teach you a debug trick that saves you a week.
+                AI engineer at Daytona. Builds developer tools and teaches through livestreams.
               </p>
             </div>
             <div className="hh-host flex flex-col items-center text-center">
@@ -81,17 +71,7 @@ export function HostsSection() {
                 Burhan Khatri
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Builder shipping with AI for the past few years. Product AI
-                engineer at Astera Software, and built{" "}
-                <a
-                  href="https://gitwit.dev"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-foreground underline-offset-4 hover:underline"
-                >
-                  gitwit.dev
-                </a>{" "}
-                with James. Runs AI Foundations.
+                AI engineer at Astera. Microsoft Learn Student Ambassador. Runs AI Foundations.
               </p>
             </div>
           </div>

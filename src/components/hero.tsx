@@ -60,7 +60,7 @@ export function Hero() {
             <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
             <span className="text-muted-foreground">
               <span className="font-medium text-foreground">Applications open:</span>{" "}
-              4-week Hacker House for 6 builders
+              4-week Summer School — applications open
             </span>
             <span className="text-purple-600 group-hover:translate-x-0.5 transition-transform">
               →

@@ -2,7 +2,7 @@
 
 import { CardStage } from "./CardStage";
 import { Button } from "@/components/ui/button";
-import { STATIC_QUESTIONS } from "@/lib/hacker-house/questions";
+import { getVisibleQuestions } from "@/lib/hacker-house/questions";
 import type { ApplicationState } from "@/lib/hacker-house/types";
 
 type Props = {
@@ -14,6 +14,8 @@ type Props = {
 
 export function ReviewCard({ state, onEdit, onSubmit, submitting }: Props) {
   const dyn = state.dynamicQuestions ?? [];
+  const visibleQuestions = getVisibleQuestions(state.answers);
+
   return (
     <CardStage className="!min-h-[560px]">
       <div className="flex-1 flex flex-col overflow-hidden">
@@ -25,8 +27,8 @@ export function ReviewCard({ state, onEdit, onSubmit, submitting }: Props) {
         </h2>
         <div className="flex-1 overflow-y-auto pr-2 -mr-2 space-y-4 text-sm">
           <Section
-            title="The 15"
-            items={STATIC_QUESTIONS.map((q, i) => ({
+            title="Your answers"
+            items={visibleQuestions.map((q, i) => ({
               key: q.id,
               prompt: q.prompt,
               answer: state.answers[q.id] ?? "—",
@@ -36,7 +38,7 @@ export function ReviewCard({ state, onEdit, onSubmit, submitting }: Props) {
           />
           {dyn.length > 0 && (
             <Section
-              title="The 5 follow-ups"
+              title="Follow-ups"
               items={dyn.map((q, i) => ({
                 key: q.id,
                 prompt: q.question,
@@ -46,23 +48,6 @@ export function ReviewCard({ state, onEdit, onSubmit, submitting }: Props) {
               }))}
             />
           )}
-          <Section
-            title="In your words"
-            items={[
-              {
-                key: "why",
-                prompt: "Why",
-                answer: state.whyText ?? "—",
-                onClick: () => onEdit({ step: "why", cardIndex: 0 }),
-              },
-              {
-                key: "project",
-                prompt: "Recent project",
-                answer: state.projectText ?? "—",
-                onClick: () => onEdit({ step: "project", cardIndex: 0 }),
-              },
-            ]}
-          />
           {(state.portfolioUrl || state.githubUrl || state.otherUrl) && (
             <Section
               title="Links"

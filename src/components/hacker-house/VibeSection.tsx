@@ -7,24 +7,14 @@ import { gsap, registerGsap } from "@/lib/gsap";
 
 const SKETCHES = [
   {
-    src: "/images/sketches/sketch-3.jpg",
-    alt: "Builders working at a wooden terrace table with a karst mountain view in the distance",
-    span: "md:col-span-7",
-  },
-  {
-    src: "/images/sketches/sketch-1.jpg",
-    alt: "Indoor hacker house — six builders heads-down at a long wooden table with laptops and a Build-in-Public whiteboard",
-    span: "md:col-span-5",
-  },
-  {
     src: "/images/sketches/sketch-2.jpg",
     alt: "A solitary boat on quiet water beneath karst mountains, conical hat, lotus pads in the foreground",
-    span: "md:col-span-5",
+    span: "md:col-span-6",
   },
   {
     src: "/images/sketches/sketch-4.jpg",
     alt: "Open bamboo balcony with a team coding around a table, looking out over a river valley and karst mountains",
-    span: "md:col-span-7",
+    span: "md:col-span-6",
   },
 ];
 
@@ -74,12 +64,11 @@ export function VibeSection() {
             The vibe
           </p>
           <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mx-auto">
-            A month that looks like this.
+            What it looks like
           </h2>
           <p className="text-muted-foreground mt-6 max-w-xl mx-auto leading-relaxed">
-            Long focused mornings. Mountains and quiet water in the afternoon.
-            Six builders, one table. We&apos;ll share exactly where when we make
-            offers.
+            Focused mornings, nice scenery in the afternoon. We&apos;ll share the
+            location when we make offers.
           </p>
         </div>
 
