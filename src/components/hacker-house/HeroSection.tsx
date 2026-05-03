@@ -54,8 +54,8 @@ export function HeroSection() {
             AI Foundations is hosting our first summer school.
           </h1>
           <p className="hh-sub mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            You will learn and teach in a community that grows through building
-            together.
+            Learn and teach for four weeks in a community that grows through
+            building together.
           </p>
         </div>
 
