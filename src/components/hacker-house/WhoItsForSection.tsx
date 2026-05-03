@@ -50,11 +50,11 @@ export function WhoItsForSection() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <figure className="hh-row relative aspect-[4/3] overflow-hidden rounded-lg border bg-white shadow-sm">
+            <figure className="hh-row relative aspect-[4/3] overflow-hidden">
               <img
                 src="/images/sketches/sketch-1.jpg"
                 alt="Sketch of builders collaborating"
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full mix-blend-multiply"
               />
             </figure>
             <div className="hh-row flex flex-col justify-center">
