@@ -39,7 +39,7 @@ export function SubmittedCard({ name }: { name?: string }) {
           variant="outline"
           className="w-full"
         >
-          <Link href="/hacker-house">Back to summer school page</Link>
+          <Link href="/summer-school">Back to summer school page</Link>
         </Button>
       </div>
     </CardStage>
