@@ -26,6 +26,28 @@ export function ReviewCard({ state, onEdit, onSubmit, submitting }: Props) {
           Looks good?
         </h2>
         <div className="flex-1 overflow-y-auto pr-2 -mr-2 space-y-4 text-sm">
+          <Section
+            title="Your answers"
+            items={visibleQuestions.map((q, i) => ({
+              key: q.id,
+              prompt: q.prompt,
+              answer: state.answers[q.id] ?? "—",
+              onClick: () =>
+                onEdit({ step: "static", cardIndex: i }),
+            }))}
+          />
+          {dyn.length > 0 && (
+            <Section
+              title="Follow-ups"
+              items={dyn.map((q, i) => ({
+                key: q.id,
+                prompt: q.question,
+                answer: state.answers[q.id] ?? "—",
+                onClick: () =>
+                  onEdit({ step: "dynamic", cardIndex: i }),
+              }))}
+            />
+          )}
           {(state.portfolioUrl || state.githubUrl || state.otherUrl) && (
             <Section
               title="Links"
@@ -54,28 +76,6 @@ export function ReviewCard({ state, onEdit, onSubmit, submitting }: Props) {
                 answer: string;
                 onClick: () => void;
               }[]}
-            />
-          )}
-          <Section
-            title="Your answers"
-            items={visibleQuestions.map((q, i) => ({
-              key: q.id,
-              prompt: q.prompt,
-              answer: state.answers[q.id] ?? "—",
-              onClick: () =>
-                onEdit({ step: "static", cardIndex: i }),
-            }))}
-          />
-          {dyn.length > 0 && (
-            <Section
-              title="Follow-ups"
-              items={dyn.map((q, i) => ({
-                key: q.id,
-                prompt: q.question,
-                answer: state.answers[q.id] ?? "—",
-                onClick: () =>
-                  onEdit({ step: "dynamic", cardIndex: i }),
-              }))}
             />
           )}
         </div>

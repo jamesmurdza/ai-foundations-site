@@ -46,18 +46,18 @@ function previousStep(
       return null;
     case "contact":
       return { step: "intro", cardIndex: 0 };
-    case "links":
-      return { step: "contact", cardIndex: 0 };
     case "static":
       if (cardIndex > 0) return { step: "static", cardIndex: cardIndex - 1 };
-      return { step: "links", cardIndex: 0 };
+      return { step: "contact", cardIndex: 0 };
     case "dynamic":
       if (cardIndex > 0) return { step: "dynamic", cardIndex: cardIndex - 1 };
       return { step: "static", cardIndex: visibleCount - 1 };
-    case "review":
+    case "links":
       return hasDynamic
         ? { step: "dynamic", cardIndex: DYNAMIC_COUNT - 1 }
         : { step: "static", cardIndex: visibleCount - 1 };
+    case "review":
+      return { step: "links", cardIndex: 0 };
   }
 }
 
@@ -67,14 +67,14 @@ function computeProgress(step: Step, cardIndex: number, visibleCount: number): n
       return 0;
     case "contact":
       return 0.04;
-    case "links":
-      return 0.08;
     case "static":
-      return 0.12 + (cardIndex / visibleCount) * 0.5;
+      return 0.08 + (cardIndex / visibleCount) * 0.5;
     case "generating":
-      return 0.65;
+      return 0.6;
     case "dynamic":
-      return 0.7 + (cardIndex / DYNAMIC_COUNT) * 0.2;
+      return 0.65 + (cardIndex / DYNAMIC_COUNT) * 0.2;
+    case "links":
+      return 0.9;
     case "review":
       return 0.95;
     case "submitted":
@@ -153,7 +153,7 @@ export default function ApplyPage() {
   const handleBegin = () => advance({ step: "contact" });
 
   const handleContact = ({ name, email }: { name: string; email: string }) =>
-    advance({ name, email, step: "links", cardIndex: 0 });
+    advance({ name, email, step: "static", cardIndex: 0 });
 
   const handleLinks = (urls: {
     portfolioUrl?: string;
@@ -162,7 +162,7 @@ export default function ApplyPage() {
   }) =>
     advance({
       ...urls,
-      step: "static",
+      step: "review",
       cardIndex: 0,
     });
 
@@ -227,7 +227,7 @@ export default function ApplyPage() {
       return {
         ...prev,
         answers,
-        step: "review",
+        step: "links",
         cardIndex: 0,
         updatedAt: Date.now(),
       };
@@ -340,10 +340,10 @@ export default function ApplyPage() {
             </div>
             <div className="pt-6">
               <button
-                onClick={() => advance({ step: "review", cardIndex: 0 })}
+                onClick={() => advance({ step: "links", cardIndex: 0 })}
                 className="w-full py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white"
               >
-                Skip to review →
+                Skip to next →
               </button>
             </div>
           </CardStage>
