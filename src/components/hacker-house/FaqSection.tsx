@@ -5,7 +5,7 @@ import { FaqItem } from "@/components/faq-item";
 
 const FAQS = [
   {
-    q: "Does it cost anything?",
+    q: "How much does it cost?",
     a: "No tuition. We cover travel and accommodation (partially or fully depending on your situation). If cost is an issue, mention it in your application and we'll work something out.",
   },
   {
@@ -15,10 +15,6 @@ const FAQS = [
   {
     q: "How do you decide?",
     a: "We read every application. We're looking for people who'll work well together, from different backgrounds and places.",
-  },
-  {
-    q: "What happens after?",
-    a: "You leave with finished projects, a portfolio video, and hopefully some good references. We stay in touch.",
   },
 ];
 
