@@ -6,10 +6,10 @@ import { gsap, registerGsap } from "@/lib/gsap";
 import { CardStage } from "./CardStage";
 
 const STAGES = [
-  "Reading what you wrote…",
-  "Thinking about your answers…",
-  "Drafting follow-up questions…",
+  "One moment…",
+  "Still working…",
   "Almost there…",
+  "Just a few more seconds…",
 ];
 
 const STAGE_AT = [0, 4, 9, 14];
