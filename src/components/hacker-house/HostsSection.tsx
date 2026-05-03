@@ -71,7 +71,7 @@ export function HostsSection() {
                 Burhan Khatri
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                AI engineer at Astera. Runs AI Foundations.
+                AI engineer at Astera. Microsoft Learn Student Ambassador. Runs AI Foundations.
               </p>
             </div>
           </div>
