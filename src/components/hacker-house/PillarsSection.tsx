@@ -55,10 +55,10 @@ export function PillarsSection() {
         <div className="mx-2 md:mx-10 px-6 md:px-12">
           <div className="text-center mb-12">
             <p className="hh-pillars text-sm uppercase tracking-[0.2em] text-purple-600 mb-3">
-              What You'll Do
+              What It Is
             </p>
             <h2 className="hh-pillars font-heading text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl mx-auto">
-              Build, reflect, and explore
+              Four weeks to learn and build things you care about.
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
