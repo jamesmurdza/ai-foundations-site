@@ -62,11 +62,11 @@ export function WhatIsItSection() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <figure className="hh-what relative aspect-[4/3] overflow-hidden rounded-lg border bg-white shadow-sm">
+            <figure className="hh-what relative aspect-[4/3] overflow-hidden">
               <img
                 src="/images/sketches/sketch-4.jpg"
                 alt="Open bamboo balcony with a team coding around a table"
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full mix-blend-multiply"
               />
             </figure>
             <div className="hh-what flex flex-col justify-center gap-2">
