@@ -38,7 +38,7 @@ export function DetailsSection() {
             <p className="hh-details text-sm uppercase tracking-[0.2em] text-purple-600 mb-3">
               When & Where
             </p>
-            <h2 className="hh-details font-heading text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl mx-auto">
+            <h2 className="hh-details font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mx-auto">
               Four weeks in Southeast Asia, August 2025
             </h2>
           </div>
