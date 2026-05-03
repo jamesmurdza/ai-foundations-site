@@ -7,8 +7,8 @@ import { CardStage } from "./CardStage";
 
 const STAGES = [
   "Reading what you wrote…",
-  "Spotting tensions in your answers…",
-  "Drafting your five follow-ups…",
+  "Thinking about your answers…",
+  "Drafting follow-up questions…",
   "Almost there…",
 ];
 
@@ -76,7 +76,7 @@ export function GeneratingCard({ message }: { message?: string } = {}) {
           </h2>
         </div>
         <p className="text-muted-foreground max-w-sm">
-          We&apos;re generating five questions tailored to your answers.
+          We&apos;re generating a couple of follow-up questions based on your answers.
           Usually about ten seconds.
         </p>
 

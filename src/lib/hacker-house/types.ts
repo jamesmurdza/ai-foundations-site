@@ -3,24 +3,22 @@ import { z } from "zod";
 export const dynamicQuestionSchema = z.object({
   id: z.string(),
   question: z.string().min(1),
-  options: z.array(z.string().min(1)).length(4),
+  type: z.enum(["text"]).default("text"),
   probes: z.string().optional(),
 });
 export type DynamicQuestion = z.infer<typeof dynamicQuestionSchema>;
 
 export const dynamicQuestionsResponseSchema = z.object({
-  questions: z.array(dynamicQuestionSchema).length(5),
+  questions: z.array(dynamicQuestionSchema).length(2),
 });
 
 export const stepSchema = z.enum([
   "intro",
   "contact",
+  "links",
   "static",
   "generating",
   "dynamic",
-  "why",
-  "project",
-  "links",
   "review",
   "submitted",
 ]);
@@ -32,8 +30,6 @@ export const applicationStateSchema = z.object({
   name: z.string().max(120).optional(),
   answers: z.record(z.string(), z.string()).default({}),
   dynamicQuestions: z.array(dynamicQuestionSchema).optional(),
-  whyText: z.string().max(2000).optional(),
-  projectText: z.string().max(2000).optional(),
   portfolioUrl: z.string().max(500).optional(),
   githubUrl: z.string().max(500).optional(),
   otherUrl: z.string().max(500).optional(),

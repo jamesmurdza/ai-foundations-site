@@ -6,119 +6,99 @@ export type StaticQuestion = {
   type?: "mcq" | "longtext";
   minChars?: number;
   maxChars?: number;
+  conditionalOn?: { questionId: string; answer: string };
 };
 
 export const STATIC_QUESTIONS: StaticQuestion[] = [
   {
     id: "q1",
-    prompt: "What stage are you at right now?",
-    options: [
-      "Just curious about AI",
-      "Actively learning, no projects yet",
-      "Built a couple of personal projects",
-      "Shipping things people use",
-    ],
+    prompt: "What country do you live in?",
+    type: "longtext",
+    minChars: 2,
+    maxChars: 100,
   },
   {
     id: "q2",
-    prompt: "How do you build today?",
-    options: [
-      "Mostly code (Python, JS, etc.)",
-      "Mostly low-code (Bubble, Webflow, n8n)",
-      "Mostly no-code (Notion, AI tools, prompts)",
-      "Generalist — whatever fits",
-    ],
+    prompt: "What stage are you at in life?",
+    options: ["Studying", "Working", "Other"],
+  },
+  {
+    id: "q2a",
+    prompt: "Where are you studying?",
+    type: "longtext",
+    minChars: 2,
+    maxChars: 200,
+    conditionalOn: { questionId: "q2", answer: "Studying" },
+  },
+  {
+    id: "q2b",
+    prompt: "Where do you work?",
+    type: "longtext",
+    minChars: 2,
+    maxChars: 200,
+    conditionalOn: { questionId: "q2", answer: "Working" },
+  },
+  {
+    id: "q2c",
+    prompt: "What are you up to?",
+    type: "longtext",
+    minChars: 2,
+    maxChars: 200,
+    conditionalOn: { questionId: "q2", answer: "Other" },
   },
   {
     id: "q3",
-    prompt: "Your portfolio right now is…",
-    options: [
-      "Non-existent — I want to start one",
-      "A few half-finished things",
-      "One or two solid projects",
-      "Multiple shipped projects with users",
-    ],
+    prompt: "What kind of projects do you like to build?",
+    type: "longtext",
+    minChars: 10,
+    maxChars: 500,
   },
   {
     id: "q4",
-    prompt: "For the next 4 weeks, building your portfolio is…",
+    prompt: "When you're building, are you more…",
     options: [
-      "The single most important thing in my life",
-      "One of my top 2-3 priorities",
-      "Important but I have other big stuff",
-      "Just curious what would happen",
+      "Meticulous — focused on the implementation",
+      "Vibes — if it works, it works",
+      "Vibes to start, meticulous to finish",
     ],
   },
   {
     id: "q5",
-    prompt: "When you hit a hard problem, you usually:",
+    prompt: "What motivates you most in your work?",
     options: [
-      "Bash my head against it until it cracks",
-      "Ask someone I trust for help",
-      "Search and read until I find a path",
-      "Take a walk and come back",
+      "Solving hard problems",
+      "Making something people love",
+      "Building a reputation",
+      "Financial independence",
+      "I'm still figuring it out",
     ],
   },
   {
     id: "q6",
-    prompt: "In a group of 6 strangers building together, you'd probably be:",
-    options: [
-      "The one organizing the schedule",
-      "The one with the wild ideas",
-      "The one quietly shipping",
-      "The one keeping morale up",
-      "The one asking the hard questions",
-    ],
+    prompt: "What's something you'd like to teach others?",
+    type: "longtext",
+    minChars: 10,
+    maxChars: 500,
   },
   {
     id: "q7",
-    prompt: "Where in the world are you based?",
+    prompt: "How free are you in August 2025?",
     options: [
-      "North America",
-      "Latin America",
-      "Europe",
-      "Africa",
-      "Middle East",
-      "South Asia",
-      "Southeast Asia",
-      "East Asia",
-      "Oceania",
+      "Completely free — I can commit 100%",
+      "Mostly free — minor commitments",
+      "Partially free — some obligations",
+      "Not sure yet",
     ],
-    helperText: "Helps us coordinate timezones and travel.",
-  },
-  {
-    id: "q8",
-    prompt: "Your biggest fear about a 4-week intensive like this is:",
-    options: [
-      "Not being good enough technically",
-      "Burning out or overcommitting",
-      "Not getting along with people",
-      "Spending the time and not having anything to show",
-      "I'm not really afraid, just excited",
-    ],
-  },
-  {
-    id: "q9",
-    prompt: "On funding — which fits you?",
-    options: [
-      "I'd need full funding (housing + travel) to make it work",
-      "I'd need partial help — I can cover part myself",
-      "I can self-fund this entirely",
-      "I'd rather not say yet, let's talk if I'm picked",
-    ],
-    helperText:
-      "Some spots are fully funded, some partially. We'd rather know honestly than guess.",
-  },
-  {
-    id: "q10",
-    prompt: "Tell us one cool, weird, or specific fact about you.",
-    helperText:
-      "Anything we wouldn't guess from your answers above — a hobby, a story, something you obsess over. The point is to give us a thread to pull on.",
-    type: "longtext",
-    minChars: 30,
-    maxChars: 400,
   },
 ];
+
+// Get questions that should be shown (excluding conditional questions that don't match)
+export function getVisibleQuestions(answers: Record<string, string>): StaticQuestion[] {
+  return STATIC_QUESTIONS.filter((q) => {
+    if (!q.conditionalOn) return true;
+    return answers[q.conditionalOn.questionId] === q.conditionalOn.answer;
+  });
+}
 
 export const STATIC_QUESTION_IDS = STATIC_QUESTIONS.map((q) => q.id);
 export const STATIC_COUNT = STATIC_QUESTIONS.length;

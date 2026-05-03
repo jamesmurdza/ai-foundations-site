@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 import { CardStage } from "@/components/hacker-house/cards/CardStage";
@@ -15,7 +14,7 @@ import { ReviewCard } from "@/components/hacker-house/cards/ReviewCard";
 import { SubmittedCard } from "@/components/hacker-house/cards/SubmittedCard";
 import { GeneratingCard } from "@/components/hacker-house/cards/GeneratingCard";
 
-import { STATIC_COUNT, STATIC_QUESTIONS } from "@/lib/hacker-house/questions";
+import { getVisibleQuestions } from "@/lib/hacker-house/questions";
 import {
   freshState,
   loadState,
@@ -32,12 +31,13 @@ import type {
   Step,
 } from "@/lib/hacker-house/types";
 
-const DYNAMIC_COUNT = 5;
+const DYNAMIC_COUNT = 2;
 
 function previousStep(
   step: Step,
   cardIndex: number,
   hasDynamic: boolean,
+  visibleCount: number,
 ): { step: Step; cardIndex: number } | null {
   switch (step) {
     case "intro":
@@ -46,55 +46,53 @@ function previousStep(
       return null;
     case "contact":
       return { step: "intro", cardIndex: 0 };
+    case "links":
+      return { step: "contact", cardIndex: 0 };
     case "static":
       if (cardIndex > 0) return { step: "static", cardIndex: cardIndex - 1 };
-      return { step: "contact", cardIndex: 0 };
+      return { step: "links", cardIndex: 0 };
     case "dynamic":
       if (cardIndex > 0) return { step: "dynamic", cardIndex: cardIndex - 1 };
-      return { step: "static", cardIndex: STATIC_COUNT - 1 };
-    case "why":
+      return { step: "static", cardIndex: visibleCount - 1 };
+    case "review":
       return hasDynamic
         ? { step: "dynamic", cardIndex: DYNAMIC_COUNT - 1 }
-        : { step: "static", cardIndex: STATIC_COUNT - 1 };
-    case "project":
-      return { step: "why", cardIndex: 0 };
-    case "links":
-      return { step: "project", cardIndex: 0 };
-    case "review":
-      return { step: "links", cardIndex: 0 };
+        : { step: "static", cardIndex: visibleCount - 1 };
   }
 }
 
-function computeProgress(step: Step, cardIndex: number): number {
+function computeProgress(step: Step, cardIndex: number, visibleCount: number): number {
   switch (step) {
     case "intro":
       return 0;
     case "contact":
       return 0.04;
-    case "static":
-      return 0.06 + (cardIndex / STATIC_COUNT) * 0.5;
-    case "generating":
-      return 0.58;
-    case "dynamic":
-      return 0.6 + (cardIndex / DYNAMIC_COUNT) * 0.22;
-    case "why":
-      return 0.86;
-    case "project":
-      return 0.91;
     case "links":
-      return 0.95;
+      return 0.08;
+    case "static":
+      return 0.12 + (cardIndex / visibleCount) * 0.5;
+    case "generating":
+      return 0.65;
+    case "dynamic":
+      return 0.7 + (cardIndex / DYNAMIC_COUNT) * 0.2;
     case "review":
-      return 0.98;
+      return 0.95;
     case "submitted":
       return 1;
   }
 }
 
 export default function ApplyPage() {
-  const router = useRouter();
   const [state, setState] = useState<ApplicationState | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [genFailed, setGenFailed] = useState(false);
+
+  // Get visible questions based on current answers
+  const visibleQuestions = useMemo(
+    () => (state ? getVisibleQuestions(state.answers) : []),
+    [state?.answers],
+  );
+  const visibleCount = visibleQuestions.length;
 
   useEffect(() => {
     const loaded = loadState();
@@ -155,20 +153,55 @@ export default function ApplyPage() {
   const handleBegin = () => advance({ step: "contact" });
 
   const handleContact = ({ name, email }: { name: string; email: string }) =>
-    advance({ name, email, step: "static", cardIndex: 0 });
+    advance({ name, email, step: "links", cardIndex: 0 });
 
-  const handleStaticAnswer = (qId: string, opt: string) => {
+  const handleLinks = (urls: {
+    portfolioUrl?: string;
+    githubUrl?: string;
+    otherUrl?: string;
+  }) =>
+    advance({
+      ...urls,
+      step: "static",
+      cardIndex: 0,
+    });
+
+  const handleStaticAnswer = (qId: string, answer: string) => {
     setState((prev) => {
       if (!prev) return prev;
-      const answers = { ...prev.answers, [qId]: opt };
-      if (prev.cardIndex < STATIC_COUNT - 1) {
+      const answers = { ...prev.answers, [qId]: answer };
+
+      // Recalculate visible questions with new answers
+      const newVisible = getVisibleQuestions(answers);
+      const currentQ = visibleQuestions[prev.cardIndex];
+
+      // Find the next question index
+      let nextIndex = prev.cardIndex + 1;
+
+      // If this was Q2 (life stage), we might have just revealed a conditional question
+      if (currentQ?.id === "q2") {
+        // Find the conditional question that just became visible
+        const conditionalIndex = newVisible.findIndex(
+          (q) => q.conditionalOn?.questionId === "q2" && q.conditionalOn?.answer === answer
+        );
+        if (conditionalIndex !== -1) {
+          nextIndex = conditionalIndex;
+        }
+      } else {
+        // Normal case: find current question in new visible list and go to next
+        const currentIndex = newVisible.findIndex((q) => q.id === currentQ?.id);
+        nextIndex = currentIndex + 1;
+      }
+
+      if (nextIndex < newVisible.length) {
         return {
           ...prev,
           answers,
-          cardIndex: prev.cardIndex + 1,
+          cardIndex: nextIndex,
           updatedAt: Date.now(),
         };
       }
+      // All static questions done, go to generating
       return {
         ...prev,
         answers,
@@ -179,10 +212,10 @@ export default function ApplyPage() {
     });
   };
 
-  const handleDynamicAnswer = (qId: string, opt: string) => {
+  const handleDynamicAnswer = (qId: string, answer: string) => {
     setState((prev) => {
       if (!prev) return prev;
-      const answers = { ...prev.answers, [qId]: opt };
+      const answers = { ...prev.answers, [qId]: answer };
       if (prev.cardIndex < DYNAMIC_COUNT - 1) {
         return {
           ...prev,
@@ -194,27 +227,12 @@ export default function ApplyPage() {
       return {
         ...prev,
         answers,
-        step: "why",
+        step: "review",
         cardIndex: 0,
         updatedAt: Date.now(),
       };
     });
   };
-
-  const handleWhy = (text: string) =>
-    advance({ whyText: text, step: "project", cardIndex: 0 });
-  const handleProject = (text: string) =>
-    advance({ projectText: text, step: "links", cardIndex: 0 });
-  const handleLinks = (urls: {
-    portfolioUrl?: string;
-    githubUrl?: string;
-    otherUrl?: string;
-  }) =>
-    advance({
-      ...urls,
-      step: "review",
-      cardIndex: 0,
-    });
 
   const handleEdit = (target: { step: Step; cardIndex: number }) =>
     advance({ step: target.step, cardIndex: target.cardIndex });
@@ -236,7 +254,7 @@ export default function ApplyPage() {
     [state],
   );
 
-  const progress = state ? computeProgress(state.step, state.cardIndex) : 0;
+  const progress = state ? computeProgress(state.step, state.cardIndex, visibleCount) : 0;
 
   if (!state) {
     return (
@@ -261,9 +279,26 @@ export default function ApplyPage() {
         />
       );
       break;
+    case "links":
+      content = (
+        <LinksCard
+          initialPortfolio={state.portfolioUrl}
+          initialGithub={state.githubUrl}
+          initialOther={state.otherUrl}
+          onContinue={handleLinks}
+        />
+      );
+      break;
     case "static": {
-      const q = STATIC_QUESTIONS[state.cardIndex];
-      const category = `Question ${state.cardIndex + 1} of ${STATIC_COUNT}`;
+      const q = visibleQuestions[state.cardIndex];
+      if (!q) {
+        content = <GeneratingCard message="Loading questions…" />;
+        break;
+      }
+      const questionNum = state.cardIndex + 1;
+      const totalVisible = visibleCount;
+      const category = `Question ${questionNum} of ${totalVisible}`;
+
       if (q.type === "longtext") {
         content = (
           <LongTextCard
@@ -271,8 +306,8 @@ export default function ApplyPage() {
             prompt={q.prompt}
             helperText={q.helperText}
             initial={state.answers[q.id]}
-            minChars={q.minChars ?? 30}
-            maxChars={q.maxChars ?? 400}
+            minChars={q.minChars ?? 2}
+            maxChars={q.maxChars ?? 500}
             onContinue={(text) => handleStaticAnswer(q.id, text)}
           />
         );
@@ -305,10 +340,10 @@ export default function ApplyPage() {
             </div>
             <div className="pt-6">
               <button
-                onClick={() => advance({ step: "why", cardIndex: 0 })}
+                onClick={() => advance({ step: "review", cardIndex: 0 })}
                 className="w-full py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white"
               >
-                Skip to next →
+                Skip to review →
               </button>
             </div>
           </CardStage>
@@ -323,51 +358,19 @@ export default function ApplyPage() {
         content = <GeneratingCard message="Loading your questions…" />;
         break;
       }
+      const totalStatic = visibleCount;
       content = (
-        <MultipleChoiceCard
-          category={`Question ${STATIC_COUNT + state.cardIndex + 1} of ${
-            STATIC_COUNT + DYNAMIC_COUNT
-          }`}
+        <LongTextCard
+          category={`Question ${totalStatic + state.cardIndex + 1} of ${totalStatic + DYNAMIC_COUNT}`}
           prompt={q.question}
-          options={q.options}
-          current={state.answers[q.id]}
-          onAnswer={(opt) => handleDynamicAnswer(q.id, opt)}
+          initial={state.answers[q.id]}
+          minChars={20}
+          maxChars={600}
+          onContinue={(text) => handleDynamicAnswer(q.id, text)}
         />
       );
       break;
     }
-    case "why":
-      content = (
-        <LongTextCard
-          category="In your words"
-          prompt="Why do you want to be here?"
-          helperText="What would make this the best month of your year?"
-          initial={state.whyText}
-          onContinue={handleWhy}
-        />
-      );
-      break;
-    case "project":
-      content = (
-        <LongTextCard
-          category="What you're building"
-          prompt="Tell us about something you've built or are working on now."
-          helperText="A real thing — anything from a side project to a class assignment you cared about."
-          initial={state.projectText}
-          onContinue={handleProject}
-        />
-      );
-      break;
-    case "links":
-      content = (
-        <LinksCard
-          initialPortfolio={state.portfolioUrl}
-          initialGithub={state.githubUrl}
-          initialOther={state.otherUrl}
-          onContinue={handleLinks}
-        />
-      );
-      break;
     case "review":
       content = (
         <ReviewCard
@@ -406,6 +409,7 @@ export default function ApplyPage() {
               state.step,
               state.cardIndex,
               !!state.dynamicQuestions && state.dynamicQuestions.length > 0,
+              visibleCount,
             );
             if (!prev) return <div className="h-7 mb-3" aria-hidden />;
             return (
