@@ -6,11 +6,11 @@ import { FaqItem } from "@/components/faq-item";
 const FAQS = [
   {
     q: "Does it cost anything?",
-    a: "No tuition. We fund travel and accommodation — partially or fully, depending on the spot and your situation. We share the details when we make offers. If money is the only thing in the way, tell us in the application and we'll figure it out.",
+    a: "No tuition. We cover travel and accommodation (partially or fully depending on your situation). If cost is an issue, mention it in your application and we'll work something out.",
   },
   {
     q: "Where is it?",
-    a: "We'll share the location with selected applicants. It's somewhere quiet, beautiful, and good for focused work — not a tourist trip.",
+    a: "We'll share the location with people we accept. It's somewhere quiet and good for focused work.",
   },
   {
     q: "When is it?",
@@ -22,15 +22,15 @@ const FAQS = [
   },
   {
     q: "What's expected of me?",
-    a: "Show up, build, and ship. We're picking for builder energy and willingness to work hard for four weeks. No vacationing, no half-presence.",
+    a: "Show up and work on your projects. This isn't a vacation — we expect you to be focused for the four weeks.",
   },
   {
     q: "How do you decide?",
-    a: "We read every application. We're picking for fit, not pedigree. We want six people who'll make each other better — diverse in background, geography, and how they build.",
+    a: "We read every application. We're looking for people who'll work well together, from different backgrounds and places.",
   },
   {
     q: "What happens after?",
-    a: "If it goes well, you leave with shipped projects, a portfolio walkthrough, and people who'll vouch for what you built. We stay in touch and help where we can.",
+    a: "You leave with finished projects, a portfolio video, and hopefully some good references. We stay in touch.",
   },
 ];
 
@@ -44,7 +44,7 @@ export function FaqSection() {
               FAQ
             </p>
             <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight">
-              The honest answers.
+              Questions
             </h2>
             <p className="text-muted-foreground mt-2">
               Got something we didn&apos;t cover?{" "}

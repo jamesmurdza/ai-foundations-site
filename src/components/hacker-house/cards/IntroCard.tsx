@@ -8,15 +8,14 @@ export function IntroCard({ onBegin }: { onBegin: () => void }) {
     <CardStage showPeek={false}>
       <div className="flex-1 flex flex-col justify-center">
         <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">
-          Hacker House · Application
+          Summer School · Application
         </p>
         <h2 className="font-heading text-3xl font-semibold leading-tight mb-6">
-          A short application. About 5 minutes.
+          A short application. About 10 minutes.
         </h2>
         <div className="space-y-3 text-muted-foreground leading-relaxed">
           <p>
-            We pick six builders from across the world. We&apos;d like to know who you
-            are — not your résumé.
+            We&apos;d like to know a bit about you — not your résumé.
           </p>
           <p>
             You can leave at any point and come back. Your answers are saved as

@@ -13,7 +13,7 @@ const SKETCHES = [
   },
   {
     src: "/images/sketches/sketch-1.jpg",
-    alt: "Indoor hacker house — six builders heads-down at a long wooden table with laptops and a Build-in-Public whiteboard",
+    alt: "Indoor workspace — people working at a long wooden table with laptops and a Build-in-Public whiteboard",
     span: "md:col-span-5",
   },
   {
@@ -74,12 +74,11 @@ export function VibeSection() {
             The vibe
           </p>
           <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mx-auto">
-            A month that looks like this.
+            What it looks like
           </h2>
           <p className="text-muted-foreground mt-6 max-w-xl mx-auto leading-relaxed">
-            Long focused mornings. Mountains and quiet water in the afternoon.
-            Six builders, one table. We&apos;ll share exactly where when we make
-            offers.
+            Focused mornings, nice scenery in the afternoon. We&apos;ll share the
+            location when we make offers.
           </p>
         </div>
 

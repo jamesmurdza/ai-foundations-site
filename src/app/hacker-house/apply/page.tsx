@@ -391,7 +391,7 @@ export default function ApplyPage() {
           href="/hacker-house"
           className="text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
-          ← Hacker House
+          ← Summer School
         </Link>
         {state.email && (
           <span className="text-xs text-muted-foreground">

@@ -7,18 +7,18 @@ import { gsap, registerGsap } from "@/lib/gsap";
 const PILLARS = [
   {
     eyebrow: "01 / Build",
-    title: "Real things, with your hands.",
-    body: "Every week is a build week. You ship something usable, even if it's small. No tutorials disguised as projects.",
+    title: "Build something real",
+    body: "Each week you'll work on and finish a project. No tutorials — just building.",
   },
   {
     eyebrow: "02 / Ship",
-    title: "Public from day one.",
-    body: "We ship in public. You'll write, post, and demo your work as you go. The internet is the room you're building for.",
+    title: "Share your work",
+    body: "You'll share updates and demo your work as you go. It's good practice for showing what you can do.",
   },
   {
     eyebrow: "03 / Be seen",
-    title: "A portfolio with proof.",
-    body: "You leave with a recorded walkthrough of your projects, a network of five other builders, and people who can vouch for what you built.",
+    title: "Leave with something to show",
+    body: "You'll leave with a video walkthrough of your projects and references from us if things go well.",
   },
 ];
 
@@ -56,8 +56,7 @@ export function WhatIsItSection() {
             What it is
           </p>
           <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mx-auto mb-16">
-            A focused house. A short window. The most builder energy you&apos;ve
-            been around in a while.
+            Four weeks to focus on building something you care about.
           </h2>
           <div className="grid md:grid-cols-3 gap-10">
             {PILLARS.map((p) => (

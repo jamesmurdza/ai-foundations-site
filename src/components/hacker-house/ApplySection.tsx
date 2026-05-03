@@ -41,11 +41,10 @@ export function ApplySection() {
               Applications
             </p>
             <h2 className="font-heading text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              We&apos;re picking six. Make it easy for us to pick you.
+              How to apply
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl leading-relaxed">
-              Twenty-one short questions, five of them tailored to you. No
-              résumé, no cover letter. About five minutes.
+              21 short questions, no résumé needed. Takes about 10 minutes.
             </p>
             <Button
               asChild
