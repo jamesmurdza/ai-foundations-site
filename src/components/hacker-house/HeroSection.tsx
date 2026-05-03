@@ -54,9 +54,8 @@ export function HeroSection() {
             AI Foundations is hosting our first summer school.
           </h1>
           <p className="hh-sub mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            A 4-week, in-person program for builders who want to improve their
-            portfolio. You will learn, teach and be part of a community that
-            grows through building together.
+            You will learn and teach in a community that grows through building
+            together.
           </p>
         </div>
 

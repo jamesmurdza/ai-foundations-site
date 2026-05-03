@@ -56,7 +56,7 @@ export function WhatIsItSection() {
             What it is
           </p>
           <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mx-auto mb-16">
-            Four weeks to focus on building something you care about.
+            Four weeks to learn and build things you care about.
           </h2>
           <div className="grid md:grid-cols-3 gap-10">
             {PILLARS.map((p) => (
