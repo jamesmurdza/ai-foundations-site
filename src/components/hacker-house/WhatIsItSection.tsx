@@ -3,17 +3,17 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@/lib/gsap";
-import { Hammer, MessageCircle, Compass } from "lucide-react";
+import { GitCompareArrows, MessageCircleMore, Compass } from "lucide-react";
 
 const PILLARS = [
   {
     eyebrow: "Build",
-    icon: Hammer,
+    icon: GitCompareArrows,
     body: "Work alongside other builders on projects you care about. We live together, share meals, and support each other.",
   },
   {
     eyebrow: "Reflect",
-    icon: MessageCircle,
+    icon: MessageCircleMore,
     body: "Get feedback and guidance from experienced AI engineers and professionals.",
   },
   {
