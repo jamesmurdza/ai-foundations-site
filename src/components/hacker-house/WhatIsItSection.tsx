@@ -6,19 +6,19 @@ import { gsap, registerGsap } from "@/lib/gsap";
 
 const PILLARS = [
   {
-    eyebrow: "01 / Build",
-    title: "Build something real",
-    body: "Each week you'll work on and finish a project. No tutorials — just building.",
+    eyebrow: "01",
+    title: "Build with friends",
+    body: "Work alongside other builders on projects you care about. We live together, share meals, and support each other.",
   },
   {
-    eyebrow: "02 / Ship",
-    title: "Share your work",
-    body: "You'll share updates and demo your work as you go. It's good practice for showing what you can do.",
+    eyebrow: "02",
+    title: "Work with mentors",
+    body: "Get feedback and guidance from experienced builders who've shipped real products.",
   },
   {
-    eyebrow: "03 / Be seen",
-    title: "Leave with something to show",
-    body: "You'll leave with a video walkthrough of your projects and references from us if things go well.",
+    eyebrow: "03",
+    title: "Explore possibilities",
+    body: "Step away from your routine. Try new things — yoga in the morning, healthy food, time to think.",
   },
 ];
 
