@@ -75,9 +75,6 @@ export function WhatIsItSection() {
                 <p className="text-sm uppercase tracking-widest text-purple-600 md:w-24 flex-shrink-0">
                   {p.eyebrow}
                 </p>
-                <h3 className="font-heading text-xl font-semibold leading-tight md:w-48 flex-shrink-0">
-                  {p.title}
-                </h3>
                 <p className="text-muted-foreground leading-relaxed">{p.body}</p>
               </div>
             ))}
