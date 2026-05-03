@@ -6,17 +6,17 @@ import { gsap, registerGsap } from "@/lib/gsap";
 
 const PILLARS = [
   {
-    eyebrow: "01",
+    eyebrow: "Build",
     title: "Build with friends",
     body: "Work alongside other builders on projects you care about. We live together, share meals, and support each other.",
   },
   {
-    eyebrow: "02",
+    eyebrow: "Reflect",
     title: "Work with mentors",
     body: "Get feedback and guidance from experienced builders who've shipped real products.",
   },
   {
-    eyebrow: "03",
+    eyebrow: "Explore",
     title: "Explore possibilities",
     body: "Step away from your routine. Try new things — yoga in the morning, healthy food, time to think.",
   },
@@ -73,6 +73,13 @@ export function WhatIsItSection() {
                 <p className="text-muted-foreground leading-relaxed">{p.body}</p>
               </div>
             ))}
+          </div>
+
+          <div className="hh-pillar mt-16 inline-grid grid-cols-[auto_1fr] gap-x-8 gap-y-3 text-left text-lg">
+            <span className="text-muted-foreground">Dates</span>
+            <span className="font-medium">August 2025</span>
+            <span className="text-muted-foreground">Location</span>
+            <span className="font-medium">Southeast Asia</span>
           </div>
         </div>
       </div>

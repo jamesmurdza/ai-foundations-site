@@ -57,16 +57,9 @@ export function HeroSection() {
             Learn and teach for four weeks in a community that grows through
             building together.
           </p>
-
-          <div className="hh-sub mt-10 grid grid-cols-2 gap-x-12 gap-y-2 text-left text-base">
-            <span className="text-muted-foreground">Dates</span>
-            <span className="font-medium">August 2025</span>
-            <span className="text-muted-foreground">Location</span>
-            <span className="font-medium">Southeast Asia</span>
-          </div>
         </div>
 
-        <div className="mx-2 md:mx-10 border-x border-b-0 px-6 md:px-12 pt-6 pb-12 flex flex-col items-center gap-3">
+        <div className="mx-2 md:mx-10 border-x border-b-0 px-6 md:px-12 pt-4 pb-12 flex flex-col items-center gap-3">
           <Button
             asChild
             size="lg"
