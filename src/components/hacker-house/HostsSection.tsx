@@ -55,7 +55,7 @@ export function HostsSection() {
                 James Murdza
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                AI engineer at Daytona.
+                AI engineer at Daytona. Builds developer tools and teaches through livestreams.
               </p>
             </div>
             <div className="hh-host flex flex-col items-center text-center">
@@ -71,7 +71,7 @@ export function HostsSection() {
                 Burhan Khatri
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                AI engineer at Astera.
+                AI engineer at Astera. Runs AI Foundations.
               </p>
             </div>
           </div>
