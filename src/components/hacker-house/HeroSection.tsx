@@ -46,7 +46,7 @@ export function HeroSection() {
   return (
     <section ref={root} className="relative pt-12 pb-24 overflow-hidden">
       <div className="container">
-        <div className="mx-2 md:mx-10 border-x border-t-0 px-6 md:px-12 pt-20 pb-12 relative flex flex-col items-center text-center">
+        <div className="mx-2 md:mx-10 border-x border-t-0 px-6 md:px-12 pt-20 pb-6 relative flex flex-col items-center text-center">
           <p className="hh-eyebrow text-sm uppercase tracking-[0.2em] text-purple-600 mb-6">
             AI Foundations · Summer School
           </p>
