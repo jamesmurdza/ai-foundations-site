@@ -7,24 +7,14 @@ import { gsap, registerGsap } from "@/lib/gsap";
 
 const SKETCHES = [
   {
-    src: "/images/sketches/sketch-3.jpg",
-    alt: "Builders working at a wooden terrace table with a karst mountain view in the distance",
-    span: "md:col-span-7",
-  },
-  {
-    src: "/images/sketches/sketch-1.jpg",
-    alt: "Indoor workspace — people working at a long wooden table with laptops and a Build-in-Public whiteboard",
-    span: "md:col-span-5",
-  },
-  {
     src: "/images/sketches/sketch-2.jpg",
     alt: "A solitary boat on quiet water beneath karst mountains, conical hat, lotus pads in the foreground",
-    span: "md:col-span-5",
+    span: "md:col-span-6",
   },
   {
     src: "/images/sketches/sketch-4.jpg",
     alt: "Open bamboo balcony with a team coding around a table, looking out over a river valley and karst mountains",
-    span: "md:col-span-7",
+    span: "md:col-span-6",
   },
 ];
 
