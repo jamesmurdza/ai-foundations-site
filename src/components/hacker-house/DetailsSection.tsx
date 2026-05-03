@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@/lib/gsap";
+import { MapPin, Calendar } from "lucide-react";
 
 export function DetailsSection() {
   registerGsap();
@@ -51,11 +52,15 @@ export function DetailsSection() {
               />
             </figure>
             <div className="hh-details flex flex-col justify-center">
-              <div className="grid grid-cols-[auto_1fr] gap-x-8 gap-y-4 text-left text-lg">
-                <span className="text-muted-foreground">Location</span>
-                <span className="font-medium">Southeast Asia</span>
-                <span className="text-muted-foreground">Dates</span>
-                <span className="font-medium">August 2025</span>
+              <div className="flex flex-col gap-4 text-left text-lg">
+                <div className="flex items-center gap-3">
+                  <MapPin className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                  <span className="font-medium">Southeast Asia</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Calendar className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                  <span className="font-medium">August 2025</span>
+                </div>
               </div>
             </div>
           </div>
