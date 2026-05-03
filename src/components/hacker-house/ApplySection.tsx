@@ -44,7 +44,7 @@ export function ApplySection() {
               How to apply
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl leading-relaxed">
-              21 short questions, no résumé needed. Takes about 10 minutes.
+              10 short questions. Takes about 10 minutes.
             </p>
             <Button
               asChild
