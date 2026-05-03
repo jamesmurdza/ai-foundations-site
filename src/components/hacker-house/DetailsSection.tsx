@@ -39,7 +39,7 @@ export function DetailsSection() {
               When & Where
             </p>
             <h2 className="hh-details font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mx-auto">
-              Four weeks in Southeast Asia, August 2025
+              A living and learning community
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -50,10 +50,13 @@ export function DetailsSection() {
                 className="object-cover w-full h-full"
               />
             </figure>
-            <div className="hh-details flex flex-col justify-center text-lg text-muted-foreground leading-relaxed">
-              <p>
-                We'll live and work together in a quiet location. Exact details shared with accepted applicants.
-              </p>
+            <div className="hh-details flex flex-col justify-center">
+              <div className="grid grid-cols-[auto_1fr] gap-x-8 gap-y-4 text-left text-lg">
+                <span className="text-muted-foreground">Location</span>
+                <span className="font-medium">Southeast Asia</span>
+                <span className="text-muted-foreground">Dates</span>
+                <span className="font-medium">August 2025</span>
+              </div>
             </div>
           </div>
         </div>
