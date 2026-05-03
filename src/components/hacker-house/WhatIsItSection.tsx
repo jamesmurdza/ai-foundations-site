@@ -3,21 +3,22 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@/lib/gsap";
+import { Hammer, MessageCircle, Compass } from "lucide-react";
 
 const PILLARS = [
   {
     eyebrow: "Build",
-    title: "Build with friends",
+    icon: Hammer,
     body: "Work alongside other builders on projects you care about. We live together, share meals, and support each other.",
   },
   {
     eyebrow: "Reflect",
-    title: "Work with mentors",
+    icon: MessageCircle,
     body: "Get feedback and guidance from experienced AI engineers and professionals.",
   },
   {
     eyebrow: "Explore",
-    title: "Explore possibilities",
+    icon: Compass,
     body: "Step away from your routine. Try new things — yoga in the morning, healthy food, time to think.",
   },
 ];
@@ -72,9 +73,12 @@ export function WhatIsItSection() {
                 key={p.eyebrow}
                 className="hh-pillar flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-[var(--radius)] bg-card border text-left"
               >
-                <p className="text-sm uppercase tracking-widest text-purple-600 md:w-24 flex-shrink-0">
-                  {p.eyebrow}
-                </p>
+                <div className="flex items-center gap-3 md:w-32 flex-shrink-0">
+                  <p.icon className="w-5 h-5 text-purple-600" />
+                  <p className="text-sm uppercase tracking-widest text-purple-600">
+                    {p.eyebrow}
+                  </p>
+                </div>
                 <p className="text-muted-foreground leading-relaxed">{p.body}</p>
               </div>
             ))}
