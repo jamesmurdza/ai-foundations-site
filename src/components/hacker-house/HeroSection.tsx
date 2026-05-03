@@ -1,10 +1,22 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@/lib/gsap";
 import { Button } from "@/components/ui/button";
+
+const SKETCHES = [
+  {
+    src: "/images/sketches/sketch-2.jpg",
+    alt: "A solitary boat on quiet water beneath karst mountains, conical hat, lotus pads in the foreground",
+  },
+  {
+    src: "/images/sketches/sketch-4.jpg",
+    alt: "Open bamboo balcony with a team coding around a table, looking out over a river valley and karst mountains",
+  },
+];
 
 export function HeroSection() {
   registerGsap();
@@ -48,7 +60,7 @@ export function HeroSection() {
           </p>
         </div>
 
-        <div className="mx-2 md:mx-10 border-x border-b-0 px-6 md:px-12 pt-8 pb-16 flex flex-col items-center gap-3">
+        <div className="mx-2 md:mx-10 border-x border-b-0 px-6 md:px-12 pt-8 pb-12 flex flex-col items-center gap-3">
           <Button
             asChild
             size="lg"
@@ -59,6 +71,24 @@ export function HeroSection() {
           <p className="hh-cta text-sm text-muted-foreground">
             It takes about ten minutes to apply.
           </p>
+        </div>
+
+        <div className="mx-2 md:mx-10 border-x px-4 md:px-6 pb-16 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {SKETCHES.map((s, i) => (
+            <figure
+              key={s.src}
+              className="hh-cta relative aspect-[4/3] overflow-hidden rounded-lg border bg-white shadow-sm"
+            >
+              <Image
+                src={s.src}
+                alt={s.alt}
+                fill
+                priority={i < 2}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </figure>
+          ))}
         </div>
       </div>
     </section>
