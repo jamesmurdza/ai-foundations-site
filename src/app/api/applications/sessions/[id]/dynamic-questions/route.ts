@@ -86,12 +86,12 @@ export async function POST(req: NextRequest, { params }: RouteCtx) {
     /* body optional */
   }
 
-  const rows = await sql`
+  const rows = (await sql`
     SELECT answers, dynamic_questions, status
       FROM hh_applications
      WHERE id = ${params.id}
      LIMIT 1
-  `;
+  `) as Record<string, unknown>[];
   if (rows.length === 0) {
     return NextResponse.json({ error: "not_found" }, { status: 404 });
   }
