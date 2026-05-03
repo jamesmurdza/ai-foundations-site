@@ -15,7 +15,7 @@ export function IntroCard({ onBegin }: { onBegin: () => void }) {
         </h2>
         <div className="space-y-3 text-muted-foreground leading-relaxed">
           <p>
-            We&apos;d like to know a bit about you — not your résumé.
+            Tell us about yourself and your interests!
           </p>
           <p>
             You can leave at any point and come back. Your answers are saved as
