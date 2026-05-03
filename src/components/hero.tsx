@@ -54,7 +54,7 @@ export function Hero() {
       <div className="container">
         <div className="mx-2 md:mx-10 border-x border-t-0 px-4 py-3 flex justify-center">
           <Link
-            href="/hacker-house"
+            href="/summer-school"
             className="group inline-flex items-center gap-2 text-sm hover:text-purple-700 transition-colors"
           >
             <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-purple-500 animate-pulse" />

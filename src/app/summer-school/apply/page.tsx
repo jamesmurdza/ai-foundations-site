@@ -391,7 +391,7 @@ export default function ApplyPage() {
       <ProgressBar progress={progress} />
       <header className="px-6 py-4 flex items-center justify-between">
         <Link
-          href="/hacker-house"
+          href="/summer-school"
           className="text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
           ← Summer School

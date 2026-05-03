@@ -54,7 +54,7 @@ export function HostsSection() {
               <h3 className="font-heading text-2xl font-semibold mb-3">
                 James Murdza
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground text-base leading-relaxed">
                 AI engineer at Daytona. Builds developer tools and teaches through livestreams.
               </p>
             </div>
@@ -70,7 +70,7 @@ export function HostsSection() {
               <h3 className="font-heading text-2xl font-semibold mb-3">
                 Burhan Khatri
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground text-base leading-relaxed">
                 AI engineer at Astera. Microsoft Learn Student Ambassador. Runs AI Foundations.
               </p>
             </div>

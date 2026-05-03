@@ -103,7 +103,7 @@ function Section({
 }) {
   return (
     <div>
-      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-2">
+      <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
         {title}
       </p>
       <ul className="space-y-1">

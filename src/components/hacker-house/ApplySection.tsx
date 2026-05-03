@@ -40,7 +40,7 @@ export function ApplySection() {
             <p className="text-sm uppercase tracking-[0.2em] text-purple-600">
               Applications
             </p>
-            <h2 className="font-heading text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
               How to apply
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl leading-relaxed">
@@ -49,9 +49,9 @@ export function ApplySection() {
             <Button
               asChild
               size="lg"
-              className="bg-purple-600 hover:bg-purple-700 text-white px-10 h-14 text-base mt-4"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 h-12 mt-4"
             >
-              <Link href="/hacker-house/apply">Start your application →</Link>
+              <Link href="/summer-school/apply">Start your application →</Link>
             </Button>
             <p className="text-sm text-muted-foreground">
               You can leave and come back. We save your work as you go.
