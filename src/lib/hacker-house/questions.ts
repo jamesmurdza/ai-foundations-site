@@ -82,7 +82,7 @@ export const STATIC_QUESTIONS: StaticQuestion[] = [
   },
   {
     id: "q7",
-    prompt: "How free are you in August 2025?",
+    prompt: "How free are you in August 2026?",
     options: [
       "Completely free — I can commit 100%",
       "Mostly free — minor commitments",
