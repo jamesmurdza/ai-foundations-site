@@ -69,15 +69,15 @@ export function WhatIsItSection() {
                 className="object-cover w-full h-full"
               />
             </figure>
-            <div className="hh-what flex flex-col justify-center gap-4">
+            <div className="hh-what flex flex-col justify-center gap-2">
               {PILLARS.map((p) => (
                 <div
                   key={p.eyebrow}
-                  className="flex items-start gap-4 p-4 text-left"
+                  className="flex items-start gap-3 p-2 text-left"
                 >
-                  <p.icon className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                  <p.icon className="w-5 h-5 text-foreground mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-sm uppercase tracking-widest text-purple-600 mb-1">
+                    <p className="text-sm uppercase tracking-widest text-foreground font-medium mb-1">
                       {p.eyebrow}
                     </p>
                     <p className="text-muted-foreground text-sm leading-relaxed">{p.body}</p>
