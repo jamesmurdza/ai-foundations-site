@@ -13,7 +13,7 @@ const PILLARS = [
   {
     eyebrow: "Reflect",
     title: "Work with mentors",
-    body: "Get feedback and guidance from experienced builders who've shipped real products.",
+    body: "Get feedback and guidance from experienced AI engineers and professionals.",
   },
   {
     eyebrow: "Explore",

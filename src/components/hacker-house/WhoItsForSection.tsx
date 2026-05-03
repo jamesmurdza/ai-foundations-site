@@ -5,9 +5,9 @@ import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@/lib/gsap";
 
 const YOU_ARE = [
-  "Loves building with code, low-code, or no-code.",
-  "Honest about what you don't know yet.",
-  "Happy to help others and share what you learn.",
+  "You love building with code, low-code, or no-code.",
+  "You're honest about what you don't know yet.",
+  "You're happy to help others and share what you learn.",
   "College students and junior developers welcome.",
 ];
 
