@@ -59,7 +59,7 @@ export function HeroSection() {
           </p>
         </div>
 
-        <div className="mx-2 md:mx-10 border-x border-b-0 px-6 md:px-12 pt-8 pb-12 flex flex-col items-center gap-3">
+        <div className="mx-2 md:mx-10 border-x border-b-0 px-6 md:px-12 pt-4 pb-12 flex flex-col items-center gap-3">
           <Button
             asChild
             size="lg"
