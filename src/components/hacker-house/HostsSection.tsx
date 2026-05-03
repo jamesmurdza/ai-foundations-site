@@ -55,16 +55,7 @@ export function HostsSection() {
                 James Murdza
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Software developer and educator. Co-founder of{" "}
-                <a
-                  href="https://gitwit.dev"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-foreground underline-offset-4 hover:underline"
-                >
-                  gitwit.dev
-                </a>
-                .
+                AI engineer at Daytona.
               </p>
             </div>
             <div className="hh-host flex flex-col items-center text-center">
@@ -80,16 +71,7 @@ export function HostsSection() {
                 Burhan Khatri
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                AI engineer. Co-founder of{" "}
-                <a
-                  href="https://gitwit.dev"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-foreground underline-offset-4 hover:underline"
-                >
-                  gitwit.dev
-                </a>
-                . Runs AI Foundations.
+                AI engineer at Astera.
               </p>
             </div>
           </div>
