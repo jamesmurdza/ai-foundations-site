@@ -5,11 +5,10 @@ import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@/lib/gsap";
 
 const YOU_ARE = [
-  "Someone who builds things — code, low-code, or no-code. College students welcome.",
-  "Willing to do the unglamorous parts of finishing a project.",
-  "Quick to pick things up.",
+  "Loves building with code, low-code, or no-code.",
   "Honest about what you don't know yet.",
   "Happy to help others and share what you learn.",
+  "College students and junior developers welcome.",
 ];
 
 export function WhoItsForSection() {
