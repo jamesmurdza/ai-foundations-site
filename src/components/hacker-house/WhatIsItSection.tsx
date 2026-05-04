@@ -9,7 +9,7 @@ const PILLARS = [
   {
     eyebrow: "Build",
     icon: GitCompareArrows,
-    body: "Work alongside other builders on projects you care about and build a portfolio that will define your future.",
+    body: "Work alongside other builders on projects you care about and build a unique and relevant portfolio.",
   },
   {
     eyebrow: "Reflect",
