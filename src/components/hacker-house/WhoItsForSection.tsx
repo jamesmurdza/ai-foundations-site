@@ -52,10 +52,11 @@ export function WhoItsForSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <figure className="hh-row relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/sketches/sketch-1.jpg"
+                src="/images/sketches/sketch-6.jpg"
                 alt="Sketch of builders collaborating"
-                className="object-cover w-full h-full mix-blend-multiply"
+                className="object-cover w-full h-full mix-blend-multiply contrast-110 brightness-105"
               />
+              <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_60px_30px_white]" />
             </figure>
             <div className="hh-row flex flex-col justify-center">
               <ul className="space-y-4">

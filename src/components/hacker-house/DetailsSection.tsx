@@ -48,7 +48,7 @@ export function DetailsSection() {
               <img
                 src="/images/sketches/sketch-2.jpg"
                 alt="A solitary boat on quiet water beneath karst mountains"
-                className="object-cover w-full h-full mix-blend-multiply"
+                className="object-cover w-full h-full mix-blend-multiply contrast-110 brightness-105"
               />
             </figure>
             <div className="hh-details flex flex-col justify-center">

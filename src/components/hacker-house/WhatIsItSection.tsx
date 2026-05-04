@@ -64,10 +64,11 @@ export function WhatIsItSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <figure className="hh-what relative aspect-[4/3] overflow-hidden">
               <img
-                src="/images/sketches/sketch-4.jpg"
+                src="/images/sketches/sketch-5.jpg"
                 alt="Open bamboo balcony with a team coding around a table"
-                className="object-cover w-full h-full mix-blend-multiply"
+                className="object-cover w-full h-full mix-blend-multiply contrast-110 brightness-105"
               />
+              <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_60px_30px_white]" />
             </figure>
             <div className="hh-what flex flex-col justify-center gap-2">
               {PILLARS.map((p) => (
