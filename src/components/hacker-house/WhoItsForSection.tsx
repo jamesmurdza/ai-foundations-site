@@ -6,9 +6,10 @@ import { gsap, registerGsap } from "@/lib/gsap";
 
 const YOU_ARE = [
   "You love building with code, low-code, or no-code.",
+  "You're excited about open-source.",
   "You're honest about what you don't know yet.",
-  "You're happy to help others and share what you learn.",
-  "College students and junior developers welcome.",
+  "You like to help others and share what you learn.",
+  "College students and junior developers are welcome.",
 ];
 
 export function WhoItsForSection() {
