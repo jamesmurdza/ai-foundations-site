@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sql } from "@/lib/db";
+import { sendThankYou } from "@/lib/email";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -23,5 +24,50 @@ export async function POST(_req: NextRequest, { params }: RouteCtx) {
            updated_at = NOW()
      WHERE id = ${params.id}
   `;
+
+  // Atomically claim the notification slot. If we win, we own the send;
+  // the admin-side cron will skip this row. If the send fails, we null
+  // the column back so the cron picks it up later. Bounded by SMTP
+  // timeouts in src/lib/email.ts so a hung server can't hang submit.
+  await notifyApplicant(params.id);
+
   return NextResponse.json({ ok: true });
+}
+
+async function notifyApplicant(id: string): Promise<void> {
+  let claimed: { email: string | null; name: string | null }[];
+  try {
+    claimed = (await sql`
+      UPDATE hh_applications
+         SET notification_sent_at = NOW()
+       WHERE id = ${id}
+         AND notification_sent_at IS NULL
+      RETURNING email, name
+    `) as { email: string | null; name: string | null }[];
+  } catch (err) {
+    console.error("[notify] claim failed", { id, err });
+    return;
+  }
+  if (claimed.length === 0) return; // someone else already sent
+
+  const row = claimed[0];
+  if (!row.email) return; // nothing we can do; row stays claimed
+
+  try {
+    await sendThankYou(row.email, row.name);
+  } catch (err) {
+    console.error("[notify] send failed; releasing for cron retry", {
+      id,
+      err,
+    });
+    try {
+      await sql`
+        UPDATE hh_applications
+           SET notification_sent_at = NULL
+         WHERE id = ${id}
+      `;
+    } catch (releaseErr) {
+      console.error("[notify] release also failed", { id, releaseErr });
+    }
+  }
 }
