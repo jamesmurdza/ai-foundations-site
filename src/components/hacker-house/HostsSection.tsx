@@ -41,7 +41,7 @@ export function HostsSection() {
           <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mb-16 mx-auto">
             Your guides
           </h2>
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-16 max-w-5xl mx-auto">
             <div className="hh-host flex flex-col items-center text-center">
               <div className="relative w-32 h-32 mb-6 rounded-full overflow-hidden border">
                 <Image
@@ -72,6 +72,22 @@ export function HostsSection() {
               </h3>
               <p className="text-muted-foreground text-base leading-relaxed">
                 AI engineer at Astera. Microsoft Learn Student Ambassador. Runs AI Foundations.
+              </p>
+            </div>
+            <div className="hh-host flex flex-col items-center text-center">
+              <div className="relative w-32 h-32 mb-6 rounded-full overflow-hidden border">
+                <Image
+                  src="/images/FleoMae.jpg"
+                  alt="Fleo Mae A."
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="font-heading text-2xl font-semibold mb-3">
+                Fleo Mae A.
+              </h3>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Head of Marketing at Punch Limited. Oxford Saïd alum. Helps builders turn projects into stories that land.
               </p>
             </div>
           </div>
