@@ -45,7 +45,7 @@ export function HostsSection() {
             <div className="hh-host flex flex-col items-center text-center">
               <div className="relative w-32 h-32 mb-6 rounded-full overflow-hidden border">
                 <Image
-                  src="/images/James.avif"
+                  src="/images/James.jpg"
                   alt="James Murdza"
                   fill
                   className="object-cover"
@@ -87,7 +87,7 @@ export function HostsSection() {
                 Fleo Mae A.
               </h3>
               <p className="text-muted-foreground text-base leading-relaxed">
-                Head of Marketing at Punch Limited. Oxford Saïd alum. Helps builders turn projects into stories that land.
+                AI Marketer at Actual Inc. Oxford Saïd alum. Helps builders turn projects into stories that land.
               </p>
             </div>
           </div>
