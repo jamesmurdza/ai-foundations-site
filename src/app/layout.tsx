@@ -19,6 +19,24 @@ const fontHeading = Schibsted_Grotesk({
 export const metadata: Metadata = {
   title: "AI Foundations - Learn AI Development",
   description: "Learn the fundamentals of AI and machine learning with our comprehensive course. Master the concepts, build projects, and advance your career.",
+  openGraph: {
+    title: "AI Foundations - Learn AI Development",
+    description: "Learn the fundamentals of AI and machine learning with our comprehensive course. Master the concepts, build projects, and advance your career.",
+    images: [
+      {
+        url: "/og/social-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "AI Foundations Summer School",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Foundations - Learn AI Development",
+    description: "Learn the fundamentals of AI and machine learning with our comprehensive course. Master the concepts, build projects, and advance your career.",
+    images: ["/og/social-preview.png"],
+  },
 };
 
 export default function RootLayout({
