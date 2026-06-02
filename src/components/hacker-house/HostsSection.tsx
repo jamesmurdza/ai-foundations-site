@@ -57,6 +57,20 @@ export function HostsSection() {
               <p className="text-muted-foreground text-base leading-relaxed">
                 AI engineer at Daytona. Builds developer tools and teaches through livestreams.
               </p>
+              <a
+                href="https://www.linkedin.com/in/jamesmurdza"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="James Murdza on LinkedIn"
+                className="mt-4 opacity-50 hover:opacity-100 transition-opacity"
+              >
+                <Image
+                  src="/svgs/linkedin-brands.svg"
+                  alt="LinkedIn"
+                  width={20}
+                  height={20}
+                />
+              </a>
             </div>
             <div className="hh-host flex flex-col items-center text-center">
               <div className="relative w-32 h-32 mb-6 rounded-full overflow-hidden border">
@@ -73,6 +87,20 @@ export function HostsSection() {
               <p className="text-muted-foreground text-base leading-relaxed">
                 AI engineer at Astera. Microsoft Learn Student Ambassador. Runs AI Foundations.
               </p>
+              <a
+                href="https://www.linkedin.com/in/burhankhatri/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Burhan Khatri on LinkedIn"
+                className="mt-4 opacity-50 hover:opacity-100 transition-opacity"
+              >
+                <Image
+                  src="/svgs/linkedin-brands.svg"
+                  alt="LinkedIn"
+                  width={20}
+                  height={20}
+                />
+              </a>
             </div>
             <div className="hh-host flex flex-col items-center text-center">
               <div className="relative w-32 h-32 mb-6 rounded-full overflow-hidden border">
@@ -89,6 +117,20 @@ export function HostsSection() {
               <p className="text-muted-foreground text-base leading-relaxed">
                 AI Marketer at Actual Inc. Oxford Saïd alum. Helps builders turn projects into stories that land.
               </p>
+              <a
+                href="https://www.linkedin.com/in/fleomae/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Fleo Mae A. on LinkedIn"
+                className="mt-4 opacity-50 hover:opacity-100 transition-opacity"
+              >
+                <Image
+                  src="/svgs/linkedin-brands.svg"
+                  alt="LinkedIn"
+                  width={20}
+                  height={20}
+                />
+              </a>
             </div>
           </div>
         </div>
