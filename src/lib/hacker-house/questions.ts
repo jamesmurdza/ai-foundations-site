@@ -82,7 +82,7 @@ export const STATIC_QUESTIONS: StaticQuestion[] = [
   },
   {
     id: "q7",
-    prompt: "How free are you between 25 August and 22 July 2026?",
+    prompt: "How free are you between 25 July and 22 August 2026?",
     options: [
       "Completely free — I can commit 100%",
       "Mostly free — minor commitments",
