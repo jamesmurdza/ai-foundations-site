@@ -13,9 +13,9 @@ interface TranscriptProps {
 }
 
 // Universal HTML entity decoder (works on server and client)
-function decodeHTMLEntities(text: string) {
+function decodeHTMLEntities(text: unknown) {
   if (!text) return '';
-  return text
+  return String(text)
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
