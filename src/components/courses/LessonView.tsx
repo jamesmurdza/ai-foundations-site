@@ -1,13 +1,46 @@
 "use client";
-import { useRef } from "react";
-import type { Course, Lesson } from "@/lib/courses";
-import { lessonHasTranscript } from "@/lib/courses";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { Check, ChevronDown } from "lucide-react";
+import type { Course, Lesson, ResolvedTab } from "@/lib/courses";
 import { Transcript } from "@/components/Transcript";
+import { Markdown } from "@/components/Markdown";
 import { ResourceLink } from "@/components/courses/ResourceLink";
 
-export function LessonView({ course, lesson }: { course: Course; lesson: Lesson }) {
+export function LessonView({
+  course,
+  lesson,
+  tabs,
+}: {
+  course: Course;
+  lesson: Lesson;
+  tabs: ResolvedTab[];
+}) {
   const playerRef = useRef<HTMLIFrameElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const [activeTab, setActiveTab] = useState(0);
 
+  // To close the lesson menu when clicking outside it or pressing Escape.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onPointerDown = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [menuOpen]);
+
+  // Seek the embedded YouTube player via the postMessage API.
   const handleSeek = (seconds: number) => {
     playerRef.current?.contentWindow?.postMessage(
       JSON.stringify({
@@ -22,52 +55,121 @@ export function LessonView({ course, lesson }: { course: Course; lesson: Lesson 
   const resources =
     lesson.resources && lesson.resources.length > 0 ? lesson.resources : (course.resources ?? []);
 
-  const showTranscript = Boolean(lesson.videoId) && lessonHasTranscript(lesson);
+  const active = tabs[activeTab];
+
+  const renderTab = (tab: ResolvedTab) => {
+    switch (tab.kind) {
+      case "transcript":
+        return lesson.videoId ? <Transcript videoId={lesson.videoId} onSeek={handleSeek} /> : null;
+      case "material":
+        return resources.length > 0 ? (
+          <div className="flex flex-col gap-4">
+            {resources.map((resource) => (
+              <ResourceLink key={resource.href} resource={resource} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-muted-foreground">No materials for this lesson yet.</p>
+        );
+      case "markdown":
+      default:
+        return <Markdown>{tab.markdown ?? ""}</Markdown>;
+    }
+  };
 
   return (
     <div className="bg-white rounded-xl border shadow-sm p-8">
-      <h1 className="text-3xl font-bold mb-6">{lesson.title}</h1>
+      {/* Sticky header: title, video and tab bar stay pinned while the panel scrolls. */}
+      <div className="sticky top-0 z-30 -mx-8 -mt-8 px-8 pt-8 pb-4 bg-white rounded-t-xl">
+        <div ref={menuRef} className="relative z-40 mb-6 inline-block">
+          <button
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-haspopup="listbox"
+            aria-expanded={menuOpen}
+            className="group flex items-center gap-2 text-left rounded-lg -mx-2 px-2 py-1 hover:bg-slate-50 transition-colors"
+          >
+            <h1 className="text-2xl font-bold">{lesson.title}</h1>
+            <ChevronDown
+              className={`w-5 h-5 shrink-0 text-muted-foreground transition-transform ${menuOpen ? "rotate-180" : ""}`}
+            />
+          </button>
 
-      <div className="flex flex-col lg:flex-row gap-8">
-        <div className="flex-1 min-w-0">
-          {lesson.videoId && (
-            <div className="aspect-video w-full bg-black rounded-lg overflow-hidden mb-8 lg:mb-0">
-              <iframe
-                ref={playerRef}
-                src={`https://www.youtube.com/embed/${lesson.videoId}?enablejsapi=1`}
-                title={lesson.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="w-full h-full"
-                style={{ border: 0 }}
-              />
+          {menuOpen && (
+            <div className="absolute z-40 mt-2 w-[min(28rem,calc(100vw-4rem))] max-h-[60vh] overflow-y-auto rounded-xl border bg-white p-2 shadow-lg">
+              {course.lessons.map((l, idx) => {
+                const isCurrent = l.id === lesson.id;
+                return (
+                  <Link
+                    key={l.id}
+                    href={`/courses/${course.slug}/${l.id}`}
+                    onClick={() => setMenuOpen(false)}
+                    aria-current={isCurrent ? "page" : undefined}
+                    className={`flex items-start gap-3 rounded-lg px-3 py-2 transition-colors ${
+                      isCurrent ? "bg-slate-100" : "hover:bg-slate-50"
+                    }`}
+                  >
+                    <span className="mt-0.5 w-5 shrink-0 text-sm text-muted-foreground tabular-nums">
+                      {isCurrent ? <Check className="w-4 h-4 text-primary" /> : idx + 1}
+                    </span>
+                    <span className={`text-sm leading-snug ${isCurrent ? "font-semibold" : ""}`}>
+                      {l.title}
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           )}
-
-          <div className="prose prose-zinc max-w-none mt-8">
-            {lesson.description && (
-              <>
-                <h2 className="text-2xl font-semibold mb-4">About this lesson</h2>
-                <p className="text-lg text-muted-foreground mb-8">{lesson.description}</p>
-              </>
-            )}
-
-            {resources.length > 0 && (
-              <div className="flex flex-col gap-4">
-                {resources.map((resource) => (
-                  <ResourceLink key={resource.href} resource={resource} />
-                ))}
-              </div>
-            )}
-          </div>
         </div>
 
-        {showTranscript && lesson.videoId && (
-          <div className="w-full lg:w-[380px] xl:w-[420px] shrink-0">
-            <Transcript videoId={lesson.videoId} onSeek={handleSeek} />
+        {lesson.videoId && (
+          <div className="aspect-video w-full bg-black rounded-lg overflow-hidden">
+            <iframe
+              ref={playerRef}
+              src={`https://www.youtube.com/embed/${lesson.videoId}?enablejsapi=1`}
+              title={lesson.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+              style={{ border: 0 }}
+            />
+          </div>
+        )}
+
+        {tabs.length > 0 && (
+          <div
+            role="tablist"
+            aria-label="Lesson sections"
+            className="flex gap-1 overflow-x-auto border-b mt-4"
+          >
+            {tabs.map((tab, idx) => {
+              const isActive = idx === activeTab;
+              return (
+                <button
+                  key={`${tab.type}-${idx}`}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setActiveTab(idx)}
+                  className={`whitespace-nowrap px-4 py-2.5 text-sm font-medium border-b-2 -mb-px transition-colors ${
+                    isActive
+                      ? "border-primary text-primary"
+                      : "border-transparent text-muted-foreground hover:text-foreground hover:border-slate-200"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
           </div>
         )}
       </div>
+
+      {active && (
+        <div role="tabpanel" className="min-h-[8rem] pt-2">
+          {renderTab(active)}
+        </div>
+      )}
     </div>
   );
 }

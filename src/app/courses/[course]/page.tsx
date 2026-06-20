@@ -85,7 +85,7 @@ export default function CoursePage({ params }: { params: { course: string } }) {
                   )}
                   <div className="flex-1">
                     <h2 className="text-xl font-semibold mb-2">{lesson.title}</h2>
-                    <p className="text-muted-foreground">{lesson.summary ?? lesson.description}</p>
+                    <p className="text-muted-foreground">{lesson.summary}</p>
                     {colab && (
                       <div className="mt-4">
                         <ResourceLink resource={colab} size="sm" />

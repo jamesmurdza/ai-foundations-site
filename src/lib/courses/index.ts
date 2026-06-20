@@ -2,7 +2,14 @@ import type { Course, Lesson } from "./types";
 import { aiAgentCamp } from "./ai-agent-camp";
 import { mlPython } from "./ml-python";
 
-export type { Course, Lesson, Resource, ResourceType } from "./types";
+export type {
+  Course,
+  Lesson,
+  LessonTab,
+  ResolvedTab,
+  Resource,
+  ResourceType,
+} from "./types";
 
 const COURSES: Course[] = [aiAgentCamp, mlPython];
 
