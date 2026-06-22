@@ -78,9 +78,9 @@ export function LessonView({
   };
 
   return (
-    <div className="bg-white rounded-xl border shadow-sm p-8">
+    <div className="bg-white p-5 sm:rounded-xl sm:border sm:shadow-sm sm:p-6 md:p-8">
       {/* Sticky header: title, video and tab bar stay pinned while the panel scrolls. */}
-      <div className="sticky top-0 z-30 -mx-8 -mt-8 px-8 pt-8 pb-4 bg-white rounded-t-xl">
+      <div className="sticky top-0 z-30 -mx-5 sm:-mx-6 md:-mx-8 -mt-5 sm:-mt-6 md:-mt-8 px-5 sm:px-6 md:px-8 pt-5 sm:pt-6 md:pt-8 pb-4 bg-white sm:rounded-t-xl">
         <div ref={menuRef} className="relative z-40 mb-6 inline-block">
           <button
             type="button"
@@ -89,7 +89,7 @@ export function LessonView({
             aria-expanded={menuOpen}
             className="group flex items-center gap-2 text-left rounded-lg -mx-2 px-2 py-1 hover:bg-slate-50 transition-colors"
           >
-            <h1 className="text-2xl font-bold">{lesson.title}</h1>
+            <h1 className="text-lg sm:text-xl font-bold">{lesson.title}</h1>
             <ChevronDown
               className={`w-5 h-5 shrink-0 text-muted-foreground transition-transform ${menuOpen ? "rotate-180" : ""}`}
             />
@@ -123,7 +123,7 @@ export function LessonView({
         </div>
 
         {lesson.videoId && (
-          <div className="aspect-video w-full bg-black rounded-lg overflow-hidden">
+          <div className="aspect-video w-full max-w-[calc(55vh*16/9)] mx-auto bg-black rounded-lg overflow-hidden">
             <iframe
               ref={playerRef}
               src={`https://www.youtube.com/embed/${lesson.videoId}?enablejsapi=1`}
@@ -140,7 +140,7 @@ export function LessonView({
           <div
             role="tablist"
             aria-label="Lesson sections"
-            className="flex gap-1 overflow-x-auto border-b mt-4"
+            className="flex gap-1 overflow-x-auto overflow-y-hidden border-b mt-4"
           >
             {tabs.map((tab, idx) => {
               const isActive = idx === activeTab;
