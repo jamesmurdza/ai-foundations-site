@@ -136,7 +136,7 @@ export function LessonView({
           </div>
         )}
 
-        {tabs.length > 0 && (
+        {tabs.length > 1 && (
           <div
             role="tablist"
             aria-label="Lesson sections"
