@@ -1,10 +1,18 @@
 import type { Course, Lesson } from "./types";
 import { aiAgentCamp } from "./ai-agent-camp";
 import { mlPython } from "./ml-python";
+import { git } from "./git";
 
-export type { Course, Lesson, Resource, ResourceType } from "./types";
+export type {
+  Course,
+  Lesson,
+  LessonTab,
+  ResolvedTab,
+  Resource,
+  ResourceType,
+} from "./types";
 
-const COURSES: Course[] = [aiAgentCamp, mlPython];
+const COURSES: Course[] = [aiAgentCamp, mlPython, git];
 
 export function getAllCourses(): Course[] {
   return COURSES;

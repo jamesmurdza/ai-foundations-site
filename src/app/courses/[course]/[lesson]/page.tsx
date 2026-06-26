@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getAllCourses, getLesson } from "@/lib/courses";
+import { getLessonTabs } from "@/lib/courses/content";
 import { LessonView } from "@/components/courses/LessonView";
 
 export function generateStaticParams() {
@@ -25,7 +26,7 @@ export function generateMetadata({
   const { course, lesson } = result;
   return {
     title: `${lesson.title} | ${course.title}`,
-    description: lesson.summary ?? lesson.description ?? course.description,
+    description: lesson.summary ?? course.description,
   };
 }
 
@@ -33,11 +34,12 @@ export default function LessonPage({ params }: { params: { course: string; lesso
   const result = getLesson(params.course, params.lesson);
   if (!result) notFound();
   const { course, lesson } = result;
+  const tabs = getLessonTabs(course.slug, lesson);
 
   return (
     <div className="min-h-screen bg-muted/10">
-      <div className="container py-24">
-        <div className="max-w-6xl mx-auto">
+      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-8">
             <Link href={`/courses/${course.slug}`}>
               <Button variant="ghost" size="sm" className="gap-2">
@@ -47,7 +49,7 @@ export default function LessonPage({ params }: { params: { course: string; lesso
             </Link>
           </div>
 
-          <LessonView course={course} lesson={lesson} />
+          <LessonView course={course} lesson={lesson} tabs={tabs} />
         </div>
       </div>
     </div>
