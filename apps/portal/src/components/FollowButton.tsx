@@ -1,5 +1,6 @@
 import { followProfile, unfollowProfile } from "@/lib/actions/follow";
 import { SubmitButton } from "@/components/SubmitButton";
+import { withBase } from "@/lib/paths";
 
 /**
  * Manual GitHub follow button shown on a profile. Following here actually
@@ -28,7 +29,7 @@ export function FollowButton({
 
   if (!viewerSignedIn) {
     return (
-      <a href="/login" className="btn btn-outline btn-sm">
+      <a href={withBase("/login")} className="btn btn-outline btn-sm">
         Sign in to follow
       </a>
     );
@@ -36,7 +37,7 @@ export function FollowButton({
 
   if (!viewerConnected) {
     return (
-      <a href="/api/auth/github" className="btn btn-outline btn-sm">
+      <a href={withBase("/api/auth/github")} className="btn btn-outline btn-sm">
         Connect GitHub to follow
       </a>
     );

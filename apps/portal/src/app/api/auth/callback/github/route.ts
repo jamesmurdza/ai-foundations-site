@@ -10,6 +10,12 @@ import {
 import { upsertUserFromGithub, linkGithubToUser } from "@/lib/users";
 import { createSession, getSessionUserId } from "@/lib/session";
 import { sendEmail, templates } from "@/lib/email";
+import { env } from "@/lib/env";
+
+// Redirect to the public, basePath-aware URL (env.baseUrl already ends in /portal)
+// — never req.url, which behind the multi-zone rewrite points at this deployment's
+// raw origin and would drop the /portal prefix.
+const appUrl = (path: string) => new URL(`${env.baseUrl}${path}`);
 
 export async function GET(req: Request) {
   const url = new URL(req.url);
@@ -21,7 +27,7 @@ export async function GET(req: Request) {
   store.delete("ss_oauth_state");
 
   if (!code || !state || !expected || state !== expected) {
-    return NextResponse.redirect(new URL("/login?error=state", req.url));
+    return NextResponse.redirect(appUrl("/login?error=state"));
   }
 
   try {
@@ -33,9 +39,8 @@ export async function GET(req: Request) {
     if (sessionUserId) {
       const res = await linkGithubToUser(sessionUserId, identity, accessToken, scope);
       return NextResponse.redirect(
-        new URL(
+        appUrl(
           res.ok ? "/onboarding/connect?connected=1" : "/onboarding/connect?error=link",
-          req.url,
         ),
       );
     }
@@ -60,11 +65,9 @@ export async function GET(req: Request) {
       .where(eq(profiles.userId, user.id))
       .limit(1);
 
-    return NextResponse.redirect(
-      new URL(profile ? "/home" : "/onboarding", req.url),
-    );
+    return NextResponse.redirect(appUrl(profile ? "/home" : "/onboarding"));
   } catch (e) {
     console.error("[oauth] callback failed", e);
-    return NextResponse.redirect(new URL("/login?error=oauth", req.url));
+    return NextResponse.redirect(appUrl("/login?error=oauth"));
   }
 }

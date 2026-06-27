@@ -4,6 +4,7 @@ import { getCurrentUser } from "@/lib/auth";
 import { env } from "@/lib/env";
 import { requestLoginCode, verifyLoginCode } from "@/lib/actions/auth-code";
 import { SubmitButton } from "@/components/SubmitButton";
+import { withBase } from "@/lib/paths";
 
 const ERRORS: Record<string, string> = {
   email: "Enter a valid email address.",
@@ -74,7 +75,7 @@ export default async function LoginPage({
                   <span className="meta-light text-[12px]">or dev login</span>
                   <span className="hairline flex-1" />
                 </div>
-                <form action="/api/auth/dev" method="post" className="flex gap-2">
+                <form action={withBase("/api/auth/dev")} method="post" className="flex gap-2">
                   <input
                     className="input"
                     type="email"

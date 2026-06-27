@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { User, LogOut } from "lucide-react";
 import { Avatar } from "./Avatar";
+import { withBase } from "@/lib/paths";
 
 // Top-right account menu: click the avatar for a dropdown with Profile + Sign out.
 // (Editing your profile lives on the profile page itself.)
@@ -62,7 +63,7 @@ export function UserMenu({
           >
             <User size={17} aria-hidden /> Profile
           </Link>
-          <form action="/api/auth/signout" method="post">
+          <form action={withBase("/api/auth/signout")} method="post">
             <button
               type="submit"
               role="menuitem"

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { withBase } from "@/lib/paths";
 
 export type NavLink = { href: string; label: string };
 
@@ -68,7 +69,7 @@ export function MobileMenu({
                     Profile
                   </Link>
                 )}
-                <form action="/api/auth/signout" method="post" className="mt-2">
+                <form action={withBase("/api/auth/signout")} method="post" className="mt-2">
                   <button type="submit" className="btn btn-ghost justify-start w-full !py-3">
                     Sign out
                   </button>

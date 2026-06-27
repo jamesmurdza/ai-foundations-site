@@ -7,6 +7,7 @@ import {
   AUTO_STARS_STORAGE_KEY,
   persistAutoStars,
 } from "@/lib/auto-stars-client";
+import { withBase } from "@/lib/paths";
 
 export function AutoStarsToggle({
   initialEnabled,
@@ -104,7 +105,7 @@ export function AutoStarsToggle({
         <p className="meta text-center">
           Auto-stars place your real GitHub star, so you need GitHub connected
           first.{" "}
-          <a href="/api/auth/github" className="link font-semibold">
+          <a href={withBase("/api/auth/github")} className="link font-semibold">
             Connect GitHub
           </a>
           .

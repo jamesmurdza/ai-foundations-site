@@ -10,6 +10,7 @@ import {
 import { onboardingFinish } from "@/lib/actions/profile";
 import { OnboardingSteps } from "@/components/OnboardingSteps";
 import { SubmitButton } from "@/components/SubmitButton";
+import { withBase } from "@/lib/paths";
 
 export default async function OnboardingConnectPage({
   searchParams,
@@ -55,12 +56,12 @@ export default async function OnboardingConnectPage({
           <div className="flex items-center gap-3">
             <span className="badge badge-teal">Connected ✓</span>
             <span className="font-semibold">@{user.githubLogin}</span>
-            <a href="/api/auth/github" className="btn btn-outline btn-sm ml-auto">Reconnect</a>
+            <a href={withBase("/api/auth/github")} className="btn btn-outline btn-sm ml-auto">Reconnect</a>
           </div>
         ) : (
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <div className="meta text-[14px]">Not connected yet.</div>
-            <a href="/api/auth/github" className="btn btn-dark">
+            <a href={withBase("/api/auth/github")} className="btn btn-dark">
               <GithubMark /> Connect GitHub
             </a>
           </div>

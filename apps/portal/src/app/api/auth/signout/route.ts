@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import { destroySession } from "@/lib/session";
+import { env } from "@/lib/env";
 
-export async function POST(req: Request) {
+export async function POST() {
   await destroySession();
-  return NextResponse.redirect(new URL("/", req.url));
+  // env.baseUrl is the public /portal URL; never req.url (multi-zone origin leak).
+  return NextResponse.redirect(new URL(`${env.baseUrl}/`));
 }

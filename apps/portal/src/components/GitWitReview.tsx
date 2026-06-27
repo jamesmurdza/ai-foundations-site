@@ -5,6 +5,10 @@ import Image from "next/image";
 import { Check, X, Loader2 } from "lucide-react";
 import { reviewMyGitHubProfile } from "@/lib/actions/gitwit";
 import type { GitWitReviewResult, VerdictWithLabel } from "@/lib/gitwitTypes";
+import { withBase } from "@/lib/paths";
+
+// next/image src must include basePath manually (basePath does not auto-prefix it).
+const GITWIT_IMG = withBase("/gitwit.jpg");
 
 function Section({
   title,
@@ -73,7 +77,7 @@ export function GitWitReview({ assignmentId }: { assignmentId: string }) {
             <Loader2 size={16} className="animate-spin" aria-hidden />
           ) : (
             <Image
-              src="/gitwit.jpg"
+              src={GITWIT_IMG}
               alt=""
               width={18}
               height={18}
@@ -85,7 +89,7 @@ export function GitWitReview({ assignmentId }: { assignmentId: string }) {
         {result && !result.ok ? (
           <div className="mt-3 mx-auto max-w-[32rem] flex items-start gap-2 text-left">
             <Image
-              src="/gitwit.jpg"
+              src={GITWIT_IMG}
               alt=""
               width={18}
               height={18}
@@ -110,7 +114,7 @@ export function GitWitReview({ assignmentId }: { assignmentId: string }) {
       <div className="rounded-[14px] border border-sea-fog p-5">
         <div className="flex items-center gap-2">
           <Image
-            src="/gitwit.jpg"
+            src={GITWIT_IMG}
             alt="GitWit"
             width={22}
             height={22}

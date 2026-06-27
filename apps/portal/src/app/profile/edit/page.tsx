@@ -8,6 +8,7 @@ import {
 } from "@/lib/applications";
 import { updateProfile, importGithubSocials } from "@/lib/actions/profile";
 import { loadReadmeForEdit } from "@/lib/actions/github-readme";
+import { withBase } from "@/lib/paths";
 import { SubmitButton } from "@/components/SubmitButton";
 import { ReadmeEditor } from "@/components/ReadmeEditor";
 import { COUNTRY_CENTROIDS } from "@/lib/countries";
@@ -85,7 +86,7 @@ export default async function ProfileEditPage({
       {sp.error === "readme_forbidden" && (
         <div className="mt-5 rounded-[11px] bg-primary-soft text-primary-strong text-[14px] px-4 py-3">
           GitHub denied write access.{" "}
-          <a href="/api/auth/github" className="link font-semibold">
+          <a href={withBase("/api/auth/github")} className="link font-semibold">
             Reconnect GitHub
           </a>{" "}
           to grant permission.
@@ -117,7 +118,7 @@ export default async function ProfileEditPage({
             />
           </div>
           <p className="meta-light text-[12px] mt-1">
-            Your shareable link: aifoundations.school/u/
+            Your shareable link: aifoundations.school/portal/u/
             <span className="font-semibold">{v.username || "yourname"}</span>
           </p>
         </div>
@@ -200,14 +201,14 @@ export default async function ProfileEditPage({
               >
                 Import links from GitHub
               </button>
-              <a href="/api/auth/github" className="btn btn-ghost btn-sm">Reconnect</a>
+              <a href={withBase("/api/auth/github")} className="btn btn-ghost btn-sm">Reconnect</a>
             </div>
           ) : (
             <div className="flex items-center justify-between gap-3 flex-wrap">
               <div className="meta text-[14px]">
                 Connect to enable Trade Stars and your GitHub glow-up.
               </div>
-              <a href="/api/auth/github" className="btn btn-dark">Connect GitHub</a>
+              <a href={withBase("/api/auth/github")} className="btn btn-dark">Connect GitHub</a>
             </div>
           )}
         </div>

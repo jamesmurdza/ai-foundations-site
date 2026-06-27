@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { githubAuthorizeUrl } from "@/lib/auth";
-import { githubConfigured, cookieSecure } from "@/lib/env";
+import { githubConfigured, cookieSecure, env } from "@/lib/env";
 
-export async function GET(req: Request) {
+export async function GET() {
   if (!githubConfigured) {
     return NextResponse.redirect(
-      new URL("/login?error=github_not_configured", req.url),
+      new URL(`${env.baseUrl}/login?error=github_not_configured`),
     );
   }
   const state = crypto.randomUUID();

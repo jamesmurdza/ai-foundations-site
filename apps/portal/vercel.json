@@ -1,7 +1,7 @@
 {
   "crons": [
     {
-      "path": "/api/cron/reconcile-stars",
+      "path": "/portal/api/cron/reconcile-stars",
       "schedule": "*/5 * * * *"
     }
   ]
