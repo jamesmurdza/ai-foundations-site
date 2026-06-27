@@ -1,6 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { sql } from "@site/lib/db";
 import { sendThankYou } from "@site/lib/email";
+import { syncOneToTinysend } from "@portal/lib/tinysend-sync";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,19 +19,30 @@ export async function POST(_req: NextRequest, { params }: RouteCtx) {
   if (rows[0].status === "submitted") {
     return NextResponse.json({ error: "already_submitted" }, { status: 409 });
   }
-  await sql`
+  const submitted = (await sql`
     UPDATE hh_applications
        SET status = 'submitted',
            submitted_at = NOW(),
            updated_at = NOW()
      WHERE id = ${id}
-  `;
+    RETURNING email, name
+  `) as { email: string | null; name: string | null }[];
 
-  // Atomically claim the notification slot. If we win, we own the send;
-  // the admin-side cron will skip this row. If the send fails, we null
-  // the column back so the cron picks it up later. Bounded by SMTP
-  // timeouts in src/lib/email.ts so a hung server can't hang submit.
-  await notifyApplicant(id);
+  // Instant best-effort: add the applicant to the tinysend mailing list right away
+  // so the twice-daily reconciler cron is only a safety net. syncOneToTinysend never
+  // throws, writes the ledger on success (so the cron skips it), and no-ops when
+  // TINYSEND_API_KEY is unset. Runs post-response via after() so submit stays fast.
+  const applicant = submitted[0];
+  if (applicant?.email) {
+    const email = applicant.email;
+    const name = applicant.name;
+    after(() => syncOneToTinysend(email, name));
+  }
+
+  // Fire-and-forget the thank-you email so submit returns instantly. notifyApplicant
+  // claims the notification slot atomically (the cron skips claimed rows) and releases
+  // it on send failure so the cron backstop retries later.
+  after(() => notifyApplicant(id));
 
   return NextResponse.json({ ok: true });
 }

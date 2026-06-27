@@ -1,7 +1,0 @@
-{
-  "crons": [
-    { "path": "/portal/api/cron/reconcile-stars", "schedule": "*/5 * * * *" },
-    { "path": "/portal/api/cron/sync-tinysend", "schedule": "*/10 * * * *" },
-    { "path": "/dashboard/api/cron/notify-submissions", "schedule": "*/15 * * * *" }
-  ]
-}
