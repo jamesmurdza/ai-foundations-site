@@ -11,7 +11,7 @@ import { HostsSection } from "@site/components/hacker-house/HostsSection";
 import { ApplySection } from "@site/components/hacker-house/ApplySection";
 import { FaqSection } from "@site/components/hacker-house/FaqSection";
 
-const OG_IMAGE = "https://aifoundations.school/og/summer-school.jpg";
+const OG_IMAGE = "https://aifoundations.school/og/summer-school.png";
 const PAGE_URL = "https://aifoundations.school/summer-school";
 const PAGE_TITLE = "Summer School — AI Foundations";
 const PAGE_DESCRIPTION =

@@ -110,7 +110,8 @@ const config = {
   },
   // animate utilities now come from tw-animate-css (imported in globals.css);
   // the accordion keyframes/animation above are defined in this theme.
-  plugins: [],
+  // @tailwindcss/typography powers the `prose` styling on the markdown course pages.
+  plugins: [require("@tailwindcss/typography")],
 } satisfies Config;
 
 export default config;

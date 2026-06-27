@@ -55,11 +55,11 @@ export function DetailsSection() {
               <div className="flex flex-col gap-4 text-left text-lg">
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                  <span className="font-medium">Southeast Asia</span>
+                  <span className="font-medium">West Java, Indonesia</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Calendar className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                  <span className="font-medium">25th July - 25th August 2026</span>
+                  <span className="font-medium">27th July - 21st August 2026</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Home className="w-5 h-5 text-muted-foreground flex-shrink-0" />

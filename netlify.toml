@@ -1,0 +1,22 @@
+# Netlify deploy config — unified app (apps/web). One Netlify site serves all
+# three zones:
+#   /            marketing site
+#   /portal/*    student portal
+#   /dashboard/* admin dashboard
+#
+# This is an npm-workspaces monorepo: the package-lock.json lives at the repo
+# root. Netlify detects the workspace root from the lockfile and runs install
+# there, then builds the package at `base`. The Next.js runtime plugin wires up
+# the serverless/edge functions, middleware (proxy.ts), image optimization and
+# caching automatically.
+
+[build]
+  base = "apps/web"
+  command = "npm run build"
+
+[build.environment]
+  # Next.js 16 requires Node >= 20.9.
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
