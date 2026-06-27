@@ -5,15 +5,16 @@ import { applicationStateSchema } from "@/lib/hacker-house/types";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-type RouteCtx = { params: { id: string } };
+type RouteCtx = { params: Promise<{ id: string }> };
 
 export async function GET(_req: NextRequest, { params }: RouteCtx) {
+  const { id } = await params;
   const rows = (await sql`
     SELECT id, email, name, answers, dynamic_questions, status,
            portfolio_url, github_url, other_url, step,
            extract(epoch from updated_at)::bigint * 1000 AS updated_at
       FROM hh_applications
-     WHERE id = ${params.id}
+     WHERE id = ${id}
      LIMIT 1
   `) as Record<string, unknown>[];
   if (rows.length === 0) {
@@ -37,6 +38,7 @@ export async function GET(_req: NextRequest, { params }: RouteCtx) {
 }
 
 export async function PATCH(req: NextRequest, { params }: RouteCtx) {
+  const { id } = await params;
   let body: unknown;
   try {
     body = await req.json();
@@ -53,12 +55,12 @@ export async function PATCH(req: NextRequest, { params }: RouteCtx) {
   }
   const s = parsed.data;
 
-  if (s.sessionId !== params.id) {
+  if (s.sessionId !== id) {
     return NextResponse.json({ error: "id_mismatch" }, { status: 400 });
   }
 
   const existing = (await sql`
-    SELECT status FROM hh_applications WHERE id = ${params.id} LIMIT 1
+    SELECT status FROM hh_applications WHERE id = ${id} LIMIT 1
   `) as Record<string, unknown>[];
 
   if (existing.length === 0) {
@@ -97,7 +99,7 @@ export async function PATCH(req: NextRequest, { params }: RouteCtx) {
       other_url         = ${s.otherUrl ?? null},
       step              = ${s.step},
       updated_at        = NOW()
-    WHERE id = ${params.id}
+    WHERE id = ${id}
   `;
 
   return NextResponse.json({ ok: true });

@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
+/* Reuse the existing v3-style theme (colors, radius, fonts, accordion) under v4. */
+@config "../../tailwind.config.ts";
 
 @layer base {
   :root {

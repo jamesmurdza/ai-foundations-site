@@ -9,7 +9,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 
-type RouteCtx = { params: { id: string } };
+type RouteCtx = { params: Promise<{ id: string }> };
 
 const SYSTEM_PROMPT = `You are an admissions interviewer for a 4-week summer program where builders work on their portfolios together in Southeast Asia.
 
@@ -76,6 +76,7 @@ function buildAnswerSummary(answers: Record<string, string>): string {
 }
 
 export async function POST(req: NextRequest, { params }: RouteCtx) {
+  const { id } = await params;
   let bodyAnswers: Record<string, string> | undefined;
   try {
     const body = (await req.json()) as { answers?: Record<string, string> | null };
@@ -89,7 +90,7 @@ export async function POST(req: NextRequest, { params }: RouteCtx) {
   const rows = (await sql`
     SELECT answers, dynamic_questions, status
       FROM hh_applications
-     WHERE id = ${params.id}
+     WHERE id = ${id}
      LIMIT 1
   `) as Record<string, unknown>[];
   if (rows.length === 0) {
@@ -170,14 +171,14 @@ export async function POST(req: NextRequest, { params }: RouteCtx) {
          SET dynamic_questions = ${JSON.stringify(questions)}::jsonb,
              answers           = ${JSON.stringify(answers)}::jsonb,
              updated_at        = NOW()
-       WHERE id = ${params.id}
+       WHERE id = ${id}
     `;
   } else {
     await sql`
       UPDATE hh_applications
          SET dynamic_questions = ${JSON.stringify(questions)}::jsonb,
              updated_at        = NOW()
-       WHERE id = ${params.id}
+       WHERE id = ${id}
     `;
   }
 

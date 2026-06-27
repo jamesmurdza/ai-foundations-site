@@ -1,9 +1,19 @@
 import type { Config } from "tailwindcss";
 
-import { fontFamily } from "tailwindcss/defaultTheme";
+// Literal sans fallback (Tailwind v4 doesn't expose tailwindcss/defaultTheme the
+// same way; this preserves the original font stack).
+const sansFallback = [
+  "ui-sans-serif",
+  "system-ui",
+  "sans-serif",
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji",
+];
 
 const config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -93,12 +103,15 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-        heading: ["var(--font-heading)", ...fontFamily.sans],
+        sans: ["var(--font-sans)", ...sansFallback],
+        heading: ["var(--font-heading)", ...sansFallback],
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  // animate utilities now come from tw-animate-css (imported in globals.css);
+  // the accordion keyframes/animation above are defined in this theme.
+  // @tailwindcss/typography powers the `prose` styling on the markdown course pages.
+  plugins: [require("@tailwindcss/typography")],
 } satisfies Config;
 
 export default config;

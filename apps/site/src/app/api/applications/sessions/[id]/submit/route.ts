@@ -5,11 +5,12 @@ import { sendThankYou } from "@/lib/email";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-type RouteCtx = { params: { id: string } };
+type RouteCtx = { params: Promise<{ id: string }> };
 
 export async function POST(_req: NextRequest, { params }: RouteCtx) {
+  const { id } = await params;
   const rows = (await sql`
-    SELECT status FROM hh_applications WHERE id = ${params.id} LIMIT 1
+    SELECT status FROM hh_applications WHERE id = ${id} LIMIT 1
   `) as Record<string, unknown>[];
   if (rows.length === 0) {
     return NextResponse.json({ error: "not_found" }, { status: 404 });
@@ -22,14 +23,14 @@ export async function POST(_req: NextRequest, { params }: RouteCtx) {
        SET status = 'submitted',
            submitted_at = NOW(),
            updated_at = NOW()
-     WHERE id = ${params.id}
+     WHERE id = ${id}
   `;
 
   // Atomically claim the notification slot. If we win, we own the send;
   // the admin-side cron will skip this row. If the send fails, we null
   // the column back so the cron picks it up later. Bounded by SMTP
   // timeouts in src/lib/email.ts so a hung server can't hang submit.
-  await notifyApplicant(params.id);
+  await notifyApplicant(id);
 
   return NextResponse.json({ ok: true });
 }
