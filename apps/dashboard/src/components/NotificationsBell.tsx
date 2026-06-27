@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { withBase } from "@/lib/paths";
 
 type Mention = {
   commentId: string;
@@ -176,8 +177,8 @@ export function NotificationsBell() {
   const refresh = useCallback(async () => {
     try {
       const [mRes, aRes] = await Promise.all([
-        fetch("/api/notifications", { cache: "no-store", credentials: "same-origin" }),
-        fetch("/api/activity", { cache: "no-store", credentials: "same-origin" }),
+        fetch(withBase("/api/notifications"), { cache: "no-store", credentials: "same-origin" }),
+        fetch(withBase("/api/activity"), { cache: "no-store", credentials: "same-origin" }),
       ]);
       let nextPayload: Payload | null = null;
       if (mRes.ok) {

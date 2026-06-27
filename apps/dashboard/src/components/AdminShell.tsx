@@ -1,12 +1,21 @@
-import { headers } from "next/headers";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import Link from "next/link";
 
 import { NotificationsBell } from "@/components/NotificationsBell";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { resolveAdmin } from "@/lib/portal-auth";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export async function AdminShell({ children }: { children: React.ReactNode }) {
-  const h = await headers();
-  const adminUser = h.get("x-admin-user") ?? "admin";
+  // Defense-in-depth: every dashboard page is wrapped by AdminShell, so even if
+  // the proxy matcher ever misses a route, auth is still enforced here against the
+  // shared Portal session. Identity comes from the verified session, not a header.
+  const store = await cookies();
+  const admin = await resolveAdmin(store.get("ss_session")?.value);
+  if (!admin) redirect(`${SITE_URL}/portal/login`);
+  const adminUser = admin.githubLogin ?? admin.email ?? "admin";
 
   return (
     <>
@@ -18,12 +27,6 @@ export async function AdminShell({ children }: { children: React.ReactNode }) {
               className="font-semibold tracking-tight text-ink hover:text-action transition-colors truncate"
             >
               Hacker House
-            </Link>
-            <Link
-              href="/admins"
-              className="text-ink-80 hover:text-ink transition-colors"
-            >
-              Admins
             </Link>
           </div>
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">

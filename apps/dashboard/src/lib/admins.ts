@@ -1,76 +1,29 @@
-import { hashPassword, isValidPassword, isValidUsername } from "./auth";
 import { sql } from "./db";
 
-export type Admin = {
-  username: string;
-  createdAt: string;
-};
+// Admins are managed in the Portal (ss_admins + ADMIN_EMAILS) now — the dashboard
+// no longer creates or stores admin passwords. This module exposes only the set of
+// admin GitHub logins, used to validate and autocomplete @mentions in comments.
 
-type Row = {
-  username: string;
-  password_hash: string;
-  created_at: string | Date;
-};
-
-function toAdmin(r: Row): Admin {
-  return {
-    username: r.username,
-    createdAt:
-      r.created_at instanceof Date
-        ? r.created_at.toISOString()
-        : new Date(r.created_at).toISOString(),
-  };
-}
-
-export async function listAdmins(): Promise<Admin[]> {
-  const rows = (await sql`
-    SELECT username, password_hash, created_at
-      FROM hh_admins
-     ORDER BY created_at ASC, username ASC
-  `) as Row[];
-  return rows.map(toAdmin);
-}
-
+/**
+ * GitHub logins of all admins, for @mention validation + autocomplete.
+ * Sources: ss_admins.github_login (managed admins) plus the github_login of any
+ * ss_users row whose email matches a ss_admins email (covers email-seeded admins,
+ * e.g. founders, once they've connected GitHub).
+ */
 export async function getAdminUsernames(): Promise<string[]> {
-  const rows = (await sql`SELECT username FROM hh_admins ORDER BY username`) as {
-    username: string;
-  }[];
-  return rows.map((r) => r.username);
-}
-
-export type CreateAdminError =
-  | "invalid_username"
-  | "invalid_password"
-  | "username_taken";
-
-export async function createAdmin(
-  username: string,
-  password: string,
-): Promise<{ ok: true; admin: Admin } | { ok: false; error: CreateAdminError }> {
-  const u = username.trim().toLowerCase();
-  if (!isValidUsername(u)) return { ok: false, error: "invalid_username" };
-  if (!isValidPassword(password)) return { ok: false, error: "invalid_password" };
-
-  const existing = (await sql`
-    SELECT 1 FROM hh_admins WHERE username = ${u} LIMIT 1
-  `) as unknown[];
-  if (existing.length > 0) return { ok: false, error: "username_taken" };
-
-  const hash = await hashPassword(password);
-  const inserted = (await sql`
-    INSERT INTO hh_admins (username, password_hash)
-    VALUES (${u}, ${hash})
-    RETURNING username, password_hash, created_at
-  `) as Row[];
-
-  return { ok: true, admin: toAdmin(inserted[0]) };
-}
-
-export async function getAdminPasswordHash(
-  username: string,
-): Promise<string | null> {
   const rows = (await sql`
-    SELECT password_hash FROM hh_admins WHERE username = ${username} LIMIT 1
-  `) as { password_hash: string }[];
-  return rows.length > 0 ? rows[0].password_hash : null;
+    SELECT DISTINCT login FROM (
+      SELECT lower(github_login) AS login
+        FROM ss_admins
+       WHERE github_login IS NOT NULL
+      UNION
+      SELECT lower(u.github_login) AS login
+        FROM ss_users u
+        JOIN ss_admins a ON lower(a.email) = lower(u.email)
+       WHERE u.github_login IS NOT NULL
+    ) t
+    WHERE login IS NOT NULL
+    ORDER BY login
+  `) as { login: string }[];
+  return rows.map((r) => r.login);
 }

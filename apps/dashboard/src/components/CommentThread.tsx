@@ -9,12 +9,15 @@ import {
 } from "react";
 
 import type { Comment } from "@/lib/comments";
+import { withBase } from "@/lib/paths";
 
 const POLL_MS = 5000;
 
 function apiUrl(path: string): string {
-  if (typeof window === "undefined") return path;
-  return window.location.origin + path;
+  // basePath (/dashboard) is not auto-applied to client fetch — add it here.
+  const withPrefix = withBase(path);
+  if (typeof window === "undefined") return withPrefix;
+  return window.location.origin + withPrefix;
 }
 
 function formatRelative(iso: string): string {

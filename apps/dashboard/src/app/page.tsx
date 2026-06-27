@@ -7,6 +7,7 @@ import { getCounts, listApplications } from "@/lib/applications";
 import { getCommentCounts, getDailySubmissions, getUnreadFor } from "@/lib/comments";
 import { countryOf } from "@/lib/geo";
 import { getStars } from "@/lib/stars";
+import { withBase } from "@/lib/paths";
 
 export const dynamic = "force-dynamic";
 
@@ -43,7 +44,7 @@ export default async function HomePage() {
             {counts.total} {counts.total === 1 ? "application" : "applications"}
           </h1>
           <a
-            href="/api/export"
+            href={withBase("/api/export")}
             className="inline-flex h-10 md:h-11 items-center rounded-full bg-action px-5 md:px-6 text-[14px] md:text-[15px] font-medium text-white transition-transform active:scale-[0.97] hover:bg-action-focus"
           >
             Export CSV

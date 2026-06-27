@@ -12,6 +12,7 @@ import {
 
 import { ALL_REGIONS, countryOf, regionOf } from "@/lib/geo";
 import type { AdminStatus, Application } from "@/lib/types";
+import { withBase } from "@/lib/paths";
 
 type UnreadByApp = Record<string, { total: number; mentioned: number }>;
 type CommentCountMap = Record<string, number>;
@@ -140,7 +141,7 @@ export function ApplicantsView({ initial }: { initial: ListPayload }) {
 
   const refresh = useCallback(async (silent: boolean) => {
     try {
-      const res = await fetch("/api/applications", {
+      const res = await fetch(withBase("/api/applications"), {
         cache: "no-store",
         credentials: "same-origin",
       });
@@ -201,7 +202,7 @@ export function ApplicantsView({ initial }: { initial: ListPayload }) {
       if (toUpload.length > 0) {
         await Promise.allSettled(
           toUpload.map((id) =>
-            fetch(`/api/stars/${id}`, {
+            fetch(withBase(`/api/stars/${id}`), {
               method: "POST",
               credentials: "same-origin",
             }),
@@ -258,7 +259,7 @@ export function ApplicantsView({ initial }: { initial: ListPayload }) {
           stars: { ...prev.stars, [id]: nextList },
         };
       });
-      void fetch(`/api/stars/${id}`, {
+      void fetch(withBase(`/api/stars/${id}`), {
         method: willBeStarred ? "POST" : "DELETE",
         credentials: "same-origin",
       }).catch(() => {
