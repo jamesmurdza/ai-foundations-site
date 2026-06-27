@@ -16,12 +16,13 @@ export function generateStaticParams() {
   );
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { course: string; lesson: string };
-}): Metadata {
-  const result = getLesson(params.course, params.lesson);
+  params: Promise<{ course: string; lesson: string }>;
+}): Promise<Metadata> {
+  const { course: courseSlug, lesson: lessonSlug } = await params;
+  const result = getLesson(courseSlug, lessonSlug);
   if (!result) return {};
   const { course, lesson } = result;
   return {
@@ -30,8 +31,13 @@ export function generateMetadata({
   };
 }
 
-export default function LessonPage({ params }: { params: { course: string; lesson: string } }) {
-  const result = getLesson(params.course, params.lesson);
+export default async function LessonPage({
+  params,
+}: {
+  params: Promise<{ course: string; lesson: string }>;
+}) {
+  const { course: courseSlug, lesson: lessonSlug } = await params;
+  const result = getLesson(courseSlug, lessonSlug);
   if (!result) notFound();
   const { course, lesson } = result;
   const tabs = getLessonTabs(course.slug, lesson);

@@ -31,12 +31,16 @@
     "pg": "^8.20.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-markdown": "^10.1.0",
     "react-toastify": "^11.0.5",
+    "remark-gfm": "^4.0.1",
+    "server-only": "^0.0.1",
     "tailwind-merge": "^2.3.0",
     "zod": "^4.4.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^20",
     "@types/nodemailer": "^8.0.0",
     "@types/pg": "^8.20.0",
