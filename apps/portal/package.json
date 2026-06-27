@@ -15,6 +15,7 @@
     "backfill:usernames": "node --env-file=.env.local --import tsx src/scripts/backfill-usernames.ts",
     "dedupe:submissions": "node --env-file=.env.local --import tsx src/scripts/dedupe-submissions.ts",
     "backfill:repo-owners": "node --env-file=.env.local --import tsx src/scripts/backfill-repo-owners.ts",
+    "seed:tinysend": "node --env-file=.env.local --import tsx src/scripts/seed-tinysend-ledger.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test"

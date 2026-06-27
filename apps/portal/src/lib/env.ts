@@ -27,6 +27,9 @@ export const env = {
   anthropicApiKey: process.env.ANTHROPIC_API_KEY ?? "",
   // Optional GitHub token for higher API rate limits on profile reads.
   githubToken: process.env.GITHUB_TOKEN ?? "",
+  // tinysend.com mailing-list API key. Powers ONLY the subscriber import in
+  // lib/tinysend.ts. Server-only; holds destructive scope — never log it.
+  tinysendApiKey: process.env.TINYSEND_API_KEY ?? "",
 };
 
 export const githubConfigured = Boolean(env.githubId && env.githubSecret);
@@ -34,6 +37,7 @@ export const anthropicConfigured = Boolean(env.anthropicApiKey);
 export const smtpConfigured = Boolean(
   env.smtpHost && env.smtpUser && env.smtpPass,
 );
+export const tinysendConfigured = Boolean(env.tinysendApiKey);
 // Mark cookies Secure only when the site is actually served over https, so
 // auth works on local http (dev + http deploys) and stays secure on https.
 export const cookieSecure = env.baseUrl.startsWith("https://");

@@ -437,6 +437,32 @@ export const admins = pgTable(
   ],
 );
 
+/* ---------------------------------------------------------------------------
+   tinysend mailing-list sync ledger (portal-owned)
+   Records which people have been pushed to tinysend.com so the reconciler cron
+   never re-imports an email. Brand-new and ss_-namespaced — touches no hh_* or
+   existing table. A row's synced_at is set only after a 200 from the import API,
+   so the ledger (not tinysend) is our source of truth for "already synced".
+--------------------------------------------------------------------------- */
+export const tinysendSubscribers = pgTable(
+  "ss_tinysend_subscribers",
+  {
+    id: id(),
+    // Lowercased email — the dedup key across ss_users + hh_applications.
+    email: text("email").notNull(),
+    name: text("name"),
+    // Where we first saw this email: ss_user | hh_application | backfill_seed
+    source: text("source").notNull(),
+    // Null until a successful import; set to NOW() on the 200 that synced it.
+    syncedAt: timestamp("synced_at", { withTimezone: true }),
+    lastError: text("last_error"),
+    attempts: integer("attempts").default(0).notNull(),
+    createdAt,
+  },
+  (t) => [uniqueIndex("ss_tinysend_subscribers_email_idx").on(t.email)],
+);
+export type TinysendSubscriber = typeof tinysendSubscribers.$inferSelect;
+
 export const announcements = pgTable(
   "ss_announcements",
   {
