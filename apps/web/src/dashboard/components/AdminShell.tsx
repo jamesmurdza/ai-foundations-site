@@ -1,21 +1,17 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 import Link from "@dashboard/components/Link";
 
 import { NotificationsBell } from "@dashboard/components/NotificationsBell";
 import { ThemeToggle } from "@dashboard/components/ThemeToggle";
-import { resolveAdmin } from "@dashboard/lib/portal-auth";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export async function AdminShell({ children }: { children: React.ReactNode }) {
-  // Defense-in-depth: every dashboard page is wrapped by AdminShell, so even if
-  // the proxy matcher ever misses a route, auth is still enforced here against the
-  // shared Portal session. Identity comes from the verified session, not a header.
-  const store = await cookies();
-  const admin = await resolveAdmin(store.get("ss_session")?.value);
-  if (!admin) redirect(`${SITE_URL}/portal/login`);
-  const adminUser = admin.githubLogin ?? admin.email ?? "admin";
+  // Auth is enforced by the proxy (src/proxy.ts): it redirects unauthorised users
+  // to /dashboard/login and sets a non-spoofable x-admin-user header (overwriting
+  // any client value) for authorised ones. The login page is excluded from the
+  // proxy gate, so it arrives here with NO header — render it bare (no admin
+  // chrome, and crucially no redirect, which would otherwise loop the login page).
+  const adminUser = (await headers()).get("x-admin-user");
+  if (!adminUser) return <>{children}</>;
 
   return (
     <>
