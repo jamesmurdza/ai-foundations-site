@@ -64,8 +64,9 @@ export async function GET(req: Request) {
     // Explicit post-login destination (e.g. /dashboard). It lives outside /portal,
     // so use the site origin directly rather than appUrl() (which prefixes /portal).
     if (next && next.startsWith("/") && !next.startsWith("//")) {
-      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || new URL(req.url).origin;
-      return NextResponse.redirect(new URL(next, siteUrl));
+      // `next` is same-origin (e.g. /dashboard); resolve it against the request
+      // origin so it never depends on NEXT_PUBLIC_SITE_URL being set correctly.
+      return NextResponse.redirect(new URL(next, new URL(req.url).origin));
     }
 
     const [profile] = await db
