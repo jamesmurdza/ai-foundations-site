@@ -13,6 +13,10 @@
 [build]
   base = "apps/web"
   command = "npm run build"
+  # Paths in netlify.toml are relative to `base`, so this is apps/web/.next.
+  # Must NOT be "apps/web/.next" (the plugin would double it to
+  # apps/web/apps/web/.next) and must NOT be empty (defaults to base → error).
+  publish = ".next"
 
 [build.environment]
   # Next.js 16 requires Node >= 20.9.
