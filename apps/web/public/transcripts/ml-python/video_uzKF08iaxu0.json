@@ -1,0 +1,7432 @@
+[
+  {
+    "text": "get started all right okay um good",
+    "start": 0.44,
+    "duration": 5.96
+  },
+  {
+    "text": "morning good evening everyone welcome to",
+    "start": 3.88,
+    "duration": 4.92
+  },
+  {
+    "text": "AI foundations um this is the course",
+    "start": 6.4,
+    "duration": 5.2
+  },
+  {
+    "text": "that um naid and I have been preparing",
+    "start": 8.8,
+    "duration": 4.92
+  },
+  {
+    "text": "for you especially for the past few",
+    "start": 11.6,
+    "duration": 5.48
+  },
+  {
+    "text": "weeks um we&#39;re super excited and I&#39;m",
+    "start": 13.72,
+    "duration": 5.48
+  },
+  {
+    "text": "super excited to get into building",
+    "start": 17.08,
+    "duration": 5.28
+  },
+  {
+    "text": "machine learning models together so um",
+    "start": 19.2,
+    "duration": 5.4
+  },
+  {
+    "text": "I&#39;m James and I&#39;ve been I&#39;ve been coding",
+    "start": 22.36,
+    "duration": 6.24
+  },
+  {
+    "text": "for like 20 years or so and um I&#39;ve",
+    "start": 24.6,
+    "duration": 6.16
+  },
+  {
+    "text": "worked as a as a software developer for",
+    "start": 28.6,
+    "duration": 4.2
+  },
+  {
+    "text": "different countries sorry for different",
+    "start": 30.76,
+    "duration": 5.16
+  },
+  {
+    "text": "companies worked in a whole bunch of",
+    "start": 32.8,
+    "duration": 6.0
+  },
+  {
+    "text": "different programming languages and I&#39;m",
+    "start": 35.92,
+    "duration": 4.88
+  },
+  {
+    "text": "more relatively new to machine learning",
+    "start": 38.8,
+    "duration": 5.76
+  },
+  {
+    "text": "topics and that&#39;s where naid comes",
+    "start": 40.8,
+    "duration": 6.92
+  },
+  {
+    "text": "in hello everyone so I&#39;m nid from",
+    "start": 44.56,
+    "duration": 5.2
+  },
+  {
+    "text": "Pakistan basically I&#39;m an electrical",
+    "start": 47.72,
+    "duration": 5.08
+  },
+  {
+    "text": "engineer uh I&#39;ve been working in this",
+    "start": 49.76,
+    "duration": 7.28
+  },
+  {
+    "text": "area for the past four to five years um",
+    "start": 52.8,
+    "duration": 6.44
+  },
+  {
+    "text": "so machine learning is something that I",
+    "start": 57.04,
+    "duration": 5.36
+  },
+  {
+    "text": "utilize uh in my own research um I&#39;m a",
+    "start": 59.24,
+    "duration": 7.12
+  },
+  {
+    "text": "master&#39;s degree holder um but I&#39;ve also",
+    "start": 62.4,
+    "duration": 6.48
+  },
+  {
+    "text": "been working with many clients from all",
+    "start": 66.36,
+    "duration": 4.6
+  },
+  {
+    "text": "over the globe uh majority of them were",
+    "start": 68.88,
+    "duration": 4.16
+  },
+  {
+    "text": "from Academia",
+    "start": 70.96,
+    "duration": 4.48
+  },
+  {
+    "text": "researchers uh but the portion of them",
+    "start": 73.04,
+    "duration": 3.84
+  },
+  {
+    "text": "were also from the",
+    "start": 75.44,
+    "duration": 3.76
+  },
+  {
+    "text": "industry so I&#39;ve been teaching on",
+    "start": 76.88,
+    "duration": 4.04
+  },
+  {
+    "text": "different platforms as well that&#39;s where",
+    "start": 79.2,
+    "duration": 5.04
+  },
+  {
+    "text": "I met James um and I&#39;m here to teach you",
+    "start": 80.92,
+    "duration": 4.68
+  },
+  {
+    "text": "machine",
+    "start": 84.24,
+    "duration": 4.48
+  },
+  {
+    "text": "learning yeah and um naid has a little",
+    "start": 85.6,
+    "duration": 8.4
+  },
+  {
+    "text": "bit of a of a cold um so don&#39;t be too",
+    "start": 88.72,
+    "duration": 11.68
+  },
+  {
+    "text": "him today that&#39;s okay so let me just go",
+    "start": 94.0,
+    "duration": 9.88
+  },
+  {
+    "text": "Um quickly into a really short",
+    "start": 100.4,
+    "duration": 5.96
+  },
+  {
+    "text": "presentation about like what is uh what",
+    "start": 103.88,
+    "duration": 6.76
+  },
+  {
+    "text": "is this program so what what we want",
+    "start": 106.36,
+    "duration": 6.84
+  },
+  {
+    "text": "this program to be is basically sort of",
+    "start": 110.64,
+    "duration": 5.16
+  },
+  {
+    "text": "like um an online program where people",
+    "start": 113.2,
+    "duration": 4.76
+  },
+  {
+    "text": "can just come together and they can talk",
+    "start": 115.8,
+    "duration": 4.88
+  },
+  {
+    "text": "openly um and discuss",
+    "start": 117.96,
+    "duration": 4.88
+  },
+  {
+    "text": "um the things that they don&#39;t understand",
+    "start": 120.68,
+    "duration": 6.08
+  },
+  {
+    "text": "about um learning and AI um I actually",
+    "start": 122.84,
+    "duration": 6.48
+  },
+  {
+    "text": "met Navid because I was looking for it",
+    "start": 126.76,
+    "duration": 4.48
+  },
+  {
+    "text": "was two years ago and I was looking for",
+    "start": 129.32,
+    "duration": 5.56
+  },
+  {
+    "text": "a tutor um I knew I could code pretty",
+    "start": 131.24,
+    "duration": 5.24
+  },
+  {
+    "text": "well but I didn&#39;t really know where to",
+    "start": 134.88,
+    "duration": 3.88
+  },
+  {
+    "text": "start when it came to learning about Ai",
+    "start": 136.48,
+    "duration": 3.56
+  },
+  {
+    "text": "and machine learning there were so many",
+    "start": 138.76,
+    "duration": 3.4
+  },
+  {
+    "text": "different courses online and I didn&#39;t",
+    "start": 140.04,
+    "duration": 3.2
+  },
+  {
+    "text": "want something that was going to teach",
+    "start": 142.16,
+    "duration": 4.08
+  },
+  {
+    "text": "me python from scratch I just wanted I",
+    "start": 143.24,
+    "duration": 5.56
+  },
+  {
+    "text": "just wanted to learn as fast as possible",
+    "start": 146.24,
+    "duration": 5.8
+  },
+  {
+    "text": "and like nid was perfect for that and um",
+    "start": 148.8,
+    "duration": 6.12
+  },
+  {
+    "text": "yeah a lot of what this course is based",
+    "start": 152.04,
+    "duration": 5.08
+  },
+  {
+    "text": "off of is that process where we would",
+    "start": 154.92,
+    "duration": 4.56
+  },
+  {
+    "text": "just ask each other questions he taught",
+    "start": 157.12,
+    "duration": 4.04
+  },
+  {
+    "text": "me a lot about machine learning I taught",
+    "start": 159.48,
+    "duration": 5.52
+  },
+  {
+    "text": "him a little bit about software and um",
+    "start": 161.16,
+    "duration": 6.64
+  },
+  {
+    "text": "that&#39;s how it got started",
+    "start": 165.0,
+    "duration": 6.16
+  },
+  {
+    "text": "so next slide um basically the way that",
+    "start": 167.8,
+    "duration": 4.4
+  },
+  {
+    "text": "this is set",
+    "start": 171.16,
+    "duration": 4.2
+  },
+  {
+    "text": "up have um two sessions every week one",
+    "start": 172.2,
+    "duration": 6.0
+  },
+  {
+    "text": "on Monday one on Thursday we want to",
+    "start": 175.36,
+    "duration": 6.0
+  },
+  {
+    "text": "encourage like as much Interruption and",
+    "start": 178.2,
+    "duration": 4.84
+  },
+  {
+    "text": "cross communication as possible that&#39;s",
+    "start": 181.36,
+    "duration": 3.4
+  },
+  {
+    "text": "why we like we don&#39;t want to have more",
+    "start": 183.04,
+    "duration": 4.04
+  },
+  {
+    "text": "than like five people in a class because",
+    "start": 184.76,
+    "duration": 4.08
+  },
+  {
+    "text": "otherwise people really wouldn&#39;t get to",
+    "start": 187.08,
+    "duration": 3.76
+  },
+  {
+    "text": "to talk and ask questions about things",
+    "start": 188.84,
+    "duration": 4.44
+  },
+  {
+    "text": "that they don&#39;t understand if it&#39;s not",
+    "start": 190.84,
+    "duration": 4.2
+  },
+  {
+    "text": "like easy to interrupt you can just typ",
+    "start": 193.28,
+    "duration": 4.16
+  },
+  {
+    "text": "something in the chat and then we will",
+    "start": 195.04,
+    "duration": 5.04
+  },
+  {
+    "text": "like stop and address that as soon as",
+    "start": 197.44,
+    "duration": 6.48
+  },
+  {
+    "text": "possible we start with like each week um",
+    "start": 200.08,
+    "duration": 5.56
+  },
+  {
+    "text": "we start with a different type of",
+    "start": 203.92,
+    "duration": 4.36
+  },
+  {
+    "text": "machine learning model um and then we&#39;ll",
+    "start": 205.64,
+    "duration": 5.44
+  },
+  {
+    "text": "give you like a really small project you",
+    "start": 208.28,
+    "duration": 5.04
+  },
+  {
+    "text": "can do so like just like for example in",
+    "start": 211.08,
+    "duration": 4.24
+  },
+  {
+    "text": "the first week it&#39;s going to be linear",
+    "start": 213.32,
+    "duration": 3.52
+  },
+  {
+    "text": "regression and you&#39;re going to be able",
+    "start": 215.32,
+    "duration": 3.4
+  },
+  {
+    "text": "to take any kind of data whether it&#39;s",
+    "start": 216.84,
+    "duration": 3.92
+  },
+  {
+    "text": "medical data or construction data or",
+    "start": 218.72,
+    "duration": 3.92
+  },
+  {
+    "text": "something and you&#39;re going to be able to",
+    "start": 220.76,
+    "duration": 6.4
+  },
+  {
+    "text": "make a simple model um for that uh using",
+    "start": 222.64,
+    "duration": 7.08
+  },
+  {
+    "text": "that using your own data and then we&#39;ll",
+    "start": 227.16,
+    "duration": 4.24
+  },
+  {
+    "text": "come back together and then we&#39;ll share",
+    "start": 229.72,
+    "duration": 3.88
+  },
+  {
+    "text": "with each other the results of the",
+    "start": 231.4,
+    "duration": 5.04
+  },
+  {
+    "text": "different models that we trained um and",
+    "start": 233.6,
+    "duration": 4.56
+  },
+  {
+    "text": "then we&#39;ll learn from what the other",
+    "start": 236.44,
+    "duration": 4.36
+  },
+  {
+    "text": "people have built and you know get get",
+    "start": 238.16,
+    "duration": 5.24
+  },
+  {
+    "text": "time to ask uh lots of questions so each",
+    "start": 240.8,
+    "duration": 4.24
+  },
+  {
+    "text": "week there should be basically",
+    "start": 243.4,
+    "duration": 4.68
+  },
+  {
+    "text": "introducing one of these models and then",
+    "start": 245.04,
+    "duration": 5.24
+  },
+  {
+    "text": "uh a practical session as well where we",
+    "start": 248.08,
+    "duration": 5.4
+  },
+  {
+    "text": "go over all of the uh problems that we",
+    "start": 250.28,
+    "duration": 6.2
+  },
+  {
+    "text": "had while actually implementing them and",
+    "start": 253.48,
+    "duration": 6.2
+  },
+  {
+    "text": "this is a flexible schedule but",
+    "start": 256.48,
+    "duration": 5.68
+  },
+  {
+    "text": "basically cramming all of machine",
+    "start": 259.68,
+    "duration": 6.16
+  },
+  {
+    "text": "learning into five weeks oh here let me",
+    "start": 262.16,
+    "duration": 5.28
+  },
+  {
+    "text": "uh let me throw on there&#39;s there&#39;s one",
+    "start": 265.84,
+    "duration": 4.48
+  },
+  {
+    "text": "more at the end should be",
+    "start": 267.44,
+    "duration": 5.36
+  },
+  {
+    "text": "there you have Transformers at the",
+    "start": 270.32,
+    "duration": 6.32
+  },
+  {
+    "text": "endend is like impossible we know we",
+    "start": 272.8,
+    "duration": 6.2
+  },
+  {
+    "text": "have to start with you know regression",
+    "start": 276.64,
+    "duration": 4.8
+  },
+  {
+    "text": "always and then we go through linear",
+    "start": 279.0,
+    "duration": 4.56
+  },
+  {
+    "text": "regression which is the the first one",
+    "start": 281.44,
+    "duration": 4.24
+  },
+  {
+    "text": "and then logistic regression which is",
+    "start": 283.56,
+    "duration": 4.04
+  },
+  {
+    "text": "can be used for categorizing things into",
+    "start": 285.68,
+    "duration": 4.72
+  },
+  {
+    "text": "different categories um rather than just",
+    "start": 287.6,
+    "duration": 6.48
+  },
+  {
+    "text": "um fitting a curve to some points and",
+    "start": 290.4,
+    "duration": 6.28
+  },
+  {
+    "text": "then neural networks we just we&#39;ll just",
+    "start": 294.08,
+    "duration": 4.12
+  },
+  {
+    "text": "start with like the most simple kind of",
+    "start": 296.68,
+    "duration": 3.8
+  },
+  {
+    "text": "neural network where you can",
+    "start": 298.2,
+    "duration": 5.16
+  },
+  {
+    "text": "um you know take one vector um and then",
+    "start": 300.48,
+    "duration": 4.6
+  },
+  {
+    "text": "have out have your neural network train",
+    "start": 303.36,
+    "duration": 5.64
+  },
+  {
+    "text": "to Output another Vector um and then con",
+    "start": 305.08,
+    "duration": 6.64
+  },
+  {
+    "text": "convolutional neural networks allows you",
+    "start": 309.0,
+    "duration": 5.8
+  },
+  {
+    "text": "to basically um process images to",
+    "start": 311.72,
+    "duration": 6.2
+  },
+  {
+    "text": "recognize images um at this point",
+    "start": 314.8,
+    "duration": 4.32
+  },
+  {
+    "text": "there&#39;s a lot of there&#39;s so many",
+    "start": 317.92,
+    "duration": 4.56
+  },
+  {
+    "text": "different directions you can go but um",
+    "start": 319.12,
+    "duration": 6.2
+  },
+  {
+    "text": "and we can still change this now um but",
+    "start": 322.48,
+    "duration": 4.84
+  },
+  {
+    "text": "we think it would be also really fun to",
+    "start": 325.32,
+    "duration": 6.08
+  },
+  {
+    "text": "uh to touch on Transformers um as well",
+    "start": 327.32,
+    "duration": 5.52
+  },
+  {
+    "text": "and yeah you all are going to get your",
+    "start": 331.4,
+    "duration": 5.52
+  },
+  {
+    "text": "hands dirty with the code too and",
+    "start": 332.84,
+    "duration": 6.88
+  },
+  {
+    "text": "everything is up here on our GitHub you",
+    "start": 336.92,
+    "duration": 5.2
+  },
+  {
+    "text": "can go to this um GitHub page and you",
+    "start": 339.72,
+    "duration": 4.84
+  },
+  {
+    "text": "can see basically basically everything",
+    "start": 342.12,
+    "duration": 4.52
+  },
+  {
+    "text": "all the content we&#39;ve",
+    "start": 344.56,
+    "duration": 6.36
+  },
+  {
+    "text": "made and um yeah did I miss",
+    "start": 346.64,
+    "duration": 4.28
+  },
+  {
+    "text": "anything uh yeah so just like James you",
+    "start": 352.08,
+    "duration": 6.0
+  },
+  {
+    "text": "said um probably whatever we would be",
+    "start": 355.92,
+    "duration": 5.12
+  },
+  {
+    "text": "doing um is a aable online on YouTube",
+    "start": 358.08,
+    "duration": 4.96
+  },
+  {
+    "text": "and lots of different",
+    "start": 361.04,
+    "duration": 4.76
+  },
+  {
+    "text": "platforms all of these materials and the",
+    "start": 363.04,
+    "duration": 4.32
+  },
+  {
+    "text": "contents that we are going to teach U",
+    "start": 365.8,
+    "duration": 5.16
+  },
+  {
+    "text": "are available so the thing that makes",
+    "start": 367.36,
+    "duration": 7.28
+  },
+  {
+    "text": "this interactions unique is um because",
+    "start": 370.96,
+    "duration": 6.16
+  },
+  {
+    "text": "you would have this chance to interrupt",
+    "start": 374.64,
+    "duration": 5.76
+  },
+  {
+    "text": "us um ask questions um bring your own",
+    "start": 377.12,
+    "duration": 6.32
+  },
+  {
+    "text": "ideas um it doesn&#39;t really matter like",
+    "start": 380.4,
+    "duration": 5.84
+  },
+  {
+    "text": "uh machine learning um some people would",
+    "start": 383.44,
+    "duration": 5.0
+  },
+  {
+    "text": "like to work in its mathematics uh they",
+    "start": 386.24,
+    "duration": 3.8
+  },
+  {
+    "text": "would be interested in Des learning new",
+    "start": 388.44,
+    "duration": 3.64
+  },
+  {
+    "text": "algorithms uh others would be interested",
+    "start": 390.04,
+    "duration": 3.8
+  },
+  {
+    "text": "in applied machine learning where they",
+    "start": 392.08,
+    "duration": 4.24
+  },
+  {
+    "text": "would take the tools in would like to",
+    "start": 393.84,
+    "duration": 4.2
+  },
+  {
+    "text": "apply them into their own areas in order",
+    "start": 396.32,
+    "duration": 4.56
+  },
+  {
+    "text": "to get something done um others could be",
+    "start": 398.04,
+    "duration": 4.44
+  },
+  {
+    "text": "interested in creating these Frameworks",
+    "start": 400.88,
+    "duration": 6.8
+  },
+  {
+    "text": "for it uh like tens of P Toge so um the",
+    "start": 402.48,
+    "duration": 7.36
+  },
+  {
+    "text": "form is open you can like throw your",
+    "start": 407.68,
+    "duration": 5.08
+  },
+  {
+    "text": "ideas uh my goal would be not just to",
+    "start": 409.84,
+    "duration": 6.24
+  },
+  {
+    "text": "teach you uh the basic stuff but also",
+    "start": 412.76,
+    "duration": 5.52
+  },
+  {
+    "text": "guide you through um like if you have",
+    "start": 416.08,
+    "duration": 4.96
+  },
+  {
+    "text": "particular interest in particular area",
+    "start": 418.28,
+    "duration": 5.52
+  },
+  {
+    "text": "uh if you go to Google or YouTube people",
+    "start": 421.04,
+    "duration": 4.6
+  },
+  {
+    "text": "kind of feel lost because of the",
+    "start": 423.8,
+    "duration": 3.56
+  },
+  {
+    "text": "humongous contents that are available so",
+    "start": 425.64,
+    "duration": 4.44
+  },
+  {
+    "text": "I&#39;d be kind of steering you as well uh",
+    "start": 427.36,
+    "duration": 4.48
+  },
+  {
+    "text": "like if you would like to go to this",
+    "start": 430.08,
+    "duration": 4.08
+  },
+  {
+    "text": "area what things you should be doing",
+    "start": 431.84,
+    "duration": 4.56
+  },
+  {
+    "text": "first and then how should you take it",
+    "start": 434.16,
+    "duration": 5.16
+  },
+  {
+    "text": "from there um so I think this is what",
+    "start": 436.4,
+    "duration": 4.48
+  },
+  {
+    "text": "would make this course very unique for",
+    "start": 439.32,
+    "duration": 4.24
+  },
+  {
+    "text": "you all and I&#39;m very much looking",
+    "start": 440.88,
+    "duration": 4.28
+  },
+  {
+    "text": "forward to",
+    "start": 443.56,
+    "duration": 4.64
+  },
+  {
+    "text": "it does anyone have any uh questions",
+    "start": 445.16,
+    "duration": 6.36
+  },
+  {
+    "text": "thoughts at this point bradden",
+    "start": 448.2,
+    "duration": 3.32
+  },
+  {
+    "text": "oh Bren you&#39;re on",
+    "start": 452.96,
+    "duration": 2.84
+  },
+  {
+    "text": "mute only question ask start um is about",
+    "start": 457.96,
+    "duration": 6.6
+  },
+  {
+    "text": "RNN because that&#39;s well something I&#39;m G",
+    "start": 462.04,
+    "duration": 4.12
+  },
+  {
+    "text": "to be working a lot a little bit within",
+    "start": 464.56,
+    "duration": 3.16
+  },
+  {
+    "text": "the weeks something I want to learn",
+    "start": 466.16,
+    "duration": 3.48
+  },
+  {
+    "text": "about but we can see if we can find time",
+    "start": 467.72,
+    "duration": 3.6
+  },
+  {
+    "text": "for that",
+    "start": 469.64,
+    "duration": 6.48
+  },
+  {
+    "text": "later yeah so Bren had asked if if we",
+    "start": 471.32,
+    "duration": 6.76
+  },
+  {
+    "text": "can touch on",
+    "start": 476.12,
+    "duration": 7.8
+  },
+  {
+    "text": "rnns yeah sure um so basically when like",
+    "start": 478.08,
+    "duration": 7.8
+  },
+  {
+    "text": "the the beginning topics in any machine",
+    "start": 483.92,
+    "duration": 4.36
+  },
+  {
+    "text": "learning 101 class classes are linear",
+    "start": 485.88,
+    "duration": 5.36
+  },
+  {
+    "text": "regession logistic regation and from",
+    "start": 488.28,
+    "duration": 4.88
+  },
+  {
+    "text": "there you kind of have two paths so one",
+    "start": 491.24,
+    "duration": 4.4
+  },
+  {
+    "text": "is going to the traditional machine",
+    "start": 493.16,
+    "duration": 4.52
+  },
+  {
+    "text": "learning path where you study algorithm",
+    "start": 495.64,
+    "duration": 5.24
+  },
+  {
+    "text": "such as uh decision trees support Vector",
+    "start": 497.68,
+    "duration": 5.32
+  },
+  {
+    "text": "machines X boost and that kind of stuff",
+    "start": 500.88,
+    "duration": 5.52
+  },
+  {
+    "text": "another path is then taking then um the",
+    "start": 503.0,
+    "duration": 5.12
+  },
+  {
+    "text": "uh studying the Deep learning so it",
+    "start": 506.4,
+    "duration": 3.8
+  },
+  {
+    "text": "begins with the simple for anual",
+    "start": 508.12,
+    "duration": 4.36
+  },
+  {
+    "text": "networks um and then we gradually build",
+    "start": 510.2,
+    "duration": 4.84
+  },
+  {
+    "text": "on that uh we talk about cnns uh which",
+    "start": 512.48,
+    "duration": 4.8
+  },
+  {
+    "text": "are particularly uh important when you",
+    "start": 515.04,
+    "duration": 4.48
+  },
+  {
+    "text": "are dealing with computer problems like",
+    "start": 517.28,
+    "duration": 4.0
+  },
+  {
+    "text": "uh image recognition object detection",
+    "start": 519.52,
+    "duration": 4.52
+  },
+  {
+    "text": "segmentation that kind of stuff um and",
+    "start": 521.28,
+    "duration": 4.92
+  },
+  {
+    "text": "then we have rnns uh so rnns are",
+    "start": 524.04,
+    "duration": 4.08
+  },
+  {
+    "text": "important when we have sequential data",
+    "start": 526.2,
+    "duration": 3.88
+  },
+  {
+    "text": "so data which is a Time series data you",
+    "start": 528.12,
+    "duration": 3.64
+  },
+  {
+    "text": "would like to do forecasting or time",
+    "start": 530.08,
+    "duration": 3.68
+  },
+  {
+    "text": "series classification that kind of stuff",
+    "start": 531.76,
+    "duration": 5.4
+  },
+  {
+    "text": "for that uh RNs are the uh tools to go",
+    "start": 533.76,
+    "duration": 5.76
+  },
+  {
+    "text": "so surely we we&#39;ll touch on that um",
+    "start": 537.16,
+    "duration": 3.72
+  },
+  {
+    "text": "thing that I&#39;ll be doing is because I&#39;ll",
+    "start": 539.52,
+    "duration": 3.32
+  },
+  {
+    "text": "be teaching you the theory sessions is",
+    "start": 540.88,
+    "duration": 4.36
+  },
+  {
+    "text": "that I&#39;ll um like for new networks for",
+    "start": 542.84,
+    "duration": 3.76
+  },
+  {
+    "text": "the simple new network or for linear",
+    "start": 545.24,
+    "duration": 3.2
+  },
+  {
+    "text": "logistic regression the maths is easy uh",
+    "start": 546.6,
+    "duration": 4.04
+  },
+  {
+    "text": "we can easily cover that in a in a",
+    "start": 548.44,
+    "duration": 4.68
+  },
+  {
+    "text": "session for the entire algorithm but",
+    "start": 550.64,
+    "duration": 4.8
+  },
+  {
+    "text": "when we talk about um some of the advanc",
+    "start": 553.12,
+    "duration": 4.48
+  },
+  {
+    "text": "algorithms like for instance lstms uh",
+    "start": 555.44,
+    "duration": 3.8
+  },
+  {
+    "text": "their math is pretty involved so it",
+    "start": 557.6,
+    "duration": 3.48
+  },
+  {
+    "text": "would be difficult for me to C all of it",
+    "start": 559.24,
+    "duration": 4.48
+  },
+  {
+    "text": "in one session and probably you wouldn&#39;t",
+    "start": 561.08,
+    "duration": 4.48
+  },
+  {
+    "text": "like uh doing that yourself as well",
+    "start": 563.72,
+    "duration": 4.36
+  },
+  {
+    "text": "because uh the Met of it is really messy",
+    "start": 565.56,
+    "duration": 4.44
+  },
+  {
+    "text": "and uh most of the time people are",
+    "start": 568.08,
+    "duration": 3.4
+  },
+  {
+    "text": "interested in just applying it in order",
+    "start": 570.0,
+    "duration": 3.64
+  },
+  {
+    "text": "to get something done but still if some",
+    "start": 571.48,
+    "duration": 4.12
+  },
+  {
+    "text": "of you would like me to talk more in",
+    "start": 573.64,
+    "duration": 3.08
+  },
+  {
+    "text": "depth about the mathematics I can",
+    "start": 575.6,
+    "duration": 2.52
+  },
+  {
+    "text": "prepare those lectures as well uh I",
+    "start": 576.72,
+    "duration": 3.52
+  },
+  {
+    "text": "don&#39;t have any issues with that as well",
+    "start": 578.12,
+    "duration": 4.92
+  },
+  {
+    "text": "uh but surely we&#39;ll touch on rnns um and",
+    "start": 580.24,
+    "duration": 5.52
+  },
+  {
+    "text": "once we touch on rnns we&#39;ll then if we",
+    "start": 583.04,
+    "duration": 4.92
+  },
+  {
+    "text": "have time Jump to Transformers and I&#39;ll",
+    "start": 585.76,
+    "duration": 5.4
+  },
+  {
+    "text": "teach you or I&#39;ll tell you about um what",
+    "start": 587.96,
+    "duration": 5.0
+  },
+  {
+    "text": "were the kind of limitations uh being",
+    "start": 591.16,
+    "duration": 5.92
+  },
+  {
+    "text": "faced in ears which um Transformers uh",
+    "start": 592.96,
+    "duration": 7.56
+  },
+  {
+    "text": "mitigated afterwards so surely whatever",
+    "start": 597.08,
+    "duration": 6.8
+  },
+  {
+    "text": "topic um and anything that you would",
+    "start": 600.52,
+    "duration": 6.76
+  },
+  {
+    "text": "bring up I&#39;d be happy to talk about",
+    "start": 603.88,
+    "duration": 5.64
+  },
+  {
+    "text": "it cool yeah I think we&#39;re really",
+    "start": 607.28,
+    "duration": 4.32
+  },
+  {
+    "text": "flexible especially after the first half",
+    "start": 609.52,
+    "duration": 5.6
+  },
+  {
+    "text": "of this program um we just want to do",
+    "start": 611.6,
+    "duration": 5.84
+  },
+  {
+    "text": "what people will find most interesting",
+    "start": 615.12,
+    "duration": 3.68
+  },
+  {
+    "text": "and this is kind of an arbitrary",
+    "start": 617.44,
+    "duration": 2.6
+  },
+  {
+    "text": "selection of models we thought was",
+    "start": 618.8,
+    "duration": 2.08
+  },
+  {
+    "text": "really",
+    "start": 620.04,
+    "duration": 4.32
+  },
+  {
+    "text": "interesting um do we have any other uh",
+    "start": 620.88,
+    "duration": 5.92
+  },
+  {
+    "text": "any other",
+    "start": 624.36,
+    "duration": 2.44
+  },
+  {
+    "text": "questions cool I mean maybe one quick",
+    "start": 627.8,
+    "duration": 4.68
+  },
+  {
+    "text": "question I think one thing that would",
+    "start": 630.96,
+    "duration": 4.04
+  },
+  {
+    "text": "also interest me is more like the",
+    "start": 632.48,
+    "duration": 4.92
+  },
+  {
+    "text": "Forefront of research like where it&#39;s",
+    "start": 635.0,
+    "duration": 5.96
+  },
+  {
+    "text": "where it&#39;s going right now um for",
+    "start": 637.4,
+    "duration": 7.6
+  },
+  {
+    "text": "example in terms of llms um there is",
+    "start": 640.96,
+    "duration": 5.44
+  },
+  {
+    "text": "some",
+    "start": 645.0,
+    "duration": 4.24
+  },
+  {
+    "text": "developments or some work to kind of",
+    "start": 646.4,
+    "duration": 8.2
+  },
+  {
+    "text": "combine I think llms with with um other",
+    "start": 649.24,
+    "duration": 7.04
+  },
+  {
+    "text": "modes of machine learning and I think",
+    "start": 654.6,
+    "duration": 4.24
+  },
+  {
+    "text": "that&#39;s quite interesting how that might",
+    "start": 656.28,
+    "duration": 4.64
+  },
+  {
+    "text": "play out",
+    "start": 658.84,
+    "duration": 5.0
+  },
+  {
+    "text": "uh yeah surely we can do that so uh I",
+    "start": 660.92,
+    "duration": 6.4
+  },
+  {
+    "text": "myself usually have signed in to some of",
+    "start": 663.84,
+    "duration": 5.92
+  },
+  {
+    "text": "the newsletters which kind of post uh",
+    "start": 667.32,
+    "duration": 5.56
+  },
+  {
+    "text": "these uh latest developments also",
+    "start": 669.76,
+    "duration": 4.56
+  },
+  {
+    "text": "recently there has been a report",
+    "start": 672.88,
+    "duration": 3.76
+  },
+  {
+    "text": "published by Stanford University uh a",
+    "start": 674.32,
+    "duration": 4.6
+  },
+  {
+    "text": "index report which kind of summarizes uh",
+    "start": 676.64,
+    "duration": 3.0
+  },
+  {
+    "text": "the",
+    "start": 678.92,
+    "duration": 3.44
+  },
+  {
+    "text": "whole um the the things that have been",
+    "start": 679.64,
+    "duration": 5.68
+  },
+  {
+    "text": "covered in the previous year uh a few",
+    "start": 682.36,
+    "duration": 4.72
+  },
+  {
+    "text": "people would like to know about the",
+    "start": 685.32,
+    "duration": 3.44
+  },
+  {
+    "text": "currenc of that research we can of",
+    "start": 687.08,
+    "duration": 3.92
+  },
+  {
+    "text": "course talk about that as well we&#39;ll set",
+    "start": 688.76,
+    "duration": 4.28
+  },
+  {
+    "text": "aside a portion of our time to that and",
+    "start": 691.0,
+    "duration": 5.2
+  },
+  {
+    "text": "then we can discuss ideas and where the",
+    "start": 693.04,
+    "duration": 5.6
+  },
+  {
+    "text": "current trends are moving so I&#39;m very",
+    "start": 696.2,
+    "duration": 5.36
+  },
+  {
+    "text": "much welcome to that as",
+    "start": 698.64,
+    "duration": 8.64
+  },
+  {
+    "text": "well thanks thanks naid",
+    "start": 701.56,
+    "duration": 5.72
+  },
+  {
+    "text": "welcome all right um if that&#39;s if that&#39;s",
+    "start": 708.92,
+    "duration": 5.96
+  },
+  {
+    "text": "it for the questions then before we I&#39;m",
+    "start": 712.6,
+    "duration": 5.08
+  },
+  {
+    "text": "going to um pass it over to nav to start",
+    "start": 714.88,
+    "duration": 4.76
+  },
+  {
+    "text": "the intro to machine learning but before",
+    "start": 717.68,
+    "duration": 5.84
+  },
+  {
+    "text": "that now everyone&#39;s here so I think we",
+    "start": 719.64,
+    "duration": 4.96
+  },
+  {
+    "text": "can just",
+    "start": 723.52,
+    "duration": 5.68
+  },
+  {
+    "text": "do um just like really quick uh intros",
+    "start": 724.6,
+    "duration": 9.08
+  },
+  {
+    "text": "so I&#39;ll just say uh my name where I",
+    "start": 729.2,
+    "duration": 7.88
+  },
+  {
+    "text": "where I am at the moment and um maybe a",
+    "start": 733.68,
+    "duration": 5.76
+  },
+  {
+    "text": "fun fact also about the place where I",
+    "start": 737.08,
+    "duration": 5.68
+  },
+  {
+    "text": "where I am right now um maybe also what",
+    "start": 739.44,
+    "duration": 5.64
+  },
+  {
+    "text": "time it is would be pretty fun",
+    "start": 742.76,
+    "duration": 5.16
+  },
+  {
+    "text": "so um so yeah I&#39;m James as you can see",
+    "start": 745.08,
+    "duration": 4.68
+  },
+  {
+    "text": "I&#39;m in um beautiful",
+    "start": 747.92,
+    "duration": 4.0
+  },
+  {
+    "text": "uh New Hampshire on the east coast of",
+    "start": 749.76,
+    "duration": 6.68
+  },
+  {
+    "text": "the US um it is 9:00 a.m. over here and",
+    "start": 751.92,
+    "duration": 7.44
+  },
+  {
+    "text": "um fun fact about New Hampshire is",
+    "start": 756.44,
+    "duration": 5.16
+  },
+  {
+    "text": "actually that the first American in",
+    "start": 759.36,
+    "duration": 4.12
+  },
+  {
+    "text": "space it&#39;s a small state but the first",
+    "start": 761.6,
+    "duration": 6.16
+  },
+  {
+    "text": "American in space came came from New",
+    "start": 763.48,
+    "duration": 4.28
+  },
+  {
+    "text": "Hampshire so you are up",
+    "start": 769.0,
+    "duration": 7.36
+  },
+  {
+    "text": "next and uh unmute",
+    "start": 772.36,
+    "duration": 4.0
+  },
+  {
+    "text": "yourself thank you just that there is a",
+    "start": 776.84,
+    "duration": 6.28
+  },
+  {
+    "text": "lot of noise so I&#39;m waiting",
+    "start": 779.32,
+    "duration": 3.8
+  },
+  {
+    "text": "a uh I&#39;ll go my name is bradden um I am",
+    "start": 783.52,
+    "duration": 7.08
+  },
+  {
+    "text": "in Ottawa which is also East Coast um",
+    "start": 788.24,
+    "duration": 4.72
+  },
+  {
+    "text": "but in Canada fun fact about Ottawa is",
+    "start": 790.6,
+    "duration": 4.08
+  },
+  {
+    "text": "it is actually the capital of Canada",
+    "start": 792.96,
+    "duration": 3.72
+  },
+  {
+    "text": "most people tend to think of Toronto um",
+    "start": 794.68,
+    "duration": 5.4
+  },
+  {
+    "text": "it&#39;s not um well the other question is",
+    "start": 796.68,
+    "duration": 5.44
+  },
+  {
+    "text": "also 9:00 a.m here because still East",
+    "start": 800.08,
+    "duration": 3.56
+  },
+  {
+    "text": "Coast",
+    "start": 802.12,
+    "duration": 6.12
+  },
+  {
+    "text": "nice not so far yeah I&#39;m Nishan and I",
+    "start": 803.64,
+    "duration": 7.28
+  },
+  {
+    "text": "currently live in San Jose so it&#39;s PSD",
+    "start": 808.24,
+    "duration": 6.76
+  },
+  {
+    "text": "time here so it&#39;s uh 6:17 right now and",
+    "start": 810.92,
+    "duration": 6.08
+  },
+  {
+    "text": "uh fun fact about San Jose is this is",
+    "start": 815.0,
+    "duration": 5.96
+  },
+  {
+    "text": "where Apple HQ was started like Apple",
+    "start": 817.0,
+    "duration": 7.28
+  },
+  {
+    "text": "started from here yeah cool awesome and",
+    "start": 820.96,
+    "duration": 6.48
+  },
+  {
+    "text": "preps to you for um being up",
+    "start": 824.28,
+    "duration": 6.36
+  },
+  {
+    "text": "early no",
+    "start": 827.44,
+    "duration": 5.92
+  },
+  {
+    "text": "problem uh I&#39;ll go next uh my name is",
+    "start": 830.64,
+    "duration": 6.32
+  },
+  {
+    "text": "ala I&#39;m from Bangalore India uh fun fact",
+    "start": 833.36,
+    "duration": 5.88
+  },
+  {
+    "text": "about Bangalore uh it&#39;s called the",
+    "start": 836.96,
+    "duration": 5.28
+  },
+  {
+    "text": "Silicon Valley of India so that&#39;s the",
+    "start": 839.24,
+    "duration": 6.32
+  },
+  {
+    "text": "fun fact and the current time is 6:48",
+    "start": 842.24,
+    "duration": 6.4
+  },
+  {
+    "text": "p.m. oh",
+    "start": 845.56,
+    "duration": 7.36
+  },
+  {
+    "text": "okay all right hi everyone I&#39;m Felix um",
+    "start": 848.64,
+    "duration": 6.4
+  },
+  {
+    "text": "I I know James already quite a long time",
+    "start": 852.92,
+    "duration": 3.36
+  },
+  {
+    "text": "uh when I was studying in the",
+    "start": 855.04,
+    "duration": 3.4
+  },
+  {
+    "text": "Netherlands together with with him at",
+    "start": 856.28,
+    "duration": 6.68
+  },
+  {
+    "text": "the same school um I am currently in",
+    "start": 858.44,
+    "duration": 7.52
+  },
+  {
+    "text": "Germany in quite a small City it&#39;s like",
+    "start": 862.96,
+    "duration": 5.4
+  },
+  {
+    "text": "uh it&#39;s called noise it&#39;s like one of",
+    "start": 865.96,
+    "duration": 5.64
+  },
+  {
+    "text": "the oldest um cities in Germany actually",
+    "start": 868.36,
+    "duration": 5.84
+  },
+  {
+    "text": "established by some some by the Romans",
+    "start": 871.6,
+    "duration": 5.12
+  },
+  {
+    "text": "so that&#39;s like the the the furthest they",
+    "start": 874.2,
+    "duration": 6.32
+  },
+  {
+    "text": "got I think north um in their fight",
+    "start": 876.72,
+    "duration": 6.44
+  },
+  {
+    "text": "against the the Germans I guess the",
+    "start": 880.52,
+    "duration": 6.28
+  },
+  {
+    "text": "German Germanic tribes um anyway uh",
+    "start": 883.16,
+    "duration": 8.64
+  },
+  {
+    "text": "right now it&#39;s 300 p.m. 3:19 um and then",
+    "start": 886.8,
+    "duration": 8.6
+  },
+  {
+    "text": "usually I live in Korea in Soul so I&#39;ll",
+    "start": 891.8,
+    "duration": 6.76
+  },
+  {
+    "text": "be back there next week again uh yeah",
+    "start": 895.4,
+    "duration": 5.64
+  },
+  {
+    "text": "nice to meet you",
+    "start": 898.56,
+    "duration": 2.48
+  },
+  {
+    "text": "nice to see you",
+    "start": 901.6,
+    "duration": 5.6
+  },
+  {
+    "text": "Felix hello so I&#39;m nid from Pakistan",
+    "start": 902.8,
+    "duration": 6.36
+  },
+  {
+    "text": "currently in Islamabad which is the",
+    "start": 907.2,
+    "duration": 4.08
+  },
+  {
+    "text": "capital of Pakistan the time here is",
+    "start": 909.16,
+    "duration": 3.36
+  },
+  {
+    "text": "6:19",
+    "start": 911.28,
+    "duration": 4.56
+  },
+  {
+    "text": "p.m. um I don&#39;t really know any fun fact",
+    "start": 912.52,
+    "duration": 6.4
+  },
+  {
+    "text": "about Islam Abad but uh fun fact about",
+    "start": 915.84,
+    "duration": 5.92
+  },
+  {
+    "text": "myself is in this blazing hot summer I",
+    "start": 918.92,
+    "duration": 7.07
+  },
+  {
+    "text": "have caught cold uh so I&#39;m trying",
+    "start": 921.76,
+    "duration": 5.32
+  },
+  {
+    "text": "[Music]",
+    "start": 925.99,
+    "duration": 4.97
+  },
+  {
+    "text": "to it",
+    "start": 927.08,
+    "duration": 3.88
+  },
+  {
+    "text": "hang in",
+    "start": 931.96,
+    "duration": 5.08
+  },
+  {
+    "text": "there yeah so I think we should begin um",
+    "start": 933.2,
+    "duration": 8.88
+  },
+  {
+    "text": "s oh okay I will try to introduce myself",
+    "start": 937.04,
+    "duration": 7.56
+  },
+  {
+    "text": "I know it&#39;s a lot of noise right now",
+    "start": 942.08,
+    "duration": 6.48
+  },
+  {
+    "text": "here can you hear me yes okay perfect so",
+    "start": 944.6,
+    "duration": 6.48
+  },
+  {
+    "text": "my name is son Nikolas I&#39;m from medin",
+    "start": 948.56,
+    "duration": 7.64
+  },
+  {
+    "text": "Colombia well how from Khal from mein um",
+    "start": 951.08,
+    "duration": 7.44
+  },
+  {
+    "text": "to say about me I&#39;m I&#39;m a very curious",
+    "start": 956.2,
+    "duration": 3.24
+  },
+  {
+    "text": "mind",
+    "start": 958.52,
+    "duration": 5.24
+  },
+  {
+    "text": "I&#39;m interest in from AI to biology and I",
+    "start": 959.44,
+    "duration": 7.32
+  },
+  {
+    "text": "work now deploying uh optic fiber",
+    "start": 963.76,
+    "duration": 5.8
+  },
+  {
+    "text": "networks around all",
+    "start": 966.76,
+    "duration": 6.48
+  },
+  {
+    "text": "Colombia cool and uh and the reason why",
+    "start": 969.56,
+    "duration": 6.08
+  },
+  {
+    "text": "I&#39;m here I met James he helped me to",
+    "start": 973.24,
+    "duration": 5.76
+  },
+  {
+    "text": "make my first ever app from no coding",
+    "start": 975.64,
+    "duration": 6.72
+  },
+  {
+    "text": "knowledge to to an actual prototype so",
+    "start": 979.0,
+    "duration": 6.12
+  },
+  {
+    "text": "that&#39;s pretty cool that here and it&#39;s 8",
+    "start": 982.36,
+    "duration": 5.48
+  },
+  {
+    "text": "o&#39;clock where you are right 8 am exactly",
+    "start": 985.12,
+    "duration": 5.52
+  },
+  {
+    "text": "8 am",
+    "start": 987.84,
+    "duration": 6.32
+  },
+  {
+    "text": "crazy all right that&#39;s",
+    "start": 990.64,
+    "duration": 6.44
+  },
+  {
+    "text": "it should I",
+    "start": 994.16,
+    "duration": 4.96
+  },
+  {
+    "text": "begin let&#39;s do",
+    "start": 997.08,
+    "duration": 7.44
+  },
+  {
+    "text": "it okay uh let me present my",
+    "start": 999.12,
+    "duration": 5.4
+  },
+  {
+    "text": "screen you see the Whiteboard",
+    "start": 1011.92,
+    "duration": 8.76
+  },
+  {
+    "text": "right yes yep okay so usually I began",
+    "start": 1014.68,
+    "duration": 7.96
+  },
+  {
+    "text": "introducing machine learning using",
+    "start": 1020.68,
+    "duration": 4.68
+  },
+  {
+    "text": "example which I personally like the most",
+    "start": 1022.64,
+    "duration": 5.88
+  },
+  {
+    "text": "uh it kind of U sets the context right",
+    "start": 1025.36,
+    "duration": 5.8
+  },
+  {
+    "text": "um and then we&#39;ll talk about the",
+    "start": 1028.52,
+    "duration": 5.56
+  },
+  {
+    "text": "taxonomy of machine learning some of the",
+    "start": 1031.16,
+    "duration": 6.6
+  },
+  {
+    "text": "main branch is sub branches um and then",
+    "start": 1034.08,
+    "duration": 7.16
+  },
+  {
+    "text": "we&#39;ll move towards algorithms and uh",
+    "start": 1037.76,
+    "duration": 6.0
+  },
+  {
+    "text": "afterwards we&#39;ll go the rest of things",
+    "start": 1041.24,
+    "duration": 4.16
+  },
+  {
+    "text": "so",
+    "start": 1043.76,
+    "duration": 4.56
+  },
+  {
+    "text": "um the way machine learning um so so",
+    "start": 1045.4,
+    "duration": 4.72
+  },
+  {
+    "text": "like the first thing is how",
+    "start": 1048.32,
+    "duration": 4.72
+  },
+  {
+    "text": "traditionally people use to use computer",
+    "start": 1050.12,
+    "duration": 5.52
+  },
+  {
+    "text": "computers in order to solve a problem so",
+    "start": 1053.04,
+    "duration": 5.76
+  },
+  {
+    "text": "what they would do is they would write a",
+    "start": 1055.64,
+    "duration": 4.52
+  },
+  {
+    "text": "rule",
+    "start": 1058.8,
+    "duration": 6.24
+  },
+  {
+    "text": "for uh the task that like to perform um",
+    "start": 1060.16,
+    "duration": 8.68
+  },
+  {
+    "text": "the rule is hardcoded into the computer",
+    "start": 1065.04,
+    "duration": 6.08
+  },
+  {
+    "text": "um and then we have some input data",
+    "start": 1068.84,
+    "duration": 3.64
+  },
+  {
+    "text": "coming into the",
+    "start": 1071.12,
+    "duration": 5.56
+  },
+  {
+    "text": "computer and that rued whatever it is uh",
+    "start": 1072.48,
+    "duration": 5.84
+  },
+  {
+    "text": "processes that input data and produces",
+    "start": 1076.68,
+    "duration": 3.76
+  },
+  {
+    "text": "an output",
+    "start": 1078.32,
+    "duration": 5.28
+  },
+  {
+    "text": "so just for example the rule could be",
+    "start": 1080.44,
+    "duration": 6.04
+  },
+  {
+    "text": "whatever comes in just Square it so",
+    "start": 1083.6,
+    "duration": 6.16
+  },
+  {
+    "text": "let&#39;s say the input is X um inside the",
+    "start": 1086.48,
+    "duration": 5.84
+  },
+  {
+    "text": "computer we have written a program uh",
+    "start": 1089.76,
+    "duration": 4.4
+  },
+  {
+    "text": "which squares the input and then it",
+    "start": 1092.32,
+    "duration": 4.68
+  },
+  {
+    "text": "produces the output which is y so if I",
+    "start": 1094.16,
+    "duration": 5.96
+  },
+  {
+    "text": "have one um the output is one if I have",
+    "start": 1097.0,
+    "duration": 4.84
+  },
+  {
+    "text": "two the output is",
+    "start": 1100.12,
+    "duration": 4.44
+  },
+  {
+    "text": "four um and so",
+    "start": 1101.84,
+    "duration": 5.0
+  },
+  {
+    "text": "on now as you can see the rule is",
+    "start": 1104.56,
+    "duration": 4.96
+  },
+  {
+    "text": "hardcoded here um and we just are",
+    "start": 1106.84,
+    "duration": 4.24
+  },
+  {
+    "text": "feeding some data into the computer and",
+    "start": 1109.52,
+    "duration": 3.6
+  },
+  {
+    "text": "it&#39;s producing output the way this",
+    "start": 1111.08,
+    "duration": 3.72
+  },
+  {
+    "text": "Paradigm has now Changed by Machine",
+    "start": 1113.12,
+    "duration": 4.48
+  },
+  {
+    "text": "learning is uh we would like this",
+    "start": 1114.8,
+    "duration": 5.36
+  },
+  {
+    "text": "computer to learn the rule for itself",
+    "start": 1117.6,
+    "duration": 5.44
+  },
+  {
+    "text": "we&#39;re not going to hardcode that rule uh",
+    "start": 1120.16,
+    "duration": 4.88
+  },
+  {
+    "text": "but what we are going to do is we are",
+    "start": 1123.04,
+    "duration": 4.32
+  },
+  {
+    "text": "going to provide it some historical data",
+    "start": 1125.04,
+    "duration": 5.32
+  },
+  {
+    "text": "of um inputs and outputs and it is a",
+    "start": 1127.36,
+    "duration": 6.48
+  },
+  {
+    "text": "task of this computer program to learn",
+    "start": 1130.36,
+    "duration": 5.2
+  },
+  {
+    "text": "uh the rule to learn the mapping between",
+    "start": 1133.84,
+    "duration": 4.2
+  },
+  {
+    "text": "that input and output so for instance if",
+    "start": 1135.56,
+    "duration": 4.28
+  },
+  {
+    "text": "we take this example",
+    "start": 1138.04,
+    "duration": 5.0
+  },
+  {
+    "text": "um at the beginning the the program",
+    "start": 1139.84,
+    "duration": 5.28
+  },
+  {
+    "text": "doesn&#39;t know if the relation is a",
+    "start": 1143.04,
+    "duration": 4.76
+  },
+  {
+    "text": "squared relation or whatever it is but",
+    "start": 1145.12,
+    "duration": 5.68
+  },
+  {
+    "text": "what we do is we provideed an",
+    "start": 1147.8,
+    "duration": 6.52
+  },
+  {
+    "text": "input and a corresponding output based",
+    "start": 1150.8,
+    "duration": 5.72
+  },
+  {
+    "text": "on some historical",
+    "start": 1154.32,
+    "duration": 5.52
+  },
+  {
+    "text": "data and it is the job of this program",
+    "start": 1156.52,
+    "duration": 5.24
+  },
+  {
+    "text": "or computer to learn the mapping between",
+    "start": 1159.84,
+    "duration": 3.64
+  },
+  {
+    "text": "that input and output so the input could",
+    "start": 1161.76,
+    "duration": 7.36
+  },
+  {
+    "text": "be 1 2 3 the output is 1 49",
+    "start": 1163.48,
+    "duration": 7.08
+  },
+  {
+    "text": "and once it learns that mapping between",
+    "start": 1169.12,
+    "duration": 4.0
+  },
+  {
+    "text": "input and output um we can then make use",
+    "start": 1170.56,
+    "duration": 6.64
+  },
+  {
+    "text": "of this um learned rule um in order to",
+    "start": 1173.12,
+    "duration": 6.6
+  },
+  {
+    "text": "produce an output so I can take this",
+    "start": 1177.2,
+    "duration": 6.12
+  },
+  {
+    "text": "learn Rule and then I next provide it an",
+    "start": 1179.72,
+    "duration": 5.68
+  },
+  {
+    "text": "input and because has learned the",
+    "start": 1183.32,
+    "duration": 3.68
+  },
+  {
+    "text": "mapping between input and output it",
+    "start": 1185.4,
+    "duration": 3.6
+  },
+  {
+    "text": "would be producing me an output so for",
+    "start": 1187.0,
+    "duration": 4.84
+  },
+  {
+    "text": "instance if I feed it for what I want",
+    "start": 1189.0,
+    "duration": 4.96
+  },
+  {
+    "text": "from this learn rule is to produce",
+    "start": 1191.84,
+    "duration": 4.6
+  },
+  {
+    "text": "something like 16 uh because we know",
+    "start": 1193.96,
+    "duration": 5.72
+  },
+  {
+    "text": "that um then put an all provided here is",
+    "start": 1196.44,
+    "duration": 5.52
+  },
+  {
+    "text": "just there&#39;s a squaring relationship we",
+    "start": 1199.68,
+    "duration": 3.4
+  },
+  {
+    "text": "know that right now because I",
+    "start": 1201.96,
+    "duration": 3.64
+  },
+  {
+    "text": "deliberately put this example but uh",
+    "start": 1203.08,
+    "duration": 4.44
+  },
+  {
+    "text": "what we&#39;d like to do is uh even though",
+    "start": 1205.6,
+    "duration": 4.28
+  },
+  {
+    "text": "if we don&#39;t know this rule ourselves we",
+    "start": 1207.52,
+    "duration": 3.68
+  },
+  {
+    "text": "would still like this computer to learn",
+    "start": 1209.88,
+    "duration": 3.64
+  },
+  {
+    "text": "that rule for itself so a typical",
+    "start": 1211.2,
+    "duration": 4.48
+  },
+  {
+    "text": "example would be then put could be an",
+    "start": 1213.52,
+    "duration": 4.72
+  },
+  {
+    "text": "image of something and the corresponding",
+    "start": 1215.68,
+    "duration": 4.72
+  },
+  {
+    "text": "output could be what is inside that",
+    "start": 1218.24,
+    "duration": 4.56
+  },
+  {
+    "text": "image so let&#39;s say this image is of a",
+    "start": 1220.4,
+    "duration": 5.08
+  },
+  {
+    "text": "cat um we provided an image we provide",
+    "start": 1222.8,
+    "duration": 5.04
+  },
+  {
+    "text": "the corresponding level that it&#39;s a cat",
+    "start": 1225.48,
+    "duration": 4.64
+  },
+  {
+    "text": "um we provideed lots and lots of such",
+    "start": 1227.84,
+    "duration": 5.8
+  },
+  {
+    "text": "images and then what we&#39;d like to uh",
+    "start": 1230.12,
+    "duration": 5.52
+  },
+  {
+    "text": "what we&#39; like this rule to have learned",
+    "start": 1233.64,
+    "duration": 3.84
+  },
+  {
+    "text": "is next time I provide you an image you",
+    "start": 1235.64,
+    "duration": 5.16
+  },
+  {
+    "text": "should recognize if it&#39;s a cat or not so",
+    "start": 1237.48,
+    "duration": 5.52
+  },
+  {
+    "text": "as you can see uh we&#39;re not explicitly",
+    "start": 1240.8,
+    "duration": 4.76
+  },
+  {
+    "text": "writing any rules for it and probably uh",
+    "start": 1243.0,
+    "duration": 4.32
+  },
+  {
+    "text": "do writing rules for such kind of",
+    "start": 1245.56,
+    "duration": 4.24
+  },
+  {
+    "text": "problem is even impossible because we",
+    "start": 1247.32,
+    "duration": 3.92
+  },
+  {
+    "text": "know that an image is just a bunch of",
+    "start": 1249.8,
+    "duration": 4.68
+  },
+  {
+    "text": "pixel values um and there&#39;s no way you",
+    "start": 1251.24,
+    "duration": 5.52
+  },
+  {
+    "text": "can hardcode",
+    "start": 1254.48,
+    "duration": 4.84
+  },
+  {
+    "text": "um to tell a computer what a cat looks",
+    "start": 1256.76,
+    "duration": 4.32
+  },
+  {
+    "text": "like for instance you can Define that if",
+    "start": 1259.32,
+    "duration": 3.08
+  },
+  {
+    "text": "this pixel value is this much and that",
+    "start": 1261.08,
+    "duration": 3.52
+  },
+  {
+    "text": "pixel value is that much and so on uh",
+    "start": 1262.4,
+    "duration": 4.0
+  },
+  {
+    "text": "maybe that&#39;s a cat but that would be",
+    "start": 1264.6,
+    "duration": 4.04
+  },
+  {
+    "text": "just for this image what if the POS of",
+    "start": 1266.4,
+    "duration": 3.88
+  },
+  {
+    "text": "the pose of the cat changes what if the",
+    "start": 1268.64,
+    "duration": 4.88
+  },
+  {
+    "text": "lighting changes what if um um The View",
+    "start": 1270.28,
+    "duration": 5.04
+  },
+  {
+    "text": "changes the background changes you&#39;d",
+    "start": 1273.52,
+    "duration": 3.64
+  },
+  {
+    "text": "have to write the entire code entire",
+    "start": 1275.32,
+    "duration": 5.0
+  },
+  {
+    "text": "rule um for different images again so",
+    "start": 1277.16,
+    "duration": 5.48
+  },
+  {
+    "text": "this kind of uh tells you or shows you",
+    "start": 1280.32,
+    "duration": 4.4
+  },
+  {
+    "text": "the importance or the significance of",
+    "start": 1282.64,
+    "duration": 3.64
+  },
+  {
+    "text": "how machine learning is changing this",
+    "start": 1284.72,
+    "duration": 4.72
+  },
+  {
+    "text": "Paradigm we are now not don&#39;t need to be",
+    "start": 1286.28,
+    "duration": 5.2
+  },
+  {
+    "text": "worried about hot coding things",
+    "start": 1289.44,
+    "duration": 4.04
+  },
+  {
+    "text": "ourselves we can just leverage",
+    "start": 1291.48,
+    "duration": 5.68
+  },
+  {
+    "text": "historical data um in order to um learn",
+    "start": 1293.48,
+    "duration": 5.36
+  },
+  {
+    "text": "this mapping and then make use of it in",
+    "start": 1297.16,
+    "duration": 4.2
+  },
+  {
+    "text": "the",
+    "start": 1298.84,
+    "duration": 2.52
+  },
+  {
+    "text": "future okay um I have these few slides",
+    "start": 1302.72,
+    "duration": 6.44
+  },
+  {
+    "text": "although we would not be using slides in",
+    "start": 1307.08,
+    "duration": 4.84
+  },
+  {
+    "text": "the course I personally find them boring",
+    "start": 1309.16,
+    "duration": 4.2
+  },
+  {
+    "text": "but this is just because we are",
+    "start": 1311.92,
+    "duration": 3.72
+  },
+  {
+    "text": "introducing lots of um taxonomy here",
+    "start": 1313.36,
+    "duration": 3.92
+  },
+  {
+    "text": "that&#39;s why it would be easier for me to",
+    "start": 1315.64,
+    "duration": 4.56
+  },
+  {
+    "text": "quickly go through them uh using slides",
+    "start": 1317.28,
+    "duration": 4.88
+  },
+  {
+    "text": "uh feel free to interrupt me anywhere",
+    "start": 1320.2,
+    "duration": 3.68
+  },
+  {
+    "text": "although we&#39;re not going to do in-depth",
+    "start": 1322.16,
+    "duration": 4.68
+  },
+  {
+    "text": "discussions about each of the sub",
+    "start": 1323.88,
+    "duration": 4.92
+  },
+  {
+    "text": "branches and sub branches uh I&#39;ll be",
+    "start": 1326.84,
+    "duration": 4.0
+  },
+  {
+    "text": "just introducing you and then uh we&#39;ll",
+    "start": 1328.8,
+    "duration": 6.92
+  },
+  {
+    "text": "cover each of them uh in the future",
+    "start": 1330.84,
+    "duration": 4.88
+  },
+  {
+    "text": "sessions so broadly you do like a",
+    "start": 1336.16,
+    "duration": 5.24
+  },
+  {
+    "text": "presentation mode so we can see it a",
+    "start": 1339.72,
+    "duration": 5.92
+  },
+  {
+    "text": "little bit larger oh yeah",
+    "start": 1341.4,
+    "duration": 7.68
+  },
+  {
+    "text": "sure is it working now yeah",
+    "start": 1345.64,
+    "duration": 7.08
+  },
+  {
+    "text": "perfect so machine learning is broadly",
+    "start": 1349.08,
+    "duration": 6.56
+  },
+  {
+    "text": "categorized into these three Fields um",
+    "start": 1352.72,
+    "duration": 4.4
+  },
+  {
+    "text": "supervised learning UNS supervised",
+    "start": 1355.64,
+    "duration": 3.56
+  },
+  {
+    "text": "learning and reinforcement learning",
+    "start": 1357.12,
+    "duration": 5.56
+  },
+  {
+    "text": "although uh these days um you can draw",
+    "start": 1359.2,
+    "duration": 6.72
+  },
+  {
+    "text": "another arrow here and write generative",
+    "start": 1362.68,
+    "duration": 5.64
+  },
+  {
+    "text": "learning as well because of its uh",
+    "start": 1365.92,
+    "duration": 6.16
+  },
+  {
+    "text": "recent emergence uh but traditionally um",
+    "start": 1368.32,
+    "duration": 7.8
+  },
+  {
+    "text": "these are like the U major branches that",
+    "start": 1372.08,
+    "duration": 5.24
+  },
+  {
+    "text": "machine learning has been studied",
+    "start": 1376.12,
+    "duration": 3.12
+  },
+  {
+    "text": "generative learning is still in its",
+    "start": 1377.32,
+    "duration": 4.88
+  },
+  {
+    "text": "infancy um it is heavily under research",
+    "start": 1379.24,
+    "duration": 4.6
+  },
+  {
+    "text": "lots of different algorithms are coming",
+    "start": 1382.2,
+    "duration": 3.48
+  },
+  {
+    "text": "every day that&#39;s why it would be",
+    "start": 1383.84,
+    "duration": 3.28
+  },
+  {
+    "text": "difficult to produce a nice looking",
+    "start": 1385.68,
+    "duration": 4.28
+  },
+  {
+    "text": "taxonomy for it um maybe we&#39;ll touch a",
+    "start": 1387.12,
+    "duration": 5.96
+  },
+  {
+    "text": "little bit on generative learning in",
+    "start": 1389.96,
+    "duration": 5.44
+  },
+  {
+    "text": "towards the end of this course but the",
+    "start": 1393.08,
+    "duration": 4.36
+  },
+  {
+    "text": "goal here is to introduce you to the",
+    "start": 1395.4,
+    "duration": 4.12
+  },
+  {
+    "text": "fundamentals so that&#39;s why I put these",
+    "start": 1397.44,
+    "duration": 5.88
+  },
+  {
+    "text": "three here so now what is uh like why",
+    "start": 1399.52,
+    "duration": 6.88
+  },
+  {
+    "text": "have we on the basis of what do we have",
+    "start": 1403.32,
+    "duration": 5.4
+  },
+  {
+    "text": "these uh divisions um this division is",
+    "start": 1406.4,
+    "duration": 4.48
+  },
+  {
+    "text": "mainly based on how you present your",
+    "start": 1408.72,
+    "duration": 5.36
+  },
+  {
+    "text": "data to the learning algorithm so",
+    "start": 1410.88,
+    "duration": 6.68
+  },
+  {
+    "text": "supervised learing um when the data is",
+    "start": 1414.08,
+    "duration": 7.48
+  },
+  {
+    "text": "nicely labeled meaning when you have um",
+    "start": 1417.56,
+    "duration": 6.72
+  },
+  {
+    "text": "features also the corresponding labels",
+    "start": 1421.56,
+    "duration": 4.36
+  },
+  {
+    "text": "which can be thought of as question and",
+    "start": 1424.28,
+    "duration": 3.4
+  },
+  {
+    "text": "answers so the example that I provided",
+    "start": 1425.92,
+    "duration": 6.32
+  },
+  {
+    "text": "where we had x 1 2 3 y 149 um we had",
+    "start": 1427.68,
+    "duration": 7.28
+  },
+  {
+    "text": "inputs and we have corresponding outputs",
+    "start": 1432.24,
+    "duration": 4.4
+  },
+  {
+    "text": "this kind of a data set is called label",
+    "start": 1434.96,
+    "duration": 3.2
+  },
+  {
+    "text": "data because you have features and you",
+    "start": 1436.64,
+    "duration": 4.16
+  },
+  {
+    "text": "have labels features are whatever input",
+    "start": 1438.16,
+    "duration": 5.36
+  },
+  {
+    "text": "you have and labels are the target",
+    "start": 1440.8,
+    "duration": 5.28
+  },
+  {
+    "text": "variable that you&#39;d like to predict so",
+    "start": 1443.52,
+    "duration": 5.2
+  },
+  {
+    "text": "if you have your data labeled um another",
+    "start": 1446.08,
+    "duration": 4.32
+  },
+  {
+    "text": "term that is used for it is annotated",
+    "start": 1448.72,
+    "duration": 3.48
+  },
+  {
+    "text": "data if you have annotated data uh",
+    "start": 1450.4,
+    "duration": 5.24
+  },
+  {
+    "text": "supervis laring is is the branch to to",
+    "start": 1452.2,
+    "duration": 5.32
+  },
+  {
+    "text": "go to um in order to do some machine",
+    "start": 1455.64,
+    "duration": 4.08
+  },
+  {
+    "text": "learning on it now superise learning is",
+    "start": 1457.52,
+    "duration": 6.12
+  },
+  {
+    "text": "further divided into two uh sub branches",
+    "start": 1459.72,
+    "duration": 5.76
+  },
+  {
+    "text": "uh one is regression another is",
+    "start": 1463.64,
+    "duration": 4.04
+  },
+  {
+    "text": "classification so in regression the goal",
+    "start": 1465.48,
+    "duration": 5.24
+  },
+  {
+    "text": "is to predict continuous variable um it",
+    "start": 1467.68,
+    "duration": 5.28
+  },
+  {
+    "text": "could be let&#39;s say the temperature",
+    "start": 1470.72,
+    "duration": 5.4
+  },
+  {
+    "text": "tomorrow or it could be some um let&#39;s",
+    "start": 1472.96,
+    "duration": 6.12
+  },
+  {
+    "text": "say stock price or anything which vares",
+    "start": 1476.12,
+    "duration": 4.84
+  },
+  {
+    "text": "continuously there&#39;s no like that was",
+    "start": 1479.08,
+    "duration": 6.16
+  },
+  {
+    "text": "not discretized in nature um so that",
+    "start": 1480.96,
+    "duration": 6.24
+  },
+  {
+    "text": "kind of uh work is handled in regression",
+    "start": 1485.24,
+    "duration": 4.28
+  },
+  {
+    "text": "in classification uh the target variable",
+    "start": 1487.2,
+    "duration": 5.08
+  },
+  {
+    "text": "is categorized it is discret in nature",
+    "start": 1489.52,
+    "duration": 6.84
+  },
+  {
+    "text": "so you already know um that what the the",
+    "start": 1492.28,
+    "duration": 5.36
+  },
+  {
+    "text": "potential output of the learning",
+    "start": 1496.36,
+    "duration": 3.4
+  },
+  {
+    "text": "algorithm could be one of which",
+    "start": 1497.64,
+    "duration": 3.72
+  },
+  {
+    "text": "categories so the categories are known",
+    "start": 1499.76,
+    "duration": 5.32
+  },
+  {
+    "text": "to us already that&#39;s why it is called",
+    "start": 1501.36,
+    "duration": 3.72
+  },
+  {
+    "text": "classification um second Branch",
+    "start": 1505.24,
+    "duration": 5.4
+  },
+  {
+    "text": "unsupplied learning the data that is",
+    "start": 1508.52,
+    "duration": 5.12
+  },
+  {
+    "text": "presented to the learning algorithm is",
+    "start": 1510.64,
+    "duration": 4.84
+  },
+  {
+    "text": "uh not label data so you have just a",
+    "start": 1513.64,
+    "duration": 5.16
+  },
+  {
+    "text": "bunch of um data um that is available",
+    "start": 1515.48,
+    "duration": 5.24
+  },
+  {
+    "text": "but it&#39;s is not annotated for instance",
+    "start": 1518.8,
+    "duration": 4.08
+  },
+  {
+    "text": "you can have lots and lots of images but",
+    "start": 1520.72,
+    "duration": 5.48
+  },
+  {
+    "text": "you don&#39;t know what uh labels uh like",
+    "start": 1522.88,
+    "duration": 5.04
+  },
+  {
+    "text": "what is inside those images or in other",
+    "start": 1526.2,
+    "duration": 4.44
+  },
+  {
+    "text": "words you can have um a bunch of let&#39;s",
+    "start": 1527.92,
+    "duration": 5.8
+  },
+  {
+    "text": "say news articles uh text articles um",
+    "start": 1530.64,
+    "duration": 4.48
+  },
+  {
+    "text": "but you don&#39;t know what those articles",
+    "start": 1533.72,
+    "duration": 4.52
+  },
+  {
+    "text": "are uh about now if you have data",
+    "start": 1535.12,
+    "duration": 6.12
+  },
+  {
+    "text": "available to you in this way um the",
+    "start": 1538.24,
+    "duration": 4.4
+  },
+  {
+    "text": "question that comes to mind is what can",
+    "start": 1541.24,
+    "duration": 3.8
+  },
+  {
+    "text": "we do with such a data um one thing that",
+    "start": 1542.64,
+    "duration": 4.24
+  },
+  {
+    "text": "we can do with such a data is we can",
+    "start": 1545.04,
+    "duration": 4.24
+  },
+  {
+    "text": "recognize similar uh looking images",
+    "start": 1546.88,
+    "duration": 5.32
+  },
+  {
+    "text": "together or similar um articles together",
+    "start": 1549.28,
+    "duration": 5.68
+  },
+  {
+    "text": "which talk about the same topic maybe uh",
+    "start": 1552.2,
+    "duration": 4.24
+  },
+  {
+    "text": "that kind of thing is called clustering",
+    "start": 1554.96,
+    "duration": 3.68
+  },
+  {
+    "text": "where you have a bunch of uh data",
+    "start": 1556.44,
+    "duration": 5.2
+  },
+  {
+    "text": "available to you and the goal is to um",
+    "start": 1558.64,
+    "duration": 5.68
+  },
+  {
+    "text": "recognize similar looking things",
+    "start": 1561.64,
+    "duration": 4.68
+  },
+  {
+    "text": "together um that is handled in",
+    "start": 1564.32,
+    "duration": 5.04
+  },
+  {
+    "text": "clustering it comes under unsup learning",
+    "start": 1566.32,
+    "duration": 5.36
+  },
+  {
+    "text": "another task that is usually performed",
+    "start": 1569.36,
+    "duration": 3.44
+  },
+  {
+    "text": "in unsup larning is called",
+    "start": 1571.68,
+    "duration": 4.24
+  },
+  {
+    "text": "dimensionality reduction so U dimension",
+    "start": 1572.8,
+    "duration": 6.4
+  },
+  {
+    "text": "deduction is the task where you have um",
+    "start": 1575.92,
+    "duration": 5.84
+  },
+  {
+    "text": "data regarding something and there are",
+    "start": 1579.2,
+    "duration": 4.84
+  },
+  {
+    "text": "lots of features and maybe not all of",
+    "start": 1581.76,
+    "duration": 4.52
+  },
+  {
+    "text": "them are important or maybe the size is",
+    "start": 1584.04,
+    "duration": 4.96
+  },
+  {
+    "text": "huge you&#39;d like to compress it to uh um",
+    "start": 1586.28,
+    "duration": 5.56
+  },
+  {
+    "text": "reduce set of features um but you would",
+    "start": 1589.0,
+    "duration": 5.16
+  },
+  {
+    "text": "like to do it in a way where you prevent",
+    "start": 1591.84,
+    "duration": 4.12
+  },
+  {
+    "text": "yourself from throwing away U the",
+    "start": 1594.16,
+    "duration": 3.68
+  },
+  {
+    "text": "important information you throw away",
+    "start": 1595.96,
+    "duration": 4.24
+  },
+  {
+    "text": "information which is least important um",
+    "start": 1597.84,
+    "duration": 5.64
+  },
+  {
+    "text": "so Dimension deduction is what um deals",
+    "start": 1600.2,
+    "duration": 6.64
+  },
+  {
+    "text": "with that uh we&#39;ll see this in in detail",
+    "start": 1603.48,
+    "duration": 5.16
+  },
+  {
+    "text": "um there are mathematical tools for",
+    "start": 1606.84,
+    "duration": 3.88
+  },
+  {
+    "text": "doing this um uh for doing",
+    "start": 1608.64,
+    "duration": 3.32
+  },
+  {
+    "text": "dimensionality reduction it comes from",
+    "start": 1610.72,
+    "duration": 4.44
+  },
+  {
+    "text": "linear jebra um but that&#39;s what you can",
+    "start": 1611.96,
+    "duration": 5.64
+  },
+  {
+    "text": "usually do in un learning reinforcement",
+    "start": 1615.16,
+    "duration": 4.16
+  },
+  {
+    "text": "learning on the other hand and uh Works",
+    "start": 1617.6,
+    "duration": 3.64
+  },
+  {
+    "text": "differently from the first two so in the",
+    "start": 1619.32,
+    "duration": 3.52
+  },
+  {
+    "text": "reinforcement larning we don&#39;t have",
+    "start": 1621.24,
+    "duration": 3.96
+  },
+  {
+    "text": "prior data available to us but what we",
+    "start": 1622.84,
+    "duration": 4.92
+  },
+  {
+    "text": "have is uh what is called an agent and",
+    "start": 1625.2,
+    "duration": 5.72
+  },
+  {
+    "text": "an environment so we have defined an",
+    "start": 1627.76,
+    "duration": 5.96
+  },
+  {
+    "text": "environment and we place an agent inside",
+    "start": 1630.92,
+    "duration": 4.44
+  },
+  {
+    "text": "that environment we have defined actions",
+    "start": 1633.72,
+    "duration": 5.16
+  },
+  {
+    "text": "for that agent um and based on those",
+    "start": 1635.36,
+    "duration": 5.84
+  },
+  {
+    "text": "actions so if an agent does something we",
+    "start": 1638.88,
+    "duration": 3.96
+  },
+  {
+    "text": "control Its Behavior by providing it",
+    "start": 1641.2,
+    "duration": 3.44
+  },
+  {
+    "text": "what is called a reward function so if",
+    "start": 1642.84,
+    "duration": 3.04
+  },
+  {
+    "text": "the agent is doing something that is",
+    "start": 1644.64,
+    "duration": 2.88
+  },
+  {
+    "text": "desirable we provide a positive reward",
+    "start": 1645.88,
+    "duration": 2.68
+  },
+  {
+    "text": "if it is doing something that is not",
+    "start": 1647.52,
+    "duration": 3.52
+  },
+  {
+    "text": "desirable we provide a negative reward a",
+    "start": 1648.56,
+    "duration": 5.84
+  },
+  {
+    "text": "typical example would be um a car um",
+    "start": 1651.04,
+    "duration": 5.6
+  },
+  {
+    "text": "driving itself on a road so if it is",
+    "start": 1654.4,
+    "duration": 4.64
+  },
+  {
+    "text": "moving um on the road uh without",
+    "start": 1656.64,
+    "duration": 4.04
+  },
+  {
+    "text": "crashing maybe it&#39;s something that we",
+    "start": 1659.04,
+    "duration": 3.16
+  },
+  {
+    "text": "would like it to do so we provide a",
+    "start": 1660.68,
+    "duration": 3.96
+  },
+  {
+    "text": "positive rward if it crashes to award",
+    "start": 1662.2,
+    "duration": 4.0
+  },
+  {
+    "text": "something we provide a negative reward",
+    "start": 1664.64,
+    "duration": 3.24
+  },
+  {
+    "text": "in order to prevent it from doing it in",
+    "start": 1666.2,
+    "duration": 4.52
+  },
+  {
+    "text": "the next session so reinforcement",
+    "start": 1667.88,
+    "duration": 6.52
+  },
+  {
+    "text": "learning um it&#39;s also like um not very",
+    "start": 1670.72,
+    "duration": 7.24
+  },
+  {
+    "text": "much um industrialized like majority of",
+    "start": 1674.4,
+    "duration": 5.0
+  },
+  {
+    "text": "what is happening is still under",
+    "start": 1677.96,
+    "duration": 3.04
+  },
+  {
+    "text": "research although there have been some",
+    "start": 1679.4,
+    "duration": 3.36
+  },
+  {
+    "text": "recent developments from Google Deep",
+    "start": 1681.0,
+    "duration": 3.24
+  },
+  {
+    "text": "Mind where they&#39;re leveraging",
+    "start": 1682.76,
+    "duration": 4.16
+  },
+  {
+    "text": "reinforcement learning uh techniques to",
+    "start": 1684.24,
+    "duration": 5.64
+  },
+  {
+    "text": "do uh research in this medical field um",
+    "start": 1686.92,
+    "duration": 4.32
+  },
+  {
+    "text": "if you have heard the terms protein",
+    "start": 1689.88,
+    "duration": 4.4
+  },
+  {
+    "text": "unfolding um and um now they&#39;re even",
+    "start": 1691.24,
+    "duration": 5.32
+  },
+  {
+    "text": "using it to so the first thing they did",
+    "start": 1694.28,
+    "duration": 4.68
+  },
+  {
+    "text": "was they did this proteins unfolding",
+    "start": 1696.56,
+    "duration": 4.76
+  },
+  {
+    "text": "which was one of the toughest problem in",
+    "start": 1698.96,
+    "duration": 4.96
+  },
+  {
+    "text": "uh biological sciences but now they are",
+    "start": 1701.32,
+    "duration": 6.16
+  },
+  {
+    "text": "even um training it to learn to design",
+    "start": 1703.92,
+    "duration": 7.16
+  },
+  {
+    "text": "drugs uh which previously took years now",
+    "start": 1707.48,
+    "duration": 5.48
+  },
+  {
+    "text": "they are claiming that it is handling",
+    "start": 1711.08,
+    "duration": 6.04
+  },
+  {
+    "text": "them in a matter of seconds or minutes",
+    "start": 1712.96,
+    "duration": 6.92
+  },
+  {
+    "text": "so enforcar is a very um interesting",
+    "start": 1717.12,
+    "duration": 6.6
+  },
+  {
+    "text": "field of research um we would not be",
+    "start": 1719.88,
+    "duration": 5.52
+  },
+  {
+    "text": "focusing too much on reforce planning in",
+    "start": 1723.72,
+    "duration": 5.6
+  },
+  {
+    "text": "this uh course because um we are",
+    "start": 1725.4,
+    "duration": 6.2
+  },
+  {
+    "text": "focusing more on the fundamentals of AI",
+    "start": 1729.32,
+    "duration": 4.36
+  },
+  {
+    "text": "um and now once you learn those",
+    "start": 1731.6,
+    "duration": 4.36
+  },
+  {
+    "text": "fundamentals those techniques are what",
+    "start": 1733.68,
+    "duration": 3.64
+  },
+  {
+    "text": "would be used in such reinforcement",
+    "start": 1735.96,
+    "duration": 2.92
+  },
+  {
+    "text": "learning so for instance when we cover",
+    "start": 1737.32,
+    "duration": 4.8
+  },
+  {
+    "text": "new networks um a sub branch of",
+    "start": 1738.88,
+    "duration": 4.8
+  },
+  {
+    "text": "reinforcement learning called Deep",
+    "start": 1742.12,
+    "duration": 3.44
+  },
+  {
+    "text": "reinforcement learning is using new",
+    "start": 1743.68,
+    "duration": 5.56
+  },
+  {
+    "text": "networks in order to do things so at",
+    "start": 1745.56,
+    "duration": 5.48
+  },
+  {
+    "text": "least I would provide you a basr around",
+    "start": 1749.24,
+    "duration": 3.68
+  },
+  {
+    "text": "if you would like then further to study",
+    "start": 1751.04,
+    "duration": 3.52
+  },
+  {
+    "text": "reinforcement learning uh you would be",
+    "start": 1752.92,
+    "duration": 2.56
+  },
+  {
+    "text": "good to",
+    "start": 1754.56,
+    "duration": 5.96
+  },
+  {
+    "text": "go so um any questions um yeah I had one",
+    "start": 1755.48,
+    "duration": 7.52
+  },
+  {
+    "text": "question but anyone",
+    "start": 1760.52,
+    "duration": 5.8
+  },
+  {
+    "text": "else so um for the dimensionality",
+    "start": 1763.0,
+    "duration": 6.44
+  },
+  {
+    "text": "reduction like is there a specific type",
+    "start": 1766.32,
+    "duration": 5.4
+  },
+  {
+    "text": "of um of data set that that works better",
+    "start": 1769.44,
+    "duration": 3.72
+  },
+  {
+    "text": "on or like what would be like what kind",
+    "start": 1771.72,
+    "duration": 4.48
+  },
+  {
+    "text": "of data sets would you want to use that",
+    "start": 1773.16,
+    "duration": 7.72
+  },
+  {
+    "text": "on so usually um it works for table data",
+    "start": 1776.2,
+    "duration": 9.52
+  },
+  {
+    "text": "sets uh but you can you can I mean um",
+    "start": 1780.88,
+    "duration": 7.64
+  },
+  {
+    "text": "perform dimensional deduction on even",
+    "start": 1785.72,
+    "duration": 5.52
+  },
+  {
+    "text": "images as well um if you arrange the",
+    "start": 1788.52,
+    "duration": 6.2
+  },
+  {
+    "text": "pixels in a table way uh maybe you can",
+    "start": 1791.24,
+    "duration": 4.72
+  },
+  {
+    "text": "do that although this is something that",
+    "start": 1794.72,
+    "duration": 3.72
+  },
+  {
+    "text": "I haven&#39;t done myself uh but now since",
+    "start": 1795.96,
+    "duration": 4.0
+  },
+  {
+    "text": "you have asked I think you can do that",
+    "start": 1798.44,
+    "duration": 5.28
+  },
+  {
+    "text": "for for pixels as well uh but usually",
+    "start": 1799.96,
+    "duration": 5.4
+  },
+  {
+    "text": "most of what I&#39;ve seen uh dimensional",
+    "start": 1803.72,
+    "duration": 4.2
+  },
+  {
+    "text": "deduction is used for if you have some",
+    "start": 1805.36,
+    "duration": 3.96
+  },
+  {
+    "text": "table of data and you would like to",
+    "start": 1807.92,
+    "duration": 3.0
+  },
+  {
+    "text": "reduce the set of Futures for instance",
+    "start": 1809.32,
+    "duration": 4.28
+  },
+  {
+    "text": "if you um so one of the problems that",
+    "start": 1810.92,
+    "duration": 4.32
+  },
+  {
+    "text": "will be cing in the classification which",
+    "start": 1813.6,
+    "duration": 4.24
+  },
+  {
+    "text": "is logistic regression uh we have this",
+    "start": 1815.24,
+    "duration": 4.8
+  },
+  {
+    "text": "uh data set about tumors so we have",
+    "start": 1817.84,
+    "duration": 5.76
+  },
+  {
+    "text": "tumor size the radius of it uh lots of",
+    "start": 1820.04,
+    "duration": 5.6
+  },
+  {
+    "text": "their medical terms are there uh maybe",
+    "start": 1823.6,
+    "duration": 4.64
+  },
+  {
+    "text": "we can use diate reduction first to use",
+    "start": 1825.64,
+    "duration": 3.76
+  },
+  {
+    "text": "all of the features and see how the",
+    "start": 1828.24,
+    "duration": 2.6
+  },
+  {
+    "text": "algorithm is performing and then we can",
+    "start": 1829.4,
+    "duration": 3.08
+  },
+  {
+    "text": "do diality reduction to reduce the set",
+    "start": 1830.84,
+    "duration": 3.28
+  },
+  {
+    "text": "of features and see how it is impacting",
+    "start": 1832.48,
+    "duration": 4.36
+  },
+  {
+    "text": "the performance of the algorithm right",
+    "start": 1834.12,
+    "duration": 4.88
+  },
+  {
+    "text": "so if the performance is not reduced",
+    "start": 1836.84,
+    "duration": 4.76
+  },
+  {
+    "text": "much and still we have reduced a set of",
+    "start": 1839.0,
+    "duration": 3.92
+  },
+  {
+    "text": "uh the number of features that would be",
+    "start": 1841.6,
+    "duration": 2.48
+  },
+  {
+    "text": "a good thing to do because it would",
+    "start": 1842.92,
+    "duration": 3.56
+  },
+  {
+    "text": "reduce the computational burden on the",
+    "start": 1844.08,
+    "duration": 5.88
+  },
+  {
+    "text": "computer um and also it would be a nice",
+    "start": 1846.48,
+    "duration": 7.96
+  },
+  {
+    "text": "nicer way of compressing the",
+    "start": 1849.96,
+    "duration": 4.48
+  },
+  {
+    "text": "data I have a question on this so so is",
+    "start": 1854.88,
+    "duration": 4.2
+  },
+  {
+    "text": "it um",
+    "start": 1857.68,
+    "duration": 4.36
+  },
+  {
+    "text": "mostly um use for optimization or is",
+    "start": 1859.08,
+    "duration": 5.92
+  },
+  {
+    "text": "there also some other use cases like",
+    "start": 1862.04,
+    "duration": 7.48
+  },
+  {
+    "text": "what would you apply this to um the",
+    "start": 1865.0,
+    "duration": 7.16
+  },
+  {
+    "text": "dimension reduction you&#39;re talking about",
+    "start": 1869.52,
+    "duration": 5.56
+  },
+  {
+    "text": "yes okay so this is usually utilized in",
+    "start": 1872.16,
+    "duration": 5.4
+  },
+  {
+    "text": "places where you have there&#39;s a term",
+    "start": 1875.08,
+    "duration": 4.72
+  },
+  {
+    "text": "called curse of dimensionality so",
+    "start": 1877.56,
+    "duration": 4.04
+  },
+  {
+    "text": "sometimes you have so many features that",
+    "start": 1879.8,
+    "duration": 4.48
+  },
+  {
+    "text": "the computational space just blows up um",
+    "start": 1881.6,
+    "duration": 4.24
+  },
+  {
+    "text": "and the available compute resources that",
+    "start": 1884.28,
+    "duration": 4.6
+  },
+  {
+    "text": "you have are not enough to to care for",
+    "start": 1885.84,
+    "duration": 6.16
+  },
+  {
+    "text": "that and in in those situation usually",
+    "start": 1888.88,
+    "duration": 6.32
+  },
+  {
+    "text": "it is um advisable to do damate",
+    "start": 1892.0,
+    "duration": 4.68
+  },
+  {
+    "text": "reduction first to reduce the set of",
+    "start": 1895.2,
+    "duration": 4.36
+  },
+  {
+    "text": "features um and then make use of them in",
+    "start": 1896.68,
+    "duration": 5.08
+  },
+  {
+    "text": "order to see how it is um if it is",
+    "start": 1899.56,
+    "duration": 4.36
+  },
+  {
+    "text": "working so that&#39;s one use case",
+    "start": 1901.76,
+    "duration": 3.68
+  },
+  {
+    "text": "particularly that&#39;s what is used mostly",
+    "start": 1903.92,
+    "duration": 4.44
+  },
+  {
+    "text": "in machine learning for the DI reduction",
+    "start": 1905.44,
+    "duration": 5.4
+  },
+  {
+    "text": "but um there could be some use cases of",
+    "start": 1908.36,
+    "duration": 4.28
+  },
+  {
+    "text": "it even outside the standard machine",
+    "start": 1910.84,
+    "duration": 3.48
+  },
+  {
+    "text": "learning for instance if you&#39;d like to",
+    "start": 1912.64,
+    "duration": 5.84
+  },
+  {
+    "text": "do um compression um because the storage",
+    "start": 1914.32,
+    "duration": 6.24
+  },
+  {
+    "text": "size that it is taking the data is",
+    "start": 1918.48,
+    "duration": 5.92
+  },
+  {
+    "text": "taking is huge um you maybe would like",
+    "start": 1920.56,
+    "duration": 6.4
+  },
+  {
+    "text": "to compress data but one thing that is",
+    "start": 1924.4,
+    "duration": 4.52
+  },
+  {
+    "text": "very important to keep in mind is diate",
+    "start": 1926.96,
+    "duration": 4.16
+  },
+  {
+    "text": "reduction is not",
+    "start": 1928.92,
+    "duration": 4.44
+  },
+  {
+    "text": "reversible",
+    "start": 1931.12,
+    "duration": 7.4
+  },
+  {
+    "text": "so um like once you take these um",
+    "start": 1933.36,
+    "duration": 7.72
+  },
+  {
+    "text": "features and you compress them into this",
+    "start": 1938.52,
+    "duration": 5.32
+  },
+  {
+    "text": "low dimensionality like the the",
+    "start": 1941.08,
+    "duration": 4.96
+  },
+  {
+    "text": "information about individual features is",
+    "start": 1943.84,
+    "duration": 4.96
+  },
+  {
+    "text": "lost so for instance if you have like",
+    "start": 1946.04,
+    "duration": 5.52
+  },
+  {
+    "text": "let&#39;s say one feature is uh radius",
+    "start": 1948.8,
+    "duration": 5.96
+  },
+  {
+    "text": "another is maybe let&#39;s say the texture",
+    "start": 1951.56,
+    "duration": 5.76
+  },
+  {
+    "text": "of the tumor uh and so on and I have",
+    "start": 1954.76,
+    "duration": 5.16
+  },
+  {
+    "text": "reduced now them into let&#39;s say two set",
+    "start": 1957.32,
+    "duration": 5.16
+  },
+  {
+    "text": "of features um which is lower than what",
+    "start": 1959.92,
+    "duration": 5.88
+  },
+  {
+    "text": "the original um number of features were",
+    "start": 1962.48,
+    "duration": 5.32
+  },
+  {
+    "text": "the that information is now lost now I",
+    "start": 1965.8,
+    "duration": 3.4
+  },
+  {
+    "text": "don&#39;t know what that feature is",
+    "start": 1967.8,
+    "duration": 3.24
+  },
+  {
+    "text": "representing although it is important a",
+    "start": 1969.2,
+    "duration": 3.48
+  },
+  {
+    "text": "learning algorithm can make use of it to",
+    "start": 1971.04,
+    "duration": 6.04
+  },
+  {
+    "text": "do uh to make useful decisions but uh I",
+    "start": 1972.68,
+    "duration": 6.64
+  },
+  {
+    "text": "don&#39;t know what that feature is anymore",
+    "start": 1977.08,
+    "duration": 6.12
+  },
+  {
+    "text": "because the the the semantic meaning uh",
+    "start": 1979.32,
+    "duration": 6.68
+  },
+  {
+    "text": "in that feature is",
+    "start": 1983.2,
+    "duration": 2.8
+  },
+  {
+    "text": "lost I have a question um so the way I",
+    "start": 1986.08,
+    "duration": 6.72
+  },
+  {
+    "text": "kind of think about well un supervised",
+    "start": 1990.52,
+    "duration": 4.16
+  },
+  {
+    "text": "learning anyway like I think one kind of",
+    "start": 1992.8,
+    "duration": 4.04
+  },
+  {
+    "text": "branch of that is embedding does that",
+    "start": 1994.68,
+    "duration": 4.32
+  },
+  {
+    "text": "fall more unto clustering or",
+    "start": 1996.84,
+    "duration": 3.76
+  },
+  {
+    "text": "dimensionality",
+    "start": 1999.0,
+    "duration": 5.24
+  },
+  {
+    "text": "reduction so um embeddings I think you",
+    "start": 2000.6,
+    "duration": 5.56
+  },
+  {
+    "text": "referring to word embeddings where we",
+    "start": 2004.24,
+    "duration": 5.8
+  },
+  {
+    "text": "have um we assigned these uh vectors to",
+    "start": 2006.16,
+    "duration": 7.48
+  },
+  {
+    "text": "each words um each word in a text where",
+    "start": 2010.04,
+    "duration": 5.56
+  },
+  {
+    "text": "the vector is tasked",
+    "start": 2013.64,
+    "duration": 4.92
+  },
+  {
+    "text": "to um learn the semantic meaning in a",
+    "start": 2015.6,
+    "duration": 8.76
+  },
+  {
+    "text": "word so usually um these algorithms um",
+    "start": 2018.56,
+    "duration": 8.76
+  },
+  {
+    "text": "the the language models that are trained",
+    "start": 2024.36,
+    "duration": 4.0
+  },
+  {
+    "text": "um there&#39;s a concept called",
+    "start": 2027.32,
+    "duration": 3.88
+  },
+  {
+    "text": "semisupervised learning um so it is a",
+    "start": 2028.36,
+    "duration": 5.04
+  },
+  {
+    "text": "kind of a recent term uh but what",
+    "start": 2031.2,
+    "duration": 5.4
+  },
+  {
+    "text": "happens in semi super learning is um you",
+    "start": 2033.4,
+    "duration": 6.84
+  },
+  {
+    "text": "take let&#39;s say you have defined um the",
+    "start": 2036.6,
+    "duration": 7.12
+  },
+  {
+    "text": "word dimension of words is 32 for each",
+    "start": 2040.24,
+    "duration": 6.0
+  },
+  {
+    "text": "word you have assigned 32 Dimension",
+    "start": 2043.72,
+    "duration": 5.52
+  },
+  {
+    "text": "vectors the way you train it it is uh",
+    "start": 2046.24,
+    "duration": 5.48
+  },
+  {
+    "text": "you take a bunch of text you randomly",
+    "start": 2049.24,
+    "duration": 5.28
+  },
+  {
+    "text": "remove words from it and then you task",
+    "start": 2051.72,
+    "duration": 5.44
+  },
+  {
+    "text": "your uh language model which could be a",
+    "start": 2054.52,
+    "duration": 4.92
+  },
+  {
+    "text": "Transformer or an lstm or whatever that",
+    "start": 2057.16,
+    "duration": 5.0
+  },
+  {
+    "text": "you&#39;re using uh in order to uh so so you",
+    "start": 2059.44,
+    "duration": 4.6
+  },
+  {
+    "text": "task it to produce or to predict the",
+    "start": 2062.16,
+    "duration": 4.44
+  },
+  {
+    "text": "next word that you have masked uh",
+    "start": 2064.04,
+    "duration": 6.28
+  },
+  {
+    "text": "deliberately uh um and in that way the",
+    "start": 2066.6,
+    "duration": 6.28
+  },
+  {
+    "text": "word embeddings are learned so if you&#39;d",
+    "start": 2070.32,
+    "duration": 5.92
+  },
+  {
+    "text": "like to um categorize that um in in this",
+    "start": 2072.88,
+    "duration": 7.08
+  },
+  {
+    "text": "picture here uh there should be um maybe",
+    "start": 2076.24,
+    "duration": 5.96
+  },
+  {
+    "text": "another arrow calling semi-supervised",
+    "start": 2079.96,
+    "duration": 4.28
+  },
+  {
+    "text": "learning uh sorry not semi learning it",
+    "start": 2082.2,
+    "duration": 4.6
+  },
+  {
+    "text": "is called self-supervised learning so",
+    "start": 2084.24,
+    "duration": 4.28
+  },
+  {
+    "text": "that is that is a more relevant term to",
+    "start": 2086.8,
+    "duration": 4.48
+  },
+  {
+    "text": "it but just like I said these are some",
+    "start": 2088.52,
+    "duration": 4.4
+  },
+  {
+    "text": "like these concepts are relatively new",
+    "start": 2091.28,
+    "duration": 3.92
+  },
+  {
+    "text": "so I haven&#39;t deliberately put them in in",
+    "start": 2092.92,
+    "duration": 4.84
+  },
+  {
+    "text": "in in the slide uh but you can write",
+    "start": 2095.2,
+    "duration": 5.36
+  },
+  {
+    "text": "another with self-supervised learning",
+    "start": 2097.76,
+    "duration": 3.92
+  },
+  {
+    "text": "there&#39;s another term as well called",
+    "start": 2100.56,
+    "duration": 3.0
+  },
+  {
+    "text": "semisupervised learning so in",
+    "start": 2101.68,
+    "duration": 5.24
+  },
+  {
+    "text": "semisupervised learning um sometimes",
+    "start": 2103.56,
+    "duration": 6.08
+  },
+  {
+    "text": "like you have a gigantic amount of data",
+    "start": 2106.92,
+    "duration": 5.36
+  },
+  {
+    "text": "um not like labeling all of it or",
+    "start": 2109.64,
+    "duration": 4.4
+  },
+  {
+    "text": "annotating all of it is is very",
+    "start": 2112.28,
+    "duration": 4.48
+  },
+  {
+    "text": "difficult so what you do is you take a",
+    "start": 2114.04,
+    "duration": 4.52
+  },
+  {
+    "text": "certain chunk of that data um you",
+    "start": 2116.76,
+    "duration": 4.92
+  },
+  {
+    "text": "manually label it you annotate it uh you",
+    "start": 2118.56,
+    "duration": 5.52
+  },
+  {
+    "text": "train a learning algorithm on it and",
+    "start": 2121.68,
+    "duration": 5.64
+  },
+  {
+    "text": "then you take the rest of the data and",
+    "start": 2124.08,
+    "duration": 4.68
+  },
+  {
+    "text": "make predictions for the rest of the",
+    "start": 2127.32,
+    "duration": 3.56
+  },
+  {
+    "text": "data because the lgorithm is not trained",
+    "start": 2128.76,
+    "duration": 3.72
+  },
+  {
+    "text": "and whatever labels that It produced now",
+    "start": 2130.88,
+    "duration": 3.04
+  },
+  {
+    "text": "like the whole data is labeled the whole",
+    "start": 2132.48,
+    "duration": 3.32
+  },
+  {
+    "text": "data is anotated and then you take the",
+    "start": 2133.92,
+    "duration": 3.92
+  },
+  {
+    "text": "whole data again and retrain the entire",
+    "start": 2135.8,
+    "duration": 4.04
+  },
+  {
+    "text": "algorthm this concept is called",
+    "start": 2137.84,
+    "duration": 4.04
+  },
+  {
+    "text": "semi-supervised learning now of course",
+    "start": 2139.84,
+    "duration": 4.76
+  },
+  {
+    "text": "the question that comes to mind is that",
+    "start": 2141.88,
+    "duration": 4.4
+  },
+  {
+    "text": "if you have trained the algorithm on a",
+    "start": 2144.6,
+    "duration": 4.0
+  },
+  {
+    "text": "reduced set of data in the first place",
+    "start": 2146.28,
+    "duration": 4.16
+  },
+  {
+    "text": "it is going to generate some errors of",
+    "start": 2148.6,
+    "duration": 4.08
+  },
+  {
+    "text": "course going to generate some errors but",
+    "start": 2150.44,
+    "duration": 4.08
+  },
+  {
+    "text": "Searchers have shown that the benefit is",
+    "start": 2152.68,
+    "duration": 5.28
+  },
+  {
+    "text": "still uh more than the introduced there",
+    "start": 2154.52,
+    "duration": 8.36
+  },
+  {
+    "text": "so semi supervis learning also works",
+    "start": 2157.96,
+    "duration": 4.92
+  },
+  {
+    "text": "sometimes any more",
+    "start": 2166.88,
+    "duration": 3.4
+  },
+  {
+    "text": "questions uh I could have one more but",
+    "start": 2170.48,
+    "duration": 3.84
+  },
+  {
+    "text": "if we&#39;re running a lot of time we can",
+    "start": 2172.68,
+    "duration": 4.68
+  },
+  {
+    "text": "keep going to next",
+    "start": 2174.32,
+    "duration": 5.68
+  },
+  {
+    "text": "SL yeah",
+    "start": 2177.36,
+    "duration": 5.92
+  },
+  {
+    "text": "okay so let&#39;s move",
+    "start": 2180.0,
+    "duration": 5.72
+  },
+  {
+    "text": "um next thing that I would like to talk",
+    "start": 2183.28,
+    "duration": 5.08
+  },
+  {
+    "text": "about is a standard workflow of a",
+    "start": 2185.72,
+    "duration": 5.04
+  },
+  {
+    "text": "machine learning wait did you did you",
+    "start": 2188.36,
+    "duration": 4.6
+  },
+  {
+    "text": "hear that that he had one more",
+    "start": 2190.76,
+    "duration": 5.12
+  },
+  {
+    "text": "question no we can keep going I can ask",
+    "start": 2192.96,
+    "duration": 4.88
+  },
+  {
+    "text": "at the end we",
+    "start": 2195.88,
+    "duration": 6.76
+  },
+  {
+    "text": "finishing okay okay probably it&#39;s okay",
+    "start": 2197.84,
+    "duration": 7.84
+  },
+  {
+    "text": "okay so a standard workflow of a aing",
+    "start": 2202.64,
+    "duration": 4.48
+  },
+  {
+    "text": "machine learning project usually",
+    "start": 2205.68,
+    "duration": 3.16
+  },
+  {
+    "text": "involves these steps although there",
+    "start": 2207.12,
+    "duration": 3.52
+  },
+  {
+    "text": "would be projects which would not follow",
+    "start": 2208.84,
+    "duration": 5.64
+  },
+  {
+    "text": "the standard uh procedure uh standard",
+    "start": 2210.64,
+    "duration": 6.64
+  },
+  {
+    "text": "linear procedure but still it is good to",
+    "start": 2214.48,
+    "duration": 5.44
+  },
+  {
+    "text": "keep in mind so the Story begins with",
+    "start": 2217.28,
+    "duration": 5.44
+  },
+  {
+    "text": "data usually machine learning Engineers",
+    "start": 2219.92,
+    "duration": 5.64
+  },
+  {
+    "text": "are um like they begin at this stage so",
+    "start": 2222.72,
+    "duration": 5.0
+  },
+  {
+    "text": "the data is available to them they don&#39;t",
+    "start": 2225.56,
+    "duration": 3.64
+  },
+  {
+    "text": "usually worry about where the data is",
+    "start": 2227.72,
+    "duration": 2.28
+  },
+  {
+    "text": "coming",
+    "start": 2229.2,
+    "duration": 3.44
+  },
+  {
+    "text": "from um it could be stored in Excel",
+    "start": 2230.0,
+    "duration": 5.16
+  },
+  {
+    "text": "sheets uh some database coming from a",
+    "start": 2232.64,
+    "duration": 4.84
+  },
+  {
+    "text": "live API or something uh but we have the",
+    "start": 2235.16,
+    "duration": 5.8
+  },
+  {
+    "text": "data so uh the next step is what is",
+    "start": 2237.48,
+    "duration": 5.8
+  },
+  {
+    "text": "called Eda or exploratory data analysis",
+    "start": 2240.96,
+    "duration": 3.8
+  },
+  {
+    "text": "so once you have the data available to",
+    "start": 2243.28,
+    "duration": 3.12
+  },
+  {
+    "text": "you what you would like to do is to get",
+    "start": 2244.76,
+    "duration": 3.16
+  },
+  {
+    "text": "an Insight of what the data looks like",
+    "start": 2246.4,
+    "duration": 3.52
+  },
+  {
+    "text": "if there are any miscon misc",
+    "start": 2247.92,
+    "duration": 5.12
+  },
+  {
+    "text": "consistencies in the data or any um",
+    "start": 2249.92,
+    "duration": 6.64
+  },
+  {
+    "text": "outliers or you can also like just do",
+    "start": 2253.04,
+    "duration": 4.88
+  },
+  {
+    "text": "your own analysis on for instance",
+    "start": 2256.56,
+    "duration": 3.24
+  },
+  {
+    "text": "correlation analysis you&#39;d like to see",
+    "start": 2257.92,
+    "duration": 3.48
+  },
+  {
+    "text": "how features are related to each other",
+    "start": 2259.8,
+    "duration": 4.72
+  },
+  {
+    "text": "and um that kind of stuff so Eda is what",
+    "start": 2261.4,
+    "duration": 4.08
+  },
+  {
+    "text": "is",
+    "start": 2264.52,
+    "duration": 3.12
+  },
+  {
+    "text": "usually is a stage where these kind of",
+    "start": 2265.48,
+    "duration": 5.2
+  },
+  {
+    "text": "things are handled uh once you get an",
+    "start": 2267.64,
+    "duration": 5.04
+  },
+  {
+    "text": "Insight of your data uh the next step is",
+    "start": 2270.68,
+    "duration": 3.72
+  },
+  {
+    "text": "then pre-processing the data so each",
+    "start": 2272.68,
+    "duration": 4.04
+  },
+  {
+    "text": "learning algorithm likes the data to be",
+    "start": 2274.4,
+    "duration": 4.16
+  },
+  {
+    "text": "presented to it in a certain shape And",
+    "start": 2276.72,
+    "duration": 3.72
+  },
+  {
+    "text": "format uh for instance if there are",
+    "start": 2278.56,
+    "duration": 4.56
+  },
+  {
+    "text": "images you cannot just simply throw uh",
+    "start": 2280.44,
+    "duration": 4.6
+  },
+  {
+    "text": "images of different sizes at a new",
+    "start": 2283.12,
+    "duration": 4.12
+  },
+  {
+    "text": "network you&#39;d have to reshape them into",
+    "start": 2285.04,
+    "duration": 5.16
+  },
+  {
+    "text": "a fixed size um normalize them we&#39;ll",
+    "start": 2287.24,
+    "duration": 4.28
+  },
+  {
+    "text": "talk about these things in the future",
+    "start": 2290.2,
+    "duration": 2.88
+  },
+  {
+    "text": "sessions but these are just some of the",
+    "start": 2291.52,
+    "duration": 4.56
+  },
+  {
+    "text": "things or if if it is a tablea data and",
+    "start": 2293.08,
+    "duration": 4.32
+  },
+  {
+    "text": "maybe there are lots of missing entries",
+    "start": 2296.08,
+    "duration": 3.44
+  },
+  {
+    "text": "in there you would like to take care of",
+    "start": 2297.4,
+    "duration": 4.76
+  },
+  {
+    "text": "those um or out cers you&#39;d like to take",
+    "start": 2299.52,
+    "duration": 4.72
+  },
+  {
+    "text": "care of those before you are um you feed",
+    "start": 2302.16,
+    "duration": 4.12
+  },
+  {
+    "text": "that data to the learning algorithm so",
+    "start": 2304.24,
+    "duration": 3.64
+  },
+  {
+    "text": "these kind of things are usually handled",
+    "start": 2306.28,
+    "duration": 4.36
+  },
+  {
+    "text": "at the pre-processing",
+    "start": 2307.88,
+    "duration": 6.76
+  },
+  {
+    "text": "stage um once the data is ready um the",
+    "start": 2310.64,
+    "duration": 7.12
+  },
+  {
+    "text": "next step is then model designing so",
+    "start": 2314.64,
+    "duration": 4.76
+  },
+  {
+    "text": "model designing is a term more relevant",
+    "start": 2317.76,
+    "duration": 4.48
+  },
+  {
+    "text": "to new networks because you usually have",
+    "start": 2319.4,
+    "duration": 4.76
+  },
+  {
+    "text": "the a lot of choices for the",
+    "start": 2322.24,
+    "duration": 3.36
+  },
+  {
+    "text": "architecture how many layers you wouldd",
+    "start": 2324.16,
+    "duration": 2.84
+  },
+  {
+    "text": "like to use how many neurons you want to",
+    "start": 2325.6,
+    "duration": 3.2
+  },
+  {
+    "text": "put in each layer what kind of",
+    "start": 2327.0,
+    "duration": 3.96
+  },
+  {
+    "text": "optimization GTH you&#39;d like to use um",
+    "start": 2328.8,
+    "duration": 4.2
+  },
+  {
+    "text": "all those kind of things so this is what",
+    "start": 2330.96,
+    "duration": 3.48
+  },
+  {
+    "text": "is usually handled at the model",
+    "start": 2333.0,
+    "duration": 4.52
+  },
+  {
+    "text": "designing phase um once the model is",
+    "start": 2334.44,
+    "duration": 6.52
+  },
+  {
+    "text": "designed um the next step is then to",
+    "start": 2337.52,
+    "duration": 5.36
+  },
+  {
+    "text": "train the model so one thing that I",
+    "start": 2340.96,
+    "duration": 3.28
+  },
+  {
+    "text": "didn&#39;t talk about in the pre-processing",
+    "start": 2342.88,
+    "duration": 3.64
+  },
+  {
+    "text": "is uh we usually so if you have a data",
+    "start": 2344.24,
+    "duration": 4.84
+  },
+  {
+    "text": "we create two sets in it um what is",
+    "start": 2346.52,
+    "duration": 5.12
+  },
+  {
+    "text": "called what are called the training and",
+    "start": 2349.08,
+    "duration": 5.12
+  },
+  {
+    "text": "test set so what we simply do is that we",
+    "start": 2351.64,
+    "duration": 5.04
+  },
+  {
+    "text": "do not take the entire data and feed it",
+    "start": 2354.2,
+    "duration": 4.12
+  },
+  {
+    "text": "to the learning algorithm in order to",
+    "start": 2356.68,
+    "duration": 4.04
+  },
+  {
+    "text": "train we set aside a certain chunk a",
+    "start": 2358.32,
+    "duration": 4.92
+  },
+  {
+    "text": "small Chunk from it let&#39;s say 20%",
+    "start": 2360.72,
+    "duration": 4.16
+  },
+  {
+    "text": "because we would like to test the",
+    "start": 2363.24,
+    "duration": 3.24
+  },
+  {
+    "text": "performance of the algorithm once it is",
+    "start": 2364.88,
+    "duration": 4.0
+  },
+  {
+    "text": "trained so we use the 80% of the data to",
+    "start": 2366.48,
+    "duration": 4.44
+  },
+  {
+    "text": "train algorithm and because we cannot",
+    "start": 2368.88,
+    "duration": 4.28
+  },
+  {
+    "text": "just simply blindly deploy that model to",
+    "start": 2370.92,
+    "duration": 5.24
+  },
+  {
+    "text": "the world um we would like to test its",
+    "start": 2373.16,
+    "duration": 5.84
+  },
+  {
+    "text": "performance so then we bring about our",
+    "start": 2376.16,
+    "duration": 5.08
+  },
+  {
+    "text": "set aside test data and we evaluate the",
+    "start": 2379.0,
+    "duration": 3.6
+  },
+  {
+    "text": "performance of the",
+    "start": 2381.24,
+    "duration": 4.04
+  },
+  {
+    "text": "model um that is handled in model",
+    "start": 2382.6,
+    "duration": 5.08
+  },
+  {
+    "text": "evaluation if the performance of the",
+    "start": 2385.28,
+    "duration": 4.32
+  },
+  {
+    "text": "model is satisfactory uh that&#39;s good",
+    "start": 2387.68,
+    "duration": 5.64
+  },
+  {
+    "text": "enough um if it is not uh you go back to",
+    "start": 2389.6,
+    "duration": 6.28
+  },
+  {
+    "text": "the model designing phase uh change the",
+    "start": 2393.32,
+    "duration": 4.92
+  },
+  {
+    "text": "architecture change the hyperparameters",
+    "start": 2395.88,
+    "duration": 4.6
+  },
+  {
+    "text": "that are there maybe sometimes you&#39;d",
+    "start": 2398.24,
+    "duration": 4.2
+  },
+  {
+    "text": "also like to pre-process data",
+    "start": 2400.48,
+    "duration": 4.52
+  },
+  {
+    "text": "differently um so this is a kind of a",
+    "start": 2402.44,
+    "duration": 5.6
+  },
+  {
+    "text": "back and forth um process here uh",
+    "start": 2405.0,
+    "duration": 7.6
+  },
+  {
+    "text": "between model training evaluation um and",
+    "start": 2408.04,
+    "duration": 6.44
+  },
+  {
+    "text": "designing and pre- processing you spend",
+    "start": 2412.6,
+    "duration": 5.68
+  },
+  {
+    "text": "a lot of time in in these four um steps",
+    "start": 2414.48,
+    "duration": 6.36
+  },
+  {
+    "text": "once the performance is satisfactory um",
+    "start": 2418.28,
+    "duration": 4.0
+  },
+  {
+    "text": "you can then proceed towards the",
+    "start": 2420.84,
+    "duration": 4.48
+  },
+  {
+    "text": "deployment stage um so that&#39;s pretty",
+    "start": 2422.28,
+    "duration": 8.24
+  },
+  {
+    "text": "much the end of a work flow any",
+    "start": 2425.32,
+    "duration": 5.2
+  },
+  {
+    "text": "questions um so I&#39;ve kind of heard about",
+    "start": 2436.24,
+    "duration": 5.64
+  },
+  {
+    "text": "the like training res of the evaluation",
+    "start": 2439.88,
+    "duration": 3.52
+  },
+  {
+    "text": "I&#39;ve kind of heard of it in two",
+    "start": 2441.88,
+    "duration": 4.32
+  },
+  {
+    "text": "different um has two different ways like",
+    "start": 2443.4,
+    "duration": 4.16
+  },
+  {
+    "text": "one is the way you said you have a",
+    "start": 2446.2,
+    "duration": 2.76
+  },
+  {
+    "text": "training set and you have a test set and",
+    "start": 2447.56,
+    "duration": 3.36
+  },
+  {
+    "text": "then you use the test set to like kind",
+    "start": 2448.96,
+    "duration": 3.96
+  },
+  {
+    "text": "of valate the model and then one other",
+    "start": 2450.92,
+    "duration": 4.08
+  },
+  {
+    "text": "way to have three sets instead you have",
+    "start": 2452.92,
+    "duration": 3.96
+  },
+  {
+    "text": "the training set the evaluation set and",
+    "start": 2455.0,
+    "duration": 4.0
+  },
+  {
+    "text": "then the test set um I guess what is the",
+    "start": 2456.88,
+    "duration": 4.08
+  },
+  {
+    "text": "significance of the evaluation set and",
+    "start": 2459.0,
+    "duration": 3.36
+  },
+  {
+    "text": "like when should you use it versus not",
+    "start": 2460.96,
+    "duration": 6.36
+  },
+  {
+    "text": "use it yeah so sometimes um uh what",
+    "start": 2462.36,
+    "duration": 7.32
+  },
+  {
+    "text": "happens is suppose you&#39;re training a new",
+    "start": 2467.32,
+    "duration": 4.64
+  },
+  {
+    "text": "network on a difficult problem uh you",
+    "start": 2469.68,
+    "duration": 4.64
+  },
+  {
+    "text": "have set aside this test data um you are",
+    "start": 2471.96,
+    "duration": 4.2
+  },
+  {
+    "text": "trending the model uh on the trending",
+    "start": 2474.32,
+    "duration": 3.56
+  },
+  {
+    "text": "set and then evaluating it on the test",
+    "start": 2476.16,
+    "duration": 4.24
+  },
+  {
+    "text": "set but it&#39;s not working so you go back",
+    "start": 2477.88,
+    "duration": 4.64
+  },
+  {
+    "text": "uh to the model designing you tweak the",
+    "start": 2480.4,
+    "duration": 4.76
+  },
+  {
+    "text": "model architecture uh pre-process the",
+    "start": 2482.52,
+    "duration": 4.44
+  },
+  {
+    "text": "data and then you again do the training",
+    "start": 2485.16,
+    "duration": 3.64
+  },
+  {
+    "text": "and again do the evaluation suppose you",
+    "start": 2486.96,
+    "duration": 4.72
+  },
+  {
+    "text": "do this for like let&#39;s say 20 or 30",
+    "start": 2488.8,
+    "duration": 5.84
+  },
+  {
+    "text": "number of times uh let&#39;s say at the thir",
+    "start": 2491.68,
+    "duration": 5.16
+  },
+  {
+    "text": "number of time the model is producing",
+    "start": 2494.64,
+    "duration": 5.72
+  },
+  {
+    "text": "good results so you can kind of fool",
+    "start": 2496.84,
+    "duration": 5.04
+  },
+  {
+    "text": "yourself into thinking that now the",
+    "start": 2500.36,
+    "duration": 3.04
+  },
+  {
+    "text": "model is good enough because it is",
+    "start": 2501.88,
+    "duration": 5.08
+  },
+  {
+    "text": "learning from the data um but what could",
+    "start": 2503.4,
+    "duration": 7.6
+  },
+  {
+    "text": "have happened is the algorithm instead",
+    "start": 2506.96,
+    "duration": 6.36
+  },
+  {
+    "text": "of learning the general uh mapping",
+    "start": 2511.0,
+    "duration": 3.68
+  },
+  {
+    "text": "between input and output what it could",
+    "start": 2513.32,
+    "duration": 4.48
+  },
+  {
+    "text": "have learned is um that it could be",
+    "start": 2514.68,
+    "duration": 5.2
+  },
+  {
+    "text": "particularly tuned towards that specific",
+    "start": 2517.8,
+    "duration": 4.52
+  },
+  {
+    "text": "test data that you have set aside so it",
+    "start": 2519.88,
+    "duration": 4.48
+  },
+  {
+    "text": "is biased toward that particular test",
+    "start": 2522.32,
+    "duration": 3.6
+  },
+  {
+    "text": "data but when you take the algorithm and",
+    "start": 2524.36,
+    "duration": 3.72
+  },
+  {
+    "text": "deploy it into real world it is not",
+    "start": 2525.92,
+    "duration": 6.68
+  },
+  {
+    "text": "producing the the desired uh Behavior so",
+    "start": 2528.08,
+    "duration": 6.08
+  },
+  {
+    "text": "in order to avoid this kind of a",
+    "start": 2532.6,
+    "duration": 5.4
+  },
+  {
+    "text": "scenario um experts sometimes um suggest",
+    "start": 2534.16,
+    "duration": 5.8
+  },
+  {
+    "text": "that instead of creating two sets you",
+    "start": 2538.0,
+    "duration": 4.84
+  },
+  {
+    "text": "can create three three uh sets so one is",
+    "start": 2539.96,
+    "duration": 3.96
+  },
+  {
+    "text": "called the training set another is",
+    "start": 2542.84,
+    "duration": 2.44
+  },
+  {
+    "text": "called validation set and third one is",
+    "start": 2543.92,
+    "duration": 4.72
+  },
+  {
+    "text": "called test set so um the percentage",
+    "start": 2545.28,
+    "duration": 5.88
+  },
+  {
+    "text": "could be like you can do 20% for the",
+    "start": 2548.64,
+    "duration": 4.76
+  },
+  {
+    "text": "testing 10% for the uh validation and",
+    "start": 2551.16,
+    "duration": 5.36
+  },
+  {
+    "text": "then 70% for the training so you take",
+    "start": 2553.4,
+    "duration": 6.68
+  },
+  {
+    "text": "your model uh train it on the 70% uh",
+    "start": 2556.52,
+    "duration": 6.76
+  },
+  {
+    "text": "evaluate it on the validation set if it",
+    "start": 2560.08,
+    "duration": 4.6
+  },
+  {
+    "text": "is not performing good enough you go",
+    "start": 2563.28,
+    "duration": 2.76
+  },
+  {
+    "text": "back to the model designing phase you",
+    "start": 2564.68,
+    "duration": 3.36
+  },
+  {
+    "text": "trick the model again you do the uh",
+    "start": 2566.04,
+    "duration": 3.84
+  },
+  {
+    "text": "training and evaluation again on that",
+    "start": 2568.04,
+    "duration": 4.96
+  },
+  {
+    "text": "10% um maybe the model is now producing",
+    "start": 2569.88,
+    "duration": 5.84
+  },
+  {
+    "text": "good results um in order to put a final",
+    "start": 2573.0,
+    "duration": 4.4
+  },
+  {
+    "text": "check on it then you bring about your",
+    "start": 2575.72,
+    "duration": 3.76
+  },
+  {
+    "text": "test data uh the 20% test data you have",
+    "start": 2577.4,
+    "duration": 4.16
+  },
+  {
+    "text": "set aside and you check its performance",
+    "start": 2579.48,
+    "duration": 4.52
+  },
+  {
+    "text": "on that um and that would kind of double",
+    "start": 2581.56,
+    "duration": 3.68
+  },
+  {
+    "text": "check that the model would be",
+    "start": 2584.0,
+    "duration": 3.24
+  },
+  {
+    "text": "generalizable it would be producing good",
+    "start": 2585.24,
+    "duration": 5.16
+  },
+  {
+    "text": "results on real world data as well so",
+    "start": 2587.24,
+    "duration": 4.92
+  },
+  {
+    "text": "that is also something that is uh",
+    "start": 2590.4,
+    "duration": 4.2
+  },
+  {
+    "text": "practiced by Machine learning",
+    "start": 2592.16,
+    "duration": 5.68
+  },
+  {
+    "text": "practitioners yeah um isn&#39;t that called",
+    "start": 2594.6,
+    "duration": 5.12
+  },
+  {
+    "text": "overfitting what you just described like",
+    "start": 2597.84,
+    "duration": 4.08
+  },
+  {
+    "text": "when it&#39;s just um basically on like",
+    "start": 2599.72,
+    "duration": 5.08
+  },
+  {
+    "text": "trained on on a certain set and it&#39;s",
+    "start": 2601.92,
+    "duration": 4.76
+  },
+  {
+    "text": "it&#39;s very well tuned for this set but",
+    "start": 2604.8,
+    "duration": 5.48
+  },
+  {
+    "text": "it&#39;s not generalizing well to other data",
+    "start": 2606.68,
+    "duration": 5.64
+  },
+  {
+    "text": "yeah so overfitting is a term that is",
+    "start": 2610.28,
+    "duration": 5.76
+  },
+  {
+    "text": "mostly used in places where um you have",
+    "start": 2612.32,
+    "duration": 6.84
+  },
+  {
+    "text": "a training data um and you are training",
+    "start": 2616.04,
+    "duration": 6.52
+  },
+  {
+    "text": "the model on it so the the model is uh",
+    "start": 2619.16,
+    "duration": 5.44
+  },
+  {
+    "text": "producing very good results on the data",
+    "start": 2622.56,
+    "duration": 4.24
+  },
+  {
+    "text": "that the model has seen uh during its",
+    "start": 2624.6,
+    "duration": 4.84
+  },
+  {
+    "text": "training but when you bring about a data",
+    "start": 2626.8,
+    "duration": 4.68
+  },
+  {
+    "text": "that it has not seen before it is",
+    "start": 2629.44,
+    "duration": 3.6
+  },
+  {
+    "text": "producing poor results on that that is",
+    "start": 2631.48,
+    "duration": 3.92
+  },
+  {
+    "text": "overfitting but what Bren was talking",
+    "start": 2633.04,
+    "duration": 5.28
+  },
+  {
+    "text": "about is a different phenomen know where",
+    "start": 2635.4,
+    "duration": 5.28
+  },
+  {
+    "text": "even the test it the the model doesn&#39;t",
+    "start": 2638.32,
+    "duration": 5.96
+  },
+  {
+    "text": "see it during its training but still um",
+    "start": 2640.68,
+    "duration": 5.16
+  },
+  {
+    "text": "the the model is kind of bias towards",
+    "start": 2644.28,
+    "duration": 3.52
+  },
+  {
+    "text": "that data because you are tweaking the",
+    "start": 2645.84,
+    "duration": 3.52
+  },
+  {
+    "text": "model over and over again in order to",
+    "start": 2647.8,
+    "duration": 3.76
+  },
+  {
+    "text": "produce good results on that test data",
+    "start": 2649.36,
+    "duration": 3.92
+  },
+  {
+    "text": "so even though it&#39;s not present in it in",
+    "start": 2651.56,
+    "duration": 3.56
+  },
+  {
+    "text": "it&#39;s training data but still it is kind",
+    "start": 2653.28,
+    "duration": 4.2
+  },
+  {
+    "text": "of biased toward dat data uh one example",
+    "start": 2655.12,
+    "duration": 5.08
+  },
+  {
+    "text": "could be let&#39;s say the test data um",
+    "start": 2657.48,
+    "duration": 5.8
+  },
+  {
+    "text": "belongs to uh a particular region of uh",
+    "start": 2660.2,
+    "duration": 5.12
+  },
+  {
+    "text": "of the world for instance it could be",
+    "start": 2663.28,
+    "duration": 5.12
+  },
+  {
+    "text": "some um like a particular part of the",
+    "start": 2665.32,
+    "duration": 5.56
+  },
+  {
+    "text": "world the data com is coming from that",
+    "start": 2668.4,
+    "duration": 3.96
+  },
+  {
+    "text": "now when you&#39;re doing this training and",
+    "start": 2670.88,
+    "duration": 3.36
+  },
+  {
+    "text": "evaluation on this test data over and",
+    "start": 2672.36,
+    "duration": 4.24
+  },
+  {
+    "text": "over again maybe the model is bed toward",
+    "start": 2674.24,
+    "duration": 5.28
+  },
+  {
+    "text": "that particular region of the world uh",
+    "start": 2676.6,
+    "duration": 6.16
+  },
+  {
+    "text": "who from where the test data is coming",
+    "start": 2679.52,
+    "duration": 4.72
+  },
+  {
+    "text": "and then when you take the model and",
+    "start": 2682.76,
+    "duration": 3.76
+  },
+  {
+    "text": "deploy it into the rest of the world it",
+    "start": 2684.24,
+    "duration": 5.36
+  },
+  {
+    "text": "is not producing good good results so it",
+    "start": 2686.52,
+    "duration": 4.64
+  },
+  {
+    "text": "is kind of like slightly different from",
+    "start": 2689.6,
+    "duration": 2.6
+  },
+  {
+    "text": "the overfitting because in the",
+    "start": 2691.16,
+    "duration": 2.96
+  },
+  {
+    "text": "overfitting the model is seeing that",
+    "start": 2692.2,
+    "duration": 4.12
+  },
+  {
+    "text": "data itself while like it is getting",
+    "start": 2694.12,
+    "duration": 4.48
+  },
+  {
+    "text": "trained on that but Bice is a little bit",
+    "start": 2696.32,
+    "duration": 5.36
+  },
+  {
+    "text": "of like it&#39;s slightly different from",
+    "start": 2698.6,
+    "duration": 7.04
+  },
+  {
+    "text": "that wait for uh so like for like trbt",
+    "start": 2701.68,
+    "duration": 5.36
+  },
+  {
+    "text": "and stuff like that right since they",
+    "start": 2705.64,
+    "duration": 3.92
+  },
+  {
+    "text": "have like infinitely different types of",
+    "start": 2707.04,
+    "duration": 4.88
+  },
+  {
+    "text": "prompts that each user can do how do",
+    "start": 2709.56,
+    "duration": 4.96
+  },
+  {
+    "text": "they pre-process that data because you",
+    "start": 2711.92,
+    "duration": 5.72
+  },
+  {
+    "text": "don&#39;t know what the user will put till",
+    "start": 2714.52,
+    "duration": 6.96
+  },
+  {
+    "text": "they like send it right or no okay so uh",
+    "start": 2717.64,
+    "duration": 7.16
+  },
+  {
+    "text": "models like CH gbt uh train are trained",
+    "start": 2721.48,
+    "duration": 7.44
+  },
+  {
+    "text": "in a in a different uh way so since you",
+    "start": 2724.8,
+    "duration": 6.08
+  },
+  {
+    "text": "have asked the question let me quickly",
+    "start": 2728.92,
+    "duration": 3.76
+  },
+  {
+    "text": "talk about",
+    "start": 2730.88,
+    "duration": 7.08
+  },
+  {
+    "text": "that um so chgb or any other llms um",
+    "start": 2732.68,
+    "duration": 7.0
+  },
+  {
+    "text": "they&#39;re usually trained in this",
+    "start": 2737.96,
+    "duration": 5.2
+  },
+  {
+    "text": "three-step process the first uh step is",
+    "start": 2739.68,
+    "duration": 5.36
+  },
+  {
+    "text": "called the self-supervised learning that",
+    "start": 2743.16,
+    "duration": 4.48
+  },
+  {
+    "text": "I was talking",
+    "start": 2745.04,
+    "duration": 6.84
+  },
+  {
+    "text": "about um so in the self-supervised stage",
+    "start": 2747.64,
+    "duration": 8.2
+  },
+  {
+    "text": "um you just take a bunch of um random",
+    "start": 2751.88,
+    "duration": 7.2
+  },
+  {
+    "text": "articles or text from the internet and",
+    "start": 2755.84,
+    "duration": 6.84
+  },
+  {
+    "text": "you randomly remove um words from it",
+    "start": 2759.08,
+    "duration": 6.24
+  },
+  {
+    "text": "from from that text and you task your",
+    "start": 2762.68,
+    "duration": 4.4
+  },
+  {
+    "text": "learning algorithm which is typically a",
+    "start": 2765.32,
+    "duration": 3.88
+  },
+  {
+    "text": "transformer in order to produce that",
+    "start": 2767.08,
+    "duration": 6.24
+  },
+  {
+    "text": "next word so once you do that um",
+    "start": 2769.2,
+    "duration": 6.12
+  },
+  {
+    "text": "training in that way in self-supervised",
+    "start": 2773.32,
+    "duration": 4.68
+  },
+  {
+    "text": "learning way the model that that you",
+    "start": 2775.32,
+    "duration": 4.2
+  },
+  {
+    "text": "come up with is what is called a",
+    "start": 2778.0,
+    "duration": 4.96
+  },
+  {
+    "text": "foundation model which is a generative",
+    "start": 2779.52,
+    "duration": 6.52
+  },
+  {
+    "text": "model um the kind of it would be like",
+    "start": 2782.96,
+    "duration": 6.2
+  },
+  {
+    "text": "gpt1 GP gpt2 gpt3 these are Foundation",
+    "start": 2786.04,
+    "duration": 4.96
+  },
+  {
+    "text": "models so what they do is that when you",
+    "start": 2789.16,
+    "duration": 5.12
+  },
+  {
+    "text": "provide it an input it is just producing",
+    "start": 2791.0,
+    "duration": 6.84
+  },
+  {
+    "text": "words um one word at a time um in Auto",
+    "start": 2794.28,
+    "duration": 6.24
+  },
+  {
+    "text": "regressive fashion but it is not at this",
+    "start": 2797.84,
+    "duration": 5.44
+  },
+  {
+    "text": "stage it is not a chatboard because it",
+    "start": 2800.52,
+    "duration": 4.76
+  },
+  {
+    "text": "is just generating random text not",
+    "start": 2803.28,
+    "duration": 4.32
+  },
+  {
+    "text": "random of course it has to be um",
+    "start": 2805.28,
+    "duration": 4.64
+  },
+  {
+    "text": "humanlike but it is just generating text",
+    "start": 2807.6,
+    "duration": 3.96
+  },
+  {
+    "text": "and that&#39;s where the second stage comes",
+    "start": 2809.92,
+    "duration": 4.4
+  },
+  {
+    "text": "in where you fine tune it on question",
+    "start": 2811.56,
+    "duration": 5.68
+  },
+  {
+    "text": "answers so and that happens in supervis",
+    "start": 2814.32,
+    "duration": 4.6
+  },
+  {
+    "text": "learing fent so you have a bunch of",
+    "start": 2817.24,
+    "duration": 4.2
+  },
+  {
+    "text": "questions and a bunch of answers and you",
+    "start": 2818.92,
+    "duration": 4.48
+  },
+  {
+    "text": "train this Foundation you further fine",
+    "start": 2821.44,
+    "duration": 3.84
+  },
+  {
+    "text": "tune it so so not train fune is the",
+    "start": 2823.4,
+    "duration": 3.52
+  },
+  {
+    "text": "correct word you take that question",
+    "start": 2825.28,
+    "duration": 3.96
+  },
+  {
+    "text": "answer pairs you fine-tune the",
+    "start": 2826.92,
+    "duration": 4.68
+  },
+  {
+    "text": "foundation model uh on that question",
+    "start": 2829.24,
+    "duration": 5.6
+  },
+  {
+    "text": "answers and at that stage the model that",
+    "start": 2831.6,
+    "duration": 5.84
+  },
+  {
+    "text": "comes out of it can be treated as a",
+    "start": 2834.84,
+    "duration": 4.72
+  },
+  {
+    "text": "chatbot because you&#39;re then putting a",
+    "start": 2837.44,
+    "duration": 5.08
+  },
+  {
+    "text": "question it is producing an output um",
+    "start": 2839.56,
+    "duration": 5.84
+  },
+  {
+    "text": "but at this stage the model is still um",
+    "start": 2842.52,
+    "duration": 5.88
+  },
+  {
+    "text": "not ready to be because it could be",
+    "start": 2845.4,
+    "duration": 6.96
+  },
+  {
+    "text": "producing harmful behaviors um so that&#39;s",
+    "start": 2848.4,
+    "duration": 6.8
+  },
+  {
+    "text": "why in order to align it to the humans",
+    "start": 2852.36,
+    "duration": 5.92
+  },
+  {
+    "text": "standards make it civilized um we do a",
+    "start": 2855.2,
+    "duration": 4.96
+  },
+  {
+    "text": "final step which is called uh",
+    "start": 2858.28,
+    "duration": 4.28
+  },
+  {
+    "text": "reinforcement learning with human",
+    "start": 2860.16,
+    "duration": 4.2
+  },
+  {
+    "text": "feedback",
+    "start": 2862.56,
+    "duration": 5.48
+  },
+  {
+    "text": "rhf so in the rhf phase what we do is uh",
+    "start": 2864.36,
+    "duration": 6.64
+  },
+  {
+    "text": "we take the model um we provideed a",
+    "start": 2868.04,
+    "duration": 6.08
+  },
+  {
+    "text": "question uh the model produces an output",
+    "start": 2871.0,
+    "duration": 6.08
+  },
+  {
+    "text": "a human personally uh sees that answer",
+    "start": 2874.12,
+    "duration": 4.68
+  },
+  {
+    "text": "and if it likes the answer uh for",
+    "start": 2877.08,
+    "duration": 2.84
+  },
+  {
+    "text": "instance if it doesn&#39;t contain any",
+    "start": 2878.8,
+    "duration": 3.2
+  },
+  {
+    "text": "abusive words or any harmful Behavior it",
+    "start": 2879.92,
+    "duration": 4.6
+  },
+  {
+    "text": "proves a positive reward and if it does",
+    "start": 2882.0,
+    "duration": 4.12
+  },
+  {
+    "text": "something that is not desirable it",
+    "start": 2884.52,
+    "duration": 4.0
+  },
+  {
+    "text": "provides a negative reward so in our",
+    "start": 2886.12,
+    "duration": 5.16
+  },
+  {
+    "text": "fashion you further make the model",
+    "start": 2888.52,
+    "duration": 6.88
+  },
+  {
+    "text": "aligned to the to the human standards",
+    "start": 2891.28,
+    "duration": 5.56
+  },
+  {
+    "text": "now I think the question that you asked",
+    "start": 2895.4,
+    "duration": 4.16
+  },
+  {
+    "text": "was um the the pre-processing or or",
+    "start": 2896.84,
+    "duration": 5.96
+  },
+  {
+    "text": "something the for models like these uh",
+    "start": 2899.56,
+    "duration": 5.88
+  },
+  {
+    "text": "it&#39;s it&#39;s a huge process so you cannot",
+    "start": 2902.8,
+    "duration": 6.44
+  },
+  {
+    "text": "like simp ified to what a typical normal",
+    "start": 2905.44,
+    "duration": 5.8
+  },
+  {
+    "text": "learning algorithm would be doing",
+    "start": 2909.24,
+    "duration": 3.56
+  },
+  {
+    "text": "although essentially this like on a",
+    "start": 2911.24,
+    "duration": 3.56
+  },
+  {
+    "text": "broader level this is what is happening",
+    "start": 2912.8,
+    "duration": 4.6
+  },
+  {
+    "text": "but there would be lots of nuances and",
+    "start": 2914.8,
+    "duration": 4.56
+  },
+  {
+    "text": "uh details that that you would need to",
+    "start": 2917.4,
+    "duration": 3.84
+  },
+  {
+    "text": "take care of uh but at least these are",
+    "start": 2919.36,
+    "duration": 4.84
+  },
+  {
+    "text": "the major steps that are uh usually",
+    "start": 2921.24,
+    "duration": 6.16
+  },
+  {
+    "text": "employed while training in",
+    "start": 2924.2,
+    "duration": 3.2
+  },
+  {
+    "text": "llm uh can you briefly touch on the",
+    "start": 2927.92,
+    "duration": 4.56
+  },
+  {
+    "text": "difference between like pre-training",
+    "start": 2930.84,
+    "duration": 3.76
+  },
+  {
+    "text": "versus fine",
+    "start": 2932.48,
+    "duration": 5.44
+  },
+  {
+    "text": "tuning Okay so pre-training um the the",
+    "start": 2934.6,
+    "duration": 4.92
+  },
+  {
+    "text": "model you take the model just like I",
+    "start": 2937.92,
+    "duration": 4.32
+  },
+  {
+    "text": "said you have let&#39;s say uh an article",
+    "start": 2939.52,
+    "duration": 7.44
+  },
+  {
+    "text": "containing um some words you randomly",
+    "start": 2942.24,
+    "duration": 7.64
+  },
+  {
+    "text": "mask some of the words from it let&#39;s say",
+    "start": 2946.96,
+    "duration": 4.4
+  },
+  {
+    "text": "this one and this one and maybe some",
+    "start": 2949.88,
+    "duration": 6.64
+  },
+  {
+    "text": "other one um you task this model which",
+    "start": 2951.36,
+    "duration": 7.28
+  },
+  {
+    "text": "again is typically a Transformer to",
+    "start": 2956.52,
+    "duration": 3.76
+  },
+  {
+    "text": "produce this next",
+    "start": 2958.64,
+    "duration": 4.16
+  },
+  {
+    "text": "word uh now if you ask me how that",
+    "start": 2960.28,
+    "duration": 4.88
+  },
+  {
+    "text": "happens the process is very very complex",
+    "start": 2962.8,
+    "duration": 5.04
+  },
+  {
+    "text": "like we might do it in in a detailed",
+    "start": 2965.16,
+    "duration": 5.24
+  },
+  {
+    "text": "lecture how we train a Transformer I",
+    "start": 2967.84,
+    "duration": 6.4
+  },
+  {
+    "text": "have like a simple single head attention",
+    "start": 2970.4,
+    "duration": 6.84
+  },
+  {
+    "text": "uh models as well we can do an exercise",
+    "start": 2974.24,
+    "duration": 5.16
+  },
+  {
+    "text": "where we train a model in this way uh",
+    "start": 2977.24,
+    "duration": 4.0
+  },
+  {
+    "text": "but on a journal level you just randomly",
+    "start": 2979.4,
+    "duration": 4.36
+  },
+  {
+    "text": "mask some of the words and you task this",
+    "start": 2981.24,
+    "duration": 5.0
+  },
+  {
+    "text": "Transformer to produce uh the next word",
+    "start": 2983.76,
+    "duration": 4.52
+  },
+  {
+    "text": "that is pre-training which happens in",
+    "start": 2986.24,
+    "duration": 4.56
+  },
+  {
+    "text": "self-supervised fashion in the fine",
+    "start": 2988.28,
+    "duration": 4.44
+  },
+  {
+    "text": "tuning then uh which I haven&#39;t",
+    "start": 2990.8,
+    "duration": 4.56
+  },
+  {
+    "text": "personally done uh because I didn&#39;t have",
+    "start": 2992.72,
+    "duration": 5.96
+  },
+  {
+    "text": "much uh data even to do the self support",
+    "start": 2995.36,
+    "duration": 5.76
+  },
+  {
+    "text": "learning correctly um because if that",
+    "start": 2998.68,
+    "duration": 5.2
+  },
+  {
+    "text": "doesn&#39;t work correctly um training",
+    "start": 3001.12,
+    "duration": 4.24
+  },
+  {
+    "text": "further fine tuning it in question",
+    "start": 3003.88,
+    "duration": 2.96
+  },
+  {
+    "text": "answers wouldn&#39;t produce something that",
+    "start": 3005.36,
+    "duration": 4.12
+  },
+  {
+    "text": "would be very fruitful but still Next",
+    "start": 3006.84,
+    "duration": 4.8
+  },
+  {
+    "text": "Step which is fine-tuning is you take",
+    "start": 3009.48,
+    "duration": 4.52
+  },
+  {
+    "text": "that Foundation model which you have",
+    "start": 3011.64,
+    "duration": 3.68
+  },
+  {
+    "text": "pre-trained using self supervised",
+    "start": 3014.0,
+    "duration": 4.8
+  },
+  {
+    "text": "learning and then you uh train it in in",
+    "start": 3015.32,
+    "duration": 6.32
+  },
+  {
+    "text": "supervised learning fashion so there&#39;s a",
+    "start": 3018.8,
+    "duration": 4.44
+  },
+  {
+    "text": "question that you put which can be",
+    "start": 3021.64,
+    "duration": 3.8
+  },
+  {
+    "text": "considered as a feature um the model",
+    "start": 3023.24,
+    "duration": 5.84
+  },
+  {
+    "text": "produces and output which you level as",
+    "start": 3025.44,
+    "duration": 5.72
+  },
+  {
+    "text": "an answer and then you compare it with",
+    "start": 3029.08,
+    "duration": 4.84
+  },
+  {
+    "text": "what is the true answer or what what was",
+    "start": 3031.16,
+    "duration": 5.56
+  },
+  {
+    "text": "available to you um and then you",
+    "start": 3033.92,
+    "duration": 5.2
+  },
+  {
+    "text": "optimize the model in such a way to",
+    "start": 3036.72,
+    "duration": 4.32
+  },
+  {
+    "text": "produce outputs that are as close as",
+    "start": 3039.12,
+    "duration": 4.56
+  },
+  {
+    "text": "possible to what the true output is",
+    "start": 3041.04,
+    "duration": 6.12
+  },
+  {
+    "text": "that&#39;s fine tuning and once that happens",
+    "start": 3043.68,
+    "duration": 6.36
+  },
+  {
+    "text": "the next step is then",
+    "start": 3047.16,
+    "duration": 2.88
+  },
+  {
+    "text": "rhf anything else",
+    "start": 3054.36,
+    "duration": 4.28
+  },
+  {
+    "text": "should I proceed to the",
+    "start": 3064.6,
+    "duration": 3.4
+  },
+  {
+    "text": "slides",
+    "start": 3070.16,
+    "duration": 3.0
+  },
+  {
+    "text": "please",
+    "start": 3073.4,
+    "duration": 3.0
+  },
+  {
+    "text": "okay yeah so that was the a typical",
+    "start": 3076.52,
+    "duration": 8.12
+  },
+  {
+    "text": "workflow um Next Step um just like I",
+    "start": 3079.64,
+    "duration": 7.2
+  },
+  {
+    "text": "said learning algorithms are usually",
+    "start": 3084.64,
+    "duration": 5.8
+  },
+  {
+    "text": "divided into these two categories um one",
+    "start": 3086.84,
+    "duration": 5.36
+  },
+  {
+    "text": "is traditional learning alith thems and",
+    "start": 3090.44,
+    "duration": 4.28
+  },
+  {
+    "text": "another one is deep learning alith thems",
+    "start": 3092.2,
+    "duration": 5.16
+  },
+  {
+    "text": "um back in the days this distinction was",
+    "start": 3094.72,
+    "duration": 5.36
+  },
+  {
+    "text": "not made um new networks were treated in",
+    "start": 3097.36,
+    "duration": 4.84
+  },
+  {
+    "text": "the same way as traditional algorithms",
+    "start": 3100.08,
+    "duration": 6.76
+  },
+  {
+    "text": "like swms um but later on uh afterwards",
+    "start": 3102.2,
+    "duration": 9.2
+  },
+  {
+    "text": "2010 or more precisely 12 after Alex net",
+    "start": 3106.84,
+    "duration": 7.4
+  },
+  {
+    "text": "came into being which won this uh imag",
+    "start": 3111.4,
+    "duration": 5.88
+  },
+  {
+    "text": "net competition of recognizing images",
+    "start": 3114.24,
+    "duration": 5.24
+  },
+  {
+    "text": "um people saw that deep learning",
+    "start": 3117.28,
+    "duration": 3.88
+  },
+  {
+    "text": "algorithms or new networks when they",
+    "start": 3119.48,
+    "duration": 4.0
+  },
+  {
+    "text": "become bigger are producing results that",
+    "start": 3121.16,
+    "duration": 4.72
+  },
+  {
+    "text": "were previously unheard of uh",
+    "start": 3123.48,
+    "duration": 4.32
+  },
+  {
+    "text": "particularly in computer vision and in",
+    "start": 3125.88,
+    "duration": 4.4
+  },
+  {
+    "text": "natural language processing so that&#39;s",
+    "start": 3127.8,
+    "duration": 3.72
+  },
+  {
+    "text": "why because of their exceptional",
+    "start": 3130.28,
+    "duration": 2.92
+  },
+  {
+    "text": "performance deep planning algorithms or",
+    "start": 3131.52,
+    "duration": 3.24
+  },
+  {
+    "text": "new networks particularly were then",
+    "start": 3133.2,
+    "duration": 3.0
+  },
+  {
+    "text": "treated in the separate class called",
+    "start": 3134.76,
+    "duration": 3.68
+  },
+  {
+    "text": "Deep learning the word deep comes from",
+    "start": 3136.2,
+    "duration": 4.52
+  },
+  {
+    "text": "the fact that you keep increasing on the",
+    "start": 3138.44,
+    "duration": 4.92
+  },
+  {
+    "text": "number of layers in a new network um and",
+    "start": 3140.72,
+    "duration": 4.24
+  },
+  {
+    "text": "the architecture becomes bigger and",
+    "start": 3143.36,
+    "duration": 2.76
+  },
+  {
+    "text": "bigger in other words they become deeper",
+    "start": 3144.96,
+    "duration": 2.16
+  },
+  {
+    "text": "and deeper",
+    "start": 3146.12,
+    "duration": 2.48
+  },
+  {
+    "text": "that&#39;s where the term deep learning",
+    "start": 3147.12,
+    "duration": 4.92
+  },
+  {
+    "text": "comes from um traditional learning",
+    "start": 3148.6,
+    "duration": 4.72
+  },
+  {
+    "text": "algorithms include support Vector",
+    "start": 3152.04,
+    "duration": 3.56
+  },
+  {
+    "text": "machines decision trees random Force ex",
+    "start": 3153.32,
+    "duration": 3.72
+  },
+  {
+    "text": "boost linear regression logistic",
+    "start": 3155.6,
+    "duration": 3.88
+  },
+  {
+    "text": "regression those kind of things uh while",
+    "start": 3157.04,
+    "duration": 4.4
+  },
+  {
+    "text": "te learning lthms include multi-layer",
+    "start": 3159.48,
+    "duration": 4.04
+  },
+  {
+    "text": "perceptrons which is just a Fed F new",
+    "start": 3161.44,
+    "duration": 5.2
+  },
+  {
+    "text": "network scant uh recurring new networks",
+    "start": 3163.52,
+    "duration": 5.72
+  },
+  {
+    "text": "Transformers and so",
+    "start": 3166.64,
+    "duration": 5.36
+  },
+  {
+    "text": "on",
+    "start": 3169.24,
+    "duration": 6.24
+  },
+  {
+    "text": "um the packages that are used for uh",
+    "start": 3172.0,
+    "duration": 5.52
+  },
+  {
+    "text": "coding",
+    "start": 3175.48,
+    "duration": 4.44
+  },
+  {
+    "text": "um uh Jims would be talking more about",
+    "start": 3177.52,
+    "duration": 5.12
+  },
+  {
+    "text": "this but um for traditional learning",
+    "start": 3179.92,
+    "duration": 4.44
+  },
+  {
+    "text": "algorithms usually psyched learn is the",
+    "start": 3182.64,
+    "duration": 3.6
+  },
+  {
+    "text": "library that is used majority of the",
+    "start": 3184.36,
+    "duration": 4.92
+  },
+  {
+    "text": "traditional lthms are quoted in pyit Lan",
+    "start": 3186.24,
+    "duration": 5.04
+  },
+  {
+    "text": "uh they&#39;re also very good tools for",
+    "start": 3189.28,
+    "duration": 4.68
+  },
+  {
+    "text": "pre-processing iny Lan fund since doings",
+    "start": 3191.28,
+    "duration": 5.36
+  },
+  {
+    "text": "data normalization uh which maybe we&#39;ll",
+    "start": 3193.96,
+    "duration": 5.04
+  },
+  {
+    "text": "be talking about in future sessions um",
+    "start": 3196.64,
+    "duration": 5.72
+  },
+  {
+    "text": "Trend test spit and um performance",
+    "start": 3199.0,
+    "duration": 5.32
+  },
+  {
+    "text": "metrics like confusion metrics and so on",
+    "start": 3202.36,
+    "duration": 4.2
+  },
+  {
+    "text": "all of them are also available in Cy",
+    "start": 3204.32,
+    "duration": 5.6
+  },
+  {
+    "text": "done uh which can you make use of and",
+    "start": 3206.56,
+    "duration": 6.84
+  },
+  {
+    "text": "then to code um newal networks to create",
+    "start": 3209.92,
+    "duration": 5.28
+  },
+  {
+    "text": "architectures there are two popular",
+    "start": 3213.4,
+    "duration": 3.24
+  },
+  {
+    "text": "Frameworks that could be used one is",
+    "start": 3215.2,
+    "duration": 2.96
+  },
+  {
+    "text": "tensorflow which is from Google another",
+    "start": 3216.64,
+    "duration": 4.36
+  },
+  {
+    "text": "one is pyos from meta uh tensorflow has",
+    "start": 3218.16,
+    "duration": 4.88
+  },
+  {
+    "text": "this wider Community um it contains",
+    "start": 3221.0,
+    "duration": 4.72
+  },
+  {
+    "text": "tools for variety of",
+    "start": 3223.04,
+    "duration": 5.44
+  },
+  {
+    "text": "the stuff like creating web apps they",
+    "start": 3225.72,
+    "duration": 5.08
+  },
+  {
+    "text": "have this tens of JS and then for",
+    "start": 3228.48,
+    "duration": 4.04
+  },
+  {
+    "text": "creating mobile apps they have",
+    "start": 3230.8,
+    "duration": 5.64
+  },
+  {
+    "text": "tensorflow light um and so the the",
+    "start": 3232.52,
+    "duration": 7.2
+  },
+  {
+    "text": "ecosystem is is bigger pyo is mostly",
+    "start": 3236.44,
+    "duration": 5.08
+  },
+  {
+    "text": "popular in the research community so if",
+    "start": 3239.72,
+    "duration": 4.0
+  },
+  {
+    "text": "you&#39;d like to design new architectures",
+    "start": 3241.52,
+    "duration": 4.72
+  },
+  {
+    "text": "come up with something new um py",
+    "start": 3243.72,
+    "duration": 4.8
+  },
+  {
+    "text": "provides extra flexibility um you can",
+    "start": 3246.24,
+    "duration": 4.92
+  },
+  {
+    "text": "make use of it um so that&#39;s why it&#39;s",
+    "start": 3248.52,
+    "duration": 6.2
+  },
+  {
+    "text": "more popular in in the research",
+    "start": 3251.16,
+    "duration": 3.56
+  },
+  {
+    "text": "community and that&#39;s pretty much it from",
+    "start": 3256.88,
+    "duration": 6.08
+  },
+  {
+    "text": "my side so I&#39;d love to hit your",
+    "start": 3260.52,
+    "duration": 6.32
+  },
+  {
+    "text": "questions if you have any",
+    "start": 3262.96,
+    "duration": 3.88
+  },
+  {
+    "text": "has everyone here used um numai and",
+    "start": 3271.16,
+    "duration": 4.96
+  },
+  {
+    "text": "pandas",
+    "start": 3273.72,
+    "duration": 2.4
+  },
+  {
+    "text": "before I have used it a little bit but",
+    "start": 3278.84,
+    "duration": 9.6
+  },
+  {
+    "text": "um not recently actually cool just",
+    "start": 3282.6,
+    "duration": 5.84
+  },
+  {
+    "text": "checking cool thank you yeah okay so",
+    "start": 3292.12,
+    "duration": 7.6
+  },
+  {
+    "text": "yeah that was a quick overview of the",
+    "start": 3297.0,
+    "duration": 6.8
+  },
+  {
+    "text": "contents um just like Jim said we&#39;d love",
+    "start": 3299.72,
+    "duration": 7.16
+  },
+  {
+    "text": "to touch upon things that are not",
+    "start": 3303.8,
+    "duration": 5.96
+  },
+  {
+    "text": "included in here um I",
+    "start": 3306.88,
+    "duration": 5.76
+  },
+  {
+    "text": "myself uh doesn&#39;t know everything so",
+    "start": 3309.76,
+    "duration": 4.4
+  },
+  {
+    "text": "maybe are learning from you people as",
+    "start": 3312.64,
+    "duration": 4.2
+  },
+  {
+    "text": "well as you ask questions dig deeper",
+    "start": 3314.16,
+    "duration": 4.48
+  },
+  {
+    "text": "into the stuff uh maybe we could be",
+    "start": 3316.84,
+    "duration": 6.48
+  },
+  {
+    "text": "doing live research um so uh probably",
+    "start": 3318.64,
+    "duration": 6.12
+  },
+  {
+    "text": "for most of the questions I&#39;ll know the",
+    "start": 3323.32,
+    "duration": 3.08
+  },
+  {
+    "text": "answers but it would be something that I",
+    "start": 3324.76,
+    "duration": 5.16
+  },
+  {
+    "text": "wouldn&#39;t know myself so um it like the",
+    "start": 3326.4,
+    "duration": 6.12
+  },
+  {
+    "text": "point is the the more it is interactive",
+    "start": 3329.92,
+    "duration": 4.36
+  },
+  {
+    "text": "the more it is practical uh the more",
+    "start": 3332.52,
+    "duration": 3.84
+  },
+  {
+    "text": "learning that we can be doing",
+    "start": 3334.28,
+    "duration": 5.44
+  },
+  {
+    "text": "together um I I have one quick",
+    "start": 3336.36,
+    "duration": 5.64
+  },
+  {
+    "text": "question there out of",
+    "start": 3339.72,
+    "duration": 3.8
+  },
+  {
+    "text": "curiosity",
+    "start": 3342.0,
+    "duration": 4.6
+  },
+  {
+    "text": "um what I have understood is that on the",
+    "start": 3343.52,
+    "duration": 5.32
+  },
+  {
+    "text": "current models that we have or or",
+    "start": 3346.6,
+    "duration": 6.8
+  },
+  {
+    "text": "techniques we gotta have a big amount of",
+    "start": 3348.84,
+    "duration": 8.44
+  },
+  {
+    "text": "data in general like big set of data but",
+    "start": 3353.4,
+    "duration": 6.36
+  },
+  {
+    "text": "uh one thing that character characterize",
+    "start": 3357.28,
+    "duration": 5.48
+  },
+  {
+    "text": "the human brain or the neurons is that",
+    "start": 3359.76,
+    "duration": 4.32
+  },
+  {
+    "text": "we are able",
+    "start": 3362.76,
+    "duration": 4.04
+  },
+  {
+    "text": "to to come up with conclusions or to",
+    "start": 3364.08,
+    "duration": 4.64
+  },
+  {
+    "text": "adapt Solutions with the small amounts",
+    "start": 3366.8,
+    "duration": 6.12
+  },
+  {
+    "text": "of data pretty well right so I&#39;m just",
+    "start": 3368.72,
+    "duration": 7.6
+  },
+  {
+    "text": "wondering on maybe on the not today",
+    "start": 3372.92,
+    "duration": 5.8
+  },
+  {
+    "text": "maybe the next lesson we can look up on",
+    "start": 3376.32,
+    "duration": 5.44
+  },
+  {
+    "text": "that but what will be the best Solutions",
+    "start": 3378.72,
+    "duration": 5.68
+  },
+  {
+    "text": "when your set of data is not that big",
+    "start": 3381.76,
+    "duration": 6.2
+  },
+  {
+    "text": "but you still need to find or maybe been",
+    "start": 3384.4,
+    "duration": 6.04
+  },
+  {
+    "text": "able to produce",
+    "start": 3387.96,
+    "duration": 5.24
+  },
+  {
+    "text": "predictions let&#39;s let&#39;s give a last",
+    "start": 3390.44,
+    "duration": 5.68
+  },
+  {
+    "text": "example upon that uh I&#39;m interested in",
+    "start": 3393.2,
+    "duration": 5.56
+  },
+  {
+    "text": "in biology and one of the things I have",
+    "start": 3396.12,
+    "duration": 4.64
+  },
+  {
+    "text": "been very interested is bioelectricity",
+    "start": 3398.76,
+    "duration": 4.28
+  },
+  {
+    "text": "electricity is the computational part",
+    "start": 3400.76,
+    "duration": 5.2
+  },
+  {
+    "text": "that cells uh used to communicate",
+    "start": 3403.04,
+    "duration": 4.28
+  },
+  {
+    "text": "between each other so when they&#39;re going",
+    "start": 3405.96,
+    "duration": 3.52
+  },
+  {
+    "text": "to regenerate an organ they they",
+    "start": 3407.32,
+    "duration": 4.12
+  },
+  {
+    "text": "communicate to bi electricity that&#39;s how",
+    "start": 3409.48,
+    "duration": 4.2
+  },
+  {
+    "text": "they coordinate the Regeneration rather",
+    "start": 3411.44,
+    "duration": 5.84
+  },
+  {
+    "text": "than just go to the uh DNA where is the",
+    "start": 3413.68,
+    "duration": 6.24
+  },
+  {
+    "text": "memory storage but not necessarily where",
+    "start": 3417.28,
+    "duration": 6.6
+  },
+  {
+    "text": "everything is is is taken uh from so as",
+    "start": 3419.92,
+    "duration": 6.12
+  },
+  {
+    "text": "we don&#39;t have that much data in",
+    "start": 3423.88,
+    "duration": 4.6
+  },
+  {
+    "text": "bioelectricity uh what what I have seen",
+    "start": 3426.04,
+    "duration": 5.32
+  },
+  {
+    "text": "is we gota use a very small sets of data",
+    "start": 3428.48,
+    "duration": 5.36
+  },
+  {
+    "text": "and try to use different approach for",
+    "start": 3431.36,
+    "duration": 5.32
+  },
+  {
+    "text": "the models to predict what could be the",
+    "start": 3433.84,
+    "duration": 5.84
+  },
+  {
+    "text": "right code to regenerate or to",
+    "start": 3436.68,
+    "duration": 5.0
+  },
+  {
+    "text": "coordinate the cells so I was very",
+    "start": 3439.68,
+    "duration": 4.24
+  },
+  {
+    "text": "interested to know like what approach do",
+    "start": 3441.68,
+    "duration": 5.04
+  },
+  {
+    "text": "we have when data sets are small to be",
+    "start": 3443.92,
+    "duration": 4.68
+  },
+  {
+    "text": "more efficient with that data and how",
+    "start": 3446.72,
+    "duration": 3.76
+  },
+  {
+    "text": "can we pre-train for",
+    "start": 3448.6,
+    "duration": 6.32
+  },
+  {
+    "text": "that okay so yeah this is a major uh",
+    "start": 3450.48,
+    "duration": 8.32
+  },
+  {
+    "text": "criticism from people outside AI on a",
+    "start": 3454.92,
+    "duration": 7.0
+  },
+  {
+    "text": "algorithms that it is taking humongous",
+    "start": 3458.8,
+    "duration": 4.88
+  },
+  {
+    "text": "amounts of data in order to learn",
+    "start": 3461.92,
+    "duration": 5.4
+  },
+  {
+    "text": "something um and then when people from",
+    "start": 3463.68,
+    "duration": 6.32
+  },
+  {
+    "text": "AI starts comparing it to a human brain",
+    "start": 3467.32,
+    "duration": 5.6
+  },
+  {
+    "text": "um non a people says that a human brain",
+    "start": 3470.0,
+    "duration": 5.44
+  },
+  {
+    "text": "can learn from so small amount of data",
+    "start": 3472.92,
+    "duration": 5.16
+  },
+  {
+    "text": "while these algorithms need these",
+    "start": 3475.44,
+    "duration": 4.36
+  },
+  {
+    "text": "terabytes and petabytes of data in order",
+    "start": 3478.08,
+    "duration": 5.8
+  },
+  {
+    "text": "to uh learn something um fairly simple",
+    "start": 3479.8,
+    "duration": 6.2
+  },
+  {
+    "text": "so the criticism is valid of course at",
+    "start": 3483.88,
+    "duration": 3.6
+  },
+  {
+    "text": "this stage we don&#39;t have learning",
+    "start": 3486.0,
+    "duration": 4.76
+  },
+  {
+    "text": "algorithms that could learn from um",
+    "start": 3487.48,
+    "duration": 4.84
+  },
+  {
+    "text": "small amounts of data but still there",
+    "start": 3490.76,
+    "duration": 3.44
+  },
+  {
+    "text": "are tools and techniques that are used",
+    "start": 3492.32,
+    "duration": 4.88
+  },
+  {
+    "text": "in machine learning in order to um work",
+    "start": 3494.2,
+    "duration": 5.04
+  },
+  {
+    "text": "around this problem so I&#39;ll just talk",
+    "start": 3497.2,
+    "duration": 3.84
+  },
+  {
+    "text": "about one particular solution which is",
+    "start": 3499.24,
+    "duration": 4.0
+  },
+  {
+    "text": "called transfer learning so for instance",
+    "start": 3501.04,
+    "duration": 4.76
+  },
+  {
+    "text": "you would like to create um an image",
+    "start": 3503.24,
+    "duration": 4.68
+  },
+  {
+    "text": "classif fire to recognize between a",
+    "start": 3505.8,
+    "duration": 5.0
+  },
+  {
+    "text": "horse and an elephant um but you don&#39;t",
+    "start": 3507.92,
+    "duration": 5.04
+  },
+  {
+    "text": "have lots amounts of data for Lots",
+    "start": 3510.8,
+    "duration": 5.12
+  },
+  {
+    "text": "amounts of images for hes and elephants",
+    "start": 3512.96,
+    "duration": 5.24
+  },
+  {
+    "text": "what you can do is that you can maybe",
+    "start": 3515.92,
+    "duration": 4.4
+  },
+  {
+    "text": "take a learning algorithm and train it",
+    "start": 3518.2,
+    "duration": 5.96
+  },
+  {
+    "text": "on something else or with similar um",
+    "start": 3520.32,
+    "duration": 5.56
+  },
+  {
+    "text": "concept like you can for instance you",
+    "start": 3524.16,
+    "duration": 4.12
+  },
+  {
+    "text": "have data for cats versus dogs you have",
+    "start": 3525.88,
+    "duration": 4.24
+  },
+  {
+    "text": "huge amounts of data for it you can",
+    "start": 3528.28,
+    "duration": 4.52
+  },
+  {
+    "text": "train algorithm on on that and then you",
+    "start": 3530.12,
+    "duration": 5.16
+  },
+  {
+    "text": "can do TR transfer learning where you",
+    "start": 3532.8,
+    "duration": 4.52
+  },
+  {
+    "text": "take the train model and further fine",
+    "start": 3535.28,
+    "duration": 4.4
+  },
+  {
+    "text": "tune it for the task at hand which is",
+    "start": 3537.32,
+    "duration": 4.92
+  },
+  {
+    "text": "human uh sorry horses versus elephants",
+    "start": 3539.68,
+    "duration": 6.2
+  },
+  {
+    "text": "classifier um and it works um so this is",
+    "start": 3542.24,
+    "duration": 6.08
+  },
+  {
+    "text": "one thing that that you can do now we&#39;ll",
+    "start": 3545.88,
+    "duration": 5.04
+  },
+  {
+    "text": "talk more about why it works when we",
+    "start": 3548.32,
+    "duration": 4.48
+  },
+  {
+    "text": "talk about cnns and the way they train",
+    "start": 3550.92,
+    "duration": 3.72
+  },
+  {
+    "text": "the filters are trained um that would",
+    "start": 3552.8,
+    "duration": 4.08
+  },
+  {
+    "text": "make more sense but this is just one way",
+    "start": 3554.64,
+    "duration": 5.84
+  },
+  {
+    "text": "of um uh working when you have less",
+    "start": 3556.88,
+    "duration": 4.84
+  },
+  {
+    "text": "amounts of data another thing that you",
+    "start": 3560.48,
+    "duration": 3.48
+  },
+  {
+    "text": "can do is um huge amounts of data are",
+    "start": 3561.72,
+    "duration": 3.84
+  },
+  {
+    "text": "usually required when you&#39;re doing new",
+    "start": 3563.96,
+    "duration": 4.08
+  },
+  {
+    "text": "network training so if the problem is",
+    "start": 3565.56,
+    "duration": 5.72
+  },
+  {
+    "text": "simple enough and maybe um you wouldn&#39;t",
+    "start": 3568.04,
+    "duration": 5.24
+  },
+  {
+    "text": "need a new network you can make use of",
+    "start": 3571.28,
+    "duration": 3.8
+  },
+  {
+    "text": "traditional algorithms like sum which",
+    "start": 3573.28,
+    "duration": 3.96
+  },
+  {
+    "text": "doesn&#39;t require huge amounts of data so",
+    "start": 3575.08,
+    "duration": 4.36
+  },
+  {
+    "text": "it&#39;s another thing um a third solution",
+    "start": 3577.24,
+    "duration": 5.68
+  },
+  {
+    "text": "could be you can um generate the data so",
+    "start": 3579.44,
+    "duration": 4.96
+  },
+  {
+    "text": "thanks to these generative models you",
+    "start": 3582.92,
+    "duration": 4.36
+  },
+  {
+    "text": "can now even so if you have let&#39;s say a",
+    "start": 3584.4,
+    "duration": 5.48
+  },
+  {
+    "text": "large language model um you can produce",
+    "start": 3587.28,
+    "duration": 4.64
+  },
+  {
+    "text": "outputs from it and take those outputs",
+    "start": 3589.88,
+    "duration": 3.64
+  },
+  {
+    "text": "and train a smaller model on it and it",
+    "start": 3591.92,
+    "duration": 3.24
+  },
+  {
+    "text": "works uh this is something that I&#39;ve",
+    "start": 3593.52,
+    "duration": 4.36
+  },
+  {
+    "text": "seen uh it&#39;s been done recently so",
+    "start": 3595.16,
+    "duration": 4.48
+  },
+  {
+    "text": "that&#39;s also something that you can do",
+    "start": 3597.88,
+    "duration": 3.12
+  },
+  {
+    "text": "but of course there&#39;s also research",
+    "start": 3599.64,
+    "duration": 4.48
+  },
+  {
+    "text": "towards um coming up with no",
+    "start": 3601.0,
+    "duration": 4.84
+  },
+  {
+    "text": "architectures that would learn from",
+    "start": 3604.12,
+    "duration": 3.28
+  },
+  {
+    "text": "lesser amounts of data for instance one",
+    "start": 3605.84,
+    "duration": 3.8
+  },
+  {
+    "text": "of it is called physics and form newal",
+    "start": 3607.4,
+    "duration": 5.76
+  },
+  {
+    "text": "networks um so what they do is uh",
+    "start": 3609.64,
+    "duration": 5.4
+  },
+  {
+    "text": "instead of taking a naive newal Network",
+    "start": 3613.16,
+    "duration": 3.04
+  },
+  {
+    "text": "which doesn&#39;t know anything about",
+    "start": 3615.04,
+    "duration": 3.8
+  },
+  {
+    "text": "physics um they com combine this",
+    "start": 3616.2,
+    "duration": 5.44
+  },
+  {
+    "text": "differential equations um uh into new",
+    "start": 3618.84,
+    "duration": 6.0
+  },
+  {
+    "text": "networks so um when you code these",
+    "start": 3621.64,
+    "duration": 4.96
+  },
+  {
+    "text": "physics equations into the learning",
+    "start": 3624.84,
+    "duration": 4.76
+  },
+  {
+    "text": "model into the algorithm um it learns",
+    "start": 3626.6,
+    "duration": 6.2
+  },
+  {
+    "text": "about physics and maybe that way um the",
+    "start": 3629.6,
+    "duration": 4.64
+  },
+  {
+    "text": "the learning algorithm would know more",
+    "start": 3632.8,
+    "duration": 3.6
+  },
+  {
+    "text": "about our data uh our world and wouldn&#39;t",
+    "start": 3634.24,
+    "duration": 5.28
+  },
+  {
+    "text": "require these huge amounts of data so",
+    "start": 3636.4,
+    "duration": 5.16
+  },
+  {
+    "text": "lots of cool things are happening uh in",
+    "start": 3639.52,
+    "duration": 6.04
+  },
+  {
+    "text": "machine learning space um this is a fair",
+    "start": 3641.56,
+    "duration": 6.76
+  },
+  {
+    "text": "enough criticism on on machine learning",
+    "start": 3645.56,
+    "duration": 4.96
+  },
+  {
+    "text": "algorithms um but let&#39;s see what comes",
+    "start": 3648.32,
+    "duration": 5.52
+  },
+  {
+    "text": "out of it",
+    "start": 3650.52,
+    "duration": 3.32
+  },
+  {
+    "text": "okay so Jims what&#39;s",
+    "start": 3657.72,
+    "duration": 6.24
+  },
+  {
+    "text": "next yeah that&#39;s it um thanks everyone",
+    "start": 3660.08,
+    "duration": 6.52
+  },
+  {
+    "text": "for uh for showing up today uh this was",
+    "start": 3663.96,
+    "duration": 5.12
+  },
+  {
+    "text": "really fun and NV thank you so much for",
+    "start": 3666.6,
+    "duration": 6.28
+  },
+  {
+    "text": "doing this uh today despite your your",
+    "start": 3669.08,
+    "duration": 7.4
+  },
+  {
+    "text": "cold really uh amazing thank you so much",
+    "start": 3672.88,
+    "duration": 6.84
+  },
+  {
+    "text": "uh the next uh yeah the next time we&#39;re",
+    "start": 3676.48,
+    "duration": 5.76
+  },
+  {
+    "text": "gonna meet is going to be on Thursday uh",
+    "start": 3679.72,
+    "duration": 4.88
+  },
+  {
+    "text": "then we&#39;re going to go over linear",
+    "start": 3682.24,
+    "duration": 6.28
+  },
+  {
+    "text": "regression um n is going to go over the",
+    "start": 3684.6,
+    "duration": 5.68
+  },
+  {
+    "text": "the theory behind it the math behind it",
+    "start": 3688.52,
+    "duration": 3.08
+  },
+  {
+    "text": "and then I&#39;m going to show you how you",
+    "start": 3690.28,
+    "duration": 3.04
+  },
+  {
+    "text": "can Implement that how you can use that",
+    "start": 3691.6,
+    "duration": 5.08
+  },
+  {
+    "text": "in Python on any data set and then you",
+    "start": 3693.32,
+    "duration": 5.96
+  },
+  {
+    "text": "guys will have um the next few days to",
+    "start": 3696.68,
+    "duration": 4.72
+  },
+  {
+    "text": "play around with that on a data set that",
+    "start": 3699.28,
+    "duration": 5.2
+  },
+  {
+    "text": "you choose with and um yeah that&#39;s it so",
+    "start": 3701.4,
+    "duration": 4.88
+  },
+  {
+    "text": "then we&#39;ll see you on",
+    "start": 3704.48,
+    "duration": 4.96
+  },
+  {
+    "text": "Thursday all right goodbye everyone take",
+    "start": 3706.28,
+    "duration": 6.04
+  },
+  {
+    "text": "care is there any anything we we can",
+    "start": 3709.44,
+    "duration": 5.72
+  },
+  {
+    "text": "look at before next session or um we",
+    "start": 3712.32,
+    "duration": 4.72
+  },
+  {
+    "text": "don&#39;t",
+    "start": 3715.16,
+    "duration": 5.44
+  },
+  {
+    "text": "or set up anything yeah so like for",
+    "start": 3717.04,
+    "duration": 7.0
+  },
+  {
+    "text": "linear aggression uh although there&#39;s",
+    "start": 3720.6,
+    "duration": 5.64
+  },
+  {
+    "text": "the it wouldn&#39;t be something that would",
+    "start": 3724.04,
+    "duration": 4.92
+  },
+  {
+    "text": "be very complex majority of the stuff",
+    "start": 3726.24,
+    "duration": 5.96
+  },
+  {
+    "text": "you will already know uh but usually",
+    "start": 3728.96,
+    "duration": 9.4
+  },
+  {
+    "text": "from experts they um uh suggest to learn",
+    "start": 3732.2,
+    "duration": 8.92
+  },
+  {
+    "text": "a little bit about linear algebra and",
+    "start": 3738.36,
+    "duration": 5.8
+  },
+  {
+    "text": "calculus particularly the derivatives uh",
+    "start": 3741.12,
+    "duration": 5.08
+  },
+  {
+    "text": "before coming up um into machine",
+    "start": 3744.16,
+    "duration": 5.64
+  },
+  {
+    "text": "learning class so if you would study the",
+    "start": 3746.2,
+    "duration": 5.56
+  },
+  {
+    "text": "conceptual understanding of what a",
+    "start": 3749.8,
+    "duration": 4.52
+  },
+  {
+    "text": "derivative does and a little bit of",
+    "start": 3751.76,
+    "duration": 4.16
+  },
+  {
+    "text": "Matrix multiplications although if you",
+    "start": 3754.32,
+    "duration": 3.12
+  },
+  {
+    "text": "don&#39;t do the matrix multiplication it&#39;s",
+    "start": 3755.92,
+    "duration": 3.48
+  },
+  {
+    "text": "fairly simple enough we wouldn&#39;t be uh",
+    "start": 3757.44,
+    "duration": 4.12
+  },
+  {
+    "text": "coding these things from scratch uh so",
+    "start": 3759.4,
+    "duration": 3.44
+  },
+  {
+    "text": "you wouldn&#39;t need that much of linear",
+    "start": 3761.56,
+    "duration": 3.2
+  },
+  {
+    "text": "algebra but in order to understand the",
+    "start": 3762.84,
+    "duration": 3.76
+  },
+  {
+    "text": "conceptual uh the concept behind how",
+    "start": 3764.76,
+    "duration": 3.04
+  },
+  {
+    "text": "these algorithms are trained I think",
+    "start": 3766.6,
+    "duration": 3.4
+  },
+  {
+    "text": "derivatives are very important so if you",
+    "start": 3767.8,
+    "duration": 4.04
+  },
+  {
+    "text": "learn that concept that would be very",
+    "start": 3770.0,
+    "duration": 4.12
+  },
+  {
+    "text": "good and as for the coding uh you know",
+    "start": 3771.84,
+    "duration": 4.6
+  },
+  {
+    "text": "that the language is python um so so if",
+    "start": 3774.12,
+    "duration": 5.08
+  },
+  {
+    "text": "you uh learn the basics of python it",
+    "start": 3776.44,
+    "duration": 4.52
+  },
+  {
+    "text": "would be good enough you don&#39;t have to",
+    "start": 3779.2,
+    "duration": 4.8
+  },
+  {
+    "text": "be a hardcore programmer thanks to",
+    "start": 3780.96,
+    "duration": 6.44
+  },
+  {
+    "text": "the jbts and the other models these days",
+    "start": 3784.0,
+    "duration": 5.24
+  },
+  {
+    "text": "I even just write a simple prompt It",
+    "start": 3787.4,
+    "duration": 6.0
+  },
+  {
+    "text": "quotes the entire algorithm for me so",
+    "start": 3789.24,
+    "duration": 6.44
+  },
+  {
+    "text": "the only thing that you would um be",
+    "start": 3793.4,
+    "duration": 4.6
+  },
+  {
+    "text": "required to know is um they still",
+    "start": 3795.68,
+    "duration": 4.48
+  },
+  {
+    "text": "produce funny behaviors sometimes um",
+    "start": 3798.0,
+    "duration": 4.4
+  },
+  {
+    "text": "I&#39;ll particularly Point towards uh a",
+    "start": 3800.16,
+    "duration": 3.84
+  },
+  {
+    "text": "problem that I was facing myself when I",
+    "start": 3802.4,
+    "duration": 3.72
+  },
+  {
+    "text": "was coding Transformers I wrote medium",
+    "start": 3804.0,
+    "duration": 4.32
+  },
+  {
+    "text": "article on it as well uh but we&#39;ll see",
+    "start": 3806.12,
+    "duration": 4.16
+  },
+  {
+    "text": "these cool examples where llm is",
+    "start": 3808.32,
+    "duration": 3.52
+  },
+  {
+    "text": "excellent where they don&#39;t and you have",
+    "start": 3810.28,
+    "duration": 5.16
+  },
+  {
+    "text": "to take care of those nuances um you",
+    "start": 3811.84,
+    "duration": 6.76
+  },
+  {
+    "text": "cannot like fully rely on it so but",
+    "start": 3815.44,
+    "duration": 5.32
+  },
+  {
+    "text": "still for like um majority of the stuff",
+    "start": 3818.6,
+    "duration": 4.8
+  },
+  {
+    "text": "it would be a very good um a friend of",
+    "start": 3820.76,
+    "duration": 6.12
+  },
+  {
+    "text": "yours while coding these",
+    "start": 3823.4,
+    "duration": 3.48
+  },
+  {
+    "text": "things yeah that&#39;s a great",
+    "start": 3828.16,
+    "duration": 3.6
+  },
+  {
+    "text": "tip and I will also send you the course",
+    "start": 3832.24,
+    "duration": 5.56
+  },
+  {
+    "text": "outline uh again so you have all of the",
+    "start": 3835.32,
+    "duration": 4.84
+  },
+  {
+    "text": "you know all the material okay but",
+    "start": 3837.8,
+    "duration": 4.92
+  },
+  {
+    "text": "nothing to set up before for next class",
+    "start": 3840.16,
+    "duration": 5.12
+  },
+  {
+    "text": "right uh no we&#39;re gonna use Google",
+    "start": 3842.72,
+    "duration": 6.32
+  },
+  {
+    "text": "collab so you&#39;ll okay cool all right",
+    "start": 3845.28,
+    "duration": 6.16
+  },
+  {
+    "text": "sounds all right goodbye everyone all",
+    "start": 3849.04,
+    "duration": 9.64
+  },
+  {
+    "text": "right thanks see you next time by bye",
+    "start": 3851.44,
+    "duration": 7.24
+  }
+]
