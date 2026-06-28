@@ -15,7 +15,8 @@ import { sendEmail, templates } from "@portal/lib/email";
 import { parseRepo, deriveRepoRef, starRepo, unstarRepo } from "@portal/lib/github";
 import { canEnableTradeStars } from "@portal/lib/tradeStars";
 import { saveBlobRefsFromForm } from "@portal/lib/files";
-import { runStarTrade, autoStarActive } from "@portal/lib/startrade";
+import { autoStarActive } from "@portal/lib/startrade";
+import { triggerStarTrade } from "@portal/lib/background";
 
 const schema = z.object({
   assignmentId: z.string().min(1),
@@ -146,7 +147,7 @@ export async function createSubmission(formData: FormData) {
   // everyone who has opted in and connected GitHub. Deduped via ss_star_grants,
   // so re-running is cheap and only genuinely new stars count.
   if (repo && (await autoStarActive())) {
-    after(() => runStarTrade());
+    after(() => triggerStarTrade());
   }
 
   revalidateTag("showcase", { expire: 0 });
@@ -186,7 +187,7 @@ export async function setStarTrade(formData: FormData) {
     .where(eq(submissions.id, submissionId));
 
   // Opting in kicks off an idempotent backfill of existing repo posts.
-  if (optIn && (await autoStarActive())) after(() => runStarTrade());
+  if (optIn && (await autoStarActive())) after(() => triggerStarTrade());
 
   // The trade-stars badge shows in the showcase feed; the flag lives on the profile.
   revalidateTag("profiles", { expire: 0 });

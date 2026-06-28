@@ -9,7 +9,7 @@ import { isAllowlistedAdmin } from "./admins";
 import { findApplicationForUser } from "./applications";
 import { getGithubStats, getGithubSocials } from "./github";
 import { recordEvent } from "./events";
-import { syncOneToTinysend } from "./tinysend-sync";
+import { triggerTinysendSync } from "./background";
 import type { GithubIdentity } from "./auth";
 import type { User } from "@portal/db/schema";
 
@@ -142,7 +142,7 @@ export async function upsertUserFromGithub(
     summary: `${identity.name ?? identity.login} joined the cohort`,
   });
   // Instant tinysend sync (cron is the backstop). Fire-and-forget after response.
-  if (created.email) after(() => syncOneToTinysend(created.email, created.name));
+  if (created.email) after(() => triggerTinysendSync());
 
   return { user: created, isNew: true };
 }
@@ -229,7 +229,7 @@ export async function upsertUserByEmail(
     actorName: name,
     summary: `${name} joined the cohort`,
   });
-  if (created.email) after(() => syncOneToTinysend(created.email, created.name));
+  if (created.email) after(() => triggerTinysendSync());
   return { user: created, isNew: true };
 }
 

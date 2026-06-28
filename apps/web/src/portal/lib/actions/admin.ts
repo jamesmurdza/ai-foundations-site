@@ -21,7 +21,7 @@ import { addAdmin, removeAdmin } from "@portal/lib/admins";
 import { recordEvent } from "@portal/lib/events";
 import { sendEmail, templates } from "@portal/lib/email";
 import { assignReviews } from "@portal/lib/matching";
-import { runStarTrade } from "@portal/lib/startrade";
+import { triggerStarTrade } from "@portal/lib/background";
 import {
   saveBlobAttachmentsFromForm,
   saveBlobRefsFromForm,
@@ -91,7 +91,7 @@ export async function updateWeek(formData: FormData) {
 
   // Publishing weeks can surface new repo posts; backfill auto-stars idempotently.
   if (isPublished) {
-    after(() => runStarTrade());
+    after(() => triggerStarTrade());
   }
 
   revalidateTag("weeks", { expire: 0 });
@@ -113,7 +113,7 @@ export async function setWeekLive(formData: FormData) {
   await db.update(weeks).set({ isLive: live }).where(eq(weeks.id, weekId));
 
   // Going live is a useful moment to backfill auto-stars. Idempotent via ss_star_grants.
-  if (live) after(() => runStarTrade());
+  if (live) after(() => triggerStarTrade());
 
   if (live) {
     await recordEvent({
@@ -214,7 +214,8 @@ export async function runMatchingAction(formData: FormData) {
 export async function runStarBatchAction() {
   await requireAdmin();
   // Global now — stars every opted-in member's submitted repos across the cohort.
-  await runStarTrade();
+  // Kicks the 15-min background drain (returns immediately; the admin doesn't wait).
+  await triggerStarTrade();
   revalidatePath("/admin");
   revalidatePath("/discover");
 }

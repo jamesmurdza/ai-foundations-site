@@ -83,7 +83,7 @@ export function needsStar(
  * the rest carries to the next invocation (Vercel cron / triggers). Following is
  * NOT done here — that's a manual per-profile action (lib/actions/follow.ts).
  */
-export async function runStarTrade(): Promise<{
+export async function runStarTrade(limit: number = MAX_WRITES_PER_RUN): Promise<{
   actors: number;
   repos: number;
   stars: number;
@@ -163,7 +163,7 @@ export async function runStarTrade(): Promise<{
 
   outer: for (const items of byActor.values()) {
     for (const { actor, repo, attempts } of items) {
-      if (writes >= MAX_WRITES_PER_RUN) break outer;
+      if (writes >= limit) break outer;
       const outcome = await starRepoThrottled(actor.token, repo.repoOwner, repo.repoName);
       writes++;
       const state = nextGrantState(attempts, outcome, Date.now());

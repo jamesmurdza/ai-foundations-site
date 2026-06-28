@@ -16,6 +16,12 @@ export async function GET(request: Request) {
     return new Response("Unauthorized", { status: 401 });
   }
 
-  const result = await runStarTrade();
+  // Optional per-call write cap so a single invocation finishes within Netlify's
+  // short function timeout; the star-trade background function passes a small
+  // value and loops until pendingRemaining hits 0 (Vercel can call it uncapped).
+  const limitParam = Number(new URL(request.url).searchParams.get("limit"));
+  const limit = Number.isFinite(limitParam) && limitParam > 0 ? limitParam : undefined;
+
+  const result = await runStarTrade(limit);
   return Response.json(result);
 }

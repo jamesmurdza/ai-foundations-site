@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse, after } from "next/server";
 import { sql } from "@site/lib/db";
 import { sendThankYou } from "@site/lib/email";
-import { syncOneToTinysend } from "@portal/lib/tinysend-sync";
+import { triggerTinysendSync } from "@portal/lib/background";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -25,19 +25,12 @@ export async function POST(_req: NextRequest, { params }: RouteCtx) {
            submitted_at = NOW(),
            updated_at = NOW()
      WHERE id = ${id}
-    RETURNING email, name
-  `) as { email: string | null; name: string | null }[];
+    RETURNING email
+  `) as { email: string | null }[];
 
-  // Instant best-effort: add the applicant to the tinysend mailing list right away
-  // so the twice-daily reconciler cron is only a safety net. syncOneToTinysend never
-  // throws, writes the ledger on success (so the cron skips it), and no-ops when
-  // TINYSEND_API_KEY is unset. Runs post-response via after() so submit stays fast.
-  const applicant = submitted[0];
-  if (applicant?.email) {
-    const email = applicant.email;
-    const name = applicant.name;
-    after(() => syncOneToTinysend(email, name));
-  }
+  // Drain the new applicant into tinysend in the background (15-min bg fn on
+  // Netlify; the twice-daily cron is just a safety net). Post-response via after().
+  if (submitted[0]?.email) after(() => triggerTinysendSync());
 
   // Fire-and-forget the thank-you email so submit returns instantly. notifyApplicant
   // claims the notification slot atomically (the cron skips claimed rows) and releases

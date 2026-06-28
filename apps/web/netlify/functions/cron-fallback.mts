@@ -1,37 +1,43 @@
-// Netlify Scheduled Function — single twice-daily fallback drain for all three crons.
+// Netlify Scheduled Function — twice-daily fallback (the rare safety net).
 //
-// Real-time work is event-driven (fire-and-forget `after()` hooks on user creation,
-// application submit, and submission/opt-in). This scheduled function is ONLY the
-// safety net that catches failed instant sends and HackerHouse applicants with no
-// Portal user row. Running it rarely (08:00 & 20:00 UTC) lets Neon scale to zero the
-// rest of the day instead of being kept awake 24/7 by a */5 cron.
-//
-// The three routes are fetched in series so the whole run is ONE Neon wake window.
-// Each underlying route is idempotent/resumable, so a truncated run just continues
-// next tick. Failures are isolated per route.
+// Real-time work is event-driven: activations/signups fire-and-forget a 202 to the
+// background functions, which self-drain in their 15-min budget. This scheduled run
+// (08:00 & 20:00 UTC) just re-kicks those background functions to catch anything the
+// instant triggers missed, plus drains the bounded notify backlog. Keeping it rare
+// lets Neon scale to zero the rest of the day. Do NOT increase the frequency.
 import type { Config } from "@netlify/functions";
 
-const ROUTES = [
-  "/portal/api/cron/reconcile-stars",
-  "/portal/api/cron/sync-tinysend",
-  "/dashboard/api/cron/notify-submissions",
-] as const;
-
 export default async () => {
-  const base = process.env.CRON_TARGET_URL || process.env.URL || "";
+  const base = process.env.URL || "";
   const auth = `Bearer ${process.env.CRON_SECRET ?? ""}`;
   const results: string[] = [];
-  for (const path of ROUTES) {
+
+  // The two heavy reconcilers need the 15-min budget → invoke them as background
+  // functions (each loops its route in chunks until drained). Calling those routes
+  // directly here would be killed by Netlify's short scheduled-function timeout.
+  for (const fn of ["star-trade-background", "tinysend-sync-background"]) {
     try {
-      const res = await fetch(`${base}${path}`, { headers: { Authorization: auth } });
-      results.push(`${path} -> ${res.status}`);
+      const res = await fetch(`${base}/.netlify/functions/${fn}`, {
+        method: "POST",
+        headers: { Authorization: auth },
+      });
+      results.push(`${fn} -> ${res.status}`);
     } catch (e) {
-      results.push(`${path} -> ERR ${(e as Error).message}`);
+      results.push(`${fn} -> ERR ${(e as Error).message}`);
     }
   }
+
+  // Notify-submissions is bounded (≤50 emails) and resumable — call it directly.
+  try {
+    const res = await fetch(`${base}/dashboard/api/cron/notify-submissions`, {
+      headers: { Authorization: auth },
+    });
+    results.push(`notify-submissions -> ${res.status}`);
+  } catch (e) {
+    results.push(`notify-submissions -> ERR ${(e as Error).message}`);
+  }
+
   return new Response(results.join("\n"), { status: 200 });
 };
 
-// Twice daily (08:00 & 20:00 UTC). Rare fallback only — do NOT increase frequency or
-// you start re-defeating Neon's scale-to-zero.
 export const config: Config = { schedule: "0 8,20 * * *" };

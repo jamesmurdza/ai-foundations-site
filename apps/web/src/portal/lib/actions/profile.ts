@@ -8,7 +8,8 @@ import { z } from "zod";
 import { db } from "@portal/db";
 import { profiles, users } from "@portal/db/schema";
 import { requireUser, getSessionContext, requireOnboardedUser } from "@portal/lib/auth";
-import { runStarTrade, autoStarActive } from "@portal/lib/startrade";
+import { autoStarActive } from "@portal/lib/startrade";
+import { triggerStarTrade } from "@portal/lib/background";
 import { canEnableTradeStars } from "@portal/lib/tradeStars";
 import { recordEvent } from "@portal/lib/events";
 import { backfillGithubSocials } from "@portal/lib/users";
@@ -240,7 +241,7 @@ export async function setProfileTradeStars(formData: FormData) {
     .where(eq(profiles.userId, user.id));
 
   // Browser state flips instantly; GitHub starring happens in the background.
-  if (optIn && (await autoStarActive())) after(() => runStarTrade());
+  if (optIn && (await autoStarActive())) after(() => triggerStarTrade());
 
   revalidateTag("profiles", { expire: 0 });
   revalidateTag("stars", { expire: 0 });
