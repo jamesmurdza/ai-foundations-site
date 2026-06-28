@@ -22,6 +22,14 @@ const adminEmails = (process.env.ADMIN_EMAILS ?? "")
   .map((e) => e.trim().toLowerCase())
   .filter(Boolean);
 
+// GitHub logins allowed into the dashboard. Self-contained: the dashboard gates
+// on the GitHub identity itself (not the Portal admin allowlist), so it works on
+// any domain. Defaults to the two maintainers; override via env.
+const dashboardLogins = (process.env.DASHBOARD_ADMIN_LOGINS ?? "jamesmurdza,burhankhatri")
+  .split(",")
+  .map((l) => l.trim().toLowerCase())
+  .filter(Boolean);
+
 export type PortalAdmin = {
   userId: string;
   email: string | null;
@@ -88,4 +96,28 @@ export async function resolveAdmin(
   if (!u) return null;
   if (!(await isAllowlistedAdmin(u.email, u.github_login))) return null;
   return { userId: u.id, email: u.email, githubLogin: u.github_login, name: u.name };
+}
+
+/** Is this GitHub login allowed into the dashboard? (DASHBOARD_ADMIN_LOGINS) */
+export function isDashboardLogin(login: string | null | undefined): boolean {
+  return !!login && dashboardLogins.includes(login.toLowerCase());
+}
+
+/**
+ * Resolve the signed-in user's GitHub login from the ss_session cookie, with NO
+ * admin check — the dashboard gate applies its own DASHBOARD_ADMIN_LOGINS list.
+ * Returns null when there is no valid session (i.e. "not signed in").
+ */
+export async function resolveSessionLogin(
+  token: string | undefined,
+): Promise<{ githubLogin: string | null } | null> {
+  const uid = await verifySessionUserId(token);
+  if (!uid) return null;
+  const sql = db();
+  const rows = (await sql`
+    SELECT github_login FROM ss_users WHERE id = ${uid} LIMIT 1
+  `) as { github_login: string | null }[];
+  const u = rows[0];
+  if (!u) return null;
+  return { githubLogin: u.github_login };
 }

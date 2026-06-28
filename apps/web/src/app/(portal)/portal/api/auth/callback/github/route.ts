@@ -25,6 +25,8 @@ export async function GET(req: Request) {
   const store = await cookies();
   const expected = store.get("ss_oauth_state")?.value;
   store.delete("ss_oauth_state");
+  const next = store.get("ss_oauth_next")?.value;
+  store.delete("ss_oauth_next");
 
   if (!code || !state || !expected || state !== expected) {
     return NextResponse.redirect(appUrl("/login?error=state"));
@@ -57,6 +59,13 @@ export async function GET(req: Request) {
         html: t.html,
         userId: user.id,
       });
+    }
+
+    // Explicit post-login destination (e.g. /dashboard). It lives outside /portal,
+    // so use the site origin directly rather than appUrl() (which prefixes /portal).
+    if (next && next.startsWith("/") && !next.startsWith("//")) {
+      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || new URL(req.url).origin;
+      return NextResponse.redirect(new URL(next, siteUrl));
     }
 
     const [profile] = await db
