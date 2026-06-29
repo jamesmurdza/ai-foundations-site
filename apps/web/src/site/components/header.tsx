@@ -9,8 +9,8 @@ export function Header() {
   return (
     <header>
       <div className="container">
-        <div>
-          <div className="flex justify-between items-center w-full py-4 border-b">
+        <div className="border-x border-b px-6 md:px-12">
+          <div className="flex justify-between items-center w-full py-4">
             <Link href="/" className="flex items-center gap-3">
               <span className="font-heading text-xl font-bold">AI Foundations</span>
             </Link>
