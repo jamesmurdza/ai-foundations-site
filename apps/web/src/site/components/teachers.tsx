@@ -78,7 +78,7 @@ export function Teachers() {
         <div className="grid md:grid-cols-3 gap-12">
           {TEACHERS.map((teacher) => (
             <div key={teacher.name} className="flex flex-col items-center">
-              <div className="relative w-[176px] h-[176px] mb-8">
+              <div className="relative w-[160px] h-[160px] mb-8">
                 <Image
                   src={teacher.image}
                   alt={teacher.name}
@@ -86,7 +86,7 @@ export function Teachers() {
                   className="object-cover rounded-full"
                 />
               </div>
-              <div className="flex flex-col gap-3 text-center">
+              <div className="flex flex-col gap-3 text-center max-w-[17rem]">
                 <p className="text-[17px] leading-[1.6] font-normal text-foreground/90">
                   {teacher.bio}
                 </p>
