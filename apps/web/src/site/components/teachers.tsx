@@ -72,7 +72,7 @@ export function Teachers() {
             The Teachers
           </h2>
           <p className="text-xl text-muted-foreground flex-1 lg:text-right">
-            Professional AI and ML engineers
+            Get taught by professional AI and ML engineers
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-12">
