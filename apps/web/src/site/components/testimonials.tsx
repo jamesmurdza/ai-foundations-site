@@ -9,7 +9,7 @@ export function Testimonials() {
             The Students
           </h2>
           <p className="text-lg text-muted-foreground flex-1 lg:text-right">
-            Outcomes from students in our learning community
+            What people say
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
