@@ -25,11 +25,13 @@ export function PageDots({
 }) {
   const pathname = usePathname();
   const params = useSearchParams();
-  if (weeks.length === 0) return null;
+  // The page control belongs to the open course only — show it on /home (where
+  // a week's lesson is open) and never on any other page.
+  if (weeks.length === 0 || pathname !== "/home") return null;
 
-  // On /home the viewed week is ?week=<id>; elsewhere fall back to the program's
-  // current week so the active dot always reflects where you are.
-  const viewedWeekId = pathname === "/home" ? params.get("week") : null;
+  // The viewed week is ?week=<id>; fall back to the program's current week so
+  // the active dot always reflects where you are.
+  const viewedWeekId = params.get("week");
   const activeNumber =
     weeks.find((w) => w.id === viewedWeekId)?.number ?? currentNumber;
 
