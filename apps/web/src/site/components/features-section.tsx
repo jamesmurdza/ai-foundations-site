@@ -9,7 +9,7 @@ export function Features() {
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left flex-1">
             Our courses
           </h2>
-          <p className="text-lg text-muted-foreground flex-1 lg:text-right">
+          <p className="text-xl text-muted-foreground flex-1 lg:text-right">
             We teach free courses to the public, online and in person.
           </p>
         </div>

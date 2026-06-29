@@ -8,7 +8,7 @@ export function Testimonials() {
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left flex-1">
             The Students
           </h2>
-          <p className="text-lg text-muted-foreground flex-1 lg:text-right">
+          <p className="text-xl text-muted-foreground flex-1 lg:text-right">
             What people say
           </p>
         </div>

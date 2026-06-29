@@ -14,7 +14,7 @@ export function Faq() {
           <h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-4xl">
             Frequently Asked Questions
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl">
+          <p className="text-muted-foreground text-xl max-w-2xl">
             Everything you need to know about our courses and classes.
           </p>
           <a href="mailto:contact@aifoundations.school">
