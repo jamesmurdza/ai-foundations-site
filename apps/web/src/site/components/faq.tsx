@@ -10,7 +10,7 @@ export function Faq() {
   return (
     <section>
       <div className="container">
-        <div className="border flex flex-col items-start gap-10 md:flex-row px-6 md:px-12 py-28">
+        <div className="border mt-3 flex flex-col items-start gap-10 md:flex-row px-6 md:px-12 pt-12 pb-20">
         <div className="flex flex-col gap-3 items-start">
           <h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-4xl">
             Frequently Asked Questions
