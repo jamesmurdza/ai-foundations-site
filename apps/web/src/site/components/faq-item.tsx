@@ -11,7 +11,7 @@ export function FaqItem({ question, answer, className }: FaqItemProps) {
   return (
     <AccordionItem
       value={question}
-      className={cn("border-b-0 px-8 bg-card/30 rounded-lg border", className)}
+      className={cn("border-b-0 px-8 bg-card/30 rounded-lg border-0", className)}
     >
       <AccordionTrigger className="text-left text-lg hover:no-underline font-semibold gap-3">
         {question}
