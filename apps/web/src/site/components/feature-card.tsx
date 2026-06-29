@@ -15,11 +15,11 @@ export function FeatureCard({ title, image, className }: FeatureCardProps) {
   return (
     <Card className={cn("p-6 rounded-lg border-0 bg-transparent shadow-none h-full flex flex-col", className)}>
       <div
-        className="mb-6 w-full h-64 relative rounded-md overflow-hidden"
+        className="mb-6 w-full h-64 relative rounded-2xl overflow-hidden"
         style={{
           backgroundColor: "#ffffff",
           backgroundImage:
-            "linear-gradient(45deg, #e2e2e2 25%, transparent 25%), linear-gradient(-45deg, #e2e2e2 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #e2e2e2 75%), linear-gradient(-45deg, transparent 75%, #e2e2e2 75%)",
+            "linear-gradient(45deg, #f0f0f0 25%, transparent 25%), linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f0f0f0 75%), linear-gradient(-45deg, transparent 75%, #f0f0f0 75%)",
           backgroundSize: "20px 20px",
           backgroundPosition: "0 0, 0 10px, 10px -10px, -10px 0",
         }}
