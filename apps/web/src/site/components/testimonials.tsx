@@ -2,8 +2,9 @@ import { TestimonialCard } from "@site/components/testimonial-card";
 
 export function Testimonials() {
   return (
-    <section className="py-28 bg-muted/10">
-      <div className="container flex flex-col items-center gap-12">
+    <section className="bg-muted/10">
+      <div className="container">
+        <div className="border-x border-t flex flex-col items-center gap-12 px-6 md:px-12 py-28">
         <div className="flex justify-between w-full flex-col lg:flex-row gap-8 lg:items-end">
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left flex-1">
             The Students
@@ -31,6 +32,7 @@ export function Testimonials() {
             image="/images/default-avatar.png"
             username="patterntrader"
           />
+        </div>
         </div>
       </div>
     </section>

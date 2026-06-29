@@ -3,8 +3,9 @@ import Link from "next/link";
 
 export function Features() {
   return (
-    <section className="relative bg-background py-28" id="courses">
-      <div className="container mx-auto flex flex-col gap-12">
+    <section className="relative bg-background" id="courses">
+      <div className="container">
+        <div className="border-x border-t flex flex-col gap-12 px-6 md:px-12 py-28">
         <div className="flex justify-between w-full flex-col lg:flex-row gap-8 lg:items-end">
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left flex-1">
             Our courses
@@ -32,6 +33,7 @@ export function Features() {
               title="AI Automation with no code"
             />
           </Link>
+        </div>
         </div>
       </div>
     </section>

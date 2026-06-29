@@ -64,8 +64,9 @@ const SOCIAL_ICONS: { key: keyof Social; src: string; alt: string }[] = [
 
 export function Teachers() {
   return (
-    <section className="py-28">
+    <section>
       <div className="container">
+        <div className="border-x border-t px-6 md:px-12 py-28">
         <div className="flex justify-between w-full flex-col lg:flex-row gap-8 lg:items-end mb-16">
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left flex-1">
             The Teachers
@@ -110,6 +111,7 @@ export function Teachers() {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

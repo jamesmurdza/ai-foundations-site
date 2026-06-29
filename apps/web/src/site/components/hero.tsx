@@ -6,7 +6,7 @@ import { Button } from "@site/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="pb-10">
+    <section>
       <div className="container">
         <div className="border-x border-t-0 px-4 py-3 flex justify-center">
           <Link
@@ -55,10 +55,10 @@ export function Hero() {
           />
         </div>
 
-        <div className="py-10">
+        <div className="border-x px-6 md:px-12 py-10">
           <Image alt="Preview of the AI Foundations learning platform" src="/images/main-image.png" width={1795} height={876} priority className="rounded-lg border border-border" />
         </div>
-        <div className="flex flex-col items-center gap-6 text-center">
+        <div className="flex flex-col items-center gap-6 text-center border-x px-6 md:px-12 pb-20">
           <h2 className="text-xl md:text-2xl font-sans text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium px-4">
             <span className="text-foreground font-semibold">AI Foundations</span> is an online school where you learn to build AI models from first principles alongside professional mentors and new friends
           </h2>
