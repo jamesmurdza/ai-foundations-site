@@ -16,7 +16,7 @@ export function Faq() {
             Frequently Asked Questions
           </h2>
           <p className="text-muted-foreground text-xl max-w-2xl">
-            Everything you need to know about our courses and classes.
+            More information about what we do
           </p>
           <a href="mailto:contact@aifoundations.school">
             <Button className="mt-4 gap-2 font-semibold">
