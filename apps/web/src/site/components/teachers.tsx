@@ -66,7 +66,7 @@ export function Teachers() {
   return (
     <section>
       <div className="container">
-        <div className="border-x border-t mt-28 px-6 md:px-12 pt-12 pb-8">
+        <div className="border-x border-t mt-28 px-6 md:px-12 pt-12 pb-12">
         <div className="flex justify-between w-full flex-col lg:flex-row gap-8 lg:items-end mb-16">
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left flex-1">
             The Teachers
