@@ -8,16 +8,26 @@ import { TopNav } from "./TopNav";
 export async function NavBar() {
   const { user, profile } = await getSessionContext();
 
+  // Discover splits into Showcase + Community, surfaced as a nav submenu.
+  const discoverLink: NavLink = {
+    href: "/discover",
+    label: "Discover",
+    submenu: [
+      { href: "/discover?tab=showcase", label: "Showcase" },
+      { href: "/discover?tab=people", label: "Community" },
+    ],
+  };
+
   // Signed-in participants get the three core pages. Logged-out marketing
   // visitors only see the public Discover page (showcase + directory + map).
   const links: NavLink[] = user
     ? [
         { href: "/home", label: "Home" },
         { href: "/submissions", label: "My Work" },
-        { href: "/discover", label: "Discover" },
+        discoverLink,
         ...(user.isAdmin ? [{ href: "/admin", label: "Admin" }] : []),
       ]
-    : [{ href: "/discover", label: "Discover" }];
+    : [discoverLink];
   const profileHref = profile
     ? user?.githubLogin
       ? `/users/${user.githubLogin}`
@@ -42,17 +52,7 @@ export async function NavBar() {
 
             {/* Right cluster: primary navigation | account. */}
             <div className="flex items-center gap-4">
-              {user ? (
-                <TopNav links={links} />
-              ) : (
-                <div className="hidden md:flex items-center gap-1 text-muted-foreground font-medium text-[14px]">
-                  {links.map((l) => (
-                    <Link key={l.href} href={l.href} className="btn btn-ghost btn-sm">
-                      {l.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
+              <TopNav links={links} />
 
               {/* Divider separates nav from the account zone. */}
               <span className="hidden md:block h-5 w-px bg-sea-fog" aria-hidden />

@@ -5,7 +5,12 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { withBase } from "@/lib/paths";
 
-export type NavLink = { href: string; label: string };
+export type NavSubLink = { href: string; label: string };
+export type NavLink = {
+  href: string;
+  label: string;
+  submenu?: NavSubLink[];
+};
 
 export function MobileMenu({
   links,
@@ -49,14 +54,25 @@ export function MobileMenu({
         >
           <nav className="container-page flex flex-col gap-1 py-4">
             {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={close}
-                className="btn btn-ghost justify-start !text-[17px] !py-3"
-              >
-                {l.label}
-              </Link>
+              <div key={l.href}>
+                <Link
+                  href={l.href}
+                  onClick={close}
+                  className="btn btn-ghost justify-start !text-[17px] !py-3 w-full"
+                >
+                  {l.label}
+                </Link>
+                {l.submenu?.map((s) => (
+                  <Link
+                    key={s.href}
+                    href={s.href}
+                    onClick={close}
+                    className="btn btn-ghost justify-start !text-[15px] !py-2.5 w-full pl-8 text-slate-channel"
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
             ))}
             <div className="hairline my-3" />
             {isAuthed ? (

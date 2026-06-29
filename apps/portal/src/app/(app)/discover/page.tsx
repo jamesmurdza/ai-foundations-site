@@ -92,22 +92,10 @@ export default async function DiscoverPage({
         </div>
         <div className="mx-auto max-w-[880px] text-center">
           <h1 className="text-[34px] mb-1">Discover</h1>
-          <p className="meta mb-4 mx-auto max-w-[60ch]">
+          <p className="meta mx-auto max-w-[60ch]">
             The cohort — who&apos;s here, what they&apos;ve shipped, and what&apos;s
             happening right now.
           </p>
-
-          <div className="flex justify-center flex-wrap gap-2">
-            {TABS.map((t) => (
-              <Link
-                key={t.key}
-                href={`/discover?tab=${t.key}`}
-                className={`pill ${tab === t.key ? "bg-signal-blue text-white" : "bg-ice-tint text-slate-channel"}`}
-              >
-                {t.label}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
 
