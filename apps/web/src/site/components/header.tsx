@@ -21,7 +21,7 @@ export function Header() {
                 {/* <NavItem href="/workshops" label="Workshops" /> */}
               </nav>
               <MobileNavbar>
-                <div className="rounded-b-lg bg-background py-4 container text-foreground shadow-xl mt-6">
+                <div className="rounded-b-lg bg-background py-4 container text-foreground border mt-6">
                   <nav className="flex flex-col gap-1 pt-2">
                     {/* <MobileNavItem href="/about" label="About" /> */}
                     <MobileNavItem href="#courses" label="Courses" />

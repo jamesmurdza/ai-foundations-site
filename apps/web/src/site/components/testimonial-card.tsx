@@ -15,7 +15,7 @@ export function TestimonialCard({ name, username, image, text, className }: Test
   return (
     <Card
       className={cn(
-        "mt-7 inline-block break-inside-avoid w-full border bg-card/50 backdrop-blur-xl h-[280px] transition-all duration-300 hover:shadow-lg hover:-translate-y-1",
+        "mt-7 inline-block break-inside-avoid w-full border bg-card/50 backdrop-blur-xl h-[280px] shadow-none",
         className,
       )}
     >
