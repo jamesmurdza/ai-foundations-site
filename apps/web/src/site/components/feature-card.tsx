@@ -24,9 +24,7 @@ export function FeatureCard({ title, image, className }: FeatureCardProps) {
       >
         <Image alt={`${title} course`} src={image} fill className="object-contain" />
       </div>
-      <div className="mt-auto">
-        <h3 className="font-heading text-xl font-semibold">{title}</h3>
-      </div>
+      <h3 className="font-heading text-xl font-semibold">{title}</h3>
     </Card>
   );
 }
