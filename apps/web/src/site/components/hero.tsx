@@ -54,7 +54,7 @@ export function Hero() {
         </div>
 
         <div className="p-10">
-          <Image alt="Image" src="/images/main-image.avif" width={1300} height={698} className="rounded-lg border border-border" />
+          <Image alt="Image" src="/images/main-image.png" width={1795} height={876} className="rounded-lg border border-border" />
         </div>
         <div className="flex flex-col items-center gap-6 mb-12 text-center">
           <h2 className="text-xl md:text-2xl font-sans text-[#888888] max-w-2xl mx-auto leading-relaxed font-medium px-4">
