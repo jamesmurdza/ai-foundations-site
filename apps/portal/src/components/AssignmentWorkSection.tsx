@@ -65,8 +65,11 @@ function focusedUrlForm(opts: {
   urlLabel: string;
   urlPlaceholder: string;
   emptyError: string;
+  /** Whether the URL field blocks submit when empty. Defaults to required. */
+  requiredUrl?: boolean;
   tradeStars?: { checked: boolean };
 }): ReactNode {
+  const requiredUrl = opts.requiredUrl ?? true;
   return (
     <>
       <input type="hidden" name="assignmentId" value={opts.assignmentId} />
@@ -90,7 +93,7 @@ function focusedUrlForm(opts: {
           className="input"
           name="payload"
           type="url"
-          required
+          required={requiredUrl}
           placeholder={opts.urlPlaceholder}
           defaultValue={opts.existingUrl ?? ""}
         />
@@ -384,6 +387,9 @@ export async function AssignmentWorkSection({
     urlLabel: "Paste the link to your pull request",
     urlPlaceholder: "https://github.com/owner/repo/pull/123",
     emptyError: "Paste your pull request link before submitting.",
+    // The contribution flow presents the form like a required step, but the
+    // second contribution is optional — so the field doesn't block submit.
+    requiredUrl: false,
   });
   const portfolioFormFields = focusedUrlForm({
     assignmentId: assignment.id,

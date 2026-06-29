@@ -13,10 +13,11 @@ type Section = { heading: string; items: { key: string; label: string }[] };
 
 /**
  * Week 3 — make an open-source contribution, as a linear three-page flow:
- * page 1 is the first checklist (find a peer's project, read it), page 2 is the
- * second checklist plus the pull-request form, and page 3 is an optional second
- * pass that shows the same form again for a contribution to a tool you use.
- * There's no early submit button — the form only appears once you reach page 2.
+ * page 1 is the first checklist (find a peer's project, read it), page 2 adds
+ * the second checklist and the pull-request form (Back/Next only — no submit
+ * yet), and page 3 shows the same form again to submit. The form spans pages 2
+ * and 3 as a single, persistent form, so the submit lives only at the end; the
+ * second contribution is optional, so you can reach submit without filling it.
  */
 export function ContributionSteps({
   weekId,
@@ -117,63 +118,52 @@ export function ContributionSteps({
         </>
       )}
 
-      {step === 2 && (
-        <>
-          <p className="text-[15px] leading-relaxed">
-            A maintainer should be able to read your pull request and say
-            &ldquo;yes&rdquo; in a minute. Here&apos;s how to make that easy:
-          </p>
-          {checklist(goodPr)}
-          <p className="text-[15px] leading-relaxed mt-4">
-            {CONTRIBUTION_BRIEF.footer}
-          </p>
-          <form action={submitAction} className="space-y-4 mt-6">
-            {formFields}
-            <div className="flex items-center justify-between pt-4">
-              <button
-                type="button"
-                onClick={() => setStep(1)}
-                className="btn btn-ghost !px-2"
-              >
-                ← Back
-              </button>
-              <SubmitButton className="btn btn-primary">Submit</SubmitButton>
-            </div>
-          </form>
-          <div className="mt-4 text-center">
+      {/* The form spans pages 2 and 3 as one persistent form so the only submit
+          button is on page 3; page 2 just steps forward with Next. */}
+      {(step === 2 || step === 3) && (
+        <form action={submitAction} className="space-y-4">
+          {step === 2 ? (
+            <>
+              <p className="text-[15px] leading-relaxed">
+                A maintainer should be able to read your pull request and say
+                &ldquo;yes&rdquo; in a minute. Here&apos;s how to make that easy:
+              </p>
+              {checklist(goodPr)}
+              <p className="text-[15px] leading-relaxed">
+                {CONTRIBUTION_BRIEF.footer}
+              </p>
+            </>
+          ) : (
+            <p className="text-[15px] leading-relaxed">
+              Want to push further? Make a second contribution — this time to an
+              open-source tool or product you actually use. It&apos;s optional, but
+              it&apos;s where contributing really starts to compound.
+            </p>
+          )}
+
+          <div className="pt-2">{formFields}</div>
+
+          <div className="flex items-center justify-between pt-4">
             <button
               type="button"
-              onClick={() => setStep(3)}
-              className="link text-[14px]"
+              onClick={() => setStep(step - 1)}
+              className="btn btn-ghost !px-2"
             >
-              Want to go further? (optional) →
+              ← Back
             </button>
-          </div>
-        </>
-      )}
-
-      {step === 3 && (
-        <>
-          <p className="text-[15px] leading-relaxed">
-            Want to push further? Make a second contribution — this time to an
-            open-source tool or product you actually use. It&apos;s optional, but
-            it&apos;s where contributing really starts to compound. Paste that pull
-            request below.
-          </p>
-          <form action={submitAction} className="space-y-4 mt-6">
-            {formFields}
-            <div className="flex items-center justify-between pt-4">
+            {step === 2 ? (
               <button
                 type="button"
-                onClick={() => setStep(2)}
-                className="btn btn-ghost !px-2"
+                onClick={() => setStep(3)}
+                className="btn btn-primary"
               >
-                ← Back
+                Next →
               </button>
+            ) : (
               <SubmitButton className="btn btn-primary">Submit</SubmitButton>
-            </div>
-          </form>
-        </>
+            )}
+          </div>
+        </form>
       )}
     </div>
   );
