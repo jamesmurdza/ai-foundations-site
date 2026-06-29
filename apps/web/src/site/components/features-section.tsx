@@ -14,7 +14,7 @@ export function Features() {
             We teach free courses to the public, online and in person.
           </p>
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 grid-cols-1">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 grid-cols-1">
           <Link href="/courses/ml-python" className="block h-full">
             <FeatureCard
               image="/images/machinelearning.png"
