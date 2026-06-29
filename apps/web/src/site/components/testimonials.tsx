@@ -2,7 +2,7 @@ import { TestimonialCard } from "@site/components/testimonial-card";
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-muted/10">
+    <section className="py-20 bg-muted/10">
       <div className="container flex flex-col items-center gap-12">
         <div className="flex justify-between w-full flex-col lg:flex-row gap-4 lg:items-end">
           <h2 className="font-heading tracking-tight sm:text-5xl text-3xl text-balance font-semibold text-left flex-1">

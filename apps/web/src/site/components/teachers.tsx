@@ -64,7 +64,7 @@ const SOCIAL_ICONS: { key: keyof Social; src: string; alt: string }[] = [
 
 export function Teachers() {
   return (
-    <section className="py-24">
+    <section className="py-20">
       <div className="container">
         <div className="flex justify-between w-full flex-col lg:flex-row gap-4 lg:items-end mb-16">
           <h2 className="font-heading tracking-tight sm:text-5xl text-3xl text-balance font-semibold text-left flex-1">
@@ -74,7 +74,7 @@ export function Teachers() {
             Learn from working engineers and educators who build and teach every day.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-12">
           {TEACHERS.map((teacher) => (
             <div key={teacher.name} className="flex flex-col items-center">
               <div className="relative w-[200px] h-[200px] mb-8">

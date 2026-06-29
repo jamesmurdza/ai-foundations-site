@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section className="pb-10">
       <div className="container">
-        <div className="mx-2 md:mx-10 border-x border-t-0 px-4 py-3 flex justify-center">
+        <div className="border-x border-t-0 px-4 py-3 flex justify-center">
           <Link
             href="/summer-school"
             className="group inline-flex items-center gap-2 text-sm hover:text-[#4c24c6] transition-colors"
@@ -23,12 +23,12 @@ export function Hero() {
             </span>
           </Link>
         </div>
-        <div className="flex flex-col items-center gap-6 pt-20 mb-4 border border-t-0 mx-2 md:mx-10 relative">
+        <div className="flex flex-col items-center gap-6 pt-20 mb-4 border border-t-0 relative">
           <h1 className="text-center font-heading font-semibold tracking-tight text-balance max-w-3xl md:text-7xl text-5xl sm:text-6xl">
             Learn AI From the Ground Up
           </h1>
         </div>
-        <div className="flex items-center justify-center gap-12 mt-8 py-6 border-x mx-2 md:mx-10 relative">
+        <div className="flex items-center justify-center gap-12 mt-8 py-6 border-x relative">
           <div className="flex flex-wrap gap-y-4 justify-center gap-x-16">
             <div className="flex items-center gap-2 justify-center">
               <Brain aria-hidden="true" className="w-5 h-5 text-[#5b2bee]" />
@@ -55,10 +55,10 @@ export function Hero() {
           />
         </div>
 
-        <div className="p-10">
+        <div className="py-10">
           <Image alt="Preview of the AI Foundations learning platform" src="/images/main-image.png" width={1795} height={876} priority className="rounded-lg border border-border" />
         </div>
-        <div className="flex flex-col items-center gap-6 mb-12 text-center">
+        <div className="flex flex-col items-center gap-6 text-center">
           <h2 className="text-xl md:text-2xl font-sans text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium px-4">
             <span className="text-foreground font-semibold">AI Foundations</span> is an online school where you learn to build AI models from first principles alongside professional mentors and new friends
           </h2>
