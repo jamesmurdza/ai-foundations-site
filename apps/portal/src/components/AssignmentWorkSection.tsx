@@ -429,7 +429,6 @@ export async function AssignmentWorkSection({
           showcaseHref="/discover?tab=showcase"
           editHref={`/home?week=${assignment.weekId}&edit=1`}
         />
-        <GitWitReview assignmentId={assignment.id} />
       </section>
     );
   }
@@ -520,6 +519,7 @@ export async function AssignmentWorkSection({
           done={profileBriefDone}
           actions={actions}
           formFields={formFields}
+          review={<GitWitReview assignmentId={assignment.id} />}
           submitAction={createSubmission}
         />
       )}
