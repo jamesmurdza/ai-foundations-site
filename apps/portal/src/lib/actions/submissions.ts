@@ -46,10 +46,31 @@ export async function createSubmission(formData: FormData) {
     .limit(1);
   if (!assignment) redirect("/home");
   const assignmentWeek = await getWeek(assignment.weekId);
-  // Week 1 is usually a GitHub README/profile link only; repo posts still join
-  // auto-stars below when a real repository URL is submitted.
-  const tradeStars =
-    assignmentWeek?.number === 1 ? false : profile.tradeStarsEnabled;
+
+  // The submission form carries a single "trade stars" checkbox (on by default;
+  // pre-set to their last choice when editing). When it's present, submitting
+  // saves the builder's global preference. The hidden companion field tells an
+  // unchecked box (off) apart from a form with no control. Week 1 is usually a
+  // GitHub README/profile link only, so it never trades stars.
+  const tradeStarsFieldPresent = formData.get("tradeStarsPresent") === "1";
+  const tradeStarsChecked =
+    formData.get("tradeStars") === "on" || formData.get("tradeStars") === "true";
+  let tradeStars: boolean;
+  if (assignmentWeek?.number === 1) {
+    tradeStars = false;
+  } else if (tradeStarsFieldPresent) {
+    const optIn = tradeStarsChecked && canEnableTradeStars(user);
+    if (optIn !== profile.tradeStarsEnabled) {
+      await db
+        .update(profiles)
+        .set({ tradeStarsEnabled: optIn, updatedAt: new Date() })
+        .where(eq(profiles.userId, user.id));
+      if (optIn && (await autoStarActive())) after(() => runStarTrade());
+    }
+    tradeStars = optIn;
+  } else {
+    tradeStars = profile.tradeStarsEnabled;
+  }
 
   // One submission per assignment per user: a resubmit EDITS the existing one.
   const existing = await getUserSubmissionForAssignment(data.assignmentId, user.id);

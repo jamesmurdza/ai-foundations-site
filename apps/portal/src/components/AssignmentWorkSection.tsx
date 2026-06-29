@@ -65,7 +65,7 @@ function focusedUrlForm(opts: {
   urlLabel: string;
   urlPlaceholder: string;
   emptyError: string;
-  tradeStars?: { enabled: boolean };
+  tradeStars?: { checked: boolean };
 }): ReactNode {
   return (
     <>
@@ -95,27 +95,33 @@ function focusedUrlForm(opts: {
           defaultValue={opts.existingUrl ?? ""}
         />
       </div>
-      {opts.tradeStars && (
-        <div className="rounded-2xl bg-ice-tint p-3 text-[13px]">
-          {opts.tradeStars.enabled ? (
-            <span className="meta">
-              <span className="font-semibold text-foreground">
-                Trade stars is ON ⭐
-              </span>{" "}
-              — the cohort will star this repo.{" "}
-              <Link href="/profile/edit" className="link">
-                Manage
-              </Link>
-            </span>
-          ) : (
-            <span className="meta">
-              Want the cohort to star your repo? You can turn on Trade Stars
-              right after you submit.
-            </span>
-          )}
-        </div>
-      )}
+      {opts.tradeStars && <TradeStarsCheckbox defaultChecked={opts.tradeStars.checked} />}
     </>
+  );
+}
+
+/**
+ * The single "trade stars" control in a submission form: a checkbox, on by
+ * default for new submissions and pre-set to whatever the builder chose last
+ * time when editing. Submitting the form saves the choice as their preference.
+ * The hidden companion field lets the server tell an unchecked box (off) apart
+ * from a form that has no control at all.
+ */
+function TradeStarsCheckbox({ defaultChecked }: { defaultChecked: boolean }) {
+  return (
+    <label className="flex items-start gap-2.5 cursor-pointer text-[14px] rounded-2xl bg-ice-tint p-3">
+      <input type="hidden" name="tradeStarsPresent" value="1" />
+      <input
+        type="checkbox"
+        name="tradeStars"
+        defaultChecked={defaultChecked}
+        className="mt-0.5 h-4 w-4 shrink-0 accent-primary cursor-pointer"
+      />
+      <span className="meta">
+        Trade stars with the cohort ⭐ — everyone who opts in stars each
+        other&apos;s repos, including yours.
+      </span>
+    </label>
   );
 }
 
@@ -343,27 +349,9 @@ export async function AssignmentWorkSection({
       )}
 
       {!isGitHubProfileWeek && canTrade && (
-        <div className="rounded-2xl bg-ice-tint p-3 text-[13px]">
-          {profile.tradeStarsEnabled ? (
-            <span className="meta">
-              <span className="font-semibold text-foreground">
-                Trade stars is ON ⭐
-              </span>{" "}
-              — the cohort will auto-star this repo.{" "}
-              <Link href="/profile/edit" className="link">
-                Manage
-              </Link>
-            </span>
-          ) : (
-            <span className="meta">
-              Want the cohort to auto-star your repo?{" "}
-              <Link href="/profile/edit" className="link">
-                Turn on Trade Stars
-              </Link>{" "}
-              on your profile.
-            </span>
-          )}
-        </div>
+        <TradeStarsCheckbox
+          defaultChecked={existing ? existing.tradeStars : true}
+        />
       )}
 
     </>
@@ -384,7 +372,7 @@ export async function AssignmentWorkSection({
     urlLabel: "Paste the GitHub repo you want to showcase",
     urlPlaceholder: "https://github.com/you/project",
     emptyError: "Paste the GitHub repo you want to showcase before submitting.",
-    tradeStars: { enabled: profile.tradeStarsEnabled },
+    tradeStars: { checked: existing ? existing.tradeStars : true },
   });
   const prFormFields = focusedUrlForm({
     assignmentId: assignment.id,
