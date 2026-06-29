@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useTransition, type ReactNode } from "react";
 import { toggleWeekStep } from "@/lib/actions/engagement";
 import { SubmitButton } from "@/components/SubmitButton";
@@ -97,7 +98,11 @@ export function ContributionSteps({
           <p className="text-[15px] leading-relaxed">{CONTRIBUTION_BRIEF.intro}</p>
           <p className="text-[15px] leading-relaxed mt-4">
             Your goal this week is one real pull request — start with a peer&apos;s
-            project from the showcase.
+            project from{" "}
+            <Link href="/discover?tab=showcase" className="link">
+              the showcase
+            </Link>
+            .
           </p>
           {checklist(peerProject)}
           {checklist(goodPr)}
