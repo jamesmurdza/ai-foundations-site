@@ -7,10 +7,10 @@ export function Testimonials() {
         <div className="border-x border-t mt-8 flex flex-col items-center gap-12 px-6 md:px-12 pt-12 pb-20">
         <div className="flex justify-between w-full flex-col lg:flex-row gap-8 lg:items-end">
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left flex-1">
-            The Students
+            What people say
           </h2>
           <p className="text-xl text-muted-foreground flex-1 lg:text-right">
-            What people say
+            Words from our students
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
