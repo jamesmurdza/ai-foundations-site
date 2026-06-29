@@ -38,6 +38,12 @@ export function Features() {
               title="Git & GitHub for Beginners"
             />
           </Link>
+          <Link href="/courses/minecraft-ai" className="block">
+            <FeatureCard
+              image="/images/main-image.avif"
+              title="Hacking Minecraft with AI"
+            />
+          </Link>
         </div>
       </div>
     </section>
