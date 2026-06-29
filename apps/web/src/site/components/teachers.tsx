@@ -83,7 +83,7 @@ export function Teachers() {
                   src={teacher.image}
                   alt={teacher.name}
                   fill
-                  className="object-cover rounded-2xl"
+                  className="object-cover rounded-full"
                 />
               </div>
               <div className="flex flex-col gap-3 text-center">
