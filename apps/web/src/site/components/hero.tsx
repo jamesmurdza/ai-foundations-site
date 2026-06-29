@@ -1,8 +1,8 @@
 import { Brain, Code, CircuitBoard, Sparkle } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@site/components/ui/button";
+import { BannerAnimation } from "@site/components/BannerAnimation";
 
 export function Hero() {
   return (
@@ -56,7 +56,7 @@ export function Hero() {
         </div>
 
         <div className="py-10">
-          <Image alt="Preview of the AI Foundations learning platform" src="/images/main-image.png" width={1795} height={876} priority className="rounded-lg border border-border" />
+          <BannerAnimation />
         </div>
         <div className="flex flex-col items-center gap-6 text-center pb-20">
           <h2 className="text-xl md:text-2xl font-sans text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium px-4">
