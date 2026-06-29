@@ -15,7 +15,7 @@ export function TestimonialCard({ name, username, image, text, className }: Test
   return (
     <Card
       className={cn(
-        "w-full h-full flex flex-col border-0 bg-card/30 backdrop-blur-xl shadow-none",
+        "w-full h-full flex flex-col border-0 bg-transparent shadow-none",
         className,
       )}
     >
