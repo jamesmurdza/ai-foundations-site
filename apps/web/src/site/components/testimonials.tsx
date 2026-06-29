@@ -18,19 +18,19 @@ export function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
           <TestimonialCard
             name="Ross"
-            text="James is a great tutor. Very patient and breaks code down to make it easier to understand. Highly recommend!"
+            text="James is a patient tutor who breaks code down so it actually clicks. Highly recommend!"
             image="/images/ross.avif"
             username="Student"
           />
           <TestimonialCard
             name="Adithyakarthik"
-            text="This is truly something many of the students need in my university, as existing guides aren't exactly simple to read and understand and throw a lot of knowledge at once, overwhelming the student."
+            text="Exactly what students need — most guides throw too much at once. This keeps it simple."
             image="/images/Adityha.avif"
             username="captainion"
           />
           <TestimonialCard
             name="Pattern Trader"
-            text="Great initiative James. Look forward to the next class. I am myself a student of M Tech in AI & DS and it's always refreshing to see AI in various perspectives."
+            text="Great initiative, James. As an M.Tech AI & DS student, it's refreshing to see AI from new angles."
             image="/images/default-avatar.png"
             username="patterntrader"
           />
