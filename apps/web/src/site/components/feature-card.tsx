@@ -1,8 +1,6 @@
 import Image from "next/image";
-import { ChevronRight } from "lucide-react";
 
 import { Card } from "@site/components/ui/card";
-import { buttonVariants } from "@site/components/ui/button";
 import { cn } from "@site/lib/utils";
 
 interface FeatureCardProps {
@@ -26,14 +24,8 @@ export function FeatureCard({ title, image, className }: FeatureCardProps) {
       >
         <Image alt={`${title} course`} src={image} fill className="object-contain" />
       </div>
-      <div className="flex justify-between items-end gap-2 mt-auto">
+      <div className="mt-auto">
         <h3 className="font-heading text-xl font-semibold">{title}</h3>
-        <span
-          aria-hidden="true"
-          className={cn(buttonVariants({ size: "icon", variant: "default" }), "size-10 shrink-0 rounded-md")}
-        >
-          <ChevronRight className="size-5" />
-        </span>
       </div>
     </Card>
   );
