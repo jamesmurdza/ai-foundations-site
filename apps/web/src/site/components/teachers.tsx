@@ -12,7 +12,7 @@ export function Teachers() {
           <div className="flex flex-col items-center">
             <div className="relative w-[200px] h-[200px] mb-8">
               <Image
-                src="/images/Naveed.avif"
+                src="/images/Naveed.png"
                 alt="Naveed Kahn"
                 fill
                 className="object-cover rounded-full"
@@ -73,7 +73,7 @@ export function Teachers() {
           <div className="flex flex-col items-center">
             <div className="relative w-[200px] h-[200px] mb-8">
               <Image
-                src="/images/James.avif"
+                src="/images/James.jpg"
                 alt="James Murdza"
                 fill
                 className="object-cover rounded-full"
