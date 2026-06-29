@@ -5,11 +5,11 @@ export function Testimonials() {
     <section className="bg-muted/10">
       <div className="container">
         <div className="border-x border-t mt-28 flex flex-col items-center gap-12 px-6 md:px-12 pt-12 pb-12">
-        <div className="flex justify-between w-full flex-col lg:flex-row gap-8 lg:items-end">
+        <div className="flex w-full flex-col lg:flex-row lg:items-end gap-2 lg:gap-4">
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left shrink-0">
             What people say
           </h2>
-          <p className="text-xl text-muted-foreground flex-1 lg:text-right">
+          <p className="text-xl text-muted-foreground">
             Experiences from past students and participants
           </p>
         </div>

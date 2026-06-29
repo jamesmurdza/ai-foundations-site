@@ -6,11 +6,11 @@ export function Features() {
     <section className="relative bg-background" id="courses">
       <div className="container">
         <div className="border-x border-t mt-28 flex flex-col gap-12 px-6 md:px-12 pt-12 pb-12">
-        <div className="flex justify-between w-full flex-col lg:flex-row gap-8 lg:items-end">
+        <div className="flex w-full flex-col lg:flex-row lg:items-end gap-2 lg:gap-4">
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left shrink-0">
             Our courses
           </h2>
-          <p className="text-xl text-muted-foreground flex-1 lg:text-right">
+          <p className="text-xl text-muted-foreground">
             We teach free courses to the public, online and in person.
           </p>
         </div>

@@ -67,11 +67,11 @@ export function Teachers() {
     <section>
       <div className="container">
         <div className="border-x border-t mt-28 px-6 md:px-12 pt-12 pb-12">
-        <div className="flex justify-between w-full flex-col lg:flex-row gap-8 lg:items-end mb-16">
+        <div className="flex w-full flex-col lg:flex-row lg:items-end gap-2 lg:gap-4 mb-16">
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left shrink-0">
             The Teachers
           </h2>
-          <p className="text-xl text-muted-foreground flex-1 lg:text-right">
+          <p className="text-xl text-muted-foreground">
             Get taught by professional AI and ML engineers
           </p>
         </div>
