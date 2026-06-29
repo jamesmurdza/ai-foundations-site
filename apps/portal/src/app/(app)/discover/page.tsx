@@ -17,7 +17,6 @@ import { maxUnlockedWeek } from "@/lib/weekRoutes";
 import { rankByNeed } from "@/lib/compliments";
 import { listEvents } from "@/lib/events";
 import { Avatar } from "@/components/Avatar";
-import { AutoStarsToggle } from "@/components/AutoStarsToggle";
 import { SubmissionFeedPost } from "@/components/SubmissionFeedPost";
 import { WorldMap } from "@/components/WorldMap";
 import { StarBoard } from "@/components/StarBoard";
@@ -67,10 +66,6 @@ export default async function DiscoverPage({
   const sp = await searchParams;
   const tab = resolveTab(sp.tab);
   const sort = resolveSort(sp.sort);
-  const { user, profile } = await getSessionContext();
-  const autoStarsEnabled = Boolean(profile?.tradeStarsEnabled);
-  // Trade Stars needs a connected GitHub (access token) to actually star.
-  const canTradeStars = Boolean(profile && user?.accessToken);
 
   return (
     <div className="py-2">
@@ -92,11 +87,6 @@ export default async function DiscoverPage({
             </Link>
           ))}
         </div>
-
-        <AutoStarsToggle
-          initialEnabled={autoStarsEnabled}
-          canToggle={canTradeStars}
-        />
       </div>
 
       {tab === "showcase" && <ShowcaseTab weekId={sp.week} sort={sort} />}
