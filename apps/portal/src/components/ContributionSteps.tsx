@@ -12,11 +12,11 @@ import {
 type Section = { heading: string; items: { key: string; label: string }[] };
 
 /**
- * Week 3 — make an open-source contribution, as a linear two-page flow. Page 1
- * is the assignment: contribute to a peer's project and submit your pull
- * request. Page 2 is an optional second pass — go further by contributing to a
- * tool you actually use — with its own form. Both pages share the same PR form
- * (one submission per assignment), so submitting from either page saves it.
+ * Week 3 — make an open-source contribution, as a linear three-page flow:
+ * page 1 is the first checklist (find a peer's project, read it), page 2 is the
+ * second checklist plus the pull-request form, and page 3 is an optional second
+ * pass that shows the same form again for a contribution to a tool you use.
+ * There's no early submit button — the form only appears once you reach page 2.
  */
 export function ContributionSteps({
   weekId,
@@ -105,21 +105,13 @@ export function ContributionSteps({
             .
           </p>
           {checklist(peerProject)}
-          {checklist(goodPr)}
-          <p className="text-[15px] leading-relaxed mt-4">
-            {CONTRIBUTION_BRIEF.footer}
-          </p>
-          <form action={submitAction} className="space-y-4 mt-6">
-            {formFields}
-            <SubmitButton className="btn btn-primary w-full">Submit →</SubmitButton>
-          </form>
-          <div className="mt-4 text-center">
+          <div className="mt-6 flex justify-end">
             <button
               type="button"
               onClick={() => setStep(2)}
-              className="link text-[14px]"
+              className="btn btn-primary"
             >
-              Want to go further? (optional) →
+              Next →
             </button>
           </div>
         </>
@@ -128,17 +120,52 @@ export function ContributionSteps({
       {step === 2 && (
         <>
           <p className="text-[15px] leading-relaxed">
-            Nice work. If you want to push further, make a second contribution —
-            this time to an open-source tool or product you actually use. It&apos;s
-            optional, but it&apos;s where contributing really starts to compound.
+            A maintainer should be able to read your pull request and say
+            &ldquo;yes&rdquo; in a minute. Here&apos;s how to make that easy:
           </p>
-          {checklist(CONTRIBUTION_BRIEF.goFurther)}
+          {checklist(goodPr)}
+          <p className="text-[15px] leading-relaxed mt-4">
+            {CONTRIBUTION_BRIEF.footer}
+          </p>
           <form action={submitAction} className="space-y-4 mt-6">
             {formFields}
             <div className="flex items-center justify-between pt-4">
               <button
                 type="button"
                 onClick={() => setStep(1)}
+                className="btn btn-ghost !px-2"
+              >
+                ← Back
+              </button>
+              <SubmitButton className="btn btn-primary">Submit</SubmitButton>
+            </div>
+          </form>
+          <div className="mt-4 text-center">
+            <button
+              type="button"
+              onClick={() => setStep(3)}
+              className="link text-[14px]"
+            >
+              Want to go further? (optional) →
+            </button>
+          </div>
+        </>
+      )}
+
+      {step === 3 && (
+        <>
+          <p className="text-[15px] leading-relaxed">
+            Want to push further? Make a second contribution — this time to an
+            open-source tool or product you actually use. It&apos;s optional, but
+            it&apos;s where contributing really starts to compound. Paste that pull
+            request below.
+          </p>
+          <form action={submitAction} className="space-y-4 mt-6">
+            {formFields}
+            <div className="flex items-center justify-between pt-4">
+              <button
+                type="button"
+                onClick={() => setStep(2)}
                 className="btn btn-ghost !px-2"
               >
                 ← Back
