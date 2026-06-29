@@ -87,7 +87,7 @@ export function Teachers() {
                 />
               </div>
               <div className="flex flex-col gap-3 text-center">
-                <p className="text-[17px] leading-[1.6] font-normal text-muted-foreground">
+                <p className="text-[17px] leading-[1.6] font-normal text-foreground/90">
                   {teacher.bio}
                 </p>
               </div>
