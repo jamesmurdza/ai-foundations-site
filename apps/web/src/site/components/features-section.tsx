@@ -14,19 +14,19 @@ export function Features() {
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 grid-cols-1">
-          <Link href="/courses/ml-python" className="block">
+          <Link href="/courses/ml-python" className="block h-full">
             <FeatureCard
               image="/images/machinelearning.avif"
               title="Machine Learning Fundamentals"
             />
           </Link>
-          <Link href="/courses/ai-agent-camp" className="block">
+          <Link href="/courses/ai-agent-camp" className="block h-full">
             <FeatureCard
               image="/images/python.avif"
               title="AI Agents in Python"
             />
           </Link>
-          <Link href="/courses/ai-agent-camp-nocode" className="block">
+          <Link href="/courses/ai-agent-camp-nocode" className="block h-full">
             <FeatureCard
               image="/images/nocode.avif"
               title="AI Automation with no code"
