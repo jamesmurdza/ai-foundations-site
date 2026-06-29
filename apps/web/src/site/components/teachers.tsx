@@ -66,11 +66,11 @@ export function Teachers() {
   return (
     <section className="py-24">
       <div className="container">
-        <div className="flex flex-col items-center gap-4 max-w-2xl text-center mx-auto mb-16">
-          <h2 className="font-heading text-3xl sm:text-5xl font-semibold tracking-tight text-balance">
+        <div className="flex justify-between w-full flex-col lg:flex-row gap-4 lg:items-end mb-16">
+          <h2 className="font-heading tracking-tight sm:text-5xl text-3xl text-balance font-semibold text-left flex-1">
             The Teachers
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-lg text-muted-foreground flex-1">
             Learn from working engineers and educators who build and teach every day.
           </p>
         </div>
