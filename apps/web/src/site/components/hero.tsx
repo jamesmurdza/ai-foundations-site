@@ -88,7 +88,7 @@ export function Hero() {
             <Button
               type="submit"
               size="lg"
-              className="whitespace-nowrap bg-[#5b2bee] hover:bg-[#4c24c6] text-white px-6"
+              className="whitespace-nowrap h-auto bg-[#5b2bee] hover:bg-[#4c24c6] text-white px-6"
             >
               Get updates!
             </Button>
