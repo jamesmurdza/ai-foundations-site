@@ -4,11 +4,11 @@ export function Testimonials() {
   return (
     <section className="py-20 bg-muted/10">
       <div className="container flex flex-col items-center gap-12">
-        <div className="flex justify-between w-full flex-col lg:flex-row gap-4 lg:items-end">
+        <div className="flex justify-between w-full flex-col lg:flex-row gap-8 lg:items-end">
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left flex-1">
             The Students
           </h2>
-          <p className="text-lg text-muted-foreground flex-1">
+          <p className="text-lg text-muted-foreground flex-1 lg:text-right">
             Outcomes from students in our learning community
           </p>
         </div>

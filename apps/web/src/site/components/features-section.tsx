@@ -5,11 +5,11 @@ export function Features() {
   return (
     <section className="relative bg-background py-20" id="courses">
       <div className="container mx-auto flex flex-col gap-12">
-        <div className="flex justify-between w-full flex-col lg:flex-row gap-4 lg:items-end">
+        <div className="flex justify-between w-full flex-col lg:flex-row gap-8 lg:items-end">
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left flex-1">
             Our courses
           </h2>
-          <p className="text-lg text-muted-foreground flex-1">
+          <p className="text-lg text-muted-foreground flex-1 lg:text-right">
             We teach free courses to the public, online and in person.
           </p>
         </div>
