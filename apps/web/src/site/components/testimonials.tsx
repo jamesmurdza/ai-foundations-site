@@ -10,7 +10,7 @@ export function Testimonials() {
             What people say
           </h2>
           <p className="text-xl text-muted-foreground flex-1 lg:text-right">
-            Words from our students
+            Experiences from past students and participants
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
