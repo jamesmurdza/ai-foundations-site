@@ -32,12 +32,6 @@ export function Features() {
               title="AI Automation with no code"
             />
           </Link>
-          <Link href="/courses/git" className="block">
-            <FeatureCard
-              image="/images/python.avif"
-              title="Git & GitHub for Beginners"
-            />
-          </Link>
         </div>
       </div>
     </section>

@@ -24,25 +24,13 @@ export function Testimonials() {
           />
           <TestimonialCard
             name="Adithyakarthik"
-            text="This is truly something many of the students need in my university, as currently existing guides aren't exactly simple to read and understand and throw a lot of knowledge at once, overwhelming the student, excited to see your idea up and running!"
+            text="This is truly something many of the students need in my university, as existing guides aren't exactly simple to read and understand and throw a lot of knowledge at once, overwhelming the student."
             image="/images/Adityha.avif"
             username="captainion"
           />
           <TestimonialCard
-            name="Ankur"
-            text="I am doing my BE in Machine Learning, personally this will be super helpful."
-            image="/images/ankur.avif"
-            username="sandaankur"
-          />
-          <TestimonialCard
-            name="Miro"
-            text="It's a great series. I appreciate the format. Interactive small group learning seems to keep the speaker grounded and focused on the subject. Thanks!"
-            image="/images/default-avatar.png"
-            username="mirodj"
-          />
-          <TestimonialCard
             name="Pattern Trader"
-            text="Great initiative James. Look forward to the next class. I am myself a student of M Tech in AI & DS and it's always refreshing to see AI in various perspectives. This only reinforces the learning!"
+            text="Great initiative James. Look forward to the next class. I am myself a student of M Tech in AI & DS and it's always refreshing to see AI in various perspectives."
             image="/images/default-avatar.png"
             username="patterntrader"
           />
