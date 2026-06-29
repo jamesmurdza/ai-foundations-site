@@ -25,28 +25,30 @@ import { PulseFeed } from "@/components/PulseFeed";
 import { Popover } from "@/components/Popover";
 import { profileHref } from "@/lib/profileHref";
 
-const TABS = [
+// "stars" is a real tab but hidden — reachable only via ?tab=stars, never shown
+// as a pill.
+type TabKey = "showcase" | "people" | "stars";
+
+const TABS: { key: Exclude<TabKey, "stars">; label: string }[] = [
   { key: "showcase", label: "Showcase" },
   { key: "people", label: "Community" },
-] as const;
-
-type TabKey = (typeof TABS)[number]["key"];
+];
 
 // People + Activity are now one "Community" tab. Every old deep link — the
-// former Activity tab and the standalone map/stars/pulse/profiles routes — funnels
+// former Activity tab and the standalone map/pulse/profiles routes — funnels
 // into it so existing links keep working.
 const LEGACY_TABS: Record<string, TabKey> = {
   directory: "people",
   community: "people",
   activity: "people",
   map: "people",
-  stars: "people",
   pulse: "people",
 };
 
 function resolveTab(raw?: string): TabKey {
   // Showcase is the front door to Discover — the feed of what the cohort shipped.
   if (!raw) return "showcase";
+  if (raw === "stars") return "stars"; // hidden tab, deep-link only
   if (raw in LEGACY_TABS) return LEGACY_TABS[raw];
   return (TABS.find((t) => t.key === raw)?.key as TabKey) ?? "showcase";
 }
@@ -111,17 +113,34 @@ export default async function DiscoverPage({
 
       {tab === "showcase" && <ShowcaseTab weekId={sp.week} sort={sort} />}
       {tab === "people" && <CommunityTab sort={sort} />}
+      {tab === "stars" && <StarsTab />}
+    </div>
+  );
+}
+
+// The star board, on its own hidden tab (?tab=stars).
+async function StarsTab() {
+  const stars = await starLeaderboard();
+  return (
+    <div className="mx-auto max-w-[640px]">
+      <section className="card">
+        <h2 className="text-[22px] mb-1">Stars</h2>
+        <p className="meta mb-6">
+          The cohort crowdsources stars. Turn on Trade Stars and everyone who
+          opted in auto-stars cohort GitHub repo posts.
+        </p>
+        <StarBoard total={stars.total} rows={stars.rows} />
+      </section>
     </div>
   );
 }
 
 async function CommunityTab({ sort }: { sort: SortKey }) {
-  // One tab for the whole cohort: the map (people as dots), the star board, and
-  // the directory. The live pulse moved to the header popover.
-  const [people, mapPeople, stars] = await Promise.all([
+  // One tab for the whole cohort: the map (people as dots) and the directory.
+  // The live pulse moved to the header popover; the star board to ?tab=stars.
+  const [people, mapPeople] = await Promise.all([
     listProfiles(),
     listProfilesForMap(),
-    starLeaderboard(),
   ]);
   const withoutLocation = people.length - mapPeople.length;
   const countries = new Set(mapPeople.map((p) => p.countryDisplay)).size;
@@ -194,16 +213,6 @@ async function CommunityTab({ sort }: { sort: SortKey }) {
             ))}
           </div>
         )}
-      </section>
-
-      {/* The star board. */}
-      <section className="card">
-        <h2 className="text-[22px] mb-1">Stars</h2>
-        <p className="meta mb-6">
-          The cohort crowdsources stars. Turn on Trade Stars and everyone who
-          opted in auto-stars cohort GitHub repo posts.
-        </p>
-        <StarBoard total={stars.total} rows={stars.rows} />
       </section>
     </div>
   );
