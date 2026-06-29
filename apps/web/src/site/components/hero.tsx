@@ -23,7 +23,7 @@ export function Hero() {
             </span>
           </Link>
         </div>
-        <div className="flex flex-col items-center gap-6 pt-20 mb-4 border border-t-0 relative">
+        <div className="flex flex-col items-center gap-6 pt-20 pb-2 mb-4 border border-t-0 relative">
           <h1 className="text-center font-heading font-semibold tracking-tight text-balance max-w-3xl md:text-7xl text-5xl sm:text-6xl">
             Learn AI From the Ground Up
           </h1>
