@@ -65,7 +65,7 @@ export async function NavBar() {
                     profileHref={profileHref}
                   />
                 ) : (
-                  <Link href="/login" className="btn btn-primary btn-sm">
+                  <Link href="/" className="btn btn-primary btn-sm">
                     Sign in
                   </Link>
                 )}

@@ -76,7 +76,7 @@ export function MobileMenu({
                 </form>
               </>
             ) : (
-              <Link href="/login" onClick={close} className="btn btn-primary !py-3">
+              <Link href="/" onClick={close} className="btn btn-primary !py-3">
                 Sign in
               </Link>
             )}
