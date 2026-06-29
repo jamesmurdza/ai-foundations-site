@@ -8,7 +8,7 @@ import { FaqItem } from "@site/components/faq-item";
 
 export function Faq() {
   return (
-    <section className="py-20">
+    <section className="py-28">
       <div className="container flex flex-col items-start gap-10 md:flex-row">
         <div className="flex flex-col gap-3 items-start">
           <h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-4xl">
