@@ -7,7 +7,7 @@ export function Teachers() {
         <h2 className="text-[40px] font-heading font-bold text-center mb-20">
           The Teachers
         </h2>
-        <div className="grid md:grid-cols-2 gap-20 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
           {/* Naveed Card */}
           <div className="flex flex-col items-center">
             <div className="relative w-[200px] h-[200px] mb-8">
@@ -116,6 +116,67 @@ export function Teachers() {
               <a 
                 href="https://twitter.com" 
                 target="_blank" 
+                rel="noopener noreferrer"
+                className="opacity-50 hover:opacity-100 transition-opacity"
+              >
+                <Image
+                  src="/svgs/twitter-brands.svg"
+                  alt="Twitter"
+                  width={20}
+                  height={20}
+                  className="text-[#525252]"
+                />
+              </a>
+            </div>
+          </div>
+
+          {/* Burhan Card */}
+          <div className="flex flex-col items-center">
+            <div className="relative w-[200px] h-[200px] mb-8">
+              <Image
+                src="/images/Burhan.jpg"
+                alt="Burhan Khatri"
+                fill
+                className="object-cover rounded-full"
+              />
+            </div>
+            <div className="flex flex-col gap-3 text-center">
+              <p className="text-[17px] leading-[1.6] font-normal text-[#525252]">
+                <strong>Burhan Khatri</strong> is a final year CS student at FAST, an AI engineer at Astera, and a Microsoft Learn Student Ambassador.
+              </p>
+            </div>
+            <div className="flex items-center justify-center gap-8 mt-6">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-50 hover:opacity-100 transition-opacity"
+              >
+                <Image
+                  src="/svgs/youtube-brands.svg"
+                  alt="YouTube"
+                  width={20}
+                  height={20}
+                  className="text-[#525252]"
+                />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-50 hover:opacity-100 transition-opacity"
+              >
+                <Image
+                  src="/svgs/linkedin-brands.svg"
+                  alt="LinkedIn"
+                  width={20}
+                  height={20}
+                  className="text-[#525252]"
+                />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="opacity-50 hover:opacity-100 transition-opacity"
               >
