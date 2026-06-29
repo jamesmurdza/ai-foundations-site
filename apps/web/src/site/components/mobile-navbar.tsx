@@ -24,8 +24,14 @@ export function MobileNavbar({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <X /> : <Menu />}
+      <button
+        type="button"
+        className="md:hidden"
+        aria-label={isOpen ? "Close menu" : "Open menu"}
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
       </button>
       {isOpen && (
         <div

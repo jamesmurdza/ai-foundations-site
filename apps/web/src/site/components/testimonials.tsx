@@ -2,17 +2,15 @@ import { TestimonialCard } from "@site/components/testimonial-card";
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-muted/10">
-      <div className="container flex flex-col items-center gap-12">
-        <div className="flex flex-col items-center gap-4 max-w-2xl text-center">
-          <span className="font-medium text-primary/90 bg-primary/10 px-4 py-1 rounded-full text-sm">
-            Testimonials
-          </span>
-          <h2 className="font-heading text-3xl font-semibold tracking-tight text-balance sm:text-5xl">
-            What people say about us
+    <section className="bg-muted/10">
+      <div className="container">
+        <div className="border-x border-t mt-28 flex flex-col items-center gap-16 px-6 md:px-12 pt-12 pb-12">
+        <div className="flex w-full flex-col lg:flex-row lg:items-end justify-between gap-8">
+          <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left shrink-0">
+            What people say
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Outcomes from students in our learning community
+          <p className="text-xl text-muted-foreground flex-1 lg:text-right">
+            Experiences from past students and participants
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
@@ -34,6 +32,7 @@ export function Testimonials() {
             image="/images/default-avatar.png"
             username="patterntrader"
           />
+        </div>
         </div>
       </div>
     </section>

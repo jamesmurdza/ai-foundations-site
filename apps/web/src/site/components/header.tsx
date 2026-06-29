@@ -8,8 +8,8 @@ import { MobileNavItem } from "@site/components/mobile-nav-item";
 export function Header() {
   return (
     <header>
-      <div className="md:mt-4 container">
-        <div className="mx-2 md:mx-10 border-x px-6">
+      <div className="container">
+        <div className="border-x px-6">
           <div className="flex justify-between items-center w-full py-4 border-b">
             <Link href="/" className="flex items-center gap-3">
               <span className="font-heading text-xl font-bold">AI Foundations</span>

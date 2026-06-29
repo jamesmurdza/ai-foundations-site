@@ -64,15 +64,21 @@ const SOCIAL_ICONS: { key: keyof Social; src: string; alt: string }[] = [
 
 export function Teachers() {
   return (
-    <section className="py-24">
+    <section>
       <div className="container">
-        <h2 className="text-[40px] font-heading font-bold text-center mb-20">
-          The Teachers
-        </h2>
-        <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <div className="border-x border-t mt-28 px-6 md:px-12 pt-12 pb-12">
+        <div className="flex w-full flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
+          <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left shrink-0">
+            The Teachers
+          </h2>
+          <p className="text-xl text-muted-foreground flex-1 lg:text-right">
+            Get taught by professional AI and ML engineers
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-12">
           {TEACHERS.map((teacher) => (
             <div key={teacher.name} className="flex flex-col items-center">
-              <div className="relative w-[200px] h-[200px] mb-8">
+              <div className="relative w-[176px] h-[176px] mb-8">
                 <Image
                   src={teacher.image}
                   alt={teacher.name}
@@ -81,7 +87,7 @@ export function Teachers() {
                 />
               </div>
               <div className="flex flex-col gap-3 text-center">
-                <p className="text-[17px] leading-[1.6] font-normal text-[#525252]">
+                <p className="text-[17px] leading-[1.6] font-normal text-foreground/90">
                   {teacher.bio}
                 </p>
               </div>
@@ -95,21 +101,17 @@ export function Teachers() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`${teacher.name} on ${alt}`}
                       className="opacity-50 hover:opacity-100 transition-opacity"
                     >
-                      <Image
-                        src={src}
-                        alt={alt}
-                        width={20}
-                        height={20}
-                        className="text-[#525252]"
-                      />
+                      <Image src={src} alt="" width={20} height={20} />
                     </a>
                   );
                 })}
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>
