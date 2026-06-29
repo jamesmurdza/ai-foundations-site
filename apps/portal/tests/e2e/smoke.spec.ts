@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
 
-test("landing page renders hero + sign-in", async ({ page }) => {
+test("landing page is the sign-in card", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: /Build in public/i })).toBeVisible();
-  await expect(page.getByRole("button", { name: /Email me a sign-in code/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /^Sign in$/i })).toBeVisible();
+  await expect(page.getByRole("button", { name: /Email me a code/i })).toBeVisible();
 });
 
 test("public pages load", async ({ page }) => {
