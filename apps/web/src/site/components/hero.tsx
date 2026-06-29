@@ -31,30 +31,32 @@ export function Hero() {
         <div className="flex items-center justify-center gap-12 mt-8 py-6 border-x mx-2 md:mx-10 relative">
           <div className="flex flex-wrap gap-y-4 justify-center gap-x-16">
             <div className="flex items-center gap-2 justify-center">
-              <Brain className="w-5 h-5 text-[#5b2bee]" />
+              <Brain aria-hidden="true" className="w-5 h-5 text-[#5b2bee]" />
               <span className="text-muted-foreground">Machine Learning</span>
             </div>
             <div className="flex items-center gap-2 justify-center">
-              <Code className="w-5 h-5 text-[#5b2bee]" />
+              <Code aria-hidden="true" className="w-5 h-5 text-[#5b2bee]" />
               <span className="text-muted-foreground">AI Automation</span>
             </div>
             <div className="flex items-center gap-2 justify-center">
-              <CircuitBoard className="w-5 h-5 text-[#5b2bee]" />
+              <CircuitBoard aria-hidden="true" className="w-5 h-5 text-[#5b2bee]" />
               <span className="text-muted-foreground">AI Engineering</span>
             </div>
           </div>
           <Sparkle
+            aria-hidden="true"
             size={20}
             className="absolute left-0 -translate-x-1/2 fill-foreground top-0 -translate-y-1/2"
           />
           <Sparkle
+            aria-hidden="true"
             size={20}
             className="absolute fill-foreground right-0 translate-x-1/2 top-0 -translate-y-1/2"
           />
         </div>
 
         <div className="p-10">
-          <Image alt="Image" src="/images/main-image.png" width={1795} height={876} className="rounded-lg border border-border" />
+          <Image alt="Preview of the AI Foundations learning platform" src="/images/main-image.png" width={1795} height={876} priority className="rounded-lg border border-border" />
         </div>
         <div className="flex flex-col items-center gap-6 mb-12 text-center">
           <h2 className="text-xl md:text-2xl font-sans text-[#888888] max-w-2xl mx-auto leading-relaxed font-medium px-4">
@@ -65,7 +67,11 @@ export function Hero() {
             method="post"
             className="flex flex-col sm:flex-row w-full max-w-lg gap-3 px-4"
           >
+            <label htmlFor="hero-email" className="sr-only">
+              Email address
+            </label>
             <input
+              id="hero-email"
               type="email"
               name="email"
               placeholder="name@email.com"

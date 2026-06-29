@@ -95,11 +95,12 @@ export function Teachers() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`${teacher.name} on ${alt}`}
                       className="opacity-50 hover:opacity-100 transition-opacity"
                     >
                       <Image
                         src={src}
-                        alt={alt}
+                        alt=""
                         width={20}
                         height={20}
                         className="text-[#525252]"
