@@ -59,8 +59,8 @@ export function Hero() {
           <Image alt="Preview of the AI Foundations learning platform" src="/images/main-image.png" width={1795} height={876} priority className="rounded-lg border border-border" />
         </div>
         <div className="flex flex-col items-center gap-6 mb-12 text-center">
-          <h2 className="text-xl md:text-2xl font-sans text-[#888888] max-w-2xl mx-auto leading-relaxed font-medium px-4">
-            <span className="text-zinc-700 font-semibold">AI Foundations</span> is an online school where you learn to build AI models from first principles alongside professional mentors and new friends
+          <h2 className="text-xl md:text-2xl font-sans text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium px-4">
+            <span className="text-foreground font-semibold">AI Foundations</span> is an online school where you learn to build AI models from first principles alongside professional mentors and new friends
           </h2>
           <form
             action="https://aifoundations.tinysend.com/subscribe"

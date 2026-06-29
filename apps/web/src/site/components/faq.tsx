@@ -11,14 +11,11 @@ export function Faq() {
     <section className="py-20">
       <div className="container flex flex-col items-start gap-10 md:flex-row">
         <div className="flex flex-col gap-3 items-start">
-          <div className="flex flex-col gap-2">
-            <span className="font-bold text-primary">Faq</span>
-            <h2 className="font-heading text-3xl font-semibold tracking-tight sm:text-5xl">
-              Frequently Asked Questions
-            </h2>
-          </div>
-          <p className="text-muted-foreground text-lg flex-1 max-w-2xl mt-2 hidden">
-            From freelancers to agencies, Divhunt is the best website builder for{" "}
+          <h2 className="font-heading text-3xl font-semibold tracking-tight sm:text-5xl">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            Everything you need to know about our courses and classes.
           </p>
           <a href="mailto:contact@aifoundations.school">
             <Button className="mt-4 gap-2 font-semibold">

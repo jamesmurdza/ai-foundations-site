@@ -66,9 +66,14 @@ export function Teachers() {
   return (
     <section className="py-24">
       <div className="container">
-        <h2 className="text-[40px] font-heading font-bold text-center mb-20">
-          The Teachers
-        </h2>
+        <div className="flex flex-col items-center gap-4 max-w-2xl text-center mx-auto mb-16">
+          <h2 className="font-heading text-3xl sm:text-5xl font-semibold tracking-tight text-balance">
+            The Teachers
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Learn from working engineers and educators who build and teach every day.
+          </p>
+        </div>
         <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
           {TEACHERS.map((teacher) => (
             <div key={teacher.name} className="flex flex-col items-center">
@@ -81,7 +86,7 @@ export function Teachers() {
                 />
               </div>
               <div className="flex flex-col gap-3 text-center">
-                <p className="text-[17px] leading-[1.6] font-normal text-[#525252]">
+                <p className="text-[17px] leading-[1.6] font-normal text-muted-foreground">
                   {teacher.bio}
                 </p>
               </div>
@@ -98,13 +103,7 @@ export function Teachers() {
                       aria-label={`${teacher.name} on ${alt}`}
                       className="opacity-50 hover:opacity-100 transition-opacity"
                     >
-                      <Image
-                        src={src}
-                        alt=""
-                        width={20}
-                        height={20}
-                        className="text-[#525252]"
-                      />
+                      <Image src={src} alt="" width={20} height={20} />
                     </a>
                   );
                 })}

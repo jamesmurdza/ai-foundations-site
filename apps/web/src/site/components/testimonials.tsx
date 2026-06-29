@@ -5,9 +5,6 @@ export function Testimonials() {
     <section className="py-24 bg-muted/10">
       <div className="container flex flex-col items-center gap-12">
         <div className="flex flex-col items-center gap-4 max-w-2xl text-center">
-          <span className="font-medium text-primary/90 bg-primary/10 px-4 py-1 rounded-full text-sm">
-            Testimonials
-          </span>
           <h2 className="font-heading text-3xl font-semibold tracking-tight text-balance sm:text-5xl">
             What people say about us
           </h2>
