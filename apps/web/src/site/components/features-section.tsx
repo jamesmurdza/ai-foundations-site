@@ -33,6 +33,12 @@ export function Features() {
               title="AI Automation with no code"
             />
           </Link>
+          <Link href="/courses/minecraft-ai" className="block h-full">
+            <FeatureCard
+              image="/images/minecraft.png"
+              title="Hacking Minecraft with AI"
+            />
+          </Link>
         </div>
         </div>
       </div>

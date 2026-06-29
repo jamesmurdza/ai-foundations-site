@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Check, ChevronDown } from "lucide-react";
+import { Check, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import type { Course, Lesson, ResolvedTab } from "@site/lib/courses";
 import { Transcript } from "@site/components/Transcript";
 import { Markdown } from "@site/components/Markdown";
@@ -56,6 +56,14 @@ export function LessonView({
     lesson.resources && lesson.resources.length > 0 ? lesson.resources : (course.resources ?? []);
 
   const active = tabs[activeTab];
+
+  // Previous / next lesson for the bottom navigation.
+  const currentIndex = course.lessons.findIndex((l) => l.id === lesson.id);
+  const prevLesson = currentIndex > 0 ? course.lessons[currentIndex - 1] : undefined;
+  const nextLesson =
+    currentIndex >= 0 && currentIndex < course.lessons.length - 1
+      ? course.lessons[currentIndex + 1]
+      : undefined;
 
   const renderTab = (tab: ResolvedTab) => {
     switch (tab.kind) {
@@ -169,6 +177,43 @@ export function LessonView({
         <div role="tabpanel" className="min-h-[8rem] pt-2">
           {renderTab(active)}
         </div>
+      )}
+
+      {(prevLesson || nextLesson) && (
+        <nav
+          aria-label="Lesson navigation"
+          className="mt-8 flex items-center justify-between gap-3 border-t pt-6"
+        >
+          {prevLesson ? (
+            <Link
+              href={`/courses/${course.slug}/${prevLesson.id}`}
+              className="group flex items-center gap-2 rounded-lg border p-3 transition-colors hover:bg-slate-50 sm:max-w-[20rem]"
+            >
+              <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-0.5" />
+              <span className="text-sm font-medium sm:hidden">Back</span>
+              <span className="hidden min-w-0 sm:block">
+                <span className="block text-xs text-muted-foreground">Previous</span>
+                <span className="block truncate text-sm font-medium">{prevLesson.title}</span>
+              </span>
+            </Link>
+          ) : (
+            <span aria-hidden />
+          )}
+
+          {nextLesson && (
+            <Link
+              href={`/courses/${course.slug}/${nextLesson.id}`}
+              className="group flex items-center gap-2 rounded-lg border p-3 transition-colors hover:bg-slate-50 sm:max-w-[20rem] sm:text-right"
+            >
+              <span className="text-sm font-medium sm:hidden">Next</span>
+              <span className="hidden min-w-0 sm:block">
+                <span className="block text-xs text-muted-foreground">Next</span>
+                <span className="block truncate text-sm font-medium">{nextLesson.title}</span>
+              </span>
+              <ChevronRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          )}
+        </nav>
       )}
     </div>
   );
