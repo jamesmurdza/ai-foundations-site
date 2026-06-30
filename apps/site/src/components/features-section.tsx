@@ -21,28 +21,14 @@ export function Features() {
             />
           </Link>
           <Link href="/courses/ai-agent-camp" className="block">
-            <FeatureCard
-              image="/images/python.avif"
-              title="AI Agents in Python"
-            />
+            <FeatureCard image="/images/python.avif" title="AI Agents in Python" />
+          </Link>
+
+          <Link href="/courses/minecraft-ai" className="block">
+            <FeatureCard image="/images/minecraft.png" title="Hacking Minecraft with AI" />
           </Link>
           <Link href="/courses/ai-agent-camp-nocode" className="block">
-            <FeatureCard
-              image="/images/nocode.avif"
-              title="AI Automation with no code"
-            />
-          </Link>
-          <Link href="/courses/git" className="block">
-            <FeatureCard
-              image="/images/python.avif"
-              title="Git & GitHub for Beginners"
-            />
-          </Link>
-          <Link href="/courses/minecraft-ai" className="block">
-            <FeatureCard
-              image="/images/main-image.avif"
-              title="Hacking Minecraft with AI"
-            />
+            <FeatureCard image="/images/nocode.avif" title="AI Automation with no code" />
           </Link>
         </div>
       </div>
