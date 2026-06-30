@@ -13,9 +13,10 @@ export const CONTRIBUTION_BRIEF = {
   title: "Week 3: Contribute to open source",
   intro:
     "Open source runs the modern world — and it has changed a lot. Today a single good pull request can put your name on a project thousands of people use. Contributing is one of the fastest ways to learn from real codebases, get noticed, and build a portfolio that isn't only your own repos.",
+  // Page 1 — contribute to a peer's project, then open the pull request.
   sections: [
     {
-      heading: "Level 1 — contribute to a peer's project",
+      heading: "Contribute to a peer's project",
       items: [
         {
           key: "find",
@@ -53,14 +54,14 @@ export const CONTRIBUTION_BRIEF = {
       ],
     },
   ],
-  // A separate, optional step shown below Level 1 — Level 2 is extra credit.
-  extraCredit: {
-    heading: "Extra credit · Level 2",
+  // Page 2 — an optional second contribution to a tool you actually use.
+  goFurther: {
+    heading: "Go further (optional)",
     items: [
       {
         key: "tool",
         label:
-          "Go further — open a pull request on an open-source tool or product you actually use",
+          "Open a pull request on an open-source tool or product you actually use",
       },
     ],
   },
@@ -68,12 +69,12 @@ export const CONTRIBUTION_BRIEF = {
     "A contribution doesn't have to be big to matter — the best first PRs are small, clear, and finished.",
 };
 
-/** Done-state for each brief item (incl. the extra-credit step), from saved completions. */
+/** Done-state for each brief item (incl. the optional second step), from saved completions. */
 export function buildContributionBriefDone(
   completions: ReadonlyMap<string, boolean>,
 ): Record<string, boolean> {
   const done: Record<string, boolean> = {};
-  const groups = [...CONTRIBUTION_BRIEF.sections, CONTRIBUTION_BRIEF.extraCredit];
+  const groups = [...CONTRIBUTION_BRIEF.sections, CONTRIBUTION_BRIEF.goFurther];
   for (const section of groups) {
     for (const item of section.items) {
       done[item.key] = completions.get(contributionStepKey(item.key)) ?? false;

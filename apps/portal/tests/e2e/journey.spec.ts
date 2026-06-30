@@ -19,7 +19,8 @@ test("submit a GitHub profile from home → confirmation → showcase", async ({
   await page.goto("/home");
   await expect(page.locator("#assignment")).toBeVisible();
 
-  // Step 1 → step 2 (the personal README + submission page).
+  // Step 1 (basics) → step 2 (README) → step 3 (GitWit review + submission).
+  await page.getByRole("button", { name: /next/i }).click();
   await page.getByRole("button", { name: /next/i }).click();
   await page.fill('input[name="payload"]', "https://github.com/octocat/octocat");
   await page.getByRole("button", { name: /^submit$/i }).click();

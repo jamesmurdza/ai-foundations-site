@@ -13,7 +13,7 @@ export function FeatureCard({ title, image, className }: FeatureCardProps) {
   return (
     <Card className={cn("p-6 rounded-lg border-0 bg-transparent shadow-none h-full flex flex-col", className)}>
       <div
-        className="mb-6 w-full h-64 relative rounded-2xl overflow-hidden"
+        className="mb-6 w-full h-72 relative rounded-2xl overflow-hidden"
         style={{
           backgroundColor: "#ffffff",
           backgroundImage:
@@ -24,7 +24,7 @@ export function FeatureCard({ title, image, className }: FeatureCardProps) {
       >
         <Image alt={`${title} course`} src={image} fill className="object-contain" />
       </div>
-      <h3 className="font-heading text-xl font-semibold">{title}</h3>
+      <h3 className="font-heading text-xl font-semibold text-center">{title}</h3>
     </Card>
   );
 }
