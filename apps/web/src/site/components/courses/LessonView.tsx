@@ -203,7 +203,7 @@ export function LessonView({
           {nextLesson && (
             <Link
               href={`/courses/${course.slug}/${nextLesson.id}`}
-              className="group flex items-center gap-2 rounded-lg border p-3 transition-colors hover:bg-slate-50 sm:max-w-[20rem] sm:text-right"
+              className="group flex items-center justify-between gap-3 rounded-lg border p-3 transition-colors hover:bg-slate-50 sm:max-w-[20rem] sm:justify-end sm:text-right"
             >
               <span className="text-sm font-medium sm:hidden">Next</span>
               <span className="hidden min-w-0 sm:block">
