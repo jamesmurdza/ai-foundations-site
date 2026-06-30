@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #ffffff;
+  --color-parchment: #f5f5f7;
+  --color-pearl: #fafafc;
+  --color-ink: #1d1d1f;
+  --color-ink-80: #333333;
+  --color-ink-48: #7a7a7a;
+  --color-hairline: #e0e0e0;
+  --color-divider: #f0f0f0;
+  --color-action: #0066cc;
+  --color-action-focus: #0071e3;
+  --color-tile: #272729;
+  --color-map-empty: #f1f1f3;
+  --color-map-empty-hover: #e6e7ea;
+  --color-map-border: #ffffff;
+
+  --color-status-pending: #6e6e73;
+  --color-status-accepted: #2da44e;
+  --color-status-rejected: #cf222e;
+  --color-status-waitlist: #bf8700;
+
+  --font-display: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-text: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+
+  --radius-xs: 5px;
+  --radius-sm: 8px;
+  --radius-md: 11px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+}
+
+:root {
+  --background: var(--color-canvas);
+  --foreground: var(--color-ink);
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* Dark theme — flip the token values so every utility (bg-canvas, text-ink,
+   border-hairline, …) follows automatically without touching markup. */
+html[data-theme="dark"] {
+  --color-canvas: #0b0d11;
+  --color-parchment: #14171c;
+  --color-pearl: #16191f;
+  --color-ink: #f3f4f7;
+  --color-ink-80: #c7cad1;
+  --color-ink-48: #8a8f99;
+  --color-hairline: #2a2e36;
+  --color-divider: #1d2027;
+  /* Picked so white text on bg-action clears WCAG AA (≥4.5:1) and the
+     button still pops against the dark canvas. */
+  --color-action: #0a84ff;
+  --color-action-focus: #3399ff;
+  --color-tile: #1a1d23;
+  --color-map-empty: #1d2027;
+  --color-map-empty-hover: #272b33;
+  --color-map-border: #0b0d11;
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-text);
+  font-feature-settings: "ss03", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-size: 17px;
+  line-height: 1.47;
+  letter-spacing: -0.01em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  line-height: 1.1;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--color-action);
+  color: white;
+}
+
+@keyframes hh-toast-in {
+  from {
+    transform: translateY(6px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
