@@ -11,19 +11,23 @@ import {
 
 type Section = (typeof GITHUB_PROFILE_BRIEF.sections)[number];
 
-// Week 1 as a two-step flow: profile basics (page 1), then the personal
-// README + submission (page 2). Checkbox state persists per item.
+// Week 1 as a linear three-step flow: profile basics (page 1), the personal
+// README (page 2), then an optional GitWit review of your profile right before
+// you submit (page 3). Checkbox state persists per item.
 export function GitHubProfileSteps({
   weekId,
   done: initialDone,
   actions,
   formFields,
+  review,
   submitAction,
 }: {
   weekId: string;
   done: Record<string, boolean>;
   actions?: ReactNode;
   formFields: ReactNode;
+  /** The "Ask GitWit to review" panel, shown as a step before submitting. */
+  review?: ReactNode;
   submitAction: (formData: FormData) => void | Promise<void>;
 }) {
   const [done, setDone] = useState(initialDone);
@@ -88,7 +92,7 @@ export function GitHubProfileSteps({
         )}
       </div>
 
-      {step === 1 ? (
+      {step === 1 && (
         <>
           <p className="text-[15px] leading-relaxed">
             {GITHUB_PROFILE_BRIEF.intro}
@@ -122,7 +126,9 @@ export function GitHubProfileSteps({
             </button>
           </div>
         </>
-      ) : (
+      )}
+
+      {step === 2 && (
         <>
           <p className="text-[15px] leading-relaxed">
             Your profile README lives in a special public repository named
@@ -150,12 +156,39 @@ export function GitHubProfileSteps({
             </a>
             .
           </p>
+          <div className="mt-6 flex items-center justify-between">
+            <button
+              type="button"
+              onClick={() => setStep(1)}
+              className="btn btn-ghost !px-2"
+            >
+              ← Back
+            </button>
+            <button
+              type="button"
+              onClick={() => setStep(3)}
+              className="btn btn-primary"
+            >
+              Next →
+            </button>
+          </div>
+        </>
+      )}
+
+      {step === 3 && (
+        <>
+          <p className="text-[15px] leading-relaxed">
+            Before you submit, let GitWit take a quick look at your profile — an
+            AI read of the seven essentials, so you can round it out now rather
+            than later.
+          </p>
+          {review}
           <form action={submitAction} className="space-y-4 mt-6">
             {formFields}
             <div className="flex items-center justify-between pt-4">
               <button
                 type="button"
-                onClick={() => setStep(1)}
+                onClick={() => setStep(2)}
                 className="btn btn-ghost !px-2"
               >
                 ← Back

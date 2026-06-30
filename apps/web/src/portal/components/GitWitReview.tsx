@@ -49,9 +49,9 @@ function Section({
 
 /**
  * "Ask GitWit to review" — an opt-in AI read of the participant's GitHub profile
- * on the Week 1 congrats screen. Stays hidden behind a trigger (design.md:
- * secondary content is progressive). When the profile already passes, it
- * celebrates rather than inventing a to-do list.
+ * shown as a step in the Week 1 submission flow, just before they submit. Stays
+ * hidden behind a trigger (design.md: secondary content is progressive). When
+ * the profile already passes, it celebrates rather than inventing a to-do list.
  */
 export function GitWitReview({ assignmentId }: { assignmentId: string }) {
   const [result, setResult] = useState<GitWitReviewResult | null>(null);

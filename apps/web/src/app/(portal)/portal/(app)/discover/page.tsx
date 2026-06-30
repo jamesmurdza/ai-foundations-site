@@ -1,4 +1,5 @@
 import Link from "@portal/components/Link";
+import { Radio } from "lucide-react";
 import {
   getWeek,
   listProfiles,
@@ -17,35 +18,37 @@ import { maxUnlockedWeek } from "@portal/lib/weekRoutes";
 import { rankByNeed } from "@portal/lib/compliments";
 import { listEvents } from "@portal/lib/events";
 import { Avatar } from "@portal/components/Avatar";
-import { AutoStarsToggle } from "@portal/components/AutoStarsToggle";
 import { SubmissionFeedPost } from "@portal/components/SubmissionFeedPost";
 import { WorldMap } from "@portal/components/WorldMap";
 import { StarBoard } from "@portal/components/StarBoard";
 import { PulseFeed } from "@portal/components/PulseFeed";
+import { Popover } from "@portal/components/Popover";
 import { profileHref } from "@portal/lib/profileHref";
 
-const TABS = [
+// "stars" is a real tab but hidden — reachable only via ?tab=stars, never shown
+// as a pill.
+type TabKey = "showcase" | "people" | "stars";
+
+const TABS: { key: Exclude<TabKey, "stars">; label: string }[] = [
   { key: "showcase", label: "Showcase" },
   { key: "people", label: "Community" },
-] as const;
-
-type TabKey = (typeof TABS)[number]["key"];
+];
 
 // People + Activity are now one "Community" tab. Every old deep link — the
-// former Activity tab and the standalone map/stars/pulse/profiles routes — funnels
+// former Activity tab and the standalone map/pulse/profiles routes — funnels
 // into it so existing links keep working.
 const LEGACY_TABS: Record<string, TabKey> = {
   directory: "people",
   community: "people",
   activity: "people",
   map: "people",
-  stars: "people",
   pulse: "people",
 };
 
 function resolveTab(raw?: string): TabKey {
   // Showcase is the front door to Discover — the feed of what the cohort shipped.
   if (!raw) return "showcase";
+  if (raw === "stars") return "stars"; // hidden tab, deep-link only
   if (raw in LEGACY_TABS) return LEGACY_TABS[raw];
   return (TABS.find((t) => t.key === raw)?.key as TabKey) ?? "showcase";
 }
@@ -67,52 +70,65 @@ export default async function DiscoverPage({
   const sp = await searchParams;
   const tab = resolveTab(sp.tab);
   const sort = resolveSort(sp.sort);
-  const { user, profile } = await getSessionContext();
-  const autoStarsEnabled = Boolean(profile?.tradeStarsEnabled);
-  // Trade Stars needs a connected GitHub (access token) to actually star.
-  const canTradeStars = Boolean(profile && user?.accessToken);
+  // The live pulse is a cohort-wide view, so it lives in a header popover (like
+  // the Q&A popover in lessons) rather than inside any one tab.
+  const events = await listEvents(150);
 
   return (
     <div className="py-2">
-      <div className="mx-auto max-w-[880px] text-center mb-6">
-        <h1 className="text-[34px] mb-1">Discover</h1>
-        <p className="meta mb-4 mx-auto max-w-[60ch]">
-          The cohort — who&apos;s here, what they&apos;ve shipped, and what&apos;s
-          happening right now.
-        </p>
-
-        <div className="flex justify-center flex-wrap gap-2 mb-4">
-          {TABS.map((t) => (
-            <Link
-              key={t.key}
-              href={`/discover?tab=${t.key}`}
-              className={`pill ${tab === t.key ? "bg-signal-blue text-white" : "bg-ice-tint text-slate-channel"}`}
-            >
-              {t.label}
-            </Link>
-          ))}
+      <div className="relative mb-6">
+        <div className="absolute right-0 top-0">
+          <Popover icon={<Radio size={19} aria-hidden />} label="Live" width={380}>
+            <div className="mb-3 flex items-center gap-2">
+              <span className="badge badge-teal"><span className="live-dot" /> live</span>
+              <span className="meta text-[13px]">
+                Everything happening across the cohort, in real time.
+              </span>
+            </div>
+            <div className="max-h-[60vh] overflow-y-auto pr-1">
+              <PulseFeed events={events} />
+            </div>
+          </Popover>
         </div>
-
-        <AutoStarsToggle
-          initialEnabled={autoStarsEnabled}
-          canToggle={canTradeStars}
-        />
+        <div className="mx-auto max-w-[880px] text-center">
+          <h1 className="text-[34px] mb-1">Discover</h1>
+          <p className="meta mx-auto max-w-[60ch]">
+            The cohort — who&apos;s here, what they&apos;ve shipped, and what&apos;s
+            happening right now.
+          </p>
+        </div>
       </div>
 
       {tab === "showcase" && <ShowcaseTab weekId={sp.week} sort={sort} />}
       {tab === "people" && <CommunityTab sort={sort} />}
+      {tab === "stars" && <StarsTab />}
+    </div>
+  );
+}
+
+// The star board, on its own hidden tab (?tab=stars).
+async function StarsTab() {
+  const stars = await starLeaderboard();
+  return (
+    <div className="mx-auto max-w-[640px]">
+      <section className="card">
+        <h2 className="text-[22px] mb-1">Stars</h2>
+        <p className="meta mb-6">
+          The cohort crowdsources stars. Turn on Trade Stars and everyone who
+          opted in auto-stars cohort GitHub repo posts.
+        </p>
+        <StarBoard total={stars.total} rows={stars.rows} />
+      </section>
     </div>
   );
 }
 
 async function CommunityTab({ sort }: { sort: SortKey }) {
-  // One tab for the whole cohort: the map (people as dots), the live pulse, the
-  // star board, and the directory. Fetch it all in parallel.
-  const [people, mapPeople, stars, events] = await Promise.all([
+  // One tab for the whole cohort: the map (people as dots) and the directory.
+  // The live pulse moved to the header popover; the star board to ?tab=stars.
+  const [people, mapPeople] = await Promise.all([
     listProfiles(),
     listProfilesForMap(),
-    starLeaderboard(),
-    listEvents(150),
   ]);
   const withoutLocation = people.length - mapPeople.length;
   const countries = new Set(mapPeople.map((p) => p.countryDisplay)).size;
@@ -186,29 +202,6 @@ async function CommunityTab({ sort }: { sort: SortKey }) {
           </div>
         )}
       </section>
-
-      {/* What's happening — live pulse + the star board. */}
-      <div className="grid lg:grid-cols-5 gap-6">
-        <section className="lg:col-span-3 card">
-          <div className="flex items-center justify-between mb-3">
-            <h2 className="text-[22px]">Live</h2>
-            <span className="badge badge-teal"><span className="live-dot" /> live</span>
-          </div>
-          <p className="meta mb-4">Everything happening across the cohort, in real time.</p>
-          <div className="max-h-[560px] overflow-y-auto pr-1">
-            <PulseFeed events={events} />
-          </div>
-        </section>
-
-        <section className="lg:col-span-2 card">
-          <h2 className="text-[22px] mb-1">Stars</h2>
-          <p className="meta mb-6">
-            The cohort crowdsources stars. Turn on Trade Stars and everyone who
-            opted in auto-stars cohort GitHub repo posts.
-          </p>
-          <StarBoard total={stars.total} rows={stars.rows} />
-        </section>
-      </div>
     </div>
   );
 }

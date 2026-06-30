@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "@portal/components/Link";
-import { usePathname } from "@portal/lib/nav";
+import { usePathname } from "@portal/lib/use-pathname";
 
 const TABS: [string, string][] = [
   ["Stream", "/admin"],
