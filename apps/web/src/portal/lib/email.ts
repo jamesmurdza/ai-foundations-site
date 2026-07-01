@@ -102,7 +102,7 @@ export async function sendEmail(args: SendArgs): Promise<SendResult> {
 /* ---- Templates ----------------------------------------------------------- */
 
 const BRAND = "#292929";
-const ACCENT = "#9333ea";
+const ACCENT = "#5b2bee";
 
 function shell(title: string, body: string, cta?: { href: string; label: string }) {
   return `

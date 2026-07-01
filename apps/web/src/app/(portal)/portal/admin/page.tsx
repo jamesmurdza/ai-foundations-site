@@ -103,7 +103,7 @@ export default async function AdminStreamPage() {
       {/* Stream */}
       <h2 className="text-heading mb-4">Stream</h2>
       {posts.length === 0 ? (
-        <div className="card meta">No announcements yet. Post the first one above.</div>
+        <p className="meta">No announcements yet.</p>
       ) : (
         <div className="space-y-4">
           {posts.map((p) => (

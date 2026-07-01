@@ -31,14 +31,12 @@ export function ReadmeEditor({
   }
 
   return (
-    <div id="readme" className="rounded-2xl border border-sea-fog p-4 space-y-4 scroll-mt-24">
+    <div id="readme" className="rounded-cards border border-sea-fog p-4 space-y-4 scroll-mt-24">
       <div>
         <div className="label mb-1">GitHub profile README</div>
         <p className="meta text-[14px]">
-          This is the README at the top of your GitHub profile. It&apos;s what
-          people see on{" "}
-          <span className="font-mono text-[13px]">/users/{login}</span> here
-          too.
+          Shown atop your GitHub profile and on{" "}
+          <span className="font-mono text-[13px]">/users/{login}</span> here.
         </p>
       </div>
 

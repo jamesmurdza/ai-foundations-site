@@ -103,8 +103,10 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...sansFallback],
-        heading: ["var(--font-heading)", ...sansFallback],
+        // Next.js font CSS variables are named the same in both zones
+        // (--font-inter / --font-schibsted); see the (site) and (portal) layouts.
+        sans: ["var(--font-inter)", ...sansFallback],
+        heading: ["var(--font-schibsted)", ...sansFallback],
       },
     },
   },

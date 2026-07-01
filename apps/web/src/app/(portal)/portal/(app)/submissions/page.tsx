@@ -36,10 +36,7 @@ export default async function MySubmissionsPage() {
       <div className="flex items-end justify-between gap-4 mb-8">
         <div>
           <h1 className="text-[34px] mb-1">Your work</h1>
-          <p className="meta">
-            Everything you&apos;ve shipped — with the feedback peers left. Open
-            any one to keep editing it, even after its deadline.
-          </p>
+          <p className="meta">Everything you&apos;ve shipped, with peer feedback.</p>
         </div>
         <Link href="/home" className="btn btn-outline btn-sm">
           Home →
@@ -47,13 +44,13 @@ export default async function MySubmissionsPage() {
       </div>
 
       {submissions.length === 0 ? (
-        <div className="card meta">
-          Nothing submitted yet.{" "}
+        <p className="meta">
+          Nothing here yet —{" "}
           <Link href="/home" className="link">
-            Go to Home
-          </Link>{" "}
-          to get on the board.
-        </div>
+            start on Home
+          </Link>
+          .
+        </p>
       ) : (
         <div className="space-y-5">
           {submissions.map((item, i) => {

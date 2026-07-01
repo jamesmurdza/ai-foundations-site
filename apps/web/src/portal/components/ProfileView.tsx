@@ -123,12 +123,12 @@ export function ProfileView({
       {readme && <div className="mt-6">{readme}</div>}
 
       {/* Goals */}
-      <section className="grid md:grid-cols-2 gap-4 mt-6">
-        <div className="card">
+      <section className="grid md:grid-cols-2 gap-x-10 gap-y-6 mt-8">
+        <div>
           <div className="label">🏅 Proud of</div>
           <p className="text-[16px]">{profile.proudOf || <span className="meta">—</span>}</p>
         </div>
-        <div className="card">
+        <div>
           <div className="flex items-center justify-between">
             <div className="label">🎯 Wants to achieve</div>
             {profile.achieved && (
@@ -148,7 +148,7 @@ export function ProfileView({
 
       {/* Glow-up */}
       {glow?.intake && (
-        <section className="card mt-6">
+        <section className="mt-8 pt-8 hairline">
           <div className="label mb-3">GitHub glow-up ✨ — intake vs now</div>
           <div className="grid grid-cols-3 gap-4 text-center">
             <Glow label="Stars" from={glow.intake.totalStars} to={glow.latest?.totalStars ?? glow.intake.totalStars} />
@@ -179,7 +179,7 @@ export function ProfileView({
       <section className="mt-8">
         <h2 className="text-heading mb-4">Projects</h2>
         {submissions.length === 0 ? (
-          <div className="card meta">No projects shipped yet.</div>
+          <p className="meta">No projects shipped yet.</p>
         ) : (
           <div className="grid md:grid-cols-2 gap-4">
             {submissions.map((s) => (
@@ -190,7 +190,7 @@ export function ProfileView({
       </section>
 
       {/* Comments — peers leaving a note on this profile */}
-      <section className="mt-8 card !p-7">
+      <section className="mt-10 pt-8 hairline">
         <CommentThread
           targetType="profile"
           targetId={profile.id}
