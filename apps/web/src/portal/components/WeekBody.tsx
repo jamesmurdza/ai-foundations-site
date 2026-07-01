@@ -48,34 +48,31 @@ export async function WeekBody({
   return (
     <div className="space-y-6">
       {embed && (
-        <>
-          <div className="card !p-0 overflow-hidden">
-            <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
-              <iframe
-                src={embed}
-                className="absolute inset-0 w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title={`Week ${week.number} stream`}
-              />
-            </div>
+        <div className="card !p-0 overflow-hidden">
+          <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
+            <iframe
+              src={embed}
+              className="absolute inset-0 w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title={`Week ${week.number} stream`}
+            />
           </div>
-
-          <div className="card">
+          <div className="p-5 border-t border-border">
             <StreamPresence weekId={week.id} />
             <div className="flex items-center justify-between mb-3">
               <span className="badge badge-teal">👀 {viewers} watching</span>
             </div>
             <StreamReactions weekId={week.id} initial={reactions} />
           </div>
-        </>
+        </div>
       )}
 
       {materials.length > 0 && (
-        <div className="card">
+        <section>
           <h2 className="text-[20px] mb-3">Materials</h2>
           <AttachmentList items={materials} showTitle={false} />
-        </div>
+        </section>
       )}
 
       {includeQa && (

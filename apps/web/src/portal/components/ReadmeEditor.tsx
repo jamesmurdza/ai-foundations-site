@@ -31,7 +31,7 @@ export function ReadmeEditor({
   }
 
   return (
-    <div id="readme" className="rounded-2xl border border-sea-fog p-4 space-y-4 scroll-mt-24">
+    <div id="readme" className="rounded-cards border border-sea-fog p-4 space-y-4 scroll-mt-24">
       <div>
         <div className="label mb-1">GitHub profile README</div>
         <p className="meta text-[14px]">

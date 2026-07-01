@@ -95,7 +95,7 @@ export function SubmissionFeedPost({
           rel="noreferrer"
           className="block px-4 group"
         >
-          <div className="rounded-xl border border-border bg-ice-tint/40 p-5 transition-colors group-hover:border-signal-blue/40">
+          <div className="rounded-xl bg-ice-tint/60 p-5 transition-colors group-hover:bg-primary-soft">
             <div className="flex items-center gap-2 text-[13px] font-semibold text-slate-channel mb-2">
               <SourceIcon size={15} className="shrink-0" />
               <span className="truncate">{label}</span>
@@ -112,7 +112,7 @@ export function SubmissionFeedPost({
         </a>
       ) : (
         <div className="px-4">
-          <div className="rounded-xl border border-border bg-ice-tint/40 p-5">
+          <div className="rounded-xl bg-ice-tint/60 p-5">
             <p className="meta whitespace-pre-wrap line-clamp-6 text-[14px]">
               {s.payload}
             </p>
