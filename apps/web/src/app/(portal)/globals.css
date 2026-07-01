@@ -125,16 +125,17 @@ h1, h2, h3, h4 {
     border-color: var(--color-primary);
   }
 
+  /* Sizing/typography mirror the root site's shadcn Button (text-sm / font-medium). */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     border-radius: var(--radius-buttons);
-    font-weight: 600;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 1;
-    padding: 11px 18px;
+    padding: 12px 16px;
     cursor: pointer;
     transition: background 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease, color 0.15s ease;
     border: 1px solid transparent;
@@ -153,8 +154,8 @@ h1, h2, h3, h4 {
     color: var(--color-foreground);
     border-color: var(--color-border);
   }
-  .btn-outline:hover { background: var(--color-muted); border-color: #ddd3ee; }
-  .btn-sm { padding: 8px 13px; font-size: 14px; }
+  .btn-outline:hover { background: var(--color-muted); border-color: var(--color-primary-soft); }
+  .btn-sm { padding: 8px 12px; font-size: 14px; }
 
   .input, .textarea, .select {
     width: 100%;
