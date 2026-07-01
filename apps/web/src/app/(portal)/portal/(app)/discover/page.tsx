@@ -93,8 +93,7 @@ export default async function DiscoverPage({
         <div className="mx-auto max-w-[880px] text-center">
           <h1 className="text-[34px] mb-1">Discover</h1>
           <p className="meta mx-auto max-w-[60ch]">
-            The cohort — who&apos;s here, what they&apos;ve shipped, and what&apos;s
-            happening right now.
+            Who&apos;s here and what they&apos;ve shipped.
           </p>
         </div>
       </div>
@@ -167,7 +166,7 @@ async function CommunityTab({ sort }: { sort: SortKey }) {
           </div>
         </div>
         {people.length === 0 ? (
-          <div className="card meta">No profiles yet.</div>
+          <p className="meta">No profiles yet.</p>
         ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {ordered.map(({ profile, author, starsReceived, complimentCount }) => (
@@ -270,7 +269,7 @@ async function ShowcaseTab({ weekId, sort }: { weekId?: string; sort: SortKey })
   const hasToken = Boolean(user?.accessToken);
 
   return items.length === 0 ? (
-    <div className="card meta">No submissions here yet.</div>
+    <p className="meta">No submissions yet.</p>
   ) : (
     <div className="mx-auto max-w-[600px] space-y-6">
       {ordered.map((it) => {

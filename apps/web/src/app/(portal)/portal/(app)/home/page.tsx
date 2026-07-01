@@ -145,10 +145,9 @@ export default async function HomePage({
           </div>
         </>
       ) : (
-        <div className="card meta">
-          No week is live yet. Hang tight — your first week unlocks when the
-          program starts.
-        </div>
+        <p className="meta">
+          No week is live yet — your first week unlocks when the program starts.
+        </p>
       )}
     </div>
   );

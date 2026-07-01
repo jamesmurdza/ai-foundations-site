@@ -19,7 +19,7 @@ export default async function AnnouncementsPage() {
       <p className="meta mb-8">News from the organizers — jump in and comment.</p>
 
       {announcements.length === 0 ? (
-        <div className="card meta">No announcements yet.</div>
+        <p className="meta">No announcements yet.</p>
       ) : (
         <div className="space-y-4">
           {announcements.map((a) => (

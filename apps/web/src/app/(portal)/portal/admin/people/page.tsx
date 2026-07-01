@@ -12,7 +12,7 @@ export default async function AdminPeoplePage() {
       <p className="meta mb-6">{people.length} participants — online and in the house.</p>
 
       {people.length === 0 ? (
-        <div className="card meta">No one has signed up yet.</div>
+        <p className="meta">No one has signed up yet.</p>
       ) : (
         <div className="card !p-0 overflow-hidden">
           {people.map(({ profile, author, starsReceived }) => (

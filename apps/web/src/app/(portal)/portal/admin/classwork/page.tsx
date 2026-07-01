@@ -80,7 +80,7 @@ export default async function ClassworkPage() {
 
       <h2 className="text-heading mb-4">All assignments</h2>
       {assignments.length === 0 ? (
-        <div className="card meta">No assignments yet.</div>
+        <p className="meta">No assignments yet.</p>
       ) : (
         <div className="space-y-3">
           {assignments.map((a) => (
