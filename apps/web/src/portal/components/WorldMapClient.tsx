@@ -79,7 +79,7 @@ export function WorldMapClient({
             <span>Fewer</span>
             <span
               className="inline-block h-2 w-24 rounded-full"
-              style={{ background: "linear-gradient(90deg, #ede6f9 0%, #6b21a8 100%)" }}
+              style={{ background: "linear-gradient(90deg, #efeafe 0%, #4c24c6 100%)" }}
             />
             <span>More</span>
           </div>
@@ -102,7 +102,7 @@ export function WorldMapClient({
                 d={p.d}
                 fill={
                   hover?.kind === "country" && hover.name === p.name && p.count > 0
-                    ? "#9333ea"
+                    ? "#5b2bee"
                     : p.fill
                 }
                 strokeWidth={0.5}
@@ -118,9 +118,9 @@ export function WorldMapClient({
 
           <defs>
             <radialGradient id="ss-blip" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#a855f7" stopOpacity="0.9" />
-              <stop offset="60%" stopColor="#a855f7" stopOpacity="0.35" />
-              <stop offset="100%" stopColor="#a855f7" stopOpacity="0" />
+              <stop offset="0%" stopColor="#6d43f0" stopOpacity="0.9" />
+              <stop offset="60%" stopColor="#6d43f0" stopOpacity="0.35" />
+              <stop offset="100%" stopColor="#6d43f0" stopOpacity="0" />
             </radialGradient>
             {personDots.map((p) => (
               <clipPath key={`clip-${p.id}`} id={`avatar-clip-${p.id}`}>
@@ -141,7 +141,7 @@ export function WorldMapClient({
                     fill="url(#ss-blip)"
                     style={{ animationDelay: `${(i % 8) * 0.18}s` }}
                   />
-                  <circle cx={d.cx} cy={d.cy} r={2.4} fill="#7e22ce" />
+                  <circle cx={d.cx} cy={d.cy} r={2.4} fill="#4c24c6" />
                 </g>
               ))}
             </g>
@@ -181,7 +181,7 @@ export function WorldMapClient({
                           y={p.cy}
                           textAnchor="middle"
                           dominantBaseline="central"
-                          fill="var(--signal-blue, #2563eb)"
+                          fill="var(--signal-blue, #5b2bee)"
                           fontSize={10}
                           fontWeight={700}
                           pointerEvents="none"

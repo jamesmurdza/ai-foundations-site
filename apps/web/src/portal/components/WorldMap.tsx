@@ -47,8 +47,8 @@ const TOPO_NAME_TO_DISPLAY: Record<string, string> = {
 function fillFor(n: number, max: number): string {
   if (n === 0) return "var(--map-empty)";
   const t = Math.min(1, n / Math.max(1, max));
-  const start = [237, 230, 249]; // light purple
-  const end = [107, 33, 168]; // purple-800
+  const start = [239, 234, 254]; // light indigo tint (--color-primary-soft)
+  const end = [76, 36, 198]; // #4c24c6 — deep indigo (--color-primary-strong)
   const eased = Math.pow(0.3 + 0.7 * t, 0.85);
   const rgb = start.map((s, i) => Math.round(s + (end[i] - s) * eased));
   return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
