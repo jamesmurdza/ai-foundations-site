@@ -340,7 +340,7 @@ export function WorldMapClient({
               type="button"
               aria-label="Zoom in"
               onClick={() => zoomBy(1.3)}
-              className="flex h-8 w-8 items-center justify-center text-[18px] leading-none text-midnight-harbor hover:bg-primary-soft"
+              className="flex h-8 w-8 cursor-pointer items-center justify-center text-[18px] leading-none text-midnight-harbor hover:bg-primary-soft"
             >
               +
             </button>
@@ -349,7 +349,7 @@ export function WorldMapClient({
               type="button"
               aria-label="Zoom out"
               onClick={() => zoomBy(1 / 1.3)}
-              className="flex h-8 w-8 items-center justify-center text-[18px] leading-none text-midnight-harbor hover:bg-primary-soft"
+              className="flex h-8 w-8 cursor-pointer items-center justify-center text-[18px] leading-none text-midnight-harbor hover:bg-primary-soft"
             >
               −
             </button>

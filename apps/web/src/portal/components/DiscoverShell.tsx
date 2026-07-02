@@ -1,14 +1,14 @@
 "use client";
 
 import { createContext, useContext, useState, type ReactNode } from "react";
-import { ArrowLeft, Map as MapIcon } from "lucide-react";
+import { ArrowLeftToLine, Map as MapIcon } from "lucide-react";
 
 // Lets the collapse button (rendered deep inside the server-composed map) reach
 // the shell's state without threading a callback through the server boundary.
 const CollapseContext = createContext<(() => void) | null>(null);
 
-/** The circular left-arrow button that hides the map; sits above the +/- zoom
- *  controls. Rendered as the map's `topControl`. */
+/** The collapse button that hides the map — an arrow tucking into a vertical
+ *  line. Sits above the +/- zoom controls (rendered as the map's `topControl`). */
 export function MapCollapseButton() {
   const collapse = useContext(CollapseContext);
   if (!collapse) return null;
@@ -17,17 +17,19 @@ export function MapCollapseButton() {
       type="button"
       aria-label="Hide map"
       onClick={collapse}
-      className="flex h-8 w-8 items-center justify-center rounded-full border border-sea-fog bg-canvas-white text-midnight-harbor shadow-card-2 hover:bg-primary-soft"
+      className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-sea-fog bg-canvas-white text-midnight-harbor shadow-card-2 hover:bg-primary-soft"
     >
-      <ArrowLeft size={16} />
+      <ArrowLeftToLine size={16} />
     </button>
   );
 }
 
 /**
  * The combined Discover layout: the world map on the left and the showcase
- * timeline on the right. Collapsing hides the map entirely, centers the
- * timeline, and leaves a "Map" button in the corner to bring it back.
+ * timeline on the right. The timeline scrolls with the page while the map
+ * sticks in view until you reach the end of the posts (then the footer shows).
+ * Collapsing hides the map, centers the timeline, and leaves a floating "Map"
+ * button on the left to bring it back.
  */
 export function DiscoverShell({ map, feed }: { map: ReactNode; feed: ReactNode }) {
   const [collapsed, setCollapsed] = useState(false);
@@ -38,26 +40,28 @@ export function DiscoverShell({ map, feed }: { map: ReactNode; feed: ReactNode }
         <button
           type="button"
           onClick={() => setCollapsed(false)}
-          className="btn btn-outline btn-sm absolute left-0 top-0 z-10 inline-flex items-center gap-1.5"
+          className="btn btn-outline btn-sm fixed left-4 top-20 z-30 inline-flex cursor-pointer items-center gap-1.5 shadow-card-2"
         >
           <MapIcon size={16} /> Map
         </button>
-        <div className="pt-12">{feed}</div>
+        {feed}
       </div>
     );
   }
 
   return (
     <CollapseContext.Provider value={() => setCollapsed(true)}>
-      {/* Break out of the page's narrow column to a wide canvas. */}
-      <div className="relative left-1/2 flex w-[min(1280px,calc(100vw-2rem))] -translate-x-1/2 flex-col gap-6 md:h-[calc(100vh-9rem)] md:flex-row">
-        {/* Map: fills the page height, pan/zoom instead of scrolling. */}
-        <div className="h-[320px] min-w-0 md:h-full md:flex-1">{map}</div>
-
-        {/* Showcase timeline: scrolls independently on the right. */}
-        <div className="shrink-0 md:h-full md:w-[560px] md:overflow-y-auto md:pr-1">
-          {feed}
+      {/* Break out of the page's narrow column to a near-full-width canvas. */}
+      <div className="relative left-1/2 flex w-[calc(100vw-2rem)] -translate-x-1/2 flex-col gap-7 md:flex-row">
+        {/* Map: sticks in view as the page scrolls, until the posts run out. */}
+        <div className="min-w-0 md:flex-1">
+          <div className="h-[320px] md:sticky md:top-[76px] md:h-[calc(100vh-96px)]">
+            {map}
+          </div>
         </div>
+
+        {/* Showcase timeline: scrolls as part of the page. */}
+        <div className="shrink-0 md:w-[560px]">{feed}</div>
       </div>
     </CollapseContext.Provider>
   );
