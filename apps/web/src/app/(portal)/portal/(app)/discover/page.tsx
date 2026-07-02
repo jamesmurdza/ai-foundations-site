@@ -204,7 +204,7 @@ async function ShowcaseTab({ weekId, sort }: { weekId?: string; sort: SortKey })
   return items.length === 0 ? (
     <p className="meta">No submissions yet.</p>
   ) : (
-    <div className="mx-auto max-w-[600px] space-y-6">
+    <div className="mx-auto max-w-[600px] space-y-14">
       {ordered.map((it) => {
         const s = it.submission;
         const isRepo = Boolean(s.repoOwner && s.repoName);
