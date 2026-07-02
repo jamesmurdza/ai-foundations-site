@@ -65,6 +65,8 @@ export function Hero() {
           <form
             action="https://aifoundations.tinysend.com/subscribe"
             method="post"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex flex-col sm:flex-row w-full max-w-lg gap-3 px-4"
           >
             <label htmlFor="hero-email" className="sr-only">
