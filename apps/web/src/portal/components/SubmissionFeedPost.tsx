@@ -3,6 +3,7 @@ import Link from "@portal/components/Link";
 import { MessageCircle } from "lucide-react";
 import { Avatar } from "./Avatar";
 import { LikeButton } from "./LikeButton";
+import { SubmissionReadme } from "./SubmissionReadme";
 import { timeAgo } from "@portal/lib/format";
 import { profileHref } from "@portal/lib/profileHref";
 import type { ShowcaseItem } from "@portal/lib/queries";
@@ -69,11 +70,7 @@ export function SubmissionFeedPost({
           thin-bordered frame (no rounding, no fill) like an Instagram photo. */}
       <div className="border border-border">
         {readmeHtml ? (
-          <div
-            className="markdown-body max-h-[520px] overflow-hidden p-5"
-            style={{ fontSize: "14px" }}
-            dangerouslySetInnerHTML={{ __html: readmeHtml }}
-          />
+          <SubmissionReadme html={readmeHtml} />
         ) : externalHref ? (
           <a
             href={externalHref}
