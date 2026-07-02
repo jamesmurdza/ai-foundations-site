@@ -52,12 +52,13 @@ export function DiscoverShell({ map, feed }: { map: ReactNode; feed: ReactNode }
   return (
     <CollapseContext.Provider value={() => setCollapsed(true)}>
       {/* Break out of the page's narrow column to a near-full-width canvas. */}
-      <div className="relative left-1/2 flex w-[calc(100vw-2rem)] -translate-x-1/2 flex-col gap-7 md:flex-row">
+      <div className="relative left-1/2 flex w-[calc(100vw-2rem)] -translate-x-1/2 flex-col gap-7 md:-mt-[10px] md:gap-[23px] md:flex-row">
         {/* Map: sticks in view as the page scrolls, until the posts run out.
-            top-[104px] matches the content's natural offset (nav + page
-            padding) so the surrounding margin is constant and never scrolls. */}
-        <div className="min-w-0 md:flex-1">
-          <div className="h-[320px] md:sticky md:top-[104px] md:h-[calc(100vh-124px)]">
+            top-[94px] matches the content's natural offset (nav + page padding,
+            less the 10px pulled up above) so the margin is constant and never
+            scrolls; ml gives it a little breathing room on the left. */}
+        <div className="min-w-0 md:ml-[10px] md:flex-1">
+          <div className="h-[320px] md:sticky md:top-[94px] md:h-[calc(100vh-114px)]">
             {map}
           </div>
         </div>
