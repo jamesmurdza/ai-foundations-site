@@ -43,6 +43,14 @@ export function DetailsSection() {
               A living and learning community
             </h2>
           </div>
+          <div className="hh-details mb-12 max-w-4xl mx-auto rounded-[var(--radius)] border bg-muted/40 px-6 py-5 text-center">
+            <p className="text-base">
+              <span className="font-medium">
+                Applications for the in-person program are now closed.
+              </span>{" "}
+              Applications for the online program are still open.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <figure className="hh-details relative aspect-[4/3] overflow-hidden">
               <img
@@ -67,14 +75,6 @@ export function DetailsSection() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="hh-details mt-12 max-w-4xl mx-auto rounded-[var(--radius)] border bg-muted/40 px-6 py-5 text-center">
-            <p className="text-base">
-              <span className="font-medium">
-                Applications for the in-person program are now closed.
-              </span>{" "}
-              Applications for the online program are still open.
-            </p>
           </div>
         </div>
       </div>
