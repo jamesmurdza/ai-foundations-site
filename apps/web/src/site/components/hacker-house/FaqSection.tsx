@@ -34,7 +34,7 @@ export function FaqSection() {
               Got something we didn&apos;t cover?{" "}
               <a
                 href="mailto:contact@aifoundations.school"
-                className="text-purple-600 hover:underline"
+                className="text-primary hover:underline"
               >
                 Email us.
               </a>

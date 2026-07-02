@@ -193,7 +193,7 @@ export default function ApplyPage() {
                               className={cn(
                                 "flex flex-col items-center justify-center gap-1.5 px-3 py-3 rounded-lg border text-sm transition-colors",
                                 selected
-                                  ? "border-purple-600 bg-purple-600 text-white font-medium shadow-sm"
+                                  ? "border-primary bg-primary text-white font-medium shadow-sm"
                                   : "bg-background text-foreground hover:bg-muted/50 hover:border-muted-foreground/40",
                               )}
                             >
@@ -290,7 +290,7 @@ export default function ApplyPage() {
                 {page === 1 ? (
                   <Button
                     size="lg"
-                    className="w-full bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50"
+                    className="w-full bg-primary hover:bg-primary/90 text-white disabled:opacity-50"
                     disabled={!page1Valid}
                     onClick={goNext}
                   >
@@ -309,7 +309,7 @@ export default function ApplyPage() {
                     </Button>
                     <Button
                       size="lg"
-                      className="flex-1 bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50"
+                      className="flex-1 bg-primary hover:bg-primary/90 text-white disabled:opacity-50"
                       disabled={!page2Valid || submitting}
                       onClick={handleSubmit}
                     >

@@ -51,7 +51,7 @@ export function HeroSection() {
           <Button
             asChild
             size="lg"
-            className="hh-cta bg-purple-600 hover:bg-purple-700 text-white px-8 h-12"
+            className="hh-cta bg-primary hover:bg-primary/90 text-white px-8 h-12"
           >
             <Link href="/summer-school/apply">Apply now →</Link>
           </Button>

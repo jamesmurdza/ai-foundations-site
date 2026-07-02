@@ -49,7 +49,7 @@ export function ApplySection() {
             <Button
               asChild
               size="lg"
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8 h-12 mt-4"
+              className="bg-primary hover:bg-primary/90 text-white px-8 h-12 mt-4"
             >
               <Link href="/summer-school/apply">Start your application →</Link>
             </Button>

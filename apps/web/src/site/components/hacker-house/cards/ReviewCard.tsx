@@ -83,7 +83,7 @@ export function ReviewCard({ state, onEdit, onSubmit, submitting }: Props) {
       <div className="pt-6">
         <Button
           size="lg"
-          className="w-full bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50"
+          className="w-full bg-primary hover:bg-primary/90 text-white disabled:opacity-50"
           onClick={onSubmit}
           disabled={submitting}
         >
