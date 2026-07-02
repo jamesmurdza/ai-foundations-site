@@ -14,6 +14,7 @@ import { SubmissionFeedPost } from "@portal/components/SubmissionFeedPost";
 import { WorldMap } from "@portal/components/WorldMap";
 import { StarBoard } from "@portal/components/StarBoard";
 import { DiscoverShell, MapCollapseButton } from "@portal/components/DiscoverShell";
+import { PinNavbar } from "@portal/components/PinNavbar";
 
 // "needs" floats the least-commented work to the top — the whole matching idea.
 // It's intentionally NOT a visible control (kept the top of the feed uncluttered);
@@ -49,6 +50,7 @@ export default async function DiscoverPage({
 
   return (
     <div className="py-2">
+      <PinNavbar />
       <DiscoverShell
         map={<WorldMap people={mapPeople} topControl={<MapCollapseButton />} />}
         feed={feed}
