@@ -3,6 +3,8 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 
+import { GraduationCap, Briefcase, Sparkles, type LucideIcon } from "lucide-react";
+
 import { CardStage } from "@site/components/hacker-house/cards/CardStage";
 import { SubmittedCard } from "@site/components/hacker-house/cards/SubmittedCard";
 import { Button } from "@site/components/ui/button";
@@ -23,6 +25,12 @@ const FOLLOWUP: Record<Stage, { id: string; prompt: string; placeholder: string 
   Studying: { id: "q2a", prompt: "Where are you studying?", placeholder: "School or program" },
   Working: { id: "q2b", prompt: "Where do you work?", placeholder: "Company or role" },
   Other: { id: "q2c", prompt: "What are you up to?", placeholder: "A sentence is plenty" },
+};
+
+const STAGE_ICON: Record<Stage, LucideIcon> = {
+  Studying: GraduationCap,
+  Working: Briefcase,
+  Other: Sparkles,
 };
 
 export default function ApplyPage() {
@@ -156,21 +164,27 @@ export default function ApplyPage() {
                       What are you currently doing?
                     </span>
                     <div className="mt-2 grid grid-cols-3 gap-2">
-                      {STAGE_OPTIONS.map((opt) => (
-                        <button
-                          key={opt}
-                          type="button"
-                          onClick={() => setStage(opt)}
-                          className={cn(
-                            "px-3 py-2 rounded-lg border text-sm transition-colors",
-                            stage === opt
-                              ? "border-purple-600 bg-purple-50 text-purple-700 font-medium"
-                              : "bg-background hover:bg-muted/50",
-                          )}
-                        >
-                          {opt}
-                        </button>
-                      ))}
+                      {STAGE_OPTIONS.map((opt) => {
+                        const Icon = STAGE_ICON[opt];
+                        const selected = stage === opt;
+                        return (
+                          <button
+                            key={opt}
+                            type="button"
+                            aria-pressed={selected}
+                            onClick={() => setStage(opt)}
+                            className={cn(
+                              "flex flex-col items-center justify-center gap-1.5 px-3 py-3 rounded-lg border text-sm transition-colors",
+                              selected
+                                ? "border-purple-600 bg-purple-600 text-white font-medium shadow-sm"
+                                : "bg-background text-foreground hover:bg-muted/50 hover:border-muted-foreground/40",
+                            )}
+                          >
+                            <Icon className="w-5 h-5" aria-hidden />
+                            {opt}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
                   {stage !== "" && (
