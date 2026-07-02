@@ -43,7 +43,7 @@ export function DetailsSection() {
               A living and learning community
             </h2>
           </div>
-          <div className="hh-details mb-12 max-w-4xl mx-auto rounded-[var(--radius)] border bg-muted/40 px-6 py-5 text-center">
+          <div className="hh-details mb-12 max-w-4xl mx-auto border bg-muted/40 px-6 py-5 text-center">
             <p className="text-base">
               <span className="font-medium">
                 Applications for the in-person program are now closed.
