@@ -33,8 +33,12 @@ const STAGE_ICON: Record<Stage, LucideIcon> = {
   Other: Sparkles,
 };
 
+const TOTAL_PAGES = 2;
+
 export default function ApplyPage() {
   const [sessionId] = useState(() => newSessionId());
+  const [page, setPage] = useState(1);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
@@ -49,19 +53,29 @@ export default function ApplyPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const isValid = useMemo(
+  const page1Valid = useMemo(
     () =>
       name.trim().length >= 2 &&
       EMAIL_RE.test(email.trim()) &&
       country.trim().length >= 2 &&
       stage !== "" &&
-      stageDetail.trim().length >= 2 &&
-      goals.trim().length >= 2,
-    [name, email, country, stage, stageDetail, goals],
+      stageDetail.trim().length >= 2,
+    [name, email, country, stage, stageDetail],
   );
+  const page2Valid = goals.trim().length >= 2;
+
+  const goNext = () => {
+    if (!page1Valid) return;
+    setError(null);
+    setPage(2);
+  };
+  const goBack = () => {
+    setError(null);
+    setPage(1);
+  };
 
   const handleSubmit = async () => {
-    if (!isValid || submitting || stage === "") return;
+    if (!page1Valid || !page2Valid || submitting || stage === "") return;
     setSubmitting(true);
     setError(null);
 
@@ -116,162 +130,193 @@ export default function ApplyPage() {
             <CardStage>
               <div className="flex-1 flex flex-col">
                 <p className="text-sm uppercase tracking-widest text-muted-foreground mb-3">
-                  Online program
+                  Online program · Step {page} of {TOTAL_PAGES}
                 </p>
                 <h2 className="font-heading text-2xl font-semibold leading-tight mb-2">
-                  Apply for the online program
+                  {page === 1 ? "Apply for the online program" : "A bit about your work"}
                 </h2>
                 <p className="text-sm text-muted-foreground mb-6">
-                  Just a few details. Links are optional — share whatever helps
-                  us understand what you build.
+                  {page === 1
+                    ? "Tell us who you are and what you're up to."
+                    : "What you'd like to get out of this. Links are optional."}
                 </p>
-                <div className="space-y-4">
-                  <label className="block">
-                    <span className="text-sm font-medium">Name</span>
-                    <input
-                      type="text"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      placeholder="Your full name"
-                      className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
-                      autoFocus
-                    />
-                  </label>
-                  <label className="block">
-                    <span className="text-sm font-medium">Email</span>
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="name@email.com"
-                      className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
-                    />
-                  </label>
-                  <label className="block">
-                    <span className="text-sm font-medium">
-                      What country are you from?
-                    </span>
-                    <input
-                      type="text"
-                      value={country}
-                      onChange={(e) => setCountry(e.target.value)}
-                      placeholder="Country"
-                      className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
-                    />
-                  </label>
-                  <div className="block">
-                    <span className="text-sm font-medium">
-                      What are you currently doing?
-                    </span>
-                    <div className="mt-2 grid grid-cols-3 gap-2">
-                      {STAGE_OPTIONS.map((opt) => {
-                        const Icon = STAGE_ICON[opt];
-                        const selected = stage === opt;
-                        return (
-                          <button
-                            key={opt}
-                            type="button"
-                            aria-pressed={selected}
-                            onClick={() => setStage(opt)}
-                            className={cn(
-                              "flex flex-col items-center justify-center gap-1.5 px-3 py-3 rounded-lg border text-sm transition-colors",
-                              selected
-                                ? "border-purple-600 bg-purple-600 text-white font-medium shadow-sm"
-                                : "bg-background text-foreground hover:bg-muted/50 hover:border-muted-foreground/40",
-                            )}
-                          >
-                            <Icon className="w-5 h-5" aria-hidden />
-                            {opt}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  {stage !== "" && (
+
+                {page === 1 ? (
+                  <div className="space-y-4">
                     <label className="block">
-                      <span className="text-sm font-medium">
-                        {FOLLOWUP[stage].prompt}
-                      </span>
+                      <span className="text-sm font-medium">Name</span>
                       <input
                         type="text"
-                        value={stageDetail}
-                        onChange={(e) => setStageDetail(e.target.value)}
-                        placeholder={FOLLOWUP[stage].placeholder}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Your full name"
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                        autoFocus
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-sm font-medium">Email</span>
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="name@email.com"
                         className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
                       />
                     </label>
-                  )}
-                  <label className="block">
-                    <span className="text-sm font-medium">
-                      What do you want to build or learn?
-                    </span>
-                    <textarea
-                      value={goals}
-                      onChange={(e) => setGoals(e.target.value)}
-                      placeholder="A sentence or two is plenty."
-                      rows={3}
-                      className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base resize-none"
-                    />
-                  </label>
-                  <label className="block">
-                    <span className="text-sm font-medium">
-                      GitHub{" "}
-                      <span className="text-muted-foreground font-normal">
-                        (optional)
+                    <label className="block">
+                      <span className="text-sm font-medium">
+                        What country are you from?
                       </span>
-                    </span>
-                    <input
-                      type="url"
-                      value={github}
-                      onChange={(e) => setGithub(e.target.value)}
-                      placeholder="https://github.com/…"
-                      className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
-                    />
-                  </label>
-                  <label className="block">
-                    <span className="text-sm font-medium">
-                      LinkedIn{" "}
-                      <span className="text-muted-foreground font-normal">
-                        (optional)
+                      <input
+                        type="text"
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                        placeholder="Country"
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                      />
+                    </label>
+                    <div className="block">
+                      <span className="text-sm font-medium">
+                        What are you currently doing?
                       </span>
-                    </span>
-                    <input
-                      type="url"
-                      value={linkedin}
-                      onChange={(e) => setLinkedin(e.target.value)}
-                      placeholder="https://linkedin.com/in/…"
-                      className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
-                    />
-                  </label>
-                  <label className="block">
-                    <span className="text-sm font-medium">
-                      Portfolio / personal site{" "}
-                      <span className="text-muted-foreground font-normal">
-                        (optional)
+                      <div className="mt-2 grid grid-cols-3 gap-2">
+                        {STAGE_OPTIONS.map((opt) => {
+                          const Icon = STAGE_ICON[opt];
+                          const selected = stage === opt;
+                          return (
+                            <button
+                              key={opt}
+                              type="button"
+                              aria-pressed={selected}
+                              onClick={() => setStage(opt)}
+                              className={cn(
+                                "flex flex-col items-center justify-center gap-1.5 px-3 py-3 rounded-lg border text-sm transition-colors",
+                                selected
+                                  ? "border-purple-600 bg-purple-600 text-white font-medium shadow-sm"
+                                  : "bg-background text-foreground hover:bg-muted/50 hover:border-muted-foreground/40",
+                              )}
+                            >
+                              <Icon className="w-5 h-5" aria-hidden />
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                    {stage !== "" && (
+                      <label className="block">
+                        <span className="text-sm font-medium">
+                          {FOLLOWUP[stage].prompt}
+                        </span>
+                        <input
+                          type="text"
+                          value={stageDetail}
+                          onChange={(e) => setStageDetail(e.target.value)}
+                          placeholder={FOLLOWUP[stage].placeholder}
+                          className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                        />
+                      </label>
+                    )}
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    <label className="block">
+                      <span className="text-sm font-medium">
+                        What do you want to build or learn?
                       </span>
-                    </span>
-                    <input
-                      type="url"
-                      value={portfolio}
-                      onChange={(e) => setPortfolio(e.target.value)}
-                      placeholder="https://"
-                      className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
-                    />
-                  </label>
-                </div>
+                      <textarea
+                        value={goals}
+                        onChange={(e) => setGoals(e.target.value)}
+                        placeholder="A sentence or two is plenty."
+                        rows={3}
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base resize-none"
+                        autoFocus
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-sm font-medium">
+                        GitHub{" "}
+                        <span className="text-muted-foreground font-normal">
+                          (optional)
+                        </span>
+                      </span>
+                      <input
+                        type="url"
+                        value={github}
+                        onChange={(e) => setGithub(e.target.value)}
+                        placeholder="https://github.com/…"
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-sm font-medium">
+                        LinkedIn{" "}
+                        <span className="text-muted-foreground font-normal">
+                          (optional)
+                        </span>
+                      </span>
+                      <input
+                        type="url"
+                        value={linkedin}
+                        onChange={(e) => setLinkedin(e.target.value)}
+                        placeholder="https://linkedin.com/in/…"
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-sm font-medium">
+                        Portfolio / personal site{" "}
+                        <span className="text-muted-foreground font-normal">
+                          (optional)
+                        </span>
+                      </span>
+                      <input
+                        type="url"
+                        value={portfolio}
+                        onChange={(e) => setPortfolio(e.target.value)}
+                        placeholder="https://"
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                      />
+                    </label>
+                  </div>
+                )}
               </div>
+
               <div className="pt-6">
                 {error && (
                   <p className="text-sm text-red-600 mb-3 text-center">{error}</p>
                 )}
-                <Button
-                  size="lg"
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50"
-                  disabled={!isValid || submitting}
-                  onClick={handleSubmit}
-                >
-                  {submitting ? "Submitting…" : "Submit application →"}
-                </Button>
+                {page === 1 ? (
+                  <Button
+                    size="lg"
+                    className="w-full bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50"
+                    disabled={!page1Valid}
+                    onClick={goNext}
+                  >
+                    Next →
+                  </Button>
+                ) : (
+                  <div className="flex gap-3">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="flex-1"
+                      onClick={goBack}
+                      disabled={submitting}
+                    >
+                      ← Previous
+                    </Button>
+                    <Button
+                      size="lg"
+                      className="flex-1 bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50"
+                      disabled={!page2Valid || submitting}
+                      onClick={handleSubmit}
+                    >
+                      {submitting ? "Submitting…" : "Submit →"}
+                    </Button>
+                  </div>
+                )}
               </div>
             </CardStage>
           )}
