@@ -56,7 +56,7 @@ export function HeroSection() {
             <Link href="/summer-school/apply">Apply now →</Link>
           </Button>
           <p className="hh-cta text-sm text-muted-foreground">
-            It takes about ten minutes to apply.
+            It only takes a minute to apply.
           </p>
         </div>
       </div>
