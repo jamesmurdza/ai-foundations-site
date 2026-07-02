@@ -1,3 +1,4 @@
+import "github-markdown-css/github-markdown-light.css";
 import Link from "@portal/components/Link";
 import { MessageCircle } from "lucide-react";
 import { Avatar } from "./Avatar";
@@ -18,18 +19,18 @@ function destLabel(url: string) {
 
 /**
  * One post in the showcase feed — an Instagram-style take on a submission.
- * Header, then the work as the "photo" (a README gist that opens the repo),
- * and a like (real GitHub star) + comment row. Comments themselves live on the
- * post's detail page, just like Instagram's feed.
+ * Header, then the work as the "photo" (the repo's README rendered as real
+ * GitHub-flavored markdown), and a like (real GitHub star) + comment row.
+ * Comments themselves live on the post's detail page, just like Instagram.
  */
 export function SubmissionFeedPost({
   item,
-  gist,
+  readmeHtml,
   liked,
   canLike,
 }: {
   item: ShowcaseItem;
-  gist: string | null;
+  readmeHtml: string | null;
   liked: boolean;
   canLike: boolean;
 }) {
@@ -64,33 +65,29 @@ export function SubmissionFeedPost({
         </Link>
       </div>
 
-      {/* "Photo" — README gist, clickable to open the repo */}
-      {externalHref ? (
-        <a
-          href={externalHref}
-          target="_blank"
-          rel="noreferrer"
-          className="block"
-        >
-          <div className="rounded-xl bg-ice-tint/60 p-5">
-            {gist ? (
-              <p className="text-[14px] leading-relaxed text-foreground/80 line-clamp-4">
-                {gist}
-              </p>
-            ) : (
-              <p className="meta text-[14px]">{destLabel(externalHref)} →</p>
-            )}
-          </div>
-        </a>
-      ) : (
-        <div>
-          <div className="rounded-xl bg-ice-tint/60 p-5">
-            <p className="meta whitespace-pre-wrap line-clamp-6 text-[14px]">
-              {s.payload}
-            </p>
-          </div>
-        </div>
-      )}
+      {/* The work — the repo's README rendered as real GitHub markdown, in a
+          thin-bordered frame (no rounding, no fill) like an Instagram photo. */}
+      <div className="border border-border">
+        {readmeHtml ? (
+          <div
+            className="markdown-body max-h-[520px] overflow-hidden p-5"
+            dangerouslySetInnerHTML={{ __html: readmeHtml }}
+          />
+        ) : externalHref ? (
+          <a
+            href={externalHref}
+            target="_blank"
+            rel="noreferrer"
+            className="link block p-5 text-[14px]"
+          >
+            {destLabel(externalHref)} →
+          </a>
+        ) : (
+          <p className="meta whitespace-pre-wrap line-clamp-6 p-5 text-[14px]">
+            {s.payload}
+          </p>
+        )}
+      </div>
 
       {/* Actions — GitHub stars only apply to repo posts; profile links can’t be starred. */}
       <div className="flex items-center gap-5 pt-3">

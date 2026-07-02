@@ -7,7 +7,7 @@ import {
   listStarredRepoKeys,
   starLeaderboard,
 } from "@portal/lib/queries";
-import { getRepoReadmeGist } from "@portal/lib/github";
+import { getRepoReadmeHtml } from "@portal/lib/github";
 import { parseRepo, parseLogin } from "@portal/lib/github-parse";
 import { getSessionContext } from "@portal/lib/auth";
 import { maxUnlockedWeek } from "@portal/lib/weekRoutes";
@@ -178,27 +178,28 @@ async function ShowcaseTab({ weekId, sort }: { weekId?: string; sort: SortKey })
 
   const { user } = await getSessionContext();
 
-  // Likes = GitHub stars the viewer already gave; gists = a README preview per
-  // repo post (cached per repo, so repeat renders are cheap).
-  const [likedRepos, gistEntries] = await Promise.all([
+  // Likes = GitHub stars the viewer already gave; readmeHtml = the repo's README
+  // rendered as real GitHub-flavored markdown (cached per repo, so repeat renders
+  // are cheap).
+  const [likedRepos, readmeEntries] = await Promise.all([
     user ? listStarredRepoKeys(user.id) : Promise.resolve(new Set<string>()),
     Promise.all(
       ordered.map(async (it) => {
         const s = it.submission;
-        let gist: string | null = null;
+        let html: string | null = null;
         if (s.repoOwner && s.repoName) {
-          gist = await getRepoReadmeGist(s.repoOwner, s.repoName);
+          html = await getRepoReadmeHtml(s.repoOwner, s.repoName);
         } else if (s.payloadType !== "text" && !parseRepo(s.payload)) {
           // A GitHub profile link (Week 1) — preview their profile README,
           // which lives in the {login}/{login} repo.
           const login = parseLogin(s.payload);
-          if (login) gist = await getRepoReadmeGist(login, login);
+          if (login) html = await getRepoReadmeHtml(login, login);
         }
-        return [s.id, gist] as const;
+        return [s.id, html] as const;
       }),
     ),
   ]);
-  const gistMap = new Map(gistEntries);
+  const readmeMap = new Map(readmeEntries);
   const hasToken = Boolean(user?.accessToken);
 
   return items.length === 0 ? (
@@ -215,7 +216,7 @@ async function ShowcaseTab({ weekId, sort }: { weekId?: string; sort: SortKey })
           <SubmissionFeedPost
             key={s.id}
             item={it}
-            gist={gistMap.get(s.id) ?? null}
+            readmeHtml={readmeMap.get(s.id) ?? null}
             liked={recordedLiked}
             canLike={canLike}
           />
