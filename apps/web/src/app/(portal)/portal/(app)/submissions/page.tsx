@@ -52,7 +52,7 @@ export default async function MySubmissionsPage() {
                     {item.assignmentTitle || "Submission"}
                   </span>
                 </Link>
-                <div className="flex items-center justify-center gap-5 meta-light text-[13px]">
+                <div className="flex items-center justify-start gap-5 meta-light text-[13px] px-1">
                   <Link
                     href={commentsHref}
                     prefetch={false}
