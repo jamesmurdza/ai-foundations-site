@@ -40,7 +40,7 @@ export function DiscoverShell({ map, feed }: { map: ReactNode; feed: ReactNode }
         <button
           type="button"
           onClick={() => setCollapsed(false)}
-          className="btn btn-outline btn-sm fixed left-4 top-20 z-30 inline-flex cursor-pointer items-center gap-1.5 shadow-card-2"
+          className="btn btn-outline btn-sm fixed left-6 top-20 z-30 inline-flex cursor-pointer items-center gap-1.5"
         >
           <MapIcon size={16} /> Map
         </button>
