@@ -23,9 +23,9 @@ type Hover = HoverCountry | HoverPerson;
 // backdrop (the "water") with land in the signal-blue used for avatar
 // placeholder initials.
 const OCEAN = "#f7f8fa";
-const LAND = "#5b2bee";
-const LAND_STROKE = "#4c24c6";
-const LAND_HOVER = "#7a52f0";
+const LAND = "#a892f2";
+const LAND_STROKE = "#8f78ec";
+const LAND_HOVER = "#8064e8";
 
 export function WorldMapClient({
   paths,
