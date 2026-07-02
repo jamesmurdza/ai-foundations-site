@@ -1,28 +1,21 @@
 import Link from "@portal/components/Link";
-import { Radio } from "lucide-react";
 import {
   getWeek,
   listProfiles,
   listProfilesForMap,
   listShowcase,
-  listTopCommentsForSubmissions,
   listStarredRepoKeys,
-  listMentionablePeople,
   starLeaderboard,
-  type Author,
 } from "@portal/lib/queries";
 import { getRepoReadmeGist } from "@portal/lib/github";
 import { parseRepo, parseLogin } from "@portal/lib/github-parse";
 import { getSessionContext } from "@portal/lib/auth";
 import { maxUnlockedWeek } from "@portal/lib/weekRoutes";
 import { rankByNeed } from "@portal/lib/compliments";
-import { listEvents } from "@portal/lib/events";
 import { Avatar } from "@portal/components/Avatar";
 import { SubmissionFeedPost } from "@portal/components/SubmissionFeedPost";
 import { WorldMap } from "@portal/components/WorldMap";
 import { StarBoard } from "@portal/components/StarBoard";
-import { PulseFeed } from "@portal/components/PulseFeed";
-import { Popover } from "@portal/components/Popover";
 import { profileHref } from "@portal/lib/profileHref";
 
 // "stars" is a real tab but hidden — reachable only via ?tab=stars, never shown
@@ -70,34 +63,9 @@ export default async function DiscoverPage({
   const sp = await searchParams;
   const tab = resolveTab(sp.tab);
   const sort = resolveSort(sp.sort);
-  // The live pulse is a cohort-wide view, so it lives in a header popover (like
-  // the Q&A popover in lessons) rather than inside any one tab.
-  const events = await listEvents(150);
 
   return (
     <div className="py-2">
-      <div className="relative mb-6">
-        <div className="absolute right-0 top-0">
-          <Popover icon={<Radio size={19} aria-hidden />} label="Live" width={380}>
-            <div className="mb-3 flex items-center gap-2">
-              <span className="badge badge-teal"><span className="live-dot" /> live</span>
-              <span className="meta text-[13px]">
-                Everything happening across the cohort, in real time.
-              </span>
-            </div>
-            <div className="max-h-[60vh] overflow-y-auto pr-1">
-              <PulseFeed events={events} />
-            </div>
-          </Popover>
-        </div>
-        <div className="mx-auto max-w-[880px] text-center">
-          <h1 className="text-[34px] mb-1">Discover</h1>
-          <p className="meta mx-auto max-w-[60ch]">
-            Who&apos;s here and what they&apos;ve shipped.
-          </p>
-        </div>
-      </div>
-
       {tab === "showcase" && <ShowcaseTab weekId={sp.week} sort={sort} />}
       {tab === "people" && <CommunityTab sort={sort} />}
       {tab === "stars" && <StarsTab />}
@@ -129,8 +97,6 @@ async function CommunityTab({ sort }: { sort: SortKey }) {
     listProfiles(),
     listProfilesForMap(),
   ]);
-  const withoutLocation = people.length - mapPeople.length;
-  const countries = new Set(mapPeople.map((p) => p.countryDisplay)).size;
   const ordered =
     sort === "needs"
       ? rankByNeed(people, (p) => ({
@@ -142,16 +108,8 @@ async function CommunityTab({ sort }: { sort: SortKey }) {
   return (
     <div className="space-y-8">
       {/* The one map: the cohort as people-dots. */}
-      <section className="card">
-        <h2 className="text-[22px] mb-1">Where we are</h2>
-        <p className="meta mb-4">
-          {mapPeople.length} builder{mapPeople.length === 1 ? "" : "s"} across{" "}
-          {countries} countr{countries === 1 ? "y" : "ies"}
-          {withoutLocation > 0
-            ? ` — ${withoutLocation} haven’t added a country yet`
-            : " — one global cohort."}
-        </p>
-        <WorldMap people={mapPeople} withoutLocation={withoutLocation} />
+      <section>
+        <WorldMap people={mapPeople} />
       </section>
 
       {/* The directory — everyone in the cohort, right under the map. */}
@@ -169,10 +127,10 @@ async function CommunityTab({ sort }: { sort: SortKey }) {
           <p className="meta">No profiles yet.</p>
         ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {ordered.map(({ profile, author, starsReceived, complimentCount }) => (
+            {ordered.map(({ profile, author }) => (
               // prefetch={false}: the directory grows with the cohort; default
               // prefetch would fire one RSC request per card on scroll.
-              <Link key={profile.id} href={profileHref(author)} prefetch={false} className="card card-hover">
+              <Link key={profile.id} href={profileHref(author)} prefetch={false} className="card">
                 <div className="flex items-center gap-3">
                   <Avatar src={author.avatarUrl} name={author.name} size={48} />
                   <div className="min-w-0">
@@ -188,14 +146,6 @@ async function CommunityTab({ sort }: { sort: SortKey }) {
                 {profile.wantToAchieve && (
                   <p className="meta text-[14px] mt-3 line-clamp-2">🎯 {profile.wantToAchieve}</p>
                 )}
-                <div className="hairline pt-3 mt-3 flex items-center justify-between meta-light text-[13px]">
-                  <span>
-                    {complimentCount === 0
-                      ? "Be the first to compliment 💛"
-                      : `💬 ${complimentCount} · ${starsReceived} ⭐`}
-                  </span>
-                  {profile.achieved && <span className="badge badge-teal">goal hit ✓</span>}
-                </div>
               </Link>
             ))}
           </div>
@@ -226,24 +176,7 @@ async function ShowcaseTab({ weekId, sort }: { weekId?: string; sort: SortKey })
         }))
       : items;
 
-  const ids = ordered.map((i) => i.submission.id);
-  const [commentMap, people, { user, profile }] = await Promise.all([
-    listTopCommentsForSubmissions(ids, 2),
-    listMentionablePeople(),
-    getSessionContext(),
-  ]);
-  const canComment = Boolean(user && profile);
-  const currentUser: Author | null =
-    user && profile
-      ? {
-          userId: user.id,
-          name: profile.displayName ?? user.name ?? "You",
-          login: user.githubLogin,
-          avatarUrl: user.avatarUrl,
-          profileId: profile.id,
-          country: profile.country,
-        }
-      : null;
+  const { user } = await getSessionContext();
 
   // Likes = GitHub stars the viewer already gave; gists = a README preview per
   // repo post (cached per repo, so repeat renders are cheap).
@@ -285,10 +218,6 @@ async function ShowcaseTab({ weekId, sort }: { weekId?: string; sort: SortKey })
             gist={gistMap.get(s.id) ?? null}
             liked={recordedLiked}
             canLike={canLike}
-            comments={commentMap.get(s.id) ?? []}
-            canComment={canComment}
-            currentUser={currentUser}
-            people={people}
           />
         );
       })}

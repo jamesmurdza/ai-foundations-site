@@ -7,7 +7,6 @@ import {
   listMentionablePeople,
   getAssignmentForWeekNumber,
 } from "@portal/lib/queries";
-import { setStarTrade } from "@portal/lib/actions/submissions";
 import { getAttachmentsFor } from "@portal/lib/files";
 import { CommentThread } from "@portal/components/CommentThread";
 import { AttachmentList } from "@portal/components/AttachmentList";
@@ -129,21 +128,6 @@ export default async function SubmissionPage({
         {s.notes && <p className="meta mt-4 whitespace-pre-wrap">{s.notes}</p>}
 
         <AttachmentList items={subFiles} title="Files" />
-
-        <div className="mt-5 flex items-center gap-3">
-          {s.tradeStars && <span className="badge">⭐ trading stars</span>}
-          {isOwner && (
-            <form action={setStarTrade}>
-              <input type="hidden" name="submissionId" value={s.id} />
-              <input type="hidden" name="optIn" value={(!s.tradeStars).toString()} />
-              <button className="btn btn-ghost btn-sm">
-                {s.tradeStars
-                  ? "Turn off Trade Stars (all repos)"
-                  : "Turn on Trade Stars (all repos) ⭐"}
-              </button>
-            </form>
-          )}
-        </div>
       </div>
 
       {/* Comments — the single place peers leave a note */}

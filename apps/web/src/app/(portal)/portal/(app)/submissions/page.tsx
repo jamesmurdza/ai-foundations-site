@@ -33,14 +33,9 @@ export default async function MySubmissionsPage() {
 
   return (
     <div className="py-2 mx-auto max-w-[680px]">
-      <div className="flex items-end justify-between gap-4 mb-8">
-        <div>
-          <h1 className="text-[34px] mb-1">Your work</h1>
-          <p className="meta">Everything you&apos;ve shipped, with peer feedback.</p>
-        </div>
-        <Link href="/home" className="btn btn-outline btn-sm">
-          Home →
-        </Link>
+      <div className="mb-8">
+        <h1 className="text-[34px] mb-1">Your work</h1>
+        <p className="meta">Everything you&apos;ve shipped, with peer feedback.</p>
       </div>
 
       {submissions.length === 0 ? (

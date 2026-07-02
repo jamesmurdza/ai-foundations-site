@@ -1,13 +1,11 @@
 import Link from "@portal/components/Link";
 import { FolderGit2, ExternalLink, MessageCircle, User } from "lucide-react";
 import { Avatar } from "./Avatar";
-import { CommentThread } from "./CommentThread";
 import { LikeButton } from "./LikeButton";
 import { timeAgo } from "@portal/lib/format";
 import { profileHref } from "@portal/lib/profileHref";
 import { parseRepo, parseLogin } from "@portal/lib/github-parse";
-import type { Comment } from "@portal/db/schema";
-import type { ShowcaseItem, Author, MentionPerson } from "@portal/lib/queries";
+import type { ShowcaseItem } from "@portal/lib/queries";
 
 /** "github.com/taniya" rather than a bare "github.com" — more to read. */
 function destLabel(url: string) {
@@ -22,27 +20,19 @@ function destLabel(url: string) {
 /**
  * One post in the showcase feed — an Instagram-style take on a submission.
  * Header, then the work as the "photo" (a README gist that opens the repo),
- * a like (real GitHub star) + comment row, the title as caption, and comments
- * inline (optimistic — no navigating away).
+ * and a like (real GitHub star) + comment row. Comments themselves live on the
+ * post's detail page, just like Instagram's feed.
  */
 export function SubmissionFeedPost({
   item,
   gist,
   liked,
   canLike,
-  comments,
-  canComment,
-  currentUser,
-  people,
 }: {
   item: ShowcaseItem;
   gist: string | null;
   liked: boolean;
   canLike: boolean;
-  comments: (Comment & { author: Author })[];
-  canComment: boolean;
-  currentUser: Author | null;
-  people: MentionPerson[];
 }) {
   const { submission: s, author, commentCount } = item;
   const starCount = item.starCount ?? 0;
@@ -67,9 +57,9 @@ export function SubmissionFeedPost({
   const SourceIcon = isProfile ? User : hasRepo ? FolderGit2 : ExternalLink;
 
   return (
-    <article className="card !p-0 overflow-hidden">
+    <article className="overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between gap-2 p-4">
+      <div className="flex items-center justify-between gap-2 pb-3">
         <Link
           href={profileHref(author)}
           prefetch={false}
@@ -93,9 +83,9 @@ export function SubmissionFeedPost({
           href={externalHref}
           target="_blank"
           rel="noreferrer"
-          className="block px-4 group"
+          className="block"
         >
-          <div className="rounded-xl bg-ice-tint/60 p-5 transition-colors group-hover:bg-primary-soft">
+          <div className="rounded-xl bg-ice-tint/60 p-5">
             <div className="flex items-center gap-2 text-[13px] font-semibold text-slate-channel mb-2">
               <SourceIcon size={15} className="shrink-0" />
               <span className="truncate">{label}</span>
@@ -111,7 +101,7 @@ export function SubmissionFeedPost({
           </div>
         </a>
       ) : (
-        <div className="px-4">
+        <div>
           <div className="rounded-xl bg-ice-tint/60 p-5">
             <p className="meta whitespace-pre-wrap line-clamp-6 text-[14px]">
               {s.payload}
@@ -120,19 +110,8 @@ export function SubmissionFeedPost({
         </div>
       )}
 
-      {/* Caption — title links to the full submission */}
-      <div className="px-4 pt-3">
-        <Link
-          href={`/submissions/${s.id}`}
-          prefetch={false}
-          className="font-bold text-[17px] hover:text-signal-blue"
-        >
-          {s.title || "Submission"}
-        </Link>
-      </div>
-
       {/* Actions — GitHub stars only apply to repo posts; profile links can’t be starred. */}
-      <div className="flex items-center gap-5 px-4 pt-3">
+      <div className="flex items-center gap-5 pt-3">
         {hasRepo && (
           <LikeButton
             submissionId={s.id}
@@ -149,29 +128,6 @@ export function SubmissionFeedPost({
           <MessageCircle size={20} />
           <span className="font-semibold">{commentCount}</span>
         </Link>
-      </div>
-
-      {/* Comments — inline, optimistic, no page change */}
-      <div className="px-4 pb-4 mt-3 hairline pt-3">
-        {commentCount > comments.length && (
-          <Link
-            href={`/submissions/${s.id}#comments`}
-            prefetch={false}
-            className="meta-light text-[13px] hover:text-signal-blue block mb-2"
-          >
-            View all {commentCount} comments
-          </Link>
-        )}
-        <CommentThread
-          compact
-          targetType="submission"
-          targetId={s.id}
-          comments={comments}
-          canComment={canComment}
-          currentUser={currentUser}
-          people={people}
-          placeholder="Add a comment…"
-        />
       </div>
     </article>
   );

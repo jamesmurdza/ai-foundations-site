@@ -27,8 +27,6 @@ export function WorldMapClient({
   width,
   height,
   total,
-  countries,
-  withoutLocation = 0,
   legend,
 }: {
   paths: CountryPath[];
@@ -38,8 +36,6 @@ export function WorldMapClient({
   width: number;
   height: number;
   total: number;
-  countries: number;
-  withoutLocation?: number;
   legend: { country: string; count: number }[];
 }) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
@@ -58,35 +54,7 @@ export function WorldMapClient({
 
   return (
     <div>
-      <div className="flex items-end justify-between gap-4 mb-4">
-        <div>
-          <div className="meta-light text-[12px] uppercase tracking-[0.16em]">
-            {peopleMode ? "The cohort on the map" : "Where the cohort builds from"}
-          </div>
-          <div className="text-[18px] font-bold mt-1">
-            {total} {total === 1 ? "builder" : "builders"} · {countries}{" "}
-            {countries === 1 ? "country" : "countries"}
-            {withoutLocation > 0 && (
-              <span className="meta-light text-[14px] font-normal">
-                {" "}
-                · +{withoutLocation} without location
-              </span>
-            )}
-          </div>
-        </div>
-        {!peopleMode && (
-          <div className="hidden sm:flex items-center gap-2 meta-light text-[11px]">
-            <span>Fewer</span>
-            <span
-              className="inline-block h-2 w-24 rounded-full"
-              style={{ background: "linear-gradient(90deg, #efeafe 0%, #4c24c6 100%)" }}
-            />
-            <span>More</span>
-          </div>
-        )}
-      </div>
-
-      <div ref={wrapRef} className="relative rounded-cards border border-sea-fog bg-canvas-white overflow-hidden">
+      <div ref={wrapRef} className="relative overflow-hidden">
         <svg
           viewBox={`0 0 ${width} ${height}`}
           className="block w-full h-auto"

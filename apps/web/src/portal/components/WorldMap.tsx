@@ -69,11 +69,9 @@ function locationsFromPeople(people: MapProfile[]) {
 export async function WorldMap({
   locations,
   people,
-  withoutLocation = 0,
 }: {
   locations?: { country: string; count: number }[];
   people?: MapProfile[];
-  withoutLocation?: number;
 }) {
   const peopleMode = Boolean(people?.length);
   const effectiveLocations = peopleMode
@@ -168,8 +166,6 @@ export async function WorldMap({
       width={W}
       height={H}
       total={total}
-      countries={effectiveLocations.length}
-      withoutLocation={withoutLocation}
       legend={effectiveLocations.slice(0, 12)}
     />
   );
