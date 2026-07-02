@@ -6,6 +6,7 @@ import Link from "next/link";
 import { CardStage } from "@site/components/hacker-house/cards/CardStage";
 import { SubmittedCard } from "@site/components/hacker-house/cards/SubmittedCard";
 import { Button } from "@site/components/ui/button";
+import { cn } from "@site/lib/utils";
 
 import { newSessionId } from "@site/lib/hacker-house/storage";
 import { submitApplication, syncImmediately } from "@site/lib/hacker-house/sync";
@@ -13,11 +14,25 @@ import type { ApplicationState } from "@site/lib/hacker-house/types";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const STAGE_OPTIONS = ["Studying", "Working", "Other"] as const;
+type Stage = (typeof STAGE_OPTIONS)[number];
+
+// Matches the wizard's conditional follow-ups (q2a/q2b/q2c) so the admin
+// dashboard labels these answers correctly.
+const FOLLOWUP: Record<Stage, { id: string; prompt: string; placeholder: string }> = {
+  Studying: { id: "q2a", prompt: "Where are you studying?", placeholder: "School or program" },
+  Working: { id: "q2b", prompt: "Where do you work?", placeholder: "Company or role" },
+  Other: { id: "q2c", prompt: "What are you up to?", placeholder: "A sentence is plenty" },
+};
+
 export default function ApplyPage() {
   const [sessionId] = useState(() => newSessionId());
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
+  const [stage, setStage] = useState<Stage | "">("");
+  const [stageDetail, setStageDetail] = useState("");
+  const [goals, setGoals] = useState("");
   const [github, setGithub] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [portfolio, setPortfolio] = useState("");
@@ -30,20 +45,30 @@ export default function ApplyPage() {
     () =>
       name.trim().length >= 2 &&
       EMAIL_RE.test(email.trim()) &&
-      country.trim().length >= 2,
-    [name, email, country],
+      country.trim().length >= 2 &&
+      stage !== "" &&
+      stageDetail.trim().length >= 2 &&
+      goals.trim().length >= 2,
+    [name, email, country, stage, stageDetail, goals],
   );
 
   const handleSubmit = async () => {
-    if (!isValid || submitting) return;
+    if (!isValid || submitting || stage === "") return;
     setSubmitting(true);
     setError(null);
+
+    const answers: Record<string, string> = {
+      q1: country.trim(),
+      q2: stage,
+      [FOLLOWUP[stage].id]: stageDetail.trim(),
+      goals: goals.trim(),
+    };
 
     const state: ApplicationState = {
       sessionId,
       email: email.trim(),
       name: name.trim(),
-      answers: { q1: country.trim() },
+      answers,
       portfolioUrl: portfolio.trim() || undefined,
       githubUrl: github.trim() || undefined,
       otherUrl: linkedin.trim() || undefined,
@@ -124,6 +149,54 @@ export default function ApplyPage() {
                       onChange={(e) => setCountry(e.target.value)}
                       placeholder="Country"
                       className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                    />
+                  </label>
+                  <div className="block">
+                    <span className="text-sm font-medium">
+                      What are you currently doing?
+                    </span>
+                    <div className="mt-2 grid grid-cols-3 gap-2">
+                      {STAGE_OPTIONS.map((opt) => (
+                        <button
+                          key={opt}
+                          type="button"
+                          onClick={() => setStage(opt)}
+                          className={cn(
+                            "px-3 py-2 rounded-lg border text-sm transition-colors",
+                            stage === opt
+                              ? "border-purple-600 bg-purple-50 text-purple-700 font-medium"
+                              : "bg-background hover:bg-muted/50",
+                          )}
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  {stage !== "" && (
+                    <label className="block">
+                      <span className="text-sm font-medium">
+                        {FOLLOWUP[stage].prompt}
+                      </span>
+                      <input
+                        type="text"
+                        value={stageDetail}
+                        onChange={(e) => setStageDetail(e.target.value)}
+                        placeholder={FOLLOWUP[stage].placeholder}
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                      />
+                    </label>
+                  )}
+                  <label className="block">
+                    <span className="text-sm font-medium">
+                      What do you want to build or learn?
+                    </span>
+                    <textarea
+                      value={goals}
+                      onChange={(e) => setGoals(e.target.value)}
+                      placeholder="A sentence or two is plenty."
+                      rows={3}
+                      className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base resize-none"
                     />
                   </label>
                   <label className="block">
