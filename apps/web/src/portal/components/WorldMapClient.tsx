@@ -81,12 +81,32 @@ export function WorldMapClient({
     return { x: p.x, y: p.y };
   }
 
+  // Keep the view in bounds: never show empty space above/below the map
+  // (clamp vertically so the map always covers the frame's height), but let it
+  // wrap freely east–west (the map is tiled horizontally, so we fold the pan
+  // back into one map-width — visually seamless).
+  function normalize() {
+    const v = view.current;
+    v.s = Math.min(8, Math.max(1, v.s));
+    // Vertical: content spans [ty, ty + s*H]; require it to cover [0, H].
+    const minTy = height * (1 - v.s); // ≤ 0
+    v.ty = Math.min(0, Math.max(minTy, v.ty));
+    // Horizontal: fold tx into (−P/2, P/2], where P = one map width on screen.
+    const period = v.s * width;
+    v.tx -= Math.round(v.tx / period) * period;
+  }
+
   function apply() {
     const g = gRef.current;
     if (g) {
       const { tx, ty, s } = view.current;
       g.setAttribute("transform", `translate(${tx} ${ty}) scale(${s})`);
     }
+  }
+
+  function commit() {
+    normalize();
+    apply();
   }
 
   // Wheel-to-zoom, anchored on the cursor. Native listener so preventDefault
@@ -104,10 +124,12 @@ export function WorldMapClient({
       view.current.tx = p.x - rf * (p.x - view.current.tx);
       view.current.ty = p.y - rf * (p.y - view.current.ty);
       view.current.s = s2;
-      apply();
+      commit();
     };
     svg.addEventListener("wheel", onWheel, { passive: false });
     return () => svg.removeEventListener("wheel", onWheel);
+    // Handlers read only refs, so the listener is stable — bind once.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function onPointerDown(e: React.PointerEvent) {
@@ -134,7 +156,7 @@ export function WorldMapClient({
       if (Math.abs(dx) > 2 || Math.abs(dy) > 2) drag.current.moved = true;
       view.current.tx = drag.current.tx0 + dx;
       view.current.ty = drag.current.ty0 + dy;
-      apply();
+      commit();
     } else {
       move(e);
     }
@@ -157,7 +179,7 @@ export function WorldMapClient({
     view.current.tx = p.x - rf * (p.x - view.current.tx);
     view.current.ty = p.y - rf * (p.y - view.current.ty);
     view.current.s = s2;
-    apply();
+    commit();
   }
 
   return (
@@ -191,27 +213,6 @@ export function WorldMapClient({
           }}
         >
           <g ref={gRef}>
-            <g style={{ stroke: LAND_STROKE }}>
-              {paths.map((p, i) => (
-                <path
-                  key={i}
-                  d={p.d}
-                  fill={
-                    hover?.kind === "country" && hover.name === p.name
-                      ? LAND_HOVER
-                      : LAND
-                  }
-                  strokeWidth={0.5}
-                  strokeLinejoin="round"
-                  onMouseEnter={(e) => {
-                    if (drag.current) return;
-                    setHover({ kind: "country", name: p.name, count: p.count });
-                    move(e);
-                  }}
-                />
-              ))}
-            </g>
-
             <defs>
               <radialGradient id="ss-blip" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stopColor="#6d43f0" stopOpacity="0.9" />
@@ -225,81 +226,109 @@ export function WorldMapClient({
               ))}
             </defs>
 
-            {!peopleMode && (
-              <g pointerEvents="none">
-                {dots.map((d, i) => (
-                  <g key={`d-${i}`}>
-                    <circle
-                      className="map-ring"
-                      cx={d.cx}
-                      cy={d.cy}
-                      r={7}
-                      fill="url(#ss-blip)"
-                      style={{ animationDelay: `${(i % 8) * 0.18}s` }}
-                    />
-                    <circle cx={d.cx} cy={d.cy} r={2.4} fill="#4c24c6" />
-                  </g>
-                ))}
-              </g>
-            )}
-
-            {peopleMode && (
-              <g>
-                {personDots.map((p) => (
-                  <a key={p.id} href={p.href} aria-label={p.name}>
-                    <g
+            {/* Tile the world east–west so panning horizontally wraps. The
+                clip-paths use userSpaceOnUse, so each translated copy clips its
+                avatars correctly against the shared defs. */}
+            {[-1, 0, 1].map((k) => (
+              <g key={`tile-${k}`} transform={`translate(${k * width} 0)`}>
+                <g style={{ stroke: LAND_STROKE }}>
+                  {paths.map((p, i) => (
+                    <path
+                      key={i}
+                      d={p.d}
+                      fill={
+                        hover?.kind === "country" && hover.name === p.name
+                          ? LAND_HOVER
+                          : LAND
+                      }
+                      strokeWidth={0.5}
+                      strokeLinejoin="round"
                       onMouseEnter={(e) => {
                         if (drag.current) return;
-                        setHover({ kind: "person", name: p.name, location: p.location });
+                        setHover({ kind: "country", name: p.name, count: p.count });
                         move(e);
                       }}
-                    >
-                      {p.avatarUrl ? (
-                        <image
-                          href={p.avatarUrl}
-                          x={p.cx - dotRadius}
-                          y={p.cy - dotRadius}
-                          width={dotRadius * 2}
-                          height={dotRadius * 2}
-                          clipPath={`url(#avatar-clip-${p.id})`}
-                          preserveAspectRatio="xMidYMid slice"
+                    />
+                  ))}
+                </g>
+
+                {!peopleMode && (
+                  <g pointerEvents="none">
+                    {dots.map((d, i) => (
+                      <g key={`d-${i}`}>
+                        <circle
+                          className="map-ring"
+                          cx={d.cx}
+                          cy={d.cy}
+                          r={7}
+                          fill="url(#ss-blip)"
+                          style={{ animationDelay: `${(i % 8) * 0.18}s` }}
                         />
-                      ) : (
-                        <>
+                        <circle cx={d.cx} cy={d.cy} r={2.4} fill="#4c24c6" />
+                      </g>
+                    ))}
+                  </g>
+                )}
+
+                {peopleMode && (
+                  <g>
+                    {personDots.map((p) => (
+                      <a key={p.id} href={p.href} aria-label={p.name}>
+                        <g
+                          onMouseEnter={(e) => {
+                            if (drag.current) return;
+                            setHover({ kind: "person", name: p.name, location: p.location });
+                            move(e);
+                          }}
+                        >
+                          {p.avatarUrl ? (
+                            <image
+                              href={p.avatarUrl}
+                              x={p.cx - dotRadius}
+                              y={p.cy - dotRadius}
+                              width={dotRadius * 2}
+                              height={dotRadius * 2}
+                              clipPath={`url(#avatar-clip-${p.id})`}
+                              preserveAspectRatio="xMidYMid slice"
+                            />
+                          ) : (
+                            <>
+                              <circle
+                                cx={p.cx}
+                                cy={p.cy}
+                                r={dotRadius}
+                                fill="var(--ice-tint, #eef2ff)"
+                              />
+                              <text
+                                x={p.cx}
+                                y={p.cy}
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                fill="var(--signal-blue, #5b2bee)"
+                                fontSize={10}
+                                fontWeight={700}
+                                pointerEvents="none"
+                              >
+                                {p.initials}
+                              </text>
+                            </>
+                          )}
                           <circle
                             cx={p.cx}
                             cy={p.cy}
                             r={dotRadius}
-                            fill="var(--ice-tint, #eef2ff)"
-                          />
-                          <text
-                            x={p.cx}
-                            y={p.cy}
-                            textAnchor="middle"
-                            dominantBaseline="central"
-                            fill="var(--signal-blue, #5b2bee)"
-                            fontSize={10}
-                            fontWeight={700}
+                            fill="none"
+                            stroke="#ffffff"
+                            strokeWidth={2}
                             pointerEvents="none"
-                          >
-                            {p.initials}
-                          </text>
-                        </>
-                      )}
-                      <circle
-                        cx={p.cx}
-                        cy={p.cy}
-                        r={dotRadius}
-                        fill="none"
-                        stroke="#ffffff"
-                        strokeWidth={2}
-                        pointerEvents="none"
-                      />
-                    </g>
-                  </a>
-                ))}
+                          />
+                        </g>
+                      </a>
+                    ))}
+                  </g>
+                )}
               </g>
-            )}
+            ))}
           </g>
         </svg>
 
