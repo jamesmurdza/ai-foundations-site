@@ -19,11 +19,12 @@ type HoverCountry = { kind: "country"; name: string; count: number };
 type HoverPerson = { kind: "person"; name: string; location: string };
 type Hover = HoverCountry | HoverPerson;
 
-// Light-blue ocean; land in the site's indigo highlight color.
-const OCEAN = "#d7eaf7";
-const LAND = "#5b2bee";
-const LAND_STROKE = "#4c24c6";
-const LAND_HOVER = "#7a52f0";
+// A restrained, map-like palette on the site's indigo theme: a very light
+// gray backdrop (the "water") with soft-indigo land a shade above it.
+const OCEAN = "#eff0f2";
+const LAND = "#d3c9f4";
+const LAND_STROKE = "#bcaef0";
+const LAND_HOVER = "#b7a7ef";
 
 export function WorldMapClient({
   paths,
