@@ -36,7 +36,7 @@ export function DetailsSection() {
       <div className="container">
         <div className="mx-2 md:mx-10 px-6 md:px-12">
           <div className="text-center mb-12">
-            <p className="hh-details text-sm uppercase tracking-[0.2em] text-purple-600 mb-3">
+            <p className="hh-details text-sm uppercase tracking-[0.2em] text-primary mb-3">
               When & Where
             </p>
             <h2 className="hh-details font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mx-auto">

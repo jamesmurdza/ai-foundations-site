@@ -37,7 +37,7 @@ export function ApplySection() {
       <div className="container">
         <div className="mx-auto max-w-3xl text-center px-6">
           <div className="hh-apply-content flex flex-col items-center gap-6">
-            <p className="text-sm uppercase tracking-[0.2em] text-purple-600">
+            <p className="text-sm uppercase tracking-[0.2em] text-primary">
               Applications
             </p>
             <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
