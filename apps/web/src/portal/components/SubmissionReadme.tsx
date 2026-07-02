@@ -32,7 +32,7 @@ export function SubmissionReadme({ html }: { html: string }) {
         <div
           ref={contentRef}
           className="markdown-body p-5"
-          style={{ fontSize: "14px" }}
+          style={{ fontSize: "13px" }}
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>

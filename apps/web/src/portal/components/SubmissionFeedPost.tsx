@@ -51,7 +51,9 @@ export function SubmissionFeedPost({
           prefetch={false}
           className="flex items-center gap-3 min-w-0"
         >
-          <Avatar src={author.avatarUrl} name={author.name} size={40} />
+          <span className="ml-5 shrink-0">
+            <Avatar src={author.avatarUrl} name={author.name} size={36} />
+          </span>
           <div className="min-w-0">
             <div className="truncate text-[14px]">
               <span className="font-semibold">{author.name}</span>
