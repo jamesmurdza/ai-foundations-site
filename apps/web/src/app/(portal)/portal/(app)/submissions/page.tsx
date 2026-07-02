@@ -38,26 +38,41 @@ export default async function MySubmissionsPage() {
             // the submission's own page, reached from the showcase feed.
             const href =
               item.weekNumber > 0 ? weekSubmissionPath(item.weekNumber) : "/home";
+            // Comments/likes live on the submission's own page — the icon row
+            // sits under the card so it stays clickable (a link can't nest
+            // inside the card's own link).
+            const commentsHref = `/submissions/${s.id}#comments`;
             return (
-              <Link
-                key={s.id}
-                href={href}
-                className="card flex flex-col items-center justify-center gap-6 min-h-[176px] text-center transition-colors hover:border-primary"
-              >
-                <span className="font-semibold text-[17px] leading-snug text-balance">
-                  {item.assignmentTitle || "Submission"}
-                </span>
-                <div className="flex items-center gap-4 meta-light text-[13px]">
-                  <span className="flex items-center gap-1.5">
+              <div key={s.id} className="flex flex-col gap-2">
+                <Link
+                  href={href}
+                  className="card flex flex-1 flex-col items-center justify-center min-h-[176px] text-center transition-colors hover:border-primary"
+                >
+                  <span className="font-semibold text-[17px] leading-snug text-balance">
+                    {item.assignmentTitle || "Submission"}
+                  </span>
+                </Link>
+                <div className="flex items-center justify-center gap-5 meta-light text-[13px]">
+                  <Link
+                    href={commentsHref}
+                    prefetch={false}
+                    className="flex items-center gap-1.5 hover:text-signal-blue"
+                    aria-label="View likes and comments"
+                  >
                     <Heart size={16} />
                     {item.starCount ?? 0}
-                  </span>
-                  <span className="flex items-center gap-1.5">
+                  </Link>
+                  <Link
+                    href={commentsHref}
+                    prefetch={false}
+                    className="flex items-center gap-1.5 hover:text-signal-blue"
+                    aria-label="View comments"
+                  >
                     <MessageCircle size={16} />
                     {item.commentCount}
-                  </span>
+                  </Link>
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>
