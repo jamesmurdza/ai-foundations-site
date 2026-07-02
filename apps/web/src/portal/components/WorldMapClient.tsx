@@ -22,10 +22,10 @@ type Hover = HoverCountry | HoverPerson;
 // A restrained, map-like palette on the site's indigo theme: a near-white
 // backdrop (the "water") with land in the signal-blue used for avatar
 // placeholder initials.
-const OCEAN = "#f7f8fa";
-const LAND = "#a892f2";
-const LAND_STROKE = "#8f78ec";
-const LAND_HOVER = "#8064e8";
+const OCEAN = "#efeafe";
+const LAND = "#cbe9c0";
+const LAND_STROKE = "#a9d79b";
+const LAND_HOVER = "#b6e2a8";
 
 export function WorldMapClient({
   paths,
