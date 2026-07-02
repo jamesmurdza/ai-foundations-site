@@ -71,6 +71,7 @@ export function SubmissionFeedPost({
         {readmeHtml ? (
           <div
             className="markdown-body max-h-[520px] overflow-hidden p-5"
+            style={{ fontSize: "14px" }}
             dangerouslySetInnerHTML={{ __html: readmeHtml }}
           />
         ) : externalHref ? (
