@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export type CountryPath = { d: string; fill: string; name: string; count: number };
 export type Dot = { cx: number; cy: number; n: number; name: string };
@@ -35,6 +35,7 @@ export function WorldMapClient({
   width,
   height,
   total,
+  topControl,
 }: {
   paths: CountryPath[];
   dots: Dot[];
@@ -43,6 +44,7 @@ export function WorldMapClient({
   width: number;
   height: number;
   total: number;
+  topControl?: ReactNode;
 }) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const tipRef = useRef<HTMLDivElement | null>(null);
@@ -301,25 +303,28 @@ export function WorldMapClient({
           </g>
         </svg>
 
-        {/* Zoom controls */}
-        <div className="absolute right-3 top-3 z-10 flex flex-col overflow-hidden rounded-[10px] border border-sea-fog bg-canvas-white shadow-card-2">
-          <button
-            type="button"
-            aria-label="Zoom in"
-            onClick={() => zoomBy(1.3)}
-            className="flex h-8 w-8 items-center justify-center text-[18px] leading-none text-midnight-harbor hover:bg-primary-soft"
-          >
-            +
-          </button>
-          <span className="h-px w-full bg-sea-fog" aria-hidden />
-          <button
-            type="button"
-            aria-label="Zoom out"
-            onClick={() => zoomBy(1 / 1.3)}
-            className="flex h-8 w-8 items-center justify-center text-[18px] leading-none text-midnight-harbor hover:bg-primary-soft"
-          >
-            −
-          </button>
+        {/* Controls: optional collapse button above the zoom +/- stack. */}
+        <div className="absolute right-3 top-3 z-10 flex flex-col items-end gap-2">
+          {topControl}
+          <div className="flex flex-col overflow-hidden rounded-[10px] border border-sea-fog bg-canvas-white shadow-card-2">
+            <button
+              type="button"
+              aria-label="Zoom in"
+              onClick={() => zoomBy(1.3)}
+              className="flex h-8 w-8 items-center justify-center text-[18px] leading-none text-midnight-harbor hover:bg-primary-soft"
+            >
+              +
+            </button>
+            <span className="h-px w-full bg-sea-fog" aria-hidden />
+            <button
+              type="button"
+              aria-label="Zoom out"
+              onClick={() => zoomBy(1 / 1.3)}
+              className="flex h-8 w-8 items-center justify-center text-[18px] leading-none text-midnight-harbor hover:bg-primary-soft"
+            >
+              −
+            </button>
+          </div>
         </div>
 
         {total === 0 && (

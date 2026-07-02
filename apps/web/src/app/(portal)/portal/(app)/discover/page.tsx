@@ -1,7 +1,5 @@
-import Link from "@portal/components/Link";
 import {
   getWeek,
-  listProfiles,
   listProfilesForMap,
   listShowcase,
   listStarredRepoKeys,
@@ -12,39 +10,10 @@ import { parseRepo, parseLogin } from "@portal/lib/github-parse";
 import { getSessionContext } from "@portal/lib/auth";
 import { maxUnlockedWeek } from "@portal/lib/weekRoutes";
 import { rankByNeed } from "@portal/lib/compliments";
-import { Avatar } from "@portal/components/Avatar";
 import { SubmissionFeedPost } from "@portal/components/SubmissionFeedPost";
 import { WorldMap } from "@portal/components/WorldMap";
 import { StarBoard } from "@portal/components/StarBoard";
-import { profileHref } from "@portal/lib/profileHref";
-
-// "stars" is a real tab but hidden — reachable only via ?tab=stars, never shown
-// as a pill.
-type TabKey = "showcase" | "people" | "stars";
-
-const TABS: { key: Exclude<TabKey, "stars">; label: string }[] = [
-  { key: "showcase", label: "Showcase" },
-  { key: "people", label: "Community" },
-];
-
-// People + Activity are now one "Community" tab. Every old deep link — the
-// former Activity tab and the standalone map/pulse/profiles routes — funnels
-// into it so existing links keep working.
-const LEGACY_TABS: Record<string, TabKey> = {
-  directory: "people",
-  community: "people",
-  activity: "people",
-  map: "people",
-  pulse: "people",
-};
-
-function resolveTab(raw?: string): TabKey {
-  // Showcase is the front door to Discover — the feed of what the cohort shipped.
-  if (!raw) return "showcase";
-  if (raw === "stars") return "stars"; // hidden tab, deep-link only
-  if (raw in LEGACY_TABS) return LEGACY_TABS[raw];
-  return (TABS.find((t) => t.key === raw)?.key as TabKey) ?? "showcase";
-}
+import { DiscoverShell, MapCollapseButton } from "@portal/components/DiscoverShell";
 
 // "needs" floats the least-commented work to the top — the whole matching idea.
 // It's intentionally NOT a visible control (kept the top of the feed uncluttered);
@@ -61,14 +30,29 @@ export default async function DiscoverPage({
   searchParams: Promise<{ tab?: string; week?: string; sort?: string }>;
 }) {
   const sp = await searchParams;
-  const tab = resolveTab(sp.tab);
   const sort = resolveSort(sp.sort);
+
+  // The star board lives on its own hidden deep-link (?tab=stars).
+  if (sp.tab === "stars") {
+    return (
+      <div className="py-2">
+        <StarsTab />
+      </div>
+    );
+  }
+
+  // Discover is one page now: the map alongside the showcase timeline.
+  const [mapPeople, feed] = await Promise.all([
+    listProfilesForMap(),
+    buildShowcaseFeed({ weekId: sp.week, sort }),
+  ]);
 
   return (
     <div className="py-2">
-      {tab === "showcase" && <ShowcaseTab weekId={sp.week} sort={sort} />}
-      {tab === "people" && <CommunityTab sort={sort} />}
-      {tab === "stars" && <StarsTab />}
+      <DiscoverShell
+        map={<WorldMap people={mapPeople} topControl={<MapCollapseButton />} />}
+        feed={feed}
+      />
     </div>
   );
 }
@@ -90,79 +74,18 @@ async function StarsTab() {
   );
 }
 
-async function CommunityTab({ sort }: { sort: SortKey }) {
-  // One tab for the whole cohort: the map (people as dots) and the directory.
-  // The live pulse moved to the header popover; the star board to ?tab=stars.
-  const [people, mapPeople] = await Promise.all([
-    listProfiles(),
-    listProfilesForMap(),
-  ]);
-  const ordered =
-    sort === "needs"
-      ? rankByNeed(people, (p) => ({
-          count: p.complimentCount,
-          createdAt: p.profile.createdAt,
-        }))
-      : people;
-
-  return (
-    // Break out of the page's narrow column to a wide, full-bleed canvas: the
-    // map takes ~3/4 of the width on the left (pan/zoom, fills the page height)
-    // and the cohort directory scrolls in a ~280px column on the right.
-    <div className="relative left-1/2 flex w-[min(1280px,calc(100vw-2rem))] -translate-x-1/2 flex-col gap-6 md:h-[calc(100vh-9rem)] md:flex-row">
-      {/* The one map: the cohort as people-dots. */}
-      <div className="h-[320px] min-w-0 md:h-full md:flex-1">
-        <WorldMap people={mapPeople} />
-      </div>
-
-      {/* The directory — everyone in the cohort, in a scrolling column. */}
-      <div className="shrink-0 md:h-full md:w-[280px] md:overflow-y-auto md:pr-1">
-          <div className="mb-4">
-            <h2 className="text-[22px] mb-1">The cohort</h2>
-            <p className="meta">
-              {people.length} {people.length === 1 ? "builder" : "builders"} so far —
-              say hi, leave a compliment.
-            </p>
-          </div>
-          {people.length === 0 ? (
-            <p className="meta">No profiles yet.</p>
-          ) : (
-            <div className="space-y-2.5">
-              {ordered.map(({ profile, author }) => (
-                // prefetch={false}: the directory grows with the cohort; default
-                // prefetch would fire one RSC request per card on scroll.
-                <Link key={profile.id} href={profileHref(author)} prefetch={false} className="card block !p-3">
-                  <div className="flex items-center gap-3">
-                    <Avatar src={author.avatarUrl} name={author.name} size={44} />
-                    <div className="min-w-0">
-                      <div className="font-semibold text-[14px] truncate flex items-center gap-2">
-                        {author.name}
-                        {profile.graduate && <span title="Graduate">🎓</span>}
-                      </div>
-                      <div className="meta-light text-[13px] truncate">
-                        {[profile.city, profile.country].filter(Boolean).join(", ") || "—"}
-                      </div>
-                    </div>
-                  </div>
-                  {profile.wantToAchieve && (
-                    <p className="meta text-[14px] mt-2 line-clamp-2">🎯 {profile.wantToAchieve}</p>
-                  )}
-                </Link>
-              ))}
-            </div>
-          )}
-      </div>
-    </div>
-  );
-}
-
-async function ShowcaseTab({ weekId, sort }: { weekId?: string; sort: SortKey }) {
+// The showcase timeline — the feed of what the cohort shipped.
+async function buildShowcaseFeed({
+  weekId,
+  sort,
+}: {
+  weekId?: string;
+  sort: SortKey;
+}) {
   const requested = weekId ? await getWeek(weekId) : null;
   const maxUnlocked = maxUnlockedWeek();
   const effectiveWeekId =
-    requested &&
-    requested.isPublished &&
-    requested.number <= maxUnlocked
+    requested && requested.isPublished && requested.number <= maxUnlocked
       ? weekId
       : undefined;
 

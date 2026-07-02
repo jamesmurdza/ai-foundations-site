@@ -8,14 +8,10 @@ import { TopNav } from "./TopNav";
 export async function NavBar() {
   const { user, profile } = await getSessionContext();
 
-  // Discover splits into Showcase + Community, surfaced as a nav submenu.
+  // Discover is one combined page — the map alongside the showcase timeline.
   const discoverLink: NavLink = {
     href: "/discover",
     label: "Discover",
-    submenu: [
-      { href: "/discover?tab=showcase", label: "Showcase" },
-      { href: "/discover?tab=people", label: "Community" },
-    ],
   };
 
   // Signed-in participants get the three core pages. Logged-out marketing

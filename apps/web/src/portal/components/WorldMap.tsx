@@ -5,6 +5,7 @@ import {
   type GeoPermissibleObjects,
 } from "d3-geo";
 import { feature } from "topojson-client";
+import type { ReactNode } from "react";
 import type { Feature, FeatureCollection } from "geojson";
 import { COUNTRY_CENTROIDS } from "@portal/lib/countries";
 import { initials } from "@portal/lib/format";
@@ -69,9 +70,11 @@ function locationsFromPeople(people: MapProfile[]) {
 export async function WorldMap({
   locations,
   people,
+  topControl,
 }: {
   locations?: { country: string; count: number }[];
   people?: MapProfile[];
+  topControl?: ReactNode;
 }) {
   const peopleMode = Boolean(people?.length);
   const effectiveLocations = peopleMode
@@ -166,6 +169,7 @@ export async function WorldMap({
       width={W}
       height={H}
       total={total}
+      topControl={topControl}
     />
   );
 }
