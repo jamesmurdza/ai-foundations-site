@@ -166,7 +166,6 @@ export async function WorldMap({
       width={W}
       height={H}
       total={total}
-      legend={effectiveLocations.slice(0, 12)}
     />
   );
 }

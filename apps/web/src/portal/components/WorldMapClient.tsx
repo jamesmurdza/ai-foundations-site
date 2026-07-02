@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export type CountryPath = { d: string; fill: string; name: string; count: number };
 export type Dot = { cx: number; cy: number; n: number; name: string };
@@ -19,6 +19,12 @@ type HoverCountry = { kind: "country"; name: string; count: number };
 type HoverPerson = { kind: "person"; name: string; location: string };
 type Hover = HoverCountry | HoverPerson;
 
+// A natural-earth palette: light blue ocean, light green land.
+const OCEAN = "#d7eaf7";
+const LAND = "#d3edc8";
+const LAND_STROKE = "#a9d79b";
+const LAND_HOVER = "#bfe6af";
+
 export function WorldMapClient({
   paths,
   dots,
@@ -27,7 +33,6 @@ export function WorldMapClient({
   width,
   height,
   total,
-  legend,
 }: {
   paths: CountryPath[];
   dots: Dot[];
@@ -36,10 +41,17 @@ export function WorldMapClient({
   width: number;
   height: number;
   total: number;
-  legend: { country: string; count: number }[];
 }) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const tipRef = useRef<HTMLDivElement | null>(null);
+  const svgRef = useRef<SVGSVGElement | null>(null);
+  const gRef = useRef<SVGGElement | null>(null);
+  // Pan/zoom lives in refs so dragging doesn't re-render the (heavy) map.
+  const view = useRef({ s: 1, tx: 0, ty: 0 });
+  const drag = useRef<
+    null | { vx: number; vy: number; tx0: number; ty0: number; moved: boolean }
+  >(null);
+  const movedRef = useRef(false);
   const [hover, setHover] = useState<Hover | null>(null);
   const peopleMode = mode === "people";
   const dotRadius = peopleMode ? 12 : 0;
@@ -52,126 +64,224 @@ export function WorldMapClient({
     tip.style.transform = `translate3d(${e.clientX - r.left + 12}px, ${e.clientY - r.top + 12}px, 0)`;
   }
 
+  // Screen coords → SVG viewBox coords (accounts for viewBox + letterboxing).
+  function toView(clientX: number, clientY: number) {
+    const svg = svgRef.current;
+    if (!svg) return null;
+    const ctm = svg.getScreenCTM();
+    if (!ctm) return null;
+    const pt = svg.createSVGPoint();
+    pt.x = clientX;
+    pt.y = clientY;
+    const p = pt.matrixTransform(ctm.inverse());
+    return { x: p.x, y: p.y };
+  }
+
+  function apply() {
+    const g = gRef.current;
+    if (g) {
+      const { tx, ty, s } = view.current;
+      g.setAttribute("transform", `translate(${tx} ${ty}) scale(${s})`);
+    }
+  }
+
+  // Wheel-to-zoom, anchored on the cursor. Native listener so preventDefault
+  // works (React's onWheel is passive).
+  useEffect(() => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const p = toView(e.clientX, e.clientY);
+      if (!p) return;
+      const f = e.deltaY < 0 ? 1.15 : 1 / 1.15;
+      const s2 = Math.min(8, Math.max(1, view.current.s * f));
+      const rf = s2 / view.current.s;
+      view.current.tx = p.x - rf * (p.x - view.current.tx);
+      view.current.ty = p.y - rf * (p.y - view.current.ty);
+      view.current.s = s2;
+      apply();
+    };
+    svg.addEventListener("wheel", onWheel, { passive: false });
+    return () => svg.removeEventListener("wheel", onWheel);
+  }, []);
+
+  function onPointerDown(e: React.PointerEvent) {
+    const p = toView(e.clientX, e.clientY);
+    if (!p) return;
+    drag.current = {
+      vx: p.x,
+      vy: p.y,
+      tx0: view.current.tx,
+      ty0: view.current.ty,
+      moved: false,
+    };
+    movedRef.current = false;
+    setHover(null);
+    e.currentTarget.setPointerCapture?.(e.pointerId);
+  }
+
+  function onPointerMove(e: React.PointerEvent) {
+    if (drag.current) {
+      const p = toView(e.clientX, e.clientY);
+      if (!p) return;
+      const dx = p.x - drag.current.vx;
+      const dy = p.y - drag.current.vy;
+      if (Math.abs(dx) > 2 || Math.abs(dy) > 2) drag.current.moved = true;
+      view.current.tx = drag.current.tx0 + dx;
+      view.current.ty = drag.current.ty0 + dy;
+      apply();
+    } else {
+      move(e);
+    }
+  }
+
+  function onPointerUp() {
+    if (drag.current) movedRef.current = drag.current.moved;
+    drag.current = null;
+  }
+
   return (
-    <div>
-      <div ref={wrapRef} className="relative overflow-hidden">
+    <div className="h-full">
+      <div
+        ref={wrapRef}
+        className="relative h-full overflow-hidden rounded-[14px] border border-border"
+        style={{ background: OCEAN }}
+      >
         <svg
+          ref={svgRef}
           viewBox={`0 0 ${width} ${height}`}
-          className="block w-full h-auto"
+          preserveAspectRatio="xMidYMid meet"
+          className="block h-full w-full cursor-grab touch-none active:cursor-grabbing"
           role="img"
           aria-label="World map of where the cohort is from"
-          onMouseMove={move}
-          onMouseLeave={() => setHover(null)}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerLeave={() => {
+            onPointerUp();
+            setHover(null);
+          }}
+          onClickCapture={(e) => {
+            // Swallow the click that ends a drag so person links don't navigate.
+            if (movedRef.current) {
+              e.preventDefault();
+              e.stopPropagation();
+              movedRef.current = false;
+            }
+          }}
         >
-          <g style={{ stroke: "var(--map-border)", opacity: peopleMode ? 0.55 : 1 }}>
-            {paths.map((p, i) => (
-              <path
-                key={i}
-                d={p.d}
-                fill={
-                  hover?.kind === "country" && hover.name === p.name && p.count > 0
-                    ? "#5b2bee"
-                    : p.fill
-                }
-                strokeWidth={0.5}
-                strokeLinejoin="round"
-                style={{ cursor: p.count > 0 ? "pointer" : "default" }}
-                onMouseEnter={(e) => {
-                  setHover({ kind: "country", name: p.name, count: p.count });
-                  move(e);
-                }}
-              />
-            ))}
-          </g>
-
-          <defs>
-            <radialGradient id="ss-blip" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#6d43f0" stopOpacity="0.9" />
-              <stop offset="60%" stopColor="#6d43f0" stopOpacity="0.35" />
-              <stop offset="100%" stopColor="#6d43f0" stopOpacity="0" />
-            </radialGradient>
-            {personDots.map((p) => (
-              <clipPath key={`clip-${p.id}`} id={`avatar-clip-${p.id}`}>
-                <circle cx={p.cx} cy={p.cy} r={dotRadius} />
-              </clipPath>
-            ))}
-          </defs>
-
-          {!peopleMode && (
-            <g pointerEvents="none">
-              {dots.map((d, i) => (
-                <g key={`d-${i}`}>
-                  <circle
-                    className="map-ring"
-                    cx={d.cx}
-                    cy={d.cy}
-                    r={7}
-                    fill="url(#ss-blip)"
-                    style={{ animationDelay: `${(i % 8) * 0.18}s` }}
-                  />
-                  <circle cx={d.cx} cy={d.cy} r={2.4} fill="#4c24c6" />
-                </g>
+          <g ref={gRef}>
+            <g style={{ stroke: LAND_STROKE }}>
+              {paths.map((p, i) => (
+                <path
+                  key={i}
+                  d={p.d}
+                  fill={
+                    hover?.kind === "country" && hover.name === p.name
+                      ? LAND_HOVER
+                      : LAND
+                  }
+                  strokeWidth={0.5}
+                  strokeLinejoin="round"
+                  onMouseEnter={(e) => {
+                    if (drag.current) return;
+                    setHover({ kind: "country", name: p.name, count: p.count });
+                    move(e);
+                  }}
+                />
               ))}
             </g>
-          )}
 
-          {peopleMode && (
-            <g>
+            <defs>
+              <radialGradient id="ss-blip" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#6d43f0" stopOpacity="0.9" />
+                <stop offset="60%" stopColor="#6d43f0" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#6d43f0" stopOpacity="0" />
+              </radialGradient>
               {personDots.map((p) => (
-                <a key={p.id} href={p.href} aria-label={p.name}>
-                  <g
-                    style={{ cursor: "pointer" }}
-                    onMouseEnter={(e) => {
-                      setHover({ kind: "person", name: p.name, location: p.location });
-                      move(e);
-                    }}
-                  >
-                    {p.avatarUrl ? (
-                      <image
-                        href={p.avatarUrl}
-                        x={p.cx - dotRadius}
-                        y={p.cy - dotRadius}
-                        width={dotRadius * 2}
-                        height={dotRadius * 2}
-                        clipPath={`url(#avatar-clip-${p.id})`}
-                        preserveAspectRatio="xMidYMid slice"
-                      />
-                    ) : (
-                      <>
-                        <circle
-                          cx={p.cx}
-                          cy={p.cy}
-                          r={dotRadius}
-                          fill="var(--ice-tint, #eef2ff)"
-                        />
-                        <text
-                          x={p.cx}
-                          y={p.cy}
-                          textAnchor="middle"
-                          dominantBaseline="central"
-                          fill="var(--signal-blue, #5b2bee)"
-                          fontSize={10}
-                          fontWeight={700}
-                          pointerEvents="none"
-                        >
-                          {p.initials}
-                        </text>
-                      </>
-                    )}
-                    <circle
-                      cx={p.cx}
-                      cy={p.cy}
-                      r={dotRadius}
-                      fill="none"
-                      stroke="#ffffff"
-                      strokeWidth={2}
-                      pointerEvents="none"
-                    />
-                  </g>
-                </a>
+                <clipPath key={`clip-${p.id}`} id={`avatar-clip-${p.id}`}>
+                  <circle cx={p.cx} cy={p.cy} r={dotRadius} />
+                </clipPath>
               ))}
-            </g>
-          )}
+            </defs>
+
+            {!peopleMode && (
+              <g pointerEvents="none">
+                {dots.map((d, i) => (
+                  <g key={`d-${i}`}>
+                    <circle
+                      className="map-ring"
+                      cx={d.cx}
+                      cy={d.cy}
+                      r={7}
+                      fill="url(#ss-blip)"
+                      style={{ animationDelay: `${(i % 8) * 0.18}s` }}
+                    />
+                    <circle cx={d.cx} cy={d.cy} r={2.4} fill="#4c24c6" />
+                  </g>
+                ))}
+              </g>
+            )}
+
+            {peopleMode && (
+              <g>
+                {personDots.map((p) => (
+                  <a key={p.id} href={p.href} aria-label={p.name}>
+                    <g
+                      onMouseEnter={(e) => {
+                        if (drag.current) return;
+                        setHover({ kind: "person", name: p.name, location: p.location });
+                        move(e);
+                      }}
+                    >
+                      {p.avatarUrl ? (
+                        <image
+                          href={p.avatarUrl}
+                          x={p.cx - dotRadius}
+                          y={p.cy - dotRadius}
+                          width={dotRadius * 2}
+                          height={dotRadius * 2}
+                          clipPath={`url(#avatar-clip-${p.id})`}
+                          preserveAspectRatio="xMidYMid slice"
+                        />
+                      ) : (
+                        <>
+                          <circle
+                            cx={p.cx}
+                            cy={p.cy}
+                            r={dotRadius}
+                            fill="var(--ice-tint, #eef2ff)"
+                          />
+                          <text
+                            x={p.cx}
+                            y={p.cy}
+                            textAnchor="middle"
+                            dominantBaseline="central"
+                            fill="var(--signal-blue, #5b2bee)"
+                            fontSize={10}
+                            fontWeight={700}
+                            pointerEvents="none"
+                          >
+                            {p.initials}
+                          </text>
+                        </>
+                      )}
+                      <circle
+                        cx={p.cx}
+                        cy={p.cy}
+                        r={dotRadius}
+                        fill="none"
+                        stroke="#ffffff"
+                        strokeWidth={2}
+                        pointerEvents="none"
+                      />
+                    </g>
+                  </a>
+                ))}
+              </g>
+            )}
+          </g>
         </svg>
 
         <div
@@ -195,21 +305,15 @@ export function WorldMapClient({
             </>
           )}
         </div>
-      </div>
 
-      {total === 0 ? (
-        <p className="meta text-center mt-4">
-          As the cohort grows, the map lights up across the globe.
-        </p>
-      ) : (
-        <div className="flex flex-wrap gap-2 mt-4 justify-center">
-          {legend.map((l) => (
-            <span key={l.country} className="pill bg-ice-tint text-slate-channel">
-              {l.country} · {l.count}
-            </span>
-          ))}
-        </div>
-      )}
+        {total === 0 && (
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-6 text-center">
+            <p className="meta">
+              As the cohort grows, the map lights up across the globe.
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

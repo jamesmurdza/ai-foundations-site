@@ -106,31 +106,31 @@ async function CommunityTab({ sort }: { sort: SortKey }) {
       : people;
 
   return (
-    <div className="space-y-8">
+    // Map framed on the left (fills the page height, pan/zoom instead of
+    // scrolling); the cohort directory scrolls independently on the right.
+    <div className="flex flex-col gap-6 md:h-[calc(100vh-9rem)] md:flex-row">
       {/* The one map: the cohort as people-dots. */}
-      <section>
+      <div className="h-[320px] min-w-0 md:h-full md:flex-1">
         <WorldMap people={mapPeople} />
-      </section>
+      </div>
 
-      {/* The directory — everyone in the cohort, right under the map. */}
-      <section>
-        <div className="flex items-end justify-between flex-wrap gap-2 mb-4">
-          <div>
-            <h2 className="text-[22px] mb-1">The cohort</h2>
-            <p className="meta">
-              {people.length} {people.length === 1 ? "builder" : "builders"} so far —
-              say hi, leave a compliment.
-            </p>
-          </div>
+      {/* The directory — everyone in the cohort, in a scrolling column. */}
+      <div className="shrink-0 md:h-full md:w-[360px] md:overflow-y-auto md:pr-1">
+        <div className="mb-4">
+          <h2 className="text-[22px] mb-1">The cohort</h2>
+          <p className="meta">
+            {people.length} {people.length === 1 ? "builder" : "builders"} so far —
+            say hi, leave a compliment.
+          </p>
         </div>
         {people.length === 0 ? (
           <p className="meta">No profiles yet.</p>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="space-y-3">
             {ordered.map(({ profile, author }) => (
               // prefetch={false}: the directory grows with the cohort; default
               // prefetch would fire one RSC request per card on scroll.
-              <Link key={profile.id} href={profileHref(author)} prefetch={false} className="card">
+              <Link key={profile.id} href={profileHref(author)} prefetch={false} className="card block">
                 <div className="flex items-center gap-3">
                   <Avatar src={author.avatarUrl} name={author.name} size={48} />
                   <div className="min-w-0">
@@ -150,7 +150,7 @@ async function CommunityTab({ sort }: { sort: SortKey }) {
             ))}
           </div>
         )}
-      </section>
+      </div>
     </div>
   );
 }
