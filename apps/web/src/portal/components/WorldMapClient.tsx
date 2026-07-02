@@ -98,10 +98,14 @@ export function WorldMapClient({
 
   function apply() {
     const g = gRef.current;
+    const svg = svgRef.current;
     if (g) {
       const { tx, ty, s } = view.current;
       g.setAttribute("transform", `translate(${tx} ${ty}) scale(${s})`);
     }
+    // Publish the scale so avatar markers can counter-scale and stay a fixed
+    // size regardless of zoom.
+    if (svg) svg.style.setProperty("--map-scale", String(view.current.s));
   }
 
   function commit() {
@@ -279,6 +283,13 @@ export function WorldMapClient({
                             if (drag.current) return;
                             setHover({ kind: "person", name: p.name, location: p.location });
                             move(e);
+                          }}
+                          style={{
+                            // Cancel the zoom scale about the avatar's own center
+                            // so markers keep a constant on-screen size.
+                            transform: "scale(calc(1 / var(--map-scale, 1)))",
+                            transformBox: "fill-box",
+                            transformOrigin: "center",
                           }}
                         >
                           {p.avatarUrl ? (
