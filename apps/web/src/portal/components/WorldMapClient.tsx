@@ -19,12 +19,13 @@ type HoverCountry = { kind: "country"; name: string; count: number };
 type HoverPerson = { kind: "person"; name: string; location: string };
 type Hover = HoverCountry | HoverPerson;
 
-// A restrained, map-like palette on the site's indigo theme: a very light
-// gray backdrop (the "water") with soft-indigo land a shade above it.
-const OCEAN = "#eff0f2";
-const LAND = "#d3c9f4";
-const LAND_STROKE = "#bcaef0";
-const LAND_HOVER = "#b7a7ef";
+// A restrained, map-like palette on the site's indigo theme: a near-white
+// backdrop (the "water") with land in the signal-blue used for avatar
+// placeholder initials.
+const OCEAN = "#f7f8fa";
+const LAND = "#5b2bee";
+const LAND_STROKE = "#4c24c6";
+const LAND_HOVER = "#7a52f0";
 
 export function WorldMapClient({
   paths,
@@ -158,7 +159,7 @@ export function WorldMapClient({
   }
 
   return (
-    <div className="h-full">
+    <div className="relative h-full">
       <div
         ref={wrapRef}
         className="relative h-full overflow-hidden rounded-[14px] border border-border"
@@ -167,7 +168,7 @@ export function WorldMapClient({
         <svg
           ref={svgRef}
           viewBox={`0 0 ${width} ${height}`}
-          preserveAspectRatio="xMidYMid meet"
+          preserveAspectRatio="xMidYMid slice"
           className="block h-full w-full cursor-grab touch-none active:cursor-grabbing"
           role="img"
           aria-label="World map of where the cohort is from"
@@ -300,28 +301,6 @@ export function WorldMapClient({
           </g>
         </svg>
 
-        <div
-          ref={tipRef}
-          className="pointer-events-none absolute left-0 top-0 z-10 rounded-[10px] border border-sea-fog bg-canvas-white px-3 py-1.5 text-[12px] shadow-card-2"
-          style={{ visibility: hover ? "visible" : "hidden" }}
-        >
-          {hover?.kind === "person" ? (
-            <>
-              <div className="font-semibold text-midnight-harbor">{hover.name}</div>
-              <div className="meta-light">{hover.location || "Cohort member"}</div>
-            </>
-          ) : (
-            <>
-              <div className="font-semibold text-midnight-harbor">{hover?.name}</div>
-              <div className="meta-light">
-                {hover && hover.kind === "country" && hover.count > 0
-                  ? `${hover.count} ${hover.count === 1 ? "builder" : "builders"}`
-                  : "No one yet"}
-              </div>
-            </>
-          )}
-        </div>
-
         {/* Zoom controls */}
         <div className="absolute right-3 top-3 z-10 flex flex-col overflow-hidden rounded-[10px] border border-sea-fog bg-canvas-white shadow-card-2">
           <button
@@ -349,6 +328,30 @@ export function WorldMapClient({
               As the cohort grows, the map lights up across the globe.
             </p>
           </div>
+        )}
+      </div>
+
+      {/* Tooltip lives outside the clipped frame so it can spill past the
+          rounded border instead of being cut off at the edges. */}
+      <div
+        ref={tipRef}
+        className="pointer-events-none absolute left-0 top-0 z-20 rounded-[10px] border border-sea-fog bg-canvas-white px-3 py-1.5 text-[12px] shadow-card-2"
+        style={{ visibility: hover ? "visible" : "hidden" }}
+      >
+        {hover?.kind === "person" ? (
+          <>
+            <div className="font-semibold text-midnight-harbor">{hover.name}</div>
+            <div className="meta-light">{hover.location || "Cohort member"}</div>
+          </>
+        ) : (
+          <>
+            <div className="font-semibold text-midnight-harbor">{hover?.name}</div>
+            <div className="meta-light">
+              {hover && hover.kind === "country" && hover.count > 0
+                ? `${hover.count} ${hover.count === 1 ? "builder" : "builders"}`
+                : "No one yet"}
+            </div>
+          </>
         )}
       </div>
     </div>
