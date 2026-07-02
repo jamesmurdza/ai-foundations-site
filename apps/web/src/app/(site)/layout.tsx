@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Schibsted_Grotesk } from "next/font/google";
 
+import { NavProgress } from "@site/components/NavProgress";
 import { SmoothScroll } from "@site/components/SmoothScroll";
 import { cn } from "@site/lib/utils";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
           fontHeading.variable
         )}
       >
+        <NavProgress />
         <SmoothScroll />
         {children}
       </body>
