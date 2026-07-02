@@ -46,7 +46,7 @@ export default async function MySubmissionsPage() {
               <div key={s.id} className="flex flex-col gap-2">
                 <Link
                   href={href}
-                  className="card flex flex-1 flex-col items-center justify-center min-h-[176px] text-center transition-colors hover:border-primary"
+                  className="card flex flex-1 flex-col items-center justify-center min-h-[176px] text-center"
                 >
                   <span className="font-semibold text-[17px] leading-snug text-balance">
                     {item.assignmentTitle || "Submission"}
