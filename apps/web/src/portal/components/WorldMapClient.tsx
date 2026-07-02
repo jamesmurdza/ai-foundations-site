@@ -19,11 +19,11 @@ type HoverCountry = { kind: "country"; name: string; count: number };
 type HoverPerson = { kind: "person"; name: string; location: string };
 type Hover = HoverCountry | HoverPerson;
 
-// A natural-earth palette: light blue ocean, light green land.
+// Light-blue ocean; land in the site's indigo highlight color.
 const OCEAN = "#d7eaf7";
-const LAND = "#d3edc8";
-const LAND_STROKE = "#a9d79b";
-const LAND_HOVER = "#bfe6af";
+const LAND = "#5b2bee";
+const LAND_STROKE = "#4c24c6";
+const LAND_HOVER = "#7a52f0";
 
 export function WorldMapClient({
   paths,
@@ -139,6 +139,21 @@ export function WorldMapClient({
   function onPointerUp() {
     if (drag.current) movedRef.current = drag.current.moved;
     drag.current = null;
+  }
+
+  // Zoom via the on-map +/- buttons, anchored on the frame's center.
+  function zoomBy(factor: number) {
+    const svg = svgRef.current;
+    if (!svg) return;
+    const r = svg.getBoundingClientRect();
+    const p = toView(r.left + r.width / 2, r.top + r.height / 2);
+    if (!p) return;
+    const s2 = Math.min(8, Math.max(1, view.current.s * factor));
+    const rf = s2 / view.current.s;
+    view.current.tx = p.x - rf * (p.x - view.current.tx);
+    view.current.ty = p.y - rf * (p.y - view.current.ty);
+    view.current.s = s2;
+    apply();
   }
 
   return (
@@ -304,6 +319,27 @@ export function WorldMapClient({
               </div>
             </>
           )}
+        </div>
+
+        {/* Zoom controls */}
+        <div className="absolute right-3 top-3 z-10 flex flex-col overflow-hidden rounded-[10px] border border-sea-fog bg-canvas-white shadow-card-2">
+          <button
+            type="button"
+            aria-label="Zoom in"
+            onClick={() => zoomBy(1.3)}
+            className="flex h-8 w-8 items-center justify-center text-[18px] leading-none text-midnight-harbor hover:bg-primary-soft"
+          >
+            +
+          </button>
+          <span className="h-px w-full bg-sea-fog" aria-hidden />
+          <button
+            type="button"
+            aria-label="Zoom out"
+            onClick={() => zoomBy(1 / 1.3)}
+            className="flex h-8 w-8 items-center justify-center text-[18px] leading-none text-midnight-harbor hover:bg-primary-soft"
+          >
+            −
+          </button>
         </div>
 
         {total === 0 && (
