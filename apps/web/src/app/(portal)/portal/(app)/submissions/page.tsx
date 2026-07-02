@@ -1,44 +1,27 @@
 import Link from "@portal/components/Link";
+import { Heart, MessageCircle } from "lucide-react";
 import { requireOnboardedUser } from "@portal/lib/auth";
-import {
-  listSubmissionsByUser,
-  listComments,
-  listMentionablePeople,
-} from "@portal/lib/queries";
-import { Avatar } from "@portal/components/Avatar";
-import { MentionText } from "@portal/lib/mentions";
-import { timeAgo } from "@portal/lib/format";
-
-function host(url: string) {
-  try {
-    return new URL(url).host.replace(/^www\./, "");
-  } catch {
-    return url;
-  }
-}
+import { listSubmissionsByUser } from "@portal/lib/queries";
+import { weekSubmissionPath } from "@portal/lib/weekRoutes";
 
 export default async function MySubmissionsPage() {
   const { user } = await requireOnboardedUser();
   const submissions = await listSubmissionsByUser(user.id);
 
-  // Feedback's single home is here — so each submission carries its own comments
-  // inside its box, newest first. No separate aggregated list to keep in sync.
-  const [people, commentsPerSubmission] = await Promise.all([
-    submissions.length ? listMentionablePeople() : Promise.resolve([]),
-    Promise.all(
-      submissions.map((s) => listComments("submission", s.submission.id)),
-    ),
-  ]);
-  const mentionHandles = new Set(people.map((p) => p.username));
+  // Chronological by week (earliest first); the query already tie-breaks by
+  // recency, and the sort is stable so that order survives within a week.
+  const ordered = [...submissions].sort(
+    (a, b) => a.weekNumber - b.weekNumber,
+  );
 
   return (
-    <div className="py-2 mx-auto max-w-[680px]">
+    <div className="py-2">
       <div className="mb-8">
         <h1 className="text-[34px] mb-1">Your work</h1>
         <p className="meta">Everything you&apos;ve shipped, with peer feedback.</p>
       </div>
 
-      {submissions.length === 0 ? (
+      {ordered.length === 0 ? (
         <p className="meta">
           Nothing here yet —{" "}
           <Link href="/home" className="link">
@@ -47,90 +30,34 @@ export default async function MySubmissionsPage() {
           .
         </p>
       ) : (
-        <div className="space-y-5">
-          {submissions.map((item, i) => {
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {ordered.map((item) => {
             const s = item.submission;
-            const comments = commentsPerSubmission[i];
+            // The whole card links back to this week's submission form on Home
+            // (the /submissions/week-N route redirects there). Comments live on
+            // the submission's own page, reached from the showcase feed.
+            const href =
+              item.weekNumber > 0 ? weekSubmissionPath(item.weekNumber) : "/home";
             return (
-              <div key={s.id} className="card flex flex-col gap-3">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <div className="meta-light text-[12px] uppercase tracking-wide">
-                      {item.assignmentTitle}
-                    </div>
-                    <Link
-                      href={`/submissions/${s.id}`}
-                      className="font-bold text-[18px] hover:text-signal-blue"
-                    >
-                      {s.title || "Submission"}
-                    </Link>
-                  </div>
-                  {item.weekNumber > 0 && (
-                    <span className="badge badge-muted shrink-0">
-                      Week {item.weekNumber}
-                    </span>
-                  )}
+              <Link
+                key={s.id}
+                href={href}
+                className="card flex flex-col items-center justify-center gap-6 min-h-[176px] text-center transition-colors hover:border-primary"
+              >
+                <span className="font-semibold text-[17px] leading-snug text-balance">
+                  {item.assignmentTitle || "Submission"}
+                </span>
+                <div className="flex items-center gap-4 meta-light text-[13px]">
+                  <span className="flex items-center gap-1.5">
+                    <Heart size={16} />
+                    {item.starCount ?? 0}
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <MessageCircle size={16} />
+                    {item.commentCount}
+                  </span>
                 </div>
-
-                <div className="text-[14px]">
-                  {s.payloadType === "text" ? (
-                    <p className="meta line-clamp-3 whitespace-pre-wrap">{s.payload}</p>
-                  ) : s.payloadType === "file" ? (
-                    <a href={s.payload} target="_blank" rel="noreferrer" className="link">
-                      View file →
-                    </a>
-                  ) : (
-                    <a
-                      href={s.payload}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="link break-all"
-                    >
-                      {s.repoOwner ? `${s.repoOwner}/${s.repoName}` : host(s.payload)} ↗
-                    </a>
-                  )}
-                </div>
-
-                {/* Feedback, inside the box. */}
-                <div className="hairline pt-3">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="meta-light text-[13px]">
-                      {comments.length === 0
-                        ? "No comments yet"
-                        : `${comments.length} comment${comments.length === 1 ? "" : "s"}`}
-                    </span>
-                    <Link
-                      href={`/submissions/${s.id}#comments`}
-                      className="link text-[13px]"
-                    >
-                      {comments.length === 0 ? "Invite feedback →" : "Reply →"}
-                    </Link>
-                  </div>
-
-                  {comments.length > 0 && (
-                    <ul className="space-y-4">
-                      {comments.map((c) => (
-                        <li key={c.id} className="flex gap-3">
-                          <Avatar src={c.author?.avatarUrl} name={c.author?.name} size={32} />
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2">
-                              <span className="font-semibold text-[14px]">
-                                {c.author?.name}
-                              </span>
-                              <span className="meta-light text-[12px]">
-                                {timeAgo(c.createdAt)}
-                              </span>
-                            </div>
-                            <p className="text-[15px] whitespace-pre-wrap mt-0.5">
-                              <MentionText text={c.body} valid={mentionHandles} />
-                            </p>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
+              </Link>
             );
           })}
         </div>
