@@ -276,6 +276,29 @@ export const getRenderedReadmeHtml = unstable_cache(
 );
 
 /**
+ * Any repo's README rendered EXACTLY as GitHub renders it — same HTML media
+ * type as {@link getRenderedReadmeHtml}, but for an arbitrary owner/name so the
+ * showcase feed can show real GitHub-flavored markdown (headings, code, tables,
+ * images) instead of a plain-text gist. Sanitized and cached per repo.
+ */
+export const getRepoReadmeHtml = unstable_cache(
+  async (owner: string, name: string): Promise<string | null> => {
+    const token = process.env.GITHUB_TOKEN || undefined;
+    try {
+      const res = await fetch(`${API}/repos/${owner}/${name}/readme`, {
+        headers: readHeaders(token, "application/vnd.github.html+json"),
+      });
+      if (res.status !== 200) return null;
+      return sanitizeReadmeHtml(await res.text());
+    } catch {
+      return null;
+    }
+  },
+  ["repo-readme-html"],
+  { tags: ["github-readme"], revalidate: 3600 },
+);
+
+/**
  * A short plain-text gist of any repo's README for the showcase feed preview.
  * Cached per repo (public, identical for everyone); uses GITHUB_TOKEN for
  * rate-limit headroom so a feed of repos doesn't exhaust the anonymous quota.

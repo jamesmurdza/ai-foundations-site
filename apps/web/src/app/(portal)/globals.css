@@ -256,3 +256,13 @@ h1, h2, h3, h4 {
 .markdown-body img {
   display: inline-block;
 }
+
+/* Discover pins the navbar so it never scrolls away. `fixed` takes the header
+   out of flow, so pad `main` by the nav height (h-16) to keep layout intact. */
+body.discover-nav-pinned > header {
+  position: fixed;
+  inset: 0 0 auto 0;
+}
+body.discover-nav-pinned > main {
+  padding-top: 4rem;
+}
