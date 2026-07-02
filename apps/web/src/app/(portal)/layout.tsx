@@ -3,6 +3,7 @@ import { Inter, Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@portal/components/NavBar";
 import { Footer } from "@portal/components/Footer";
+import { NavProgress } from "@portal/components/NavProgress";
 
 const fontSans = Inter({
   variable: "--font-inter",
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fontSans.variable} ${fontHeading.variable} h-full`}>
       <body className="min-h-full flex flex-col">
+        <NavProgress />
         <NavBar />
         <main className="flex-1">{children}</main>
         <Footer />
