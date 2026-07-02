@@ -83,15 +83,15 @@ export function GeneratingCard({ message }: { message?: string } = {}) {
         <div className="w-full max-w-xs h-1 mt-8 bg-muted/40 rounded-full overflow-hidden">
           <div
             ref={barRef}
-            className="h-full bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 rounded-full"
+            className="h-full bg-primary rounded-full"
             style={{ width: "6%" }}
           />
         </div>
 
         <div ref={dotsRef} className="flex items-center gap-2 mt-6">
-          <span data-dot className="w-2 h-2 rounded-full bg-purple-500" />
-          <span data-dot className="w-2 h-2 rounded-full bg-purple-500" />
-          <span data-dot className="w-2 h-2 rounded-full bg-purple-500" />
+          <span data-dot className="w-2 h-2 rounded-full bg-primary" />
+          <span data-dot className="w-2 h-2 rounded-full bg-primary" />
+          <span data-dot className="w-2 h-2 rounded-full bg-primary" />
         </div>
       </div>
     </CardStage>

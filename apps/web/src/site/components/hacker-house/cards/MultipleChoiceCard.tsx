@@ -60,13 +60,13 @@ export function MultipleChoiceCard({
                 onClick={() => onAnswer(opt)}
                 className={cn(
                   "group w-full text-left px-4 py-3 rounded-lg border transition-all",
-                  "bg-background hover:bg-purple-50 hover:border-purple-300",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400",
-                  isCurrent && "bg-purple-100 border-purple-400",
+                  "bg-background hover:bg-primary/5 hover:border-primary/40",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50",
+                  isCurrent && "bg-primary/10 border-primary/50",
                 )}
               >
                 <span className="inline-flex items-center gap-3">
-                  <span className="inline-flex w-6 h-6 items-center justify-center rounded-md border bg-muted/40 text-xs font-medium group-hover:bg-purple-100 group-hover:border-purple-300">
+                  <span className="inline-flex w-6 h-6 items-center justify-center rounded-md border bg-muted/40 text-xs font-medium group-hover:bg-primary/10 group-hover:border-primary/40">
                     {i + 1}
                   </span>
                   <span className="text-sm">{opt}</span>

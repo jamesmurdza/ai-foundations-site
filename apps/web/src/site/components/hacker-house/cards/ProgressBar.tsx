@@ -24,7 +24,7 @@ export function ProgressBar({ progress }: { progress: number }) {
     <div className="fixed top-0 inset-x-0 z-40 h-1 bg-muted/40">
       <div
         ref={fillRef}
-        className="h-full origin-left bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500"
+        className="h-full origin-left bg-primary"
         style={{ transform: "scaleX(0)" }}
       />
     </div>
