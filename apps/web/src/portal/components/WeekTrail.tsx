@@ -25,20 +25,20 @@ export function WeekTrail({
   return (
     <nav
       aria-label="Program weeks"
-      className="mb-6 flex items-center justify-center gap-2 text-[13px] text-slate-channel/75"
+      className="mb-6 flex items-center justify-center gap-2 text-[11px] text-slate-channel/55"
     >
       {weeks.map((w, i) => {
         const active = w.number === activeNumber;
         return (
           <span key={w.id} className="flex items-center gap-2">
             {i > 0 && (
-              <span aria-hidden className="text-slate-channel/30">
+              <span aria-hidden className="text-slate-channel/25">
                 ·
               </span>
             )}
             {w.locked ? (
               <span
-                className="text-slate-channel/35"
+                className="text-slate-channel/30"
                 title={`Week ${w.number} — unlocks soon`}
               >
                 Week {w.number}
@@ -50,8 +50,8 @@ export function WeekTrail({
                 title={`Week ${w.number} · ${w.theme}`}
                 className={
                   active
-                    ? "font-semibold text-midnight-harbor"
-                    : "transition-colors hover:text-midnight-harbor"
+                    ? "font-medium text-slate-channel"
+                    : "transition-colors hover:text-slate-channel"
                 }
               >
                 Week {w.number}
