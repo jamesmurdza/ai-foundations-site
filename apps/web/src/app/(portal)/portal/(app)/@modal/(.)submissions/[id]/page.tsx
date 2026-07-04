@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import { SubmissionModal } from "@portal/components/SubmissionModal";
 import { SubmissionDetailView } from "@portal/components/SubmissionDetailView";
+import { LoadingScreen } from "@portal/components/LoadingScreen";
 import { parseWeekRouteParam } from "@portal/lib/weekRoutes";
 import { redirect } from "@portal/lib/nav";
 
@@ -17,9 +19,14 @@ export default async function SubmissionModalPage({
   // send those to the full page, which resolves the redirect.
   if (parseWeekRouteParam(id)) redirect(`/submissions/${id}`);
 
+  // Render the modal chrome immediately and stream the (data-heavy) detail in
+  // behind a Suspense boundary, so a click shows the modal with a spinner right
+  // away instead of nothing until everything has loaded.
   return (
     <SubmissionModal>
-      <SubmissionDetailView id={id} />
+      <Suspense fallback={<LoadingScreen />}>
+        <SubmissionDetailView id={id} />
+      </Suspense>
     </SubmissionModal>
   );
 }
