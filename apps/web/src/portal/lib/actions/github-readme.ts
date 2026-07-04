@@ -61,6 +61,14 @@ export async function updateGithubReadme(formData: FormData) {
   const token = user.accessToken!;
   const existing = await getProfileReadmeContents(login, token);
 
+  // Nothing to write: identical to what's on GitHub already, OR an empty editor
+  // with no README yet (both sides ""). Skip the write entirely — this avoids
+  // creating an empty `login/login` repo and avoids redundant no-diff commits —
+  // and just continue to wherever the caller wanted to go.
+  if (markdown.trim() === (existing?.markdown ?? "").trim()) {
+    redirect(returnTo ?? "/settings/readme?saved=1");
+  }
+
   const result = await upsertProfileReadme(
     login,
     token,

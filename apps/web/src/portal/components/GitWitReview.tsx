@@ -131,7 +131,7 @@ export function GitWitReview({
 
   // Result.
   return (
-    <div className="mt-4 max-w-[34rem] mx-auto text-left">
+    <div className="mt-4 max-w-[744px] mx-auto text-left">
       <div className="rounded-[14px] border border-sea-fog p-5">
         <div className="flex items-center gap-2">
           <Image

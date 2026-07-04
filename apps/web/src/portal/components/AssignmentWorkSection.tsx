@@ -36,7 +36,6 @@ import { Popover } from "@portal/components/Popover";
 import { QaPanel } from "@portal/components/QaPanel";
 import { SubmittedCongrats } from "@portal/components/SubmittedCongrats";
 import { GitWitReview } from "@portal/components/GitWitReview";
-import { ReadmeEditor } from "@portal/components/ReadmeEditor";
 import { loadReadmeForEdit } from "@portal/lib/actions/github-readme";
 import { toReviewResult, type CriterionVerdict } from "@portal/lib/gitwitTypes";
 import { withBase } from "@portal/lib/paths";
@@ -223,27 +222,21 @@ export async function AssignmentWorkSection({
       )
     : null;
   // Saving the README doubles as "continue" — it advances to the feedback page.
+  // The editor itself is rendered inside the (client) flow so Back is instant
+  // client nav; here we only supply its data + a connect-GitHub fallback.
   const readmeReturnTo = `/home?week=${assignment.weekId}&step=4${
     edit ? "&edit=1" : ""
   }#assignment`;
-  const readmeBackHref = `/home?week=${assignment.weekId}&step=2${
-    edit ? "&edit=1" : ""
-  }#assignment`;
-  const readmeSavable = Boolean(githubConnected && readme);
-  const readmeEditorNode = githubConnected && readme ? (
-    <ReadmeEditor
-      login={user.githubLogin!}
-      initialMarkdown={readme.markdown}
-      hasExisting={readme.hasExisting}
-      returnTo={readmeReturnTo}
-      saveLabel="Save & continue →"
-      secondaryAction={
-        <Link href={readmeBackHref} className="btn btn-gray">
-          ← Back
-        </Link>
-      }
-    />
-  ) : (
+  const readmeEditorProps =
+    githubConnected && readme
+      ? {
+          login: user.githubLogin!,
+          initialMarkdown: readme.markdown,
+          hasExisting: readme.hasExisting,
+          returnTo: readmeReturnTo,
+        }
+      : null;
+  const readmeFallback = (
     <div className="rounded-[12px] border border-sea-fog p-4">
       <p className="meta text-[14px]">
         Connect your GitHub account to write and sync your profile README here.
@@ -580,8 +573,8 @@ export async function AssignmentWorkSection({
           actions={actions}
           formFields={formFields}
           review={<GitWitReview initial={gitwitInitial} />}
-          readmeEditor={readmeEditorNode}
-          readmeSavable={readmeSavable}
+          readmeEditorProps={readmeEditorProps}
+          readmeFallback={readmeFallback}
           submitAction={createSubmission}
           initialStep={step ?? 1}
         />

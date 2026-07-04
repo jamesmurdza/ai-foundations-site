@@ -33,10 +33,7 @@ export default async function MySubmissionsPage() {
   return (
     <div className="py-2">
       <div className="mb-8">
-        <h1 className="text-[34px] mb-1">Your work</h1>
-        <p className="meta">
-          Everything you&apos;ve shipped — and the weeks still ahead.
-        </p>
+        <h1 className="text-[34px]">Your work</h1>
       </div>
 
       {cards.length === 0 ? (
@@ -55,11 +52,11 @@ export default async function MySubmissionsPage() {
               return (
                 <div key={assignment.id} className="flex flex-col gap-2">
                   <div className="card flex flex-1 flex-col items-center justify-center min-h-[176px] text-center opacity-60">
+                    <span className="meta-light text-[12px] mb-1">
+                      Week {assignment.weekNumber}
+                    </span>
                     <span className="font-semibold text-[17px] leading-snug text-balance text-slate-channel">
                       {assignment.title}
-                    </span>
-                    <span className="meta-light text-[12px] mt-1.5">
-                      Week {assignment.weekNumber} · Not started
                     </span>
                   </div>
                   <div className="flex items-center justify-end meta-light text-[13px] px-1">
@@ -87,6 +84,9 @@ export default async function MySubmissionsPage() {
                   href={href}
                   className="card flex flex-1 flex-col items-center justify-center min-h-[176px] text-center"
                 >
+                  <span className="meta-light text-[12px] mb-1">
+                    Week {item.weekNumber}
+                  </span>
                   <span className="font-semibold text-[17px] leading-snug text-balance">
                     {item.assignmentTitle || "Submission"}
                   </span>
