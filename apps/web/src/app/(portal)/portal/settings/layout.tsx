@@ -18,7 +18,7 @@ export default async function SettingsLayout({
     : `/profiles/${profile.id}`;
 
   return (
-    <div className="container-page py-10 max-w-[960px]">
+    <div className="container-page py-10">
       <div className="flex items-center justify-between gap-4">
         <h1 className="text-[34px]">Settings</h1>
         <Link href={profileHref} className="link text-[14px]">

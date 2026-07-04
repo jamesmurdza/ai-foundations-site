@@ -50,7 +50,7 @@ export function ProfileView({
   const location = [profile.city, profile.country].filter(Boolean).join(", ");
 
   return (
-    <div className="container-page py-10 max-w-[1120px]">
+    <div className="container-page py-10">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[300px_minmax(0,1fr)] lg:items-start">
         {/* Identity rail */}
         <aside className="lg:sticky lg:top-6">
