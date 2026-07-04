@@ -16,7 +16,7 @@ export function TradeStarsCta({
       <p className="meta mx-auto max-w-[44ch] text-center">
         <span className="font-semibold text-foreground">Trade Stars is on ⭐</span>{" "}
         — the cohort is starring your repo, and yours stars theirs.{" "}
-        <Link href="/profile/edit" className="link">
+        <Link href="/settings/account" className="link">
           Manage
         </Link>
       </p>

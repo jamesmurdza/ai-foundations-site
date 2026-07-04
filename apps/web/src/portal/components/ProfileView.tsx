@@ -63,7 +63,7 @@ export function ProfileView({
           {/* Full-width follow / edit, GitHub-style. */}
           <div className="mt-4 [&_a]:w-full [&_a]:justify-center [&_button]:w-full [&_button]:justify-center [&_form]:w-full">
             {isOwner ? (
-              <Link href="/profile/edit" className="btn btn-outline btn-sm">Edit profile</Link>
+              <Link href="/settings/profile" className="btn btn-outline btn-sm">Edit profile</Link>
             ) : (
               <FollowButton
                 targetUserId={follow.targetUserId}
@@ -108,7 +108,7 @@ export function ProfileView({
         <div className="min-w-0">
           {/* GitHub README — the centerpiece (mirrors their GitHub profile).
               Proud of / Excited by are intentionally not shown here — they're
-              private, edited on /profile/edit but never rendered on the profile. */}
+              private, edited in Settings but never rendered on the profile. */}
           {readme}
 
           {/* Projects — a "pinned"-style card grid, matching Discover / My Work. */}
