@@ -11,20 +11,21 @@ export async function Readme({ login }: { login: string }) {
   const html = await getRenderedReadmeHtml(login);
   if (!html) return null;
   // GitHub's HTML is already wrapped in <article class="markdown-body">, which
-  // github-markdown-css styles — render it directly (no extra wrapper).
+  // github-markdown-css styles — render it directly (no extra wrapper). Framed
+  // flat (thin border, no fill) to match the Discover feed's "work" frame.
   return (
-    <article className="card !p-7">
-      <div className="label mb-4">
+    <div className="border border-border">
+      <div className="border-b border-border px-5 py-3">
         <a
           href={`https://github.com/${login}`}
           target="_blank"
           rel="noreferrer"
-          className="hover:text-primary"
+          className="label hover:text-signal-blue"
         >
           GitHub profile · @{login}
         </a>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-    </article>
+      <div className="p-5" dangerouslySetInnerHTML={{ __html: html }} />
+    </div>
   );
 }

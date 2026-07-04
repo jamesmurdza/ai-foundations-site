@@ -183,7 +183,7 @@ export default async function ProfileEditPage({
           <textarea className="textarea" name="proudOf" rows={2} defaultValue={v.proudOf} />
         </div>
         <div>
-          <label className="label">🎯 Want to achieve</label>
+          <label className="label">🎯 Excited by</label>
           <textarea className="textarea" name="wantToAchieve" rows={2} defaultValue={v.wantToAchieve} />
         </div>
 
