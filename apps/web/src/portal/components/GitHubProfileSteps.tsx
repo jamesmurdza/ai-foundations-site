@@ -108,20 +108,22 @@ export function GitHubProfileSteps({
 
   return (
     <div>
-      <div className="mb-3">
-        {weekLabel && (
-          <p className="text-[13px] font-medium text-slate-channel/60 mb-0.5">
-            {weekLabel}
-          </p>
-        )}
-        <div className="flex items-center justify-between gap-3">
+      <div className="flex items-start justify-between gap-3 mb-3">
+        <div>
+          {weekLabel && (
+            <p className="text-[13px] font-medium text-slate-channel/60 mb-0.5">
+              {weekLabel}
+            </p>
+          )}
           <h2 className="text-heading-lg leading-tight">
             {STEPS[step - 1].header}
           </h2>
-          {actions && (
-            <div className="flex items-center gap-1 shrink-0">{actions}</div>
-          )}
         </div>
+        {actions && (
+          <div className="flex items-center gap-1 shrink-0 [&_button]:text-slate-channel/60">
+            {actions}
+          </div>
+        )}
       </div>
 
       {step === 1 && (
