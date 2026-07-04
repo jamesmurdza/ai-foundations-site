@@ -54,13 +54,18 @@ export default async function MySubmissionsPage() {
             if (!item) {
               return (
                 <div key={assignment.id} className="flex flex-col gap-2">
-                  <div className="card flex flex-1 flex-col items-center justify-center min-h-[176px] text-center opacity-60">
-                    <span className="font-semibold text-[17px] leading-snug text-balance text-slate-channel">
-                      {assignment.title}
+                  <div className="card flex flex-1 flex-col min-h-[176px] text-center opacity-60">
+                    <span className="meta-light text-[12px] text-left">
+                      Week {assignment.weekNumber}
                     </span>
-                    <span className="meta-light text-[12px] mt-1.5">
-                      Week {assignment.weekNumber} · Not started
-                    </span>
+                    <div className="flex flex-1 flex-col items-center justify-center">
+                      <span className="font-semibold text-[17px] leading-snug text-balance text-slate-channel">
+                        {assignment.title}
+                      </span>
+                      <span className="meta-light text-[12px] mt-1.5">
+                        Not started
+                      </span>
+                    </div>
                   </div>
                   <div className="flex items-center justify-end meta-light text-[13px] px-1">
                     <Link
@@ -85,11 +90,16 @@ export default async function MySubmissionsPage() {
               <div key={s.id} className="flex flex-col gap-2">
                 <Link
                   href={href}
-                  className="card flex flex-1 flex-col items-center justify-center min-h-[176px] text-center"
+                  className="card flex flex-1 flex-col min-h-[176px] text-center"
                 >
-                  <span className="font-semibold text-[17px] leading-snug text-balance">
-                    {item.assignmentTitle || "Submission"}
+                  <span className="meta-light text-[12px] text-left">
+                    Week {assignment.weekNumber}
                   </span>
+                  <div className="flex flex-1 flex-col items-center justify-center">
+                    <span className="font-semibold text-[17px] leading-snug text-balance">
+                      {item.assignmentTitle || "Submission"}
+                    </span>
+                  </div>
                 </Link>
                 <div className="flex items-center justify-start gap-5 meta-light text-[13px] px-1">
                   <Link
