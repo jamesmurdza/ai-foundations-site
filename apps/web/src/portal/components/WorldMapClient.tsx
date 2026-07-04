@@ -36,6 +36,7 @@ export function WorldMapClient({
   height,
   total,
   topControl,
+  reserveTopControl,
 }: {
   paths: CountryPath[];
   dots: Dot[];
@@ -45,6 +46,7 @@ export function WorldMapClient({
   height: number;
   total: number;
   topControl?: ReactNode;
+  reserveTopControl?: boolean;
 }) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const tipRef = useRef<HTMLDivElement | null>(null);
@@ -346,6 +348,9 @@ export function WorldMapClient({
         {/* Controls: optional collapse button above the zoom +/- stack. */}
         <div className="absolute right-3 top-3 z-10 flex flex-col items-end gap-2">
           {topControl}
+          {/* Reserve the top slot (h-8, matching the +/- buttons) for a
+              collapse control the parent overlays above this stack. */}
+          {reserveTopControl && !topControl && <div className="h-8 w-8" aria-hidden />}
           <div className="flex flex-col overflow-hidden rounded-[10px] border border-sea-fog bg-canvas-white shadow-card-2">
             <button
               type="button"
