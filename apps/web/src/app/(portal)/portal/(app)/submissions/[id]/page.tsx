@@ -122,7 +122,7 @@ export default async function SubmissionPage({
           className="scroll-mt-24 lg:sticky lg:top-6 border-t border-border pt-5 lg:border-t-0 lg:pt-0"
         >
           {isOwner && (
-            <div className="mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md border border-border bg-muted px-4 py-3 text-[14px]">
+            <div className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md border border-border bg-muted px-4 py-3 text-[14px]">
               <span>You submitted this.</span>
               {assignment && week && (
                 <Link
