@@ -15,16 +15,6 @@ export async function Readme({ login }: { login: string }) {
   // flat (thin border, no fill) to match the Discover feed's "work" frame.
   return (
     <div className="border border-border">
-      <div className="border-b border-border px-5 py-3">
-        <a
-          href={`https://github.com/${login}`}
-          target="_blank"
-          rel="noreferrer"
-          className="label hover:text-signal-blue"
-        >
-          GitHub profile · @{login}
-        </a>
-      </div>
       <div className="p-5" dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );

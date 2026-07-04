@@ -59,14 +59,6 @@ export function ReadmeEditor({
 
   return (
     <div id="readme" className="scroll-mt-24 space-y-4">
-      <div>
-        <div className="label mb-1">GitHub profile README</div>
-        <p className="meta text-[14px]">
-          Shown atop your GitHub profile and on{" "}
-          <span className="font-mono text-[13px]">/users/{login}</span> here.
-        </p>
-      </div>
-
       {!hasExisting && !markdown.trim() && (
         <p className="meta text-[14px]">
           No README yet — write one here and we&apos;ll create your{" "}
