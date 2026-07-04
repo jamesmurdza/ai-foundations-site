@@ -13,7 +13,7 @@ import { rankByNeed } from "@portal/lib/compliments";
 import { SubmissionFeedPost } from "@portal/components/SubmissionFeedPost";
 import { WorldMap } from "@portal/components/WorldMap";
 import { StarBoard } from "@portal/components/StarBoard";
-import { DiscoverShell, MapCollapseButton } from "@portal/components/DiscoverShell";
+import { DiscoverShell } from "@portal/components/DiscoverShell";
 import { PinNavbar } from "@portal/components/PinNavbar";
 
 // "needs" floats the least-commented work to the top — the whole matching idea.
@@ -52,7 +52,7 @@ export default async function DiscoverPage({
     <div className="py-2">
       <PinNavbar />
       <DiscoverShell
-        map={<WorldMap people={mapPeople} topControl={<MapCollapseButton />} />}
+        map={<WorldMap people={mapPeople} reserveTopControl />}
         feed={feed}
       />
     </div>
