@@ -172,10 +172,14 @@ export default async function SubmissionPage({
                     canLike={canLike}
                   />
                 )}
-                <span className="flex items-center gap-1.5 text-[15px] text-slate-channel">
+                <Link
+                  href={`/submissions/${s.id}#comments`}
+                  prefetch={false}
+                  className="flex items-center gap-1.5 text-[15px] text-slate-channel hover:text-signal-blue"
+                >
                   <MessageCircle size={18} />
                   <span className="font-semibold">{comments.length}</span>
-                </span>
+                </Link>
               </div>
             }
           />
