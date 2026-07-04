@@ -89,6 +89,7 @@ export default async function SubmissionPage({
     author,
     assignmentTitle: assignment?.title ?? "Submission",
     weekNumber: week?.number ?? 0,
+    weekId: week?.id ?? null,
     feedbackCount: 0,
     commentCount: comments.length,
     starCount,
@@ -96,19 +97,6 @@ export default async function SubmissionPage({
 
   return (
     <div className="py-2">
-      {isOwner && (
-        <div className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md border border-border bg-muted px-4 py-3 text-[14px]">
-          <span>You submitted this.</span>
-          {assignment && week && (
-            <Link
-              href={weekAssignmentHomePath(week.id)}
-              className="link font-semibold"
-            >
-              Edit it
-            </Link>
-          )}
-        </div>
-      )}
       <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
         {/* The post — left */}
         <div>
@@ -134,6 +122,19 @@ export default async function SubmissionPage({
           id="comments"
           className="scroll-mt-24 lg:sticky lg:top-6 border-t border-border pt-5 lg:border-t-0 lg:pt-0"
         >
+          {isOwner && (
+            <div className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md border border-border bg-muted px-4 py-3 text-[14px]">
+              <span>You submitted this.</span>
+              {assignment && week && (
+                <Link
+                  href={weekAssignmentHomePath(week.id, { edit: true })}
+                  className="link font-semibold"
+                >
+                  Edit it
+                </Link>
+              )}
+            </div>
+          )}
           <div className="flex items-start justify-between gap-3 border-b border-border pb-4 mb-4">
             <Link
               href={profileHref(author)}

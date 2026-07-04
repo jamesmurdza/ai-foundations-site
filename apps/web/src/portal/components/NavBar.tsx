@@ -18,7 +18,7 @@ export async function NavBar() {
   // visitors only see the public Discover page (showcase + directory + map).
   const links: NavLink[] = user
     ? [
-        { href: "/home", label: "Home" },
+        { href: "/home", label: "Course" },
         { href: "/submissions", label: "My Work" },
         discoverLink,
         ...(user.isAdmin ? [{ href: "/admin", label: "Admin" }] : []),
