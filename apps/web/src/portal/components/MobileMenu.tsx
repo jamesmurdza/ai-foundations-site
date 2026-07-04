@@ -78,7 +78,7 @@ export function MobileMenu({
             {isAuthed ? (
               <>
                 <Link href="/home" onClick={close} className="btn btn-primary !py-3">
-                  Home
+                  Course
                 </Link>
                 {profileHref && (
                   <Link href={profileHref} onClick={close} className="btn btn-outline !py-3 mt-2">
