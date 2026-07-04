@@ -47,6 +47,35 @@ export function isGitHubProfileStepKey(stepKey: string): boolean {
 
 export const GITHUB_PROFILE_ASSIGNMENT_PROMPT = `Polish your GitHub profile and personal README so people can see who you are and what you've built. Submit your profile URL (github.com/yourname). Follow a few peers in the cohort on GitHub.`;
 
+/**
+ * Page 1 of the Week 1 flow — brainstorm / priming. No inputs; it gets students
+ * thinking about the raw material for a great profile before they touch settings.
+ */
+export const GITHUB_PROFILE_BRAINSTORM = {
+  intro:
+    "Your GitHub profile is the first impression you make on other developers, recruiters, and collaborators. Before you touch a single setting, take a few minutes to think about the story you want it to tell.",
+  prompts: [
+    {
+      title: "What are you proud of?",
+      body: "Projects you've built, problems you've solved, things you've shipped — even small ones. These become the highlights of your profile.",
+    },
+    {
+      title: "What are you excited about?",
+      body: "The languages, tools, and ideas you love working with, and what you're learning right now. This is what makes a profile feel alive.",
+    },
+    {
+      title: "Who's it for?",
+      body: "Picture whoever lands on your profile — a recruiter, a future teammate, a fellow contributor. What should they know about you in ten seconds?",
+    },
+    {
+      title: "What makes you, you?",
+      body: "Your background, interests outside of code, and the through-line in the things you build.",
+    },
+  ],
+  footer:
+    "Jot a few notes down — you'll turn them into your profile and README over the next pages.",
+};
+
 export const GITHUB_PROFILE_BRIEF = {
   title: "Week 1: Introducing You!",
   intro:

@@ -277,6 +277,27 @@ export const follows = pgTable(
   ],
 );
 
+/**
+ * Cached GitWit AI reviews — one row per user (their own profile). Lets the
+ * Week 1 feedback step show instantly and skip re-running Haiku on every visit;
+ * the "Refresh" button overwrites this row. `verdicts` is the raw per-criterion
+ * array (jsonb), re-partitioned into good/missing on read.
+ */
+export const gitwitReviews = pgTable(
+  "ss_gitwit_reviews",
+  {
+    id: id(),
+    userId: text("user_id").notNull(),
+    login: text("login").notNull(),
+    verdicts: jsonb("verdicts").notNull(),
+    createdAt,
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .defaultNow()
+      .notNull(),
+  },
+  (t) => [uniqueIndex("ss_gitwit_reviews_user_idx").on(t.userId)],
+);
+
 export const githubSnapshots = pgTable("ss_github_snapshots", {
   id: id(),
   userId: text("user_id").notNull(),
@@ -542,3 +563,4 @@ export type Feedback = typeof feedback.$inferSelect;
 export type Comment = typeof comments.$inferSelect;
 export type Event = typeof events.$inferSelect;
 export type Follow = typeof follows.$inferSelect;
+export type GitwitReviewRow = typeof gitwitReviews.$inferSelect;

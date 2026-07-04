@@ -6,33 +6,52 @@ import { toggleWeekStep } from "@portal/lib/actions/engagement";
 import { SubmitButton } from "@portal/components/SubmitButton";
 import {
   GITHUB_PROFILE_BRIEF,
+  GITHUB_PROFILE_BRAINSTORM,
   githubProfileStepKey,
 } from "@portal/lib/githubProfileChecklist";
 
 type Section = (typeof GITHUB_PROFILE_BRIEF.sections)[number];
 
-// Week 1 as a linear three-step flow: profile basics (page 1), the personal
-// README (page 2), then an optional GitWit review of your profile right before
-// you submit (page 3). Checkbox state persists per item.
+// Week 1 as a linear four-page flow, each page with its own header:
+//   1. Brainstorm  — prime what makes a great profile (no inputs)
+//   2. Profile     — set up the GitHub profile basics + checklist
+//   3. README      — write an awesome README in the embedded editor
+//   4. Feedback    — automatic GitWit review, then submit
+// Checkbox state persists per item; a subtle page-dot row sits below the flow.
+const STEPS = [
+  { header: "Before you build your profile" },
+  { header: "Set up your GitHub profile" },
+  { header: "Write an awesome README" },
+  { header: "Get feedback, then submit" },
+];
+
 export function GitHubProfileSteps({
   weekId,
   done: initialDone,
   actions,
   formFields,
   review,
+  readmeEditor,
   submitAction,
+  initialStep = 1,
 }: {
   weekId: string;
   done: Record<string, boolean>;
   actions?: ReactNode;
   formFields: ReactNode;
-  /** The "Ask GitWit to review" panel, shown as a step before submitting. */
+  /** The automatic "GitWit review" panel, shown on the final page before submit. */
   review?: ReactNode;
+  /** The embedded tabbed README editor (or a connect-GitHub fallback). */
+  readmeEditor?: ReactNode;
   submitAction: (formData: FormData) => void | Promise<void>;
+  /** Which page to open on (server can restore it after a full navigation). */
+  initialStep?: number;
 }) {
   const [done, setDone] = useState(initialDone);
   const [, startTransition] = useTransition();
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(() =>
+    Math.min(Math.max(initialStep, 1), STEPS.length),
+  );
 
   function toggle(itemKey: string, next: boolean) {
     const snapshot = done;
@@ -84,15 +103,44 @@ export function GitHubProfileSteps({
   return (
     <div>
       <div className="flex items-start justify-between gap-3 mb-3">
-        <h2 className="text-heading-lg leading-tight">
-          {GITHUB_PROFILE_BRIEF.title}
-        </h2>
+        <h2 className="text-heading-lg leading-tight">{STEPS[step - 1].header}</h2>
         {actions && (
           <div className="flex items-center gap-1 shrink-0">{actions}</div>
         )}
       </div>
 
       {step === 1 && (
+        <>
+          <p className="text-[15px] leading-relaxed">
+            {GITHUB_PROFILE_BRAINSTORM.intro}
+          </p>
+          <div className="mt-5 space-y-3">
+            {GITHUB_PROFILE_BRAINSTORM.prompts.map((p) => (
+              <div
+                key={p.title}
+                className="rounded-[12px] border border-sea-fog bg-ice-tint/40 p-4"
+              >
+                <p className="font-semibold text-[15px]">{p.title}</p>
+                <p className="meta text-[14px] mt-1 leading-relaxed">{p.body}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-[15px] leading-relaxed mt-4">
+            {GITHUB_PROFILE_BRAINSTORM.footer}
+          </p>
+          <div className="mt-6 flex justify-end">
+            <button
+              type="button"
+              onClick={() => setStep(2)}
+              className="btn btn-primary"
+            >
+              Start building →
+            </button>
+          </div>
+        </>
+      )}
+
+      {step === 2 && (
         <>
           <p className="text-[15px] leading-relaxed">
             {GITHUB_PROFILE_BRIEF.intro}
@@ -107,55 +155,9 @@ export function GitHubProfileSteps({
             >
               GitHub profile
             </a>{" "}
-            to get started. Click <strong>Edit profile</strong> to fill in the
-            basics:
+            and click <strong>Edit profile</strong> to fill in the basics:
           </p>
           {checklist(profileSection)}
-          <p className="text-[15px] leading-relaxed mt-4">
-            We will be adding more content here as we develop the curriculum.
-            We could probably get away with one page for this form, but two
-            pages gives us more space to add content.
-          </p>
-          <div className="mt-6 flex justify-end">
-            <button
-              type="button"
-              onClick={() => setStep(2)}
-              className="btn btn-primary"
-            >
-              Next →
-            </button>
-          </div>
-        </>
-      )}
-
-      {step === 2 && (
-        <>
-          <p className="text-[15px] leading-relaxed">
-            Your profile README lives in a special public repository named
-            exactly your username — for example,{" "}
-            <strong>yourname/yourname</strong>. You can write and save it right
-            here in the portal — it syncs to GitHub and shows on your profile
-            page.
-          </p>
-          <div className="mt-4">
-            <Link href="/settings/readme" className="btn btn-primary">
-              Edit your README in the portal →
-            </Link>
-          </div>
-          {checklist(readmeSection)}
-          <p className="text-[15px] leading-relaxed mt-4">
-            {GITHUB_PROFILE_BRIEF.footer}{" "}
-            After saving, you can also{" "}
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noreferrer"
-              className="link"
-            >
-              view it on GitHub
-            </a>
-            .
-          </p>
           <div className="mt-6 flex items-center justify-between">
             <button
               type="button"
@@ -178,9 +180,47 @@ export function GitHubProfileSteps({
       {step === 3 && (
         <>
           <p className="text-[15px] leading-relaxed">
-            Before you submit, let GitWit take a quick look at your profile — an
-            AI read of the seven essentials, so you can round it out now rather
-            than later.
+            Your profile README lives in a special public repository named exactly
+            your username — for example, <strong>yourname/yourname</strong>. A great
+            README is scannable and personal: a one-line intro, the skills and
+            tools you work with, a couple of projects you&apos;re proud of, and what
+            you&apos;re learning now. Write and save it right here — it syncs to
+            GitHub and shows on your profile.
+          </p>
+          {checklist(readmeSection)}
+          <div className="mt-5">{readmeEditor}</div>
+          <p className="meta text-[13px] mt-3">
+            You can also edit this later under{" "}
+            <Link href="/settings/readme" className="link">
+              Settings → GitHub README
+            </Link>
+            .
+          </p>
+          <div className="mt-6 flex items-center justify-between">
+            <button
+              type="button"
+              onClick={() => setStep(2)}
+              className="btn btn-ghost !px-2"
+            >
+              ← Back
+            </button>
+            <button
+              type="button"
+              onClick={() => setStep(4)}
+              className="btn btn-primary"
+            >
+              Next →
+            </button>
+          </div>
+        </>
+      )}
+
+      {step === 4 && (
+        <>
+          <p className="text-[15px] leading-relaxed">
+            Here&apos;s GitWit&apos;s take on your profile — an AI read of the seven
+            essentials. Round out anything it flags, hit <strong>Refresh</strong> to
+            re-check, then submit when you&apos;re happy.
           </p>
           {review}
           <form action={submitAction} className="space-y-4 mt-6">
@@ -188,7 +228,7 @@ export function GitHubProfileSteps({
             <div className="flex items-center justify-between pt-4">
               <button
                 type="button"
-                onClick={() => setStep(2)}
+                onClick={() => setStep(3)}
                 className="btn btn-ghost !px-2"
               >
                 ← Back
@@ -198,6 +238,29 @@ export function GitHubProfileSteps({
           </form>
         </>
       )}
+
+      {/* Subtle page indicator for the flow (not the program weeks). Neutral —
+          no purple accent — with a wider dot for the current page. */}
+      <div className="mt-8 flex justify-center gap-2" aria-label="Page">
+        {STEPS.map((_, i) => {
+          const n = i + 1;
+          const active = n === step;
+          return (
+            <button
+              key={n}
+              type="button"
+              onClick={() => setStep(n)}
+              aria-label={`Go to page ${n}`}
+              aria-current={active ? "step" : undefined}
+              className={`h-2 rounded-full transition-all duration-200 ${
+                active
+                  ? "w-5 bg-slate-channel"
+                  : "w-2 bg-slate-channel/30 hover:bg-slate-channel/55"
+              }`}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

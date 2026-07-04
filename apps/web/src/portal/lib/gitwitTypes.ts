@@ -61,5 +61,17 @@ export type GitWitReviewResult =
       allGood: boolean;
       good: VerdictWithLabel[];
       missing: VerdictWithLabel[];
+      /** ISO timestamp of when this review was produced (for "last checked"). */
+      checkedAt: string;
     }
   | { ok: false; error: string };
+
+/** Build the client-facing result from raw verdicts + when they were produced. */
+export function toReviewResult(
+  login: string,
+  verdicts: CriterionVerdict[],
+  checkedAt: string,
+): GitWitReviewResult {
+  const { good, missing, allGood } = partitionReview({ verdicts });
+  return { ok: true, login, allGood, good, missing, checkedAt };
+}
