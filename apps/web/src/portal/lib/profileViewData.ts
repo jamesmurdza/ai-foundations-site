@@ -23,24 +23,49 @@ import type { Author } from "@portal/lib/queries";
  * style previews. README renders are cached per repo, so this is cheap.
  */
 export async function loadProfileViewData(profile: Profile, author: Author) {
-  const [{ user }, submissions] = await Promise.all([
+  const [{ user }, allSubmissions] = await Promise.all([
     getSessionContext(),
     listSubmissionsByUser(profile.userId),
   ]);
 
   const isOwner = user?.id === profile.userId;
 
+  // Chronological (oldest first) — the profile reads as a build log.
+  const ordered = [...allSubmissions].sort(
+    (a, b) => a.submission.createdAt.getTime() - b.submission.createdAt.getTime(),
+  );
+
+  // The Week 1 submission is a link to the person's GitHub profile. When present
+  // we source the README centerpiece from it; otherwise we fall back to their
+  // GitHub username. Either way that submission is dropped from the project feed
+  // below, so the same profile README is never shown twice.
+  const profileReadmeSub = ordered.find((it) => {
+    const s = it.submission;
+    return (
+      s.payloadType !== "text" &&
+      !parseRepo(s.payload) &&
+      Boolean(parseLogin(s.payload))
+    );
+  });
+  const readmeLogin =
+    (profileReadmeSub ? parseLogin(profileReadmeSub.submission.payload) : null) ??
+    author.login ??
+    null;
+
+  const projectItems = profileReadmeSub
+    ? ordered.filter((it) => it.submission.id !== profileReadmeSub.submission.id)
+    : ordered;
+
   const [likedRepos, readmeEntries] = await Promise.all([
     user ? listStarredRepoKeys(user.id) : Promise.resolve(new Set<string>()),
     Promise.all(
-      submissions.map(async (it) => {
+      projectItems.map(async (it) => {
         const s = it.submission;
         let html: string | null = null;
         if (s.repoOwner && s.repoName) {
           html = await getRepoReadmeHtml(s.repoOwner, s.repoName);
         } else if (s.payloadType !== "text" && !parseRepo(s.payload)) {
-          // A GitHub profile link (Week 1) — preview their profile README,
-          // which lives in the {login}/{login} repo.
+          // A GitHub profile link — preview the {login}/{login} README.
           const login = parseLogin(s.payload);
           if (login) html = await getRepoReadmeHtml(login, login);
         }
@@ -51,7 +76,7 @@ export async function loadProfileViewData(profile: Profile, author: Author) {
   const readmeMap = new Map(readmeEntries);
   const hasToken = Boolean(user?.accessToken);
 
-  const projects = submissions.map((item) => {
+  const projects = projectItems.map((item) => {
     const s = item.submission;
     const isRepo = Boolean(s.repoOwner && s.repoName);
     const repoKey = isRepo ? `${s.repoOwner}/${s.repoName}` : "";
@@ -76,6 +101,7 @@ export async function loadProfileViewData(profile: Profile, author: Author) {
     profile,
     author,
     projects,
+    readmeLogin,
     isOwner,
     follow: {
       targetUserId: profile.userId,

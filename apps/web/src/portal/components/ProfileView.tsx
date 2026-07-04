@@ -45,12 +45,8 @@ export function ProfileView({
   follow: FollowInfo;
   readme?: ReactNode;
 }) {
-  const links: [string, string | null][] = [
-    ["GitHub", profile.githubUrl],
-    ["Website", profile.siteUrl || profile.portfolioUrl],
-    ["LinkedIn", profile.linkedinUrl],
-    ["X", profile.xUrl],
-  ];
+  // Only the GitHub link is surfaced on the profile.
+  const links: [string, string | null][] = [["GitHub", profile.githubUrl]];
   const location = [profile.city, profile.country].filter(Boolean).join(", ");
 
   return (
