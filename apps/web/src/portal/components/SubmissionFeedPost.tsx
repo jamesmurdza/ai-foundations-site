@@ -31,6 +31,7 @@ export function SubmissionFeedPost({
   canLike,
   hideHeader = false,
   hideActions = false,
+  full = false,
 }: {
   item: ShowcaseItem;
   readmeHtml: string | null;
@@ -40,6 +41,9 @@ export function SubmissionFeedPost({
   hideHeader?: boolean;
   /** The submission page shows the like/comment row beneath its comments instead. */
   hideActions?: boolean;
+  /** Once opened (modal/detail), render the README full-length and drop the
+   *  overlay link — you're already looking at the submission. */
+  full?: boolean;
 }) {
   const { submission: s, author, commentCount } = item;
   const starCount = item.starCount ?? 0;
@@ -47,6 +51,10 @@ export function SubmissionFeedPost({
   const hasRepo = Boolean(s.repoOwner && s.repoName);
   // "2d" rather than "2d ago" — the terse Instagram-style timestamp.
   const posted = timeAgo(s.createdAt).replace(" ago", "");
+  // In the feed the whole clipped "photo" is a tap target that opens the
+  // submission modal (an overlay link, so it doesn't nest inside README anchors).
+  // The external-link card is itself a link, so it's left to open the repo.
+  const openModal = !full && (readmeHtml !== null || !externalHref);
 
   return (
     <article className="overflow-hidden">
@@ -78,9 +86,9 @@ export function SubmissionFeedPost({
 
       {/* The work — the repo's README rendered as real GitHub markdown, in a
           thin-bordered frame (no rounding, no fill) like an Instagram photo. */}
-      <div className="border border-border">
+      <div className="relative border border-border">
         {readmeHtml ? (
-          <SubmissionReadme html={readmeHtml} />
+          <SubmissionReadme html={readmeHtml} full={full} />
         ) : externalHref ? (
           <a
             href={externalHref}
@@ -91,9 +99,21 @@ export function SubmissionFeedPost({
             {destLabel(externalHref)} →
           </a>
         ) : (
-          <p className="meta whitespace-pre-wrap line-clamp-6 p-5 text-[14px]">
+          <p
+            className={`meta whitespace-pre-wrap p-5 text-[14px] ${
+              full ? "" : "line-clamp-6"
+            }`}
+          >
             {s.payload}
           </p>
+        )}
+        {openModal && (
+          <Link
+            href={`/submissions/${s.id}`}
+            prefetch={false}
+            aria-label="Open submission"
+            className="absolute inset-0 z-10"
+          />
         )}
       </div>
 
