@@ -51,7 +51,11 @@ export function ReadmeEditor({
   }
 
   const tab = (active: boolean) =>
-    `pill ${active ? "bg-signal-blue text-white" : "bg-ice-tint text-slate-channel"}`;
+    `px-4 py-2.5 text-[14px] font-semibold border-b-2 -mb-px cursor-pointer transition-colors ${
+      active
+        ? "border-signal-blue text-signal-blue"
+        : "border-transparent text-slate-channel hover:text-midnight-harbor"
+    }`;
 
   return (
     <div id="readme" className="scroll-mt-24 space-y-4">
@@ -73,7 +77,7 @@ export function ReadmeEditor({
         </p>
       )}
 
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex items-center gap-1 border-b border-sea-fog">
         <button type="button" onClick={() => setMode("write")} className={tab(mode === "write")}>
           Write
         </button>
@@ -84,7 +88,7 @@ export function ReadmeEditor({
           href={`https://github.com/${login}/${login}`}
           target="_blank"
           rel="noreferrer"
-          className="pill bg-ice-tint text-slate-channel ml-auto"
+          className="link text-[13px] ml-auto mr-1"
         >
           View on GitHub →
         </a>
