@@ -42,12 +42,12 @@ export function SubmissionModal({ children }: { children: React.ReactNode }) {
     >
       {/* The box is capped to the viewport minus the padding and scrolls its own
           content, so it stays centered with an even top/bottom gap always in
-          view — the whole page never scrolls behind it. overscroll-contain keeps
-          the rubber-band inside the box so it doesn't feel detached from the
-          border. */}
+          view — the whole page never scrolls behind it. No border (it was white
+          on white anyway, and a static frame looks odd against the scroll
+          bounce); the shadow separates it from the backdrop. */}
       <div
         ref={dialogRef}
-        className="max-h-[calc(100dvh-2rem)] w-full max-w-6xl overflow-y-auto overscroll-contain rounded-md border border-border bg-background p-5 shadow-xl sm:max-h-[calc(100dvh-4rem)] sm:p-8"
+        className="max-h-[calc(100dvh-2rem)] w-full max-w-6xl overflow-y-auto overscroll-contain rounded-md bg-background p-5 shadow-xl sm:max-h-[calc(100dvh-4rem)] sm:p-8"
       >
         {children}
       </div>
