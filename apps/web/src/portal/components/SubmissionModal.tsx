@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { X } from "lucide-react";
 
 /**
  * Instagram-web-style modal for viewing a submission without leaving the feed.
@@ -41,21 +40,14 @@ export function SubmissionModal({ children }: { children: React.ReactNode }) {
         if (!dialogRef.current?.contains(e.target as Node)) close();
       }}
     >
-      <button
-        type="button"
-        aria-label="Close"
-        onClick={close}
-        className="fixed right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-white transition-colors hover:bg-black/60"
-      >
-        <X size={20} />
-      </button>
-
       {/* The box is capped to the viewport minus the padding and scrolls its own
           content, so it stays centered with an even top/bottom gap always in
-          view — the whole page never scrolls behind it. */}
+          view — the whole page never scrolls behind it. overscroll-contain keeps
+          the rubber-band inside the box so it doesn't feel detached from the
+          border. */}
       <div
         ref={dialogRef}
-        className="max-h-[calc(100dvh-2rem)] w-full max-w-5xl overflow-y-auto rounded-lg border border-border bg-background p-5 shadow-xl sm:max-h-[calc(100dvh-4rem)] sm:p-8"
+        className="max-h-[calc(100dvh-2rem)] w-full max-w-6xl overflow-y-auto overscroll-contain rounded-md border border-border bg-background p-5 shadow-xl sm:max-h-[calc(100dvh-4rem)] sm:p-8"
       >
         {children}
       </div>
