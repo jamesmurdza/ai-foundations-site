@@ -55,7 +55,7 @@ export default async function MySubmissionsPage() {
               return (
                 <div key={assignment.id} className="flex flex-col gap-2">
                   <div className="card flex flex-1 flex-col min-h-[176px] text-center opacity-60">
-                    <span className="meta-light text-[12px] text-left">
+                    <span className="meta-light text-[12px] text-center">
                       Week {assignment.weekNumber}
                     </span>
                     <div className="flex flex-1 flex-col items-center justify-center">
@@ -92,7 +92,7 @@ export default async function MySubmissionsPage() {
                   href={href}
                   className="card flex flex-1 flex-col min-h-[176px] text-center"
                 >
-                  <span className="meta-light text-[12px] text-left">
+                  <span className="meta-light text-[12px] text-center">
                     Week {assignment.weekNumber}
                   </span>
                   <div className="flex flex-1 flex-col items-center justify-center">
