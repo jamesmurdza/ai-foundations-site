@@ -5,7 +5,6 @@ import { revalidatePath, revalidateTag } from "next/cache";
 import { getSessionContext } from "@portal/lib/auth";
 import {
   getProfileReadmeContents,
-  renderMarkdownPreview,
   upsertProfileReadme,
 } from "@portal/lib/github";
 
@@ -24,13 +23,6 @@ function requireGithubWriteAccess(user: {
   return true;
 }
 
-export async function previewReadmeMarkdown(
-  markdown: string,
-): Promise<string | null> {
-  const { user } = await getSessionContext();
-  if (!user || !requireGithubWriteAccess(user)) return null;
-  return renderMarkdownPreview(markdown, user.accessToken ?? undefined);
-}
 
 export async function updateGithubReadme(formData: FormData) {
   const { user } = await getSessionContext();
