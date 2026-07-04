@@ -30,6 +30,7 @@ export function SubmissionFeedPost({
   liked,
   canLike,
   hideHeader = false,
+  hideActions = false,
 }: {
   item: ShowcaseItem;
   readmeHtml: string | null;
@@ -37,6 +38,8 @@ export function SubmissionFeedPost({
   canLike: boolean;
   /** The submission page shows the author header in its comments column instead. */
   hideHeader?: boolean;
+  /** The submission page shows the like/comment row beneath its comments instead. */
+  hideActions?: boolean;
 }) {
   const { submission: s, author, commentCount } = item;
   const starCount = item.starCount ?? 0;
@@ -95,24 +98,26 @@ export function SubmissionFeedPost({
       </div>
 
       {/* Actions — GitHub stars only apply to repo posts; profile links can’t be starred. */}
-      <div className="flex items-center gap-5 pt-3">
-        {hasRepo && (
-          <LikeButton
-            submissionId={s.id}
-            count={starCount}
-            liked={liked}
-            canLike={canLike}
-          />
-        )}
-        <Link
-          href={`/submissions/${s.id}#comments`}
-          prefetch={false}
-          className="flex items-center gap-1.5 text-[15px] text-slate-channel hover:text-signal-blue"
-        >
-          <MessageCircle size={18} />
-          <span className="font-semibold">{commentCount}</span>
-        </Link>
-      </div>
+      {!hideActions && (
+        <div className="flex items-center gap-5 pt-3">
+          {hasRepo && (
+            <LikeButton
+              submissionId={s.id}
+              count={starCount}
+              liked={liked}
+              canLike={canLike}
+            />
+          )}
+          <Link
+            href={`/submissions/${s.id}#comments`}
+            prefetch={false}
+            className="flex items-center gap-1.5 text-[15px] text-slate-channel hover:text-signal-blue"
+          >
+            <MessageCircle size={18} />
+            <span className="font-semibold">{commentCount}</span>
+          </Link>
+        </div>
+      )}
     </article>
   );
 }

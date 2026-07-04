@@ -14,6 +14,8 @@ import { getAttachmentsFor } from "@portal/lib/files";
 import { CommentThread } from "@portal/components/CommentThread";
 import { AttachmentList } from "@portal/components/AttachmentList";
 import { SubmissionFeedPost } from "@portal/components/SubmissionFeedPost";
+import { LikeButton } from "@portal/components/LikeButton";
+import { MessageCircle } from "lucide-react";
 import { Avatar } from "@portal/components/Avatar";
 import { timeAgo } from "@portal/lib/format";
 import { profileHref } from "@portal/lib/profileHref";
@@ -103,6 +105,7 @@ export default async function SubmissionPage({
             liked={liked}
             canLike={canLike}
             hideHeader
+            hideActions
           />
 
           {s.notes && (
@@ -159,6 +162,22 @@ export default async function SubmissionPage({
             currentUser={currentUser}
             people={people}
             minimal
+            actions={
+              <div className="flex items-center gap-5">
+                {isRepo && (
+                  <LikeButton
+                    submissionId={s.id}
+                    count={starCount}
+                    liked={liked}
+                    canLike={canLike}
+                  />
+                )}
+                <span className="flex items-center gap-1.5 text-[15px] text-slate-channel">
+                  <MessageCircle size={18} />
+                  <span className="font-semibold">{comments.length}</span>
+                </span>
+              </div>
+            }
           />
         </aside>
       </div>

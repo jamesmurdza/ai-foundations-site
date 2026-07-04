@@ -24,6 +24,7 @@ export function CommentThread({
   people = [],
   compact = false,
   minimal = false,
+  actions = null,
   title = "Comments",
   placeholder = "Leave a comment… use @ to tag someone",
 }: {
@@ -36,6 +37,9 @@ export function CommentThread({
   compact?: boolean;
   /** Instagram-style: tiny avatars, inline name + text, single-line input. */
   minimal?: boolean;
+  /** Minimal only: a node (e.g. like/comment icons) rendered between the
+   *  comment list and the input field. */
+  actions?: React.ReactNode;
   /** Heading + input copy — e.g. profiles reuse this thread for "Compliments". */
   title?: string;
   placeholder?: string;
@@ -112,8 +116,15 @@ export function CommentThread({
           ))}
         </ul>
 
+        {actions && (
+          <div className="border-t border-border pt-3">{actions}</div>
+        )}
+
         {canComment ? (
-          <form action={submit} className="flex items-center gap-2 border-t border-border pt-3">
+          <form
+            action={submit}
+            className={`flex items-center gap-2 ${actions ? "" : "border-t border-border pt-3"}`}
+          >
             <input type="hidden" name="targetType" value={targetType} />
             <input type="hidden" name="targetId" value={targetId} />
             <MentionInput
@@ -130,7 +141,7 @@ export function CommentThread({
             </SubmitButton>
           </form>
         ) : (
-          <p className="meta text-[13px] border-t border-border pt-3">
+          <p className={`meta text-[13px] ${actions ? "" : "border-t border-border pt-3"}`}>
             <Link href="/login" className="link">Sign in</Link> to comment.
           </p>
         )}
