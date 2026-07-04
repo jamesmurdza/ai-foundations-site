@@ -12,6 +12,11 @@ const pool = new Pool({
 
 const WEEKS: [number, string, string][] = [
   [
+    0,
+    "Welcome",
+    "An intro to AI Summer School — what it is, how the weeks work, and what to expect.",
+  ],
+  [
     1,
     "GitHub Profile",
     "Polish your GitHub profile and personal README so people can see who you are and what you've built.",

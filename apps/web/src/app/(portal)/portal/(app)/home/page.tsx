@@ -4,11 +4,13 @@ import { requireOnboardedUser } from "@portal/lib/auth";
 import {
   getCurrentWeek,
   getWeek,
+  getWeekByNumber,
   listAnnouncements,
   listAssignmentsForWeek,
   resolveMentions,
 } from "@portal/lib/queries";
 import { AssignmentWorkSection } from "@portal/components/AssignmentWorkSection";
+import { WelcomeWeek } from "@portal/components/WelcomeWeek";
 import { extractMentions, MentionText } from "@portal/lib/mentions";
 import { getAttachmentsForMany } from "@portal/lib/files";
 import { AttachmentList } from "@portal/components/AttachmentList";
@@ -59,6 +61,11 @@ export default async function HomePage({
   const assignments = week ? await listAssignmentsForWeek(week.id) : [];
   const primaryAssignment = assignments[0] ?? null;
 
+  // Week 0 is the informational welcome — resolve where "Start Week 1 →" points.
+  const isWelcomeWeek = week?.number === 0;
+  const nextWeek = isWelcomeWeek ? await getWeekByNumber(1) : null;
+  const nextWeekHref = nextWeek ? `/home?week=${nextWeek.id}` : "/home";
+
   return (
     <div className="py-2">
       {/* Announcements */}
@@ -95,7 +102,9 @@ export default async function HomePage({
         </section>
       )}
 
-      {week ? (
+      {week && isWelcomeWeek ? (
+        <WelcomeWeek nextWeekHref={nextWeekHref} />
+      ) : week ? (
         <>
           {/* Active week header. The wizard weeks (1: profile, 2: repo showcase)
               open straight into their brief, so skip the redundant theme header. */}
