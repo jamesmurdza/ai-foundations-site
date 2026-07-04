@@ -89,6 +89,7 @@ export default async function SubmissionPage({
     author,
     assignmentTitle: assignment?.title ?? "Submission",
     weekNumber: week?.number ?? 0,
+    weekId: week?.id ?? null,
     feedbackCount: 0,
     commentCount: comments.length,
     starCount,

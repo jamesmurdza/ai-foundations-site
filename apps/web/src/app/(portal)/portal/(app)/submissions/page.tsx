@@ -1,7 +1,8 @@
 import Link from "@portal/components/Link";
-import { Heart, MessageCircle } from "lucide-react";
+import { Heart, MessageCircle, Pencil } from "lucide-react";
 import { requireOnboardedUser } from "@portal/lib/auth";
 import { listSubmissionsByUser } from "@portal/lib/queries";
+import { weekAssignmentHomePath } from "@portal/lib/weekRoutes";
 
 export default async function MySubmissionsPage() {
   const { user } = await requireOnboardedUser();
@@ -65,6 +66,16 @@ export default async function MySubmissionsPage() {
                     <MessageCircle size={16} />
                     {item.commentCount}
                   </Link>
+                  {item.weekId && (
+                    <Link
+                      href={weekAssignmentHomePath(item.weekId, { edit: true })}
+                      prefetch={false}
+                      className="ml-auto flex items-center hover:text-signal-blue"
+                      aria-label="Edit submission"
+                    >
+                      <Pencil size={15} />
+                    </Link>
+                  )}
                 </div>
               </div>
             );

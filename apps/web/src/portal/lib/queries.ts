@@ -206,6 +206,8 @@ export type ShowcaseItem = {
   author: Author;
   assignmentTitle: string;
   weekNumber: number;
+  /** The submission's week id — used to deep-link back into its edit form. */
+  weekId: string | null;
   feedbackCount: number;
   commentCount: number;
   /** GitHub stars on this submission's repo — the feed's "likes". */
@@ -224,6 +226,7 @@ async function decorateSubmissions(
       id: assignments.id,
       title: assignments.title,
       weekNumber: weeks.number,
+      weekId: assignments.weekId,
     })
     .from(assignments)
     .leftJoin(weeks, eq(weeks.id, assignments.weekId))
@@ -299,6 +302,7 @@ async function decorateSubmissions(
       },
     assignmentTitle: aMap.get(s.assignmentId)?.title ?? "Assignment",
     weekNumber: aMap.get(s.assignmentId)?.weekNumber ?? 0,
+    weekId: aMap.get(s.assignmentId)?.weekId ?? null,
     feedbackCount: fbMap.get(s.id) ?? 0,
     commentCount: cmMap.get(s.id) ?? 0,
     starCount:
