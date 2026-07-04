@@ -8,6 +8,7 @@ import {
 // Week 2 — pick & polish one repo to showcase. Thin copy wrapper over WeekWizard.
 export function RepoShowcaseSteps(props: {
   weekId: string;
+  weekLabel?: string;
   done: Record<string, boolean>;
   actions?: ReactNode;
   formFields: ReactNode;
@@ -18,7 +19,7 @@ export function RepoShowcaseSteps(props: {
     <WeekWizard
       {...props}
       keyPrefix={REPO_SHOWCASE_CHECKLIST_KEY_PREFIX}
-      title={REPO_SHOWCASE_BRIEF.title}
+      headers={["Pick a project and make it great", "Make it readable, then submit"]}
       section1={great}
       section2={readable}
       page1Before={

@@ -4,12 +4,19 @@ import Link from "@portal/components/Link";
 import { useState, useTransition, type ReactNode } from "react";
 import { toggleWeekStep } from "@portal/lib/actions/engagement";
 import { SubmitButton } from "@portal/components/SubmitButton";
+import { WizardHeader, WizardDots } from "@portal/components/WizardChrome";
 import {
   CONTRIBUTION_BRIEF,
   contributionStepKey,
 } from "@portal/lib/contributionChecklist";
 
 type Section = { heading: string; items: { key: string; label: string }[] };
+
+const HEADERS = [
+  "Find a project to contribute to",
+  "Write a great pull request",
+  "Go further, then submit",
+];
 
 /**
  * Week 3 — make an open-source contribution, as a linear three-page flow:
@@ -21,12 +28,14 @@ type Section = { heading: string; items: { key: string; label: string }[] };
  */
 export function ContributionSteps({
   weekId,
+  weekLabel,
   done: initialDone,
   actions,
   formFields,
   submitAction,
 }: {
   weekId: string;
+  weekLabel?: string;
   done: Record<string, boolean>;
   actions?: ReactNode;
   formFields: ReactNode;
@@ -85,14 +94,11 @@ export function ContributionSteps({
 
   return (
     <div>
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <h2 className="text-heading-lg leading-tight">
-          {CONTRIBUTION_BRIEF.title}
-        </h2>
-        {actions && (
-          <div className="flex items-center gap-1 shrink-0">{actions}</div>
-        )}
-      </div>
+      <WizardHeader
+        weekLabel={weekLabel}
+        title={HEADERS[step - 1]}
+        actions={actions}
+      />
 
       {step === 1 && (
         <>
@@ -147,7 +153,7 @@ export function ContributionSteps({
             <button
               type="button"
               onClick={() => setStep(step - 1)}
-              className="btn btn-ghost !px-2"
+              className="btn btn-gray"
             >
               ← Back
             </button>
@@ -165,6 +171,8 @@ export function ContributionSteps({
           </div>
         </form>
       )}
+
+      <WizardDots count={3} current={step} onGo={setStep} />
     </div>
   );
 }

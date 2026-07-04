@@ -3,6 +3,7 @@
 import { useState, useTransition, type ReactNode } from "react";
 import { toggleWeekStep } from "@portal/lib/actions/engagement";
 import { SubmitButton } from "@portal/components/SubmitButton";
+import { WizardHeader, WizardDots } from "@portal/components/WizardChrome";
 import { ReadmeEditor } from "@portal/components/ReadmeEditor";
 import {
   GITHUB_PROFILE_BRIEF,
@@ -118,23 +119,11 @@ export function GitHubProfileSteps({
 
   return (
     <div>
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <div>
-          {weekLabel && (
-            <p className="text-[13px] font-medium text-slate-channel/60 mb-0.5">
-              {weekLabel}
-            </p>
-          )}
-          <h2 className="text-heading-lg leading-tight">
-            {STEPS[step - 1].header}
-          </h2>
-        </div>
-        {actions && (
-          <div className="flex items-center gap-1 shrink-0 [&_button]:text-slate-channel/60">
-            {actions}
-          </div>
-        )}
-      </div>
+      <WizardHeader
+        weekLabel={weekLabel}
+        title={STEPS[step - 1].header}
+        actions={actions}
+      />
 
       {step === 1 && (
         <>
@@ -278,28 +267,7 @@ export function GitHubProfileSteps({
         </>
       )}
 
-      {/* Subtle page indicator for the flow (not the program weeks). Neutral —
-          no purple accent — with a wider dot for the current page. */}
-      <div className="mt-8 flex justify-center gap-2" aria-label="Page">
-        {STEPS.map((_, i) => {
-          const n = i + 1;
-          const active = n === step;
-          return (
-            <button
-              key={n}
-              type="button"
-              onClick={() => setStep(n)}
-              aria-label={`Go to page ${n}`}
-              aria-current={active ? "step" : undefined}
-              className={`h-2 cursor-pointer rounded-full transition-all duration-200 ${
-                active
-                  ? "w-5 bg-slate-channel"
-                  : "w-2 bg-slate-channel/30 hover:bg-slate-channel/55"
-              }`}
-            />
-          );
-        })}
-      </div>
+      <WizardDots count={STEPS.length} current={step} onGo={setStep} />
     </div>
   );
 }

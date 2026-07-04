@@ -1,5 +1,5 @@
 import Link from "@portal/components/Link";
-import { Heart, MessageCircle, SquarePen } from "lucide-react";
+import { Heart, MessageCircle, SquarePen, ArrowRight } from "lucide-react";
 import { requireOnboardedUser } from "@portal/lib/auth";
 import {
   listSubmissionsByUser,
@@ -16,19 +16,21 @@ export default async function MySubmissionsPage() {
     listAllAssignments(),
   ]);
 
-  // One card per program week (published), earliest first. A week the user has
-  // submitted shows its submission; a week they haven't shows a disabled card
-  // they can still start from — so the whole program is visible at a glance.
-  const publishedWeekIds = new Set(
-    weeks.filter((w) => w.isPublished).map((w) => w.id),
-  );
+  // One card per program week (published), earliest first — including weeks with
+  // no assignment (e.g. Week 0, the welcome). A submitted week shows its
+  // submission; a not-yet-done week shows a card you can start from.
   const byAssignment = new Map(
     submissions.map((item) => [item.submission.assignmentId, item]),
   );
-  const cards = assignments
-    .filter((a) => publishedWeekIds.has(a.weekId))
-    .sort((a, b) => a.weekNumber - b.weekNumber)
-    .map((a) => ({ assignment: a, item: byAssignment.get(a.id) ?? null }));
+  const assignmentByWeek = new Map(assignments.map((a) => [a.weekId, a]));
+  const cards = weeks
+    .filter((w) => w.isPublished)
+    .sort((a, b) => a.number - b.number)
+    .map((week) => {
+      const assignment = assignmentByWeek.get(week.id) ?? null;
+      const item = assignment ? byAssignment.get(assignment.id) ?? null : null;
+      return { week, assignment, item };
+    });
 
   return (
     <div className="py-2">
@@ -45,15 +47,45 @@ export default async function MySubmissionsPage() {
           .
         </p>
       ) : (
-        <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
-          {cards.map(({ assignment, item }) => {
+        <div className="grid mx-auto max-w-[820px] gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+          {cards.map(({ week, assignment, item }) => {
+            // A week with no assignment (Week 0 welcome) — an "open" card that
+            // links to that week's page rather than a submission.
+            if (!assignment) {
+              return (
+                <div key={week.id} className="flex flex-col gap-2">
+                  <Link
+                    href={`/home?week=${week.id}`}
+                    className="card flex flex-1 flex-col items-center justify-center min-h-[176px] text-center"
+                  >
+                    <span className="meta-light text-[12px] mb-1">
+                      Week {week.number}
+                    </span>
+                    <span className="font-semibold text-[17px] leading-snug text-balance">
+                      {week.theme}
+                    </span>
+                  </Link>
+                  <div className="flex items-center justify-end meta-light text-[13px] px-1">
+                    <Link
+                      href={`/home?week=${week.id}`}
+                      prefetch={false}
+                      className="flex items-center hover:text-signal-blue"
+                      aria-label={`Open ${week.theme}`}
+                    >
+                      <ArrowRight size={15} />
+                    </Link>
+                  </div>
+                </div>
+              );
+            }
+
             // Not started yet — a quiet, disabled card the user can still pick up.
             if (!item) {
               return (
                 <div key={assignment.id} className="flex flex-col gap-2">
                   <div className="card flex flex-1 flex-col items-center justify-center min-h-[176px] text-center opacity-60">
                     <span className="meta-light text-[12px] mb-1">
-                      Week {assignment.weekNumber}
+                      Week {week.number}
                     </span>
                     <span className="font-semibold text-[17px] leading-snug text-balance text-slate-channel">
                       {assignment.title}

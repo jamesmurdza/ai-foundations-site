@@ -16,9 +16,8 @@ export function WelcomeWeek({ nextWeekHref }: { nextWeekHref: string }) {
       </h1>
 
       <p className="mt-4 text-[16px] leading-relaxed">
-        AI Summer School is a four-week, build-in-public program for developers.
-        Each week you ship something real — and grow how the world sees you as a
-        builder — alongside a cohort doing the same.
+        AI Summer School is a four-week program where you learn by building real
+        projects — one each week, alongside a cohort doing the same.
       </p>
 
       <h2 className="mt-8 text-[20px] font-semibold">What to expect</h2>
@@ -31,7 +30,7 @@ export function WelcomeWeek({ nextWeekHref }: { nextWeekHref: string }) {
         <li>Week 1 — Refresh your GitHub profile and README</li>
         <li>Week 2 — Showcase a project for the cohort to star</li>
         <li>Week 3 — Make an open-source contribution</li>
-        <li>Week 4 — Build your portfolio and find your spark</li>
+        <li>Week 4 — Build your portfolio and find your direction</li>
       </ul>
 
       <p className="mt-6 text-[15px] leading-relaxed">

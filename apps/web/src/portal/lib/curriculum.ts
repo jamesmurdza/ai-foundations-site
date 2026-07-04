@@ -76,12 +76,12 @@ const SPECS: WeekSpec[] = [
     number: 2,
     theme: "Showcase your work",
     description:
-      "Pick one project to start or improve — make it shine with a great README, a license, and a demo — then showcase it for the cohort to star.",
+      "Pick one project to start or improve — give it a great README, a license, and a demo — then showcase it for the cohort to star.",
     assignment: {
       title: "Showcase one repo",
       submissionType: "repo",
       prompt:
-        "Pick one project — something new to start, or something you'd like to improve — and get it ready to show off. Give it a clear README, a license, and a demo (a screenshot or short video), and tidy the codebase so it reads well. Then submit the repo URL (github.com/you/project) to showcase it. Turn on Trade Stars to trade stars with the cohort.",
+        "Pick one project — something new to start, or something you'd like to improve — and get it ready to share. Give it a clear README, a license, and a demo (a screenshot or short video), and tidy the codebase so it reads well. Then submit the repo URL (github.com/you/project) to showcase it. Turn on Trade Stars to trade stars with the cohort.",
     },
   },
   {
@@ -98,14 +98,14 @@ const SPECS: WeekSpec[] = [
   },
   {
     number: 4,
-    theme: "Your portfolio & spark",
+    theme: "Your portfolio & direction",
     description:
-      "Bring it together: a portfolio that shows your best work, and a clear sense of the spark you want to build on next.",
+      "Bring it together: a portfolio that shows your best work, and a clear sense of what you want to build next.",
     assignment: {
       title: "Build your portfolio",
       submissionType: "link",
       prompt:
-        "Bring it all together. Build a portfolio that shows your best work — projects, an about section, and a way to reach you — and get clear on your spark: what you actually want to build next. Submit your portfolio link, then give feedback on a few peers' profiles to close out the program.",
+        "Bring it all together. Build a portfolio that shows your best work — projects, an about section, and a way to reach you — and get clear on what you actually want to build next. Submit your portfolio link, then give feedback on a few peers' profiles to close out the program.",
     },
   },
 ];
