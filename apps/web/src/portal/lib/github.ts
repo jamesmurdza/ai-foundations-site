@@ -148,6 +148,15 @@ export type GithubSocials = {
 };
 
 /**
+ * Cache policy for the public profile reads. Normally a 10-minute data cache,
+ * but `fresh` bypasses it (no-store) — used by GitWit so a review always reflects
+ * the profile right now (e.g. right after saving the README), never a stale copy.
+ */
+function profileReadCache(fresh?: boolean): RequestInit {
+  return fresh ? { cache: "no-store" } : { next: { revalidate: 600 } };
+}
+
+/**
  * Pull the public links a user already lists on their GitHub profile: the
  * website (`blog`), and the "social accounts" they've added (LinkedIn, X, …).
  * All public, read-only — safe to import into the portal profile.
@@ -155,12 +164,13 @@ export type GithubSocials = {
 export async function getGithubSocials(
   login: string,
   token?: string,
+  opts?: { fresh?: boolean },
 ): Promise<GithubSocials> {
   const out: GithubSocials = { website: null, linkedin: null, twitter: null };
   try {
     const u = await fetch(`${API}/users/${login}`, {
       headers: readHeaders(token),
-      next: { revalidate: 600 },
+      ...profileReadCache(opts?.fresh),
     });
     if (u.ok) {
       const j = (await u.json()) as {
@@ -172,7 +182,7 @@ export async function getGithubSocials(
     }
     const s = await fetch(`${API}/users/${login}/social_accounts`, {
       headers: readHeaders(token),
-      next: { revalidate: 600 },
+      ...profileReadCache(opts?.fresh),
     });
     if (s.ok) {
       const accounts = (await s.json()) as { provider: string; url: string }[];
@@ -382,11 +392,12 @@ export async function getGithubStats(
 export async function getGithubProfileBasics(
   login: string,
   token?: string,
+  opts?: { fresh?: boolean },
 ): Promise<{ name: string | null; bio: string | null; avatarUrl: string | null } | null> {
   try {
     const res = await fetch(`${API}/users/${login}`, {
       headers: readHeaders(token),
-      next: { revalidate: 600 },
+      ...profileReadCache(opts?.fresh),
     });
     if (!res.ok) return null;
     const j = (await res.json()) as {
@@ -408,11 +419,12 @@ export async function getGithubProfileBasics(
 export async function getProfileReadmeMarkdown(
   login: string,
   token?: string,
+  opts?: { fresh?: boolean },
 ): Promise<string | null> {
   try {
     const res = await fetch(`${API}/repos/${login}/${login}/readme`, {
       headers: readHeaders(token, "application/vnd.github.raw"),
-      next: { revalidate: 600 },
+      ...profileReadCache(opts?.fresh),
     });
     if (res.status !== 200) return null;
     return await res.text();
@@ -609,12 +621,15 @@ export async function getPinnedRepos(
 export async function gatherProfileSignals(
   login: string,
   userToken?: string | null,
+  opts?: { fresh?: boolean },
 ): Promise<ProfileSignals> {
   const token = userToken || process.env.GITHUB_TOKEN || undefined;
+  // `getPinnedRepos` is a POST (GraphQL), which Next never caches, so it's always
+  // fresh; the other three reads honour `opts.fresh` (no-store) for GitWit.
   const [basics, socials, readmeMarkdown, pinnedRepos] = await Promise.all([
-    getGithubProfileBasics(login, token),
-    getGithubSocials(login, token),
-    getProfileReadmeMarkdown(login, token),
+    getGithubProfileBasics(login, token, opts),
+    getGithubSocials(login, token, opts),
+    getProfileReadmeMarkdown(login, token, opts),
     getPinnedRepos(login, token),
   ]);
   return {

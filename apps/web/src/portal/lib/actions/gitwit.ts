@@ -51,7 +51,13 @@ export async function reviewMyGitHubProfile(
   }
 
   try {
-    const signals = await gatherProfileSignals(login, user.accessToken);
+    // Always read the live profile (no-store) — a review must reflect what the
+    // user just saved, never a cached README/basics from up to 10 min ago. Cheap:
+    // the *result* is cached in ss_gitwit_reviews, so this runs only on first
+    // review + explicit Refresh, not on every page load.
+    const signals = await gatherProfileSignals(login, user.accessToken, {
+      fresh: true,
+    });
     const review = await reviewProfile(signals);
     const row = await upsertGitwitReview(user.id, login, review.verdicts);
     return toReviewResult(
