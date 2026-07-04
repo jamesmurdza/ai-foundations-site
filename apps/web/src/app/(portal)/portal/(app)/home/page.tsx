@@ -25,6 +25,7 @@ export default async function HomePage({
     error?: string;
     submitted?: string;
     edit?: string;
+    step?: string;
   }>;
 }) {
   const { user, profile } = await requireOnboardedUser();
@@ -130,6 +131,7 @@ export default async function HomePage({
               error={sp.error}
               submitted={sp.submitted === "1"}
               edit={sp.edit === "1"}
+              step={sp.step ? Number(sp.step) : undefined}
             />
           )}
 

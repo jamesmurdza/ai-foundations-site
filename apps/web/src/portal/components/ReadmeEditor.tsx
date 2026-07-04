@@ -19,10 +19,24 @@ export function ReadmeEditor({
   login,
   initialMarkdown,
   hasExisting,
+  returnTo,
+  saveLabel = "Save to GitHub",
+  secondaryAction,
 }: {
   login: string;
   initialMarkdown: string;
   hasExisting: boolean;
+  /**
+   * Where saving redirects back to. Defaults to the Settings README page; the
+   * Week 1 flow passes its own path so saving stays on /home instead of bouncing
+   * the user into settings.
+   */
+  returnTo?: string;
+  /** Save button label — e.g. the Week 1 flow uses "Save & continue →". */
+  saveLabel?: string;
+  /** Optional control on the left of the footer row (e.g. a flow's Back button),
+   *  so it lines up on the same line as the save button. */
+  secondaryAction?: React.ReactNode;
 }) {
   const [markdown, setMarkdown] = useState(initialMarkdown);
   const [mode, setMode] = useState<"write" | "preview">("write");
@@ -114,13 +128,18 @@ export function ReadmeEditor({
         )}
 
         <input type="hidden" name="markdown" value={markdown} />
+        {returnTo && (
+          <input type="hidden" name="redirectTo" value={returnTo} />
+        )}
 
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <p className="meta-light text-[13px]">
-            Saves directly to GitHub — your profile updates within a minute.
-          </p>
+        <div
+          className={`flex items-center gap-3 flex-wrap ${
+            secondaryAction ? "justify-between" : "justify-end"
+          }`}
+        >
+          {secondaryAction}
           <SubmitButton className="btn btn-primary" pendingText="Saving…">
-            Save to GitHub
+            {saveLabel}
           </SubmitButton>
         </div>
       </form>

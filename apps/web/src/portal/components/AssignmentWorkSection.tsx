@@ -11,6 +11,7 @@ import {
   listComments,
   listMentionablePeople,
   getWeekStepCompletions,
+  getCachedGitwitReview,
 } from "@portal/lib/queries";
 import { listQuestions, listUpvotedQuestionIds } from "@portal/lib/stream";
 import { GitHubProfileSteps } from "@portal/components/GitHubProfileSteps";
@@ -35,6 +36,10 @@ import { Popover } from "@portal/components/Popover";
 import { QaPanel } from "@portal/components/QaPanel";
 import { SubmittedCongrats } from "@portal/components/SubmittedCongrats";
 import { GitWitReview } from "@portal/components/GitWitReview";
+import { ReadmeEditor } from "@portal/components/ReadmeEditor";
+import { loadReadmeForEdit } from "@portal/lib/actions/github-readme";
+import { toReviewResult, type CriterionVerdict } from "@portal/lib/gitwitTypes";
+import { withBase } from "@portal/lib/paths";
 
 const TYPE_LABEL: Record<string, string> = {
   link: "Paste a link (e.g. your GitHub profile)",
@@ -134,11 +139,15 @@ export async function AssignmentWorkSection({
   error,
   submitted,
   edit,
+  step,
 }: {
   assignmentId: string;
   error?: string;
   submitted?: boolean;
   edit?: boolean;
+  /** Which Week 1 flow page to open on — used to restore position after saving
+   *  the README (a full navigation resets the wizard's client state otherwise). */
+  step?: number;
 }) {
   const { user, profile } = await requireOnboardedUser();
   const assignment = await getAssignment(assignmentId);
@@ -187,6 +196,64 @@ export async function AssignmentWorkSection({
     ? buildPortfolioBriefDone(stepCompletions)
     : {};
   const comments = existing ? await listComments("submission", existing.id) : [];
+
+  // Week 1 extras: the embedded README editor + the automatic GitWit review.
+  const githubConnected = Boolean(
+    user.githubId &&
+      !String(user.githubId).startsWith("dev:") &&
+      user.githubLogin &&
+      user.accessToken,
+  );
+  const profileUrl = user.githubLogin
+    ? `https://github.com/${user.githubLogin}`
+    : "";
+  const [readme, cachedReview] = isGitHubProfileWeek
+    ? await Promise.all([
+        githubConnected
+          ? loadReadmeForEdit(user.githubLogin!, user.accessToken!)
+          : Promise.resolve(null),
+        getCachedGitwitReview(user.id),
+      ])
+    : [null, null];
+  const gitwitInitial = cachedReview
+    ? toReviewResult(
+        cachedReview.login,
+        cachedReview.verdicts as CriterionVerdict[],
+        cachedReview.updatedAt.toISOString(),
+      )
+    : null;
+  // Saving the README doubles as "continue" — it advances to the feedback page.
+  const readmeReturnTo = `/home?week=${assignment.weekId}&step=4${
+    edit ? "&edit=1" : ""
+  }#assignment`;
+  const readmeBackHref = `/home?week=${assignment.weekId}&step=2${
+    edit ? "&edit=1" : ""
+  }#assignment`;
+  const readmeSavable = Boolean(githubConnected && readme);
+  const readmeEditorNode = githubConnected && readme ? (
+    <ReadmeEditor
+      login={user.githubLogin!}
+      initialMarkdown={readme.markdown}
+      hasExisting={readme.hasExisting}
+      returnTo={readmeReturnTo}
+      saveLabel="Save & continue →"
+      secondaryAction={
+        <Link href={readmeBackHref} className="btn btn-gray">
+          ← Back
+        </Link>
+      }
+    />
+  ) : (
+    <div className="rounded-[12px] border border-sea-fog p-4">
+      <p className="meta text-[14px]">
+        Connect your GitHub account to write and sync your profile README here.
+      </p>
+      <a href={withBase("/api/auth/github")} className="btn btn-dark mt-3">
+        Connect GitHub
+      </a>
+    </div>
+  );
+
   const currentUser: Author = {
     userId: user.id,
     name: profile.displayName ?? user.name ?? "You",
@@ -248,7 +315,11 @@ export async function AssignmentWorkSection({
     <>
       <input type="hidden" name="assignmentId" value={assignment.id} />
       {isGitHubProfileWeek && (
-        <input type="hidden" name="title" value="GitHub profile" />
+        <>
+          {/* Login is already known — no URL to paste. */}
+          <input type="hidden" name="title" value="GitHub profile" />
+          <input type="hidden" name="payload" value={profileUrl} />
+        </>
       )}
       {!isGitHubProfileWeek && (
         <h3 className="font-bold text-[15px]">
@@ -256,11 +327,9 @@ export async function AssignmentWorkSection({
         </h3>
       )}
 
-      {error === "empty" && (
+      {error === "empty" && !isGitHubProfileWeek && (
         <div className="rounded-[11px] bg-primary-soft text-primary-strong text-[14px] px-4 py-3">
-          {isGitHubProfileWeek
-            ? "Paste your GitHub profile link before submitting."
-            : isAny
+          {isAny
             ? "Add a link, write something, or upload a file before submitting."
             : "Add a link or upload a file before submitting."}
         </div>
@@ -278,47 +347,43 @@ export async function AssignmentWorkSection({
         </div>
       )}
 
-      <div>
-        <label className="label">
-          {isGitHubProfileWeek
-            ? "Paste your GitHub profile link"
-            : TYPE_LABEL[assignment.submissionType] ?? "Your submission"}
-          {isAny && (
-            <span className="meta font-normal"> (optional if uploading a file)</span>
+      {!isGitHubProfileWeek && (
+        <div>
+          <label className="label">
+            {TYPE_LABEL[assignment.submissionType] ?? "Your submission"}
+            {isAny && (
+              <span className="meta font-normal"> (optional if uploading a file)</span>
+            )}
+          </label>
+          {usesTextarea ? (
+            <textarea
+              className="textarea"
+              name="payload"
+              rows={5}
+              required={isText}
+              placeholder={
+                isAny
+                  ? "https://github.com/you/project — or describe what you shipped"
+                  : undefined
+              }
+              defaultValue={existing?.payload ?? ""}
+            />
+          ) : (
+            <input
+              className="input"
+              name="payload"
+              type="url"
+              required={!isFile}
+              placeholder="https://…"
+              defaultValue={
+                existing && !existing.payload.startsWith("/api/files/")
+                  ? existing.payload
+                  : ""
+              }
+            />
           )}
-        </label>
-        {usesTextarea ? (
-          <textarea
-            className="textarea"
-            name="payload"
-            rows={5}
-            required={isText}
-            placeholder={
-              isAny
-                ? "https://github.com/you/project — or describe what you shipped"
-                : undefined
-            }
-            defaultValue={existing?.payload ?? ""}
-          />
-        ) : (
-          <input
-            className="input"
-            name="payload"
-            type="url"
-            required={!isFile}
-            placeholder={
-              isGitHubProfileWeek
-                ? "https://github.com/yourname"
-                : "https://…"
-            }
-            defaultValue={
-              existing && !existing.payload.startsWith("/api/files/")
-                ? existing.payload
-                : ""
-            }
-          />
-        )}
-      </div>
+        </div>
+      )}
 
       {!isGitHubProfileWeek && (
         <BlobFileInput
@@ -510,11 +575,15 @@ export async function AssignmentWorkSection({
       {isGitHubProfileWeek && (
         <GitHubProfileSteps
           weekId={assignment.weekId}
+          weekLabel={week ? `Week ${week.number}: ${week.theme}` : undefined}
           done={profileBriefDone}
           actions={actions}
           formFields={formFields}
-          review={<GitWitReview assignmentId={assignment.id} />}
+          review={<GitWitReview initial={gitwitInitial} />}
+          readmeEditor={readmeEditorNode}
+          readmeSavable={readmeSavable}
           submitAction={createSubmission}
+          initialStep={step ?? 1}
         />
       )}
 

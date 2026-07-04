@@ -37,11 +37,23 @@ export async function previewReadmeMarkdown(
   return renderMarkdownPreview(markdown, user.accessToken ?? undefined);
 }
 
+/**
+ * Where to send the user after saving. Defaults to the Settings README page (its
+ * own ?saved / ?error handling). An embedder (e.g. the Week 1 flow) may pass an
+ * internal `redirectTo` to stay in place; we only accept same-origin paths.
+ */
+function safeReturnTo(raw: FormDataEntryValue | null): string | null {
+  const s = String(raw ?? "");
+  if (s.startsWith("/") && !s.startsWith("//")) return s;
+  return null;
+}
+
 export async function updateGithubReadme(formData: FormData) {
   const { user } = await getSessionContext();
   if (!user) redirect("/login");
+  const returnTo = safeReturnTo(formData.get("redirectTo"));
   if (!requireGithubWriteAccess(user)) {
-    redirect("/settings/readme?error=no_github");
+    redirect(returnTo ?? "/settings/readme?error=no_github");
   }
 
   const markdown = String(formData.get("markdown") ?? "");
@@ -57,6 +69,8 @@ export async function updateGithubReadme(formData: FormData) {
   );
 
   if (!result.ok) {
+    // Embedded editors just return to their page; Settings shows a coded error.
+    if (returnTo) redirect(returnTo);
     const code =
       result.code === "forbidden"
         ? "readme_forbidden"
@@ -68,7 +82,7 @@ export async function updateGithubReadme(formData: FormData) {
 
   revalidateTag("github-readme", { expire: 0 });
   revalidatePath(`/users/${login}`);
-  redirect("/settings/readme?saved=1");
+  redirect(returnTo ?? "/settings/readme?saved=1");
 }
 
 export async function loadReadmeForEdit(login: string, token: string) {

@@ -19,6 +19,7 @@ import {
   weekStepCompletions,
   resources,
   announcements,
+  gitwitReviews,
 } from "@portal/db/schema";
 import { applicationCountryCounts } from "@portal/lib/applications";
 import { normalizeCountry, displayCountry } from "@portal/lib/countries";
@@ -30,7 +31,9 @@ import type {
   Profile,
   Feedback,
   Comment,
+  GitwitReviewRow,
 } from "@portal/db/schema";
+import type { CriterionVerdict } from "@portal/lib/gitwitTypes";
 
 export type Author = {
   userId: string;
@@ -469,6 +472,37 @@ export async function getUserSubmissionForAssignment(
     .orderBy(desc(submissions.createdAt))
     .limit(1);
   return s ?? null;
+}
+
+/* ---- GitWit review cache ------------------------------------------------- */
+
+/** The user's most recent cached GitWit review, or null if never run. */
+export async function getCachedGitwitReview(
+  userId: string,
+): Promise<GitwitReviewRow | null> {
+  const [row] = await db
+    .select()
+    .from(gitwitReviews)
+    .where(eq(gitwitReviews.userId, userId))
+    .limit(1);
+  return row ?? null;
+}
+
+/** Insert or overwrite the user's cached GitWit review (one row per user). */
+export async function upsertGitwitReview(
+  userId: string,
+  login: string,
+  verdicts: CriterionVerdict[],
+): Promise<GitwitReviewRow> {
+  const [row] = await db
+    .insert(gitwitReviews)
+    .values({ userId, login, verdicts })
+    .onConflictDoUpdate({
+      target: gitwitReviews.userId,
+      set: { login, verdicts, updatedAt: new Date() },
+    })
+    .returning();
+  return row;
 }
 
 const _countSubmissions = unstable_cache(

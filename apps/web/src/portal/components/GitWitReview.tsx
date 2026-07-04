@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import Image from "next/image";
-import { Check, X, Loader2 } from "lucide-react";
+import { Check, X, Loader2, RefreshCw } from "lucide-react";
 import { reviewMyGitHubProfile } from "@portal/lib/actions/gitwit";
 import type { GitWitReviewResult, VerdictWithLabel } from "@portal/lib/gitwitTypes";
 import { withBase } from "@portal/lib/paths";
+import { timeAgo } from "@portal/lib/format";
 
 // next/image src must include basePath manually (basePath does not auto-prefix it).
 const GITWIT_IMG = withBase("/gitwit.jpg");
@@ -48,28 +49,54 @@ function Section({
 }
 
 /**
- * "Ask GitWit to review" — an opt-in AI read of the participant's GitHub profile
- * shown as a step in the Week 1 submission flow, just before they submit. Stays
- * hidden behind a trigger (design.md: secondary content is progressive). When
- * the profile already passes, it celebrates rather than inventing a to-do list.
+ * Automatic GitWit read of the participant's own GitHub profile, shown on the
+ * final Week 1 page just before they submit. The result is cached in the DB
+ * (one per user): a server-preloaded `initial` shows instantly; when there's no
+ * cache yet it runs once on mount; "Refresh" re-runs Haiku and overwrites the
+ * cache. When the profile already passes, it celebrates rather than inventing a
+ * to-do list.
  */
-export function GitWitReview({ assignmentId }: { assignmentId: string }) {
-  const [result, setResult] = useState<GitWitReviewResult | null>(null);
+export function GitWitReview({
+  initial = null,
+}: {
+  initial?: GitWitReviewResult | null;
+}) {
+  const [result, setResult] = useState<GitWitReviewResult | null>(initial);
   const [pending, startTransition] = useTransition();
+  // Guards the one-time auto-run so React strict-mode's double effect (and
+  // re-renders) can't fire a second model call.
+  const autoRan = useRef(initial != null);
 
-  function run() {
+  function run(refresh = false) {
     startTransition(async () => {
-      setResult(await reviewMyGitHubProfile(assignmentId));
+      setResult(await reviewMyGitHubProfile({ refresh }));
     });
   }
 
-  // Trigger — shown until the first successful review.
+  useEffect(() => {
+    if (autoRan.current) return;
+    autoRan.current = true;
+    run(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // First read still in flight — quiet loading state.
+  if (!result && pending) {
+    return (
+      <div className="mt-4 flex items-center justify-center gap-2 text-slate-channel">
+        <Loader2 size={16} className="animate-spin" aria-hidden />
+        <span className="text-[14px]">GitWit is reading your profile…</span>
+      </div>
+    );
+  }
+
+  // Error (not connected, model failure, etc.) — offer a retry.
   if (!result || !result.ok) {
     return (
       <div className="mt-4 text-center">
         <button
           type="button"
-          onClick={run}
+          onClick={() => run(true)}
           disabled={pending}
           className="btn btn-outline inline-flex items-center gap-2 disabled:opacity-70"
         >
@@ -86,7 +113,7 @@ export function GitWitReview({ assignmentId }: { assignmentId: string }) {
           )}
           {pending ? "GitWit is reading your profile…" : "Ask GitWit to review"}
         </button>
-        {result && !result.ok ? (
+        {result && !result.ok && (
           <div className="mt-3 mx-auto max-w-[32rem] flex items-start gap-2 text-left">
             <Image
               src={GITWIT_IMG}
@@ -97,12 +124,6 @@ export function GitWitReview({ assignmentId }: { assignmentId: string }) {
             />
             <p className="meta text-[13px]">{result.error}</p>
           </div>
-        ) : (
-          !pending && (
-            <p className="meta-light text-[13px] mt-2">
-              A quick AI check of your profile&apos;s essentials.
-            </p>
-          )
         )}
       </div>
     );
@@ -145,15 +166,24 @@ export function GitWitReview({ assignmentId }: { assignmentId: string }) {
           <Section title="A few things to add" items={result.missing} kind="missing" />
         )}
 
-        <button
-          type="button"
-          onClick={run}
-          disabled={pending}
-          className="link text-[13px] mt-4 inline-flex items-center gap-1 disabled:opacity-70"
-        >
-          {pending && <Loader2 size={13} className="animate-spin" aria-hidden />}
-          Review again
-        </button>
+        <div className="mt-4 flex items-center justify-between gap-3">
+          <span className="meta-light text-[12px]">
+            {pending ? "Refreshing…" : `Last checked ${timeAgo(result.checkedAt)}`}
+          </span>
+          <button
+            type="button"
+            onClick={() => run(true)}
+            disabled={pending}
+            className="link text-[13px] inline-flex items-center gap-1 cursor-pointer disabled:cursor-not-allowed disabled:opacity-70"
+          >
+            <RefreshCw
+              size={13}
+              className={pending ? "animate-spin" : ""}
+              aria-hidden
+            />
+            Refresh
+          </button>
+        </div>
       </div>
     </div>
   );

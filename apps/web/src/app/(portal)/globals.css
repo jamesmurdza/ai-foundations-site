@@ -150,6 +150,8 @@ h1, h2, h3, h4 {
   .btn-dark:hover { background: #000; }
   .btn-ghost { background: transparent; color: var(--color-foreground); }
   .btn-ghost:hover { background: var(--color-muted); }
+  .btn-gray { background: var(--color-sea-fog); color: var(--color-foreground); }
+  .btn-gray:hover { background: #e2dbd3; }
   .btn-outline {
     background: transparent;
     color: var(--color-foreground);
