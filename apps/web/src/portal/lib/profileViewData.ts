@@ -1,60 +1,28 @@
 import "server-only";
 import { getSessionContext } from "@portal/lib/auth";
 import {
-  getGlowUp,
   listSubmissionsByUser,
-  listComments,
   starLeaderboardMap,
-  listMentionablePeople,
   isViewerFollowing,
 } from "@portal/lib/queries";
 import { isFollowing as githubIsFollowing } from "@portal/lib/github";
-import { env } from "@portal/lib/env";
 import type { Profile } from "@portal/db/schema";
 import type { Author } from "@portal/lib/queries";
 
 /**
- * Gather everything the shared ProfileView needs (viewer context, glow-up,
- * projects, comments, stars, follow state). Used by both the canonical
- * /users/[login] page and the /profiles/[id] fallback.
+ * Gather everything the shared ProfileView needs (viewer context, projects,
+ * stars, follow state). Used by both the canonical /users/[login] page and the
+ * /profiles/[id] fallback.
  */
 export async function loadProfileViewData(profile: Profile, author: Author) {
-  const [
-    { user, profile: viewerProfile },
-    glow,
-    submissions,
-    comments,
-    starsMap,
-    people,
-  ] = await Promise.all([
+  const [{ user }, submissions, starsMap] = await Promise.all([
     getSessionContext(),
-    getGlowUp(profile.userId),
     listSubmissionsByUser(profile.userId),
-    listComments("profile", profile.id),
     starLeaderboardMap(),
-    listMentionablePeople(),
   ]);
 
   const isOwner = user?.id === profile.userId;
-  const canComment = Boolean(user && viewerProfile);
-  const currentUser: Author | null =
-    user && viewerProfile
-      ? {
-          userId: user.id,
-          name: viewerProfile.displayName ?? user.name ?? "You",
-          login: user.githubLogin,
-          avatarUrl: user.avatarUrl,
-          profileId: viewerProfile.id,
-          country: viewerProfile.country,
-        }
-      : null;
-
   const stars = starsMap.get(profile.userId) ?? 0;
-  const shareUrl = author.login
-    ? `${env.baseUrl}/users/${author.login}`
-    : profile.username
-      ? `${env.baseUrl}/u/${profile.username}`
-      : `${env.baseUrl}/profiles/${profile.id}`;
 
   // GitHub is the source of truth for the button: a viewer who already follows
   // this person (here, on GitHub directly, or via the old auto-follow) sees
@@ -71,15 +39,9 @@ export async function loadProfileViewData(profile: Profile, author: Author) {
   return {
     profile,
     author,
-    glow,
     submissions,
-    comments,
-    people,
     stars,
     isOwner,
-    canComment,
-    currentUser,
-    shareUrl,
     follow: {
       targetUserId: profile.userId,
       targetLogin: author.login,
