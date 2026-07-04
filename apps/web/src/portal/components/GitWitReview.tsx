@@ -174,7 +174,7 @@ export function GitWitReview({
             type="button"
             onClick={() => run(true)}
             disabled={pending}
-            className="link text-[13px] inline-flex items-center gap-1 disabled:opacity-70"
+            className="link text-[13px] inline-flex items-center gap-1 cursor-pointer disabled:cursor-not-allowed disabled:opacity-70"
           >
             <RefreshCw
               size={13}

@@ -264,7 +264,7 @@ export function GitHubProfileSteps({
               onClick={() => setStep(n)}
               aria-label={`Go to page ${n}`}
               aria-current={active ? "step" : undefined}
-              className={`h-2 rounded-full transition-all duration-200 ${
+              className={`h-2 cursor-pointer rounded-full transition-all duration-200 ${
                 active
                   ? "w-5 bg-slate-channel"
                   : "w-2 bg-slate-channel/30 hover:bg-slate-channel/55"
