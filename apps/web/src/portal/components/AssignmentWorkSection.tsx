@@ -1,7 +1,7 @@
 import Link from "@portal/components/Link";
 import { type ReactNode } from "react";
 import { notFound } from "@portal/lib/nav";
-import { ClipboardList, MessageSquare, HelpCircle } from "lucide-react";
+import { ClipboardList } from "lucide-react";
 import { requireOnboardedUser } from "@portal/lib/auth";
 import {
   getAssignment,
@@ -13,7 +13,6 @@ import {
   getWeekStepCompletions,
   getCachedGitwitReview,
 } from "@portal/lib/queries";
-import { listQuestions, listUpvotedQuestionIds } from "@portal/lib/stream";
 import { GitHubProfileSteps } from "@portal/components/GitHubProfileSteps";
 import { buildGitHubProfileBriefDone } from "@portal/lib/githubProfileChecklist";
 import { RepoShowcaseSteps } from "@portal/components/RepoShowcaseSteps";
@@ -32,8 +31,10 @@ import { SubmissionPanel } from "@portal/components/SubmissionPanel";
 import { BlobFileInput } from "@portal/components/BlobFileInput";
 import { AttachmentList } from "@portal/components/AttachmentList";
 import { CommentThread } from "@portal/components/CommentThread";
-import { Popover } from "@portal/components/Popover";
-import { QaPanel } from "@portal/components/QaPanel";
+import {
+  FlowWithComments,
+  CommentsToggleButton,
+} from "@portal/components/FlowWithComments";
 import { SubmittedCongrats } from "@portal/components/SubmittedCongrats";
 import { GitWitReview } from "@portal/components/GitWitReview";
 import { loadReadmeForEdit } from "@portal/lib/actions/github-readme";
@@ -158,8 +159,6 @@ export async function AssignmentWorkSection({
     assignmentFiles,
     resources,
     stepCompletions,
-    questions,
-    upvotedIds,
     people,
   ] = await Promise.all([
     getWeek(assignment.weekId),
@@ -167,8 +166,6 @@ export async function AssignmentWorkSection({
     getAttachmentsFor("assignment", assignment.id),
     listResourcesForWeek(assignment.weekId),
     getWeekStepCompletions(user.id, assignment.weekId),
-    listQuestions(assignment.weekId),
-    listUpvotedQuestionIds(assignment.weekId, user.id),
     listMentionablePeople(),
   ]);
   const isGitHubProfileWeek = week?.number === 1;
@@ -195,6 +192,7 @@ export async function AssignmentWorkSection({
     ? buildPortfolioBriefDone(stepCompletions)
     : {};
   const comments = existing ? await listComments("submission", existing.id) : [];
+  const weekLabel = week ? `Week ${week.number}: ${week.theme}` : undefined;
 
   // Week 1 extras: the embedded README editor + the automatic GitWit review.
   const githubConnected = Boolean(
@@ -266,43 +264,26 @@ export async function AssignmentWorkSection({
   const usesTextarea = isText || isAny;
   const showAssignmentSummary = !isWizardWeek;
 
-  // Comments (on your submission) and the week's Q&A live in header popovers.
-  const actions = (
-    <>
-      {existing && (
-        <Popover
-          icon={<MessageSquare size={19} aria-hidden />}
-          label="Comments"
-          count={comments.length}
-          width={380}
-        >
-          <CommentThread
-            targetType="submission"
-            targetId={existing.id}
-            comments={comments}
-            canComment
-            currentUser={currentUser}
-            people={people}
-            compact
-          />
-        </Popover>
-      )}
-      <Popover
-        icon={<HelpCircle size={19} aria-hidden />}
-        label="Questions"
-        count={questions.length}
-        width={380}
-      >
-        <QaPanel
-          weekId={assignment.weekId}
-          initial={questions}
-          isAdmin={user.isAdmin}
-          people={people}
-          upvotedIds={upvotedIds}
-        />
-      </Popover>
-    </>
-  );
+  // Comments on your submission open in a panel to the right of the flow,
+  // toggled by the comment icon in the flow header (post-style). Nothing to show
+  // until there's a submission.
+  const commentsToggle = existing ? (
+    <CommentsToggleButton count={comments.length} />
+  ) : undefined;
+  const commentsPanel = existing ? (
+    <div>
+      <h3 className="font-semibold text-[15px] mb-3">Comments</h3>
+      <CommentThread
+        targetType="submission"
+        targetId={existing.id}
+        comments={comments}
+        canComment
+        currentUser={currentUser}
+        people={people}
+        minimal
+      />
+    </div>
+  ) : undefined;
 
   const formFields = (
     <>
@@ -478,6 +459,7 @@ export async function AssignmentWorkSection({
     return (
       <section id="assignment" className="mt-2 scroll-mt-24">
         <SubmittedCongrats
+          weekLabel={weekLabel}
           showcaseHref="/discover?tab=showcase"
           editHref={`/home?week=${assignment.weekId}&edit=1`}
         />
@@ -491,6 +473,7 @@ export async function AssignmentWorkSection({
     return (
       <section id="assignment" className="mt-2 scroll-mt-24">
         <SubmittedCongrats
+          weekLabel={weekLabel}
           showcaseHref="/discover?tab=showcase"
           editHref={`/home?week=${assignment.weekId}&edit=1`}
           title="Your project's in the showcase!"
@@ -518,6 +501,7 @@ export async function AssignmentWorkSection({
     return (
       <section id="assignment" className="mt-2 scroll-mt-24">
         <SubmittedCongrats
+          weekLabel={weekLabel}
           showcaseHref="/discover?tab=showcase"
           editHref={`/home?week=${assignment.weekId}&edit=1`}
           title="Pull request shipped!"
@@ -541,6 +525,7 @@ export async function AssignmentWorkSection({
     return (
       <section id="assignment" className="mt-2 scroll-mt-24">
         <SubmittedCongrats
+          weekLabel={weekLabel}
           showcaseHref="/discover?tab=showcase"
           editHref={`/home?week=${assignment.weekId}&edit=1`}
           title="Portfolio submitted — that's the program!"
@@ -565,52 +550,56 @@ export async function AssignmentWorkSection({
         </div>
       )}
 
-      {isGitHubProfileWeek && (
-        <GitHubProfileSteps
-          weekId={assignment.weekId}
-          weekLabel={week ? `Week ${week.number}: ${week.theme}` : undefined}
-          done={profileBriefDone}
-          actions={actions}
-          formFields={formFields}
-          review={<GitWitReview initial={gitwitInitial} />}
-          readmeEditorProps={readmeEditorProps}
-          readmeFallback={readmeFallback}
-          submitAction={createSubmission}
-          initialStep={step ?? 1}
-        />
-      )}
+      {isWizardWeek && (
+        <FlowWithComments comments={commentsPanel}>
+          {isGitHubProfileWeek && (
+            <GitHubProfileSteps
+              weekId={assignment.weekId}
+              weekLabel={weekLabel}
+              done={profileBriefDone}
+              actions={commentsToggle}
+              formFields={formFields}
+              review={<GitWitReview initial={gitwitInitial} />}
+              readmeEditorProps={readmeEditorProps}
+              readmeFallback={readmeFallback}
+              submitAction={createSubmission}
+              initialStep={step ?? 1}
+            />
+          )}
 
-      {isRepoShowcaseWeek && (
-        <RepoShowcaseSteps
-          weekId={assignment.weekId}
-          weekLabel={week ? `Week ${week.number}: ${week.theme}` : undefined}
-          done={repoBriefDone}
-          actions={actions}
-          formFields={repoFormFields}
-          submitAction={createSubmission}
-        />
-      )}
+          {isRepoShowcaseWeek && (
+            <RepoShowcaseSteps
+              weekId={assignment.weekId}
+              weekLabel={weekLabel}
+              done={repoBriefDone}
+              actions={commentsToggle}
+              formFields={repoFormFields}
+              submitAction={createSubmission}
+            />
+          )}
 
-      {isContributionWeek && (
-        <ContributionSteps
-          weekId={assignment.weekId}
-          weekLabel={week ? `Week ${week.number}: ${week.theme}` : undefined}
-          done={contributionBriefDone}
-          actions={actions}
-          formFields={prFormFields}
-          submitAction={createSubmission}
-        />
-      )}
+          {isContributionWeek && (
+            <ContributionSteps
+              weekId={assignment.weekId}
+              weekLabel={weekLabel}
+              done={contributionBriefDone}
+              actions={commentsToggle}
+              formFields={prFormFields}
+              submitAction={createSubmission}
+            />
+          )}
 
-      {isPortfolioWeek && (
-        <PortfolioSteps
-          weekId={assignment.weekId}
-          weekLabel={week ? `Week ${week.number}: ${week.theme}` : undefined}
-          done={portfolioBriefDone}
-          actions={actions}
-          formFields={portfolioFormFields}
-          submitAction={createSubmission}
-        />
+          {isPortfolioWeek && (
+            <PortfolioSteps
+              weekId={assignment.weekId}
+              weekLabel={weekLabel}
+              done={portfolioBriefDone}
+              actions={commentsToggle}
+              formFields={portfolioFormFields}
+              submitAction={createSubmission}
+            />
+          )}
+        </FlowWithComments>
       )}
 
       {showAssignmentSummary && (
@@ -646,7 +635,6 @@ export async function AssignmentWorkSection({
             {assignment.deadline && (
               <Countdown deadline={new Date(assignment.deadline).toISOString()} />
             )}
-            <div className="flex items-center gap-1 shrink-0">{actions}</div>
           </div>
 
           <div className="hairline my-5" />
