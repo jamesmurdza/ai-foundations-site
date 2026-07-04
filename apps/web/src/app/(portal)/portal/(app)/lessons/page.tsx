@@ -33,6 +33,9 @@ export default async function LessonsPage() {
 
   return (
     <div className="py-2">
+      <h1 className="text-[30px] md:text-[34px] font-semibold leading-tight text-center mb-8">
+        Welcome to AI Summer School
+      </h1>
       <div className="grid mx-auto max-w-[820px] gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
         {cards.map(({ week, assignment, item }) => {
           // A week with no assignment (Week 0 welcome) — an "open" card that
