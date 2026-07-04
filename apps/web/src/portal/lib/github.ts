@@ -2,7 +2,11 @@ import "server-only";
 import { unstable_cache } from "next/cache";
 import sanitizeHtml from "sanitize-html";
 import { normalizeUrl } from "./github-parse";
-import { unwrapReadmeImageUrls, readmeGist } from "./readme-html";
+import {
+  unwrapReadmeImageUrls,
+  readmeGist,
+  promoteImgStyleSizes,
+} from "./readme-html";
 import { classifyStarResponse, type StarOutcome } from "./star-throttle";
 import type { ProfileSignals } from "./gitwitTypes";
 export { parseRepo, parseLogin, deriveRepoRef } from "./github-parse";
@@ -552,7 +556,9 @@ export async function renderMarkdownPreview(
         ...readHeaders(token),
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ text: markdown, mode: "gfm" }),
+      // The /markdown API drops inline <img style>, so promote style sizes to
+      // width/height attributes it keeps — otherwise unsized images go full-width.
+      body: JSON.stringify({ text: promoteImgStyleSizes(markdown), mode: "gfm" }),
     });
     if (!res.ok) return null;
     return sanitizeReadmeHtml(await res.text());
