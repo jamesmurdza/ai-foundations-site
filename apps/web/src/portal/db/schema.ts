@@ -97,36 +97,10 @@ export const profiles = pgTable(
 
 /* ---------------------------------------------------------------------------
    Program spine
+   NOTE: weeks & assignments are NOT stored in the DB — the curriculum is
+   hardcoded in code (src/portal/lib/curriculum.ts). Other tables below still
+   store `weekId` / `assignmentId` as plain text pointing at those stable ids.
 --------------------------------------------------------------------------- */
-export const weeks = pgTable(
-  "ss_weeks",
-  {
-    id: id(),
-    number: integer("number").notNull(),
-    theme: text("theme").notNull(),
-    description: text("description"),
-    streamUrl: text("stream_url"),
-    recordingUrl: text("recording_url"),
-    isLive: boolean("is_live").default(false).notNull(),
-    isPublished: boolean("is_published").default(true).notNull(),
-    startsAt: timestamp("starts_at", { withTimezone: true }),
-    createdAt,
-  },
-  (t) => [uniqueIndex("ss_weeks_number_idx").on(t.number)],
-);
-
-export const assignments = pgTable("ss_assignments", {
-  id: id(),
-  weekId: text("week_id").notNull(),
-  title: text("title").notNull(),
-  prompt: text("prompt").notNull(),
-  submissionType: text("submission_type").notNull(), // link | repo | file | text | any
-  deadline: timestamp("deadline", { withTimezone: true }),
-  recurring: boolean("recurring").default(false).notNull(),
-  reviewCount: integer("review_count").default(3).notNull(),
-  createdBy: text("created_by"),
-  createdAt,
-});
 
 export const submissions = pgTable(
   "ss_submissions",
@@ -556,8 +530,8 @@ export type FileRow = typeof files.$inferSelect;
 export type Attachment = typeof attachments.$inferSelect;
 export type Announcement = typeof announcements.$inferSelect;
 export type Profile = typeof profiles.$inferSelect;
-export type Week = typeof weeks.$inferSelect;
-export type Assignment = typeof assignments.$inferSelect;
+// Week & Assignment types now live with the hardcoded curriculum.
+export type { Week, Assignment } from "@portal/lib/curriculum";
 export type Submission = typeof submissions.$inferSelect;
 export type Feedback = typeof feedback.$inferSelect;
 export type Comment = typeof comments.$inferSelect;

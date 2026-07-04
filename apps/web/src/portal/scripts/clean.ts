@@ -4,7 +4,8 @@
  *   npm run clean         # report row counts only (no changes)
  *   npm run clean -- --apply   # wipe transactional tables, keep the spine
  *
- * PRESERVES ss_weeks + ss_admins (the program spine + founder allowlist).
+ * PRESERVES ss_admins (the founder allowlist). The curriculum (weeks &
+ * assignments) is hardcoded in code, not the DB.
  * NEVER touches the read-only hh_* applicant tables.
  */
 import { Pool } from "pg";
@@ -36,11 +37,10 @@ const WIPE = [
   "ss_login_codes",
   "ss_resources",
   "ss_announcements",
-  "ss_assignments",
   "ss_profiles",
   "ss_users",
 ];
-const KEEP = ["ss_weeks", "ss_admins"];
+const KEEP = ["ss_admins"];
 
 async function count(table: string): Promise<number> {
   const { rows } = await pool.query(`select count(*)::int as n from ${table}`);
@@ -92,7 +92,7 @@ async function main() {
   }
 
   await pool.end();
-  console.log("\nDone. Run `npm run seed` to restore the Week 1 assignment + admins.");
+  console.log("\nDone. Run `npm run seed` to restore the admin allowlist.");
 }
 
 main().catch((e) => {

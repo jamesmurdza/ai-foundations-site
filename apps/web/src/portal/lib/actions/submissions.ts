@@ -6,9 +6,13 @@ import { revalidatePath, revalidateTag } from "next/cache";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 import { db } from "@portal/db";
-import { submissions, assignments, attachments, profiles, starGrants } from "@portal/db/schema";
+import { submissions, attachments, profiles, starGrants } from "@portal/db/schema";
 import { requireOnboardedUser } from "@portal/lib/auth";
-import { getUserSubmissionForAssignment, getWeek } from "@portal/lib/queries";
+import {
+  getUserSubmissionForAssignment,
+  getWeek,
+  getAssignment,
+} from "@portal/lib/queries";
 import { weekAssignmentHomePath } from "@portal/lib/weekRoutes";
 import { recordEvent } from "@portal/lib/events";
 import { sendEmail, templates } from "@portal/lib/email";
@@ -40,11 +44,7 @@ export async function createSubmission(formData: FormData) {
     payload: formData.get("payload") ?? "",
     notes: formData.get("notes") ?? "",
   });
-  const [assignment] = await db
-    .select()
-    .from(assignments)
-    .where(eq(assignments.id, data.assignmentId))
-    .limit(1);
+  const assignment = await getAssignment(data.assignmentId);
   if (!assignment) redirect("/home");
   const assignmentWeek = await getWeek(assignment.weekId);
   // The submission form carries a single "trade stars" checkbox (on by default;
@@ -79,7 +79,7 @@ export async function createSubmission(formData: FormData) {
   // "file" assignment even with no link pasted. Files come from Vercel Blob.
   const stored = await saveBlobRefsFromForm(formData, "blobRefs", user.id);
   let payload = data.payload;
-  let payloadType =
+  let payloadType: string =
     assignment.submissionType === "any" ? "text" : assignment.submissionType;
   if (!payload && stored.length) {
     payload = `/api/files/${stored[0].id}`;
