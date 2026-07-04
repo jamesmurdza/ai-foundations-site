@@ -34,22 +34,10 @@ export default async function AdminStreamPage() {
 
   return (
     <div>
-      {/* Quick actions */}
-      <div className="grid sm:grid-cols-3 gap-3 mb-8">
-        <Link href="/admin/classwork" className="card card-hover flex items-center gap-3">
-          <span className="text-[24px]">📌</span>
-          <div>
-            <div className="font-bold">New assignment</div>
-            <div className="meta text-[13px]">Set classwork for a week</div>
-          </div>
-        </Link>
-        <Link href="/admin/weeks" className="card card-hover flex items-center gap-3">
-          <span className="text-[24px]">🔴</span>
-          <div>
-            <div className="font-bold">Go live / stream</div>
-            <div className="meta text-[13px]">Start a workshop, email everyone</div>
-          </div>
-        </Link>
+      {/* Quick actions. The curriculum (weeks & assignments) is hardcoded in
+          code now — see src/portal/lib/curriculum.ts — so there's no week/
+          assignment editor here. */}
+      <div className="grid sm:grid-cols-2 gap-3 mb-8">
         <Link href="/admin/people" className="card card-hover flex items-center gap-3">
           <span className="text-[24px]">👥</span>
           <div>

@@ -1,13 +1,11 @@
 import "server-only";
 import { cache } from "react";
 import { unstable_cache } from "next/cache";
-import { and, asc, desc, eq, inArray, isNotNull, lte, ne, sql } from "drizzle-orm";
+import { and, asc, desc, eq, inArray, isNotNull, ne, sql } from "drizzle-orm";
 import { db } from "@portal/db";
 import {
   users,
   profiles,
-  weeks,
-  assignments,
   submissions,
   feedback,
   reviewAssignments,
@@ -24,9 +22,18 @@ import {
 import { applicationCountryCounts } from "@portal/lib/applications";
 import { normalizeCountry, displayCountry } from "@portal/lib/countries";
 import { profileHref } from "@portal/lib/profileHref";
+import {
+  WEEKS,
+  findWeek,
+  findWeekByNumber,
+  findAssignment,
+  assignmentsForWeek,
+  allAssignmentsWithWeek,
+  currentWeek,
+  type Week,
+  type Assignment,
+} from "@portal/lib/curriculum";
 import type {
-  Week,
-  Assignment,
   Submission,
   Profile,
   Feedback,
@@ -76,131 +83,45 @@ export async function getAuthors(
   return map;
 }
 
-/* ---- Weeks --------------------------------------------------------------- */
-// Weeks are global cohort data that changes only on admin actions, so they go
-// behind a tagged cache: reads serve from cache, and every week mutation calls
-// revalidateTag("weeks", { expire: 0 }) for instant freshness. The revalidate
-// values are background safety nets, not the freshness mechanism.
-const _listWeeks = unstable_cache(
-  async (): Promise<Week[]> => db.select().from(weeks).orderBy(weeks.number),
-  ["list-weeks"],
-  { tags: ["weeks"], revalidate: 300 },
-);
+/* ---- Weeks & assignments (hardcoded curriculum, not the DB) --------------- */
+// The program's weeks and assignments live in code (src/portal/lib/curriculum.ts),
+// not in Postgres. These reads stay async so every caller is unchanged; they just
+// resolve from the in-memory curriculum now.
 export async function listWeeks(): Promise<Week[]> {
-  return _listWeeks();
+  return WEEKS;
 }
-const _getWeek = unstable_cache(
-  async (id: string): Promise<Week | null> => {
-    const [w] = await db.select().from(weeks).where(eq(weeks.id, id)).limit(1);
-    return w ?? null;
-  },
-  ["get-week"],
-  { tags: ["weeks"], revalidate: 300 },
-);
 export async function getWeek(id: string): Promise<Week | null> {
-  return _getWeek(id);
+  return findWeek(id);
 }
-const _getWeekByNumber = unstable_cache(
-  async (number: number): Promise<Week | null> => {
-    const [w] = await db.select().from(weeks).where(eq(weeks.number, number)).limit(1);
-    return w ?? null;
-  },
-  ["get-week-by-number"],
-  { tags: ["weeks"], revalidate: 300 },
-);
 export async function getWeekByNumber(number: number): Promise<Week | null> {
-  return _getWeekByNumber(number);
+  return findWeekByNumber(number);
 }
-// Shorter safety-net TTL than the other week reads: getCurrentWeek also rolls
-// over by wall-clock (a week whose startsAt has passed), so cap the lag if no
-// explicit admin action (setWeekLive) fires the tag first.
-const _getCurrentWeek = unstable_cache(
-  async (): Promise<Week | null> => {
-    // 1) a week explicitly set live wins.
-    const [live] = await db
-      .select()
-      .from(weeks)
-      .where(eq(weeks.isLive, true))
-      .limit(1);
-    if (live) return live;
-
-    // 2) the most recently *started* published week.
-    const now = new Date();
-    const [started] = await db
-      .select()
-      .from(weeks)
-      .where(
-        and(
-          eq(weeks.isPublished, true),
-          isNotNull(weeks.startsAt),
-          lte(weeks.startsAt, now),
-        ),
-      )
-      .orderBy(desc(weeks.number))
-      .limit(1);
-    if (started) return started;
-
-    // 3) fall back to the first published week (program start).
-    const [first] = await db
-      .select()
-      .from(weeks)
-      .where(eq(weeks.isPublished, true))
-      .orderBy(asc(weeks.number))
-      .limit(1);
-    return first ?? null;
-  },
-  ["get-current-week"],
-  { tags: ["weeks"], revalidate: 60 },
-);
 export async function getCurrentWeek(): Promise<Week | null> {
-  return _getCurrentWeek();
+  return currentWeek();
 }
 
-/* ---- Assignments --------------------------------------------------------- */
 export async function getAssignment(id: string): Promise<Assignment | null> {
-  const [a] = await db
-    .select()
-    .from(assignments)
-    .where(eq(assignments.id, id))
-    .limit(1);
-  return a ?? null;
+  return findAssignment(id);
 }
 export async function listAssignmentsForWeek(
   weekId: string,
 ): Promise<Assignment[]> {
-  return db
-    .select()
-    .from(assignments)
-    .where(eq(assignments.weekId, weekId))
-    .orderBy(assignments.createdAt);
+  return assignmentsForWeek(weekId);
 }
-/** The week's primary assignment — the first one posted for that week. */
+/** The week's primary assignment — its first (and only) assignment. */
 export async function getAssignmentForWeekNumber(
   weekNumber: number,
 ): Promise<(Assignment & { week: Week }) | null> {
-  const week = await getWeekByNumber(weekNumber);
+  const week = findWeekByNumber(weekNumber);
   if (!week) return null;
-  const [assignment] = await listAssignmentsForWeek(week.id);
+  const [assignment] = assignmentsForWeek(week.id);
   if (!assignment) return null;
   return { ...assignment, week };
 }
 export async function listAllAssignments(): Promise<
   (Assignment & { weekNumber: number; weekTheme: string })[]
 > {
-  const rows = await db
-    .select({
-      a: assignments,
-      weekNumber: weeks.number,
-      weekTheme: weeks.theme,
-    })
-    .from(assignments)
-    .leftJoin(weeks, eq(weeks.id, assignments.weekId))
-    .orderBy(desc(assignments.createdAt));
-  return rows.map((r) => ({
-    ...r.a,
-    weekNumber: r.weekNumber ?? 0,
-    weekTheme: r.weekTheme ?? "",
-  }));
+  return allAssignmentsWithWeek();
 }
 
 /* ---- Submissions --------------------------------------------------------- */
@@ -224,22 +145,17 @@ async function decorateSubmissions(
   const ids = subs.map((s) => s.id);
   const authors = await getAuthors(subs.map((s) => s.userId));
 
-  const assignmentRows = await db
-    .select({
-      id: assignments.id,
-      title: assignments.title,
-      weekNumber: weeks.number,
-      weekId: assignments.weekId,
-    })
-    .from(assignments)
-    .leftJoin(weeks, eq(weeks.id, assignments.weekId))
-    .where(
-      inArray(
-        assignments.id,
-        [...new Set(subs.map((s) => s.assignmentId))],
-      ),
-    );
-  const aMap = new Map(assignmentRows.map((a) => [a.id, a]));
+  // Assignment + week metadata come from the hardcoded curriculum. Submissions
+  // whose assignmentId no longer resolves (old/orphaned rows) fall back below.
+  const meta = (assignmentId: string) => {
+    const a = findAssignment(assignmentId);
+    const w = a ? findWeek(a.weekId) : null;
+    return {
+      title: a?.title ?? "Assignment",
+      weekNumber: w?.number ?? 0,
+      weekId: a?.weekId ?? null,
+    };
+  };
 
   const fbCounts = await db
     .select({
@@ -303,9 +219,9 @@ async function decorateSubmissions(
         profileId: null,
         country: null,
       },
-    assignmentTitle: aMap.get(s.assignmentId)?.title ?? "Assignment",
-    weekNumber: aMap.get(s.assignmentId)?.weekNumber ?? 0,
-    weekId: aMap.get(s.assignmentId)?.weekId ?? null,
+    assignmentTitle: meta(s.assignmentId).title,
+    weekNumber: meta(s.assignmentId).weekNumber,
+    weekId: meta(s.assignmentId).weekId,
     feedbackCount: fbMap.get(s.id) ?? 0,
     commentCount: cmMap.get(s.id) ?? 0,
     starCount:
@@ -353,11 +269,7 @@ const _listShowcase = unstable_cache(
   async (opts?: { weekId?: string; limit?: number }): Promise<ShowcaseItem[]> => {
     let subs: Submission[];
     if (opts?.weekId) {
-      const weekAssignments = await db
-        .select({ id: assignments.id })
-        .from(assignments)
-        .where(eq(assignments.weekId, opts.weekId));
-      const ids = weekAssignments.map((a) => a.id);
+      const ids = assignmentsForWeek(opts.weekId).map((a) => a.id);
       if (!ids.length) return [];
       subs = await db
         .select()
@@ -549,11 +461,10 @@ export async function listPendingReviews(
     .select({
       raId: reviewAssignments.id,
       submission: submissions,
-      assignmentTitle: assignments.title,
+      assignmentId: reviewAssignments.assignmentId,
     })
     .from(reviewAssignments)
     .innerJoin(submissions, eq(submissions.id, reviewAssignments.submissionId))
-    .leftJoin(assignments, eq(assignments.id, reviewAssignments.assignmentId))
     .where(
       and(
         eq(reviewAssignments.reviewerId, userId),
@@ -566,7 +477,7 @@ export async function listPendingReviews(
     reviewAssignmentId: r.raId,
     submission: r.submission,
     author: authors.get(r.submission.userId)!,
-    assignmentTitle: r.assignmentTitle ?? "Assignment",
+    assignmentTitle: findAssignment(r.assignmentId)?.title ?? "Assignment",
   }));
 }
 
