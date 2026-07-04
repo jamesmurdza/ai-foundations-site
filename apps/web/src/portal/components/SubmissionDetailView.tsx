@@ -18,6 +18,7 @@ import { MessageCircle } from "lucide-react";
 import { Avatar } from "@portal/components/Avatar";
 import { timeAgo } from "@portal/lib/format";
 import { profileHref } from "@portal/lib/profileHref";
+import { withBase } from "@portal/lib/paths";
 import type { Author, ShowcaseItem } from "@portal/lib/queries";
 import { weekAssignmentHomePath } from "@portal/lib/weekRoutes";
 
@@ -108,18 +109,15 @@ export async function SubmissionDetailView({ id }: { id: string }) {
         id="comments"
         className="scroll-mt-24 lg:sticky lg:top-6 border-t border-border pt-5 lg:border-t-0 lg:pt-0"
       >
-        {isOwner && (
-          <div className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md border border-border bg-muted px-4 py-3 text-[14px]">
-            <span>You submitted this.</span>
-            {assignment && week && (
-              <Link
-                href={weekAssignmentHomePath(week.id, { edit: true })}
-                className="link font-semibold"
-              >
-                Edit it
-              </Link>
-            )}
-          </div>
+        {isOwner && assignment && week && (
+          // Full-width outline button (like the profile page's "Edit profile").
+          // A real navigation, so it works from inside the intercepting modal too.
+          <a
+            href={withBase(weekAssignmentHomePath(week.id, { edit: true }))}
+            className="btn btn-outline w-full justify-center mb-6"
+          >
+            Edit submission
+          </a>
         )}
         <div className="flex items-start justify-between gap-3 border-b border-border pb-4 mb-4">
           <Link
