@@ -99,11 +99,18 @@ export function ReadmeEditor({
             placeholder={`# Hi, I'm ${login}\n\nTell the cohort who you are and what you're building…`}
           />
         ) : (
-          <div className="markdown-body min-h-[420px] max-h-[640px] overflow-auto rounded-cards border border-sea-fog bg-canvas-white p-4">
+          <div className="min-h-[420px] max-h-[640px] overflow-auto rounded-cards border border-sea-fog bg-canvas-white p-5">
             {pending ? (
               <p className="meta">Rendering preview…</p>
             ) : previewHtml ? (
-              <div dangerouslySetInnerHTML={{ __html: previewHtml }} />
+              // Bound the rendered README to a content column like GitHub's own
+              // `.markdown-body.container-lg`, so wide / unsized images (badges,
+              // banners, SVGs, width="80%") don't stretch the full column — this
+              // matches how the profile page renders it.
+              <div
+                className="markdown-body mx-auto max-w-[700px]"
+                dangerouslySetInnerHTML={{ __html: previewHtml }}
+              />
             ) : (
               <p className="meta">Nothing to preview yet.</p>
             )}
