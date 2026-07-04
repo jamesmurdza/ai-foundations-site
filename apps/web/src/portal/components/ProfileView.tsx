@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { MapPin, Link2 } from "lucide-react";
 import Link from "@portal/components/Link";
-import { SubmissionCard } from "@portal/components/SubmissionCard";
+import { SubmissionFeedPost } from "@portal/components/SubmissionFeedPost";
 import { FollowButton } from "@portal/components/FollowButton";
 import { Avatar } from "@portal/components/Avatar";
 import type { Profile } from "@portal/db/schema";
@@ -15,25 +15,32 @@ export type FollowInfo = {
   isFollowing: boolean;
 };
 
+export type ProjectPreview = {
+  item: ShowcaseItem;
+  readmeHtml: string | null;
+  liked: boolean;
+  canLike: boolean;
+};
+
 /**
  * Shared profile renderer, laid out like a GitHub profile: a sticky identity
  * rail on the left (avatar, name, follow/edit, bio, location + links) and a
  * main content column on the right (the GitHub README as `readme` centerpiece
- * and the person's projects as a "pinned"-style card grid). Used by the
+ * and the person's projects as full-height Discover-style previews). Used by the
  * canonical /users/[githubusername] page and the /profiles/[id] fallback (which
  * passes no readme).
  */
 export function ProfileView({
   profile,
   author,
-  submissions,
+  projects,
   isOwner,
   follow,
   readme,
 }: {
   profile: Profile;
   author: Author;
-  submissions: ShowcaseItem[];
+  projects: ProjectPreview[];
   isOwner: boolean;
   follow: FollowInfo;
   readme?: ReactNode;
@@ -111,15 +118,22 @@ export function ProfileView({
               private, edited in Settings but never rendered on the profile. */}
           {readme}
 
-          {/* Projects — a "pinned"-style card grid, matching Discover / My Work. */}
+          {/* Projects — full-height Discover-style previews (README rendered as
+              real GitHub markdown, not clipped). */}
           <section className={readme ? "mt-10" : ""}>
-            <h2 className="text-heading mb-4">Projects</h2>
-            {submissions.length === 0 ? (
+            {projects.length === 0 ? (
               <p className="meta">No projects shipped yet.</p>
             ) : (
-              <div className="grid gap-4 sm:grid-cols-2">
-                {submissions.map((s) => (
-                  <SubmissionCard key={s.submission.id} item={s} />
+              <div className="space-y-12">
+                {projects.map(({ item, readmeHtml, liked, canLike }) => (
+                  <SubmissionFeedPost
+                    key={item.submission.id}
+                    item={item}
+                    readmeHtml={readmeHtml}
+                    liked={liked}
+                    canLike={canLike}
+                    fullReadme
+                  />
                 ))}
               </div>
             )}

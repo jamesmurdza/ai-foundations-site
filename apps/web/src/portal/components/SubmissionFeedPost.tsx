@@ -31,6 +31,7 @@ export function SubmissionFeedPost({
   canLike,
   hideHeader = false,
   hideActions = false,
+  fullReadme = false,
 }: {
   item: ShowcaseItem;
   readmeHtml: string | null;
@@ -40,6 +41,8 @@ export function SubmissionFeedPost({
   hideHeader?: boolean;
   /** The submission page shows the like/comment row beneath its comments instead. */
   hideActions?: boolean;
+  /** Render the README at full height (no clip/fade) — used on profile pages. */
+  fullReadme?: boolean;
 }) {
   const { submission: s, author, commentCount } = item;
   const starCount = item.starCount ?? 0;
@@ -80,7 +83,17 @@ export function SubmissionFeedPost({
           thin-bordered frame (no rounding, no fill) like an Instagram photo. */}
       <div className="border border-border">
         {readmeHtml ? (
-          <SubmissionReadme html={readmeHtml} />
+          fullReadme ? (
+            // Full height — no clip/fade. github-markdown-css styles the
+            // pre-wrapped `.markdown-body` from GitHub's rendered HTML.
+            <div
+              className="markdown-body p-5"
+              style={{ fontSize: "13px" }}
+              dangerouslySetInnerHTML={{ __html: readmeHtml }}
+            />
+          ) : (
+            <SubmissionReadme html={readmeHtml} />
+          )
         ) : externalHref ? (
           <a
             href={externalHref}
