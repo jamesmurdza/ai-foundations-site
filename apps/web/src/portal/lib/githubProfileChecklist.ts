@@ -57,19 +57,19 @@ export const GITHUB_PROFILE_BRAINSTORM = {
   prompts: [
     {
       title: "What are you proud of?",
-      body: "Projects you've built, problems you've solved, things you've shipped — even small ones. These become the highlights of your profile.",
+      body: "Projects you've built, problems you've solved — even small wins.",
     },
     {
       title: "What are you excited about?",
-      body: "The languages, tools, and ideas you love working with, and what you're learning right now. This is what makes a profile feel alive.",
+      body: "The languages, tools, and ideas you love, and what you're learning now.",
     },
     {
       title: "Who's it for?",
-      body: "Picture whoever lands on your profile — a recruiter, a future teammate, a fellow contributor. What should they know about you in ten seconds?",
+      body: "A recruiter, a teammate, a fellow contributor — what should they see first?",
     },
     {
       title: "What makes you, you?",
-      body: "Your background, interests outside of code, and the through-line in the things you build.",
+      body: "Your background, interests outside code, the through-line in what you build.",
     },
   ],
   footer:
