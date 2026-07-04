@@ -2,7 +2,6 @@ import Link from "@portal/components/Link";
 import { Heart, MessageCircle } from "lucide-react";
 import { requireOnboardedUser } from "@portal/lib/auth";
 import { listSubmissionsByUser } from "@portal/lib/queries";
-import { weekSubmissionPath } from "@portal/lib/weekRoutes";
 
 export default async function MySubmissionsPage() {
   const { user } = await requireOnboardedUser();
@@ -33,15 +32,10 @@ export default async function MySubmissionsPage() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {ordered.map((item) => {
             const s = item.submission;
-            // The whole card links back to this week's submission form on Home
-            // (the /submissions/week-N route redirects there). Comments live on
-            // the submission's own page, reached from the showcase feed.
-            const href =
-              item.weekNumber > 0 ? weekSubmissionPath(item.weekNumber) : "/home";
-            // Comments/likes live on the submission's own page — the icon row
-            // sits under the card so it stays clickable (a link can't nest
-            // inside the card's own link).
-            const commentsHref = `/submissions/${s.id}#comments`;
+            // The whole card opens the submission's own page — the post on the
+            // left, comments on the right (jumps straight to the thread).
+            const href = `/submissions/${s.id}#comments`;
+            const commentsHref = href;
             return (
               <div key={s.id} className="flex flex-col gap-2">
                 <Link

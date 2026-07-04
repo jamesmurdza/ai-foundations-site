@@ -411,6 +411,8 @@ export async function getSubmissionDetail(id: string): Promise<{
   author: Author;
   assignment: Assignment | null;
   week: Week | null;
+  /** GitHub stars on this submission's repo — the feed's "likes". */
+  starCount: number;
 } | null> {
   const [s] = await db
     .select()
@@ -421,11 +423,29 @@ export async function getSubmissionDetail(id: string): Promise<{
   const authors = await getAuthors([s.userId]);
   const assignment = await getAssignment(s.assignmentId);
   const week = assignment ? await getWeek(assignment.weekId) : null;
+
+  let starCount = 0;
+  if (s.repoOwner && s.repoName) {
+    const [row] = await db
+      .select({ n: sql<number>`count(*)::int` })
+      .from(starGrants)
+      .where(
+        and(
+          eq(starGrants.kind, "star"),
+          eq(starGrants.ok, true),
+          eq(starGrants.repoOwner, s.repoOwner),
+          eq(starGrants.repoName, s.repoName),
+        ),
+      );
+    starCount = row?.n ?? 0;
+  }
+
   return {
     submission: s,
     author: authors.get(s.userId)!,
     assignment,
     week,
+    starCount,
   };
 }
 
