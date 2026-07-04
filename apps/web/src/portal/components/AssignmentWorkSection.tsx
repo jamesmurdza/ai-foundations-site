@@ -226,6 +226,9 @@ export async function AssignmentWorkSection({
   const readmeReturnTo = `/home?week=${assignment.weekId}&step=4${
     edit ? "&edit=1" : ""
   }#assignment`;
+  const readmeBackHref = `/home?week=${assignment.weekId}&step=2${
+    edit ? "&edit=1" : ""
+  }#assignment`;
   const readmeSavable = Boolean(githubConnected && readme);
   const readmeEditorNode = githubConnected && readme ? (
     <ReadmeEditor
@@ -234,6 +237,11 @@ export async function AssignmentWorkSection({
       hasExisting={readme.hasExisting}
       returnTo={readmeReturnTo}
       saveLabel="Save & continue →"
+      secondaryAction={
+        <Link href={readmeBackHref} className="btn btn-gray">
+          ← Back
+        </Link>
+      }
     />
   ) : (
     <div className="rounded-[12px] border border-sea-fog p-4">

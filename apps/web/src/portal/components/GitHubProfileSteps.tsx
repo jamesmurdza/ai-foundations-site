@@ -174,7 +174,7 @@ export function GitHubProfileSteps({
             <button
               type="button"
               onClick={() => setStep(1)}
-              className="btn btn-ghost !px-2"
+              className="btn btn-gray"
             >
               ← Back
             </button>
@@ -200,19 +200,19 @@ export function GitHubProfileSteps({
             GitHub and shows on your profile.
           </p>
           {checklist(readmeSection)}
-          {/* The editor's "Save & continue →" is the forward action (saving also
-              advances to page 4). When it can't save (GitHub not connected) we
-              show an explicit Next so the flow isn't a dead end. */}
+          {/* When the editor can save, its footer carries Back + "Save & continue →"
+              on one line (saving also advances to page 4). When it can't save
+              (GitHub not connected) we render our own Back + Next below instead. */}
           <div className="mt-5">{readmeEditor}</div>
-          <div className="mt-6 flex items-center justify-between">
-            <button
-              type="button"
-              onClick={() => setStep(2)}
-              className="btn btn-ghost !px-2"
-            >
-              ← Back
-            </button>
-            {!readmeSavable && (
+          {!readmeSavable && (
+            <div className="mt-6 flex items-center justify-between">
+              <button
+                type="button"
+                onClick={() => setStep(2)}
+                className="btn btn-gray"
+              >
+                ← Back
+              </button>
               <button
                 type="button"
                 onClick={() => setStep(4)}
@@ -220,8 +220,8 @@ export function GitHubProfileSteps({
               >
                 Next →
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </>
       )}
 
@@ -239,7 +239,7 @@ export function GitHubProfileSteps({
               <button
                 type="button"
                 onClick={() => setStep(3)}
-                className="btn btn-ghost !px-2"
+                className="btn btn-gray"
               >
                 ← Back
               </button>

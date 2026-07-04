@@ -21,6 +21,7 @@ export function ReadmeEditor({
   hasExisting,
   returnTo,
   saveLabel = "Save to GitHub",
+  secondaryAction,
 }: {
   login: string;
   initialMarkdown: string;
@@ -33,6 +34,9 @@ export function ReadmeEditor({
   returnTo?: string;
   /** Save button label — e.g. the Week 1 flow uses "Save & continue →". */
   saveLabel?: string;
+  /** Optional control on the left of the footer row (e.g. a flow's Back button),
+   *  so it lines up on the same line as the save button. */
+  secondaryAction?: React.ReactNode;
 }) {
   const [markdown, setMarkdown] = useState(initialMarkdown);
   const [mode, setMode] = useState<"write" | "preview">("write");
@@ -128,7 +132,12 @@ export function ReadmeEditor({
           <input type="hidden" name="redirectTo" value={returnTo} />
         )}
 
-        <div className="flex items-center justify-end gap-3 flex-wrap">
+        <div
+          className={`flex items-center gap-3 flex-wrap ${
+            secondaryAction ? "justify-between" : "justify-end"
+          }`}
+        >
+          {secondaryAction}
           <SubmitButton className="btn btn-primary" pendingText="Saving…">
             {saveLabel}
           </SubmitButton>
