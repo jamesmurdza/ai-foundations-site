@@ -41,8 +41,8 @@ export function SubmissionFeedPost({
   hideHeader?: boolean;
   /** The submission page shows the like/comment row beneath its comments instead. */
   hideActions?: boolean;
-  /** Once opened (modal/detail), render the README full-length and drop the
-   *  overlay link — you're already looking at the submission. */
+  /** Render the README full-length (no clip/fade) and drop the overlay modal
+   *  link — used when opened (modal/detail) and on profile pages. */
   full?: boolean;
 }) {
   const { submission: s, author, commentCount } = item;

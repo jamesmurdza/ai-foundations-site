@@ -18,6 +18,8 @@ export default async function UserProfilePage({
   if (!page) notFound();
 
   const data = await loadProfileViewData(page.profile, page.author);
-  const readmeLogin = page.author.login ?? login;
+  // Source the README from the Week 1 submission when present (see loader), else
+  // the GitHub username; fall back to the route login as a last resort.
+  const readmeLogin = data.readmeLogin ?? login;
   return <ProfileView {...data} readme={<Readme login={readmeLogin} />} />;
 }

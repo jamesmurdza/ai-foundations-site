@@ -71,10 +71,12 @@ export async function WorldMap({
   locations,
   people,
   topControl,
+  reserveTopControl,
 }: {
   locations?: { country: string; count: number }[];
   people?: MapProfile[];
   topControl?: ReactNode;
+  reserveTopControl?: boolean;
 }) {
   const peopleMode = Boolean(people?.length);
   const effectiveLocations = peopleMode
@@ -170,6 +172,7 @@ export async function WorldMap({
       height={H}
       total={total}
       topControl={topControl}
+      reserveTopControl={reserveTopControl}
     />
   );
 }

@@ -5,7 +5,6 @@ import { revalidatePath, revalidateTag } from "next/cache";
 import { getSessionContext } from "@portal/lib/auth";
 import {
   getProfileReadmeContents,
-  renderMarkdownPreview,
   upsertProfileReadme,
 } from "@portal/lib/github";
 
@@ -24,19 +23,12 @@ function requireGithubWriteAccess(user: {
   return true;
 }
 
-export async function previewReadmeMarkdown(
-  markdown: string,
-): Promise<string | null> {
-  const { user } = await getSessionContext();
-  if (!user || !requireGithubWriteAccess(user)) return null;
-  return renderMarkdownPreview(markdown, user.accessToken ?? undefined);
-}
 
 export async function updateGithubReadme(formData: FormData) {
   const { user } = await getSessionContext();
   if (!user) redirect("/login");
   if (!requireGithubWriteAccess(user)) {
-    redirect("/profile/edit?error=no_github#readme");
+    redirect("/settings/readme?error=no_github");
   }
 
   const markdown = String(formData.get("markdown") ?? "");
@@ -58,12 +50,12 @@ export async function updateGithubReadme(formData: FormData) {
         : result.code === "conflict"
           ? "readme_conflict"
           : "readme_failed";
-    redirect(`/profile/edit?error=${code}#readme`);
+    redirect(`/settings/readme?error=${code}`);
   }
 
   revalidateTag("github-readme", { expire: 0 });
   revalidatePath(`/users/${login}`);
-  redirect("/profile/edit?saved=readme#readme");
+  redirect("/settings/readme?saved=1");
 }
 
 export async function loadReadmeForEdit(login: string, token: string) {

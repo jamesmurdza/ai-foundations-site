@@ -2,6 +2,7 @@ import { notFound, redirect } from "@portal/lib/nav";
 import { getProfilePage, getLoginForProfileId } from "@portal/lib/queries";
 import { loadProfileViewData } from "@portal/lib/profileViewData";
 import { ProfileView } from "@portal/components/ProfileView";
+import { Readme } from "@portal/components/Readme";
 
 // Legacy/canonicalizing profile route. If the owner has a GitHub login, this
 // redirects to the canonical /users/[login]. Otherwise (no GitHub connected) it
@@ -18,5 +19,10 @@ export default async function ProfilePage({
   const page = await getProfilePage(id);
   if (!page) notFound();
   const data = await loadProfileViewData(page.profile, page.author);
-  return <ProfileView {...data} />;
+  return (
+    <ProfileView
+      {...data}
+      readme={data.readmeLogin ? <Readme login={data.readmeLogin} /> : undefined}
+    />
+  );
 }
