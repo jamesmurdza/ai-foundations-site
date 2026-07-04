@@ -178,7 +178,7 @@ export async function createAnnouncement(formData: FormData) {
   }
 
   revalidatePath("/admin");
-  revalidatePath("/home");
+  revalidatePath("/lessons");
   revalidatePath("/announcements");
 }
 
@@ -188,7 +188,7 @@ export async function deleteAnnouncement(formData: FormData) {
   if (!id) return;
   await db.delete(announcements).where(eq(announcements.id, id));
   revalidatePath("/admin");
-  revalidatePath("/home");
+  revalidatePath("/lessons");
 }
 
 /* ---- Attachments --------------------------------------------------------- */

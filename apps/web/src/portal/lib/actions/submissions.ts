@@ -45,7 +45,7 @@ export async function createSubmission(formData: FormData) {
     notes: formData.get("notes") ?? "",
   });
   const assignment = await getAssignment(data.assignmentId);
-  if (!assignment) redirect("/home");
+  if (!assignment) redirect("/lessons");
   const assignmentWeek = await getWeek(assignment.weekId);
   // The submission form carries a single "trade stars" checkbox (on by default;
   // pre-set to their last choice when editing). When it's present, submitting
@@ -93,7 +93,7 @@ export async function createSubmission(formData: FormData) {
   if (!payload) {
     const path = assignmentWeek
       ? weekAssignmentHomePath(assignmentWeek.id, { error: "empty" })
-      : "/home";
+      : "/lessons";
     redirect(path);
   }
   if (assignment.submissionType === "any") {
@@ -172,11 +172,10 @@ export async function createSubmission(formData: FormData) {
 
   revalidateTag("showcase", { expire: 0 });
   revalidatePath("/showcase");
-  revalidatePath("/submissions");
-  revalidatePath("/home");
+  revalidatePath("/lessons");
   const path = assignmentWeek
     ? weekAssignmentHomePath(assignmentWeek.id, { submitted: true })
-    : "/home#assignment";
+    : "/lessons";
   redirect(path);
 }
 

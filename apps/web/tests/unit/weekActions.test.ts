@@ -23,7 +23,7 @@ describe("buildWeekSteps", () => {
     expect(steps).toHaveLength(soft.length + 1);
     const last = steps[steps.length - 1];
     expect(last.key).toBe("assignment-a1");
-    expect(last.href).toBe(`/home?week=${week1Id}#assignment`);
+    expect(last.href).toBe(`/lessons/${week1Id}`);
     expect(last.title).toBe("Refresh your GitHub profile");
   });
 

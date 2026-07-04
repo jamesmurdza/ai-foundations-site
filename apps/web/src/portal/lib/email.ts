@@ -200,7 +200,7 @@ export const templates = {
     return {
       subject: title,
       html: shell(title, body, {
-        href: `${env.baseUrl}/home`,
+        href: `${env.baseUrl}/lessons`,
         label: "Open the portal",
       }),
     };

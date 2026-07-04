@@ -77,8 +77,8 @@ export function MobileMenu({
             <div className="hairline my-3" />
             {isAuthed ? (
               <>
-                <Link href="/home" onClick={close} className="btn btn-primary !py-3">
-                  Course
+                <Link href="/lessons" onClick={close} className="btn btn-primary !py-3">
+                  Lessons
                 </Link>
                 {profileHref && (
                   <Link href={profileHref} onClick={close} className="btn btn-outline !py-3 mt-2">

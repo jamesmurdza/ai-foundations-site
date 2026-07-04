@@ -52,5 +52,5 @@ export async function verifyLoginCode(formData: FormData) {
     .where(eq(profiles.userId, user.id))
     .limit(1);
 
-  redirect(profile ? "/home" : "/onboarding");
+  redirect(profile ? "/lessons" : "/onboarding");
 }

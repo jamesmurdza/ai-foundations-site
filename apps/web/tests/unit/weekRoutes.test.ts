@@ -12,15 +12,16 @@ describe("weekRoutes", () => {
     expect(weekSubmissionPath(4)).toBe("/submissions/week-4");
   });
 
-  it("builds homepage assignment paths", () => {
-    expect(weekAssignmentHomePath("week-uuid-1")).toBe(
-      "/home?week=week-uuid-1#assignment",
+  it("builds lesson paths", () => {
+    expect(weekAssignmentHomePath("week-1")).toBe("/lessons/week-1");
+    expect(weekAssignmentHomePath("week-1", { error: "empty" })).toBe(
+      "/lessons/week-1?error=empty",
     );
-    expect(weekAssignmentHomePath("week-uuid-1", { error: "empty" })).toBe(
-      "/home?week=week-uuid-1&error=empty#assignment",
+    expect(weekAssignmentHomePath("week-1", { submitted: true })).toBe(
+      "/lessons/week-1?submitted=1",
     );
-    expect(weekAssignmentHomePath("week-uuid-1", { submitted: true })).toBe(
-      "/home?week=week-uuid-1&submitted=1#assignment",
+    expect(weekAssignmentHomePath("week-1", { edit: true })).toBe(
+      "/lessons/week-1?edit=1",
     );
   });
 

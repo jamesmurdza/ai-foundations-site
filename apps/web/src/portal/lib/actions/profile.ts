@@ -105,7 +105,7 @@ export async function updateProfile(formData: FormData) {
   // Name/location/socials are denormalized into the directory + showcase author.
   revalidateTag("profiles", { expire: 0 });
   revalidateTag("showcase", { expire: 0 });
-  revalidatePath("/home");
+  revalidatePath("/lessons");
   revalidatePath("/profiles");
   revalidatePath(dest);
   redirect("/settings/profile?saved=1");
@@ -184,8 +184,8 @@ export async function onboardingFinish(formData: FormData) {
     await backfillGithubSocials(user.id, user.githubLogin, user.accessToken ?? undefined);
   }
   revalidatePath("/profiles");
-  revalidatePath("/home");
-  redirect("/home");
+  revalidatePath("/lessons");
+  redirect("/lessons");
 }
 
 /** Import links from the user's GitHub profile (website, LinkedIn, X) on demand. */
@@ -216,7 +216,7 @@ export async function markGoalAchieved() {
   revalidatePath(
     user.githubLogin ? `/users/${user.githubLogin}` : `/profiles/${profile.id}`,
   );
-  revalidatePath("/home");
+  revalidatePath("/lessons");
 }
 
 /**

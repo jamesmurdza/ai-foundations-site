@@ -3,5 +3,5 @@ import { redirect } from "@portal/lib/nav";
 // Assignments are surfaced inside the weekly Check-in page now.
 // Canonical assignment URLs: /home?week=<id>#assignment
 export default function AssignmentsRedirect() {
-  redirect("/home");
+  redirect("/lessons");
 }
