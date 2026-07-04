@@ -1,17 +1,19 @@
 "use client";
 
 import "github-markdown-css/github-markdown-light.css";
-import { useState } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { updateGithubReadme } from "@portal/lib/actions/github-readme";
+import { useEffect, useRef, useState } from "react";
+import {
+  previewReadmeMarkdown,
+  updateGithubReadme,
+} from "@portal/lib/actions/github-readme";
 import { SubmitButton } from "@portal/components/SubmitButton";
 
 /**
- * Edits the user's GitHub profile README ({login}/{login}) with a live,
- * GitHub-flavored markdown preview beside the editor — rendered client-side with
- * react-markdown + remark-gfm (raw HTML is ignored, so no sanitising needed) and
- * styled with github-markdown-css. Saving writes straight to GitHub.
+ * Edits the user's GitHub profile README ({login}/{login}) with a live preview
+ * that matches the rendered profile exactly: the markdown is rendered through
+ * GitHub's own /markdown API (the same engine + sanitiser the profile README
+ * uses), so raw HTML, badges, tables and alignment all render. Debounced so it
+ * stays live as you type without hammering the API. Saving writes to GitHub.
  */
 export function ReadmeEditor({
   login,
@@ -23,6 +25,28 @@ export function ReadmeEditor({
   hasExisting: boolean;
 }) {
   const [markdown, setMarkdown] = useState(initialMarkdown);
+  const [previewHtml, setPreviewHtml] = useState<string | null>(null);
+  const [pending, setPending] = useState(false);
+  // Guards against an earlier (slower) render overwriting a newer one.
+  const reqId = useRef(0);
+
+  useEffect(() => {
+    if (!markdown.trim()) {
+      setPreviewHtml(null);
+      setPending(false);
+      return;
+    }
+    setPending(true);
+    const id = ++reqId.current;
+    const timer = setTimeout(async () => {
+      const html = await previewReadmeMarkdown(markdown);
+      if (id === reqId.current) {
+        setPreviewHtml(html);
+        setPending(false);
+      }
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [markdown]);
 
   return (
     <div id="readme" className="scroll-mt-24 space-y-4">
@@ -59,14 +83,17 @@ export function ReadmeEditor({
             />
           </div>
 
-          {/* Live preview */}
+          {/* Live preview — rendered by GitHub, so it matches the profile. */}
           <div className="flex flex-col">
-            <div className="meta-light text-[12px] font-semibold uppercase tracking-wide mb-1.5">
+            <div className="meta-light text-[12px] font-semibold uppercase tracking-wide mb-1.5 flex items-center gap-2">
               Preview
+              {pending && <span className="normal-case font-normal">· updating…</span>}
             </div>
             <div className="markdown-body flex-1 min-h-[420px] max-h-[600px] overflow-auto rounded-cards border border-sea-fog bg-canvas-white p-4">
-              {markdown.trim() ? (
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+              {previewHtml ? (
+                <div dangerouslySetInnerHTML={{ __html: previewHtml }} />
+              ) : markdown.trim() ? (
+                <p className="meta">Rendering preview…</p>
               ) : (
                 <p className="meta">Nothing to preview yet.</p>
               )}

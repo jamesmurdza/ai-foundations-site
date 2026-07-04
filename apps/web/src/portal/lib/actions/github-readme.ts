@@ -5,6 +5,7 @@ import { revalidatePath, revalidateTag } from "next/cache";
 import { getSessionContext } from "@portal/lib/auth";
 import {
   getProfileReadmeContents,
+  renderMarkdownPreview,
   upsertProfileReadme,
 } from "@portal/lib/github";
 
@@ -23,6 +24,18 @@ function requireGithubWriteAccess(user: {
   return true;
 }
 
+/**
+ * Render markdown to HTML using GitHub's own /markdown API (+ the same
+ * sanitiser as the profile README), so the editor's live preview matches the
+ * rendered profile exactly — raw HTML, badges, tables and all.
+ */
+export async function previewReadmeMarkdown(
+  markdown: string,
+): Promise<string | null> {
+  const { user } = await getSessionContext();
+  if (!user || !requireGithubWriteAccess(user)) return null;
+  return renderMarkdownPreview(markdown, user.accessToken ?? undefined);
+}
 
 export async function updateGithubReadme(formData: FormData) {
   const { user } = await getSessionContext();
