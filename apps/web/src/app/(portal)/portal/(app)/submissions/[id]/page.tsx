@@ -126,7 +126,7 @@ export default async function SubmissionPage({
               <span>You submitted this.</span>
               {assignment && week && (
                 <Link
-                  href={weekAssignmentHomePath(week.id)}
+                  href={weekAssignmentHomePath(week.id, { edit: true })}
                   className="link font-semibold"
                 >
                   Edit it
