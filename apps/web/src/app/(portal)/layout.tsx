@@ -23,7 +23,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "AI Foundations Summer School",
   description:
-    "One cohort, online and in the house. Build a portfolio, ship real projects, trade stars, and graduate with traction.",
+    "One cohort, online and in the house. Build real projects, trade stars, and leave with a portfolio.",
 };
 
 export default function RootLayout({
