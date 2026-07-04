@@ -583,6 +583,7 @@ export async function AssignmentWorkSection({
       {isRepoShowcaseWeek && (
         <RepoShowcaseSteps
           weekId={assignment.weekId}
+          weekLabel={week ? `Week ${week.number}: ${week.theme}` : undefined}
           done={repoBriefDone}
           actions={actions}
           formFields={repoFormFields}
@@ -593,6 +594,7 @@ export async function AssignmentWorkSection({
       {isContributionWeek && (
         <ContributionSteps
           weekId={assignment.weekId}
+          weekLabel={week ? `Week ${week.number}: ${week.theme}` : undefined}
           done={contributionBriefDone}
           actions={actions}
           formFields={prFormFields}
@@ -603,6 +605,7 @@ export async function AssignmentWorkSection({
       {isPortfolioWeek && (
         <PortfolioSteps
           weekId={assignment.weekId}
+          weekLabel={week ? `Week ${week.number}: ${week.theme}` : undefined}
           done={portfolioBriefDone}
           actions={actions}
           formFields={portfolioFormFields}

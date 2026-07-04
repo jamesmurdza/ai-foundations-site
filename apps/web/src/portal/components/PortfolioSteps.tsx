@@ -9,6 +9,7 @@ import {
 // because naming what excites you is what gives the portfolio its direction.
 export function PortfolioSteps(props: {
   weekId: string;
+  weekLabel?: string;
   done: Record<string, boolean>;
   actions?: ReactNode;
   formFields: ReactNode;
@@ -19,7 +20,7 @@ export function PortfolioSteps(props: {
     <WeekWizard
       {...props}
       keyPrefix={PORTFOLIO_CHECKLIST_KEY_PREFIX}
-      title={PORTFOLIO_BRIEF.title}
+      headers={["Start with your spark", "Build your portfolio, then submit"]}
       section1={spark}
       section2={portfolio}
       page1Before={
