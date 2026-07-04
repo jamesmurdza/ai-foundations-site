@@ -35,7 +35,7 @@ export function SubmissionModal({ children }: { children: React.ReactNode }) {
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-[60] overflow-y-auto bg-black/60"
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4 sm:p-8"
       onMouseDown={(e) => {
         // Backdrop click (not a click that started inside the dialog) closes.
         if (!dialogRef.current?.contains(e.target as Node)) close();
@@ -50,16 +50,14 @@ export function SubmissionModal({ children }: { children: React.ReactNode }) {
         <X size={20} />
       </button>
 
-      {/* min-h-full + padding on this inner wrapper (not the scroll container)
-          keeps an even top/bottom gap that stays in view while scrolling a tall
-          submission, and centers a short one. */}
-      <div className="flex min-h-full items-center justify-center p-4 sm:p-8">
-        <div
-          ref={dialogRef}
-          className="w-full max-w-5xl rounded-lg border border-border bg-background p-5 shadow-xl sm:p-8"
-        >
-          {children}
-        </div>
+      {/* The box is capped to the viewport minus the padding and scrolls its own
+          content, so it stays centered with an even top/bottom gap always in
+          view — the whole page never scrolls behind it. */}
+      <div
+        ref={dialogRef}
+        className="max-h-[calc(100dvh-2rem)] w-full max-w-5xl overflow-y-auto rounded-lg border border-border bg-background p-5 shadow-xl sm:max-h-[calc(100dvh-4rem)] sm:p-8"
+      >
+        {children}
       </div>
     </div>
   );
