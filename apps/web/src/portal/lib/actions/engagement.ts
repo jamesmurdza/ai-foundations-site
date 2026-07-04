@@ -34,7 +34,7 @@ export async function checkIn(formData: FormData) {
       weekId,
     });
   }
-  revalidatePath("/home");
+  revalidatePath("/lessons");
 }
 
 export async function toggleWeekStep(
@@ -100,7 +100,7 @@ export async function askQuestion(formData: FormData) {
     .values({ questionId: q.id, userId: user.id })
     .onConflictDoNothing();
   revalidatePath(`/weeks/${weekId}`);
-  revalidatePath("/home");
+  revalidatePath("/lessons");
 }
 
 export async function upvoteQuestion(formData: FormData) {

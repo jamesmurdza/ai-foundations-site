@@ -10,7 +10,7 @@ export default async function LoginPage({
 }: {
   searchParams: Promise<LoginSearchParams>;
 }) {
-  if (await getCurrentUser()) redirect("/home");
+  if (await getCurrentUser()) redirect("/lessons");
   const sp = await searchParams;
   return <LoginView sp={sp} />;
 }

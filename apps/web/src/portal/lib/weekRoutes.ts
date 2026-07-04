@@ -1,16 +1,18 @@
-/** Home path for a week's assignment section — the canonical assignment URL. */
+/**
+ * The canonical URL for a week's lesson (its own page under /lessons). `edit=1`
+ * reopens the editable flow from page 1 instead of the post-submit congrats
+ * screen the wizard weeks show once a submission exists.
+ */
 export function weekAssignmentHomePath(
   weekId: string,
   opts?: { error?: string; submitted?: boolean; edit?: boolean },
 ): string {
   const params = new URLSearchParams();
-  params.set("week", weekId);
   if (opts?.error) params.set("error", opts.error);
   if (opts?.submitted) params.set("submitted", "1");
-  // `edit=1` reopens the editable form (first page) instead of the post-submit
-  // congrats screen the wizard weeks show once a submission exists.
   if (opts?.edit) params.set("edit", "1");
-  return `/home?${params.toString()}#assignment`;
+  const qs = params.toString();
+  return `/lessons/${weekId}${qs ? `?${qs}` : ""}`;
 }
 
 /** Legacy week submission slug — route handlers redirect this to the homepage. */

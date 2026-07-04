@@ -70,5 +70,5 @@ export async function submitFeedback(formData: FormData) {
   revalidateTag("showcase", { expire: 0 });
   revalidatePath(`/submissions/${data.submissionId}`);
   revalidatePath("/feedback");
-  revalidatePath("/home");
+  revalidatePath("/lessons");
 }

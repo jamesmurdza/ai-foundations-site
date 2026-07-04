@@ -222,9 +222,9 @@ export async function AssignmentWorkSection({
   // Saving the README doubles as "continue" — it advances to the feedback page.
   // The editor itself is rendered inside the (client) flow so Back is instant
   // client nav; here we only supply its data + a connect-GitHub fallback.
-  const readmeReturnTo = `/home?week=${assignment.weekId}&step=4${
+  const readmeReturnTo = `/lessons/${assignment.weekId}?step=4${
     edit ? "&edit=1" : ""
-  }#assignment`;
+  }`;
   const readmeEditorProps =
     githubConnected && readme
       ? {
@@ -461,7 +461,7 @@ export async function AssignmentWorkSection({
         <SubmittedCongrats
           weekLabel={weekLabel}
           showcaseHref="/discover?tab=showcase"
-          editHref={`/home?week=${assignment.weekId}&edit=1`}
+          editHref={`/lessons/${assignment.weekId}?edit=1`}
         />
       </section>
     );
@@ -475,7 +475,7 @@ export async function AssignmentWorkSection({
         <SubmittedCongrats
           weekLabel={weekLabel}
           showcaseHref="/discover?tab=showcase"
-          editHref={`/home?week=${assignment.weekId}&edit=1`}
+          editHref={`/lessons/${assignment.weekId}?edit=1`}
           title="Your project's in the showcase!"
           message="Nice work — your repo's up. This week, support the cohort too:"
         />
@@ -503,7 +503,7 @@ export async function AssignmentWorkSection({
         <SubmittedCongrats
           weekLabel={weekLabel}
           showcaseHref="/discover?tab=showcase"
-          editHref={`/home?week=${assignment.weekId}&edit=1`}
+          editHref={`/lessons/${assignment.weekId}?edit=1`}
           title="Pull request shipped!"
           message="Nice — your PR's in. Close the loop with the cohort:"
         />
@@ -527,7 +527,7 @@ export async function AssignmentWorkSection({
         <SubmittedCongrats
           weekLabel={weekLabel}
           showcaseHref="/discover?tab=showcase"
-          editHref={`/home?week=${assignment.weekId}&edit=1`}
+          editHref={`/lessons/${assignment.weekId}?edit=1`}
           title="Portfolio submitted — that's the program!"
           message="Beautiful work. One last thing to send the cohort off:"
         />

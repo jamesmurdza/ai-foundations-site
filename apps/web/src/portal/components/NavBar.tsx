@@ -18,8 +18,7 @@ export async function NavBar() {
   // visitors only see the public Discover page (showcase + directory + map).
   const links: NavLink[] = user
     ? [
-        { href: "/home", label: "Course" },
-        { href: "/submissions", label: "My Work" },
+        { href: "/lessons", label: "Lessons" },
         discoverLink,
         ...(user.isAdmin ? [{ href: "/admin", label: "Admin" }] : []),
       ]
@@ -37,7 +36,7 @@ export async function NavBar() {
         <nav className="flex items-center justify-between h-16 gap-2">
             {/* Brand: logo mark + wordmark. */}
             <Link
-              href={user ? "/home" : "/"}
+              href={user ? "/lessons" : "/"}
               className="flex items-center gap-2 shrink-0"
             >
               <TreePalm size={22} className="text-primary shrink-0" aria-hidden />

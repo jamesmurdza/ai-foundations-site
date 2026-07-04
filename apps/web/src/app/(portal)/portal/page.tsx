@@ -9,7 +9,7 @@ export default async function LandingPage({
 }: {
   searchParams: Promise<LoginSearchParams>;
 }) {
-  if (await getCurrentUser()) redirect("/home");
+  if (await getCurrentUser()) redirect("/lessons");
   const sp = await searchParams;
   return <LoginView sp={sp} />;
 }
