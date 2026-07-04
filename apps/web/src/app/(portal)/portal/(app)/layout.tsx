@@ -9,8 +9,13 @@ import { PageDots } from "@portal/components/PageDots";
 // so it never narrows the content column.
 export default async function AppLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  // Parallel `@modal` slot: the Instagram-style intercepting route for opening a
+  // submission over the current page. Empty (default.tsx → null) until a soft
+  // navigation to /submissions/[id] fills it.
+  modal: React.ReactNode;
 }) {
   const [weeks, current] = await Promise.all([listWeeks(), getCurrentWeek()]);
   const maxUnlocked = maxUnlockedWeek();
@@ -29,6 +34,7 @@ export default async function AppLayout({
         <PageDots weeks={dotWeeks} currentNumber={current?.number ?? null} />
       </Suspense>
       <div className="container-page py-8">{children}</div>
+      {modal}
     </>
   );
 }
