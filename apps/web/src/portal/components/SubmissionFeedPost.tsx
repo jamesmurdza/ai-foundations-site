@@ -29,11 +29,14 @@ export function SubmissionFeedPost({
   readmeHtml,
   liked,
   canLike,
+  hideHeader = false,
 }: {
   item: ShowcaseItem;
   readmeHtml: string | null;
   liked: boolean;
   canLike: boolean;
+  /** The submission page shows the author header in its comments column instead. */
+  hideHeader?: boolean;
 }) {
   const { submission: s, author, commentCount } = item;
   const starCount = item.starCount ?? 0;
@@ -45,28 +48,30 @@ export function SubmissionFeedPost({
   return (
     <article className="overflow-hidden">
       {/* Header */}
-      <div className="pb-3">
-        <Link
-          href={profileHref(author)}
-          prefetch={false}
-          className="flex items-center gap-3 min-w-0"
-        >
-          <span className="ml-2 shrink-0">
-            <Avatar src={author.avatarUrl} name={author.name} size={36} />
-          </span>
-          <div className="min-w-0">
-            <div className="truncate text-[14px]">
-              <span className="font-semibold">{author.name}</span>
-              {posted && (
-                <span className="meta-light font-normal"> • {posted}</span>
+      {!hideHeader && (
+        <div className="pb-3">
+          <Link
+            href={profileHref(author)}
+            prefetch={false}
+            className="flex items-center gap-3 min-w-0"
+          >
+            <span className="ml-2 shrink-0">
+              <Avatar src={author.avatarUrl} name={author.name} size={36} />
+            </span>
+            <div className="min-w-0">
+              <div className="truncate text-[14px]">
+                <span className="font-semibold">{author.name}</span>
+                {posted && (
+                  <span className="meta-light font-normal"> • {posted}</span>
+                )}
+              </div>
+              {author.country && (
+                <div className="meta-light text-[12px] truncate">{author.country}</div>
               )}
             </div>
-            {author.country && (
-              <div className="meta-light text-[12px] truncate">{author.country}</div>
-            )}
-          </div>
-        </Link>
-      </div>
+          </Link>
+        </div>
+      )}
 
       {/* The work — the repo's README rendered as real GitHub markdown, in a
           thin-bordered frame (no rounding, no fill) like an Instagram photo. */}

@@ -14,6 +14,9 @@ import { getAttachmentsFor } from "@portal/lib/files";
 import { CommentThread } from "@portal/components/CommentThread";
 import { AttachmentList } from "@portal/components/AttachmentList";
 import { SubmissionFeedPost } from "@portal/components/SubmissionFeedPost";
+import { Avatar } from "@portal/components/Avatar";
+import { timeAgo } from "@portal/lib/format";
+import { profileHref } from "@portal/lib/profileHref";
 import type { Author, ShowcaseItem } from "@portal/lib/queries";
 import { parseWeekRouteParam, weekAssignmentHomePath } from "@portal/lib/weekRoutes";
 
@@ -63,6 +66,8 @@ export default async function SubmissionPage({
     user && isRepo ? await listStarredRepoKeys(user.id) : new Set<string>();
   const liked = isRepo && likedRepos.has(`${s.repoOwner}/${s.repoName}`);
   const canLike = Boolean(user?.accessToken) && isRepo && !isOwner;
+  // "2d" rather than "2d ago" — the terse Instagram-style timestamp.
+  const posted = timeAgo(s.createdAt).replace(" ago", "");
 
   const currentUser: Author | null =
     user && profile
@@ -97,18 +102,8 @@ export default async function SubmissionPage({
             readmeHtml={readmeHtml}
             liked={liked}
             canLike={canLike}
+            hideHeader
           />
-
-          {isOwner && assignment && week && (
-            <div className="mt-5">
-              <Link
-                href={weekAssignmentHomePath(week.id)}
-                className="btn btn-outline btn-sm"
-              >
-                Edit submission
-              </Link>
-            </div>
-          )}
 
           {s.notes && (
             <p className="meta mt-5 whitespace-pre-wrap">{s.notes}</p>
@@ -117,11 +112,45 @@ export default async function SubmissionPage({
           <AttachmentList items={subFiles} title="Files" />
         </div>
 
-        {/* Comments — right, kept minimal, Instagram-style */}
+        {/* Comments — right, kept minimal, Instagram-style. The author header
+            lives here now, with the owner's Edit button on the opposite side. */}
         <aside
           id="comments"
-          className="scroll-mt-24 lg:sticky lg:top-6 border-t border-border pt-5 lg:border-t-0 lg:border-l lg:pl-6 lg:pt-0"
+          className="scroll-mt-24 lg:sticky lg:top-6 border-t border-border pt-5 lg:border-t-0 lg:pt-0"
         >
+          <div className="flex items-start justify-between gap-3 pb-4">
+            <Link
+              href={profileHref(author)}
+              prefetch={false}
+              className="flex items-center gap-3 min-w-0"
+            >
+              <span className="shrink-0">
+                <Avatar src={author.avatarUrl} name={author.name} size={36} />
+              </span>
+              <div className="min-w-0">
+                <div className="truncate text-[14px]">
+                  <span className="font-semibold">{author.name}</span>
+                  {posted && (
+                    <span className="meta-light font-normal"> • {posted}</span>
+                  )}
+                </div>
+                {author.country && (
+                  <div className="meta-light text-[12px] truncate">
+                    {author.country}
+                  </div>
+                )}
+              </div>
+            </Link>
+            {isOwner && assignment && week && (
+              <Link
+                href={weekAssignmentHomePath(week.id)}
+                className="btn btn-outline btn-sm shrink-0"
+              >
+                Edit
+              </Link>
+            )}
+          </div>
+
           <CommentThread
             targetType="submission"
             targetId={s.id}
