@@ -131,11 +131,10 @@ export function GitHubProfileSteps({
           <p className="text-[15px] leading-relaxed">
             {GITHUB_PROFILE_BRAINSTORM.intro}
           </p>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed marker:text-slate-channel/50">
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed">
             {GITHUB_PROFILE_BRAINSTORM.prompts.map((p) => (
               <li key={p.title}>
-                <span className="font-semibold">{p.title}</span>{" "}
-                <span className="meta">{p.body}</span>
+                {p.title} {p.body}
               </li>
             ))}
           </ul>
