@@ -20,6 +20,7 @@ export function ReadmeEditor({
   initialMarkdown,
   hasExisting,
   returnTo,
+  saveLabel = "Save to GitHub",
 }: {
   login: string;
   initialMarkdown: string;
@@ -30,6 +31,8 @@ export function ReadmeEditor({
    * the user into settings.
    */
   returnTo?: string;
+  /** Save button label — e.g. the Week 1 flow uses "Save & continue →". */
+  saveLabel?: string;
 }) {
   const [markdown, setMarkdown] = useState(initialMarkdown);
   const [mode, setMode] = useState<"write" | "preview">("write");
@@ -125,12 +128,9 @@ export function ReadmeEditor({
           <input type="hidden" name="redirectTo" value={returnTo} />
         )}
 
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <p className="meta-light text-[13px]">
-            Saves directly to GitHub — your profile updates within a minute.
-          </p>
+        <div className="flex items-center justify-end gap-3 flex-wrap">
           <SubmitButton className="btn btn-primary" pendingText="Saving…">
-            Save to GitHub
+            {saveLabel}
           </SubmitButton>
         </div>
       </form>

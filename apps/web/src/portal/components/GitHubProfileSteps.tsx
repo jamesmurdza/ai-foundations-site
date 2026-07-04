@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "@portal/components/Link";
 import { useState, useTransition, type ReactNode } from "react";
 import { toggleWeekStep } from "@portal/lib/actions/engagement";
 import { SubmitButton } from "@portal/components/SubmitButton";
@@ -33,6 +32,7 @@ export function GitHubProfileSteps({
   formFields,
   review,
   readmeEditor,
+  readmeSavable = false,
   submitAction,
   initialStep = 1,
 }: {
@@ -46,6 +46,9 @@ export function GitHubProfileSteps({
   review?: ReactNode;
   /** The embedded tabbed README editor (or a connect-GitHub fallback). */
   readmeEditor?: ReactNode;
+  /** Whether the editor has its own save (which doubles as "continue"). When it
+   *  can't save (e.g. GitHub not connected), page 3 shows an explicit Next. */
+  readmeSavable?: boolean;
   submitAction: (formData: FormData) => void | Promise<void>;
   /** Which page to open on (server can restore it after a full navigation). */
   initialStep?: number;
@@ -197,14 +200,10 @@ export function GitHubProfileSteps({
             GitHub and shows on your profile.
           </p>
           {checklist(readmeSection)}
+          {/* The editor's "Save & continue →" is the forward action (saving also
+              advances to page 4). When it can't save (GitHub not connected) we
+              show an explicit Next so the flow isn't a dead end. */}
           <div className="mt-5">{readmeEditor}</div>
-          <p className="meta text-[13px] mt-3">
-            You can also edit this later under{" "}
-            <Link href="/settings/readme" className="link">
-              Settings → GitHub README
-            </Link>
-            .
-          </p>
           <div className="mt-6 flex items-center justify-between">
             <button
               type="button"
@@ -213,13 +212,15 @@ export function GitHubProfileSteps({
             >
               ← Back
             </button>
-            <button
-              type="button"
-              onClick={() => setStep(4)}
-              className="btn btn-primary"
-            >
-              Next →
-            </button>
+            {!readmeSavable && (
+              <button
+                type="button"
+                onClick={() => setStep(4)}
+                className="btn btn-primary"
+              >
+                Next →
+              </button>
+            )}
           </div>
         </>
       )}

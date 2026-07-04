@@ -222,16 +222,18 @@ export async function AssignmentWorkSection({
         cachedReview.updatedAt.toISOString(),
       )
     : null;
-  // Saving the README returns here (staying on /home, on the README page).
-  const readmeReturnTo = `/home?week=${assignment.weekId}&step=3${
+  // Saving the README doubles as "continue" — it advances to the feedback page.
+  const readmeReturnTo = `/home?week=${assignment.weekId}&step=4${
     edit ? "&edit=1" : ""
   }#assignment`;
+  const readmeSavable = Boolean(githubConnected && readme);
   const readmeEditorNode = githubConnected && readme ? (
     <ReadmeEditor
       login={user.githubLogin!}
       initialMarkdown={readme.markdown}
       hasExisting={readme.hasExisting}
       returnTo={readmeReturnTo}
+      saveLabel="Save & continue →"
     />
   ) : (
     <div className="rounded-[12px] border border-sea-fog p-4">
@@ -571,6 +573,7 @@ export async function AssignmentWorkSection({
           formFields={formFields}
           review={<GitWitReview initial={gitwitInitial} />}
           readmeEditor={readmeEditorNode}
+          readmeSavable={readmeSavable}
           submitAction={createSubmission}
           initialStep={step ?? 1}
         />
