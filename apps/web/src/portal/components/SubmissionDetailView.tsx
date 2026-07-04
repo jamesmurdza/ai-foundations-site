@@ -94,6 +94,7 @@ export async function SubmissionDetailView({ id }: { id: string }) {
           canLike={canLike}
           hideHeader
           hideActions
+          full
         />
 
         {s.notes && <p className="meta mt-5 whitespace-pre-wrap">{s.notes}</p>}
