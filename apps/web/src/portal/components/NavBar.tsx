@@ -33,7 +33,8 @@ export async function NavBar() {
 
   return (
     <header className="sticky top-0 z-40 bg-background/85 backdrop-blur border-b border-sea-fog">
-      <div className="container-page">
+      {/* A touch wider than the page content (960px) so the nav breathes. */}
+      <div className="container-page max-w-[1100px]">
         <nav className="flex items-center justify-between h-16 gap-2">
             {/* Brand: logo mark + wordmark. */}
             <Link
