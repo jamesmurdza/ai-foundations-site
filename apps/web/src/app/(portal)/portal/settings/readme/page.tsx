@@ -61,7 +61,7 @@ export default async function SettingsReadmePage({
       )}
 
       {connected && user.githubLogin && readme ? (
-        <div className="card !p-7 fade-up">
+        <div className="fade-up">
           <ReadmeEditor
             login={user.githubLogin}
             initialMarkdown={readme.markdown}
@@ -69,7 +69,7 @@ export default async function SettingsReadmePage({
           />
         </div>
       ) : (
-        <div className="card !p-7">
+        <div>
           <p className="meta text-[15px]">
             Connect your GitHub account to write and sync your profile README from
             here.

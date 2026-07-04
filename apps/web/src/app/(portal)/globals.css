@@ -59,7 +59,8 @@
   --shadow-card-2: rgba(38, 18, 71, 0.05) 0px 4px 18px 0px;
   --shadow-soft: rgba(38, 18, 71, 0.06) 0px 2px 8px 0px;
 
-  --page-max: 960px;
+  /* Matches the profile page width so the navbar and all pages share it. */
+  --page-max: 1120px;
 }
 
 :root {

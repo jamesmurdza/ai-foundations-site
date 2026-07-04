@@ -30,7 +30,7 @@ export default async function MySubmissionsPage() {
           .
         </p>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
           {ordered.map((item) => {
             const s = item.submission;
             // The whole card opens the submission's own page — the post on the

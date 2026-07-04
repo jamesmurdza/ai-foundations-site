@@ -64,7 +64,7 @@ export default async function SettingsProfilePage({
         </div>
       )}
 
-      <form action={updateProfile} className="card !p-7 space-y-5 fade-up">
+      <form action={updateProfile} className="space-y-5 fade-up">
         <div>
           <label className="label">Username</label>
           <div className="flex items-center gap-2">

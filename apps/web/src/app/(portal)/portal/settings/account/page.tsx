@@ -38,7 +38,7 @@ export default async function SettingsAccountPage({
 
       <div className="space-y-6 fade-up">
         {/* GitHub connection */}
-        <div className="card !p-7">
+        <div>
           <div className="label mb-2">GitHub connection</div>
           {connected ? (
             <form className="flex items-center gap-3 flex-wrap">
@@ -64,7 +64,7 @@ export default async function SettingsAccountPage({
         </div>
 
         {/* Trade Stars */}
-        <form action={setProfileTradeStars} className="card !p-7">
+        <form action={setProfileTradeStars}>
           <div className="label mb-3">Trade Stars ⭐</div>
           <label className="flex items-start gap-3 cursor-pointer">
             <input
