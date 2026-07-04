@@ -96,6 +96,19 @@ export default async function SubmissionPage({
 
   return (
     <div className="py-2">
+      {isOwner && (
+        <div className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md border border-border bg-muted px-4 py-3 text-[14px]">
+          <span>You submitted this.</span>
+          {assignment && week && (
+            <Link
+              href={weekAssignmentHomePath(week.id)}
+              className="link font-semibold"
+            >
+              Edit it
+            </Link>
+          )}
+        </div>
+      )}
       <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
         {/* The post — left */}
         <div>
@@ -144,14 +157,6 @@ export default async function SubmissionPage({
                 )}
               </div>
             </Link>
-            {isOwner && assignment && week && (
-              <Link
-                href={weekAssignmentHomePath(week.id)}
-                className="btn btn-outline btn-sm shrink-0"
-              >
-                Edit
-              </Link>
-            )}
           </div>
 
           <CommentThread
