@@ -121,7 +121,7 @@ export default async function SubmissionPage({
           id="comments"
           className="scroll-mt-24 lg:sticky lg:top-6 border-t border-border pt-5 lg:border-t-0 lg:pt-0"
         >
-          <div className="flex items-start justify-between gap-3 pb-4">
+          <div className="flex items-start justify-between gap-3 border-b border-border pb-4 mb-4">
             <Link
               href={profileHref(author)}
               prefetch={false}
