@@ -3,11 +3,21 @@
 import { useState, useTransition, type ReactNode } from "react";
 import { toggleWeekStep } from "@portal/lib/actions/engagement";
 import { SubmitButton } from "@portal/components/SubmitButton";
+import { ReadmeEditor } from "@portal/components/ReadmeEditor";
 import {
   GITHUB_PROFILE_BRIEF,
   GITHUB_PROFILE_BRAINSTORM,
   githubProfileStepKey,
 } from "@portal/lib/githubProfileChecklist";
+
+/** Props for the embedded README editor on page 3 (when GitHub is connected). */
+export type ReadmeEditorProps = {
+  login: string;
+  initialMarkdown: string;
+  hasExisting: boolean;
+  /** Where saving redirects — the flow points it at page 4 to double as "continue". */
+  returnTo: string;
+};
 
 type Section = (typeof GITHUB_PROFILE_BRIEF.sections)[number];
 
@@ -31,8 +41,8 @@ export function GitHubProfileSteps({
   actions,
   formFields,
   review,
-  readmeEditor,
-  readmeSavable = false,
+  readmeEditorProps,
+  readmeFallback,
   submitAction,
   initialStep = 1,
 }: {
@@ -44,13 +54,13 @@ export function GitHubProfileSteps({
   formFields: ReactNode;
   /** The automatic "GitWit review" panel, shown on the final page before submit. */
   review?: ReactNode;
-  /** The embedded tabbed README editor (or a connect-GitHub fallback). */
-  readmeEditor?: ReactNode;
-  /** Whether the editor has its own save (which doubles as "continue"). When it
-   *  can't save (e.g. GitHub not connected), page 3 shows an explicit Next. */
-  readmeSavable?: boolean;
+  /** README editor data (page 3). Null when GitHub isn't connected — then
+   *  `readmeFallback` renders and page 3 shows an explicit Next instead. */
+  readmeEditorProps?: ReadmeEditorProps | null;
+  /** Shown on page 3 when there's no editor (e.g. a connect-GitHub prompt). */
+  readmeFallback?: ReactNode;
   submitAction: (formData: FormData) => void | Promise<void>;
-  /** Which page to open on (server can restore it after a full navigation). */
+  /** Which page to open on (server can restore it after the save navigation). */
   initialStep?: number;
 }) {
   const [done, setDone] = useState(initialDone);
@@ -201,11 +211,29 @@ export function GitHubProfileSteps({
             GitHub and shows on your profile.
           </p>
           {checklist(readmeSection)}
-          {/* When the editor can save, its footer carries Back + "Save & continue →"
-              on one line (saving also advances to page 4). When it can't save
-              (GitHub not connected) we render our own Back + Next below instead. */}
-          <div className="mt-5">{readmeEditor}</div>
-          {!readmeSavable && (
+          <div className="mt-5">
+            {readmeEditorProps ? (
+              // The editor's footer carries Back + "Save & continue →" on one line;
+              // Back is instant client nav, and saving advances to page 4.
+              <ReadmeEditor
+                {...readmeEditorProps}
+                saveLabel="Save & continue →"
+                secondaryAction={
+                  <button
+                    type="button"
+                    onClick={() => setStep(2)}
+                    className="btn btn-gray"
+                  >
+                    ← Back
+                  </button>
+                }
+              />
+            ) : (
+              readmeFallback
+            )}
+          </div>
+          {/* No editor to save (GitHub not connected) → own Back + Next row. */}
+          {!readmeEditorProps && (
             <div className="mt-6 flex items-center justify-between">
               <button
                 type="button"
