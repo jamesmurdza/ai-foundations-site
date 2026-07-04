@@ -106,32 +106,13 @@ export function ProfileView({
 
         {/* Main content */}
         <div className="min-w-0">
-          {/* GitHub README — the centerpiece (mirrors their GitHub profile) */}
+          {/* GitHub README — the centerpiece (mirrors their GitHub profile).
+              Proud of / Excited by are intentionally not shown here — they're
+              private, edited on /profile/edit but never rendered on the profile. */}
           {readme}
 
-          {/* Proud of / Excited by — private to the owner, never shown publicly. */}
-          {isOwner && (
-            <section className={readme ? "mt-8" : ""}>
-              <div className="meta-light text-[12px] mb-3">Private — only visible to you</div>
-              <div className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
-                <div>
-                  <div className="label">🏅 Proud of</div>
-                  <p className="mt-1 text-[15px]">
-                    {profile.proudOf || <span className="meta">—</span>}
-                  </p>
-                </div>
-                <div>
-                  <div className="label">🎯 Excited by</div>
-                  <p className="mt-1 text-[15px]">
-                    {profile.wantToAchieve || <span className="meta">—</span>}
-                  </p>
-                </div>
-              </div>
-            </section>
-          )}
-
           {/* Projects — a "pinned"-style card grid, matching Discover / My Work. */}
-          <section className={readme || isOwner ? "mt-10" : ""}>
+          <section className={readme ? "mt-10" : ""}>
             <h2 className="text-heading mb-4">Projects</h2>
             {submissions.length === 0 ? (
               <p className="meta">No projects shipped yet.</p>
