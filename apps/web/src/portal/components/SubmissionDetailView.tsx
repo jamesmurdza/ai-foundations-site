@@ -109,11 +109,6 @@ export async function SubmissionDetailView({ id }: { id: string }) {
         id="comments"
         className="scroll-mt-24 lg:sticky lg:top-6 border-t border-border pt-5 lg:border-t-0 lg:pt-0"
       >
-        {week && (
-          <p className="text-[13px] font-medium text-slate-channel/60 mb-2">
-            Week {week.number}: {week.theme}
-          </p>
-        )}
         {isOwner && assignment && week && (
           // Full-width outline button (like the profile page's "Edit profile").
           // A real navigation, so it works from inside the intercepting modal too.
@@ -123,6 +118,11 @@ export async function SubmissionDetailView({ id }: { id: string }) {
           >
             Edit submission
           </a>
+        )}
+        {week && (
+          <p className="text-[13px] font-medium text-slate-channel/60 mb-2">
+            Week {week.number}: {week.theme}
+          </p>
         )}
         <div className="flex items-start justify-between gap-3 border-b border-border pb-4 mb-4">
           <Link
