@@ -77,11 +77,6 @@ export async function updateProfile(formData: FormData) {
   const { user, profile } = await getSessionContext();
   if (!user || !profile) redirect("/login");
   const data = parse(formData);
-  // Trade Stars can only be turned ON by a GitHub-connected account.
-  const tradeStarsEnabled =
-    (formData.get("tradeStarsEnabled") === "on" ||
-      formData.get("tradeStarsEnabled") === "true") &&
-    canEnableTradeStars(user);
 
   let username: string | null = null;
   try {
@@ -91,7 +86,7 @@ export async function updateProfile(formData: FormData) {
       profile.username,
     );
   } catch {
-    redirect("/profile/edit?error=username_taken");
+    redirect("/settings/profile?error=username_taken");
   }
 
   await db
@@ -99,7 +94,6 @@ export async function updateProfile(formData: FormData) {
     .set({
       ...data,
       country: normalizeProfileCountry(data.country),
-      tradeStarsEnabled,
       ...(username ? { username } : {}),
       updatedAt: new Date(),
     })
@@ -114,7 +108,7 @@ export async function updateProfile(formData: FormData) {
   revalidatePath("/home");
   revalidatePath("/profiles");
   revalidatePath(dest);
-  redirect(dest);
+  redirect("/settings/profile?saved=1");
 }
 
 /* ---- Multi-step onboarding ---------------------------------------------- */
@@ -198,10 +192,10 @@ export async function onboardingFinish(formData: FormData) {
 export async function importGithubSocials() {
   const { user, profile } = await getSessionContext();
   if (!user || !profile) redirect("/login");
-  if (!user.githubLogin) redirect("/profile/edit?error=no_github");
+  if (!user.githubLogin) redirect("/settings/account?error=no_github");
   await backfillGithubSocials(user.id, user.githubLogin, user.accessToken ?? undefined);
-  revalidatePath("/profile/edit");
-  redirect("/profile/edit?imported=1");
+  revalidatePath("/settings/profile");
+  redirect("/settings/account?imported=1");
 }
 
 export async function markGoalAchieved() {

@@ -138,7 +138,7 @@ export function GitHubProfileSteps({
             page.
           </p>
           <div className="mt-4">
-            <Link href="/profile/edit#readme" className="btn btn-primary">
+            <Link href="/settings/readme" className="btn btn-primary">
               Edit your README in the portal →
             </Link>
           </div>
