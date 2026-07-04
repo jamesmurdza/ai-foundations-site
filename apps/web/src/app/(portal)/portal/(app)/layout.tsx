@@ -1,6 +1,6 @@
 // Signed-in app shell. Primary navigation lives in the top bar (see NavBar /
-// TopNav), so cohort pages render full-width. Jumping between weeks lives in the
-// program-week trail at the top of /home (see WeekTrail).
+// TopNav), so cohort pages render full-width. Weeks are reachable from the
+// "My Work" page, which lists every week (done or not) with a start button.
 export default async function AppLayout({
   children,
   modal,

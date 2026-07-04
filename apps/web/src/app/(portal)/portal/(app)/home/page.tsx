@@ -4,13 +4,11 @@ import { requireOnboardedUser } from "@portal/lib/auth";
 import {
   getCurrentWeek,
   getWeek,
-  listWeeks,
   listAnnouncements,
   listAssignmentsForWeek,
   resolveMentions,
 } from "@portal/lib/queries";
 import { AssignmentWorkSection } from "@portal/components/AssignmentWorkSection";
-import { WeekTrail } from "@portal/components/WeekTrail";
 import { extractMentions, MentionText } from "@portal/lib/mentions";
 import { getAttachmentsForMany } from "@portal/lib/files";
 import { AttachmentList } from "@portal/components/AttachmentList";
@@ -33,9 +31,8 @@ export default async function HomePage({
   const { user, profile } = await requireOnboardedUser();
   const sp = await searchParams;
 
-  const [currentWeek, allWeeks, announcements] = await Promise.all([
+  const [currentWeek, announcements] = await Promise.all([
     getCurrentWeek(),
-    listWeeks(),
     listAnnouncements(5),
   ]);
 
@@ -49,16 +46,6 @@ export default async function HomePage({
     requested.number <= maxUnlocked
       ? requested
       : currentWeek;
-
-  // The top program-week trail (replaces the old floating page-dots control).
-  const trailWeeks = allWeeks
-    .filter((w) => w.isPublished)
-    .map((w) => ({
-      id: w.id,
-      number: w.number,
-      theme: w.theme,
-      locked: w.number > maxUnlocked,
-    }));
 
   const annAttachments = await getAttachmentsForMany(
     "announcement",
@@ -110,8 +97,6 @@ export default async function HomePage({
 
       {week ? (
         <>
-          <WeekTrail weeks={trailWeeks} activeNumber={week.number} />
-
           {/* Active week header. The wizard weeks (1: profile, 2: repo showcase)
               open straight into their brief, so skip the redundant theme header. */}
           {!isWizardWeek(week.number) && (

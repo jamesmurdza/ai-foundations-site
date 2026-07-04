@@ -565,6 +565,7 @@ export async function AssignmentWorkSection({
       {isGitHubProfileWeek && (
         <GitHubProfileSteps
           weekId={assignment.weekId}
+          weekLabel={week ? `Week ${week.number}: ${week.theme}` : undefined}
           done={profileBriefDone}
           actions={actions}
           formFields={formFields}

@@ -1,27 +1,45 @@
 import Link from "@portal/components/Link";
 import { Heart, MessageCircle, SquarePen } from "lucide-react";
 import { requireOnboardedUser } from "@portal/lib/auth";
-import { listSubmissionsByUser } from "@portal/lib/queries";
+import {
+  listSubmissionsByUser,
+  listWeeks,
+  listAllAssignments,
+} from "@portal/lib/queries";
 import { weekAssignmentHomePath } from "@portal/lib/weekRoutes";
 
 export default async function MySubmissionsPage() {
   const { user } = await requireOnboardedUser();
-  const submissions = await listSubmissionsByUser(user.id);
+  const [submissions, weeks, assignments] = await Promise.all([
+    listSubmissionsByUser(user.id),
+    listWeeks(),
+    listAllAssignments(),
+  ]);
 
-  // Chronological by week (earliest first); the query already tie-breaks by
-  // recency, and the sort is stable so that order survives within a week.
-  const ordered = [...submissions].sort(
-    (a, b) => a.weekNumber - b.weekNumber,
+  // One card per program week (published), earliest first. A week the user has
+  // submitted shows its submission; a week they haven't shows a disabled card
+  // they can still start from — so the whole program is visible at a glance.
+  const publishedWeekIds = new Set(
+    weeks.filter((w) => w.isPublished).map((w) => w.id),
   );
+  const byAssignment = new Map(
+    submissions.map((item) => [item.submission.assignmentId, item]),
+  );
+  const cards = assignments
+    .filter((a) => publishedWeekIds.has(a.weekId))
+    .sort((a, b) => a.weekNumber - b.weekNumber)
+    .map((a) => ({ assignment: a, item: byAssignment.get(a.id) ?? null }));
 
   return (
     <div className="py-2">
       <div className="mb-8">
         <h1 className="text-[34px] mb-1">Your work</h1>
-        <p className="meta">Everything you&apos;ve shipped, with peer feedback.</p>
+        <p className="meta">
+          Everything you&apos;ve shipped — and the weeks still ahead.
+        </p>
       </div>
 
-      {ordered.length === 0 ? (
+      {cards.length === 0 ? (
         <p className="meta">
           Nothing here yet —{" "}
           <Link href="/home" className="link">
@@ -31,7 +49,33 @@ export default async function MySubmissionsPage() {
         </p>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
-          {ordered.map((item) => {
+          {cards.map(({ assignment, item }) => {
+            // Not started yet — a quiet, disabled card the user can still pick up.
+            if (!item) {
+              return (
+                <div key={assignment.id} className="flex flex-col gap-2">
+                  <div className="card flex flex-1 flex-col items-center justify-center min-h-[176px] text-center opacity-60">
+                    <span className="font-semibold text-[17px] leading-snug text-balance text-slate-channel">
+                      {assignment.title}
+                    </span>
+                    <span className="meta-light text-[12px] mt-1.5">
+                      Week {assignment.weekNumber} · Not started
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-end meta-light text-[13px] px-1">
+                    <Link
+                      href={weekAssignmentHomePath(assignment.weekId)}
+                      prefetch={false}
+                      className="flex items-center hover:text-signal-blue"
+                      aria-label={`Start ${assignment.title}`}
+                    >
+                      <SquarePen size={15} />
+                    </Link>
+                  </div>
+                </div>
+              );
+            }
+
             const s = item.submission;
             // The whole card opens the submission's own page — the post on the
             // left, comments on the right (jumps straight to the thread).

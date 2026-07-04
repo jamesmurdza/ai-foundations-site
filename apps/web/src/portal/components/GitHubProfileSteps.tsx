@@ -27,6 +27,7 @@ const STEPS = [
 
 export function GitHubProfileSteps({
   weekId,
+  weekLabel,
   done: initialDone,
   actions,
   formFields,
@@ -36,6 +37,8 @@ export function GitHubProfileSteps({
   initialStep = 1,
 }: {
   weekId: string;
+  /** Small eyebrow above the page title, e.g. "Week 1: GitHub Profile". */
+  weekLabel?: string;
   done: Record<string, boolean>;
   actions?: ReactNode;
   formFields: ReactNode;
@@ -103,7 +106,16 @@ export function GitHubProfileSteps({
   return (
     <div>
       <div className="flex items-start justify-between gap-3 mb-3">
-        <h2 className="text-heading-lg leading-tight">{STEPS[step - 1].header}</h2>
+        <div>
+          {weekLabel && (
+            <p className="text-[13px] font-medium text-slate-channel mb-0.5">
+              {weekLabel}
+            </p>
+          )}
+          <h2 className="text-heading-lg leading-tight">
+            {STEPS[step - 1].header}
+          </h2>
+        </div>
         {actions && (
           <div className="flex items-center gap-1 shrink-0">{actions}</div>
         )}
