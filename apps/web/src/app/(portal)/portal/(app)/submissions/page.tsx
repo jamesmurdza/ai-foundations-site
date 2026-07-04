@@ -1,5 +1,5 @@
 import Link from "@portal/components/Link";
-import { Heart, MessageCircle, Pencil } from "lucide-react";
+import { Heart, MessageCircle, SquarePen } from "lucide-react";
 import { requireOnboardedUser } from "@portal/lib/auth";
 import { listSubmissionsByUser } from "@portal/lib/queries";
 import { weekAssignmentHomePath } from "@portal/lib/weekRoutes";
@@ -73,7 +73,7 @@ export default async function MySubmissionsPage() {
                       className="ml-auto flex items-center hover:text-signal-blue"
                       aria-label="Edit submission"
                     >
-                      <Pencil size={15} />
+                      <SquarePen size={15} />
                     </Link>
                   )}
                 </div>
