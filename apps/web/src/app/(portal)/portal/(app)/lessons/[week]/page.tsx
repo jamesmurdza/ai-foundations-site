@@ -4,6 +4,7 @@ import {
   getWeek,
   getWeekByNumber,
   listAssignmentsForWeek,
+  getMaxUnlockedWeekNumber,
 } from "@portal/lib/queries";
 import { AssignmentWorkSection } from "@portal/components/AssignmentWorkSection";
 import { WelcomeWeek } from "@portal/components/WelcomeWeek";
@@ -22,12 +23,18 @@ export default async function LessonPage({
     step?: string;
   }>;
 }) {
-  await requireOnboardedUser();
+  const { user } = await requireOnboardedUser();
   const { week: weekId } = await params;
   const sp = await searchParams;
 
   const week = await getWeek(weekId);
   if (!week || !week.isPublished) redirect("/lessons");
+
+  // Sequential gating: a week stays locked until the previous one is submitted.
+  // Guard the route itself so a locked week can't be opened by direct URL.
+  if (week.number > (await getMaxUnlockedWeekNumber(user.id))) {
+    redirect("/lessons");
+  }
 
   // Week 0 is the informational welcome — no assignment.
   if (week.number === 0) {

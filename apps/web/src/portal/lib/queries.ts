@@ -41,6 +41,7 @@ import type {
   GitwitReviewRow,
 } from "@portal/db/schema";
 import type { CriterionVerdict } from "@portal/lib/gitwitTypes";
+import { maxUnlockedWeekNumber } from "@portal/lib/weekRoutes";
 
 export type Author = {
   userId: string;
@@ -323,6 +324,32 @@ export async function listSubmissionsByUser(
     .where(eq(submissions.userId, userId))
     .orderBy(desc(submissions.createdAt));
   return decorateSubmissions(subs);
+}
+
+/**
+ * The per-user lesson-unlock ceiling: the highest week NUMBER this participant
+ * may open. A program week stays locked until the previous one is submitted.
+ * Shared by the lessons hub and the /lessons/[week] route guard. Reads only the
+ * submitted assignment ids (no decoration) so it's cheap enough to gate on.
+ */
+export async function getMaxUnlockedWeekNumber(userId: string): Promise<number> {
+  const [weeks, assignments, subs] = await Promise.all([
+    listWeeks(),
+    listAllAssignments(),
+    db
+      .select({ assignmentId: submissions.assignmentId })
+      .from(submissions)
+      .where(eq(submissions.userId, userId)),
+  ]);
+  const submitted = new Set(subs.map((s) => s.assignmentId));
+  const assignmentByWeek = new Map(assignments.map((a) => [a.weekId, a]));
+  const assignmentWeeks = weeks
+    .filter((w) => w.isPublished)
+    .flatMap((w) => {
+      const a = assignmentByWeek.get(w.id);
+      return a ? [{ number: w.number, submitted: submitted.has(a.id) }] : [];
+    });
+  return maxUnlockedWeekNumber(assignmentWeeks);
 }
 
 export async function getSubmissionDetail(id: string): Promise<{
