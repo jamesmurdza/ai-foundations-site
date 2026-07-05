@@ -113,14 +113,19 @@ export function ReadmeEditor({
             {pending ? (
               <p className="meta">Rendering preview…</p>
             ) : previewHtml ? (
-              // Bound the rendered README to a content column like GitHub's own
-              // `.markdown-body.container-lg`, so wide / unsized images (badges,
-              // banners, SVGs, width="80%") don't stretch the full column — this
-              // matches how the profile page renders it.
-              <div
-                className="markdown-body mx-auto max-w-[700px]"
-                dangerouslySetInnerHTML={{ __html: previewHtml }}
-              />
+              // Bound the rendered README to a centered content column like
+              // GitHub's own `.markdown-body.container-lg`, so wide / unsized
+              // images (badges, banners, SVGs, width="80%") don't stretch the
+              // full column. The centering (mx-auto) lives on this wrapper, NOT
+              // on `.markdown-body` — github-markdown-css sets
+              // `.markdown-body { margin: 0 }`, which (same specificity, loaded
+              // later) would otherwise cancel mx-auto and pin the column left.
+              <div className="mx-auto max-w-[700px]">
+                <div
+                  className="markdown-body"
+                  dangerouslySetInnerHTML={{ __html: previewHtml }}
+                />
+              </div>
             ) : (
               <p className="meta">Nothing to preview yet.</p>
             )}
