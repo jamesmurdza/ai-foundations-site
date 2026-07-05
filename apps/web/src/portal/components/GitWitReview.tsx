@@ -1,10 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState, useTransition } from "react";
+import { useEffect, useId, useRef, useState, useTransition } from "react";
 import Image from "next/image";
-import { Check, X, Loader2, RefreshCw } from "lucide-react";
+import { Check, X, Loader2, RefreshCw, Sparkles } from "lucide-react";
 import { reviewMyGitHubProfile } from "@portal/lib/actions/gitwit";
-import type { GitWitReviewResult, VerdictWithLabel } from "@portal/lib/gitwitTypes";
+import {
+  buildProfileSuggestionsPrompt,
+  type GitWitReviewResult,
+  type VerdictWithLabel,
+} from "@portal/lib/gitwitTypes";
 import { withBase } from "@portal/lib/paths";
 import { timeAgo } from "@portal/lib/format";
 
@@ -44,6 +48,55 @@ function Section({
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+/**
+ * Copies GitWit's "things to add" as a ready-to-paste prompt for an AI
+ * assistant. A hover / focus tooltip spells out what to do with it, since the
+ * copied text isn't the improvement itself — it's an instruction to hand to a
+ * model. Follows the site's `group` + `group-hover:block` floating-panel style.
+ */
+function CopySuggestionsButton({ prompt }: { prompt: string }) {
+  const [copied, setCopied] = useState(false);
+  const hintId = useId();
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(prompt);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      /* clipboard blocked — no-op */
+    }
+  }
+
+  return (
+    <div className="relative group">
+      <button
+        type="button"
+        onClick={copy}
+        aria-describedby={hintId}
+        className="link text-[13px] inline-flex items-center gap-1 cursor-pointer"
+      >
+        {copied ? <Check size={13} aria-hidden /> : <Sparkles size={13} aria-hidden />}
+        {copied ? "Copied ✓" : "Copy suggestions"}
+      </button>
+      <div
+        role="tooltip"
+        id={hintId}
+        className="pointer-events-none absolute bottom-full right-0 z-50 mb-2 hidden w-[268px] max-w-[calc(100vw-2rem)] group-hover:block group-focus-within:block"
+      >
+        <div
+          className="card !p-3 text-[12px] leading-snug text-slate-channel"
+          style={{ boxShadow: "var(--shadow-card)" }}
+        >
+          Copies a ready-made prompt of exactly what to improve. Paste it into an
+          AI assistant (ChatGPT, Claude, GitWit) to get specific fixes and
+          Markdown for your README.
+        </div>
+      </div>
     </div>
   );
 }
@@ -170,19 +223,24 @@ export function GitWitReview({
           <span className="meta-light text-[12px]">
             {pending ? "Refreshing…" : `Last checked ${timeAgo(result.checkedAt)}`}
           </span>
-          <button
-            type="button"
-            onClick={() => run(true)}
-            disabled={pending}
-            className="link text-[13px] inline-flex items-center gap-1 cursor-pointer disabled:cursor-not-allowed disabled:opacity-70"
-          >
-            <RefreshCw
-              size={13}
-              className={pending ? "animate-spin" : ""}
-              aria-hidden
-            />
-            Refresh
-          </button>
+          <div className="flex items-center gap-4">
+            {!result.allGood && (
+              <CopySuggestionsButton prompt={buildProfileSuggestionsPrompt(result)} />
+            )}
+            <button
+              type="button"
+              onClick={() => run(true)}
+              disabled={pending}
+              className="link text-[13px] inline-flex items-center gap-1 cursor-pointer disabled:cursor-not-allowed disabled:opacity-70"
+            >
+              <RefreshCw
+                size={13}
+                className={pending ? "animate-spin" : ""}
+                aria-hidden
+              />
+              Refresh
+            </button>
+          </div>
         </div>
       </div>
     </div>
