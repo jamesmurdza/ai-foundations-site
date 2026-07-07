@@ -19,7 +19,7 @@ export async function requestLoginCode(formData: FormData) {
   const isResend = formData.get("resend") === "1";
   // Sign-up is open: anyone with a well-formed email gets a code (no applicant
   // or admin requirement). mayRequestLoginCode is the single gate.
-  if (!mayRequestLoginCode(email)) redirect("/login?error=email");
+  if (!mayRequestLoginCode(email)) redirect("/?error=email");
 
   const code = await createLoginCode(email);
   const t = templates.loginCode(code);
@@ -31,13 +31,13 @@ export async function requestLoginCode(formData: FormData) {
   );
 
   const suffix = isResend ? "&resent=1" : "";
-  redirect(`/login?step=code&email=${encodeURIComponent(email)}${suffix}`);
+  redirect(`/?step=code&email=${encodeURIComponent(email)}${suffix}`);
 }
 
 export async function verifyLoginCode(formData: FormData) {
   const email = cleanEmail(formData.get("email"));
   const code = String(formData.get("code") ?? "").trim();
-  const back = `/login?step=code&email=${encodeURIComponent(email)}`;
+  const back = `/?step=code&email=${encodeURIComponent(email)}`;
   if (!email || !code) redirect(`${back}&error=code_wrong`);
 
   const result = await verifyCode(email, code);
@@ -52,5 +52,5 @@ export async function verifyLoginCode(formData: FormData) {
     .where(eq(profiles.userId, user.id))
     .limit(1);
 
-  redirect(profile ? "/home" : "/onboarding");
+  redirect(profile ? "/lessons" : "/onboarding");
 }

@@ -14,17 +14,14 @@ export default async function FeedbackPage() {
     <div className="py-2 max-w-[760px]">
       <h1 className="text-heading-lg">Reviews to give</h1>
       <p className="meta mt-2 mb-2 max-w-[60ch]">
-        You&apos;re randomly matched with submissions to review. Random matching
-        keeps the loop alive even as the cohort changes week to week.
+        You&apos;re randomly matched with submissions to review.
       </p>
       <p className="meta-light text-[14px] mb-8">
         {given} review{given === 1 ? "" : "s"} given so far · {pending.length} waiting
       </p>
 
       {pending.length === 0 ? (
-        <div className="card meta">
-          You&apos;re all caught up 🎉 New matches appear here as people submit.
-        </div>
+        <p className="meta">You&apos;re all caught up 🎉</p>
       ) : (
         <ul className="space-y-4">
           {pending.map((p) => (

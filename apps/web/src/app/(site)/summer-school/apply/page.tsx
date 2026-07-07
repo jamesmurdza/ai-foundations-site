@@ -1,428 +1,325 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 
+import { GraduationCap, Briefcase, Sparkles, type LucideIcon } from "lucide-react";
+
 import { CardStage } from "@site/components/hacker-house/cards/CardStage";
-import { ProgressBar } from "@site/components/hacker-house/cards/ProgressBar";
-import { IntroCard } from "@site/components/hacker-house/cards/IntroCard";
-import { ContactCard } from "@site/components/hacker-house/cards/ContactCard";
-import { MultipleChoiceCard } from "@site/components/hacker-house/cards/MultipleChoiceCard";
-import { LongTextCard } from "@site/components/hacker-house/cards/LongTextCard";
-import { LinksCard } from "@site/components/hacker-house/cards/LinksCard";
-import { ReviewCard } from "@site/components/hacker-house/cards/ReviewCard";
 import { SubmittedCard } from "@site/components/hacker-house/cards/SubmittedCard";
-import { GeneratingCard } from "@site/components/hacker-house/cards/GeneratingCard";
+import { Button } from "@site/components/ui/button";
+import { cn } from "@site/lib/utils";
 
-import { getVisibleQuestions } from "@site/lib/hacker-house/questions";
-import {
-  freshState,
-  loadState,
-  saveState,
-} from "@site/lib/hacker-house/storage";
-import {
-  generateDynamicQuestions,
-  submitApplication,
-  useDebouncedDbSync,
-  useSyncOnUnload,
-} from "@site/lib/hacker-house/sync";
-import type {
-  ApplicationState,
-  Step,
-} from "@site/lib/hacker-house/types";
+import { newSessionId } from "@site/lib/hacker-house/storage";
+import { submitApplication, syncImmediately } from "@site/lib/hacker-house/sync";
+import type { ApplicationState } from "@site/lib/hacker-house/types";
 
-const DYNAMIC_COUNT = 2;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function previousStep(
-  step: Step,
-  cardIndex: number,
-  hasDynamic: boolean,
-  visibleCount: number,
-): { step: Step; cardIndex: number } | null {
-  switch (step) {
-    case "intro":
-    case "submitted":
-    case "generating":
-      return null;
-    case "contact":
-      return { step: "intro", cardIndex: 0 };
-    case "static":
-      if (cardIndex > 0) return { step: "static", cardIndex: cardIndex - 1 };
-      return { step: "contact", cardIndex: 0 };
-    case "dynamic":
-      if (cardIndex > 0) return { step: "dynamic", cardIndex: cardIndex - 1 };
-      return { step: "static", cardIndex: visibleCount - 1 };
-    case "links":
-      return hasDynamic
-        ? { step: "dynamic", cardIndex: DYNAMIC_COUNT - 1 }
-        : { step: "static", cardIndex: visibleCount - 1 };
-    case "review":
-      return { step: "links", cardIndex: 0 };
-  }
-}
+const STAGE_OPTIONS = ["Studying", "Working", "Other"] as const;
+type Stage = (typeof STAGE_OPTIONS)[number];
 
-function computeProgress(step: Step, cardIndex: number, visibleCount: number): number {
-  switch (step) {
-    case "intro":
-      return 0;
-    case "contact":
-      return 0.04;
-    case "static":
-      return 0.08 + (cardIndex / visibleCount) * 0.5;
-    case "generating":
-      return 0.6;
-    case "dynamic":
-      return 0.65 + (cardIndex / DYNAMIC_COUNT) * 0.2;
-    case "links":
-      return 0.9;
-    case "review":
-      return 0.95;
-    case "submitted":
-      return 1;
-  }
-}
+// Matches the wizard's conditional follow-ups (q2a/q2b/q2c) so the admin
+// dashboard labels these answers correctly.
+const FOLLOWUP: Record<Stage, { id: string; prompt: string; placeholder: string }> = {
+  Studying: { id: "q2a", prompt: "Where are you studying?", placeholder: "School or program" },
+  Working: { id: "q2b", prompt: "Where do you work?", placeholder: "Company or role" },
+  Other: { id: "q2c", prompt: "What are you up to?", placeholder: "A sentence is plenty" },
+};
+
+const STAGE_ICON: Record<Stage, LucideIcon> = {
+  Studying: GraduationCap,
+  Working: Briefcase,
+  Other: Sparkles,
+};
+
+const TOTAL_PAGES = 2;
 
 export default function ApplyPage() {
-  const [state, setState] = useState<ApplicationState | null>(null);
+  const [sessionId] = useState(() => newSessionId());
+  const [page, setPage] = useState(1);
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [country, setCountry] = useState("");
+  const [stage, setStage] = useState<Stage | "">("");
+  const [stageDetail, setStageDetail] = useState("");
+  const [goals, setGoals] = useState("");
+  const [github, setGithub] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [portfolio, setPortfolio] = useState("");
+
   const [submitting, setSubmitting] = useState(false);
-  const [genFailed, setGenFailed] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  // Get visible questions based on current answers
-  const visibleQuestions = useMemo(
-    () => (state ? getVisibleQuestions(state.answers) : []),
-    [state?.answers],
+  const page1Valid = useMemo(
+    () =>
+      name.trim().length >= 2 &&
+      EMAIL_RE.test(email.trim()) &&
+      country.trim().length >= 2 &&
+      stage !== "" &&
+      stageDetail.trim().length >= 2,
+    [name, email, country, stage, stageDetail],
   );
-  const visibleCount = visibleQuestions.length;
+  const page2Valid = goals.trim().length >= 2;
 
-  useEffect(() => {
-    const loaded = loadState();
-    setState(loaded ?? freshState());
-  }, []);
-
-  useEffect(() => {
-    if (state) saveState(state);
-  }, [state]);
-
-  const enableDbSync =
-    !!state?.email && state.status === "in_progress" && state.step !== "intro";
-  useDebouncedDbSync(state ?? ({} as ApplicationState), enableDbSync);
-  useSyncOnUnload(state ?? ({} as ApplicationState), enableDbSync);
-
-  useEffect(() => {
-    if (!state) return;
-    if (state.step !== "generating") return;
-    if (state.dynamicQuestions && state.dynamicQuestions.length === DYNAMIC_COUNT) {
-      setState((s) =>
-        s ? { ...s, step: "dynamic", cardIndex: 0, updatedAt: Date.now() } : s,
-      );
-      return;
-    }
-    let cancelled = false;
-    setGenFailed(false);
-    generateDynamicQuestions(state.sessionId, state.answers)
-      .then(({ questions }) => {
-        if (cancelled) return;
-        setState((s) =>
-          s
-            ? {
-                ...s,
-                dynamicQuestions: questions,
-                step: "dynamic",
-                cardIndex: 0,
-                updatedAt: Date.now(),
-              }
-            : s,
-        );
-      })
-      .catch((err) => {
-        console.error("dynamic gen failed", err);
-        if (cancelled) return;
-        setGenFailed(true);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [state?.step, state?.sessionId, state?.dynamicQuestions]);
-
-  const advance = useCallback((updates: Partial<ApplicationState>) => {
-    setState((prev) =>
-      prev ? { ...prev, ...updates, updatedAt: Date.now() } : prev,
-    );
-  }, []);
-
-  const handleBegin = () => advance({ step: "contact" });
-
-  const handleContact = ({ name, email }: { name: string; email: string }) =>
-    advance({ name, email, step: "static", cardIndex: 0 });
-
-  const handleLinks = (urls: {
-    portfolioUrl?: string;
-    githubUrl?: string;
-    otherUrl?: string;
-  }) =>
-    advance({
-      ...urls,
-      step: "review",
-      cardIndex: 0,
-    });
-
-  const handleStaticAnswer = (qId: string, answer: string) => {
-    setState((prev) => {
-      if (!prev) return prev;
-      const answers = { ...prev.answers, [qId]: answer };
-
-      // Recalculate visible questions with new answers
-      const newVisible = getVisibleQuestions(answers);
-      const currentQ = visibleQuestions[prev.cardIndex];
-
-      // Find the next question index
-      let nextIndex = prev.cardIndex + 1;
-
-      // If this was Q2 (life stage), we might have just revealed a conditional question
-      if (currentQ?.id === "q2") {
-        // Find the conditional question that just became visible
-        const conditionalIndex = newVisible.findIndex(
-          (q) => q.conditionalOn?.questionId === "q2" && q.conditionalOn?.answer === answer
-        );
-        if (conditionalIndex !== -1) {
-          nextIndex = conditionalIndex;
-        }
-      } else {
-        // Normal case: find current question in new visible list and go to next
-        const currentIndex = newVisible.findIndex((q) => q.id === currentQ?.id);
-        nextIndex = currentIndex + 1;
-      }
-
-      if (nextIndex < newVisible.length) {
-        return {
-          ...prev,
-          answers,
-          cardIndex: nextIndex,
-          updatedAt: Date.now(),
-        };
-      }
-      // All static questions done, go to generating
-      return {
-        ...prev,
-        answers,
-        step: "generating",
-        cardIndex: 0,
-        updatedAt: Date.now(),
-      };
-    });
+  const goNext = () => {
+    if (!page1Valid) return;
+    setError(null);
+    setPage(2);
   };
-
-  const handleDynamicAnswer = (qId: string, answer: string) => {
-    setState((prev) => {
-      if (!prev) return prev;
-      const answers = { ...prev.answers, [qId]: answer };
-      if (prev.cardIndex < DYNAMIC_COUNT - 1) {
-        return {
-          ...prev,
-          answers,
-          cardIndex: prev.cardIndex + 1,
-          updatedAt: Date.now(),
-        };
-      }
-      return {
-        ...prev,
-        answers,
-        step: "links",
-        cardIndex: 0,
-        updatedAt: Date.now(),
-      };
-    });
+  const goBack = () => {
+    setError(null);
+    setPage(1);
   };
-
-  const handleEdit = (target: { step: Step; cardIndex: number }) =>
-    advance({ step: target.step, cardIndex: target.cardIndex });
 
   const handleSubmit = async () => {
-    if (!state) return;
+    if (!page1Valid || !page2Valid || submitting || stage === "") return;
     setSubmitting(true);
+    setError(null);
+
+    const answers: Record<string, string> = {
+      q1: country.trim(),
+      q2: stage,
+      [FOLLOWUP[stage].id]: stageDetail.trim(),
+      goals: goals.trim(),
+    };
+
+    const state: ApplicationState = {
+      sessionId,
+      email: email.trim(),
+      name: name.trim(),
+      answers,
+      portfolioUrl: portfolio.trim() || undefined,
+      githubUrl: github.trim() || undefined,
+      otherUrl: linkedin.trim() || undefined,
+      step: "review",
+      cardIndex: 0,
+      status: "in_progress",
+      updatedAt: Date.now(),
+    };
+
     try {
-      await submitApplication(state.sessionId);
-      advance({ step: "submitted", status: "submitted" });
+      // Upsert the row (creates it with all fields), then submit.
+      await syncImmediately(state);
+      await submitApplication(sessionId);
+      setSubmitted(true);
     } catch (err) {
       console.error("submit failed", err);
+      setError("Something went wrong. Please try again.");
       setSubmitting(false);
     }
   };
 
-  const cardKey = useMemo(
-    () => (state ? `${state.step}-${state.cardIndex}` : "loading"),
-    [state],
-  );
-
-  const progress = state ? computeProgress(state.step, state.cardIndex, visibleCount) : 0;
-
-  if (!state) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-muted/30">
-        <p className="text-sm text-muted-foreground">Loading…</p>
-      </div>
-    );
-  }
-
-  let content: React.ReactNode = null;
-
-  switch (state.step) {
-    case "intro":
-      content = <IntroCard onBegin={handleBegin} />;
-      break;
-    case "contact":
-      content = (
-        <ContactCard
-          initialName={state.name}
-          initialEmail={state.email}
-          onContinue={handleContact}
-        />
-      );
-      break;
-    case "links":
-      content = (
-        <LinksCard
-          initialPortfolio={state.portfolioUrl}
-          initialGithub={state.githubUrl}
-          initialOther={state.otherUrl}
-          onContinue={handleLinks}
-        />
-      );
-      break;
-    case "static": {
-      const q = visibleQuestions[state.cardIndex];
-      if (!q) {
-        content = <GeneratingCard message="Loading questions…" />;
-        break;
-      }
-      const questionNum = state.cardIndex + 1;
-      const totalVisible = visibleCount;
-      const category = `Question ${questionNum} of ${totalVisible}`;
-
-      if (q.type === "longtext") {
-        content = (
-          <LongTextCard
-            category={category}
-            prompt={q.prompt}
-            helperText={q.helperText}
-            initial={state.answers[q.id]}
-            minChars={q.minChars ?? 2}
-            maxChars={q.maxChars ?? 500}
-            onContinue={(text) => handleStaticAnswer(q.id, text)}
-          />
-        );
-      } else {
-        content = (
-          <MultipleChoiceCard
-            category={category}
-            prompt={q.prompt}
-            options={q.options ?? []}
-            helperText={q.helperText}
-            current={state.answers[q.id]}
-            onAnswer={(opt) => handleStaticAnswer(q.id, opt)}
-          />
-        );
-      }
-      break;
-    }
-    case "generating":
-      if (genFailed) {
-        content = (
-          <CardStage>
-            <div className="flex-1 flex flex-col justify-center text-center">
-              <h2 className="font-heading text-2xl font-semibold mb-3">
-                We couldn&apos;t generate your follow-ups.
-              </h2>
-              <p className="text-muted-foreground">
-                That&apos;s on us. You can skip ahead — your application will still
-                be reviewed.
-              </p>
-            </div>
-            <div className="pt-6">
-              <button
-                onClick={() => advance({ step: "links", cardIndex: 0 })}
-                className="w-full py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white"
-              >
-                Skip to next →
-              </button>
-            </div>
-          </CardStage>
-        );
-      } else {
-        content = <GeneratingCard />;
-      }
-      break;
-    case "dynamic": {
-      const q = state.dynamicQuestions?.[state.cardIndex];
-      if (!q) {
-        content = <GeneratingCard message="Loading your questions…" />;
-        break;
-      }
-      const totalStatic = visibleCount;
-      content = (
-        <LongTextCard
-          category={`Question ${totalStatic + state.cardIndex + 1} of ${totalStatic + DYNAMIC_COUNT}`}
-          prompt={q.question}
-          initial={state.answers[q.id]}
-          minChars={20}
-          maxChars={600}
-          onContinue={(text) => handleDynamicAnswer(q.id, text)}
-        />
-      );
-      break;
-    }
-    case "review":
-      content = (
-        <ReviewCard
-          state={state}
-          onEdit={handleEdit}
-          onSubmit={handleSubmit}
-          submitting={submitting}
-        />
-      );
-      break;
-    case "submitted":
-      content = <SubmittedCard name={state.name} />;
-      break;
-  }
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-background to-muted/30">
-      <ProgressBar progress={progress} />
-      <header className="px-6 py-4 flex items-center justify-between">
+      <header className="px-6 py-4">
         <Link
           href="/summer-school"
           className="text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
           ← Summer School
         </Link>
-        {state.email && (
-          <span className="text-xs text-muted-foreground">
-            Saved as {state.email}
-          </span>
-        )}
       </header>
       <section className="px-6 pt-6 pb-20 flex items-start justify-center">
         <div className="w-full max-w-md mx-auto">
-          {(() => {
-            const prev = previousStep(
-              state.step,
-              state.cardIndex,
-              !!state.dynamicQuestions && state.dynamicQuestions.length > 0,
-              visibleCount,
-            );
-            if (!prev) return <div className="h-7 mb-3" aria-hidden />;
-            return (
-              <button
-                type="button"
-                onClick={() => advance(prev)}
-                className="mb-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <span aria-hidden>←</span> Back
-              </button>
-            );
-          })()}
-          <div key={cardKey}>{content}</div>
+          {submitted ? (
+            <SubmittedCard name={name.trim() || undefined} />
+          ) : (
+            <CardStage>
+              <div className="flex-1 flex flex-col">
+                <p className="text-sm uppercase tracking-widest text-muted-foreground mb-3">
+                  Online program · Step {page} of {TOTAL_PAGES}
+                </p>
+                <h2 className="font-heading text-2xl font-semibold leading-tight mb-2">
+                  {page === 1 ? "Apply for the online program" : "A bit about your work"}
+                </h2>
+                <p className="text-sm text-muted-foreground mb-6">
+                  {page === 1
+                    ? "Tell us who you are and what you're up to."
+                    : "What you'd like to get out of this. Links are optional."}
+                </p>
+
+                {page === 1 ? (
+                  <div className="space-y-4">
+                    <label className="block">
+                      <span className="text-sm font-medium">Name</span>
+                      <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Your full name"
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                        autoFocus
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-sm font-medium">Email</span>
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="name@email.com"
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-sm font-medium">
+                        What country are you from?
+                      </span>
+                      <input
+                        type="text"
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                        placeholder="Country"
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                      />
+                    </label>
+                    <div className="block">
+                      <span className="text-sm font-medium">
+                        What are you currently doing?
+                      </span>
+                      <div className="mt-2 grid grid-cols-3 gap-2">
+                        {STAGE_OPTIONS.map((opt) => {
+                          const Icon = STAGE_ICON[opt];
+                          const selected = stage === opt;
+                          return (
+                            <button
+                              key={opt}
+                              type="button"
+                              aria-pressed={selected}
+                              onClick={() => setStage(opt)}
+                              className={cn(
+                                "flex flex-col items-center justify-center gap-1.5 px-3 py-3 rounded-lg border text-sm transition-colors",
+                                selected
+                                  ? "border-primary bg-primary text-white font-medium shadow-sm"
+                                  : "bg-background text-foreground hover:bg-muted/50 hover:border-muted-foreground/40",
+                              )}
+                            >
+                              <Icon className="w-5 h-5" aria-hidden />
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                    {stage !== "" && (
+                      <label className="block">
+                        <span className="text-sm font-medium">
+                          {FOLLOWUP[stage].prompt}
+                        </span>
+                        <input
+                          type="text"
+                          value={stageDetail}
+                          onChange={(e) => setStageDetail(e.target.value)}
+                          placeholder={FOLLOWUP[stage].placeholder}
+                          className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                        />
+                      </label>
+                    )}
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    <label className="block">
+                      <span className="text-sm font-medium">
+                        What do you want to build or learn?
+                      </span>
+                      <textarea
+                        value={goals}
+                        onChange={(e) => setGoals(e.target.value)}
+                        placeholder="A sentence or two is plenty."
+                        rows={3}
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base resize-none"
+                        autoFocus
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-sm font-medium">
+                        GitHub{" "}
+                        <span className="text-muted-foreground font-normal">
+                          (optional)
+                        </span>
+                      </span>
+                      <input
+                        type="url"
+                        value={github}
+                        onChange={(e) => setGithub(e.target.value)}
+                        placeholder="https://github.com/…"
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-sm font-medium">
+                        LinkedIn{" "}
+                        <span className="text-muted-foreground font-normal">
+                          (optional)
+                        </span>
+                      </span>
+                      <input
+                        type="url"
+                        value={linkedin}
+                        onChange={(e) => setLinkedin(e.target.value)}
+                        placeholder="https://linkedin.com/in/…"
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-sm font-medium">
+                        Portfolio / personal site{" "}
+                        <span className="text-muted-foreground font-normal">
+                          (optional)
+                        </span>
+                      </span>
+                      <input
+                        type="url"
+                        value={portfolio}
+                        onChange={(e) => setPortfolio(e.target.value)}
+                        placeholder="https://"
+                        className="mt-1 w-full px-4 py-3 bg-background rounded-lg border text-base"
+                      />
+                    </label>
+                  </div>
+                )}
+              </div>
+
+              <div className="pt-6">
+                {error && (
+                  <p className="text-sm text-red-600 mb-3 text-center">{error}</p>
+                )}
+                {page === 1 ? (
+                  <Button
+                    size="lg"
+                    className="w-full bg-primary hover:bg-primary/90 text-white disabled:opacity-50"
+                    disabled={!page1Valid}
+                    onClick={goNext}
+                  >
+                    Next →
+                  </Button>
+                ) : (
+                  <div className="flex gap-3">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="flex-1"
+                      onClick={goBack}
+                      disabled={submitting}
+                    >
+                      ← Previous
+                    </Button>
+                    <Button
+                      size="lg"
+                      className="flex-1 bg-primary hover:bg-primary/90 text-white disabled:opacity-50"
+                      disabled={!page2Valid || submitting}
+                      onClick={handleSubmit}
+                    >
+                      {submitting ? "Submitting…" : "Submit →"}
+                    </Button>
+                  </div>
+                )}
+              </div>
+            </CardStage>
+          )}
         </div>
       </section>
     </main>

@@ -6,31 +6,31 @@
    Grotesk · ~11px radii · bordered-frame SaaS layout
 --------------------------------------------------------------------------- */
 @theme {
-  /* semantic */
+  /* semantic — accent unified with the root marketing site (#5b2bee indigo-violet) */
   --color-background: #ffffff;
   --color-foreground: #292929;
-  --color-primary: #9333ea;        /* purple-600 */
-  --color-primary-strong: #7e22ce; /* purple-700 */
-  --color-primary-soft: #f3eefe;   /* light purple tint */
+  --color-primary: #5b2bee;        /* brand indigo-violet (matches root site) */
+  --color-primary-strong: #4c24c6; /* darker indigo, hover/pressed */
+  --color-primary-soft: #efeafe;   /* light indigo tint */
   --color-muted: #f6f3f0;          /* warm off-white */
   --color-muted-foreground: #6b7280;
   --color-card: #ffffff;
   --color-border: #ebe6e1;
-  --color-ring: #9333ea;
-  --color-purple-glow: #a855f7;    /* purple-500 */
+  --color-ring: #5b2bee;
+  --color-purple-glow: #6d43f0;    /* indigo glow (live dots / pings) */
   --color-success: #16a34a;        /* green-600: review present */
   --color-danger: #dc2626;         /* red-600: review missing */
 
   /* legacy aliases — remapped so existing pages recolour automatically */
   --color-canvas-white: #ffffff;
   --color-midnight-harbor: #292929;
-  --color-signal-blue: #9333ea;
+  --color-signal-blue: #5b2bee;
   --color-slate-channel: #6b7280;
   --color-pale-steel: #9ca3af;
   --color-sea-fog: #ebe6e1;
   --color-ice-tint: #f6f3f0;
   --color-light-mist: #e4ded7;
-  --color-active-teal: #a855f7;
+  --color-active-teal: #6d43f0;
 
   --font-inter: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -46,23 +46,26 @@
   --text-display: 52px;
   --text-hero: 92px;
 
-  --radius-cards: 14px;
+  /* Radii tightened toward the root site (8px base) for a crisper, less "boxy" feel */
+  --radius-cards: 10px;
   --radius-pills: 9999px;
   --radius-badges: 8px;
-  --radius-images: 14px;
-  --radius-inputs: 11px;
-  --radius-buttons: 11px;
+  --radius-images: 10px;
+  --radius-inputs: 8px;
+  --radius-buttons: 8px;
 
+  /* Elevation reserved for floating UI (dropdowns, popovers, tooltips) only. */
   --shadow-card: rgba(38, 18, 71, 0.08) 0px 8px 30px 0px;
   --shadow-card-2: rgba(38, 18, 71, 0.05) 0px 4px 18px 0px;
   --shadow-soft: rgba(38, 18, 71, 0.06) 0px 2px 8px 0px;
 
-  --page-max: 960px;
+  /* Matches the profile page width so the navbar and all pages share it. */
+  --page-max: 1120px;
 }
 
 :root {
   color-scheme: light;
-  --map-empty: #f1edf9;
+  --map-empty: #efeafe;
   --map-border: #ffffff;
 }
 
@@ -103,36 +106,37 @@ h1, h2, h3, h4 {
     padding-inline: 24px;
   }
 
+  /* Flat, bordered surface — matches the root site's thin-line "frame" aesthetic.
+     Shadows are reserved for genuinely floating UI (see --shadow-card usages). */
   .card {
     background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-cards);
-    box-shadow: var(--shadow-card-2);
     padding: 20px;
   }
+  /* .card-flat kept as an alias for .card so existing markup keeps working. */
   .card-flat {
     background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-cards);
     padding: 20px;
   }
-  .card-hover { transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease; }
+  .card-hover { transition: border-color 0.15s ease, background 0.15s ease; }
   .card-hover:hover {
-    box-shadow: var(--shadow-card);
-    transform: translateY(-2px);
-    border-color: #ddd3ee;
+    border-color: var(--color-primary);
   }
 
+  /* Sizing/typography mirror the root site's shadcn Button (text-sm / font-medium). */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     border-radius: var(--radius-buttons);
-    font-weight: 600;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 1;
-    padding: 11px 18px;
+    padding: 12px 16px;
     cursor: pointer;
     transition: background 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease, color 0.15s ease;
     border: 1px solid transparent;
@@ -146,13 +150,15 @@ h1, h2, h3, h4 {
   .btn-dark:hover { background: #000; }
   .btn-ghost { background: transparent; color: var(--color-foreground); }
   .btn-ghost:hover { background: var(--color-muted); }
+  .btn-gray { background: var(--color-sea-fog); color: var(--color-foreground); }
+  .btn-gray:hover { background: #e2dbd3; }
   .btn-outline {
     background: transparent;
     color: var(--color-foreground);
     border-color: var(--color-border);
   }
-  .btn-outline:hover { background: var(--color-muted); border-color: #ddd3ee; }
-  .btn-sm { padding: 8px 13px; font-size: 14px; }
+  .btn-outline:hover { background: var(--color-muted); border-color: var(--color-primary-soft); }
+  .btn-sm { padding: 8px 12px; font-size: 14px; }
 
   .input, .textarea, .select {
     width: 100%;
@@ -168,7 +174,7 @@ h1, h2, h3, h4 {
   .input::placeholder, .textarea::placeholder { color: var(--color-pale-steel); }
   .input:focus, .textarea:focus, .select:focus {
     border-color: var(--color-primary);
-    box-shadow: rgba(147, 51, 234, 0.16) 0px 0px 0px 3px;
+    box-shadow: rgba(91, 43, 238, 0.16) 0px 0px 0px 3px;
   }
 
   .pill {
@@ -213,9 +219,9 @@ h1, h2, h3, h4 {
 }
 
 @keyframes pulse-dot {
-  0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.5); }
-  70% { box-shadow: 0 0 0 9px rgba(168, 85, 247, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(91, 43, 238, 0.5); }
+  70% { box-shadow: 0 0 0 9px rgba(91, 43, 238, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(91, 43, 238, 0); }
 }
 .live-dot {
   width: 8px; height: 8px; border-radius: 9999px;
@@ -252,4 +258,14 @@ h1, h2, h3, h4 {
 }
 .markdown-body img {
   display: inline-block;
+}
+
+/* Discover pins the navbar so it never scrolls away. `fixed` takes the header
+   out of flow, so pad `main` by the nav height (h-16) to keep layout intact. */
+body.discover-nav-pinned > header {
+  position: fixed;
+  inset: 0 0 auto 0;
+}
+body.discover-nav-pinned > main {
+  padding-top: 4rem;
 }

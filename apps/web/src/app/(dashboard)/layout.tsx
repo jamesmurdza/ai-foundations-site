@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import { AdminShell } from "@dashboard/components/AdminShell";
+import { NavProgress } from "@dashboard/components/NavProgress";
 import "./globals.css";
 
 const inter = Inter({
@@ -45,6 +46,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
       </head>
       <body className="min-h-full bg-canvas text-ink">
+        <NavProgress />
         <AdminShell>{children}</AdminShell>
       </body>
     </html>

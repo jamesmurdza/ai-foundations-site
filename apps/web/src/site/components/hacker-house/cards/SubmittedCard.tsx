@@ -8,7 +8,7 @@ export function SubmittedCard({ name }: { name?: string }) {
   return (
     <CardStage showPeek={false}>
       <div className="flex-1 flex flex-col items-center justify-center text-center">
-        <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 text-purple-600">
+        <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"

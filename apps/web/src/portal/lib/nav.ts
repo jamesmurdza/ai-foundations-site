@@ -8,6 +8,10 @@ import { BASE_PATH } from "./paths";
 // portal's BASE_PATH onto internal, root-relative paths (no Next basePath here).
 // External URLs (e.g. the GitHub OAuth authorize URL) and already-prefixed paths
 // pass through unchanged. Everything else from next/navigation is re-exported.
+//
+// NOTE: this module is imported by Server Components (for redirect), so it must
+// NOT statically import client-only hooks. For a BASE_PATH-stripping usePathname
+// use "@portal/lib/use-pathname" (a "use client" module) instead.
 export * from "next/navigation";
 
 function prefix(p: string): string {

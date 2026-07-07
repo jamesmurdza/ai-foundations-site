@@ -3,6 +3,7 @@
 import { useState, useTransition, type ReactNode } from "react";
 import { toggleWeekStep } from "@portal/lib/actions/engagement";
 import { SubmitButton } from "@portal/components/SubmitButton";
+import { WizardHeader, WizardDots } from "@portal/components/WizardChrome";
 
 export type WizardSection = {
   heading: string;
@@ -21,7 +22,8 @@ export type WizardSection = {
 export function WeekWizard({
   weekId,
   keyPrefix,
-  title,
+  weekLabel,
+  headers,
   section1,
   section1Extra,
   section2,
@@ -36,7 +38,10 @@ export function WeekWizard({
 }: {
   weekId: string;
   keyPrefix: string;
-  title: string;
+  /** Eyebrow above the title, e.g. "Week 2: Showcase your work". */
+  weekLabel?: string;
+  /** Per-page titles: [page 1, page 2]. */
+  headers: [string, string];
   section1: WizardSection;
   /** Optional bonus checklist shown below section1 on page 1, set off by a
    *  divider (e.g. Week 3's "extra credit" Level 2). */
@@ -102,12 +107,11 @@ export function WeekWizard({
 
   return (
     <div>
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <h2 className="text-heading-lg leading-tight">{title}</h2>
-        {actions && (
-          <div className="flex items-center gap-1 shrink-0">{actions}</div>
-        )}
-      </div>
+      <WizardHeader
+        weekLabel={weekLabel}
+        title={headers[step - 1]}
+        actions={actions}
+      />
 
       {step === 1 ? (
         <>
@@ -138,7 +142,7 @@ export function WeekWizard({
               <button
                 type="button"
                 onClick={() => setStep(1)}
-                className="btn btn-ghost !px-2"
+                className="btn btn-gray"
               >
                 ← Back
               </button>
@@ -147,6 +151,8 @@ export function WeekWizard({
           </form>
         </>
       )}
+
+      <WizardDots count={2} current={step} onGo={setStep} />
     </div>
   );
 }

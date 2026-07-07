@@ -51,6 +51,37 @@ export function unwrapReadmeImageUrls(html: string): string {
   });
 }
 
+/**
+ * GitHub's /markdown API (used for the editor's live preview) strips inline
+ * `style` from <img>, unlike the repo-README endpoint (used on the profile),
+ * which keeps it. Authors size images with `style="height:25px"` etc., so on the
+ * preview those images lose their size and unsized SVG icons blow up to full
+ * width. Promote width/height from the style into width/height ATTRIBUTES (which
+ * the API preserves) so previewed images match the profile. Pure.
+ */
+export function promoteImgStyleSizes(markdown: string): string {
+  return markdown.replace(/<img\b[^>]*>/gi, (tag) => {
+    const style =
+      /style\s*=\s*"([^"]*)"/i.exec(tag)?.[1] ??
+      /style\s*=\s*'([^']*)'/i.exec(tag)?.[1];
+    if (!style) return tag;
+    let out = tag;
+    for (const prop of ["width", "height"] as const) {
+      // Skip if the attribute is already present (the attribute wins anyway).
+      if (new RegExp(`\\s${prop}\\s*=`, "i").test(out)) continue;
+      // Anchor to a declaration start so `max-width`/`min-height` don't match.
+      const m = new RegExp(
+        `(?:^|;)\\s*${prop}\\s*:\\s*([0-9.]+)(px|%)?`,
+        "i",
+      ).exec(style);
+      if (!m) continue;
+      const value = m[2] === "%" ? `${m[1]}%` : m[1];
+      out = out.replace(/<img\b/i, `<img ${prop}="${value}"`);
+    }
+    return out;
+  });
+}
+
 const NAMED_ENTITIES: Record<string, string> = {
   amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ",
   mdash: "—", ndash: "–", hellip: "…", copy: "©", reg: "®", trade: "™",

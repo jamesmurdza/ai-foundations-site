@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "@portal/components/Link";
-import { User, LogOut } from "lucide-react";
+import { User, Settings, LogOut } from "lucide-react";
 import { Avatar } from "./Avatar";
 import { withBase } from "@portal/lib/paths";
 
-// Top-right account menu: click the avatar for a dropdown with Profile + Sign out.
-// (Editing your profile lives on the profile page itself.)
+// Top-right account menu: click the avatar for a dropdown with Profile, Settings
+// and Sign out.
 export function UserMenu({
   avatarUrl,
   name,
@@ -62,6 +62,14 @@ export function UserMenu({
             className="flex items-center gap-2.5 rounded-[9px] px-3 py-2 text-[15px] hover:bg-ice-tint"
           >
             <User size={17} aria-hidden /> Profile
+          </Link>
+          <Link
+            href="/settings/profile"
+            role="menuitem"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2.5 rounded-[9px] px-3 py-2 text-[15px] hover:bg-ice-tint"
+          >
+            <Settings size={17} aria-hidden /> Settings
           </Link>
           <form action={withBase("/api/auth/signout")} method="post">
             <button

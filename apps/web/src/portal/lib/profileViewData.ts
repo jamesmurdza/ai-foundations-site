@@ -1,60 +1,89 @@
 import "server-only";
 import { getSessionContext } from "@portal/lib/auth";
 import {
-  getGlowUp,
   listSubmissionsByUser,
-  listComments,
-  starLeaderboardMap,
-  listMentionablePeople,
+  listStarredRepoKeys,
   isViewerFollowing,
 } from "@portal/lib/queries";
-import { isFollowing as githubIsFollowing } from "@portal/lib/github";
-import { env } from "@portal/lib/env";
+import {
+  isFollowing as githubIsFollowing,
+  getRepoReadmeHtml,
+} from "@portal/lib/github";
+import { parseRepo, parseLogin } from "@portal/lib/github-parse";
 import type { Profile } from "@portal/db/schema";
 import type { Author } from "@portal/lib/queries";
 
 /**
- * Gather everything the shared ProfileView needs (viewer context, glow-up,
- * projects, comments, stars, follow state). Used by both the canonical
- * /users/[login] page and the /profiles/[id] fallback.
+ * Gather everything the shared ProfileView needs (viewer context, projects,
+ * follow state). Used by both the canonical /users/[login] page and the
+ * /profiles/[id] fallback.
+ *
+ * Each project is enriched with its repo README (rendered as real GitHub
+ * markdown) and the viewer's like state, so the profile can show full Discover-
+ * style previews. README renders are cached per repo, so this is cheap.
  */
 export async function loadProfileViewData(profile: Profile, author: Author) {
-  const [
-    { user, profile: viewerProfile },
-    glow,
-    submissions,
-    comments,
-    starsMap,
-    people,
-  ] = await Promise.all([
+  const [{ user }, allSubmissions] = await Promise.all([
     getSessionContext(),
-    getGlowUp(profile.userId),
     listSubmissionsByUser(profile.userId),
-    listComments("profile", profile.id),
-    starLeaderboardMap(),
-    listMentionablePeople(),
   ]);
 
   const isOwner = user?.id === profile.userId;
-  const canComment = Boolean(user && viewerProfile);
-  const currentUser: Author | null =
-    user && viewerProfile
-      ? {
-          userId: user.id,
-          name: viewerProfile.displayName ?? user.name ?? "You",
-          login: user.githubLogin,
-          avatarUrl: user.avatarUrl,
-          profileId: viewerProfile.id,
-          country: viewerProfile.country,
-        }
-      : null;
 
-  const stars = starsMap.get(profile.userId) ?? 0;
-  const shareUrl = author.login
-    ? `${env.baseUrl}/users/${author.login}`
-    : profile.username
-      ? `${env.baseUrl}/u/${profile.username}`
-      : `${env.baseUrl}/profiles/${profile.id}`;
+  // Chronological (oldest first) — the profile reads as a build log.
+  const ordered = [...allSubmissions].sort(
+    (a, b) => a.submission.createdAt.getTime() - b.submission.createdAt.getTime(),
+  );
+
+  // The Week 1 submission is a link to the person's GitHub profile. When present
+  // we source the README centerpiece from it; otherwise we fall back to their
+  // GitHub username. Either way that submission is dropped from the project feed
+  // below, so the same profile README is never shown twice.
+  const profileReadmeSub = ordered.find((it) => {
+    const s = it.submission;
+    return (
+      s.payloadType !== "text" &&
+      !parseRepo(s.payload) &&
+      Boolean(parseLogin(s.payload))
+    );
+  });
+  const readmeLogin =
+    (profileReadmeSub ? parseLogin(profileReadmeSub.submission.payload) : null) ??
+    author.login ??
+    null;
+
+  const projectItems = profileReadmeSub
+    ? ordered.filter((it) => it.submission.id !== profileReadmeSub.submission.id)
+    : ordered;
+
+  const [likedRepos, readmeEntries] = await Promise.all([
+    user ? listStarredRepoKeys(user.id) : Promise.resolve(new Set<string>()),
+    Promise.all(
+      projectItems.map(async (it) => {
+        const s = it.submission;
+        let html: string | null = null;
+        if (s.repoOwner && s.repoName) {
+          html = await getRepoReadmeHtml(s.repoOwner, s.repoName);
+        } else if (s.payloadType !== "text" && !parseRepo(s.payload)) {
+          // A GitHub profile link — preview the {login}/{login} README.
+          const login = parseLogin(s.payload);
+          if (login) html = await getRepoReadmeHtml(login, login);
+        }
+        return [s.id, html] as const;
+      }),
+    ),
+  ]);
+  const readmeMap = new Map(readmeEntries);
+  const hasToken = Boolean(user?.accessToken);
+
+  const projects = projectItems.map((item) => {
+    const s = item.submission;
+    const isRepo = Boolean(s.repoOwner && s.repoName);
+    const repoKey = isRepo ? `${s.repoOwner}/${s.repoName}` : "";
+    const liked = isRepo && likedRepos.has(repoKey);
+    const canLike = hasToken && isRepo && s.userId !== user?.id;
+    return { item, readmeHtml: readmeMap.get(s.id) ?? null, liked, canLike };
+  });
 
   // GitHub is the source of truth for the button: a viewer who already follows
   // this person (here, on GitHub directly, or via the old auto-follow) sees
@@ -71,15 +100,9 @@ export async function loadProfileViewData(profile: Profile, author: Author) {
   return {
     profile,
     author,
-    glow,
-    submissions,
-    comments,
-    people,
-    stars,
+    projects,
+    readmeLogin,
     isOwner,
-    canComment,
-    currentUser,
-    shareUrl,
     follow: {
       targetUserId: profile.userId,
       targetLogin: author.login,

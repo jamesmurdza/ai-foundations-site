@@ -75,7 +75,7 @@ export async function GET(req: Request) {
       .where(eq(profiles.userId, user.id))
       .limit(1);
 
-    return NextResponse.redirect(appUrl(profile ? "/home" : "/onboarding"));
+    return NextResponse.redirect(appUrl(profile ? "/lessons" : "/onboarding"));
   } catch (e) {
     console.error("[oauth] callback failed", e);
     return NextResponse.redirect(appUrl("/login?error=oauth"));

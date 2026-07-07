@@ -1,40 +1,45 @@
-# AI Foundations — monorepo
+# AI Foundations
 
-npm-workspaces monorepo unifying the three AI Foundations apps behind one domain
-(`aifoundations.school`) and one shared Neon Postgres database.
+A single Next.js 16 app (`apps/web`) serving all of `aifoundations.school` behind
+one domain and one shared Neon Postgres database. It's an npm-workspaces monorepo
+with one workspace today (`apps/web`); the layout leaves room for more.
 
-## Apps
+## Zones
 
-| Workspace | Stack | Served at | Source of truth |
-|---|---|---|---|
-| `apps/site` | Next 14 | `aifoundations.school` (host zone) | marketing site + `/summer-school` application |
-| `apps/portal` | Next 16 | `aifoundations.school/portal` | cohort portal (auth, submissions, discover) |
-| `apps/dashboard` | Next 16 | `aifoundations.school/dashboard` | applicant-review dashboard |
+The app is one Next.js project; the three areas live under route groups in
+`apps/web/src/app`, with their components/lib under `apps/web/src/<zone>`:
 
-The Portal and Dashboard are **Next.js multi-zones**: each sets `basePath` and the site
-rewrites `/portal/*` and `/dashboard/*` to their deployments. Each app keeps its own
-Next/React/Tailwind versions.
+| Zone | URL | Source |
+|---|---|---|
+| Marketing site | `/` | `(site)` route group · `src/site` |
+| Cohort portal | `/portal/*` | `(portal)` route group · `src/portal` |
+| Admin dashboard | `/dashboard/*` | `(dashboard)` route group · `src/dashboard` |
 
-## Shared packages
-
-| Package | Purpose |
-|---|---|
-| `packages/db` | one Neon connection — Drizzle (`ss_*`) + raw `sql` helper (`hh_*`) |
-| `packages/auth` | shared GitHub-OAuth session verification + admin check |
+There is **no Next `basePath`** — each zone lives under a literal route segment.
+Client navigation is prefixed via `@portal/components/Link`, `@portal/lib/nav`
+(redirect/usePathname shims), and `withBase()` from `@portal/lib/paths`.
 
 ## Develop
 
 ```bash
-npm install            # one root lockfile, hoisted workspaces
-npm run dev:site       # :3000 (host)
-npm run dev:portal     # :3001
-npm run dev:dashboard  # :3002
+npm install      # one root lockfile, hoisted workspaces
+npm run dev      # apps/web (Next dev server)
 ```
 
-Each app needs its own `apps/<app>/.env.local` (gitignored). See each app's `.env.example`.
+Local secrets live in `apps/web/.env.local` (gitignored).
 
-## History
+## Verify
 
-`apps/portal` and `apps/dashboard` were imported from their standalone repos
-(`burhankhatri/AIFoundationsSummerSchool`, `burhankhatri/HackerHouse`); full history
-remains in those remotes.
+```bash
+npm run typecheck   # tsc --noEmit (apps/web)
+npm run test        # vitest unit tests (apps/web/tests/unit)
+npm run test:e2e    # Playwright (apps/web)
+npm run build       # next build (apps/web)
+```
+
+## Deploy
+
+One Netlify site builds `apps/web` (`netlify.toml` → `base = "apps/web"`) and
+serves all three zones. Scheduled work runs as Netlify background functions in
+`apps/web/netlify/functions` (`apps/web/vercel.json` mirrors the same crons for
+Vercel portability). See `docs/DEPLOY.md`.

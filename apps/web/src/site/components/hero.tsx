@@ -11,14 +11,14 @@ export function Hero() {
         <div className="border-x border-t-0 px-4 py-3 flex justify-center">
           <Link
             href="/summer-school"
-            className="group inline-flex items-center gap-2 text-sm hover:text-[#4c24c6] transition-colors"
+            className="group inline-flex items-center gap-2 text-sm hover:text-primary/80 transition-colors"
           >
-            <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-[#5b2bee] animate-pulse" />
+            <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-muted-foreground">
               <span className="font-medium text-foreground">Applications open:</span>{" "}
               4-week Summer School — applications open
             </span>
-            <span className="text-[#5b2bee] group-hover:translate-x-0.5 transition-transform">
+            <span className="text-primary group-hover:translate-x-0.5 transition-transform">
               →
             </span>
           </Link>
@@ -31,15 +31,15 @@ export function Hero() {
         <div className="flex items-center justify-center gap-12 mt-8 py-6 border-x relative">
           <div className="flex flex-wrap gap-y-4 justify-center gap-x-16">
             <div className="flex items-center gap-2 justify-center">
-              <Brain aria-hidden="true" className="w-5 h-5 text-[#5b2bee]" />
+              <Brain aria-hidden="true" className="w-5 h-5 text-primary" />
               <span className="text-muted-foreground">Machine Learning</span>
             </div>
             <div className="flex items-center gap-2 justify-center">
-              <Code aria-hidden="true" className="w-5 h-5 text-[#5b2bee]" />
+              <Code aria-hidden="true" className="w-5 h-5 text-primary" />
               <span className="text-muted-foreground">AI Automation</span>
             </div>
             <div className="flex items-center gap-2 justify-center">
-              <CircuitBoard aria-hidden="true" className="w-5 h-5 text-[#5b2bee]" />
+              <CircuitBoard aria-hidden="true" className="w-5 h-5 text-primary" />
               <span className="text-muted-foreground">AI Engineering</span>
             </div>
           </div>
@@ -65,6 +65,8 @@ export function Hero() {
           <form
             action="https://aifoundations.tinysend.com/subscribe"
             method="post"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex flex-col sm:flex-row w-full max-w-lg gap-3 px-4"
           >
             <label htmlFor="hero-email" className="sr-only">
@@ -88,7 +90,7 @@ export function Hero() {
             <Button
               type="submit"
               size="lg"
-              className="whitespace-nowrap h-auto bg-[#5b2bee] hover:bg-[#4c24c6] text-white px-6"
+              className="whitespace-nowrap h-auto bg-primary hover:bg-primary/90 text-white px-6"
             >
               Get updates!
             </Button>

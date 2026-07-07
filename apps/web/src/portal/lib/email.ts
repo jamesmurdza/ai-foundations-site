@@ -102,7 +102,7 @@ export async function sendEmail(args: SendArgs): Promise<SendResult> {
 /* ---- Templates ----------------------------------------------------------- */
 
 const BRAND = "#292929";
-const ACCENT = "#9333ea";
+const ACCENT = "#5b2bee";
 
 function shell(title: string, body: string, cta?: { href: string; label: string }) {
   return `
@@ -149,7 +149,7 @@ export const templates = {
       subject: `Reminder: ${assignmentTitle} is due ${when}`,
       html: shell(
         "A deadline is coming up ⏰",
-        `Heads up — <b>${assignmentTitle}</b> is due ${when}. Ship what you've got; momentum beats perfection.`,
+        `Heads up — <b>${assignmentTitle}</b> is due ${when}. Submit what you've got; done beats perfect.`,
         {
           href: `${env.baseUrl}${weekAssignmentHomePath(weekId)}`,
           label: "Open the assignment",
@@ -171,8 +171,8 @@ export const templates = {
     return {
       subject: `You just earned ${count} star${count === 1 ? "" : "s"} ⭐`,
       html: shell(
-        "Traction incoming ⭐",
-        `The cohort traded stars and your project picked up <b>${count}</b> new star${count === 1 ? "" : "s"} (and some new followers). This is what real momentum looks like.`,
+        "New stars ⭐",
+        `The cohort traded stars and your project picked up <b>${count}</b> new star${count === 1 ? "" : "s"} (and some new followers).`,
         { href: `${env.baseUrl}/stars`, label: "See the star board" },
       ),
     };
@@ -200,7 +200,7 @@ export const templates = {
     return {
       subject: title,
       html: shell(title, body, {
-        href: `${env.baseUrl}/home`,
+        href: `${env.baseUrl}/lessons`,
         label: "Open the portal",
       }),
     };

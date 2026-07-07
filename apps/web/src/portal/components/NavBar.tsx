@@ -8,16 +8,21 @@ import { TopNav } from "./TopNav";
 export async function NavBar() {
   const { user, profile } = await getSessionContext();
 
+  // Discover is one combined page — the map alongside the showcase timeline.
+  const discoverLink: NavLink = {
+    href: "/discover",
+    label: "Discover",
+  };
+
   // Signed-in participants get the three core pages. Logged-out marketing
   // visitors only see the public Discover page (showcase + directory + map).
   const links: NavLink[] = user
     ? [
-        { href: "/home", label: "Home" },
-        { href: "/submissions", label: "My Work" },
-        { href: "/discover", label: "Discover" },
+        { href: "/lessons", label: "Lessons" },
+        discoverLink,
         ...(user.isAdmin ? [{ href: "/admin", label: "Admin" }] : []),
       ]
-    : [{ href: "/discover", label: "Discover" }];
+    : [discoverLink];
   const profileHref = profile
     ? user?.githubLogin
       ? `/users/${user.githubLogin}`
@@ -27,11 +32,11 @@ export async function NavBar() {
 
   return (
     <header className="sticky top-0 z-40 bg-background/85 backdrop-blur border-b border-sea-fog">
-      <div className="container-page">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-16 gap-2">
             {/* Brand: logo mark + wordmark. */}
             <Link
-              href={user ? "/home" : "/"}
+              href={user ? "/lessons" : "/"}
               className="flex items-center gap-2 shrink-0"
             >
               <TreePalm size={22} className="text-primary shrink-0" aria-hidden />
@@ -42,17 +47,7 @@ export async function NavBar() {
 
             {/* Right cluster: primary navigation | account. */}
             <div className="flex items-center gap-4">
-              {user ? (
-                <TopNav links={links} />
-              ) : (
-                <div className="hidden md:flex items-center gap-1 text-muted-foreground font-medium text-[14px]">
-                  {links.map((l) => (
-                    <Link key={l.href} href={l.href} className="btn btn-ghost btn-sm">
-                      {l.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
+              <TopNav links={links} />
 
               {/* Divider separates nav from the account zone. */}
               <span className="hidden md:block h-5 w-px bg-sea-fog" aria-hidden />
@@ -65,7 +60,7 @@ export async function NavBar() {
                     profileHref={profileHref}
                   />
                 ) : (
-                  <Link href="/login" className="btn btn-primary btn-sm">
+                  <Link href="/" className="btn btn-primary btn-sm">
                     Sign in
                   </Link>
                 )}

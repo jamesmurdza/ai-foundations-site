@@ -23,6 +23,8 @@ export function CommentThread({
   currentUser,
   people = [],
   compact = false,
+  minimal = false,
+  actions = null,
   title = "Comments",
   placeholder = "Leave a comment… use @ to tag someone",
 }: {
@@ -33,6 +35,11 @@ export function CommentThread({
   currentUser?: Author | null;
   people?: MentionPerson[];
   compact?: boolean;
+  /** Instagram-style: tiny avatars, inline name + text, single-line input. */
+  minimal?: boolean;
+  /** Minimal only: a node (e.g. like/comment icons) rendered between the
+   *  comment list and the input field. */
+  actions?: React.ReactNode;
   /** Heading + input copy — e.g. profiles reuse this thread for "Compliments". */
   title?: string;
   placeholder?: string;
@@ -67,6 +74,79 @@ export function CommentThread({
     });
     clearDraft();
     await postComment(formData);
+  }
+
+  // Instagram-style: a tight list of "name text" lines with tiny avatars, and a
+  // single-line "Add a comment…" input pinned below. No heading, no big button.
+  if (minimal) {
+    return (
+      <div className="flex flex-col gap-4">
+        <ul className="space-y-4">
+          {optimistic.length === 0 && (
+            <li className="meta-light text-[13px]">
+              No comments yet. Be the first.
+            </li>
+          )}
+          {optimistic.map((c) => (
+            <li
+              key={c.id}
+              className={`flex gap-2.5 ${c.pending ? "opacity-60" : ""}`}
+            >
+              {c.author?.profileId ? (
+                <Link href={profileHref(c.author)} className="shrink-0">
+                  <Avatar src={c.author?.avatarUrl} name={c.author?.name} size={28} />
+                </Link>
+              ) : (
+                <span className="shrink-0">
+                  <Avatar src={c.author?.avatarUrl} name={c.author?.name} size={28} />
+                </span>
+              )}
+              <div className="min-w-0 flex-1 text-[13px] leading-snug">
+                <span className="break-words whitespace-pre-wrap">
+                  <span className="font-semibold">
+                    {c.author?.name ?? "Participant"}
+                  </span>{" "}
+                  <MentionText text={c.body} valid={mentionHandles} />
+                </span>
+                <div className="meta-light text-[11px] mt-0.5">
+                  {c.pending ? "sending…" : timeAgo(c.createdAt)}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        {actions && (
+          <div className="border-t border-border pt-3">{actions}</div>
+        )}
+
+        {canComment ? (
+          <form
+            action={submit}
+            className={`flex items-center gap-2 ${actions ? "" : "border-t border-border pt-3"}`}
+          >
+            <input type="hidden" name="targetType" value={targetType} />
+            <input type="hidden" name="targetId" value={targetId} />
+            <MentionInput
+              name="body"
+              required
+              placeholder="Add a comment…"
+              className="input flex-1 text-[13px]"
+              value={draft}
+              onChange={setDraft}
+              people={people}
+            />
+            <SubmitButton className="btn btn-ghost btn-sm text-signal-blue">
+              Post
+            </SubmitButton>
+          </form>
+        ) : (
+          <p className={`meta text-[13px] ${actions ? "" : "border-t border-border pt-3"}`}>
+            <Link href="/login" className="link">Sign in</Link> to comment.
+          </p>
+        )}
+      </div>
+    );
   }
 
   const content = (

@@ -1,7 +1,7 @@
 import Link from "@portal/components/Link";
 import { type ReactNode } from "react";
 import { notFound } from "@portal/lib/nav";
-import { ClipboardList, MessageSquare, HelpCircle } from "lucide-react";
+import { ClipboardList } from "lucide-react";
 import { requireOnboardedUser } from "@portal/lib/auth";
 import {
   getAssignment,
@@ -11,8 +11,8 @@ import {
   listComments,
   listMentionablePeople,
   getWeekStepCompletions,
+  getCachedGitwitReview,
 } from "@portal/lib/queries";
-import { listQuestions, listUpvotedQuestionIds } from "@portal/lib/stream";
 import { GitHubProfileSteps } from "@portal/components/GitHubProfileSteps";
 import { buildGitHubProfileBriefDone } from "@portal/lib/githubProfileChecklist";
 import { RepoShowcaseSteps } from "@portal/components/RepoShowcaseSteps";
@@ -31,10 +31,15 @@ import { SubmissionPanel } from "@portal/components/SubmissionPanel";
 import { BlobFileInput } from "@portal/components/BlobFileInput";
 import { AttachmentList } from "@portal/components/AttachmentList";
 import { CommentThread } from "@portal/components/CommentThread";
-import { Popover } from "@portal/components/Popover";
-import { QaPanel } from "@portal/components/QaPanel";
+import {
+  FlowWithComments,
+  CommentsToggleButton,
+} from "@portal/components/FlowWithComments";
 import { SubmittedCongrats } from "@portal/components/SubmittedCongrats";
 import { GitWitReview } from "@portal/components/GitWitReview";
+import { loadReadmeForEdit } from "@portal/lib/actions/github-readme";
+import { toReviewResult, type CriterionVerdict } from "@portal/lib/gitwitTypes";
+import { withBase } from "@portal/lib/paths";
 
 const TYPE_LABEL: Record<string, string> = {
   link: "Paste a link (e.g. your GitHub profile)",
@@ -65,8 +70,11 @@ function focusedUrlForm(opts: {
   urlLabel: string;
   urlPlaceholder: string;
   emptyError: string;
-  tradeStars?: { enabled: boolean };
+  /** Whether the URL field blocks submit when empty. Defaults to required. */
+  requiredUrl?: boolean;
+  tradeStars?: { checked: boolean };
 }): ReactNode {
+  const requiredUrl = opts.requiredUrl ?? true;
   return (
     <>
       <input type="hidden" name="assignmentId" value={opts.assignmentId} />
@@ -90,32 +98,38 @@ function focusedUrlForm(opts: {
           className="input"
           name="payload"
           type="url"
-          required
+          required={requiredUrl}
           placeholder={opts.urlPlaceholder}
           defaultValue={opts.existingUrl ?? ""}
         />
       </div>
-      {opts.tradeStars && (
-        <div className="rounded-2xl bg-ice-tint p-3 text-[13px]">
-          {opts.tradeStars.enabled ? (
-            <span className="meta">
-              <span className="font-semibold text-foreground">
-                Trade stars is ON ⭐
-              </span>{" "}
-              — the cohort will star this repo.{" "}
-              <Link href="/profile/edit" className="link">
-                Manage
-              </Link>
-            </span>
-          ) : (
-            <span className="meta">
-              Want the cohort to star your repo? You can turn on Trade Stars
-              right after you submit.
-            </span>
-          )}
-        </div>
-      )}
+      {opts.tradeStars && <TradeStarsCheckbox defaultChecked={opts.tradeStars.checked} />}
     </>
+  );
+}
+
+/**
+ * The single "trade stars" control in a submission form: a checkbox, on by
+ * default for new submissions and pre-set to whatever the builder chose last
+ * time when editing. Submitting the form saves the choice as their preference.
+ * The hidden companion field lets the server tell an unchecked box (off) apart
+ * from a form that has no control at all.
+ */
+function TradeStarsCheckbox({ defaultChecked }: { defaultChecked: boolean }) {
+  return (
+    <label className="flex items-start gap-2.5 cursor-pointer text-[14px] rounded-2xl bg-ice-tint p-3">
+      <input type="hidden" name="tradeStarsPresent" value="1" />
+      <input
+        type="checkbox"
+        name="tradeStars"
+        defaultChecked={defaultChecked}
+        className="mt-0.5 h-4 w-4 shrink-0 accent-primary cursor-pointer"
+      />
+      <span className="meta">
+        Trade stars with the cohort ⭐ — everyone who opts in stars each
+        other&apos;s repos, including yours.
+      </span>
+    </label>
   );
 }
 
@@ -125,11 +139,15 @@ export async function AssignmentWorkSection({
   error,
   submitted,
   edit,
+  step,
 }: {
   assignmentId: string;
   error?: string;
   submitted?: boolean;
   edit?: boolean;
+  /** Which Week 1 flow page to open on — used to restore position after saving
+   *  the README (a full navigation resets the wizard's client state otherwise). */
+  step?: number;
 }) {
   const { user, profile } = await requireOnboardedUser();
   const assignment = await getAssignment(assignmentId);
@@ -141,8 +159,6 @@ export async function AssignmentWorkSection({
     assignmentFiles,
     resources,
     stepCompletions,
-    questions,
-    upvotedIds,
     people,
   ] = await Promise.all([
     getWeek(assignment.weekId),
@@ -150,8 +166,6 @@ export async function AssignmentWorkSection({
     getAttachmentsFor("assignment", assignment.id),
     listResourcesForWeek(assignment.weekId),
     getWeekStepCompletions(user.id, assignment.weekId),
-    listQuestions(assignment.weekId),
-    listUpvotedQuestionIds(assignment.weekId, user.id),
     listMentionablePeople(),
   ]);
   const isGitHubProfileWeek = week?.number === 1;
@@ -178,6 +192,59 @@ export async function AssignmentWorkSection({
     ? buildPortfolioBriefDone(stepCompletions)
     : {};
   const comments = existing ? await listComments("submission", existing.id) : [];
+  const weekLabel = week ? `Week ${week.number}: ${week.theme}` : undefined;
+
+  // Week 1 extras: the embedded README editor + the automatic GitWit review.
+  const githubConnected = Boolean(
+    user.githubId &&
+      !String(user.githubId).startsWith("dev:") &&
+      user.githubLogin &&
+      user.accessToken,
+  );
+  const profileUrl = user.githubLogin
+    ? `https://github.com/${user.githubLogin}`
+    : "";
+  const [readme, cachedReview] = isGitHubProfileWeek
+    ? await Promise.all([
+        githubConnected
+          ? loadReadmeForEdit(user.githubLogin!, user.accessToken!)
+          : Promise.resolve(null),
+        getCachedGitwitReview(user.id),
+      ])
+    : [null, null];
+  const gitwitInitial = cachedReview
+    ? toReviewResult(
+        cachedReview.login,
+        cachedReview.verdicts as CriterionVerdict[],
+        cachedReview.updatedAt.toISOString(),
+      )
+    : null;
+  // Saving the README doubles as "continue" — it advances to the feedback page.
+  // The editor itself is rendered inside the (client) flow so Back is instant
+  // client nav; here we only supply its data + a connect-GitHub fallback.
+  const readmeReturnTo = `/lessons/${assignment.weekId}?step=4${
+    edit ? "&edit=1" : ""
+  }`;
+  const readmeEditorProps =
+    githubConnected && readme
+      ? {
+          login: user.githubLogin!,
+          initialMarkdown: readme.markdown,
+          hasExisting: readme.hasExisting,
+          returnTo: readmeReturnTo,
+        }
+      : null;
+  const readmeFallback = (
+    <div className="rounded-[12px] border border-sea-fog p-4">
+      <p className="meta text-[14px]">
+        Connect your GitHub account to write and sync your profile README here.
+      </p>
+      <a href={withBase("/api/auth/github")} className="btn btn-dark mt-3">
+        Connect GitHub
+      </a>
+    </div>
+  );
+
   const currentUser: Author = {
     userId: user.id,
     name: profile.displayName ?? user.name ?? "You",
@@ -197,49 +264,36 @@ export async function AssignmentWorkSection({
   const usesTextarea = isText || isAny;
   const showAssignmentSummary = !isWizardWeek;
 
-  // Comments (on your submission) and the week's Q&A live in header popovers.
-  const actions = (
-    <>
-      {existing && (
-        <Popover
-          icon={<MessageSquare size={19} aria-hidden />}
-          label="Comments"
-          count={comments.length}
-          width={380}
-        >
-          <CommentThread
-            targetType="submission"
-            targetId={existing.id}
-            comments={comments}
-            canComment
-            currentUser={currentUser}
-            people={people}
-            compact
-          />
-        </Popover>
-      )}
-      <Popover
-        icon={<HelpCircle size={19} aria-hidden />}
-        label="Questions"
-        count={questions.length}
-        width={380}
-      >
-        <QaPanel
-          weekId={assignment.weekId}
-          initial={questions}
-          isAdmin={user.isAdmin}
-          people={people}
-          upvotedIds={upvotedIds}
-        />
-      </Popover>
-    </>
-  );
+  // Comments on your submission open in a panel to the right of the flow,
+  // toggled by the comment icon in the flow header (post-style). Nothing to show
+  // until there's a submission.
+  const commentsToggle = existing ? (
+    <CommentsToggleButton count={comments.length} />
+  ) : undefined;
+  const commentsPanel = existing ? (
+    <div>
+      <h3 className="font-semibold text-[15px] mb-3">Comments</h3>
+      <CommentThread
+        targetType="submission"
+        targetId={existing.id}
+        comments={comments}
+        canComment
+        currentUser={currentUser}
+        people={people}
+        minimal
+      />
+    </div>
+  ) : undefined;
 
   const formFields = (
     <>
       <input type="hidden" name="assignmentId" value={assignment.id} />
       {isGitHubProfileWeek && (
-        <input type="hidden" name="title" value="GitHub profile" />
+        <>
+          {/* Login is already known — no URL to paste. */}
+          <input type="hidden" name="title" value="GitHub profile" />
+          <input type="hidden" name="payload" value={profileUrl} />
+        </>
       )}
       {!isGitHubProfileWeek && (
         <h3 className="font-bold text-[15px]">
@@ -247,11 +301,9 @@ export async function AssignmentWorkSection({
         </h3>
       )}
 
-      {error === "empty" && (
+      {error === "empty" && !isGitHubProfileWeek && (
         <div className="rounded-[11px] bg-primary-soft text-primary-strong text-[14px] px-4 py-3">
-          {isGitHubProfileWeek
-            ? "Paste your GitHub profile link before submitting."
-            : isAny
+          {isAny
             ? "Add a link, write something, or upload a file before submitting."
             : "Add a link or upload a file before submitting."}
         </div>
@@ -269,47 +321,43 @@ export async function AssignmentWorkSection({
         </div>
       )}
 
-      <div>
-        <label className="label">
-          {isGitHubProfileWeek
-            ? "Paste your GitHub profile link"
-            : TYPE_LABEL[assignment.submissionType] ?? "Your submission"}
-          {isAny && (
-            <span className="meta font-normal"> (optional if uploading a file)</span>
+      {!isGitHubProfileWeek && (
+        <div>
+          <label className="label">
+            {TYPE_LABEL[assignment.submissionType] ?? "Your submission"}
+            {isAny && (
+              <span className="meta font-normal"> (optional if uploading a file)</span>
+            )}
+          </label>
+          {usesTextarea ? (
+            <textarea
+              className="textarea"
+              name="payload"
+              rows={5}
+              required={isText}
+              placeholder={
+                isAny
+                  ? "https://github.com/you/project — or describe what you shipped"
+                  : undefined
+              }
+              defaultValue={existing?.payload ?? ""}
+            />
+          ) : (
+            <input
+              className="input"
+              name="payload"
+              type="url"
+              required={!isFile}
+              placeholder="https://…"
+              defaultValue={
+                existing && !existing.payload.startsWith("/api/files/")
+                  ? existing.payload
+                  : ""
+              }
+            />
           )}
-        </label>
-        {usesTextarea ? (
-          <textarea
-            className="textarea"
-            name="payload"
-            rows={5}
-            required={isText}
-            placeholder={
-              isAny
-                ? "https://github.com/you/project — or describe what you shipped"
-                : undefined
-            }
-            defaultValue={existing?.payload ?? ""}
-          />
-        ) : (
-          <input
-            className="input"
-            name="payload"
-            type="url"
-            required={!isFile}
-            placeholder={
-              isGitHubProfileWeek
-                ? "https://github.com/yourname"
-                : "https://…"
-            }
-            defaultValue={
-              existing && !existing.payload.startsWith("/api/files/")
-                ? existing.payload
-                : ""
-            }
-          />
-        )}
-      </div>
+        </div>
+      )}
 
       {!isGitHubProfileWeek && (
         <BlobFileInput
@@ -343,27 +391,9 @@ export async function AssignmentWorkSection({
       )}
 
       {!isGitHubProfileWeek && canTrade && (
-        <div className="rounded-2xl bg-ice-tint p-3 text-[13px]">
-          {profile.tradeStarsEnabled ? (
-            <span className="meta">
-              <span className="font-semibold text-foreground">
-                Trade stars is ON ⭐
-              </span>{" "}
-              — the cohort will auto-star this repo.{" "}
-              <Link href="/profile/edit" className="link">
-                Manage
-              </Link>
-            </span>
-          ) : (
-            <span className="meta">
-              Want the cohort to auto-star your repo?{" "}
-              <Link href="/profile/edit" className="link">
-                Turn on Trade Stars
-              </Link>{" "}
-              on your profile.
-            </span>
-          )}
-        </div>
+        <TradeStarsCheckbox
+          defaultChecked={existing ? existing.tradeStars : true}
+        />
       )}
 
     </>
@@ -384,7 +414,7 @@ export async function AssignmentWorkSection({
     urlLabel: "Paste the GitHub repo you want to showcase",
     urlPlaceholder: "https://github.com/you/project",
     emptyError: "Paste the GitHub repo you want to showcase before submitting.",
-    tradeStars: { enabled: profile.tradeStarsEnabled },
+    tradeStars: { checked: existing ? existing.tradeStars : true },
   });
   const prFormFields = focusedUrlForm({
     assignmentId: assignment.id,
@@ -396,6 +426,9 @@ export async function AssignmentWorkSection({
     urlLabel: "Paste the link to your pull request",
     urlPlaceholder: "https://github.com/owner/repo/pull/123",
     emptyError: "Paste your pull request link before submitting.",
+    // The contribution flow presents the form like a required step, but the
+    // second contribution is optional — so the field doesn't block submit.
+    requiredUrl: false,
   });
   const portfolioFormFields = focusedUrlForm({
     assignmentId: assignment.id,
@@ -426,10 +459,10 @@ export async function AssignmentWorkSection({
     return (
       <section id="assignment" className="mt-2 scroll-mt-24">
         <SubmittedCongrats
+          weekLabel={weekLabel}
           showcaseHref="/discover?tab=showcase"
-          editHref={`/home?week=${assignment.weekId}&edit=1`}
+          editHref={`/lessons/${assignment.weekId}?edit=1`}
         />
-        <GitWitReview assignmentId={assignment.id} />
       </section>
     );
   }
@@ -440,8 +473,9 @@ export async function AssignmentWorkSection({
     return (
       <section id="assignment" className="mt-2 scroll-mt-24">
         <SubmittedCongrats
+          weekLabel={weekLabel}
           showcaseHref="/discover?tab=showcase"
-          editHref={`/home?week=${assignment.weekId}&edit=1`}
+          editHref={`/lessons/${assignment.weekId}?edit=1`}
           title="Your project's in the showcase!"
           message="Nice work — your repo's up. This week, support the cohort too:"
         />
@@ -467,8 +501,9 @@ export async function AssignmentWorkSection({
     return (
       <section id="assignment" className="mt-2 scroll-mt-24">
         <SubmittedCongrats
+          weekLabel={weekLabel}
           showcaseHref="/discover?tab=showcase"
-          editHref={`/home?week=${assignment.weekId}&edit=1`}
+          editHref={`/lessons/${assignment.weekId}?edit=1`}
           title="Pull request shipped!"
           message="Nice — your PR's in. Close the loop with the cohort:"
         />
@@ -490,8 +525,9 @@ export async function AssignmentWorkSection({
     return (
       <section id="assignment" className="mt-2 scroll-mt-24">
         <SubmittedCongrats
+          weekLabel={weekLabel}
           showcaseHref="/discover?tab=showcase"
-          editHref={`/home?week=${assignment.weekId}&edit=1`}
+          editHref={`/lessons/${assignment.weekId}?edit=1`}
           title="Portfolio submitted — that's the program!"
           message="Beautiful work. One last thing to send the cohort off:"
         />
@@ -514,44 +550,56 @@ export async function AssignmentWorkSection({
         </div>
       )}
 
-      {isGitHubProfileWeek && (
-        <GitHubProfileSteps
-          weekId={assignment.weekId}
-          done={profileBriefDone}
-          actions={actions}
-          formFields={formFields}
-          submitAction={createSubmission}
-        />
-      )}
+      {isWizardWeek && (
+        <FlowWithComments comments={commentsPanel}>
+          {isGitHubProfileWeek && (
+            <GitHubProfileSteps
+              weekId={assignment.weekId}
+              weekLabel={weekLabel}
+              done={profileBriefDone}
+              actions={commentsToggle}
+              formFields={formFields}
+              review={<GitWitReview initial={gitwitInitial} />}
+              readmeEditorProps={readmeEditorProps}
+              readmeFallback={readmeFallback}
+              submitAction={createSubmission}
+              initialStep={step ?? 1}
+            />
+          )}
 
-      {isRepoShowcaseWeek && (
-        <RepoShowcaseSteps
-          weekId={assignment.weekId}
-          done={repoBriefDone}
-          actions={actions}
-          formFields={repoFormFields}
-          submitAction={createSubmission}
-        />
-      )}
+          {isRepoShowcaseWeek && (
+            <RepoShowcaseSteps
+              weekId={assignment.weekId}
+              weekLabel={weekLabel}
+              done={repoBriefDone}
+              actions={commentsToggle}
+              formFields={repoFormFields}
+              submitAction={createSubmission}
+            />
+          )}
 
-      {isContributionWeek && (
-        <ContributionSteps
-          weekId={assignment.weekId}
-          done={contributionBriefDone}
-          actions={actions}
-          formFields={prFormFields}
-          submitAction={createSubmission}
-        />
-      )}
+          {isContributionWeek && (
+            <ContributionSteps
+              weekId={assignment.weekId}
+              weekLabel={weekLabel}
+              done={contributionBriefDone}
+              actions={commentsToggle}
+              formFields={prFormFields}
+              submitAction={createSubmission}
+            />
+          )}
 
-      {isPortfolioWeek && (
-        <PortfolioSteps
-          weekId={assignment.weekId}
-          done={portfolioBriefDone}
-          actions={actions}
-          formFields={portfolioFormFields}
-          submitAction={createSubmission}
-        />
+          {isPortfolioWeek && (
+            <PortfolioSteps
+              weekId={assignment.weekId}
+              weekLabel={weekLabel}
+              done={portfolioBriefDone}
+              actions={commentsToggle}
+              formFields={portfolioFormFields}
+              submitAction={createSubmission}
+            />
+          )}
+        </FlowWithComments>
       )}
 
       {showAssignmentSummary && (
@@ -587,7 +635,6 @@ export async function AssignmentWorkSection({
             {assignment.deadline && (
               <Countdown deadline={new Date(assignment.deadline).toISOString()} />
             )}
-            <div className="flex items-center gap-1 shrink-0">{actions}</div>
           </div>
 
           <div className="hairline my-5" />

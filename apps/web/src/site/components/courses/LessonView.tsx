@@ -289,12 +289,8 @@ export function LessonView({
               <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-0.5" />
               <span className="text-sm font-medium sm:hidden">Back</span>
               <span className="hidden min-w-0 sm:block">
-                <span className="block text-xs text-muted-foreground">
-                  Previous
-                </span>
-                <span className="block truncate text-sm font-medium">
-                  {prevLesson.title}
-                </span>
+                <span className="block text-xs text-muted-foreground">Previous</span>
+                <span className="block truncate text-sm font-medium">{prevLesson.title}</span>
               </span>
             </Link>
           ) : (
@@ -308,12 +304,8 @@ export function LessonView({
             >
               <span className="text-sm font-medium sm:hidden">Next</span>
               <span className="hidden min-w-0 sm:block">
-                <span className="block text-xs text-muted-foreground">
-                  Next
-                </span>
-                <span className="block truncate text-sm font-medium">
-                  {nextLesson.title}
-                </span>
+                <span className="block text-xs text-muted-foreground">Next</span>
+                <span className="block truncate text-sm font-medium">{nextLesson.title}</span>
               </span>
               <ChevronRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
             </Link>

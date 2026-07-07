@@ -1,12 +1,11 @@
 import { redirect } from "@portal/lib/nav";
 
-/** Legacy route — home page lives at /home. */
+/** Legacy route — the lessons hub lives at /lessons. */
 export default async function CheckInRedirect({
   searchParams,
 }: {
   searchParams: Promise<{ week?: string }>;
 }) {
   const sp = await searchParams;
-  const q = sp.week ? `?week=${sp.week}` : "";
-  redirect(`/home${q}`);
+  redirect(sp.week ? `/lessons/${sp.week}` : "/lessons");
 }

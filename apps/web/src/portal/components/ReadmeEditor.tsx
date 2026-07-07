@@ -1,47 +1,78 @@
 "use client";
 
 import "github-markdown-css/github-markdown-light.css";
-import { useState, useTransition } from "react";
+import { useRef, useState } from "react";
 import {
   previewReadmeMarkdown,
   updateGithubReadme,
 } from "@portal/lib/actions/github-readme";
 import { SubmitButton } from "@portal/components/SubmitButton";
 
+/**
+ * Edits the user's GitHub profile README ({login}/{login}) with GitHub-style
+ * Write / Preview tabs. The preview is rendered through GitHub's own /markdown
+ * API (the same engine + sanitiser the profile README uses), so raw HTML,
+ * badges, tables and alignment all render exactly as they will on the profile.
+ * Saving writes straight to GitHub.
+ */
 export function ReadmeEditor({
   login,
   initialMarkdown,
   hasExisting,
+  returnTo,
+  saveLabel = "Save to GitHub",
+  secondaryAction,
 }: {
   login: string;
   initialMarkdown: string;
   hasExisting: boolean;
+  /**
+   * Where saving redirects back to. Defaults to the Settings README page; the
+   * Week 1 flow passes its own path so saving stays on /home instead of bouncing
+   * the user into settings.
+   */
+  returnTo?: string;
+  /** Save button label — e.g. the Week 1 flow uses "Save & continue →". */
+  saveLabel?: string;
+  /** Optional control on the left of the footer row (e.g. a flow's Back button),
+   *  so it lines up on the same line as the save button. */
+  secondaryAction?: React.ReactNode;
 }) {
   const [markdown, setMarkdown] = useState(initialMarkdown);
+  const [mode, setMode] = useState<"write" | "preview">("write");
   const [previewHtml, setPreviewHtml] = useState<string | null>(null);
-  const [mode, setMode] = useState<"edit" | "preview">("edit");
-  const [previewPending, startPreview] = useTransition();
+  const [pending, setPending] = useState(false);
+  // Markdown the current preview was rendered from — skip re-fetching if unchanged.
+  const renderedFor = useRef<string | null>(null);
+  const reqId = useRef(0);
 
-  function showPreview() {
-    startPreview(async () => {
-      const html = await previewReadmeMarkdown(markdown);
+  async function showPreview() {
+    setMode("preview");
+    if (renderedFor.current === markdown) return;
+    if (!markdown.trim()) {
+      setPreviewHtml(null);
+      renderedFor.current = markdown;
+      return;
+    }
+    setPending(true);
+    const id = ++reqId.current;
+    const html = await previewReadmeMarkdown(markdown);
+    if (id === reqId.current) {
       setPreviewHtml(html);
-      setMode("preview");
-    });
+      renderedFor.current = markdown;
+      setPending(false);
+    }
   }
 
-  return (
-    <div id="readme" className="rounded-2xl border border-sea-fog p-4 space-y-4 scroll-mt-24">
-      <div>
-        <div className="label mb-1">GitHub profile README</div>
-        <p className="meta text-[14px]">
-          This is the README at the top of your GitHub profile. It&apos;s what
-          people see on{" "}
-          <span className="font-mono text-[13px]">/users/{login}</span> here
-          too.
-        </p>
-      </div>
+  const tab = (active: boolean) =>
+    `px-4 py-2.5 text-[14px] font-semibold border-b-2 -mb-px cursor-pointer transition-colors ${
+      active
+        ? "border-signal-blue text-signal-blue"
+        : "border-transparent text-slate-channel hover:text-midnight-harbor"
+    }`;
 
+  return (
+    <div id="readme" className="scroll-mt-24 space-y-4">
       {!hasExisting && !markdown.trim() && (
         <p className="meta text-[14px]">
           No README yet — write one here and we&apos;ll create your{" "}
@@ -52,58 +83,68 @@ export function ReadmeEditor({
         </p>
       )}
 
-      <div className="flex flex-wrap gap-2">
-        <button
-          type="button"
-          onClick={() => setMode("edit")}
-          className={`pill ${mode === "edit" ? "bg-signal-blue text-white" : "bg-ice-tint text-slate-channel"}`}
-        >
-          Edit
+      <div className="flex items-center gap-1 border-b border-sea-fog">
+        <button type="button" onClick={() => setMode("write")} className={tab(mode === "write")}>
+          Write
         </button>
-        <button
-          type="button"
-          onClick={showPreview}
-          disabled={previewPending}
-          className={`pill ${mode === "preview" ? "bg-signal-blue text-white" : "bg-ice-tint text-slate-channel"}`}
-        >
-          {previewPending ? "Rendering…" : "Preview"}
+        <button type="button" onClick={showPreview} className={tab(mode === "preview")}>
+          {mode === "preview" && pending ? "Rendering…" : "Preview"}
         </button>
         <a
           href={`https://github.com/${login}/${login}`}
           target="_blank"
           rel="noreferrer"
-          className="pill bg-ice-tint text-slate-channel ml-auto"
+          className="link text-[13px] ml-auto mr-1"
         >
           View on GitHub →
         </a>
       </div>
 
       <form action={updateGithubReadme} className="space-y-4">
-        {mode === "edit" ? (
+        {mode === "write" ? (
           <textarea
-            className="textarea font-mono text-[13px] min-h-[320px]"
-            rows={16}
+            className="textarea font-mono text-[13px] min-h-[420px]"
             value={markdown}
             onChange={(e) => setMarkdown(e.target.value)}
             placeholder={`# Hi, I'm ${login}\n\nTell the cohort who you are and what you're building…`}
           />
-        ) : previewHtml ? (
-          <div
-            className="markdown-body rounded-cards border border-sea-fog p-4 bg-canvas-white overflow-auto max-h-[480px]"
-            dangerouslySetInnerHTML={{ __html: previewHtml }}
-          />
         ) : (
-          <p className="meta">Could not render preview. Try again or save to GitHub.</p>
+          <div className="min-h-[420px] max-h-[640px] overflow-auto rounded-cards border border-sea-fog bg-canvas-white p-5">
+            {pending ? (
+              <p className="meta">Rendering preview…</p>
+            ) : previewHtml ? (
+              // Bound the rendered README to a centered content column like
+              // GitHub's own `.markdown-body.container-lg`, so wide / unsized
+              // images (badges, banners, SVGs, width="80%") don't stretch the
+              // full column. The centering (mx-auto) lives on this wrapper, NOT
+              // on `.markdown-body` — github-markdown-css sets
+              // `.markdown-body { margin: 0 }`, which (same specificity, loaded
+              // later) would otherwise cancel mx-auto and pin the column left.
+              <div className="mx-auto max-w-[700px]">
+                <div
+                  className="markdown-body"
+                  dangerouslySetInnerHTML={{ __html: previewHtml }}
+                />
+              </div>
+            ) : (
+              <p className="meta">Nothing to preview yet.</p>
+            )}
+          </div>
         )}
 
         <input type="hidden" name="markdown" value={markdown} />
+        {returnTo && (
+          <input type="hidden" name="redirectTo" value={returnTo} />
+        )}
 
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <p className="meta-light text-[13px]">
-            Saves directly to GitHub — your profile page updates within a minute.
-          </p>
+        <div
+          className={`flex items-center gap-3 flex-wrap ${
+            secondaryAction ? "justify-between" : "justify-end"
+          }`}
+        >
+          {secondaryAction}
           <SubmitButton className="btn btn-primary" pendingText="Saving…">
-            Save to GitHub
+            {saveLabel}
           </SubmitButton>
         </div>
       </form>

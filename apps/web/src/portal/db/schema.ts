@@ -97,36 +97,10 @@ export const profiles = pgTable(
 
 /* ---------------------------------------------------------------------------
    Program spine
+   NOTE: weeks & assignments are NOT stored in the DB — the curriculum is
+   hardcoded in code (src/portal/lib/curriculum.ts). Other tables below still
+   store `weekId` / `assignmentId` as plain text pointing at those stable ids.
 --------------------------------------------------------------------------- */
-export const weeks = pgTable(
-  "ss_weeks",
-  {
-    id: id(),
-    number: integer("number").notNull(),
-    theme: text("theme").notNull(),
-    description: text("description"),
-    streamUrl: text("stream_url"),
-    recordingUrl: text("recording_url"),
-    isLive: boolean("is_live").default(false).notNull(),
-    isPublished: boolean("is_published").default(true).notNull(),
-    startsAt: timestamp("starts_at", { withTimezone: true }),
-    createdAt,
-  },
-  (t) => [uniqueIndex("ss_weeks_number_idx").on(t.number)],
-);
-
-export const assignments = pgTable("ss_assignments", {
-  id: id(),
-  weekId: text("week_id").notNull(),
-  title: text("title").notNull(),
-  prompt: text("prompt").notNull(),
-  submissionType: text("submission_type").notNull(), // link | repo | file | text | any
-  deadline: timestamp("deadline", { withTimezone: true }),
-  recurring: boolean("recurring").default(false).notNull(),
-  reviewCount: integer("review_count").default(3).notNull(),
-  createdBy: text("created_by"),
-  createdAt,
-});
 
 export const submissions = pgTable(
   "ss_submissions",
@@ -275,6 +249,27 @@ export const follows = pgTable(
     uniqueIndex("ss_follows_from_to_idx").on(t.fromUserId, t.toUserId),
     index("ss_follows_to_idx").on(t.toUserId),
   ],
+);
+
+/**
+ * Cached GitWit AI reviews — one row per user (their own profile). Lets the
+ * Week 1 feedback step show instantly and skip re-running Haiku on every visit;
+ * the "Refresh" button overwrites this row. `verdicts` is the raw per-criterion
+ * array (jsonb), re-partitioned into good/missing on read.
+ */
+export const gitwitReviews = pgTable(
+  "ss_gitwit_reviews",
+  {
+    id: id(),
+    userId: text("user_id").notNull(),
+    login: text("login").notNull(),
+    verdicts: jsonb("verdicts").notNull(),
+    createdAt,
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .defaultNow()
+      .notNull(),
+  },
+  (t) => [uniqueIndex("ss_gitwit_reviews_user_idx").on(t.userId)],
 );
 
 export const githubSnapshots = pgTable("ss_github_snapshots", {
@@ -535,10 +530,11 @@ export type FileRow = typeof files.$inferSelect;
 export type Attachment = typeof attachments.$inferSelect;
 export type Announcement = typeof announcements.$inferSelect;
 export type Profile = typeof profiles.$inferSelect;
-export type Week = typeof weeks.$inferSelect;
-export type Assignment = typeof assignments.$inferSelect;
+// Week & Assignment types now live with the hardcoded curriculum.
+export type { Week, Assignment } from "@portal/lib/curriculum";
 export type Submission = typeof submissions.$inferSelect;
 export type Feedback = typeof feedback.$inferSelect;
 export type Comment = typeof comments.$inferSelect;
 export type Event = typeof events.$inferSelect;
 export type Follow = typeof follows.$inferSelect;
+export type GitwitReviewRow = typeof gitwitReviews.$inferSelect;

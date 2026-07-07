@@ -5,7 +5,12 @@ import Link from "@portal/components/Link";
 import { Menu, X } from "lucide-react";
 import { withBase } from "@portal/lib/paths";
 
-export type NavLink = { href: string; label: string };
+export type NavSubLink = { href: string; label: string };
+export type NavLink = {
+  href: string;
+  label: string;
+  submenu?: NavSubLink[];
+};
 
 export function MobileMenu({
   links,
@@ -49,20 +54,31 @@ export function MobileMenu({
         >
           <nav className="container-page flex flex-col gap-1 py-4">
             {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={close}
-                className="btn btn-ghost justify-start !text-[17px] !py-3"
-              >
-                {l.label}
-              </Link>
+              <div key={l.href}>
+                <Link
+                  href={l.href}
+                  onClick={close}
+                  className="btn btn-ghost justify-start !text-[17px] !py-3 w-full"
+                >
+                  {l.label}
+                </Link>
+                {l.submenu?.map((s) => (
+                  <Link
+                    key={s.href}
+                    href={s.href}
+                    onClick={close}
+                    className="btn btn-ghost justify-start !text-[15px] !py-2.5 w-full pl-8 text-slate-channel"
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
             ))}
             <div className="hairline my-3" />
             {isAuthed ? (
               <>
-                <Link href="/home" onClick={close} className="btn btn-primary !py-3">
-                  Home
+                <Link href="/lessons" onClick={close} className="btn btn-primary !py-3">
+                  Lessons
                 </Link>
                 {profileHref && (
                   <Link href={profileHref} onClick={close} className="btn btn-outline !py-3 mt-2">
@@ -76,7 +92,7 @@ export function MobileMenu({
                 </form>
               </>
             ) : (
-              <Link href="/login" onClick={close} className="btn btn-primary !py-3">
+              <Link href="/" onClick={close} className="btn btn-primary !py-3">
                 Sign in
               </Link>
             )}

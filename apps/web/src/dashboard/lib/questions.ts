@@ -22,6 +22,7 @@ export const STATIC_QUESTIONS: StaticQuestion[] = [
     prompt: "What are you up to?",
     conditionalOn: { questionId: "q2", answer: "Other" },
   },
+  { id: "goals", prompt: "What do you want to build or learn?" },
   { id: "q3", prompt: "What kind of projects do you like to build?" },
   { id: "q4", prompt: "When you're building, are you more…" },
   { id: "q5", prompt: "What motivates you most in your work?" },

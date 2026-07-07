@@ -30,7 +30,7 @@ export const FALLBACK_ACTION: WeekAction = {
   icon: Sparkles,
   title: "Make this week count",
   blurb:
-    "Jump into this week's assignment, ship something, and support the cohort.",
+    "Jump into this week's assignment, build something, and support the cohort.",
   cta: { label: "Discover the cohort", href: "/discover" },
 };
 

@@ -44,7 +44,7 @@ export function LikeButton({
   }
 
   const heart = (
-    <Heart size={20} className={state.liked ? "fill-[#f43f5e] text-[#f43f5e]" : ""} />
+    <Heart size={18} className={state.liked ? "fill-[#f43f5e] text-[#f43f5e]" : ""} />
   );
 
   // Static when you can't star (signed out / no GitHub / your own post).

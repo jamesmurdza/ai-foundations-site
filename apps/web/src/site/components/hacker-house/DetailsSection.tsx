@@ -36,12 +36,20 @@ export function DetailsSection() {
       <div className="container">
         <div className="mx-2 md:mx-10 px-6 md:px-12">
           <div className="text-center mb-12">
-            <p className="hh-details text-sm uppercase tracking-[0.2em] text-purple-600 mb-3">
+            <p className="hh-details text-sm uppercase tracking-[0.2em] text-primary mb-3">
               When & Where
             </p>
             <h2 className="hh-details font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mx-auto">
               A living and learning community
             </h2>
+          </div>
+          <div className="hh-details mb-12 max-w-4xl mx-auto border bg-muted/40 px-6 py-5 text-center">
+            <p className="text-base">
+              <span className="font-medium">
+                Applications for the in-person program are now closed.
+              </span>{" "}
+              Applications for the online program are still open.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <figure className="hh-details relative aspect-[4/3] overflow-hidden">

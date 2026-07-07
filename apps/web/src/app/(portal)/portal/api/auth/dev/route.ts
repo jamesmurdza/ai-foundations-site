@@ -30,5 +30,5 @@ export async function POST(req: Request) {
     .where(eq(profiles.userId, user.id))
     .limit(1);
 
-  return NextResponse.redirect(appUrl(profile ? "/home" : "/onboarding"));
+  return NextResponse.redirect(appUrl(profile ? "/lessons" : "/onboarding"));
 }

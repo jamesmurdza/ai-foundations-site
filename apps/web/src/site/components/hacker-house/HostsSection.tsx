@@ -35,7 +35,7 @@ export function HostsSection() {
     <section ref={root} className="py-24 md:py-32 border-t bg-muted/20">
       <div className="container">
         <div className="mx-2 md:mx-10 px-6 md:px-12 text-center">
-          <p className="text-sm uppercase tracking-[0.2em] text-purple-600 mb-3">
+          <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">
             Guides
           </p>
           <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mb-16 mx-auto">

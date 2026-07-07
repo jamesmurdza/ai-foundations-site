@@ -3,16 +3,17 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Schibsted_Grotesk } from "next/font/google";
 
+import { NavProgress } from "@site/components/NavProgress";
 import { SmoothScroll } from "@site/components/SmoothScroll";
 import { cn } from "@site/lib/utils";
 
 const fontSans = Inter({
-  variable: "--font-sans",
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
 const fontHeading = Schibsted_Grotesk({
-  variable: "--font-heading",
+  variable: "--font-schibsted",
   subsets: ["latin"],
 });
 
@@ -35,6 +36,7 @@ export default function RootLayout({
           fontHeading.variable
         )}
       >
+        <NavProgress />
         <SmoothScroll />
         {children}
       </body>

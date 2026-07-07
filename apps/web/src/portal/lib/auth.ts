@@ -56,7 +56,7 @@ export async function requireAdmin(): Promise<User> {
   const user = await requireUser();
   // Live allowlist check so revoking access takes effect immediately.
   const ok = await isAllowlistedAdmin(user.email, user.githubLogin);
-  if (!ok) redirect("/home");
+  if (!ok) redirect("/lessons");
   return user;
 }
 

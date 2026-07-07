@@ -1,13 +1,18 @@
-/** Home path for a week's assignment section — the canonical assignment URL. */
+/**
+ * The canonical URL for a week's lesson (its own page under /lessons). `edit=1`
+ * reopens the editable flow from page 1 instead of the post-submit congrats
+ * screen the wizard weeks show once a submission exists.
+ */
 export function weekAssignmentHomePath(
   weekId: string,
-  opts?: { error?: string; submitted?: boolean },
+  opts?: { error?: string; submitted?: boolean; edit?: boolean },
 ): string {
   const params = new URLSearchParams();
-  params.set("week", weekId);
   if (opts?.error) params.set("error", opts.error);
   if (opts?.submitted) params.set("submitted", "1");
-  return `/home?${params.toString()}#assignment`;
+  if (opts?.edit) params.set("edit", "1");
+  const qs = params.toString();
+  return `/lessons/${weekId}${qs ? `?${qs}` : ""}`;
 }
 
 /** Legacy week submission slug — route handlers redirect this to the homepage. */
@@ -26,14 +31,35 @@ export function isWizardWeek(weekNumber: number | null | undefined): boolean {
 }
 
 /**
- * Highest week number a participant may open. Every published week is unlocked
- * for everyone — the program has no week gating, so this is effectively
- * unbounded. Kept as one function (the single source of truth used by /home, the
- * weeks rail, and the showcase) so re-introducing gating later is a one-line
- * change here.
+ * Highest week number the showcase/weeks-rail will surface. Unbounded — those
+ * surfaces list every published week regardless of who's viewing. (Per-user
+ * lesson gating is `maxUnlockedWeekNumber` below, a separate concern.)
  */
 export function maxUnlockedWeek(): number {
   return Number.MAX_SAFE_INTEGER;
+}
+
+/**
+ * Sequential lesson gating for one participant. A week may be opened only once
+ * every EARLIER program week (a week that has an assignment) has a submission.
+ *
+ * Returns the highest week NUMBER currently unlocked: the first program week
+ * without a submission — that week is open to work on, everything after it is
+ * locked. `MAX_SAFE_INTEGER` when every program week is already submitted (all
+ * open). Welcome weeks (no assignment) don't gate; their number is always ≤ this.
+ */
+export function maxUnlockedWeekNumber(
+  assignmentWeeks: { number: number; submitted: boolean }[],
+): number {
+  for (const w of [...assignmentWeeks].sort((a, b) => a.number - b.number)) {
+    if (!w.submitted) return w.number;
+  }
+  return Number.MAX_SAFE_INTEGER;
+}
+
+/** A week (by number) is open iff its number is within the unlocked ceiling. */
+export function isWeekUnlocked(weekNumber: number, maxUnlocked: number): boolean {
+  return weekNumber <= maxUnlocked;
 }
 
 /** Parses week-1, week1, etc. Returns null for UUIDs and unknown shapes. */

@@ -6,11 +6,8 @@ import { and, eq, sql } from "drizzle-orm";
 import { z } from "zod";
 import { db } from "@portal/db";
 import {
-  weeks,
-  assignments,
   submissions,
   comments,
-  resources,
   qaQuestions,
   announcements,
   users,
@@ -20,15 +17,12 @@ import { requireAdmin } from "@portal/lib/auth";
 import { addAdmin, removeAdmin } from "@portal/lib/admins";
 import { recordEvent } from "@portal/lib/events";
 import { sendEmail, templates } from "@portal/lib/email";
-import { assignReviews } from "@portal/lib/matching";
-import { triggerStarTrade } from "@portal/lib/background";
-import {
-  saveBlobAttachmentsFromForm,
-  saveBlobRefsFromForm,
-  deleteAttachment,
-} from "@portal/lib/files";
+import { saveBlobAttachmentsFromForm, deleteAttachment } from "@portal/lib/files";
 import { extractMentions } from "@portal/lib/mentions";
 import { resolveMentions } from "@portal/lib/queries";
+
+// NOTE: weeks & assignments are hardcoded in src/portal/lib/curriculum.ts — there
+// is no admin editing of the curriculum (and no live-stream toggle) anymore.
 
 async function participantContacts() {
   return db
@@ -38,303 +32,7 @@ async function participantContacts() {
     .where(sql`${users.email} is not null and ${users.email} <> ''`);
 }
 
-/* ---- Weeks --------------------------------------------------------------- */
-export async function createWeek(formData: FormData) {
-  await requireAdmin();
-  const data = z
-    .object({
-      number: z.coerce.number().int().min(1).max(52),
-      theme: z.string().trim().min(1).max(120),
-      description: z.string().trim().max(2000).optional().default(""),
-      startsAt: z.string().optional().default(""),
-      streamUrl: z.string().trim().max(300).optional().default(""),
-    })
-    .parse({
-      number: formData.get("number"),
-      theme: formData.get("theme"),
-      description: formData.get("description") ?? "",
-      startsAt: formData.get("startsAt") ?? "",
-      streamUrl: formData.get("streamUrl") ?? "",
-    });
-
-  await db
-    .insert(weeks)
-    .values({
-      number: data.number,
-      theme: data.theme,
-      description: data.description || null,
-      streamUrl: data.streamUrl || null,
-      startsAt: data.startsAt ? new Date(data.startsAt) : null,
-    })
-    .onConflictDoNothing();
-  revalidateTag("weeks", { expire: 0 });
-  revalidatePath("/admin");
-  revalidatePath("/weeks");
-}
-
-export async function updateWeek(formData: FormData) {
-  const me = await requireAdmin();
-  const id = String(formData.get("id") ?? "");
-  if (!id) return;
-  const isPublished = formData.get("isPublished") === "on";
-  await db
-    .update(weeks)
-    .set({
-      theme: String(formData.get("theme") ?? ""),
-      description: String(formData.get("description") ?? "") || null,
-      streamUrl: String(formData.get("streamUrl") ?? "") || null,
-      recordingUrl: String(formData.get("recordingUrl") ?? "") || null,
-      isPublished,
-    })
-    .where(eq(weeks.id, id));
-  await saveBlobAttachmentsFromForm(formData, "blobRefs", "week", id, me.id);
-
-  // Publishing weeks can surface new repo posts; backfill auto-stars idempotently.
-  if (isPublished) {
-    after(() => triggerStarTrade());
-  }
-
-  revalidateTag("weeks", { expire: 0 });
-  revalidatePath("/admin");
-  revalidatePath("/admin/weeks");
-  revalidatePath(`/weeks/${id}`);
-  revalidatePath("/weeks");
-}
-
-export async function setWeekLive(formData: FormData) {
-  await requireAdmin();
-  const weekId = String(formData.get("weekId") ?? "");
-  const live = formData.get("live") === "true";
-  if (!weekId) return;
-
-  const [week] = await db.select().from(weeks).where(eq(weeks.id, weekId)).limit(1);
-  if (!week) return;
-
-  await db.update(weeks).set({ isLive: live }).where(eq(weeks.id, weekId));
-
-  // Going live is a useful moment to backfill auto-stars. Idempotent via ss_star_grants.
-  if (live) after(() => triggerStarTrade());
-
-  if (live) {
-    await recordEvent({
-      type: "stream_live",
-      summary: `🔴 The Week ${week.number} stream — ${week.theme} — is live`,
-      weekId,
-    });
-    const contacts = await participantContacts();
-    const t = templates.streamLive(week.theme, weekId);
-    after(() =>
-      Promise.all(
-        contacts
-          .filter((c) => c.email)
-          .map((c) =>
-            sendEmail({
-              to: c.email!,
-              type: "stream_live",
-              subject: t.subject,
-              html: t.html,
-              userId: c.id,
-            }),
-          ),
-      ),
-    );
-  }
-  revalidateTag("weeks", { expire: 0 });
-  revalidatePath("/admin");
-  revalidatePath(`/weeks/${weekId}`);
-  revalidatePath("/");
-}
-
-/* ---- Assignments --------------------------------------------------------- */
-export async function createAssignment(formData: FormData) {
-  const admin = await requireAdmin();
-  const data = z
-    .object({
-      weekId: z.string().min(1),
-      title: z.string().trim().min(1).max(140),
-      prompt: z.string().trim().min(1).max(4000),
-      submissionType: z.enum(["link", "repo", "file", "text", "any"]),
-      deadline: z.string().optional().default(""),
-      reviewCount: z.coerce.number().int().min(0).max(10).default(3),
-      recurring: z.boolean().optional().default(false),
-    })
-    .parse({
-      weekId: formData.get("weekId"),
-      title: formData.get("title"),
-      prompt: formData.get("prompt"),
-      submissionType: formData.get("submissionType") ?? "link",
-      deadline: formData.get("deadline") ?? "",
-      reviewCount: formData.get("reviewCount") ?? 3,
-      recurring: formData.get("recurring") === "on",
-    });
-
-  const [a] = await db
-    .insert(assignments)
-    .values({
-      weekId: data.weekId,
-      title: data.title,
-      prompt: data.prompt,
-      submissionType: data.submissionType,
-      deadline: data.deadline ? new Date(data.deadline) : null,
-      reviewCount: data.reviewCount,
-      recurring: data.recurring,
-      createdBy: admin.id,
-    })
-    .returning();
-
-  await saveBlobAttachmentsFromForm(formData, "blobRefs", "assignment", a.id, admin.id);
-
-  await recordEvent({
-    type: "assignment",
-    summary: `New assignment posted: "${data.title}"`,
-    weekId: data.weekId,
-    targetType: "assignment",
-    targetId: a.id,
-  });
-  revalidatePath("/admin");
-  revalidatePath("/admin/classwork");
-  revalidatePath("/home");
-}
-
-/* ---- Engine triggers ----------------------------------------------------- */
-export async function runMatchingAction(formData: FormData) {
-  await requireAdmin();
-  const assignmentId = String(formData.get("assignmentId") ?? "");
-  if (!assignmentId) return;
-  const [a] = await db
-    .select()
-    .from(assignments)
-    .where(eq(assignments.id, assignmentId))
-    .limit(1);
-  await assignReviews(assignmentId, a?.reviewCount);
-  revalidatePath("/admin");
-  revalidatePath("/feedback");
-}
-
-export async function runStarBatchAction() {
-  await requireAdmin();
-  // Global now — stars every opted-in member's submitted repos across the cohort.
-  // Kicks the 15-min background drain (returns immediately; the admin doesn't wait).
-  await triggerStarTrade();
-  revalidatePath("/admin");
-  revalidatePath("/discover");
-}
-
-export async function sendWeeklyUpdate(formData: FormData) {
-  await requireAdmin();
-  const weekId = String(formData.get("weekId") ?? "");
-  const body = String(formData.get("body") ?? "").trim();
-  if (!weekId || !body) return;
-  const [week] = await db.select().from(weeks).where(eq(weeks.id, weekId)).limit(1);
-  if (!week) return;
-
-  const contacts = await participantContacts();
-  const t = templates.weeklyUpdate(week.theme, body.replace(/\n/g, "<br>"), weekId);
-  after(() =>
-    Promise.all(
-      contacts
-        .filter((c) => c.email)
-        .map((c) =>
-          sendEmail({
-            to: c.email!,
-            type: "weekly_update",
-            subject: t.subject,
-            html: t.html,
-            userId: c.id,
-          }),
-        ),
-    ),
-  );
-  await recordEvent({
-    type: "weekly_update",
-    summary: `Weekly update sent for Week ${week.number}`,
-    weekId,
-  });
-  revalidatePath("/admin");
-}
-
-export async function sendDeadlineReminders(formData: FormData) {
-  await requireAdmin();
-  const assignmentId = String(formData.get("assignmentId") ?? "");
-  if (!assignmentId) return;
-  const [a] = await db
-    .select({
-      title: assignments.title,
-      weekId: assignments.weekId,
-      deadline: assignments.deadline,
-    })
-    .from(assignments)
-    .where(eq(assignments.id, assignmentId))
-    .limit(1);
-  if (!a) return;
-
-  const submitted = await db
-    .select({ userId: submissions.userId })
-    .from(submissions)
-    .where(eq(submissions.assignmentId, assignmentId));
-  const submittedIds = new Set(submitted.map((s) => s.userId));
-
-  const contacts = await participantContacts();
-  const when = a.deadline
-    ? new Date(a.deadline).toLocaleDateString()
-    : "soon";
-  const t = templates.deadlineReminder(a.title, a.weekId, when);
-  after(() =>
-    Promise.all(
-      contacts
-        .filter((c) => c.email && !submittedIds.has(c.id))
-        .map((c) =>
-          sendEmail({
-            to: c.email!,
-            type: "deadline_reminder",
-            subject: t.subject,
-            html: t.html,
-            userId: c.id,
-          }),
-        ),
-    ),
-  );
-  revalidatePath("/admin");
-}
-
-/* ---- Resources & Q&A ----------------------------------------------------- */
-export async function addResource(formData: FormData) {
-  const admin = await requireAdmin();
-  const weekId = String(formData.get("weekId") ?? "");
-  const title = String(formData.get("title") ?? "").trim();
-  const url = String(formData.get("url") ?? "").trim();
-  if (!weekId) return;
-
-  // Uploaded files become downloadable resources pointing at the file route.
-  const stored = await saveBlobRefsFromForm(formData, "blobRefs", admin.id);
-  if (stored.length) {
-    await db.insert(resources).values(
-      stored.map((f) => ({
-        weekId,
-        title: stored.length === 1 && title ? title : f.name,
-        url: `/api/files/${f.id}`,
-        kind: "file",
-        createdBy: admin.id,
-      })),
-    );
-  }
-
-  // A link resource (optional — admins can add a link, a file, or both).
-  if (title && url) {
-    await db.insert(resources).values({
-      weekId,
-      title,
-      url,
-      kind: String(formData.get("kind") ?? "link"),
-      createdBy: admin.id,
-    });
-  }
-
-  revalidatePath(`/weeks/${weekId}`);
-  revalidatePath("/admin");
-  revalidatePath("/admin/weeks");
-}
-
+/* ---- Q&A ----------------------------------------------------------------- */
 export async function markQuestionAnswered(formData: FormData) {
   await requireAdmin();
   const id = String(formData.get("questionId") ?? "");
@@ -480,7 +178,7 @@ export async function createAnnouncement(formData: FormData) {
   }
 
   revalidatePath("/admin");
-  revalidatePath("/home");
+  revalidatePath("/lessons");
   revalidatePath("/announcements");
 }
 
@@ -490,7 +188,7 @@ export async function deleteAnnouncement(formData: FormData) {
   if (!id) return;
   await db.delete(announcements).where(eq(announcements.id, id));
   revalidatePath("/admin");
-  revalidatePath("/home");
+  revalidatePath("/lessons");
 }
 
 /* ---- Attachments --------------------------------------------------------- */

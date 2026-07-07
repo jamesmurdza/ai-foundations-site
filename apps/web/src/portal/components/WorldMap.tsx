@@ -5,6 +5,7 @@ import {
   type GeoPermissibleObjects,
 } from "d3-geo";
 import { feature } from "topojson-client";
+import type { ReactNode } from "react";
 import type { Feature, FeatureCollection } from "geojson";
 import { COUNTRY_CENTROIDS } from "@portal/lib/countries";
 import { initials } from "@portal/lib/format";
@@ -47,8 +48,8 @@ const TOPO_NAME_TO_DISPLAY: Record<string, string> = {
 function fillFor(n: number, max: number): string {
   if (n === 0) return "var(--map-empty)";
   const t = Math.min(1, n / Math.max(1, max));
-  const start = [237, 230, 249]; // light purple
-  const end = [107, 33, 168]; // purple-800
+  const start = [239, 234, 254]; // light indigo tint (--color-primary-soft)
+  const end = [76, 36, 198]; // #4c24c6 — deep indigo (--color-primary-strong)
   const eased = Math.pow(0.3 + 0.7 * t, 0.85);
   const rgb = start.map((s, i) => Math.round(s + (end[i] - s) * eased));
   return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
@@ -69,11 +70,13 @@ function locationsFromPeople(people: MapProfile[]) {
 export async function WorldMap({
   locations,
   people,
-  withoutLocation = 0,
+  topControl,
+  reserveTopControl,
 }: {
   locations?: { country: string; count: number }[];
   people?: MapProfile[];
-  withoutLocation?: number;
+  topControl?: ReactNode;
+  reserveTopControl?: boolean;
 }) {
   const peopleMode = Boolean(people?.length);
   const effectiveLocations = peopleMode
@@ -168,9 +171,8 @@ export async function WorldMap({
       width={W}
       height={H}
       total={total}
-      countries={effectiveLocations.length}
-      withoutLocation={withoutLocation}
-      legend={effectiveLocations.slice(0, 12)}
+      topControl={topControl}
+      reserveTopControl={reserveTopControl}
     />
   );
 }

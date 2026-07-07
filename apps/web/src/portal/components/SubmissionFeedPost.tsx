@@ -1,13 +1,12 @@
+import "github-markdown-css/github-markdown-light.css";
 import Link from "@portal/components/Link";
-import { FolderGit2, ExternalLink, MessageCircle, User } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { Avatar } from "./Avatar";
-import { CommentThread } from "./CommentThread";
 import { LikeButton } from "./LikeButton";
+import { SubmissionReadme } from "./SubmissionReadme";
 import { timeAgo } from "@portal/lib/format";
 import { profileHref } from "@portal/lib/profileHref";
-import { parseRepo, parseLogin } from "@portal/lib/github-parse";
-import type { Comment } from "@portal/db/schema";
-import type { ShowcaseItem, Author, MentionPerson } from "@portal/lib/queries";
+import type { ShowcaseItem } from "@portal/lib/queries";
 
 /** "github.com/taniya" rather than a bare "github.com" — more to read. */
 function destLabel(url: string) {
@@ -21,158 +20,124 @@ function destLabel(url: string) {
 
 /**
  * One post in the showcase feed — an Instagram-style take on a submission.
- * Header, then the work as the "photo" (a README gist that opens the repo),
- * a like (real GitHub star) + comment row, the title as caption, and comments
- * inline (optimistic — no navigating away).
+ * Header, then the work as the "photo" (the repo's README rendered as real
+ * GitHub-flavored markdown), and a like (real GitHub star) + comment row.
+ * Comments themselves live on the post's detail page, just like Instagram.
  */
 export function SubmissionFeedPost({
   item,
-  gist,
+  readmeHtml,
   liked,
   canLike,
-  comments,
-  canComment,
-  currentUser,
-  people,
+  hideHeader = false,
+  hideActions = false,
+  full = false,
 }: {
   item: ShowcaseItem;
-  gist: string | null;
+  readmeHtml: string | null;
   liked: boolean;
   canLike: boolean;
-  comments: (Comment & { author: Author })[];
-  canComment: boolean;
-  currentUser: Author | null;
-  people: MentionPerson[];
+  /** The submission page shows the author header in its comments column instead. */
+  hideHeader?: boolean;
+  /** The submission page shows the like/comment row beneath its comments instead. */
+  hideActions?: boolean;
+  /** Render the README full-length (no clip/fade) and drop the overlay modal
+   *  link — used when opened (modal/detail) and on profile pages. */
+  full?: boolean;
 }) {
   const { submission: s, author, commentCount } = item;
   const starCount = item.starCount ?? 0;
   const externalHref = s.payloadType === "text" ? null : s.payload;
   const hasRepo = Boolean(s.repoOwner && s.repoName);
-  // A profile post: a stored profile-README repo (<login>/<login>) or a bare
-  // profile link. Shown as @login; project repos show owner/name.
-  const profileLogin =
-    hasRepo && s.repoOwner === s.repoName
-      ? s.repoOwner
-      : !hasRepo && externalHref && !parseRepo(externalHref)
-        ? parseLogin(externalHref)
-        : null;
-  const isProfile = Boolean(profileLogin);
-  const label = isProfile
-    ? `@${profileLogin}`
-    : hasRepo
-      ? `${s.repoOwner}/${s.repoName}`
-      : externalHref
-        ? destLabel(externalHref)
-        : "";
-  const SourceIcon = isProfile ? User : hasRepo ? FolderGit2 : ExternalLink;
+  // "2d" rather than "2d ago" — the terse Instagram-style timestamp.
+  const posted = timeAgo(s.createdAt).replace(" ago", "");
+  // In the feed the whole clipped "photo" is a tap target that opens the
+  // submission modal (an overlay link, so it doesn't nest inside README anchors).
+  // The external-link card is itself a link, so it's left to open the repo.
+  const openModal = !full && (readmeHtml !== null || !externalHref);
 
   return (
-    <article className="card !p-0 overflow-hidden">
+    <article className="overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between gap-2 p-4">
-        <Link
-          href={profileHref(author)}
-          prefetch={false}
-          className="flex items-center gap-3 min-w-0"
-        >
-          <Avatar src={author.avatarUrl} name={author.name} size={40} />
-          <div className="min-w-0">
-            <div className="font-bold truncate">{author.name}</div>
-            <div className="meta-light text-[12px] truncate">
-              {item.assignmentTitle}
-              {item.weekNumber > 0 ? ` · Week ${item.weekNumber}` : ""}
+      {!hideHeader && (
+        <div className="pb-3">
+          <Link
+            href={profileHref(author)}
+            prefetch={false}
+            className="flex items-center gap-3 min-w-0"
+          >
+            <span className="ml-2 shrink-0">
+              <Avatar src={author.avatarUrl} name={author.name} size={36} />
+            </span>
+            <div className="min-w-0">
+              <div className="truncate text-[14px]">
+                <span className="font-semibold">{author.name}</span>
+                {posted && (
+                  <span className="meta-light font-normal"> • {posted}</span>
+                )}
+              </div>
+              {author.country && (
+                <div className="meta-light text-[12px] truncate">{author.country}</div>
+              )}
             </div>
-          </div>
-        </Link>
-        <span className="meta-light text-[12px] shrink-0">{timeAgo(s.createdAt)}</span>
-      </div>
-
-      {/* "Photo" — README gist, clickable to open the repo */}
-      {externalHref ? (
-        <a
-          href={externalHref}
-          target="_blank"
-          rel="noreferrer"
-          className="block px-4 group"
-        >
-          <div className="rounded-xl border border-border bg-ice-tint/40 p-5 transition-colors group-hover:border-signal-blue/40">
-            <div className="flex items-center gap-2 text-[13px] font-semibold text-slate-channel mb-2">
-              <SourceIcon size={15} className="shrink-0" />
-              <span className="truncate">{label}</span>
-              <ExternalLink size={13} className="opacity-50 shrink-0 ml-auto" />
-            </div>
-            {gist ? (
-              <p className="text-[14px] leading-relaxed text-foreground/80 line-clamp-4">
-                {gist}
-              </p>
-            ) : (
-              <p className="meta text-[14px]">{destLabel(externalHref)} →</p>
-            )}
-          </div>
-        </a>
-      ) : (
-        <div className="px-4">
-          <div className="rounded-xl border border-border bg-ice-tint/40 p-5">
-            <p className="meta whitespace-pre-wrap line-clamp-6 text-[14px]">
-              {s.payload}
-            </p>
-          </div>
+          </Link>
         </div>
       )}
 
-      {/* Caption — title links to the full submission */}
-      <div className="px-4 pt-3">
-        <Link
-          href={`/submissions/${s.id}`}
-          prefetch={false}
-          className="font-bold text-[17px] hover:text-signal-blue"
-        >
-          {s.title || "Submission"}
-        </Link>
+      {/* The work — the repo's README rendered as real GitHub markdown, in a
+          thin-bordered frame (no rounding, no fill) like an Instagram photo. */}
+      <div className="relative border border-border">
+        {readmeHtml ? (
+          <SubmissionReadme html={readmeHtml} full={full} />
+        ) : externalHref ? (
+          <a
+            href={externalHref}
+            target="_blank"
+            rel="noreferrer"
+            className="link block p-5 text-[14px]"
+          >
+            {destLabel(externalHref)} →
+          </a>
+        ) : (
+          <p
+            className={`meta whitespace-pre-wrap p-5 text-[14px] ${
+              full ? "" : "line-clamp-6"
+            }`}
+          >
+            {s.payload}
+          </p>
+        )}
+        {openModal && (
+          <Link
+            href={`/submissions/${s.id}`}
+            prefetch={false}
+            aria-label="Open submission"
+            className="absolute inset-0 z-10"
+          />
+        )}
       </div>
 
       {/* Actions — GitHub stars only apply to repo posts; profile links can’t be starred. */}
-      <div className="flex items-center gap-5 px-4 pt-3">
-        {hasRepo && (
-          <LikeButton
-            submissionId={s.id}
-            count={starCount}
-            liked={liked}
-            canLike={canLike}
-          />
-        )}
-        <Link
-          href={`/submissions/${s.id}#comments`}
-          prefetch={false}
-          className="flex items-center gap-1.5 text-[15px] text-slate-channel hover:text-signal-blue"
-        >
-          <MessageCircle size={20} />
-          <span className="font-semibold">{commentCount}</span>
-        </Link>
-      </div>
-
-      {/* Comments — inline, optimistic, no page change */}
-      <div className="px-4 pb-4 mt-3 hairline pt-3">
-        {commentCount > comments.length && (
+      {!hideActions && (
+        <div className="flex items-center gap-5 pt-3">
+          {hasRepo && (
+            <LikeButton
+              submissionId={s.id}
+              count={starCount}
+              liked={liked}
+              canLike={canLike}
+            />
+          )}
           <Link
             href={`/submissions/${s.id}#comments`}
             prefetch={false}
-            className="meta-light text-[13px] hover:text-signal-blue block mb-2"
+            className="flex items-center gap-1.5 text-[15px] text-slate-channel hover:text-signal-blue"
           >
-            View all {commentCount} comments
+            <MessageCircle size={18} />
+            <span className="font-semibold">{commentCount}</span>
           </Link>
-        )}
-        <CommentThread
-          compact
-          targetType="submission"
-          targetId={s.id}
-          comments={comments}
-          canComment={canComment}
-          currentUser={currentUser}
-          people={people}
-          placeholder="Add a comment…"
-        />
-      </div>
+        </div>
+      )}
     </article>
   );
 }
