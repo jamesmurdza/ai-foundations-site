@@ -45,7 +45,9 @@ export default async function LessonPage({
   return (
     <div className="min-h-screen bg-muted/10">
       <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-8">
-        <div className="max-w-4xl mx-auto">
+        <div
+          className={`mx-auto ${lesson.videoId ? "max-w-7xl" : "max-w-4xl"}`}
+        >
           <div className="flex items-center gap-4 mb-8">
             <Link href={`/courses/${course.slug}`}>
               <Button variant="ghost" size="sm" className="gap-2">
