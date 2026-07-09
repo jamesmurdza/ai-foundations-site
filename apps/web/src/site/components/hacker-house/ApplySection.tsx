@@ -44,17 +44,17 @@ export function ApplySection() {
               How to apply
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl leading-relaxed">
-              A few quick details. Takes about a minute.
+              10 short questions. Takes about 10 minutes.
             </p>
             <Button
               asChild
               size="lg"
               className="bg-primary hover:bg-primary/90 text-white px-8 h-12 mt-4"
             >
-              <Link href="/summer-school/apply">Start your application →</Link>
+              <Link href="/summer-school/apply/full">Start your application →</Link>
             </Button>
             <p className="text-sm text-muted-foreground">
-              Applications for the online program are open.
+              You can leave and come back. We save your work as you go.
             </p>
           </div>
         </div>
