@@ -53,7 +53,7 @@ export function HeroSection() {
             size="lg"
             className="hh-cta bg-primary hover:bg-primary/90 text-white px-8 h-12"
           >
-            <Link href="/summer-school/apply/full">Apply now →</Link>
+            <Link href="/summer-school/apply">Apply now →</Link>
           </Button>
           <p className="hh-cta text-sm text-muted-foreground">
             It takes about ten minutes to apply.

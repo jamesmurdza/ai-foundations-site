@@ -51,7 +51,7 @@ export function ApplySection() {
               size="lg"
               className="bg-primary hover:bg-primary/90 text-white px-8 h-12 mt-4"
             >
-              <Link href="/summer-school/apply/full">Start your application →</Link>
+              <Link href="/summer-school/apply">Start your application →</Link>
             </Button>
             <p className="text-sm text-muted-foreground">
               You can leave and come back. We save your work as you go.
