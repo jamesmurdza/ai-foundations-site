@@ -31,22 +31,6 @@ function escapeRegExp(text: string) {
   return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-// Render a chunk of text with any matches of `query` highlighted.
-function highlightMatches(text: string, query: string): React.ReactNode {
-  if (!query) return text;
-  const regex = new RegExp(`(${escapeRegExp(query)})`, "ig");
-  const parts = text.split(regex);
-  return parts.map((part, i) =>
-    part.toLowerCase() === query.toLowerCase() ? (
-      <mark key={i} className="bg-yellow-200 text-gray-950 rounded px-0.5">
-        {part}
-      </mark>
-    ) : (
-      <React.Fragment key={i}>{part}</React.Fragment>
-    ),
-  );
-}
-
 export const Transcript: React.FC<TranscriptProps> = ({
   videoId,
   onSeek,
@@ -56,8 +40,11 @@ export const Transcript: React.FC<TranscriptProps> = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
+  const [currentMatch, setCurrentMatch] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const activeChunkRef = useRef<HTMLSpanElement>(null);
+  const activeMatchRef = useRef<HTMLElement>(null);
+
   const activeIndex = useMemo(() => {
     if (currentTime == null) return -1;
     let idx = -1;
@@ -70,7 +57,55 @@ export const Transcript: React.FC<TranscriptProps> = ({
 
   const query = search.trim();
 
+  // Total number of search matches across the whole transcript.
+  const totalMatches = useMemo(() => {
+    if (!query) return 0;
+    const regex = new RegExp(escapeRegExp(query), "ig");
+    let count = 0;
+    for (const item of transcript) {
+      const text = decodeHTMLEntities(item.text);
+      const found = text.match(regex);
+      if (found) count += found.length;
+    }
+    return count;
+  }, [query, transcript]);
+
+  // Reset to the first match whenever the query changes.
   useEffect(() => {
+    setCurrentMatch(0);
+  }, [query]);
+
+  // Keep the selected match index within bounds.
+  const safeMatch =
+    totalMatches > 0 ? ((currentMatch % totalMatches) + totalMatches) % totalMatches : 0;
+
+  const gotoNext = () => {
+    if (totalMatches > 0) setCurrentMatch((m) => m + 1);
+  };
+  const gotoPrev = () => {
+    if (totalMatches > 0) setCurrentMatch((m) => m - 1);
+  };
+
+  // Scroll the current search match into the middle of the transcript panel.
+  useEffect(() => {
+    if (totalMatches === 0) return;
+    const container = containerRef.current;
+    const mark = activeMatchRef.current;
+    if (!container || !mark) return;
+    const cRect = container.getBoundingClientRect();
+    const mRect = mark.getBoundingClientRect();
+    const next =
+      mRect.top -
+      cRect.top +
+      container.scrollTop -
+      container.clientHeight / 2 +
+      mRect.height / 2;
+    container.scrollTo({ top: Math.max(0, next) });
+  }, [safeMatch, totalMatches, query]);
+
+  // Scroll the currently-playing chunk into view (only when not searching).
+  useEffect(() => {
+    if (query) return;
     const container = containerRef.current;
     const chunk = activeChunkRef.current;
     if (!container || !chunk) return;
@@ -83,7 +118,7 @@ export const Transcript: React.FC<TranscriptProps> = ({
       container.clientHeight / 2 +
       rRect.height / 2;
     container.scrollTo({ top: Math.max(0, next) });
-  }, [activeIndex]);
+  }, [activeIndex, query]);
 
   useEffect(() => {
     const loadTranscript = async () => {
@@ -126,6 +161,41 @@ export const Transcript: React.FC<TranscriptProps> = ({
     if (onSeek) onSeek(start);
   };
 
+  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (e.shiftKey) gotoPrev();
+      else gotoNext();
+    }
+  };
+
+  // Render a chunk of text, wrapping each search match in a <mark>. A running
+  // counter assigns every match a global index so we can highlight/scroll to
+  // the currently-selected one.
+  const renderChunk = (text: string, counter: { n: number }) => {
+    if (!query) return text;
+    const regex = new RegExp(`(${escapeRegExp(query)})`, "ig");
+    const parts = text.split(regex);
+    return parts.map((part, i) => {
+      if (part.toLowerCase() !== query.toLowerCase()) {
+        return <React.Fragment key={i}>{part}</React.Fragment>;
+      }
+      const matchIndex = counter.n++;
+      const isCurrent = matchIndex === safeMatch;
+      return (
+        <mark
+          key={i}
+          ref={isCurrent ? activeMatchRef : undefined}
+          className={`rounded px-0.5 text-gray-950 ${
+            isCurrent ? "bg-orange-400" : "bg-yellow-200"
+          }`}
+        >
+          {part}
+        </mark>
+      );
+    });
+  };
+
   if (loading)
     return (
       <div className="text-center text-muted-foreground py-8">
@@ -135,37 +205,49 @@ export const Transcript: React.FC<TranscriptProps> = ({
   if (error)
     return <div className="text-center text-destructive py-8">{error}</div>;
 
+  // Running match counter shared across all chunks during this render pass.
+  const matchCounter = { n: 0 };
+
   return (
     <div className="md:absolute md:inset-0 flex flex-col bg-white rounded-2xl w-full font-sans border border-slate-100 shadow-sm overflow-hidden">
       <div className="px-4 pt-4 pb-3 border-b border-slate-100">
         <h3 className="font-bold text-xl mb-3 text-gray-900 tracking-tight">
           Transcript
         </h3>
-        <div className="relative">
-          <svg
-            className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
-            width="16"
-            height="16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <circle cx="11" cy="11" r="7" />
-            <path d="m21 21-4.3-4.3" strokeLinecap="round" />
-          </svg>
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search transcript..."
-            className="w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-9 text-sm text-gray-900 placeholder:text-slate-400 focus:border-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
-          />
-          {search && (
+        <div className="relative flex items-center gap-2">
+          <div className="relative flex-1">
+            <svg
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m21 21-4.3-4.3" strokeLinecap="round" />
+            </svg>
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyDown={handleSearchKeyDown}
+              placeholder="Search transcript..."
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-16 text-sm text-gray-900 placeholder:text-slate-400 focus:border-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
+            />
+            {query && (
+              <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs tabular-nums text-slate-400">
+                {totalMatches > 0 ? `${safeMatch + 1}/${totalMatches}` : "0/0"}
+              </span>
+            )}
+          </div>
+          <div className="flex items-center gap-1">
             <button
-              onClick={() => setSearch("")}
-              aria-label="Clear search"
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+              onClick={gotoPrev}
+              disabled={totalMatches === 0}
+              aria-label="Previous match"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-40 disabled:hover:bg-transparent"
             >
               <svg
                 width="16"
@@ -175,10 +257,27 @@ export const Transcript: React.FC<TranscriptProps> = ({
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path d="M18 6 6 18M6 6l12 12" strokeLinecap="round" />
+                <path d="m18 15-6-6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-          )}
+            <button
+              onClick={gotoNext}
+              disabled={totalMatches === 0}
+              aria-label="Next match"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-40 disabled:hover:bg-transparent"
+            >
+              <svg
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -194,9 +293,6 @@ export const Transcript: React.FC<TranscriptProps> = ({
             const key = `${item.start}-${idx}`;
             const isActive = activeIndex === idx;
             const text = decodeHTMLEntities(item.text);
-            const matches =
-              query.length > 0 &&
-              text.toLowerCase().includes(query.toLowerCase());
 
             return (
               <React.Fragment key={key}>
@@ -214,14 +310,10 @@ export const Transcript: React.FC<TranscriptProps> = ({
                   }}
                   className={`cursor-pointer rounded transition-colors duration-100
                     ${isActive ? "bg-primary/10" : ""}
-                    ${
-                      matches
-                        ? "text-gray-950"
-                        : "text-gray-700 hover:text-gray-950"
-                    }
+                    text-gray-700 hover:text-gray-950
                   `}
                 >
-                  {highlightMatches(text, query)}
+                  {renderChunk(text, matchCounter)}
                 </span>{" "}
               </React.Fragment>
             );
