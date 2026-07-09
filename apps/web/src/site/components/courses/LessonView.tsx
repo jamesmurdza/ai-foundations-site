@@ -7,6 +7,37 @@ import { Transcript } from "@site/components/Transcript";
 import { Markdown } from "@site/components/Markdown";
 import { ResourceLink } from "@site/components/courses/ResourceLink";
 
+interface YTPlayer {
+  getCurrentTime: () => number;
+  seekTo: (seconds: number, allowSeekAhead: boolean) => void;
+  playVideo: () => void;
+  destroy: () => void;
+}
+declare global {
+  interface Window {
+    YT?: { Player: new (el: HTMLElement, opts: unknown) => YTPlayer };
+    onYouTubeIframeAPIReady?: () => void;
+  }
+}
+
+let ytApiPromise: Promise<void> | null = null;
+function loadYouTubeApi(): Promise<void> {
+  if (typeof window === "undefined") return Promise.resolve();
+  if (window.YT?.Player) return Promise.resolve();
+  if (ytApiPromise) return ytApiPromise;
+  ytApiPromise = new Promise((resolve) => {
+    const prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => {
+      prev?.();
+      resolve();
+    };
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+  });
+  return ytApiPromise;
+}
+
 export function LessonView({
   course,
   lesson,
@@ -17,9 +48,12 @@ export function LessonView({
   tabs: ResolvedTab[];
 }) {
   const playerRef = useRef<HTMLIFrameElement>(null);
+  const ytPlayerRef = useRef<YTPlayer | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState(0);
+  // Current playback time (seconds)
+  const [currentTime, setCurrentTime] = useState(0);
 
   // To close the lesson menu when clicking outside it or pressing Escape.
   useEffect(() => {
@@ -40,8 +74,39 @@ export function LessonView({
     };
   }, [menuOpen]);
 
-  // Seek the embedded YouTube player via the postMessage API.
+  // Attach the YouTube Player API to the iframe and poll the current time so
+  // the transcript can follow along with playback.
+  useEffect(() => {
+    if (!lesson.videoId) return;
+    let cancelled = false;
+    let interval: ReturnType<typeof setInterval> | null = null;
+
+    loadYouTubeApi().then(() => {
+      if (cancelled || !playerRef.current || !window.YT?.Player) return;
+      const player = new window.YT.Player(playerRef.current, {});
+      ytPlayerRef.current = player;
+      interval = setInterval(() => {
+        if (typeof player.getCurrentTime === "function") {
+          setCurrentTime(player.getCurrentTime() || 0);
+        }
+      }, 250);
+    });
+
+    return () => {
+      cancelled = true;
+      if (interval) clearInterval(interval);
+      ytPlayerRef.current?.destroy?.();
+      ytPlayerRef.current = null;
+    };
+  }, [lesson.videoId]);
+
   const handleSeek = (seconds: number) => {
+    const player = ytPlayerRef.current;
+    if (player && typeof player.seekTo === "function") {
+      player.seekTo(seconds, true);
+      player.playVideo?.();
+      return;
+    }
     playerRef.current?.contentWindow?.postMessage(
       JSON.stringify({
         event: "command",
@@ -53,13 +118,23 @@ export function LessonView({
   };
 
   const resources =
-    lesson.resources && lesson.resources.length > 0 ? lesson.resources : (course.resources ?? []);
+    lesson.resources && lesson.resources.length > 0
+      ? lesson.resources
+      : (course.resources ?? []);
 
-  const active = tabs[activeTab];
+  const contentTabs = tabs.filter((t) => {
+    if (t.kind === "transcript") return false;
+    if (t.kind === "material" && resources.length === 0) return false;
+    return true;
+  });
+  const hasTranscript =
+    tabs.some((t) => t.kind === "transcript") && Boolean(lesson.videoId);
+  const active = contentTabs[activeTab];
 
   // Previous / next lesson for the bottom navigation.
   const currentIndex = course.lessons.findIndex((l) => l.id === lesson.id);
-  const prevLesson = currentIndex > 0 ? course.lessons[currentIndex - 1] : undefined;
+  const prevLesson =
+    currentIndex > 0 ? course.lessons[currentIndex - 1] : undefined;
   const nextLesson =
     currentIndex >= 0 && currentIndex < course.lessons.length - 1
       ? course.lessons[currentIndex + 1]
@@ -68,7 +143,9 @@ export function LessonView({
   const renderTab = (tab: ResolvedTab) => {
     switch (tab.kind) {
       case "transcript":
-        return lesson.videoId ? <Transcript videoId={lesson.videoId} onSeek={handleSeek} /> : null;
+        return lesson.videoId ? (
+          <Transcript videoId={lesson.videoId} onSeek={handleSeek} />
+        ) : null;
       case "material":
         return resources.length > 0 ? (
           <div className="flex flex-col gap-4">
@@ -77,7 +154,9 @@ export function LessonView({
             ))}
           </div>
         ) : (
-          <p className="text-muted-foreground">No materials for this lesson yet.</p>
+          <p className="text-muted-foreground">
+            No materials for this lesson yet.
+          </p>
         );
       case "markdown":
       default:
@@ -87,8 +166,7 @@ export function LessonView({
 
   return (
     <div className="bg-white p-5 sm:rounded-xl sm:border sm:shadow-sm sm:p-6 md:p-8">
-      {/* Sticky header: title, video and tab bar stay pinned while the panel scrolls. */}
-      <div className="sticky top-0 z-30 -mx-5 sm:-mx-6 md:-mx-8 -mt-5 sm:-mt-6 md:-mt-8 px-5 sm:px-6 md:px-8 pt-5 sm:pt-6 md:pt-8 pb-4 bg-white sm:rounded-t-xl">
+      <div>
         <div ref={menuRef} className="relative z-40 mb-6 inline-block">
           <button
             type="button"
@@ -118,9 +196,15 @@ export function LessonView({
                     }`}
                   >
                     <span className="mt-0.5 w-5 shrink-0 text-sm text-muted-foreground tabular-nums">
-                      {isCurrent ? <Check className="w-4 h-4 text-primary" /> : idx + 1}
+                      {isCurrent ? (
+                        <Check className="w-4 h-4 text-primary" />
+                      ) : (
+                        idx + 1
+                      )}
                     </span>
-                    <span className={`text-sm leading-snug ${isCurrent ? "font-semibold" : ""}`}>
+                    <span
+                      className={`text-sm leading-snug ${isCurrent ? "font-semibold" : ""}`}
+                    >
                       {l.title}
                     </span>
                   </Link>
@@ -131,26 +215,39 @@ export function LessonView({
         </div>
 
         {lesson.videoId && (
-          <div className="aspect-video w-full max-w-[calc(55vh*16/9)] mx-auto bg-black rounded-lg overflow-hidden">
-            <iframe
-              ref={playerRef}
-              src={`https://www.youtube.com/embed/${lesson.videoId}?enablejsapi=1`}
-              title={lesson.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="w-full h-full"
-              style={{ border: 0 }}
-            />
+          <div className="flex flex-col md:flex-row md:items-stretch gap-4 lg:gap-6">
+            <div className="flex-1 min-w-0">
+              <div className="aspect-video w-full bg-black rounded-lg overflow-hidden">
+                <iframe
+                  ref={playerRef}
+                  src={`https://www.youtube.com/embed/${lesson.videoId}?enablejsapi=1`}
+                  title={lesson.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full"
+                  style={{ border: 0 }}
+                />
+              </div>
+            </div>
+            {hasTranscript && (
+              <div className="w-full shrink-0 md:relative md:w-[300px] lg:w-[360px] xl:w-[440px]">
+                <Transcript
+                  videoId={lesson.videoId}
+                  onSeek={handleSeek}
+                  currentTime={currentTime}
+                />
+              </div>
+            )}
           </div>
         )}
 
-        {tabs.length > 1 && (
+        {contentTabs.length > 1 && (
           <div
             role="tablist"
             aria-label="Lesson sections"
-            className="flex gap-1 overflow-x-auto overflow-y-hidden border-b mt-4"
+            className="flex gap-1 overflow-x-auto overflow-y-hidden border-b mt-6"
           >
-            {tabs.map((tab, idx) => {
+            {contentTabs.map((tab, idx) => {
               const isActive = idx === activeTab;
               return (
                 <button
