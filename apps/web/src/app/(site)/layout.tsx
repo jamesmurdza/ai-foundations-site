@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Inter, Schibsted_Grotesk } from "next/font/google";
 
 import { NavProgress } from "@site/components/NavProgress";
-import { SmoothScroll } from "@site/components/SmoothScroll";
 import { cn } from "@site/lib/utils";
 
 const fontSans = Inter({
@@ -37,7 +36,6 @@ export default function RootLayout({
         )}
       >
         <NavProgress />
-        <SmoothScroll />
         {children}
       </body>
     </html>
