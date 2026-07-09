@@ -47,7 +47,7 @@ export function CodeBlock({
     <div className="group relative my-6">
       <div className="absolute right-2 top-2 z-10 flex items-center gap-2">
         {lang && (
-          <span className="rounded bg-black/5 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+          <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-zinc-400">
             {lang}
           </span>
         )}
@@ -55,7 +55,7 @@ export function CodeBlock({
           type="button"
           onClick={handleCopy}
           aria-label={copied ? "Copied" : "Copy code"}
-          className="rounded bg-black/5 p-1 text-muted-foreground opacity-0 transition hover:bg-black/10 hover:text-foreground focus-visible:opacity-100 group-hover:opacity-100"
+          className="rounded bg-white/10 p-1 text-zinc-300 opacity-0 transition hover:bg-white/20 hover:text-white focus-visible:opacity-100 group-hover:opacity-100"
         >
           {copied ? (
             <Check className="h-3.5 w-3.5" />
