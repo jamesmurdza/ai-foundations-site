@@ -46,9 +46,8 @@ export function DetailsSection() {
           <div className="hh-details mb-12 max-w-4xl mx-auto border bg-muted/40 px-6 py-5 text-center">
             <p className="text-base">
               <span className="font-medium">
-                Applications for the in-person program are now closed.
-              </span>{" "}
-              Applications for the online program are still open.
+                Applications for the in-person program are open.
+              </span>
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
