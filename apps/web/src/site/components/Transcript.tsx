@@ -26,6 +26,11 @@ function decodeHTMLEntities(text: unknown) {
     .replace(/&apos;/g, "'");
 }
 
+// Escape a string for safe use inside a RegExp
+function escapeRegExp(text: string) {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 export const Transcript: React.FC<TranscriptProps> = ({
   videoId,
   onSeek,
@@ -34,8 +39,12 @@ export const Transcript: React.FC<TranscriptProps> = ({
   const [transcript, setTranscript] = useState<TranscriptItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [search, setSearch] = useState("");
+  const [currentMatch, setCurrentMatch] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const activeRowRef = useRef<HTMLDivElement>(null);
+  const activeChunkRef = useRef<HTMLSpanElement>(null);
+  const activeMatchRef = useRef<HTMLElement>(null);
+
   const activeIndex = useMemo(() => {
     if (currentTime == null) return -1;
     let idx = -1;
@@ -46,20 +55,70 @@ export const Transcript: React.FC<TranscriptProps> = ({
     return idx;
   }, [currentTime, transcript]);
 
+  const query = search.trim();
+
+  // Total number of search matches across the whole transcript.
+  const totalMatches = useMemo(() => {
+    if (!query) return 0;
+    const regex = new RegExp(escapeRegExp(query), "ig");
+    let count = 0;
+    for (const item of transcript) {
+      const text = decodeHTMLEntities(item.text);
+      const found = text.match(regex);
+      if (found) count += found.length;
+    }
+    return count;
+  }, [query, transcript]);
+
+  // Reset to the first match whenever the query changes.
   useEffect(() => {
+    setCurrentMatch(0);
+  }, [query]);
+
+  // Keep the selected match index within bounds.
+  const safeMatch =
+    totalMatches > 0 ? ((currentMatch % totalMatches) + totalMatches) % totalMatches : 0;
+
+  const gotoNext = () => {
+    if (totalMatches > 0) setCurrentMatch((m) => m + 1);
+  };
+  const gotoPrev = () => {
+    if (totalMatches > 0) setCurrentMatch((m) => m - 1);
+  };
+
+  // Scroll the current search match into the middle of the transcript panel.
+  useEffect(() => {
+    if (totalMatches === 0) return;
     const container = containerRef.current;
-    const row = activeRowRef.current;
-    if (!container || !row) return;
+    const mark = activeMatchRef.current;
+    if (!container || !mark) return;
     const cRect = container.getBoundingClientRect();
-    const rRect = row.getBoundingClientRect();
+    const mRect = mark.getBoundingClientRect();
+    const next =
+      mRect.top -
+      cRect.top +
+      container.scrollTop -
+      container.clientHeight / 2 +
+      mRect.height / 2;
+    container.scrollTo({ top: Math.max(0, next) });
+  }, [safeMatch, totalMatches, query]);
+
+  // Scroll the currently-playing chunk into view (only when not searching).
+  useEffect(() => {
+    if (query) return;
+    const container = containerRef.current;
+    const chunk = activeChunkRef.current;
+    if (!container || !chunk) return;
+    const cRect = container.getBoundingClientRect();
+    const rRect = chunk.getBoundingClientRect();
     const next =
       rRect.top -
       cRect.top +
       container.scrollTop -
       container.clientHeight / 2 +
       rRect.height / 2;
-    container.scrollTo({ top: Math.max(0, next), behavior: "smooth" });
-  }, [activeIndex]);
+    container.scrollTo({ top: Math.max(0, next) });
+  }, [activeIndex, query]);
 
   useEffect(() => {
     const loadTranscript = async () => {
@@ -102,6 +161,41 @@ export const Transcript: React.FC<TranscriptProps> = ({
     if (onSeek) onSeek(start);
   };
 
+  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (e.shiftKey) gotoPrev();
+      else gotoNext();
+    }
+  };
+
+  // Render a chunk of text, wrapping each search match in a <mark>. A running
+  // counter assigns every match a global index so we can highlight/scroll to
+  // the currently-selected one.
+  const renderChunk = (text: string, counter: { n: number }) => {
+    if (!query) return text;
+    const regex = new RegExp(`(${escapeRegExp(query)})`, "ig");
+    const parts = text.split(regex);
+    return parts.map((part, i) => {
+      if (part.toLowerCase() !== query.toLowerCase()) {
+        return <React.Fragment key={i}>{part}</React.Fragment>;
+      }
+      const matchIndex = counter.n++;
+      const isCurrent = matchIndex === safeMatch;
+      return (
+        <mark
+          key={i}
+          ref={isCurrent ? activeMatchRef : undefined}
+          className={`rounded px-0.5 text-gray-950 ${
+            isCurrent ? "bg-orange-400" : "bg-yellow-200"
+          }`}
+        >
+          {part}
+        </mark>
+      );
+    });
+  };
+
   if (loading)
     return (
       <div className="text-center text-muted-foreground py-8">
@@ -111,68 +205,121 @@ export const Transcript: React.FC<TranscriptProps> = ({
   if (error)
     return <div className="text-center text-destructive py-8">{error}</div>;
 
-  return (
-    <div
-      ref={containerRef}
-      className="overflow-y-auto max-h-[70vh] md:max-h-none md:absolute md:inset-0 px-2 py-4 bg-white rounded-2xl w-full font-sans border border-slate-100 shadow-sm"
-    >
-      <h3 className="font-bold text-xl mb-4 text-gray-900 tracking-tight pl-2">
-        Transcript
-      </h3>
-      <div className="flex flex-col gap-0.5 relative z-20">
-        {transcript.map((item, idx) => {
-          const key = `${item.start}-${idx}`;
+  // Running match counter shared across all chunks during this render pass.
+  const matchCounter = { n: 0 };
 
-          return (
-            <React.Fragment key={key}>
-              <div
-                ref={activeIndex === idx ? activeRowRef : undefined}
-                className={`flex items-start gap-4 py-3 px-2 group transition-colors duration-100 rounded-lg cursor-pointer
-                  ${activeIndex === idx ? "bg-primary/10" : "hover:bg-slate-50"}
-                `}
-                onClick={() => handleSeek(item.start)}
-                tabIndex={0}
-                aria-current={activeIndex === idx ? "true" : undefined}
-                style={{ minHeight: "44px" }}
+  return (
+    <div className="md:absolute md:inset-0 flex flex-col bg-white rounded-2xl w-full font-sans border border-slate-100 shadow-sm overflow-hidden">
+      <div className="px-4 pt-4 pb-3 border-b border-slate-100">
+        <h3 className="font-bold text-xl mb-3 text-gray-900 tracking-tight">
+          Transcript
+        </h3>
+        <div className="relative flex items-center gap-2">
+          <div className="relative flex-1">
+            <svg
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m21 21-4.3-4.3" strokeLinecap="round" />
+            </svg>
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyDown={handleSearchKeyDown}
+              placeholder="Search transcript..."
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-16 text-sm text-gray-900 placeholder:text-slate-400 focus:border-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
+            />
+            {query && (
+              <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs tabular-nums text-slate-400">
+                {totalMatches > 0 ? `${safeMatch + 1}/${totalMatches}` : "0/0"}
+              </span>
+            )}
+          </div>
+          <div className="flex items-center gap-1">
+            <button
+              onClick={gotoPrev}
+              disabled={totalMatches === 0}
+              aria-label="Previous match"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-40 disabled:hover:bg-transparent"
+            >
+              <svg
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
               >
-                <button
-                  className={`flex items-center justify-center w-8 h-8 rounded-full border border-slate-200 shadow-sm mr-1 transition-all duration-150
-                    ${activeIndex === idx ? "bg-primary text-white border-primary" : "bg-white text-slate-500 hover:bg-primary/10"}
+                <path d="m18 15-6-6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <button
+              onClick={gotoNext}
+              disabled={totalMatches === 0}
+              aria-label="Next match"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-40 disabled:hover:bg-transparent"
+            >
+              <svg
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        ref={containerRef}
+        className="overflow-y-auto max-h-[70vh] md:max-h-none md:flex-1 px-4 py-4"
+      >
+        <p
+          className="text-[1.08rem] leading-relaxed break-words"
+          style={{ wordBreak: "break-word", lineHeight: "1.9" }}
+        >
+          {transcript.map((item, idx) => {
+            const key = `${item.start}-${idx}`;
+            const isActive = activeIndex === idx;
+            const text = decodeHTMLEntities(item.text);
+
+            return (
+              <React.Fragment key={key}>
+                <span
+                  ref={isActive ? activeChunkRef : undefined}
+                  onClick={() => handleSeek(item.start)}
+                  role="button"
+                  tabIndex={0}
+                  aria-current={isActive ? "true" : undefined}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handleSeek(item.start);
+                    }
+                  }}
+                  className={`cursor-pointer rounded transition-colors duration-100
+                    ${isActive ? "bg-primary/10" : ""}
+                    text-gray-700 hover:text-gray-950
                   `}
-                  aria-label="Play segment"
-                  tabIndex={-1}
                 >
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M4 3.993v8.014c0 .548.592.885 1.06.593l6.518-4.007a.684.684 0 0 0 0-1.186L5.06 3.4A.684.684 0 0 0 4 3.993z" />
-                  </svg>
-                </button>
-                <div className="flex flex-col flex-1 min-w-0">
-                  <span
-                    className="text-[1.08rem] text-gray-900 leading-relaxed font-normal font-sans break-words"
-                    style={{ wordBreak: "break-word", lineHeight: "1.7" }}
-                  >
-                    {decodeHTMLEntities(item.text)}
-                  </span>
-                </div>
-              </div>
-              {idx < transcript.length - 1 && (
-                <div className="border-b border-slate-100 mx-2" />
-              )}
-            </React.Fragment>
-          );
-        })}
+                  {renderChunk(text, matchCounter)}
+                </span>{" "}
+              </React.Fragment>
+            );
+          })}
+        </p>
       </div>
     </div>
   );
 };
-
-function formatTime(seconds: number) {
-  const m = Math.floor(seconds / 60);
-  const s = Math.floor(seconds % 60);
-  return `${m}:${s.toString().padStart(2, "0")}`;
-}
