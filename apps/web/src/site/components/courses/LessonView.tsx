@@ -174,7 +174,8 @@ export function LessonView({
   return (
     <div>
       <div>
-        <div ref={menuRef} className="relative z-40 mb-6 inline-block">
+        <div className="mb-6 flex items-center justify-between gap-3">
+          <div ref={menuRef} className="relative z-40 inline-block">
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
@@ -219,11 +220,23 @@ export function LessonView({
               })}
             </div>
           )}
+          </div>
+
+          {lesson.videoId && hasTranscript && !transcriptOpen && (
+            <button
+              type="button"
+              onClick={() => setTranscriptOpen(true)}
+              className="inline-flex shrink-0 items-center gap-2 rounded-lg border px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <PanelRightOpen className="h-4 w-4" />
+              Show transcript
+            </button>
+          )}
         </div>
 
         {lesson.videoId && (
           <div className="flex flex-col md:flex-row md:items-stretch gap-4 lg:gap-6">
-            <div className="flex flex-1 min-w-0 flex-col gap-3">
+            <div className="flex-1 min-w-0">
               <div className="aspect-video w-full bg-black rounded-xl overflow-hidden border">
                 <iframe
                   ref={playerRef}
@@ -235,16 +248,6 @@ export function LessonView({
                   style={{ border: 0 }}
                 />
               </div>
-              {hasTranscript && !transcriptOpen && (
-                <button
-                  type="button"
-                  onClick={() => setTranscriptOpen(true)}
-                  className="inline-flex items-center gap-2 self-start rounded-lg border px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                >
-                  <PanelRightOpen className="h-4 w-4" />
-                  Show transcript
-                </button>
-              )}
             </div>
             {hasTranscript && transcriptOpen && (
               <div className="w-full shrink-0 md:relative md:w-[300px] lg:w-[360px] xl:w-[440px]">
