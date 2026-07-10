@@ -66,10 +66,10 @@ export default async function CoursePage({
                 <Link
                   key={lesson.id}
                   href={`/courses/${course.slug}/${lesson.id}`}
-                  className="bg-white rounded-xl border shadow-sm hover:shadow-md transition-all p-4 flex gap-6"
+                  className="bg-white rounded-xl border shadow-sm hover:shadow-md transition-all p-4 flex flex-col sm:flex-row gap-4 sm:gap-6"
                 >
                   {lesson.videoId && (
-                    <div className="relative w-64 h-36 flex-shrink-0 rounded-lg overflow-hidden">
+                    <div className="relative w-full sm:w-64 aspect-video sm:aspect-auto sm:h-36 shrink-0 rounded-lg overflow-hidden">
                       <img
                         src={youtubeThumbnail(lesson.videoId)}
                         alt={lesson.title}
@@ -93,7 +93,7 @@ export default async function CoursePage({
                       )}
                     </div>
                   )}
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <h2 className="text-xl font-semibold mb-2">{lesson.title}</h2>
                     <p className="text-muted-foreground">{lesson.summary}</p>
                     {colab && (
