@@ -1,0 +1,8447 @@
+[
+  {
+    "text": "all right it&#39;s time how&#39;s everyone doing",
+    "start": 2.92,
+    "duration": 4.52
+  },
+  {
+    "text": "today is everyone",
+    "start": 5.76,
+    "duration": 4.84
+  },
+  {
+    "text": "ready see we got some people joining us",
+    "start": 7.44,
+    "duration": 4.68
+  },
+  {
+    "text": "on",
+    "start": 10.6,
+    "duration": 5.28
+  },
+  {
+    "text": "YouTube uh this is it guys today uh we",
+    "start": 12.12,
+    "duration": 5.8
+  },
+  {
+    "text": "are going to be doing our last lesson of",
+    "start": 15.88,
+    "duration": 5.4
+  },
+  {
+    "text": "AI agent camp and we are going to be",
+    "start": 17.92,
+    "duration": 6.24
+  },
+  {
+    "text": "making a computer use",
+    "start": 21.28,
+    "duration": 5.32
+  },
+  {
+    "text": "agent so first of all how&#39;s everyone",
+    "start": 24.16,
+    "duration": 6.32
+  },
+  {
+    "text": "doing today um has has anyone used a",
+    "start": 26.6,
+    "duration": 6.48
+  },
+  {
+    "text": "computer use agent before uh what kind",
+    "start": 30.48,
+    "duration": 6.96
+  },
+  {
+    "text": "of stuff have you seen recently hey Raj",
+    "start": 33.08,
+    "duration": 7.6
+  },
+  {
+    "text": "uh s stuff on LinkedIn and Twitter great",
+    "start": 37.44,
+    "duration": 7.2
+  },
+  {
+    "text": "work um has anyone oh harsh great good",
+    "start": 40.68,
+    "duration": 6.72
+  },
+  {
+    "text": "to see you um can&#39;t wait to see what you",
+    "start": 44.64,
+    "duration": 6.0
+  },
+  {
+    "text": "guys are going to build for this um what",
+    "start": 47.4,
+    "duration": 4.6
+  },
+  {
+    "text": "what do you guys think about computer",
+    "start": 50.64,
+    "duration": 3.64
+  },
+  {
+    "text": "use agents uh what have you seen so far",
+    "start": 52.0,
+    "duration": 5.4
+  },
+  {
+    "text": "has anyone seen has anyone seen um of",
+    "start": 54.28,
+    "duration": 5.12
+  },
+  {
+    "text": "course the the big announcement",
+    "start": 57.4,
+    "duration": 7.16
+  },
+  {
+    "text": "yesterday was open AI released um their",
+    "start": 59.4,
+    "duration": 9.4
+  },
+  {
+    "text": "operator and um that combines a lot of",
+    "start": 64.56,
+    "duration": 6.08
+  },
+  {
+    "text": "this stuff that we just did in the last",
+    "start": 68.8,
+    "duration": 4.64
+  },
+  {
+    "text": "lesson um so for anyone who&#39;s watching",
+    "start": 70.64,
+    "duration": 5.76
+  },
+  {
+    "text": "this yeah operator harsh so so for",
+    "start": 73.44,
+    "duration": 4.96
+  },
+  {
+    "text": "anyone who&#39;s watching this um today",
+    "start": 76.4,
+    "duration": 5.36
+  },
+  {
+    "text": "we&#39;re going to be making a um Compu a",
+    "start": 78.4,
+    "duration": 6.48
+  },
+  {
+    "text": "fully automated computer use AI agent",
+    "start": 81.76,
+    "duration": 4.48
+  },
+  {
+    "text": "that can control a",
+    "start": 84.88,
+    "duration": 3.2
+  },
+  {
+    "text": "computer who knows if we&#39;re going to be",
+    "start": 86.24,
+    "duration": 4.84
+  },
+  {
+    "text": "able to do it in an hour um um I think",
+    "start": 88.08,
+    "duration": 5.0
+  },
+  {
+    "text": "uh I think we have a good shot at it but",
+    "start": 91.08,
+    "duration": 4.32
+  },
+  {
+    "text": "if it&#39;s your first time watching um I",
+    "start": 93.08,
+    "duration": 4.12
+  },
+  {
+    "text": "really recommend you go back and you",
+    "start": 95.4,
+    "duration": 4.12
+  },
+  {
+    "text": "watch the earlier lessons that we&#39;ve",
+    "start": 97.2,
+    "duration": 5.64
+  },
+  {
+    "text": "done um we did how to make a react based",
+    "start": 99.52,
+    "duration": 7.28
+  },
+  {
+    "text": "agent uh how to make a Json based agent",
+    "start": 102.84,
+    "duration": 6.36
+  },
+  {
+    "text": "um we did after that code execution",
+    "start": 106.8,
+    "duration": 7.64
+  },
+  {
+    "text": "agents and browser use agent and I know",
+    "start": 109.2,
+    "duration": 8.44
+  },
+  {
+    "text": "a lot of you here uh joined us for the",
+    "start": 114.44,
+    "duration": 6.12
+  },
+  {
+    "text": "browser use agent and that&#39;s going to be",
+    "start": 117.64,
+    "duration": 5.48
+  },
+  {
+    "text": "uh super super useful uh for what we&#39;re",
+    "start": 120.56,
+    "duration": 5.44
+  },
+  {
+    "text": "going to do today hey uh good morning I",
+    "start": 123.12,
+    "duration": 7.04
+  },
+  {
+    "text": "think that&#39;s Brian and um so yeah we&#39;re",
+    "start": 126.0,
+    "duration": 5.88
+  },
+  {
+    "text": "going to get started also one other",
+    "start": 130.16,
+    "duration": 3.76
+  },
+  {
+    "text": "thing I wanted to say was um at the end",
+    "start": 131.88,
+    "duration": 5.28
+  },
+  {
+    "text": "of this um lesson uh if I forget remind",
+    "start": 133.92,
+    "duration": 6.0
+  },
+  {
+    "text": "me uh I I want to talk about what are",
+    "start": 137.16,
+    "duration": 5.28
+  },
+  {
+    "text": "the next steps uh for you all after",
+    "start": 139.92,
+    "duration": 4.28
+  },
+  {
+    "text": "after completing this",
+    "start": 142.44,
+    "duration": 5.36
+  },
+  {
+    "text": "course so um yeah let&#39;s let&#39;s get",
+    "start": 144.2,
+    "duration": 6.4
+  },
+  {
+    "text": "started um let me just talk a little bit",
+    "start": 147.8,
+    "duration": 4.92
+  },
+  {
+    "text": "about my work with uh computer use",
+    "start": 150.6,
+    "duration": 6.12
+  },
+  {
+    "text": "agents uh real quick so this is um this",
+    "start": 152.72,
+    "duration": 5.92
+  },
+  {
+    "text": "is a project that I&#39;ve been working on",
+    "start": 156.72,
+    "duration": 6.08
+  },
+  {
+    "text": "actually for a little while and um",
+    "start": 158.64,
+    "duration": 5.72
+  },
+  {
+    "text": "here&#39;s I&#39;ll I&#39;ll I&#39;ll send a link to",
+    "start": 162.8,
+    "duration": 4.08
+  },
+  {
+    "text": "this blog post for everyone this goes",
+    "start": 164.36,
+    "duration": 5.08
+  },
+  {
+    "text": "into way into the details about what",
+    "start": 166.88,
+    "duration": 5.4
+  },
+  {
+    "text": "I&#39;ve been working on for the past month",
+    "start": 169.44,
+    "duration": 6.0
+  },
+  {
+    "text": "or actually even longer but essentially",
+    "start": 172.28,
+    "duration": 5.8
+  },
+  {
+    "text": "the goal was to make uh an entirely",
+    "start": 175.44,
+    "duration": 5.96
+  },
+  {
+    "text": "open- Source uh agent",
+    "start": 178.08,
+    "duration": 8.08
+  },
+  {
+    "text": "and as you can see here um it is it is a",
+    "start": 181.4,
+    "duration": 7.0
+  },
+  {
+    "text": "Ubuntu system but it would work on any",
+    "start": 186.16,
+    "duration": 4.92
+  },
+  {
+    "text": "operating system and the AI is is",
+    "start": 188.4,
+    "duration": 6.0
+  },
+  {
+    "text": "controlling the Mouse um and the",
+    "start": 191.08,
+    "duration": 7.64
+  },
+  {
+    "text": "keyboard um of the operating system um",
+    "start": 194.4,
+    "duration": 6.96
+  },
+  {
+    "text": "and as someone just wrote in the chat",
+    "start": 198.72,
+    "duration": 4.76
+  },
+  {
+    "text": "like would this work on a mobile",
+    "start": 201.36,
+    "duration": 4.44
+  },
+  {
+    "text": "operating system yeah this this system",
+    "start": 203.48,
+    "duration": 6.32
+  },
+  {
+    "text": "would actually even work um on uh mobile",
+    "start": 205.8,
+    "duration": 5.56
+  },
+  {
+    "text": "on a mobile device and I even have a",
+    "start": 209.8,
+    "duration": 4.36
+  },
+  {
+    "text": "friend who&#39;s using um nearly the same",
+    "start": 211.36,
+    "duration": 5.84
+  },
+  {
+    "text": "nearly the same thing that I have um and",
+    "start": 214.16,
+    "duration": 6.52
+  },
+  {
+    "text": "he&#39;s using it to automate um iPhones or",
+    "start": 217.2,
+    "duration": 6.4
+  },
+  {
+    "text": "or Androids and um it&#39;s it&#39;s really",
+    "start": 220.68,
+    "duration": 5.88
+  },
+  {
+    "text": "really really interesting now um you",
+    "start": 223.6,
+    "duration": 6.24
+  },
+  {
+    "text": "have to try it um to to see how good it",
+    "start": 226.56,
+    "duration": 5.8
+  },
+  {
+    "text": "really is um today we&#39;re just going to",
+    "start": 229.84,
+    "duration": 5.36
+  },
+  {
+    "text": "be going through um how you can make",
+    "start": 232.36,
+    "duration": 4.2
+  },
+  {
+    "text": "basically what I&#39;ve been do what I&#39;ve",
+    "start": 235.2,
+    "duration": 4.28
+  },
+  {
+    "text": "worked on for a month in an hour so it&#39;s",
+    "start": 236.56,
+    "duration": 4.96
+  },
+  {
+    "text": "going to going to be really really rough",
+    "start": 239.48,
+    "duration": 4.72
+  },
+  {
+    "text": "and even the ones that that are even the",
+    "start": 241.52,
+    "duration": 4.36
+  },
+  {
+    "text": "really good computer use agents they",
+    "start": 244.2,
+    "duration": 4.24
+  },
+  {
+    "text": "still struggle uh constantly to get",
+    "start": 245.88,
+    "duration": 5.04
+  },
+  {
+    "text": "things right but it&#39;s um it&#39;s an area",
+    "start": 248.44,
+    "duration": 4.6
+  },
+  {
+    "text": "where things are moving really fast so I",
+    "start": 250.92,
+    "duration": 4.08
+  },
+  {
+    "text": "think this is going to be um I think",
+    "start": 253.04,
+    "duration": 4.8
+  },
+  {
+    "text": "this is going to be super super relevant",
+    "start": 255.0,
+    "duration": 4.96
+  },
+  {
+    "text": "for anyone who&#39;s",
+    "start": 257.84,
+    "duration": 5.08
+  },
+  {
+    "text": "interested in building agents right",
+    "start": 259.96,
+    "duration": 5.24
+  },
+  {
+    "text": "now all right",
+    "start": 262.92,
+    "duration": 5.0
+  },
+  {
+    "text": "so let&#39;s uh let&#39;s just get started",
+    "start": 265.2,
+    "duration": 4.32
+  },
+  {
+    "text": "coding right away cuz this is going to",
+    "start": 267.92,
+    "duration": 4.64
+  },
+  {
+    "text": "take take us um this is going to take us",
+    "start": 269.52,
+    "duration": 5.36
+  },
+  {
+    "text": "the whole hour that we have",
+    "start": 272.56,
+    "duration": 5.44
+  },
+  {
+    "text": "left so um who here",
+    "start": 274.88,
+    "duration": 5.32
+  },
+  {
+    "text": "remembers um",
+    "start": 278.0,
+    "duration": 7.24
+  },
+  {
+    "text": "e2b um and who here has a um a Gro API",
+    "start": 280.2,
+    "duration": 8.64
+  },
+  {
+    "text": "key setup um those are the those are the",
+    "start": 285.24,
+    "duration": 5.84
+  },
+  {
+    "text": "main things that we&#39;re going to be uh",
+    "start": 288.84,
+    "duration": 4.84
+  },
+  {
+    "text": "work using using today for this uh if",
+    "start": 291.08,
+    "duration": 5.56
+  },
+  {
+    "text": "you have EB and Gro um then you&#39;re",
+    "start": 293.68,
+    "duration": 6.68
+  },
+  {
+    "text": "pretty much good to go uh perfect bur on",
+    "start": 296.64,
+    "duration": 6.8
+  },
+  {
+    "text": "so we&#39;re going to do um what we did",
+    "start": 300.36,
+    "duration": 6.04
+  },
+  {
+    "text": "before um we&#39;re going",
+    "start": 303.44,
+    "duration": 7.88
+  },
+  {
+    "text": "to um we&#39;re going to pip install e2b",
+    "start": 306.4,
+    "duration": 5.96
+  },
+  {
+    "text": "code",
+    "start": 311.32,
+    "duration": 4.44
+  },
+  {
+    "text": "interpreter um and this just going to um",
+    "start": 312.36,
+    "duration": 6.2
+  },
+  {
+    "text": "give us access to the Cloud Server where",
+    "start": 315.76,
+    "duration": 6.36
+  },
+  {
+    "text": "we can uh host the remote execution",
+    "start": 318.56,
+    "duration": 5.8
+  },
+  {
+    "text": "environment and that&#39;s important I&#39;m not",
+    "start": 322.12,
+    "duration": 4.2
+  },
+  {
+    "text": "going to be running any llm generated",
+    "start": 324.36,
+    "duration": 4.4
+  },
+  {
+    "text": "code on my own computer or even allowing",
+    "start": 326.32,
+    "duration": 5.8
+  },
+  {
+    "text": "llm to pick my Mouse um for for a",
+    "start": 328.76,
+    "duration": 5.04
+  },
+  {
+    "text": "variety of reasons I don&#39;t really think",
+    "start": 332.12,
+    "duration": 4.12
+  },
+  {
+    "text": "this is a good idea um as a developer to",
+    "start": 333.8,
+    "duration": 5.76
+  },
+  {
+    "text": "be to be um testing this way most of all",
+    "start": 336.24,
+    "duration": 5.52
+  },
+  {
+    "text": "that you know it&#39;s it&#39;s it&#39;s insecure",
+    "start": 339.56,
+    "duration": 5.84
+  },
+  {
+    "text": "it&#39;s not safe um Anything could happen",
+    "start": 341.76,
+    "duration": 7.28
+  },
+  {
+    "text": "so um moving on once I have that",
+    "start": 345.4,
+    "duration": 7.32
+  },
+  {
+    "text": "installed um this is uh this is the same",
+    "start": 349.04,
+    "duration": 6.08
+  },
+  {
+    "text": "code I&#39;m going to just copied the same",
+    "start": 352.72,
+    "duration": 5.2
+  },
+  {
+    "text": "code um that we used in the code",
+    "start": 355.12,
+    "duration": 6.44
+  },
+  {
+    "text": "execution lesson so we&#39;re importing the",
+    "start": 357.92,
+    "duration": 7.76
+  },
+  {
+    "text": "EB code interpreter and oh but let me",
+    "start": 361.56,
+    "duration": 5.92
+  },
+  {
+    "text": "let me delete that",
+    "start": 365.68,
+    "duration": 4.16
+  },
+  {
+    "text": "because oh yeah sure and I&#39;ll share this",
+    "start": 367.48,
+    "duration": 5.56
+  },
+  {
+    "text": "with you all",
+    "start": 369.84,
+    "duration": 3.2
+  },
+  {
+    "text": "um link copy link of course so you all",
+    "start": 374.64,
+    "duration": 7.04
+  },
+  {
+    "text": "can follow along as we are uh as we are",
+    "start": 378.44,
+    "duration": 6.96
+  },
+  {
+    "text": "building here",
+    "start": 381.68,
+    "duration": 3.72
+  },
+  {
+    "text": "perfect great so",
+    "start": 387.88,
+    "duration": 5.48
+  },
+  {
+    "text": "um this is the exact same code that we",
+    "start": 390.92,
+    "duration": 5.0
+  },
+  {
+    "text": "had before um to create a new Cloud",
+    "start": 393.36,
+    "duration": 6.24
+  },
+  {
+    "text": "sandbox right and we are going to change",
+    "start": 395.92,
+    "duration": 6.72
+  },
+  {
+    "text": "one thing here which is I&#39;m going to",
+    "start": 399.6,
+    "duration": 4.24
+  },
+  {
+    "text": "just",
+    "start": 402.64,
+    "duration": 5.48
+  },
+  {
+    "text": "add uh template equals desktop that&#39;s",
+    "start": 403.84,
+    "duration": 7.0
+  },
+  {
+    "text": "all and that&#39;s um you&#39;re going to see in",
+    "start": 408.12,
+    "duration": 4.72
+  },
+  {
+    "text": "a second what what features that enables",
+    "start": 410.84,
+    "duration": 3.0
+  },
+  {
+    "text": "but it",
+    "start": 412.84,
+    "duration": 3.2
+  },
+  {
+    "text": "enables the the core feature that we",
+    "start": 413.84,
+    "duration": 5.28
+  },
+  {
+    "text": "need today let me run this uh which is",
+    "start": 416.04,
+    "duration": 6.68
+  },
+  {
+    "text": "that you can um have a um a desktop",
+    "start": 419.12,
+    "duration": 5.48
+  },
+  {
+    "text": "operating system in our case it&#39;s going",
+    "start": 422.72,
+    "duration": 4.24
+  },
+  {
+    "text": "to be um ubu because that&#39;s the easiest",
+    "start": 424.6,
+    "duration": 4.16
+  },
+  {
+    "text": "one to it&#39;s open source and it&#39;s really",
+    "start": 426.96,
+    "duration": 3.88
+  },
+  {
+    "text": "easy to spin",
+    "start": 428.76,
+    "duration": 7.84
+  },
+  {
+    "text": "up okay uh so now name this computer use",
+    "start": 430.84,
+    "duration": 11.32
+  },
+  {
+    "text": "agent so now um let&#39;s let&#39;s see uh let&#39;s",
+    "start": 436.6,
+    "duration": 9.36
+  },
+  {
+    "text": "see the desktop all right so I&#39;m going",
+    "start": 442.16,
+    "duration": 6.52
+  },
+  {
+    "text": "so we had this command uh I don&#39;t not",
+    "start": 445.96,
+    "duration": 5.0
+  },
+  {
+    "text": "sure if I showed it before but we we",
+    "start": 448.68,
+    "duration": 4.36
+  },
+  {
+    "text": "were running python commands but I think",
+    "start": 450.96,
+    "duration": 5.52
+  },
+  {
+    "text": "I mentioned you could also run uh shell",
+    "start": 453.04,
+    "duration": 7.24
+  },
+  {
+    "text": "commands so um this is just like uh Unix",
+    "start": 456.48,
+    "duration": 7.28
+  },
+  {
+    "text": "shell stuff but there&#39;s a command called",
+    "start": 460.28,
+    "duration": 5.32
+  },
+  {
+    "text": "um",
+    "start": 463.76,
+    "duration": 5.84
+  },
+  {
+    "text": "scrot uh which um takes a",
+    "start": 465.6,
+    "duration": 7.6
+  },
+  {
+    "text": "screenshot um of your desktop and I&#39;m",
+    "start": 469.6,
+    "duration": 6.6
+  },
+  {
+    "text": "going to be basically taking a",
+    "start": 473.2,
+    "duration": 5.76
+  },
+  {
+    "text": "screenshot um to prove to you all that",
+    "start": 476.2,
+    "duration": 5.32
+  },
+  {
+    "text": "we actually we have uh a real computer",
+    "start": 478.96,
+    "duration": 5.52
+  },
+  {
+    "text": "here so",
+    "start": 481.52,
+    "duration": 6.68
+  },
+  {
+    "text": "let&#39;s let&#39;s save and then the argument",
+    "start": 484.48,
+    "duration": 7.52
+  },
+  {
+    "text": "here is just the uh screenshot",
+    "start": 488.2,
+    "duration": 7.36
+  },
+  {
+    "text": "path and that saves the screenshot on",
+    "start": 492.0,
+    "duration": 6.48
+  },
+  {
+    "text": "the remote computer we uh we need to",
+    "start": 495.56,
+    "duration": 5.84
+  },
+  {
+    "text": "have it on the local um on the local",
+    "start": 498.48,
+    "duration": 5.32
+  },
+  {
+    "text": "setups that we can actually read it so",
+    "start": 501.4,
+    "duration": 5.72
+  },
+  {
+    "text": "to do that I&#39;m going to do sandbox files",
+    "start": 503.8,
+    "duration": 6.24
+  },
+  {
+    "text": "read uh screenshot path",
+    "start": 507.12,
+    "duration": 7.08
+  },
+  {
+    "text": "and format equals bytes so it comes back",
+    "start": 510.04,
+    "duration": 5.68
+  },
+  {
+    "text": "as uh",
+    "start": 514.2,
+    "duration": 3.84
+  },
+  {
+    "text": "bytes",
+    "start": 515.72,
+    "duration": 5.48
+  },
+  {
+    "text": "then um what I can do is I can use the",
+    "start": 518.04,
+    "duration": 5.0
+  },
+  {
+    "text": "same the exact same code that we had",
+    "start": 521.2,
+    "duration": 5.48
+  },
+  {
+    "text": "before for uh not the code execution",
+    "start": 523.04,
+    "duration": 5.44
+  },
+  {
+    "text": "agent but I can use the code that we",
+    "start": 526.68,
+    "duration": 6.8
+  },
+  {
+    "text": "used uh two days ago for the um for the",
+    "start": 528.48,
+    "duration": 9.88
+  },
+  {
+    "text": "browser use agent um to show that image",
+    "start": 533.48,
+    "duration": 7.56
+  },
+  {
+    "text": "um here in the notebook just the same",
+    "start": 538.36,
+    "duration": 4.32
+  },
+  {
+    "text": "way that we were taking a screenshot",
+    "start": 541.04,
+    "duration": 4.28
+  },
+  {
+    "text": "with uh playwright I&#39;m going to Now",
+    "start": 542.68,
+    "duration": 5.2
+  },
+  {
+    "text": "display that uh",
+    "start": 545.32,
+    "duration": 5.2
+  },
+  {
+    "text": "here and all this code does is it just",
+    "start": 547.88,
+    "duration": 5.32
+  },
+  {
+    "text": "show it&#39;s just show scaling down and",
+    "start": 550.52,
+    "duration": 4.96
+  },
+  {
+    "text": "then showing the image here in the in",
+    "start": 553.2,
+    "duration": 3.0
+  },
+  {
+    "text": "the",
+    "start": 555.48,
+    "duration": 5.6
+  },
+  {
+    "text": "notebook cool so there it is um I hope",
+    "start": 556.2,
+    "duration": 6.84
+  },
+  {
+    "text": "you believe me now this is a this is a",
+    "start": 561.08,
+    "duration": 5.92
+  },
+  {
+    "text": "real um desktop um operating system that",
+    "start": 563.04,
+    "duration": 7.4
+  },
+  {
+    "text": "we have here running in the cloud and uh",
+    "start": 567.0,
+    "duration": 6.08
+  },
+  {
+    "text": "that&#39;s that&#39;s why we use e2b for this it",
+    "start": 570.44,
+    "duration": 5.0
+  },
+  {
+    "text": "just takes a minute to get it set",
+    "start": 573.08,
+    "duration": 5.56
+  },
+  {
+    "text": "up and um yeah let&#39;s let&#39;s see that this",
+    "start": 575.44,
+    "duration": 4.76
+  },
+  {
+    "text": "is actually a real computer that you can",
+    "start": 578.64,
+    "duration": 4.28
+  },
+  {
+    "text": "do stuff with and it&#39;s not just an image",
+    "start": 580.2,
+    "duration": 5.2
+  },
+  {
+    "text": "so um everything we do we have to do",
+    "start": 582.92,
+    "duration": 5.52
+  },
+  {
+    "text": "with code so I&#39;m going to run another",
+    "start": 585.4,
+    "duration": 5.8
+  },
+  {
+    "text": "command and this is a this is a shell",
+    "start": 588.44,
+    "duration": 7.52
+  },
+  {
+    "text": "command um now how how would you move uh",
+    "start": 591.2,
+    "duration": 7.12
+  },
+  {
+    "text": "your mouse if you don&#39;t actually have",
+    "start": 595.96,
+    "duration": 4.4
+  },
+  {
+    "text": "access if it&#39;s not a real machine and we",
+    "start": 598.32,
+    "duration": 4.64
+  },
+  {
+    "text": "don&#39;t have access to a real mouse or the",
+    "start": 600.36,
+    "duration": 6.2
+  },
+  {
+    "text": "USB uh of the computer it&#39;s a cloud um",
+    "start": 602.96,
+    "duration": 6.04
+  },
+  {
+    "text": "it&#39;s it&#39;s a cloud environment how would",
+    "start": 606.56,
+    "duration": 4.76
+  },
+  {
+    "text": "we do that uh well there&#39;s actually a",
+    "start": 609.0,
+    "duration": 4.32
+  },
+  {
+    "text": "command uh a shell command that you can",
+    "start": 611.32,
+    "duration": 5.44
+  },
+  {
+    "text": "use for that and it&#39;s called um",
+    "start": 613.32,
+    "duration": 5.8
+  },
+  {
+    "text": "X oh let me open it right here it&#39;s",
+    "start": 616.76,
+    "duration": 8.48
+  },
+  {
+    "text": "called X do tool all right so uh check",
+    "start": 619.12,
+    "duration": 9.88
+  },
+  {
+    "text": "out this really cool tool um we see the",
+    "start": 625.24,
+    "duration": 6.64
+  },
+  {
+    "text": "the get ithub page here fake keyboard",
+    "start": 629.0,
+    "duration": 6.36
+  },
+  {
+    "text": "mouse input window management uh and",
+    "start": 631.88,
+    "duration": 7.08
+  },
+  {
+    "text": "more it&#39;s a it&#39;s a really really awesome",
+    "start": 635.36,
+    "duration": 6.2
+  },
+  {
+    "text": "uh tool you can you can have it on",
+    "start": 638.96,
+    "duration": 5.32
+  },
+  {
+    "text": "Ubuntu you can even run it on Mac OS so",
+    "start": 641.56,
+    "duration": 4.64
+  },
+  {
+    "text": "I could run this on my own",
+    "start": 644.28,
+    "duration": 4.72
+  },
+  {
+    "text": "laptop um and this is this is how it",
+    "start": 646.2,
+    "duration": 4.48
+  },
+  {
+    "text": "works",
+    "start": 649.0,
+    "duration": 7.04
+  },
+  {
+    "text": "so here I will run X do tool Mouse",
+    "start": 650.68,
+    "duration": 9.2
+  },
+  {
+    "text": "move uh let&#39;s say uh let&#39;s just let&#39;s",
+    "start": 656.04,
+    "duration": 7.4
+  },
+  {
+    "text": "just put in some coordinates 500",
+    "start": 659.88,
+    "duration": 3.56
+  },
+  {
+    "text": "500 and then once that&#39;s finished I&#39;ll",
+    "start": 665.32,
+    "duration": 5.12
+  },
+  {
+    "text": "run the screenshot code",
+    "start": 668.12,
+    "duration": 5.28
+  },
+  {
+    "text": "again did it",
+    "start": 670.44,
+    "duration": 5.52
+  },
+  {
+    "text": "move did anyone see if it moved let me",
+    "start": 673.4,
+    "duration": 4.8
+  },
+  {
+    "text": "run it let me put it somewhere",
+    "start": 675.96,
+    "duration": 4.12
+  },
+  {
+    "text": "else I think that might have been where",
+    "start": 678.2,
+    "duration": 4.0
+  },
+  {
+    "text": "it",
+    "start": 680.08,
+    "duration": 2.12
+  },
+  {
+    "text": "was let&#39;s see let&#39;s see what what if I",
+    "start": 682.52,
+    "duration": 8.72
+  },
+  {
+    "text": "add in uh sync there",
+    "start": 685.8,
+    "duration": 5.44
+  },
+  {
+    "text": "maybe it needs to uh the sync means that",
+    "start": 692.32,
+    "duration": 3.64
+  },
+  {
+    "text": "you&#39;re supposed it&#39;s supposed to wait",
+    "start": 694.76,
+    "duration": 6.56
+  },
+  {
+    "text": "until it&#39;s uh finish moving I believe so",
+    "start": 695.96,
+    "duration": 6.72
+  },
+  {
+    "text": "now we&#39;re",
+    "start": 701.32,
+    "duration": 5.24
+  },
+  {
+    "text": "waiting uh let&#39;s",
+    "start": 702.68,
+    "duration": 3.88
+  },
+  {
+    "text": "see running",
+    "start": 708.68,
+    "duration": 6.2
+  },
+  {
+    "text": "running",
+    "start": 712.48,
+    "duration": 5.04
+  },
+  {
+    "text": "running okay this",
+    "start": 714.88,
+    "duration": 5.44
+  },
+  {
+    "text": "is not what normally",
+    "start": 717.52,
+    "duration": 6.96
+  },
+  {
+    "text": "happens so let&#39;s try let&#39;s give it",
+    "start": 720.32,
+    "duration": 7.52
+  },
+  {
+    "text": "another second and if that doesn&#39;t",
+    "start": 724.48,
+    "duration": 6.72
+  },
+  {
+    "text": "work okay let&#39;s like I stopped that one",
+    "start": 727.84,
+    "duration": 6.36
+  },
+  {
+    "text": "it seemed to be okay so it looks like",
+    "start": 731.2,
+    "duration": 5.04
+  },
+  {
+    "text": "maybe the sandbox might have timed out",
+    "start": 734.2,
+    "duration": 3.76
+  },
+  {
+    "text": "while I was talking for so long so I",
+    "start": 736.24,
+    "duration": 3.84
+  },
+  {
+    "text": "create a new Sandbox just run run all",
+    "start": 737.96,
+    "duration": 3.04
+  },
+  {
+    "text": "the code",
+    "start": 740.08,
+    "duration": 3.32
+  },
+  {
+    "text": "again that does happen if you talk for a",
+    "start": 741.0,
+    "duration": 3.72
+  },
+  {
+    "text": "long",
+    "start": 743.4,
+    "duration": 6.44
+  },
+  {
+    "text": "time if I talk for a long time let&#39;s see",
+    "start": 744.72,
+    "duration": 11.4
+  },
+  {
+    "text": "let&#39;s see okay so I have X do tool Mouse",
+    "start": 749.84,
+    "duration": 9.64
+  },
+  {
+    "text": "move uh",
+    "start": 756.12,
+    "duration": 5.96
+  },
+  {
+    "text": "sync and",
+    "start": 759.48,
+    "duration": 4.16
+  },
+  {
+    "text": "here",
+    "start": 762.08,
+    "duration": 5.48
+  },
+  {
+    "text": "um possibly uh possibly the screenshot",
+    "start": 763.64,
+    "duration": 6.72
+  },
+  {
+    "text": "needs to be uh",
+    "start": 767.56,
+    "duration": 8.0
+  },
+  {
+    "text": "deleted um before I can create it",
+    "start": 770.36,
+    "duration": 7.96
+  },
+  {
+    "text": "again let&#39;s see if that let&#39;s see if",
+    "start": 775.56,
+    "duration": 4.68
+  },
+  {
+    "text": "that&#39;s the",
+    "start": 778.32,
+    "duration": 4.96
+  },
+  {
+    "text": "the issue",
+    "start": 780.24,
+    "duration": 6.64
+  },
+  {
+    "text": "SBX files.",
+    "start": 783.28,
+    "duration": 5.12
+  },
+  {
+    "text": "remove",
+    "start": 786.88,
+    "duration": 3.36
+  },
+  {
+    "text": "screenshot",
+    "start": 788.4,
+    "duration": 4.36
+  },
+  {
+    "text": "path let&#39;s",
+    "start": 790.24,
+    "duration": 7.52
+  },
+  {
+    "text": "see if that makes any difference",
+    "start": 792.76,
+    "duration": 5.0
+  },
+  {
+    "text": "I swear I tested all this",
+    "start": 811.84,
+    "duration": 3.28
+  },
+  {
+    "text": "before there it is okay so I&#39;m not sure",
+    "start": 815.56,
+    "duration": 4.96
+  },
+  {
+    "text": "I I really don&#39;t know what happened",
+    "start": 819.2,
+    "duration": 4.12
+  },
+  {
+    "text": "there uh but so here the mouse is moved",
+    "start": 820.52,
+    "duration": 5.16
+  },
+  {
+    "text": "and let&#39;s run it again let&#39;s move the",
+    "start": 823.32,
+    "duration": 4.52
+  },
+  {
+    "text": "mouse somewhere",
+    "start": 825.68,
+    "duration": 6.08
+  },
+  {
+    "text": "else see now it&#39;s at 200 200 possibly I",
+    "start": 827.84,
+    "duration": 6.68
+  },
+  {
+    "text": "think I might have just skip this uh",
+    "start": 831.76,
+    "duration": 5.16
+  },
+  {
+    "text": "removing the screenshot path and maybe",
+    "start": 834.52,
+    "duration": 5.08
+  },
+  {
+    "text": "that um yeah maybe because I didn&#39;t",
+    "start": 836.92,
+    "duration": 4.4
+  },
+  {
+    "text": "remove the old screenshot from the",
+    "start": 839.6,
+    "duration": 4.4
+  },
+  {
+    "text": "system uh it wasn&#39;t a this the",
+    "start": 841.32,
+    "duration": 5.56
+  },
+  {
+    "text": "screenshot command uh wasn&#39;t uh wasn&#39;t",
+    "start": 844.0,
+    "duration": 4.88
+  },
+  {
+    "text": "able to save the file that&#39;s really",
+    "start": 846.88,
+    "duration": 3.8
+  },
+  {
+    "text": "that&#39;s really interesting I never uh",
+    "start": 848.88,
+    "duration": 5.04
+  },
+  {
+    "text": "never encountered that yet so um let&#39;s",
+    "start": 850.68,
+    "duration": 6.76
+  },
+  {
+    "text": "move on so now we&#39;re able to move this",
+    "start": 853.92,
+    "duration": 7.6
+  },
+  {
+    "text": "Mouse um let&#39;s click on something so um",
+    "start": 857.44,
+    "duration": 9.12
+  },
+  {
+    "text": "I know this is a scale image here so if",
+    "start": 861.52,
+    "duration": 8.8
+  },
+  {
+    "text": "I would just kind of measure I can",
+    "start": 866.56,
+    "duration": 6.6
+  },
+  {
+    "text": "measure here where something is so this",
+    "start": 870.32,
+    "duration": 6.36
+  },
+  {
+    "text": "is uh 2",
+    "start": 873.16,
+    "duration": 7.4
+  },
+  {
+    "text": "260 um",
+    "start": 876.68,
+    "duration": 6.88
+  },
+  {
+    "text": "374 okay",
+    "start": 880.56,
+    "duration": 6.52
+  },
+  {
+    "text": "so let&#39;s see",
+    "start": 883.56,
+    "duration": 7.52
+  },
+  {
+    "text": "with so that should be about 500",
+    "start": 887.08,
+    "duration": 7.2
+  },
+  {
+    "text": "across and then I think that the I think",
+    "start": 891.08,
+    "duration": 5.64
+  },
+  {
+    "text": "that this comes up from the bottom the",
+    "start": 894.28,
+    "duration": 4.52
+  },
+  {
+    "text": "the dimensions actually come up from the",
+    "start": 896.72,
+    "duration": 6.76
+  },
+  {
+    "text": "bottom bottom with um no no that&#39;s right",
+    "start": 898.8,
+    "duration": 8.2
+  },
+  {
+    "text": "so here it&#39;s it&#39;s 500 across and then",
+    "start": 903.48,
+    "duration": 6.68
+  },
+  {
+    "text": "370 down If I multiply that by two",
+    "start": 907.0,
+    "duration": 5.92
+  },
+  {
+    "text": "because we&#39;re at a scale of two um I get",
+    "start": 910.16,
+    "duration": 3.96
+  },
+  {
+    "text": "to about",
+    "start": 912.92,
+    "duration": 4.08
+  },
+  {
+    "text": "750 down or something like that so let&#39;s",
+    "start": 914.12,
+    "duration": 5.0
+  },
+  {
+    "text": "try it",
+    "start": 917.0,
+    "duration": 5.12
+  },
+  {
+    "text": 550,
+    "start": 919.12,
+    "duration": 3.0
+  },
+  {
+    "text": "750 so now the mouse is here over the",
+    "start": 923.6,
+    "duration": 9.56
+  },
+  {
+    "text": "dock okay and so let&#39;s try and run uh",
+    "start": 927.72,
+    "duration": 8.64
+  },
+  {
+    "text": "let&#39;s let&#39;s try and click on",
+    "start": 933.16,
+    "duration": 3.2
+  },
+  {
+    "text": "something let&#39;s see how much time do we",
+    "start": 937.12,
+    "duration": 4.16
+  },
+  {
+    "text": "have left to make this agent we have for",
+    "start": 939.6,
+    "duration": 4.12
+  },
+  {
+    "text": "we have 45 minutes left I think we can",
+    "start": 941.28,
+    "duration": 3.2
+  },
+  {
+    "text": "do",
+    "start": 943.72,
+    "duration": 3.72
+  },
+  {
+    "text": "it commands.",
+    "start": 944.48,
+    "duration": 5.32
+  },
+  {
+    "text": "run and to click on something is the",
+    "start": 947.44,
+    "duration": 4.08
+  },
+  {
+    "text": "same X do",
+    "start": 949.8,
+    "duration": 3.28
+  },
+  {
+    "text": "tool",
+    "start": 951.52,
+    "duration": 5.0
+  },
+  {
+    "text": "click uh one uh one here means the left",
+    "start": 953.08,
+    "duration": 5.12
+  },
+  {
+    "text": "Mouse button so I could do the right I",
+    "start": 956.52,
+    "duration": 3.28
+  },
+  {
+    "text": "could do three three for the right Mouse",
+    "start": 958.2,
+    "duration": 4.32
+  },
+  {
+    "text": "button two for the middle button let&#39;s",
+    "start": 959.8,
+    "duration": 4.52
+  },
+  {
+    "text": "run this",
+    "start": 962.52,
+    "duration": 5.0
+  },
+  {
+    "text": "again okay now something has changed but",
+    "start": 964.32,
+    "duration": 5.56
+  },
+  {
+    "text": "we don&#39;t see the web browser yet not",
+    "start": 967.52,
+    "duration": 4.0
+  },
+  {
+    "text": "everything happens right",
+    "start": 969.88,
+    "duration": 5.2
+  },
+  {
+    "text": "away cool so there&#39;s the web",
+    "start": 971.52,
+    "duration": 7.04
+  },
+  {
+    "text": "browser and um yeah we can we can keep",
+    "start": 975.08,
+    "duration": 7.36
+  },
+  {
+    "text": "doing things uh like this so if I wanted",
+    "start": 978.56,
+    "duration": 8.08
+  },
+  {
+    "text": "to um click on the on the address bar I",
+    "start": 982.44,
+    "duration": 6.88
+  },
+  {
+    "text": "can click on that um I can use x to tool",
+    "start": 986.64,
+    "duration": 5.64
+  },
+  {
+    "text": "to type uh and then I could even use it",
+    "start": 989.32,
+    "duration": 6.08
+  },
+  {
+    "text": "to hit the return key you can even use",
+    "start": 992.28,
+    "duration": 4.96
+  },
+  {
+    "text": "it for I think you can even use it for",
+    "start": 995.4,
+    "duration": 5.92
+  },
+  {
+    "text": "dragging um so all sorts of basically",
+    "start": 997.24,
+    "duration": 5.52
+  },
+  {
+    "text": "everything that we need to do with the",
+    "start": 1001.32,
+    "duration": 5.44
+  },
+  {
+    "text": "computer use agent uh we can do uh via",
+    "start": 1002.76,
+    "duration": 6.44
+  },
+  {
+    "text": "this uh command line",
+    "start": 1006.76,
+    "duration": 5.04
+  },
+  {
+    "text": "command and uh even without this one",
+    "start": 1009.2,
+    "duration": 4.44
+  },
+  {
+    "text": "there are some other tools you could use",
+    "start": 1011.8,
+    "duration": 3.88
+  },
+  {
+    "text": "but uh this one has worked really well",
+    "start": 1013.64,
+    "duration": 5.72
+  },
+  {
+    "text": "for me so far",
+    "start": 1015.68,
+    "duration": 3.68
+  },
+  {
+    "text": "so um that&#39;s just the that&#39;s just the",
+    "start": 1019.76,
+    "duration": 5.12
+  },
+  {
+    "text": "environment that we&#39;re going to automate",
+    "start": 1022.72,
+    "duration": 5.44
+  },
+  {
+    "text": "so this is just getting set up now what",
+    "start": 1024.88,
+    "duration": 6.36
+  },
+  {
+    "text": "we really want to do today uh is we want",
+    "start": 1028.16,
+    "duration": 4.6
+  },
+  {
+    "text": "to make an",
+    "start": 1031.24,
+    "duration": 5.92
+  },
+  {
+    "text": "agent that completely controls uh what&#39;s",
+    "start": 1032.76,
+    "duration": 6.04
+  },
+  {
+    "text": "going on on the computer so not just",
+    "start": 1037.16,
+    "duration": 4.56
+  },
+  {
+    "text": "needs to be able to move the mouse but",
+    "start": 1038.8,
+    "duration": 6.32
+  },
+  {
+    "text": "it also has to be able to see uh what&#39;s",
+    "start": 1041.72,
+    "duration": 6.4
+  },
+  {
+    "text": "happening um need to be able to get",
+    "start": 1045.12,
+    "duration": 4.24
+  },
+  {
+    "text": "context",
+    "start": 1048.12,
+    "duration": 4.32
+  },
+  {
+    "text": "uh from that computer so before we do",
+    "start": 1049.36,
+    "duration": 4.16
+  },
+  {
+    "text": "anything",
+    "start": 1052.44,
+    "duration": 5.48
+  },
+  {
+    "text": "else let&#39;s make uh let&#39;s make a",
+    "start": 1053.52,
+    "duration": 6.92
+  },
+  {
+    "text": "flowchart diagram these are all from the",
+    "start": 1057.92,
+    "duration": 5.4
+  },
+  {
+    "text": "past lessons right uh let&#39;s make a",
+    "start": 1060.44,
+    "duration": 5.72
+  },
+  {
+    "text": "diagram find some",
+    "start": 1063.32,
+    "duration": 8.32
+  },
+  {
+    "text": "space and um yeah let&#39;s let&#39;s think",
+    "start": 1066.16,
+    "duration": 8.2
+  },
+  {
+    "text": "about let&#39;s think about um how this is",
+    "start": 1071.64,
+    "duration": 6.76
+  },
+  {
+    "text": "going to work so we have an llm right",
+    "start": 1074.36,
+    "duration": 6.6
+  },
+  {
+    "text": "that&#39;s that&#39;s for sure that&#39;s the core",
+    "start": 1078.4,
+    "duration": 5.96
+  },
+  {
+    "text": "of it all and we are going to um the",
+    "start": 1080.96,
+    "duration": 7.36
+  },
+  {
+    "text": "user is going to make a",
+    "start": 1084.36,
+    "duration": 3.96
+  },
+  {
+    "text": "prompt it&#39;s going to prompt the agent to",
+    "start": 1089.8,
+    "duration": 6.28
+  },
+  {
+    "text": "do something you",
+    "start": 1092.48,
+    "duration": 10.28
+  },
+  {
+    "text": "know and that is going to go into the",
+    "start": 1096.08,
+    "duration": 9.04
+  },
+  {
+    "text": "LM",
+    "start": 1102.76,
+    "duration": 5.44
+  },
+  {
+    "text": "and after that just like we had before",
+    "start": 1105.12,
+    "duration": 5.4
+  },
+  {
+    "text": "we&#39;re going to have to make a decision",
+    "start": 1108.2,
+    "duration": 4.8
+  },
+  {
+    "text": "right",
+    "start": 1110.52,
+    "duration": 6.92
+  },
+  {
+    "text": "um what should we do next okay and",
+    "start": 1113.0,
+    "duration": 9.56
+  },
+  {
+    "text": "there&#39;s two options basically one",
+    "start": 1117.44,
+    "duration": 9.0
+  },
+  {
+    "text": "is finished so one is if we&#39;re",
+    "start": 1122.56,
+    "duration": 7.48
+  },
+  {
+    "text": "finished um and then the other is uh",
+    "start": 1126.44,
+    "duration": 6.72
+  },
+  {
+    "text": "using a tool",
+    "start": 1130.04,
+    "duration": 3.12
+  },
+  {
+    "text": "right and that&#39;s going to be based off",
+    "start": 1134.84,
+    "duration": 5.36
+  },
+  {
+    "text": "of the output of whatever the llm",
+    "start": 1136.92,
+    "duration": 6.36
+  },
+  {
+    "text": "says so the tools um that I&#39;ve",
+    "start": 1140.2,
+    "duration": 5.12
+  },
+  {
+    "text": "integrated into my own computer use",
+    "start": 1143.28,
+    "duration": 5.48
+  },
+  {
+    "text": "agent that I made if we look uh if we",
+    "start": 1145.32,
+    "duration": 5.76
+  },
+  {
+    "text": "look",
+    "start": 1148.76,
+    "duration": 2.32
+  },
+  {
+    "text": "here I don&#39;t know if you can see that",
+    "start": 1151.12,
+    "duration": 3.68
+  },
+  {
+    "text": "let&#39;s",
+    "start": 1153.52,
+    "duration": 7.2
+  },
+  {
+    "text": "see um essentially um here what I have",
+    "start": 1154.8,
+    "duration": 5.92
+  },
+  {
+    "text": "is I have uh clicking typing pressing",
+    "start": 1161.2,
+    "duration": 7.96
+  },
+  {
+    "text": "keys uh shell commands you can even um",
+    "start": 1165.0,
+    "duration": 6.24
+  },
+  {
+    "text": "you you can even add file reading file",
+    "start": 1169.16,
+    "duration": 5.56
+  },
+  {
+    "text": "writing as specific tools um today for",
+    "start": 1171.24,
+    "duration": 5.52
+  },
+  {
+    "text": "the time that we have I just want to",
+    "start": 1174.72,
+    "duration": 4.32
+  },
+  {
+    "text": "focus on uh the main tool that I want to",
+    "start": 1176.76,
+    "duration": 7.4
+  },
+  {
+    "text": "focus on is clicking um because what we",
+    "start": 1179.04,
+    "duration": 8.24
+  },
+  {
+    "text": "um what we did before um in the last",
+    "start": 1184.16,
+    "duration": 5.96
+  },
+  {
+    "text": "lesson if I can remember um we didn&#39;t",
+    "start": 1187.28,
+    "duration": 7.12
+  },
+  {
+    "text": "show how to click um but but clicking",
+    "start": 1190.12,
+    "duration": 6.68
+  },
+  {
+    "text": "really is the",
+    "start": 1194.4,
+    "duration": 4.72
+  },
+  {
+    "text": "main uh challenge was something like",
+    "start": 1196.8,
+    "duration": 5.76
+  },
+  {
+    "text": "this um typing uh is pretty",
+    "start": 1199.12,
+    "duration": 5.76
+  },
+  {
+    "text": "straightforward um but yeah clicking is",
+    "start": 1202.56,
+    "duration": 3.68
+  },
+  {
+    "text": "a lot more interesting so we&#39;re going to",
+    "start": 1204.88,
+    "duration": 3.48
+  },
+  {
+    "text": "do that one and then you&#39;ll we&#39;ll",
+    "start": 1206.24,
+    "duration": 4.4
+  },
+  {
+    "text": "briefly see how you can do other things",
+    "start": 1208.36,
+    "duration": 5.2
+  },
+  {
+    "text": "like typing and writing",
+    "start": 1210.64,
+    "duration": 6.04
+  },
+  {
+    "text": "files so um let&#39;s let&#39;s throw in the",
+    "start": 1213.56,
+    "duration": 5.76
+  },
+  {
+    "text": "click uh The Click one",
+    "start": 1216.68,
+    "duration": 4.6
+  },
+  {
+    "text": "here click",
+    "start": 1219.32,
+    "duration": 5.76
+  },
+  {
+    "text": "Mouse and then",
+    "start": 1221.28,
+    "duration": 3.8
+  },
+  {
+    "text": "also Let&#39;s do let&#39;s say um type text",
+    "start": 1225.2,
+    "duration": 6.36
+  },
+  {
+    "text": "because we know we&#39;re going to need that",
+    "start": 1230.48,
+    "duration": 3.0
+  },
+  {
+    "text": "for sure as well um we won&#39;t be able to",
+    "start": 1231.56,
+    "duration": 5.24
+  },
+  {
+    "text": "do much without that so this is one tool",
+    "start": 1233.48,
+    "duration": 4.72
+  },
+  {
+    "text": "that we",
+    "start": 1236.8,
+    "duration": 5.2
+  },
+  {
+    "text": "have and this is another Tool uh that we",
+    "start": 1238.2,
+    "duration": 6.08
+  },
+  {
+    "text": "have and this is going to be all based",
+    "start": 1242.0,
+    "duration": 3.96
+  },
+  {
+    "text": "off the output of the LM and then once",
+    "start": 1244.28,
+    "duration": 4.04
+  },
+  {
+    "text": "that&#39;s finished we&#39;re going to go back",
+    "start": 1245.96,
+    "duration": 4.48
+  },
+  {
+    "text": "here to see if there are more steps",
+    "start": 1248.32,
+    "duration": 6.16
+  },
+  {
+    "text": "remaining to be done okay um one thing",
+    "start": 1250.44,
+    "duration": 8.88
+  },
+  {
+    "text": "that I&#39;m missing still is I need to to",
+    "start": 1254.48,
+    "duration": 6.76
+  },
+  {
+    "text": "um the LM needs to be able to see what&#39;s",
+    "start": 1259.32,
+    "duration": 5.64
+  },
+  {
+    "text": "happening right so here we are giving",
+    "start": 1261.24,
+    "duration": 6.84
+  },
+  {
+    "text": "the prompt to the LM and just like we",
+    "start": 1264.96,
+    "duration": 6.56
+  },
+  {
+    "text": "did in the browser use agent um oh wait",
+    "start": 1268.08,
+    "duration": 4.68
+  },
+  {
+    "text": "we didn&#39;t do this in the browser use",
+    "start": 1271.52,
+    "duration": 3.56
+  },
+  {
+    "text": "agent in the browser use agent we passed",
+    "start": 1272.76,
+    "duration": 4.96
+  },
+  {
+    "text": "a list of elements that were on the",
+    "start": 1275.08,
+    "duration": 5.16
+  },
+  {
+    "text": "screen",
+    "start": 1277.72,
+    "duration": 2.52
+  },
+  {
+    "text": "right and um so we we looked at what was",
+    "start": 1280.52,
+    "duration": 5.36
+  },
+  {
+    "text": "on the page and then we summarized that",
+    "start": 1284.16,
+    "duration": 4.04
+  },
+  {
+    "text": "for the LM well one thing we could have",
+    "start": 1285.88,
+    "duration": 3.88
+  },
+  {
+    "text": "done that I discuss at the end is we",
+    "start": 1288.2,
+    "duration": 3.48
+  },
+  {
+    "text": "could have actually added in a",
+    "start": 1289.76,
+    "duration": 4.12
+  },
+  {
+    "text": "screenshot and for today that&#39;s going to",
+    "start": 1291.68,
+    "duration": 4.4
+  },
+  {
+    "text": "be super necessary because there&#39;s no",
+    "start": 1293.88,
+    "duration": 4.92
+  },
+  {
+    "text": "great way especially on Ubuntu uh to",
+    "start": 1296.08,
+    "duration": 4.56
+  },
+  {
+    "text": "summarize the contents of a computer",
+    "start": 1298.8,
+    "duration": 3.68
+  },
+  {
+    "text": "screen just as text you really need to",
+    "start": 1300.64,
+    "duration": 3.56
+  },
+  {
+    "text": "be able to see it with the colors and",
+    "start": 1302.48,
+    "duration": 4.0
+  },
+  {
+    "text": "the UI elements what&#39;s a text box what&#39;s",
+    "start": 1304.2,
+    "duration": 6.16
+  },
+  {
+    "text": "not a text box uh that needs computer",
+    "start": 1306.48,
+    "duration": 6.6
+  },
+  {
+    "text": "vision someone had asked can it escape",
+    "start": 1310.36,
+    "duration": 7.32
+  },
+  {
+    "text": "the VM now no we we are betting on the",
+    "start": 1313.08,
+    "duration": 7.92
+  },
+  {
+    "text": "fact that it cannot escape the VM um and",
+    "start": 1317.68,
+    "duration": 5.88
+  },
+  {
+    "text": "that&#39;s uh that&#39;s that&#39;s critical uh for",
+    "start": 1321.0,
+    "duration": 4.72
+  },
+  {
+    "text": "the safety of this and that&#39;s something",
+    "start": 1323.56,
+    "duration": 4.48
+  },
+  {
+    "text": "that um you need you need to have",
+    "start": 1325.72,
+    "duration": 5.76
+  },
+  {
+    "text": "Security Experts um to",
+    "start": 1328.04,
+    "duration": 7.36
+  },
+  {
+    "text": "test fortunately um EB is pretty safe",
+    "start": 1331.48,
+    "duration": 8.68
+  },
+  {
+    "text": "like that so let&#39;s as far as I know so",
+    "start": 1335.4,
+    "duration": 6.92
+  },
+  {
+    "text": "let&#39;s go on",
+    "start": 1340.16,
+    "duration": 6.76
+  },
+  {
+    "text": "to um to implementing this in the code",
+    "start": 1342.32,
+    "duration": 6.92
+  },
+  {
+    "text": "um as I kind of",
+    "start": 1346.92,
+    "duration": 4.96
+  },
+  {
+    "text": "um referred to before clicking the mouse",
+    "start": 1349.24,
+    "duration": 5.04
+  },
+  {
+    "text": "is is a bit of a challenge also we",
+    "start": 1351.88,
+    "duration": 5.44
+  },
+  {
+    "text": "haven&#39;t seen yet how to pass images uh",
+    "start": 1354.28,
+    "duration": 5.84
+  },
+  {
+    "text": "to an llm um I mentioned last lesson",
+    "start": 1357.32,
+    "duration": 5.28
+  },
+  {
+    "text": "that you can do that and you all have",
+    "start": 1360.12,
+    "duration": 4.96
+  },
+  {
+    "text": "probably done it before uh via the web",
+    "start": 1362.6,
+    "duration": 4.48
+  },
+  {
+    "text": "maybe on chat GPT you&#39;ve dra you&#39;ve",
+    "start": 1365.08,
+    "duration": 3.56
+  },
+  {
+    "text": "dragged an image in and you&#39;ve seen that",
+    "start": 1367.08,
+    "duration": 5.4
+  },
+  {
+    "text": "it can it can read it so let&#39;s let&#39;s see",
+    "start": 1368.64,
+    "duration": 7.8
+  },
+  {
+    "text": "how you would actually do that uh in",
+    "start": 1372.48,
+    "duration": 7.88
+  },
+  {
+    "text": "code and we we have this screenshot here",
+    "start": 1376.44,
+    "duration": 7.48
+  },
+  {
+    "text": "right so the screenshot is stored into",
+    "start": 1380.36,
+    "duration": 8.64
+  },
+  {
+    "text": "this image uh variable here so let&#39;s",
+    "start": 1383.92,
+    "duration": 7.48
+  },
+  {
+    "text": "just uh let&#39;s just do that um so I&#39;m",
+    "start": 1389.0,
+    "duration": 7.92
+  },
+  {
+    "text": "going to go to the um open AI tool use",
+    "start": 1391.4,
+    "duration": 7.56
+  },
+  {
+    "text": "example that we that we just keep",
+    "start": 1396.92,
+    "duration": 4.04
+  },
+  {
+    "text": "referring",
+    "start": 1398.96,
+    "duration": 5.04
+  },
+  {
+    "text": "to and going to be",
+    "start": 1400.96,
+    "duration": 5.2
+  },
+  {
+    "text": "using yeah we&#39;re going to be using this",
+    "start": 1404.0,
+    "duration": 3.96
+  },
+  {
+    "text": "whole example again so this is the",
+    "start": 1406.16,
+    "duration": 2.92
+  },
+  {
+    "text": "function called",
+    "start": 1407.96,
+    "duration": 5.84
+  },
+  {
+    "text": "example um and I&#39;m going",
+    "start": 1409.08,
+    "duration": 8.76
+  },
+  {
+    "text": "to change the um we&#39;re not going to be",
+    "start": 1413.8,
+    "duration": 7.76
+  },
+  {
+    "text": "using um GPT we&#39;re going to be using",
+    "start": 1417.84,
+    "duration": 8.12
+  },
+  {
+    "text": "today um llama again and I&#39;m going to",
+    "start": 1421.56,
+    "duration": 8.32
+  },
+  {
+    "text": "change it to use uh",
+    "start": 1425.96,
+    "duration": 3.92
+  },
+  {
+    "text": "grock now Gro with a Q uh not Gro with a",
+    "start": 1431.24,
+    "duration": 6.48
+  },
+  {
+    "text": "K which is elon&#39;s thing grock with a Q",
+    "start": 1435.12,
+    "duration": 3.88
+  },
+  {
+    "text": "is the",
+    "start": 1437.72,
+    "duration": 4.2
+  },
+  {
+    "text": "um is just a host um that provides you",
+    "start": 1439.0,
+    "duration": 6.32
+  },
+  {
+    "text": "access to uh llama and the reason why",
+    "start": 1441.92,
+    "duration": 6.04
+  },
+  {
+    "text": "I&#39;m using uh this today is basically",
+    "start": 1445.32,
+    "duration": 6.08
+  },
+  {
+    "text": "just a combination of vision features um",
+    "start": 1447.96,
+    "duration": 7.32
+  },
+  {
+    "text": "it&#39;s the Vision support with tool use um",
+    "start": 1451.4,
+    "duration": 7.28
+  },
+  {
+    "text": "Works uh on grock oras the other ones",
+    "start": 1455.28,
+    "duration": 6.48
+  },
+  {
+    "text": "are not uh it&#39;s not working uh",
+    "start": 1458.68,
+    "duration": 4.76
+  },
+  {
+    "text": "properly",
+    "start": 1461.76,
+    "duration": 4.88
+  },
+  {
+    "text": "so uh yeah so I&#39;ve changed the the",
+    "start": 1463.44,
+    "duration": 5.44
+  },
+  {
+    "text": "client to now be using Gro I&#39;m going to",
+    "start": 1466.64,
+    "duration": 6.8
+  },
+  {
+    "text": "have to change the model here and we",
+    "start": 1468.88,
+    "duration": 7.48
+  },
+  {
+    "text": "want to make that let&#39;s go to let&#39;s go",
+    "start": 1473.44,
+    "duration": 6.16
+  },
+  {
+    "text": "to Gro and find it the model that we",
+    "start": 1476.36,
+    "duration": 5.4
+  },
+  {
+    "text": "need so I can go",
+    "start": 1479.6,
+    "duration": 5.04
+  },
+  {
+    "text": "to here that it&#39;s it&#39;s",
+    "start": 1481.76,
+    "duration": 4.48
+  },
+  {
+    "text": "under",
+    "start": 1484.64,
+    "duration": 6.72
+  },
+  {
+    "text": "products just search for Gro",
+    "start": 1486.24,
+    "duration": 5.12
+  },
+  {
+    "text": "models",
+    "start": 1491.68,
+    "duration": 6.84
+  },
+  {
+    "text": "here all right so we need vision and",
+    "start": 1494.6,
+    "duration": 5.72
+  },
+  {
+    "text": "there&#39;s not too many models that support",
+    "start": 1498.52,
+    "duration": 3.8
+  },
+  {
+    "text": "there&#39;s not too many open source models",
+    "start": 1500.32,
+    "duration": 3.76
+  },
+  {
+    "text": "that support",
+    "start": 1502.32,
+    "duration": 5.36
+  },
+  {
+    "text": "vision and looks like this is exactly",
+    "start": 1504.08,
+    "duration": 9.08
+  },
+  {
+    "text": "the one we need um llama 3.2 90b Vision",
+    "start": 1507.68,
+    "duration": 8.56
+  },
+  {
+    "text": "so I&#39;m going to copy this and I&#39;ll paste",
+    "start": 1513.16,
+    "duration": 7.12
+  },
+  {
+    "text": "that here replace the gbt 40 with that",
+    "start": 1516.24,
+    "duration": 6.52
+  },
+  {
+    "text": "and let&#39;s um let&#39;s forget about the",
+    "start": 1520.28,
+    "duration": 5.48
+  },
+  {
+    "text": "tools for now we&#39;ll add them back",
+    "start": 1522.76,
+    "duration": 6.12
+  },
+  {
+    "text": "in and we need to figure out",
+    "start": 1525.76,
+    "duration": 7.44
+  },
+  {
+    "text": "how to add in how to embed uh the",
+    "start": 1528.88,
+    "duration": 8.48
+  },
+  {
+    "text": "screenshot that we took into uh into our",
+    "start": 1533.2,
+    "duration": 7.08
+  },
+  {
+    "text": "request to the llm that&#39;s going to be a",
+    "start": 1537.36,
+    "duration": 5.2
+  },
+  {
+    "text": "key step right",
+    "start": 1540.28,
+    "duration": 7.8
+  },
+  {
+    "text": "so basically um the way that we do that",
+    "start": 1542.56,
+    "duration": 8.36
+  },
+  {
+    "text": "is if you think about the way that the",
+    "start": 1548.08,
+    "duration": 5.2
+  },
+  {
+    "text": "messages to the llm are structured it&#39;s",
+    "start": 1550.92,
+    "duration": 4.32
+  },
+  {
+    "text": "basically like your chat history in chat",
+    "start": 1553.28,
+    "duration": 5.4
+  },
+  {
+    "text": "GPT so here you have like um message you",
+    "start": 1555.24,
+    "duration": 5.04
+  },
+  {
+    "text": "have a message from the user then you",
+    "start": 1558.68,
+    "duration": 3.36
+  },
+  {
+    "text": "have a message from the assistant and",
+    "start": 1560.28,
+    "duration": 2.88
+  },
+  {
+    "text": "then you have a message from the user",
+    "start": 1562.04,
+    "duration": 3.36
+  },
+  {
+    "text": "and a message from the assistant now",
+    "start": 1563.16,
+    "duration": 4.04
+  },
+  {
+    "text": "within each message you can actually",
+    "start": 1565.4,
+    "duration": 2.76
+  },
+  {
+    "text": "have a",
+    "start": 1567.2,
+    "duration": 5.52
+  },
+  {
+    "text": "combination of images and text right so",
+    "start": 1568.16,
+    "duration": 7.76
+  },
+  {
+    "text": "this content here uh what is the weather",
+    "start": 1572.72,
+    "duration": 6.32
+  },
+  {
+    "text": "like in Paris today um I I could say",
+    "start": 1575.92,
+    "duration": 5.56
+  },
+  {
+    "text": "something like um what&#39;s how many cats",
+    "start": 1579.04,
+    "duration": 5.04
+  },
+  {
+    "text": "are in this uh photo for",
+    "start": 1581.48,
+    "duration": 5.6
+  },
+  {
+    "text": "example now in order to uh make that",
+    "start": 1584.08,
+    "duration": 5.28
+  },
+  {
+    "text": "work",
+    "start": 1587.08,
+    "duration": 4.6
+  },
+  {
+    "text": "um basically what you do is you turn",
+    "start": 1589.36,
+    "duration": 7.44
+  },
+  {
+    "text": "this into a list okay and in that list",
+    "start": 1591.68,
+    "duration": 8.12
+  },
+  {
+    "text": "um you can have various things uh which",
+    "start": 1596.8,
+    "duration": 6.28
+  },
+  {
+    "text": "are objects so for the text part of that",
+    "start": 1599.8,
+    "duration": 5.04
+  },
+  {
+    "text": "I&#39;m going to say",
+    "start": 1603.08,
+    "duration": 4.4
+  },
+  {
+    "text": "type",
+    "start": 1604.84,
+    "duration": 7.2
+  },
+  {
+    "text": "text uh and then text is the text so",
+    "start": 1607.48,
+    "duration": 7.88
+  },
+  {
+    "text": "this this looks very uh verbose the way",
+    "start": 1612.04,
+    "duration": 5.72
+  },
+  {
+    "text": "that it is here let&#39;s run it and see",
+    "start": 1615.36,
+    "duration": 4.48
+  },
+  {
+    "text": "that I have an made any",
+    "start": 1617.76,
+    "duration": 6.16
+  },
+  {
+    "text": "mistakes uh let&#39;s see it works um okay",
+    "start": 1619.84,
+    "duration": 5.6
+  },
+  {
+    "text": "I&#39;m a large language model I don&#39;t have",
+    "start": 1623.92,
+    "duration": 3.2
+  },
+  {
+    "text": "real- time access to other conditions",
+    "start": 1625.44,
+    "duration": 4.12
+  },
+  {
+    "text": "that makes sense because we commented",
+    "start": 1627.12,
+    "duration": 3.88
+  },
+  {
+    "text": "out the",
+    "start": 1629.56,
+    "duration": 6.08
+  },
+  {
+    "text": "tools so that&#39;s here&#39;s just text but the",
+    "start": 1631.0,
+    "duration": 9.16
+  },
+  {
+    "text": "the magic comes when I copy this and",
+    "start": 1635.64,
+    "duration": 6.76
+  },
+  {
+    "text": "then I change it from",
+    "start": 1640.16,
+    "duration": 6.64
+  },
+  {
+    "text": "text to image",
+    "start": 1642.4,
+    "duration": 8.04
+  },
+  {
+    "text": "URL um and you&#39;re probably thinking we",
+    "start": 1646.8,
+    "duration": 6.8
+  },
+  {
+    "text": "we don&#39;t have a URL for this image uh",
+    "start": 1650.44,
+    "duration": 4.96
+  },
+  {
+    "text": "what we&#39;re going to do is we&#39;re going to",
+    "start": 1653.6,
+    "duration": 3.08
+  },
+  {
+    "text": "create what&#39;s",
+    "start": 1655.4,
+    "duration": 4.64
+  },
+  {
+    "text": "called a what is it called a base",
+    "start": 1656.68,
+    "duration": 7.84
+  },
+  {
+    "text": "64 um inline URL a data",
+    "start": 1660.04,
+    "duration": 7.92
+  },
+  {
+    "text": "URL and the way that that works is we&#39;re",
+    "start": 1664.52,
+    "duration": 6.04
+  },
+  {
+    "text": "taking this uh screenshot that we have",
+    "start": 1667.96,
+    "duration": 4.84
+  },
+  {
+    "text": "we&#39;re going to use the Bas 64",
+    "start": 1670.56,
+    "duration": 8.08
+  },
+  {
+    "text": "library and we&#39;re going to use that 64",
+    "start": 1672.8,
+    "duration": 7.0
+  },
+  {
+    "text": "do",
+    "start": 1678.64,
+    "duration": 3.16
+  },
+  {
+    "text": "b64 oops",
+    "start": 1679.8,
+    "duration": 6.4
+  },
+  {
+    "text": "encode we&#39;re going to encode the",
+    "start": 1681.8,
+    "duration": 8.32
+  },
+  {
+    "text": "screenshot um and then convert that into",
+    "start": 1686.2,
+    "duration": 6.48
+  },
+  {
+    "text": "utf8 uh which is text which is text",
+    "start": 1690.12,
+    "duration": 5.12
+  },
+  {
+    "text": "encoding so basically we&#39;re converting",
+    "start": 1692.68,
+    "duration": 5.32
+  },
+  {
+    "text": "the data the bytes that we collected",
+    "start": 1695.24,
+    "duration": 4.0
+  },
+  {
+    "text": "before from the screenshot and",
+    "start": 1698.0,
+    "duration": 5.2
+  },
+  {
+    "text": "converting that into a string uh",
+    "start": 1699.24,
+    "duration": 6.88
+  },
+  {
+    "text": "representation um it is the it&#39;s the",
+    "start": 1703.2,
+    "duration": 6.0
+  },
+  {
+    "text": "same data but uh it&#39;s it&#39;s going to be",
+    "start": 1706.12,
+    "duration": 5.6
+  },
+  {
+    "text": "something that looks as text uh without",
+    "start": 1709.2,
+    "duration": 3.92
+  },
+  {
+    "text": "all of the weird question mark",
+    "start": 1711.72,
+    "duration": 3.84
+  },
+  {
+    "text": "characters when we print it out now it&#39;s",
+    "start": 1713.12,
+    "duration": 6.2
+  },
+  {
+    "text": "not going to actually um show anything",
+    "start": 1715.56,
+    "duration": 6.72
+  },
+  {
+    "text": "that we can see uh but if we would then",
+    "start": 1719.32,
+    "duration": 5.84
+  },
+  {
+    "text": "reverse this and decode it we would get",
+    "start": 1722.28,
+    "duration": 4.76
+  },
+  {
+    "text": "all of those bytes back and we could",
+    "start": 1725.16,
+    "duration": 6.56
+  },
+  {
+    "text": "convert that into um an image file right",
+    "start": 1727.04,
+    "duration": 6.72
+  },
+  {
+    "text": "um because normally in uh in an image",
+    "start": 1731.72,
+    "duration": 4.8
+  },
+  {
+    "text": "file you would have a lot of data that",
+    "start": 1733.76,
+    "duration": 5.48
+  },
+  {
+    "text": "would not uh be able to to be encoded as",
+    "start": 1736.52,
+    "duration": 6.84
+  },
+  {
+    "text": "text um so",
+    "start": 1739.24,
+    "duration": 5.64
+  },
+  {
+    "text": "let&#39;s",
+    "start": 1743.36,
+    "duration": 5.36
+  },
+  {
+    "text": "um let&#39;s take",
+    "start": 1744.88,
+    "duration": 5.88
+  },
+  {
+    "text": "this uh",
+    "start": 1748.72,
+    "duration": 5.48
+  },
+  {
+    "text": "here and uh we&#39;re going to have to put",
+    "start": 1750.76,
+    "duration": 7.04
+  },
+  {
+    "text": "this string uh into here somehow and the",
+    "start": 1754.2,
+    "duration": 6.96
+  },
+  {
+    "text": "format by which they do that it looks uh",
+    "start": 1757.8,
+    "duration": 8.72
+  },
+  {
+    "text": "it looks like this so we have image",
+    "start": 1761.16,
+    "duration": 8.8
+  },
+  {
+    "text": "URL and don&#39;t ask me why it&#39;s like this",
+    "start": 1766.52,
+    "duration": 5.12
+  },
+  {
+    "text": "URL",
+    "start": 1769.96,
+    "duration": 5.04
+  },
+  {
+    "text": "this uh and then you have",
+    "start": 1771.64,
+    "duration": 6.68
+  },
+  {
+    "text": "data image",
+    "start": 1775.0,
+    "duration": 7.04
+  },
+  {
+    "text": "slash uh I don&#39;t know why have I&#39;ve done",
+    "start": 1778.32,
+    "duration": 5.92
+  },
+  {
+    "text": "it as JPEG so far",
+    "start": 1782.04,
+    "duration": 5.2
+  },
+  {
+    "text": "maybe uh maybe it would work as PNG I&#39;m",
+    "start": 1784.24,
+    "duration": 6.0
+  },
+  {
+    "text": "I&#39;m not totally sure about that",
+    "start": 1787.24,
+    "duration": 8.88
+  },
+  {
+    "text": "um and then add um",
+    "start": 1790.24,
+    "duration": 5.88
+  },
+  {
+    "text": "screenshot now this is I know this is",
+    "start": 1797.04,
+    "duration": 4.08
+  },
+  {
+    "text": "like a weird this is like a weird thing",
+    "start": 1799.04,
+    "duration": 3.88
+  },
+  {
+    "text": "that you&#39;re seeing right now you&#39;re like",
+    "start": 1801.12,
+    "duration": 3.92
+  },
+  {
+    "text": "what what&#39;s going on someone came up to",
+    "start": 1802.92,
+    "duration": 3.76
+  },
+  {
+    "text": "me to hackathon the other day and asked",
+    "start": 1805.04,
+    "duration": 3.88
+  },
+  {
+    "text": "me how you do this and I showed them how",
+    "start": 1806.68,
+    "duration": 4.28
+  },
+  {
+    "text": "to do this and it&#39;s like here&#39;s the",
+    "start": 1808.92,
+    "duration": 4.28
+  },
+  {
+    "text": "secret of how you put images in but it",
+    "start": 1810.96,
+    "duration": 5.12
+  },
+  {
+    "text": "it just uh it&#39;s it comes from it comes",
+    "start": 1813.2,
+    "duration": 6.16
+  },
+  {
+    "text": "from the the web uh",
+    "start": 1816.08,
+    "duration": 7.24
+  },
+  {
+    "text": "protocols basically",
+    "start": 1819.36,
+    "duration": 7.2
+  },
+  {
+    "text": "so let&#39;s see that should work so we&#39;re",
+    "start": 1823.32,
+    "duration": 4.8
+  },
+  {
+    "text": "taking the screenshot converting bring",
+    "start": 1826.56,
+    "duration": 7.36
+  },
+  {
+    "text": "it into a string uh into this data URL",
+    "start": 1828.12,
+    "duration": 8.04
+  },
+  {
+    "text": "specification let&#39;s do it as a let&#39;s see",
+    "start": 1833.92,
+    "duration": 5.76
+  },
+  {
+    "text": "it as an F string like",
+    "start": 1836.16,
+    "duration": 7.16
+  },
+  {
+    "text": "this oh and this should be",
+    "start": 1839.68,
+    "duration": 7.08
+  },
+  {
+    "text": "equals uh yeah and that should",
+    "start": 1843.32,
+    "duration": 8.24
+  },
+  {
+    "text": "work so I&#39;ll just say what&#39;s in this",
+    "start": 1846.76,
+    "duration": 9.04
+  },
+  {
+    "text": "image all right",
+    "start": 1851.56,
+    "duration": 4.24
+  },
+  {
+    "text": "let&#39;s see yeah Dimo you&#39;re totally right",
+    "start": 1859.92,
+    "duration": 4.08
+  },
+  {
+    "text": "you have to you have to be really",
+    "start": 1861.92,
+    "duration": 4.28
+  },
+  {
+    "text": "certain that the code you&#39;re running is",
+    "start": 1864.0,
+    "duration": 4.6
+  },
+  {
+    "text": "properly isolated and I will get back to",
+    "start": 1866.2,
+    "duration": 6.48
+  },
+  {
+    "text": "that in just a sec once I fix this error",
+    "start": 1868.6,
+    "duration": 7.4
+  },
+  {
+    "text": "okay so we got invalid uh invalid image",
+    "start": 1872.68,
+    "duration": 5.84
+  },
+  {
+    "text": "data so",
+    "start": 1876.0,
+    "duration": 6.12
+  },
+  {
+    "text": "basically let&#39;s see this is data",
+    "start": 1878.52,
+    "duration": 5.68
+  },
+  {
+    "text": "imagejpeg base",
+    "start": 1882.12,
+    "duration": 6.52
+  },
+  {
+    "text": "64 okay um looks",
+    "start": 1884.2,
+    "duration": 8.4
+  },
+  {
+    "text": "looks correct",
+    "start": 1888.64,
+    "duration": 3.96
+  },
+  {
+    "text": "um yeah it looks looks pretty good to",
+    "start": 1893.4,
+    "duration": 8.28
+  },
+  {
+    "text": "me let&#39;s see",
+    "start": 1898.6,
+    "duration": 6.56
+  },
+  {
+    "text": "maybe uh maybe I&#39;ve done",
+    "start": 1901.68,
+    "duration": 5.88
+  },
+  {
+    "text": "something",
+    "start": 1905.16,
+    "duration": 6.52
+  },
+  {
+    "text": "different let&#39;s",
+    "start": 1907.56,
+    "duration": 4.12
+  },
+  {
+    "text": "huh let&#39;s see if this is right okay this",
+    "start": 1912.4,
+    "duration": 7.44
+  },
+  {
+    "text": "does look fine",
+    "start": 1916.28,
+    "duration": 3.56
+  },
+  {
+    "text": "invalid image never got that one before",
+    "start": 1925.36,
+    "duration": 7.24
+  },
+  {
+    "text": "so we&#39;re using llama Vision",
+    "start": 1928.56,
+    "duration": 6.68
+  },
+  {
+    "text": "preview which I did this I&#39;ve done this",
+    "start": 1932.6,
+    "duration": 5.44
+  },
+  {
+    "text": "last night I know that it",
+    "start": 1935.24,
+    "duration": 6.88
+  },
+  {
+    "text": "works data",
+    "start": 1938.04,
+    "duration": 4.08
+  },
+  {
+    "text": "imagejpeg base 64",
+    "start": 1942.56,
+    "duration": 5.88
+  },
+  {
+    "text": "comma there",
+    "start": 1946.2,
+    "duration": 7.44
+  },
+  {
+    "text": "this one is it&#39;s probably a small um a",
+    "start": 1948.44,
+    "duration": 9.24
+  },
+  {
+    "text": "small mistake somewhere that",
+    "start": 1953.64,
+    "duration": 4.04
+  },
+  {
+    "text": "I B 16 no it&#39;s it&#39;s definitely Bay",
+    "start": 1958.36,
+    "duration": 7.2
+  },
+  {
+    "text": 64,
+    "start": 1963.16,
+    "duration": 7.08
+  },
+  {
+    "text": "um this is uh this is definitely",
+    "start": 1965.56,
+    "duration": 6.92
+  },
+  {
+    "text": "right",
+    "start": 1970.24,
+    "duration": 4.0
+  },
+  {
+    "text": "um",
+    "start": 1972.48,
+    "duration": 6.28
+  },
+  {
+    "text": "so yeah um I&#39;ve just done this so so we",
+    "start": 1974.24,
+    "duration": 5.44
+  },
+  {
+    "text": "should",
+    "start": 1978.76,
+    "duration": 3.24
+  },
+  {
+    "text": "see if",
+    "start": 1979.68,
+    "duration": 5.2
+  },
+  {
+    "text": "there&#39;s the invalid image",
+    "start": 1982.0,
+    "duration": 6.08
+  },
+  {
+    "text": "data that&#39;s",
+    "start": 1984.88,
+    "duration": 3.2
+  },
+  {
+    "text": "strange Let&#39;s uh let&#39;s just test it real",
+    "start": 1988.56,
+    "duration": 5.72
+  },
+  {
+    "text": "quick uh Bas",
+    "start": 1991.28,
+    "duration": 5.56
+  },
+  {
+    "text": "64 image",
+    "start": 1994.28,
+    "duration": 6.96
+  },
+  {
+    "text": "encoder so can do this manually right so",
+    "start": 1996.84,
+    "duration": 8.04
+  },
+  {
+    "text": "I can try drop images anywhere I just",
+    "start": 2001.24,
+    "duration": 6.24
+  },
+  {
+    "text": "need an image right I don&#39;t know if this",
+    "start": 2004.88,
+    "duration": 4.88
+  },
+  {
+    "text": "will work",
+    "start": 2007.48,
+    "duration": 2.28
+  },
+  {
+    "text": "oh cool uh let me check let me check",
+    "start": 2010.48,
+    "duration": 4.84
+  },
+  {
+    "text": "that see so",
+    "start": 2012.76,
+    "duration": 4.76
+  },
+  {
+    "text": "I copy",
+    "start": 2015.32,
+    "duration": 5.2
+  },
+  {
+    "text": "this",
+    "start": 2017.52,
+    "duration": 6.8
+  },
+  {
+    "text": "and what if I put this in",
+    "start": 2020.52,
+    "duration": 3.8
+  },
+  {
+    "text": "here still getting an error here let&#39;s",
+    "start": 2033.0,
+    "duration": 6.72
+  },
+  {
+    "text": "see what Raj gave",
+    "start": 2036.04,
+    "duration": 3.68
+  },
+  {
+    "text": "okay",
+    "start": 2040.04,
+    "duration": 2.56
+  },
+  {
+    "text": "here did I write did I write base",
+    "start": 2044.76,
+    "duration": 7.4
+  },
+  {
+    "text": 16,
+    "start": 2049.16,
+    "duration": 3.0
+  },
+  {
+    "text": "um",
+    "start": 2052.36,
+    "duration": 3.56
+  },
+  {
+    "text": "oh",
+    "start": 2054.32,
+    "duration": 4.68
+  },
+  {
+    "text": "this I&#39;m sorry",
+    "start": 2055.92,
+    "duration": 5.96
+  },
+  {
+    "text": "Raj um I thought you were saying that",
+    "start": 2059.0,
+    "duration": 4.76
+  },
+  {
+    "text": "that I needed to change it to base 16",
+    "start": 2061.88,
+    "duration": 4.92
+  },
+  {
+    "text": "but I had I had converted it into base",
+    "start": 2063.76,
+    "duration": 6.64
+  },
+  {
+    "text": "uh 16 instead of of B 6 oh my gosh",
+    "start": 2066.8,
+    "duration": 4.88
+  },
+  {
+    "text": "thanks",
+    "start": 2070.4,
+    "duration": 4.88
+  },
+  {
+    "text": "guys all right good we have all of this",
+    "start": 2071.68,
+    "duration": 6.8
+  },
+  {
+    "text": "uh Team debugging thank you so much Raj",
+    "start": 2075.28,
+    "duration": 6.36
+  },
+  {
+    "text": "should keep a close eye on the",
+    "start": 2078.48,
+    "duration": 3.16
+  },
+  {
+    "text": "comments ah okay there it is there it is",
+    "start": 2082.52,
+    "duration": 3.6
+  },
+  {
+    "text": "there it",
+    "start": 2085.28,
+    "duration": 2.64
+  },
+  {
+    "text": "is",
+    "start": 2086.12,
+    "duration": 4.92
+  },
+  {
+    "text": "okay I blame the auto complete for that",
+    "start": 2087.92,
+    "duration": 5.4
+  },
+  {
+    "text": "thank you team for sticking together for",
+    "start": 2091.04,
+    "duration": 6.68
+  },
+  {
+    "text": "that one so uh what do we get back for",
+    "start": 2093.32,
+    "duration": 8.28
+  },
+  {
+    "text": "for the um from the",
+    "start": 2097.72,
+    "duration": 6.28
+  },
+  {
+    "text": "image uh sorry from the LM this image",
+    "start": 2101.6,
+    "duration": 5.04
+  },
+  {
+    "text": "shows the Firefox homepage um there&#39;s a",
+    "start": 2104.0,
+    "duration": 5.08
+  },
+  {
+    "text": "line drawing on the left of two people",
+    "start": 2106.64,
+    "duration": 5.56
+  },
+  {
+    "text": "hugging the world um both figures appear",
+    "start": 2109.08,
+    "duration": 4.92
+  },
+  {
+    "text": "to have dark hair and are wearing black",
+    "start": 2112.2,
+    "duration": 4.16
+  },
+  {
+    "text": "shoes black pants and a white and when I",
+    "start": 2114.0,
+    "duration": 4.32
+  },
+  {
+    "text": "and I was like what what&#39;s going on",
+    "start": 2116.36,
+    "duration": 5.56
+  },
+  {
+    "text": "actually very close so it&#39;s very close",
+    "start": 2118.32,
+    "duration": 4.76
+  },
+  {
+    "text": "to actually what&#39;s happening in this",
+    "start": 2121.92,
+    "duration": 3.84
+  },
+  {
+    "text": "image um it thinks there&#39;s two people",
+    "start": 2123.08,
+    "duration": 5.4
+  },
+  {
+    "text": "just which is cute um",
+    "start": 2125.76,
+    "duration": 5.44
+  },
+  {
+    "text": "the world is surrounded by a flame has",
+    "start": 2128.48,
+    "duration": 5.84
+  },
+  {
+    "text": "words no trouble okay now it is now it",
+    "start": 2131.2,
+    "duration": 5.88
+  },
+  {
+    "text": "is hallucinating a bit um under the",
+    "start": 2134.32,
+    "duration": 6.96
+  },
+  {
+    "text": "illustration is the Firefox logo um and",
+    "start": 2137.08,
+    "duration": 5.68
+  },
+  {
+    "text": "then and then it goes on to say more",
+    "start": 2141.28,
+    "duration": 3.92
+  },
+  {
+    "text": "things that are real on the page um all",
+    "start": 2142.76,
+    "duration": 5.2
+  },
+  {
+    "text": "of the buttons that are on the page um",
+    "start": 2145.2,
+    "duration": 6.16
+  },
+  {
+    "text": "well this is super detailed um browse",
+    "start": 2147.96,
+    "duration": 4.72
+  },
+  {
+    "text": "that you have a button that says browse",
+    "start": 2151.36,
+    "duration": 2.08
+  },
+  {
+    "text": "the",
+    "start": 2152.68,
+    "duration": 5.32
+  },
+  {
+    "text": "web um so uh basically",
+    "start": 2153.44,
+    "duration": 7.16
+  },
+  {
+    "text": "uh",
+    "start": 2158.0,
+    "duration": 2.6
+  },
+  {
+    "text": "yeah ban wants to know if we can play",
+    "start": 2167.4,
+    "duration": 4.56
+  },
+  {
+    "text": "around with temperature uh yeah you can",
+    "start": 2169.8,
+    "duration": 4.76
+  },
+  {
+    "text": "play around with it but um but this is",
+    "start": 2171.96,
+    "duration": 4.8
+  },
+  {
+    "text": "actually the default setting is normally",
+    "start": 2174.56,
+    "duration": 5.14
+  },
+  {
+    "text": "uh like that for a reason so it should",
+    "start": 2176.76,
+    "duration": 4.2
+  },
+  {
+    "text": "[Music]",
+    "start": 2179.7,
+    "duration": 5.94
+  },
+  {
+    "text": "be you&#39;re def it&#39;s definitely going to",
+    "start": 2180.96,
+    "duration": 4.68
+  },
+  {
+    "text": "be not one of the first things that",
+    "start": 2185.72,
+    "duration": 6.92
+  },
+  {
+    "text": "you&#39;re going to adjust um when",
+    "start": 2188.2,
+    "duration": 6.6
+  },
+  {
+    "text": "you&#39;re uh when you&#39;re experimenting with",
+    "start": 2192.64,
+    "duration": 4.4
+  },
+  {
+    "text": "your agent um but it might be something",
+    "start": 2194.8,
+    "duration": 5.48
+  },
+  {
+    "text": "at the very end to play around with to",
+    "start": 2197.04,
+    "duration": 4.4
+  },
+  {
+    "text": "play around",
+    "start": 2200.28,
+    "duration": 5.48
+  },
+  {
+    "text": "with so what are we seeing here uh we&#39;re",
+    "start": 2201.44,
+    "duration": 8.88
+  },
+  {
+    "text": "seeing that um llama in particular we&#39;re",
+    "start": 2205.76,
+    "duration": 7.44
+  },
+  {
+    "text": "we&#39;re testing with remember llama",
+    "start": 2210.32,
+    "duration": 8.76
+  },
+  {
+    "text": "3.2 llama 3.2 uh does work uh with uh",
+    "start": 2213.2,
+    "duration": 9.72
+  },
+  {
+    "text": "with vision or multimodal input um and",
+    "start": 2219.08,
+    "duration": 5.64
+  },
+  {
+    "text": "it roughly gets a pretty good idea of",
+    "start": 2222.92,
+    "duration": 4.12
+  },
+  {
+    "text": "what&#39;s happening on the page it doesn&#39;t",
+    "start": 2224.72,
+    "duration": 5.12
+  },
+  {
+    "text": "read it perfectly and in my",
+    "start": 2227.04,
+    "duration": 4.76
+  },
+  {
+    "text": "interpretation like it made some small",
+    "start": 2229.84,
+    "duration": 3.8
+  },
+  {
+    "text": "mistakes you know like it hallucinated",
+    "start": 2231.8,
+    "duration": 5.6
+  },
+  {
+    "text": "some text um what what was it saying",
+    "start": 2233.64,
+    "duration": 8.28
+  },
+  {
+    "text": "trust no one or or something um I have",
+    "start": 2237.4,
+    "duration": 6.04
+  },
+  {
+    "text": "to go back to the recording for what it",
+    "start": 2241.92,
+    "duration": 4.08
+  },
+  {
+    "text": "what it said and and then it was saying",
+    "start": 2243.44,
+    "duration": 4.68
+  },
+  {
+    "text": "uh that there&#39;s two people here but but",
+    "start": 2246.0,
+    "duration": 3.88
+  },
+  {
+    "text": "for the most part it gets all of this",
+    "start": 2248.12,
+    "duration": 6.44
+  },
+  {
+    "text": "stuff that&#39;s going on and uh basically",
+    "start": 2249.88,
+    "duration": 7.0
+  },
+  {
+    "text": "um this this is really",
+    "start": 2254.56,
+    "duration": 4.48
+  },
+  {
+    "text": "useful um for what we&#39;re trying to do",
+    "start": 2256.88,
+    "duration": 5.96
+  },
+  {
+    "text": "today so we figured this out how to pass",
+    "start": 2259.04,
+    "duration": 6.52
+  },
+  {
+    "text": "the prompt and the screenshot um into",
+    "start": 2262.84,
+    "duration": 3.36
+  },
+  {
+    "text": "the",
+    "start": 2265.56,
+    "duration": 6.2
+  },
+  {
+    "text": "llm we figured out uh how to click",
+    "start": 2266.2,
+    "duration": 8.56
+  },
+  {
+    "text": "right and uh typing text will be really",
+    "start": 2271.76,
+    "duration": 6.24
+  },
+  {
+    "text": "similar so what we need to do",
+    "start": 2274.76,
+    "duration": 5.36
+  },
+  {
+    "text": "now oh we didn&#39;t really figure out how",
+    "start": 2278.0,
+    "duration": 6.08
+  },
+  {
+    "text": "to click did we okay this uh is another",
+    "start": 2280.12,
+    "duration": 7.4
+  },
+  {
+    "text": "huge challenge that I had uh when I&#39;m",
+    "start": 2284.08,
+    "duration": 5.08
+  },
+  {
+    "text": "able to",
+    "start": 2287.52,
+    "duration": 4.08
+  },
+  {
+    "text": "um uh this is another huge challenge",
+    "start": 2289.16,
+    "duration": 4.32
+  },
+  {
+    "text": "that that that I had when I was first",
+    "start": 2291.6,
+    "duration": 4.76
+  },
+  {
+    "text": "building computer use agent someone said",
+    "start": 2293.48,
+    "duration": 4.88
+  },
+  {
+    "text": "um they were getting just now in the",
+    "start": 2296.36,
+    "duration": 3.64
+  },
+  {
+    "text": "chat that they were getting censored by",
+    "start": 2298.36,
+    "duration": 2.32
+  },
+  {
+    "text": "the",
+    "start": 2300.0,
+    "duration": 3.72
+  },
+  {
+    "text": "llm um yeah I had this too I had a lot",
+    "start": 2300.68,
+    "duration": 4.68
+  },
+  {
+    "text": "of times that you&#39;d pass an image and it",
+    "start": 2303.72,
+    "duration": 4.4
+  },
+  {
+    "text": "would say um I&#39;m not going to engage in",
+    "start": 2305.36,
+    "duration": 5.92
+  },
+  {
+    "text": "this discussion um change the change the",
+    "start": 2308.12,
+    "duration": 5.36
+  },
+  {
+    "text": "prompt that you give change the text",
+    "start": 2311.28,
+    "duration": 5.88
+  },
+  {
+    "text": "prompt that you&#39;re giving um here and",
+    "start": 2313.48,
+    "duration": 5.56
+  },
+  {
+    "text": "this has like a for some reason this has",
+    "start": 2317.16,
+    "duration": 4.6
+  },
+  {
+    "text": "a drastic effect on whether it gets uh",
+    "start": 2319.04,
+    "duration": 4.24
+  },
+  {
+    "text": "censored or",
+    "start": 2321.76,
+    "duration": 7.28
+  },
+  {
+    "text": "not so um now um imagine that we want to",
+    "start": 2323.28,
+    "duration": 8.44
+  },
+  {
+    "text": "actually click on something uh right",
+    "start": 2329.04,
+    "duration": 7.52
+  },
+  {
+    "text": "like imagine I&#39;d say here um I want you",
+    "start": 2331.72,
+    "duration": 6.6
+  },
+  {
+    "text": "know I want want",
+    "start": 2336.56,
+    "duration": 6.64
+  },
+  {
+    "text": "to see pictures of cats what should I",
+    "start": 2338.32,
+    "duration": 6.52
+  },
+  {
+    "text": "click on",
+    "start": 2343.2,
+    "duration": 5.4
+  },
+  {
+    "text": "okay let&#39;s see if this",
+    "start": 2344.84,
+    "duration": 3.76
+  },
+  {
+    "text": "works there appears to be no cats in the",
+    "start": 2349.48,
+    "duration": 6.16
+  },
+  {
+    "text": "image you should try clicking on you",
+    "start": 2352.48,
+    "duration": 5.12
+  },
+  {
+    "text": "know web browser browse the web browse",
+    "start": 2355.64,
+    "duration": 4.0
+  },
+  {
+    "text": "the web options",
+    "start": 2357.6,
+    "duration": 5.44
+  },
+  {
+    "text": "okay um you could always type pictures",
+    "start": 2359.64,
+    "duration": 6.44
+  },
+  {
+    "text": "of cats into the address bar um that&#39;s",
+    "start": 2363.04,
+    "duration": 6.36
+  },
+  {
+    "text": "what it says there so",
+    "start": 2366.08,
+    "duration": 6.68
+  },
+  {
+    "text": "um what if I would want to actually move",
+    "start": 2369.4,
+    "duration": 6.36
+  },
+  {
+    "text": "the mouse there so there&#39;s a lot of",
+    "start": 2372.76,
+    "duration": 5.28
+  },
+  {
+    "text": "computer vision models which are really",
+    "start": 2375.76,
+    "duration": 6.04
+  },
+  {
+    "text": "good at um identifying text um so we",
+    "start": 2378.04,
+    "duration": 5.96
+  },
+  {
+    "text": "could use one of those right and we",
+    "start": 2381.8,
+    "duration": 5.12
+  },
+  {
+    "text": "could use that to",
+    "start": 2384.0,
+    "duration": 6.08
+  },
+  {
+    "text": "find um maybe find here where it says",
+    "start": 2386.92,
+    "duration": 4.88
+  },
+  {
+    "text": "search or enter",
+    "start": 2390.08,
+    "duration": 4.92
+  },
+  {
+    "text": "address we could click on maybe this",
+    "start": 2391.8,
+    "duration": 6.08
+  },
+  {
+    "text": "stuff on the top of the page",
+    "start": 2395.0,
+    "duration": 5.08
+  },
+  {
+    "text": "um",
+    "start": 2397.88,
+    "duration": 6.16
+  },
+  {
+    "text": "but nice prompt harsh uh you should",
+    "start": 2400.08,
+    "duration": 6.6
+  },
+  {
+    "text": "definitely try that um for your",
+    "start": 2404.04,
+    "duration": 7.8
+  },
+  {
+    "text": "project so um but those basic OCR",
+    "start": 2406.68,
+    "duration": 9.56
+  },
+  {
+    "text": "optical character recognition um models",
+    "start": 2411.84,
+    "duration": 5.92
+  },
+  {
+    "text": "they&#39;re they&#39;re not going to do very",
+    "start": 2416.24,
+    "duration": 5.16
+  },
+  {
+    "text": "well for like UI elements especially in",
+    "start": 2417.76,
+    "duration": 5.88
+  },
+  {
+    "text": "my experience they had a lot of trouble",
+    "start": 2421.4,
+    "duration": 5.04
+  },
+  {
+    "text": "telling what&#39;s a text box and what&#39;s not",
+    "start": 2423.64,
+    "duration": 5.16
+  },
+  {
+    "text": "uh what&#39;s not a text",
+    "start": 2426.44,
+    "duration": 4.68
+  },
+  {
+    "text": "box",
+    "start": 2428.8,
+    "duration": 7.0
+  },
+  {
+    "text": "um that&#39;s hilarious B hun um",
+    "start": 2431.12,
+    "duration": 6.84
+  },
+  {
+    "text": "so uh so",
+    "start": 2435.8,
+    "duration": 4.32
+  },
+  {
+    "text": "basically",
+    "start": 2437.96,
+    "duration": 6.0
+  },
+  {
+    "text": "um uh so so what we what we need to do",
+    "start": 2440.12,
+    "duration": 5.36
+  },
+  {
+    "text": "is we need to have a much more",
+    "start": 2443.96,
+    "duration": 3.68
+  },
+  {
+    "text": "sophisticated um",
+    "start": 2445.48,
+    "duration": 6.04
+  },
+  {
+    "text": "model so ban I think that&#39;s just the",
+    "start": 2447.64,
+    "duration": 6.84
+  },
+  {
+    "text": "exchange rate that you have over",
+    "start": 2451.52,
+    "duration": 6.08
+  },
+  {
+    "text": "there burun said",
+    "start": 2454.48,
+    "duration": 4.68
+  },
+  {
+    "text": "um they&#39;re talking about prompting the",
+    "start": 2457.6,
+    "duration": 4.48
+  },
+  {
+    "text": "model using U monetary",
+    "start": 2459.16,
+    "duration": 5.48
+  },
+  {
+    "text": "rewards some are prom some are offering",
+    "start": 2462.08,
+    "duration": 6.84
+  },
+  {
+    "text": "the model ,000 some are offering $10 um",
+    "start": 2464.64,
+    "duration": 5.76
+  },
+  {
+    "text": "that&#39;s uh that kind of prompt",
+    "start": 2468.92,
+    "duration": 2.88
+  },
+  {
+    "text": "engineering techniques is way too",
+    "start": 2470.4,
+    "duration": 3.48
+  },
+  {
+    "text": "advanced for this class so I&#39;m not",
+    "start": 2471.8,
+    "duration": 6.28
+  },
+  {
+    "text": "qualified to teach that",
+    "start": 2473.88,
+    "duration": 4.2
+  },
+  {
+    "text": "but yeah Jordan",
+    "start": 2481.16,
+    "duration": 6.48
+  },
+  {
+    "text": "says Jordan says that the his Mouse is",
+    "start": 2484.48,
+    "duration": 6.12
+  },
+  {
+    "text": "not moving I had that for a while um and",
+    "start": 2487.64,
+    "duration": 4.84
+  },
+  {
+    "text": "I it was just the screenshot wasn&#39;t",
+    "start": 2490.6,
+    "duration": 5.12
+  },
+  {
+    "text": "getting updated so I had to add this I&#39;m",
+    "start": 2492.48,
+    "duration": 5.92
+  },
+  {
+    "text": "not sure what it is uh try try starting",
+    "start": 2495.72,
+    "duration": 5.44
+  },
+  {
+    "text": "the sandbox",
+    "start": 2498.4,
+    "duration": 2.76
+  },
+  {
+    "text": "again what I was getting to uh as we are",
+    "start": 2501.96,
+    "duration": 8.88
+  },
+  {
+    "text": "uh rapidly running out of time here uh",
+    "start": 2507.52,
+    "duration": 5.44
+  },
+  {
+    "text": "is that we need to be able to move the",
+    "start": 2510.84,
+    "duration": 5.4
+  },
+  {
+    "text": "mouse and to be able to click on things",
+    "start": 2512.96,
+    "duration": 5.0
+  },
+  {
+    "text": "um and I&#39;ve I&#39;ve gone through all of",
+    "start": 2516.24,
+    "duration": 4.12
+  },
+  {
+    "text": "this in quite detail uh in the in my",
+    "start": 2517.96,
+    "duration": 5.6
+  },
+  {
+    "text": "blog post here um in the section of so",
+    "start": 2520.36,
+    "duration": 6.08
+  },
+  {
+    "text": "we have some different sections here uh",
+    "start": 2523.56,
+    "duration": 4.32
+  },
+  {
+    "text": "let&#39;s go let&#39;s go to the table of",
+    "start": 2526.44,
+    "duration": 3.88
+  },
+  {
+    "text": "contents security these are the main",
+    "start": 2527.88,
+    "duration": 6.04
+  },
+  {
+    "text": "challenges security clicking on things",
+    "start": 2530.32,
+    "duration": 6.88
+  },
+  {
+    "text": "reasoning um finding an agent framework",
+    "start": 2533.92,
+    "duration": 6.68
+  },
+  {
+    "text": "or not using an agent framework um which",
+    "start": 2537.2,
+    "duration": 5.92
+  },
+  {
+    "text": "is the option that we ended up going for",
+    "start": 2540.6,
+    "duration": 5.76
+  },
+  {
+    "text": "um deploying um llms and streaming the",
+    "start": 2543.12,
+    "duration": 4.76
+  },
+  {
+    "text": "display",
+    "start": 2546.36,
+    "duration": 3.76
+  },
+  {
+    "text": "so let&#39;s uh let&#39;s talk about clicking on",
+    "start": 2547.88,
+    "duration": 4.24
+  },
+  {
+    "text": "things and you can see more in this in",
+    "start": 2550.12,
+    "duration": 6.36
+  },
+  {
+    "text": "this um article about uh my thought",
+    "start": 2552.12,
+    "duration": 6.52
+  },
+  {
+    "text": "process but today I&#39;m just going to give",
+    "start": 2556.48,
+    "duration": 6.12
+  },
+  {
+    "text": "you uh the solution and the solution for",
+    "start": 2558.64,
+    "duration": 9.28
+  },
+  {
+    "text": "this uh was really interesting um I",
+    "start": 2562.6,
+    "duration": 7.48
+  },
+  {
+    "text": "thought this was going to be really",
+    "start": 2567.92,
+    "duration": 5.4
+  },
+  {
+    "text": "difficult um and then I came across a",
+    "start": 2570.08,
+    "duration": 5.88
+  },
+  {
+    "text": "new series of models which are",
+    "start": 2573.32,
+    "duration": 4.16
+  },
+  {
+    "text": "fine-tuned",
+    "start": 2575.96,
+    "duration": 4.64
+  },
+  {
+    "text": "uh to Output spatial information and",
+    "start": 2577.48,
+    "duration": 6.44
+  },
+  {
+    "text": "this is this is a type of llm so um if",
+    "start": 2580.6,
+    "duration": 6.72
+  },
+  {
+    "text": "we go to uh something called OS world",
+    "start": 2583.92,
+    "duration": 5.32
+  },
+  {
+    "text": "you you should just be able to search",
+    "start": 2587.32,
+    "duration": 5.32
+  },
+  {
+    "text": "for OS world uh you find this really",
+    "start": 2589.24,
+    "duration": 7.04
+  },
+  {
+    "text": "interesting Benchmark um now this is not",
+    "start": 2592.64,
+    "duration": 5.84
+  },
+  {
+    "text": "like a a general problem solving",
+    "start": 2596.28,
+    "duration": 3.4
+  },
+  {
+    "text": "Benchmark for",
+    "start": 2598.48,
+    "duration": 4.12
+  },
+  {
+    "text": "llms um it does a little bit of that but",
+    "start": 2599.68,
+    "duration": 6.12
+  },
+  {
+    "text": "what it&#39;s mainly for is seeing if a uh",
+    "start": 2602.6,
+    "duration": 7.64
+  },
+  {
+    "text": "if an llm can identify like a button on",
+    "start": 2605.8,
+    "duration": 6.56
+  },
+  {
+    "text": "the screen and figure out where it is",
+    "start": 2610.24,
+    "duration": 4.04
+  },
+  {
+    "text": "and that&#39;s exactly um what we&#39;re trying",
+    "start": 2612.36,
+    "duration": 4.56
+  },
+  {
+    "text": "to do and they have these these crazy",
+    "start": 2614.28,
+    "duration": 5.88
+  },
+  {
+    "text": "examples um but but what what I ended up",
+    "start": 2616.92,
+    "duration": 4.56
+  },
+  {
+    "text": "doing was",
+    "start": 2620.16,
+    "duration": 3.76
+  },
+  {
+    "text": "integrating um I&#39;ve never seen it work",
+    "start": 2621.48,
+    "duration": 6.12
+  },
+  {
+    "text": "that well in real life but um but I",
+    "start": 2623.92,
+    "duration": 7.56
+  },
+  {
+    "text": "think that uh no I should I should",
+    "start": 2627.6,
+    "duration": 5.92
+  },
+  {
+    "text": "correct myself I&#39;ve never seen the agent",
+    "start": 2631.48,
+    "duration": 3.96
+  },
+  {
+    "text": "work that well in real life but the",
+    "start": 2633.52,
+    "duration": 4.32
+  },
+  {
+    "text": "model that can actually identify where",
+    "start": 2635.44,
+    "duration": 4.24
+  },
+  {
+    "text": "things are on the screen it works really",
+    "start": 2637.84,
+    "duration": 2.96
+  },
+  {
+    "text": "well",
+    "start": 2639.68,
+    "duration": 5.48
+  },
+  {
+    "text": "so um so let&#39;s look",
+    "start": 2640.8,
+    "duration": 7.0
+  },
+  {
+    "text": "at uh let&#39;s just look at the let&#39;s just",
+    "start": 2645.16,
+    "duration": 4.68
+  },
+  {
+    "text": "look at the final benchmarks um that",
+    "start": 2647.8,
+    "duration": 3.48
+  },
+  {
+    "text": "they have",
+    "start": 2649.84,
+    "duration": 4.44
+  },
+  {
+    "text": "here",
+    "start": 2651.28,
+    "duration": 3.0
+  },
+  {
+    "text": "um it&#39;s somewhere on this page if you",
+    "start": 2655.48,
+    "duration": 6.32
+  },
+  {
+    "text": "scroll down um so there&#39;s there&#39;s a few",
+    "start": 2657.84,
+    "duration": 7.24
+  },
+  {
+    "text": "different uh benchmarks here sorry a few",
+    "start": 2661.8,
+    "duration": 5.68
+  },
+  {
+    "text": "different models that have been ranked",
+    "start": 2665.08,
+    "duration": 4.92
+  },
+  {
+    "text": "uh like we see here Claude um Claude",
+    "start": 2667.48,
+    "duration": 5.36
+  },
+  {
+    "text": "does really well at identifying items on",
+    "start": 2670.0,
+    "duration": 4.36
+  },
+  {
+    "text": "a",
+    "start": 2672.84,
+    "duration": 4.72
+  },
+  {
+    "text": "screen and then there&#39;s a bunch of these",
+    "start": 2674.36,
+    "duration": 6.2
+  },
+  {
+    "text": "that are really new um that either I",
+    "start": 2677.56,
+    "duration": 6.52
+  },
+  {
+    "text": "haven&#39;t tried or I could not find the",
+    "start": 2680.56,
+    "duration": 6.96
+  },
+  {
+    "text": "the weights on hugging face when and",
+    "start": 2684.08,
+    "duration": 4.76
+  },
+  {
+    "text": "this just shows how fast things are",
+    "start": 2687.52,
+    "duration": 2.76
+  },
+  {
+    "text": "moving because look where all these are",
+    "start": 2688.84,
+    "duration": 4.68
+  },
+  {
+    "text": "from these are all from from this month",
+    "start": 2690.28,
+    "duration": 5.36
+  },
+  {
+    "text": "um except for Claude which was the",
+    "start": 2693.52,
+    "duration": 3.56
+  },
+  {
+    "text": "computer use Source released in o",
+    "start": 2695.64,
+    "duration": 3.12
+  },
+  {
+    "text": "October and they haven&#39;t updated it",
+    "start": 2697.08,
+    "duration": 5.04
+  },
+  {
+    "text": "since then um so the one that I&#39;m using",
+    "start": 2698.76,
+    "duration": 6.04
+  },
+  {
+    "text": "that actually works quite well which was",
+    "start": 2702.12,
+    "duration": 5.4
+  },
+  {
+    "text": "it was close to the top um a couple",
+    "start": 2704.8,
+    "duration": 8.08
+  },
+  {
+    "text": "months ago uh was is OS Atlas base uh",
+    "start": 2707.52,
+    "duration": 12.8
+  },
+  {
+    "text": "7B so um we can check out OS Atlas on",
+    "start": 2712.88,
+    "duration": 9.88
+  },
+  {
+    "text": "hugging",
+    "start": 2720.32,
+    "duration": 2.44
+  },
+  {
+    "text": "face here it is um there&#39;s a lot of",
+    "start": 2724.44,
+    "duration": 7.16
+  },
+  {
+    "text": "stuff on the hug face uh main page when",
+    "start": 2728.72,
+    "duration": 5.2
+  },
+  {
+    "text": "you get there but if you you check this",
+    "start": 2731.6,
+    "duration": 4.64
+  },
+  {
+    "text": "out here under",
+    "start": 2733.92,
+    "duration": 4.32
+  },
+  {
+    "text": "spaces um you actually find an",
+    "start": 2736.24,
+    "duration": 4.36
+  },
+  {
+    "text": "interactive version of it which is just",
+    "start": 2738.24,
+    "duration": 4.24
+  },
+  {
+    "text": "shows you right away what it does so",
+    "start": 2740.6,
+    "duration": 3.92
+  },
+  {
+    "text": "let&#39;s click on one of these example",
+    "start": 2742.48,
+    "duration": 5.12
+  },
+  {
+    "text": "images and we can prompt anything here",
+    "start": 2744.52,
+    "duration": 6.64
+  },
+  {
+    "text": "uh so what should we what should we look",
+    "start": 2747.6,
+    "duration": 6.24
+  },
+  {
+    "text": "for Jonathan what do you uh what&#39;s like",
+    "start": 2751.16,
+    "duration": 7.76
+  },
+  {
+    "text": "a good test for something like this",
+    "start": 2753.84,
+    "duration": 5.08
+  },
+  {
+    "text": "basically we want to just ask it to find",
+    "start": 2763.6,
+    "duration": 8.4
+  },
+  {
+    "text": "something uh find something on the page",
+    "start": 2767.44,
+    "duration": 4.56
+  },
+  {
+    "text": "right like search box for example and if",
+    "start": 2772.16,
+    "duration": 7.36
+  },
+  {
+    "text": "I click uh so so we&#39;re prompting the llm",
+    "start": 2776.32,
+    "duration": 7.04
+  },
+  {
+    "text": "with this image plus the prompt search",
+    "start": 2779.52,
+    "duration": 7.12
+  },
+  {
+    "text": "box and this is what you get back uh",
+    "start": 2783.36,
+    "duration": 4.72
+  },
+  {
+    "text": "what you you cannot see let me open it",
+    "start": 2786.64,
+    "duration": 4.6
+  },
+  {
+    "text": "in a new tab here um you still cannot",
+    "start": 2788.08,
+    "duration": 5.92
+  },
+  {
+    "text": "see",
+    "start": 2791.24,
+    "duration": 7.08
+  },
+  {
+    "text": "um let&#39;s see how do I get this image",
+    "start": 2794.0,
+    "duration": 8.4
+  },
+  {
+    "text": "where you all can see it let",
+    "start": 2798.32,
+    "duration": 7.52
+  },
+  {
+    "text": "me that&#39;s that&#39;s uh that&#39;s rather",
+    "start": 2802.4,
+    "duration": 8.32
+  },
+  {
+    "text": "awkward let&#39;s see I",
+    "start": 2805.84,
+    "duration": 4.88
+  },
+  {
+    "text": "can it&#39;s it&#39;s on the wrong side of the",
+    "start": 2811.72,
+    "duration": 7.12
+  },
+  {
+    "text": "screen so basically",
+    "start": 2814.92,
+    "duration": 3.92
+  },
+  {
+    "text": "here I can put it",
+    "start": 2819.32,
+    "duration": 5.4
+  },
+  {
+    "text": "maybe I can hide myself for a second",
+    "start": 2821.52,
+    "duration": 5.16
+  },
+  {
+    "text": "that",
+    "start": 2824.72,
+    "duration": 4.84
+  },
+  {
+    "text": "work no it&#39;s risky I don&#39;t want to mess",
+    "start": 2826.68,
+    "duration": 6.76
+  },
+  {
+    "text": "with the so basically what it did is it",
+    "start": 2829.56,
+    "duration": 7.6
+  },
+  {
+    "text": "put uh it put a red box here I can copy",
+    "start": 2833.44,
+    "duration": 6.32
+  },
+  {
+    "text": "the image and then put it in a new",
+    "start": 2837.16,
+    "duration": 6.68
+  },
+  {
+    "text": "document um so everyone can",
+    "start": 2839.76,
+    "duration": 8.08
+  },
+  {
+    "text": "see here",
+    "start": 2843.84,
+    "duration": 4.0
+  },
+  {
+    "text": "let&#39;s see here",
+    "start": 2851.0,
+    "duration": 8.6
+  },
+  {
+    "text": "and there okay now you can see here um",
+    "start": 2854.08,
+    "duration": 7.64
+  },
+  {
+    "text": "it&#39;s put a red",
+    "start": 2859.6,
+    "duration": 6.44
+  },
+  {
+    "text": "box right around uh the text box isn&#39;t",
+    "start": 2861.72,
+    "duration": 5.44
+  },
+  {
+    "text": "that",
+    "start": 2866.04,
+    "duration": 4.68
+  },
+  {
+    "text": "awesome like we said here uh so we all",
+    "start": 2867.16,
+    "duration": 5.68
+  },
+  {
+    "text": "we said was search box and just based",
+    "start": 2870.72,
+    "duration": 5.16
+  },
+  {
+    "text": "off that information um it put a red box",
+    "start": 2872.84,
+    "duration": 7.16
+  },
+  {
+    "text": "here so Let&#39;s do let&#39;s do one more um of",
+    "start": 2875.88,
+    "duration": 8.24
+  },
+  {
+    "text": "course like if you do something like um",
+    "start": 2880.0,
+    "duration": 4.12
+  },
+  {
+    "text": "discussion it should be able to get that",
+    "start": 2886.96,
+    "duration": 3.8
+  },
+  {
+    "text": "one right",
+    "start": 2889.08,
+    "duration": 4.88
+  },
+  {
+    "text": "away but um yeah as we&#39;re we&#39;re running",
+    "start": 2890.76,
+    "duration": 6.76
+  },
+  {
+    "text": "close on time um yeah let&#39;s just uh yeah",
+    "start": 2893.96,
+    "duration": 5.28
+  },
+  {
+    "text": "so there&#39;s there&#39;s an example for the",
+    "start": 2897.52,
+    "duration": 2.88
+  },
+  {
+    "text": "the",
+    "start": 2899.24,
+    "duration": 3.76
+  },
+  {
+    "text": "discussion let&#39;s throw that in let&#39;s let",
+    "start": 2900.4,
+    "duration": 4.04
+  },
+  {
+    "text": "me show you how that works how that",
+    "start": 2903.0,
+    "duration": 4.44
+  },
+  {
+    "text": "looks",
+    "start": 2904.44,
+    "duration": 3.0
+  },
+  {
+    "text": "oops",
+    "start": 2908.08,
+    "duration": 3.0
+  },
+  {
+    "text": "uh let&#39;s see copy image here here so you",
+    "start": 2911.76,
+    "duration": 7.04
+  },
+  {
+    "text": "can see now that the",
+    "start": 2917.2,
+    "duration": 6.0
+  },
+  {
+    "text": "discussion uh item is is in this",
+    "start": 2918.8,
+    "duration": 7.28
+  },
+  {
+    "text": "box this this is really amazing and I",
+    "start": 2923.2,
+    "duration": 5.52
+  },
+  {
+    "text": "really recommend that you go to the um",
+    "start": 2926.08,
+    "duration": 5.0
+  },
+  {
+    "text": "OS Atlas uh",
+    "start": 2928.72,
+    "duration": 5.8
+  },
+  {
+    "text": "website check out this paper and they",
+    "start": 2931.08,
+    "duration": 6.28
+  },
+  {
+    "text": "have described in detail how they",
+    "start": 2934.52,
+    "duration": 6.28
+  },
+  {
+    "text": "fine-tuned in llm um to Output those",
+    "start": 2937.36,
+    "duration": 6.44
+  },
+  {
+    "text": "four um well it&#39;s really two coord um",
+    "start": 2940.8,
+    "duration": 5.72
+  },
+  {
+    "text": "two sets of coordinates that Define the",
+    "start": 2943.8,
+    "duration": 5.36
+  },
+  {
+    "text": "Box uh that you&#39;re looking for really",
+    "start": 2946.52,
+    "duration": 7.2
+  },
+  {
+    "text": "cool so um that solves this problem",
+    "start": 2949.16,
+    "duration": 7.76
+  },
+  {
+    "text": "perfectly so the way that I&#39;m going to",
+    "start": 2953.72,
+    "duration": 7.16
+  },
+  {
+    "text": "um Implement that is that uh when the",
+    "start": 2956.92,
+    "duration": 7.04
+  },
+  {
+    "text": "llm wants to click on something this is",
+    "start": 2960.88,
+    "duration": 4.92
+  },
+  {
+    "text": "the way I decided to architect it and it",
+    "start": 2963.96,
+    "duration": 3.36
+  },
+  {
+    "text": "work quite well for me",
+    "start": 2965.8,
+    "duration": 3.28
+  },
+  {
+    "text": "is when the llm wants to click on",
+    "start": 2967.32,
+    "duration": 4.48
+  },
+  {
+    "text": "something uh it doesn&#39;t it doesn&#39;t",
+    "start": 2969.08,
+    "duration": 4.52
+  },
+  {
+    "text": "output the",
+    "start": 2971.8,
+    "duration": 4.16
+  },
+  {
+    "text": "coordinates but it",
+    "start": 2973.6,
+    "duration": 5.04
+  },
+  {
+    "text": "outputs um just a description of what it",
+    "start": 2975.96,
+    "duration": 6.92
+  },
+  {
+    "text": "wants to click on and then we have a",
+    "start": 2978.64,
+    "duration": 8.6
+  },
+  {
+    "text": "secondary llm right here right that",
+    "start": 2982.88,
+    "duration": 7.16
+  },
+  {
+    "text": "converts query to",
+    "start": 2987.24,
+    "duration": 5.4
+  },
+  {
+    "text": "coordinates right and so this secondary",
+    "start": 2990.04,
+    "duration": 4.88
+  },
+  {
+    "text": "llm is OS",
+    "start": 2992.64,
+    "duration": 5.84
+  },
+  {
+    "text": "Atlas so that that that smaller LM which",
+    "start": 2994.92,
+    "duration": 6.84
+  },
+  {
+    "text": "is n 9B parameters that gets called only",
+    "start": 2998.48,
+    "duration": 7.4
+  },
+  {
+    "text": "when the the um reasoning LM decides to",
+    "start": 3001.76,
+    "duration": 6.36
+  },
+  {
+    "text": "use",
+    "start": 3005.88,
+    "duration": 2.24
+  },
+  {
+    "text": "it uh Jordan if you&#39;re having trouble",
+    "start": 3008.2,
+    "duration": 5.4
+  },
+  {
+    "text": "with the screenshot uh uh I&#39;m sorry uh",
+    "start": 3010.48,
+    "duration": 5.44
+  },
+  {
+    "text": "send me your notebook and um I&#39;ll have a",
+    "start": 3013.6,
+    "duration": 4.8
+  },
+  {
+    "text": "look and uh make sure that it gets that",
+    "start": 3015.92,
+    "duration": 5.12
+  },
+  {
+    "text": "it um uh it works or maybe you can post",
+    "start": 3018.4,
+    "duration": 5.12
+  },
+  {
+    "text": "it here in the chat and someone else can",
+    "start": 3021.04,
+    "duration": 6.56
+  },
+  {
+    "text": "uh can find what the what the issue is",
+    "start": 3023.52,
+    "duration": 8.16
+  },
+  {
+    "text": "so I want to just give you all the",
+    "start": 3027.6,
+    "duration": 6.44
+  },
+  {
+    "text": "solution uh",
+    "start": 3031.68,
+    "duration": 6.04
+  },
+  {
+    "text": "directly uh for this CU this model is",
+    "start": 3034.04,
+    "duration": 6.36
+  },
+  {
+    "text": "hosted here uh on hugging face as I just",
+    "start": 3037.72,
+    "duration": 6.96
+  },
+  {
+    "text": "showed you so we&#39;re just going to uh",
+    "start": 3040.4,
+    "duration": 5.96
+  },
+  {
+    "text": "we&#39;re just going",
+    "start": 3044.68,
+    "duration": 5.44
+  },
+  {
+    "text": "to call it directly using the hugging",
+    "start": 3046.36,
+    "duration": 5.8
+  },
+  {
+    "text": "face um",
+    "start": 3050.12,
+    "duration": 7.12
+  },
+  {
+    "text": "API so to do that we are going to use um",
+    "start": 3052.16,
+    "duration": 9.56
+  },
+  {
+    "text": "and it&#39;s it&#39;s using something called uh",
+    "start": 3057.24,
+    "duration": 4.48
+  },
+  {
+    "text": "gradio which is like a python web server",
+    "start": 3063.96,
+    "duration": 6.64
+  },
+  {
+    "text": "so if we install gradio",
+    "start": 3067.44,
+    "duration": 6.56
+  },
+  {
+    "text": "client uh and then what this code does",
+    "start": 3070.6,
+    "duration": 6.92
+  },
+  {
+    "text": "here is it&#39;s just calling that API from",
+    "start": 3074.0,
+    "duration": 6.88
+  },
+  {
+    "text": "hugging face um that&#39;s that&#39;s all that",
+    "start": 3077.52,
+    "duration": 5.88
+  },
+  {
+    "text": "it&#39;s doing so if we have an image here",
+    "start": 3080.88,
+    "duration": 4.36
+  },
+  {
+    "text": "called",
+    "start": 3083.4,
+    "duration": 5.36
+  },
+  {
+    "text": "screenshot um we can upload that to the",
+    "start": 3085.24,
+    "duration": 7.28
+  },
+  {
+    "text": "model on hugging face that will uh",
+    "start": 3088.76,
+    "duration": 6.56
+  },
+  {
+    "text": "return so here I say click on the URL",
+    "start": 3092.52,
+    "duration": 6.44
+  },
+  {
+    "text": "bar and I will uh",
+    "start": 3095.32,
+    "duration": 7.88
+  },
+  {
+    "text": "return the uh the coordinates of that",
+    "start": 3098.96,
+    "duration": 6.8
+  },
+  {
+    "text": "rectangle that which is the area that we",
+    "start": 3103.2,
+    "duration": 5.92
+  },
+  {
+    "text": "want to click on based on whatever this",
+    "start": 3105.76,
+    "duration": 5.04
+  },
+  {
+    "text": "uh prompt was",
+    "start": 3109.12,
+    "duration": 6.36
+  },
+  {
+    "text": "right so uh let&#39;s see how we can um pass",
+    "start": 3110.8,
+    "duration": 8.08
+  },
+  {
+    "text": "in the the screen shot that we have um",
+    "start": 3115.48,
+    "duration": 6.84
+  },
+  {
+    "text": "this uh this sandbox as we saw before it",
+    "start": 3118.88,
+    "duration": 5.76
+  },
+  {
+    "text": "it times out after 5 minutes so we do",
+    "start": 3122.32,
+    "duration": 4.6
+  },
+  {
+    "text": "need to run this again to get it to",
+    "start": 3124.64,
+    "duration": 6.0
+  },
+  {
+    "text": "work and here uh we can",
+    "start": 3126.92,
+    "duration": 5.52
+  },
+  {
+    "text": "get the",
+    "start": 3130.64,
+    "duration": 6.08
+  },
+  {
+    "text": "screenshot um now I have to save this uh",
+    "start": 3132.44,
+    "duration": 8.92
+  },
+  {
+    "text": "to a file right",
+    "start": 3136.72,
+    "duration": 10.8
+  },
+  {
+    "text": "so that is actually as simple as doing",
+    "start": 3141.36,
+    "duration": 10.36
+  },
+  {
+    "text": "image. saave screenshot.png",
+    "start": 3147.52,
+    "duration": 8.76
+  },
+  {
+    "text": "that should also save it here ah perfect",
+    "start": 3151.72,
+    "duration": 8.36
+  },
+  {
+    "text": "to a file called PNG uh and that&#39;s just",
+    "start": 3156.28,
+    "duration": 6.72
+  },
+  {
+    "text": "because of how this code Works down here",
+    "start": 3160.08,
+    "duration": 6.16
+  },
+  {
+    "text": "um oh I already I already had that here",
+    "start": 3163.0,
+    "duration": 4.8
+  },
+  {
+    "text": "but",
+    "start": 3166.24,
+    "duration": 4.6
+  },
+  {
+    "text": "basically um this is going to then",
+    "start": 3167.8,
+    "duration": 6.2
+  },
+  {
+    "text": "upload that image that we just saved um",
+    "start": 3170.84,
+    "duration": 6.92
+  },
+  {
+    "text": "and then get the results so let&#39;s try it",
+    "start": 3174.0,
+    "duration": 6.04
+  },
+  {
+    "text": "and this is a free API actually it&#39;s",
+    "start": 3177.76,
+    "duration": 5.2
+  },
+  {
+    "text": "it&#39;s rate limited um so you so you&#39;ll",
+    "start": 3180.04,
+    "duration": 4.64
+  },
+  {
+    "text": "get blocked not blocked but you get",
+    "start": 3182.96,
+    "duration": 5.12
+  },
+  {
+    "text": "limited if used a lot um but here are",
+    "start": 3184.68,
+    "duration": 6.2
+  },
+  {
+    "text": "the results the no API key required and",
+    "start": 3188.08,
+    "duration": 5.76
+  },
+  {
+    "text": "you get back these um these values the",
+    "start": 3190.88,
+    "duration": 5.08
+  },
+  {
+    "text": "query you put",
+    "start": 3193.84,
+    "duration": 5.84
+  },
+  {
+    "text": "in the um",
+    "start": 3195.96,
+    "duration": 7.36
+  },
+  {
+    "text": "coordinates uh the coordinates of the",
+    "start": 3199.68,
+    "duration": 7.36
+  },
+  {
+    "text": "box and you even get back uh",
+    "start": 3203.32,
+    "duration": 7.84
+  },
+  {
+    "text": "um this is you even get back an image uh",
+    "start": 3207.04,
+    "duration": 6.92
+  },
+  {
+    "text": "with the rectangle outlined on the",
+    "start": 3211.16,
+    "duration": 5.12
+  },
+  {
+    "text": "original screenshot so that&#39;s great for",
+    "start": 3213.96,
+    "duration": 4.44
+  },
+  {
+    "text": "uh debugging",
+    "start": 3216.28,
+    "duration": 4.76
+  },
+  {
+    "text": "purposes now uh what what we&#39;re",
+    "start": 3218.4,
+    "duration": 3.88
+  },
+  {
+    "text": "interested in is getting these",
+    "start": 3221.04,
+    "duration": 3.92
+  },
+  {
+    "text": "coordinates uh so that we can make a",
+    "start": 3222.28,
+    "duration": 6.12
+  },
+  {
+    "text": "script that will click with them",
+    "start": 3224.96,
+    "duration": 7.28
+  },
+  {
+    "text": "right so the way I solved that is using",
+    "start": 3228.4,
+    "duration": 5.88
+  },
+  {
+    "text": "uh regular",
+    "start": 3232.24,
+    "duration": 5.8
+  },
+  {
+    "text": "Expressions I&#39;m doing uh um first I want",
+    "start": 3234.28,
+    "duration": 6.72
+  },
+  {
+    "text": "to this is a string here right um and",
+    "start": 3238.04,
+    "duration": 6.04
+  },
+  {
+    "text": "this is not a standard",
+    "start": 3241.0,
+    "duration": 5.32
+  },
+  {
+    "text": "python uh this is this is not like a",
+    "start": 3244.08,
+    "duration": 4.8
+  },
+  {
+    "text": "traditional data uh format here it&#39;s",
+    "start": 3246.32,
+    "duration": 5.32
+  },
+  {
+    "text": "called it&#39;s just a bounding box so the",
+    "start": 3248.88,
+    "duration": 5.84
+  },
+  {
+    "text": "way that I&#39;m parsing that is I&#39;m going",
+    "start": 3251.64,
+    "duration": 7.52
+  },
+  {
+    "text": "to use regular expression find all um",
+    "start": 3254.72,
+    "duration": 7.08
+  },
+  {
+    "text": "and then I&#39;m putting in an expression",
+    "start": 3259.16,
+    "duration": 6.76
+  },
+  {
+    "text": "for a decimal followed by a period",
+    "start": 3261.8,
+    "duration": 7.84
+  },
+  {
+    "text": "followed by by um oh yeah any number of",
+    "start": 3265.92,
+    "duration": 6.24
+  },
+  {
+    "text": "digits followed by period followed by",
+    "start": 3269.64,
+    "duration": 4.4
+  },
+  {
+    "text": "any other number of",
+    "start": 3272.16,
+    "duration": 8.16
+  },
+  {
+    "text": "digits I&#39;m passing in this item from the",
+    "start": 3274.04,
+    "duration": 6.28
+  },
+  {
+    "text": "result",
+    "start": 3282.92,
+    "duration": 4.2
+  },
+  {
+    "text": "okay and notice that this is now",
+    "start": 3284.44,
+    "duration": 5.0
+  },
+  {
+    "text": "actually a python list here so we have",
+    "start": 3287.12,
+    "duration": 3.24
+  },
+  {
+    "text": "all of",
+    "start": 3289.44,
+    "duration": 5.24
+  },
+  {
+    "text": "those uh so let&#39;s see um and then I want",
+    "start": 3290.36,
+    "duration": 7.48
+  },
+  {
+    "text": "to convert all of these",
+    "start": 3294.68,
+    "duration": 8.16
+  },
+  {
+    "text": "to uh float number for number in so this",
+    "start": 3297.84,
+    "duration": 7.64
+  },
+  {
+    "text": "this should convert each of these to an",
+    "start": 3302.84,
+    "duration": 4.4
+  },
+  {
+    "text": "actual number instead of a",
+    "start": 3305.48,
+    "duration": 3.36
+  },
+  {
+    "text": "string",
+    "start": 3307.24,
+    "duration": 4.6
+  },
+  {
+    "text": "cool now we have four",
+    "start": 3308.84,
+    "duration": 7.76
+  },
+  {
+    "text": "numbers and I think the format for this",
+    "start": 3311.84,
+    "duration": 9.48
+  },
+  {
+    "text": "is going to be something like",
+    "start": 3316.6,
+    "duration": 4.72
+  },
+  {
+    "text": "X1 um y1 X2 Y2",
+    "start": 3322.0,
+    "duration": 12.4
+  },
+  {
+    "text": "2 uh wait X1 y1 X2 Y2 right so what that",
+    "start": 3327.24,
+    "duration": 10.92
+  },
+  {
+    "text": "means is that these are the coordinates",
+    "start": 3334.4,
+    "duration": 6.92
+  },
+  {
+    "text": "uh for one uh Point these are the",
+    "start": 3338.16,
+    "duration": 5.12
+  },
+  {
+    "text": "coordinates for another",
+    "start": 3341.32,
+    "duration": 5.32
+  },
+  {
+    "text": "point and then if we take whatever point",
+    "start": 3343.28,
+    "duration": 5.72
+  },
+  {
+    "text": "so those are two of the corners of the",
+    "start": 3346.64,
+    "duration": 6.84
+  },
+  {
+    "text": "box and if we take uh if we take the",
+    "start": 3349.0,
+    "duration": 6.68
+  },
+  {
+    "text": "point that&#39;s between these two we&#39;ll get",
+    "start": 3353.48,
+    "duration": 4.84
+  },
+  {
+    "text": "something that we click on I hope that",
+    "start": 3355.68,
+    "duration": 3.44
+  },
+  {
+    "text": "makes",
+    "start": 3358.32,
+    "duration": 4.08
+  },
+  {
+    "text": "sense um I don&#39;t think I have a great",
+    "start": 3359.12,
+    "duration": 5.32
+  },
+  {
+    "text": "actually yeah so let&#39;s say this is your",
+    "start": 3362.4,
+    "duration": 6.36
+  },
+  {
+    "text": "box right um I think this would be one",
+    "start": 3364.44,
+    "duration": 6.64
+  },
+  {
+    "text": "of the points this would be the other",
+    "start": 3368.76,
+    "duration": 3.96
+  },
+  {
+    "text": "we&#39;re going to average the X and Y",
+    "start": 3371.08,
+    "duration": 4.04
+  },
+  {
+    "text": "values and we&#39;ll get this point which is",
+    "start": 3372.72,
+    "duration": 5.72
+  },
+  {
+    "text": "the safest place uh for us to click",
+    "start": 3375.12,
+    "duration": 6.8
+  },
+  {
+    "text": "on so that&#39;s just um",
+    "start": 3378.44,
+    "duration": 6.16
+  },
+  {
+    "text": "basic",
+    "start": 3381.92,
+    "duration": 5.88
+  },
+  {
+    "text": "um yeah that&#39;s just some basic",
+    "start": 3384.6,
+    "duration": 6.28
+  },
+  {
+    "text": "arithmetic there so we take numbers zero",
+    "start": 3387.8,
+    "duration": 4.68
+  },
+  {
+    "text": "we take the",
+    "start": 3390.88,
+    "duration": 6.12
+  },
+  {
+    "text": "X1 um plus the",
+    "start": 3392.48,
+    "duration": 6.04
+  },
+  {
+    "text": "X2",
+    "start": 3397.0,
+    "duration": 7.48
+  },
+  {
+    "text": "uh right 0 one2 take the average of",
+    "start": 3398.52,
+    "duration": 5.96
+  },
+  {
+    "text": "that and we do the same for the y1 and",
+    "start": 3404.56,
+    "duration": 8.24
+  },
+  {
+    "text": "the Y2 so we get X",
+    "start": 3409.44,
+    "duration": 6.84
+  },
+  {
+    "text": "average oops numbers so we should get X",
+    "start": 3412.8,
+    "duration": 7.24
+  },
+  {
+    "text": "average and Y average out of",
+    "start": 3416.28,
+    "duration": 5.4
+  },
+  {
+    "text": "that",
+    "start": 3420.04,
+    "duration": 6.44
+  },
+  {
+    "text": "cool so um I believe um this this should",
+    "start": 3421.68,
+    "duration": 8.84
+  },
+  {
+    "text": "be what did we say we said URL bar right",
+    "start": 3426.48,
+    "duration": 7.56
+  },
+  {
+    "text": "and there is no URL bar here so let&#39;s do",
+    "start": 3430.52,
+    "duration": 6.04
+  },
+  {
+    "text": "something else Let&#39;s do let&#39;s see is",
+    "start": 3434.04,
+    "duration": 7.12
+  },
+  {
+    "text": "this sandbox still alive no start it",
+    "start": 3436.56,
+    "duration": 4.6
+  },
+  {
+    "text": "again and let&#39;s say let&#39;s prompt for",
+    "start": 3442.84,
+    "duration": 6.08
+  },
+  {
+    "text": "the uh",
+    "start": 3446.8,
+    "duration": 4.36
+  },
+  {
+    "text": "web",
+    "start": 3448.92,
+    "duration": 5.6
+  },
+  {
+    "text": "browser to click on that click on the or",
+    "start": 3451.16,
+    "duration": 6.24
+  },
+  {
+    "text": "you can even just say web",
+    "start": 3454.52,
+    "duration": 2.88
+  },
+  {
+    "text": "browser and this prompt um just uh",
+    "start": 3460.24,
+    "duration": 6.44
+  },
+  {
+    "text": "encourages it to always give a result",
+    "start": 3464.48,
+    "duration": 3.2
+  },
+  {
+    "text": "like",
+    "start": 3466.68,
+    "duration": 3.96
+  },
+  {
+    "text": "this and let&#39;s get the coordinates oh",
+    "start": 3467.68,
+    "duration": 4.76
+  },
+  {
+    "text": "these coordinates look just like the",
+    "start": 3470.64,
+    "duration": 4.76
+  },
+  {
+    "text": "ones that that we used at the beginning",
+    "start": 3472.44,
+    "duration": 5.08
+  },
+  {
+    "text": "so I&#39;m pretty confident that that&#39;s",
+    "start": 3475.4,
+    "duration": 6.96
+  },
+  {
+    "text": "going to work uh so let&#39;s take this um",
+    "start": 3477.52,
+    "duration": 7.96
+  },
+  {
+    "text": "both of these right put them together",
+    "start": 3482.36,
+    "duration": 6.12
+  },
+  {
+    "text": "the mouse move and the",
+    "start": 3485.48,
+    "duration": 7.56
+  },
+  {
+    "text": "click and let&#39;s put in result",
+    "start": 3488.48,
+    "duration": 9.88
+  },
+  {
+    "text": "X result y okay as an F string let&#39;s run",
+    "start": 3493.04,
+    "duration": 8.92
+  },
+  {
+    "text": "this uh now let&#39;s wait a second so just",
+    "start": 3498.36,
+    "duration": 5.6
+  },
+  {
+    "text": "sorry I went really fast there this is",
+    "start": 3501.96,
+    "duration": 4.84
+  },
+  {
+    "text": "the mouse move command to the X and Y",
+    "start": 3503.96,
+    "duration": 5.48
+  },
+  {
+    "text": "that came out of the OS Atlas model and",
+    "start": 3506.8,
+    "duration": 5.52
+  },
+  {
+    "text": "this is a command to click uh so let&#39;s",
+    "start": 3509.44,
+    "duration": 4.84
+  },
+  {
+    "text": "go back up",
+    "start": 3512.32,
+    "duration": 5.84
+  },
+  {
+    "text": "to to the screenshot let&#39;s refresh it",
+    "start": 3514.28,
+    "duration": 6.04
+  },
+  {
+    "text": "cool we didn&#39;t tell it where to click",
+    "start": 3518.16,
+    "duration": 5.24
+  },
+  {
+    "text": "the mouse um all that we told it was to",
+    "start": 3520.32,
+    "duration": 7.2
+  },
+  {
+    "text": "click on the web browser and it used um",
+    "start": 3523.4,
+    "duration": 8.04
+  },
+  {
+    "text": "another model uh in order to do that",
+    "start": 3527.52,
+    "duration": 8.6
+  },
+  {
+    "text": "cool so we have been going uh super",
+    "start": 3531.44,
+    "duration": 7.2
+  },
+  {
+    "text": "super fast so far uh because I really",
+    "start": 3536.12,
+    "duration": 6.32
+  },
+  {
+    "text": "want to uh get get sort of like an agent",
+    "start": 3538.64,
+    "duration": 5.8
+  },
+  {
+    "text": "um that we can that we can that you all",
+    "start": 3542.44,
+    "duration": 5.52
+  },
+  {
+    "text": "can play with",
+    "start": 3544.44,
+    "duration": 8.48
+  },
+  {
+    "text": "um any questions of what we have done uh",
+    "start": 3547.96,
+    "duration": 7.28
+  },
+  {
+    "text": "so",
+    "start": 3552.92,
+    "duration": 2.32
+  },
+  {
+    "text": "far",
+    "start": 3559.8,
+    "duration": 4.2
+  },
+  {
+    "text": "cool yeah this is totally wild right",
+    "start": 3561.48,
+    "duration": 5.8
+  },
+  {
+    "text": "when I realized um that that this",
+    "start": 3564.0,
+    "duration": 4.96
+  },
+  {
+    "text": "clicking problem had been solved and",
+    "start": 3567.28,
+    "duration": 3.4
+  },
+  {
+    "text": "that was something that I could do in my",
+    "start": 3568.96,
+    "duration": 5.6
+  },
+  {
+    "text": "agent I got quite excited right because",
+    "start": 3570.68,
+    "duration": 7.84
+  },
+  {
+    "text": "now what&#39;s left to do uh is",
+    "start": 3574.56,
+    "duration": 5.48
+  },
+  {
+    "text": "basically",
+    "start": 3578.52,
+    "duration": 6.6
+  },
+  {
+    "text": "um just to construct this Loop um and",
+    "start": 3580.04,
+    "duration": 6.96
+  },
+  {
+    "text": "yeah thanks a lot harsh um and there&#39;s a",
+    "start": 3585.12,
+    "duration": 4.6
+  },
+  {
+    "text": "lot more details on this um in this",
+    "start": 3587.0,
+    "duration": 4.56
+  },
+  {
+    "text": "article that I&#39;ve sent in the chat where",
+    "start": 3589.72,
+    "duration": 3.92
+  },
+  {
+    "text": "I really go through a lot of the",
+    "start": 3591.56,
+    "duration": 4.92
+  },
+  {
+    "text": "problems that I was uh thinking about as",
+    "start": 3593.64,
+    "duration": 5.32
+  },
+  {
+    "text": "I solve",
+    "start": 3596.48,
+    "duration": 4.64
+  },
+  {
+    "text": "this",
+    "start": 3598.96,
+    "duration": 5.84
+  },
+  {
+    "text": "so we&#39;ve we&#39;ve solved the the core yeah",
+    "start": 3601.12,
+    "duration": 5.24
+  },
+  {
+    "text": "it&#39;s super interesting we&#39;ve solved the",
+    "start": 3604.8,
+    "duration": 5.6
+  },
+  {
+    "text": "core problems here of basically getting",
+    "start": 3606.36,
+    "duration": 8.76
+  },
+  {
+    "text": "an llm to Vision uh to to view uh the",
+    "start": 3610.4,
+    "duration": 6.44
+  },
+  {
+    "text": "contents of of the screen to view",
+    "start": 3615.12,
+    "duration": 3.48
+  },
+  {
+    "text": "whatever is on the screen or the",
+    "start": 3616.84,
+    "duration": 4.92
+  },
+  {
+    "text": "display and um we&#39;ve also solved getting",
+    "start": 3618.6,
+    "duration": 6.28
+  },
+  {
+    "text": "it to click on stuff from just a text",
+    "start": 3621.76,
+    "duration": 5.84
+  },
+  {
+    "text": "description",
+    "start": 3624.88,
+    "duration": 5.48
+  },
+  {
+    "text": "Jordan you got it to work congrats",
+    "start": 3627.6,
+    "duration": 5.28
+  },
+  {
+    "text": "that&#39;s that&#39;s sick um we&#39;re we&#39;re",
+    "start": 3630.36,
+    "duration": 4.32
+  },
+  {
+    "text": "getting there we&#39;re making a lot of",
+    "start": 3632.88,
+    "duration": 5.84
+  },
+  {
+    "text": "progress yeah OS Atlas is um is is",
+    "start": 3634.68,
+    "duration": 7.2
+  },
+  {
+    "text": "really awesome um",
+    "start": 3638.72,
+    "duration": 7.72
+  },
+  {
+    "text": "the the Creator uh is on Twitter um and",
+    "start": 3641.88,
+    "duration": 8.16
+  },
+  {
+    "text": "I&#39;ve um I&#39;ve I&#39;ve mentioned him a few",
+    "start": 3646.44,
+    "duration": 8.64
+  },
+  {
+    "text": "times uh in in my work here so no doubt",
+    "start": 3650.04,
+    "duration": 6.64
+  },
+  {
+    "text": "there will be even better",
+    "start": 3655.08,
+    "duration": 3.84
+  },
+  {
+    "text": "uh even better models this is called a",
+    "start": 3656.68,
+    "duration": 4.6
+  },
+  {
+    "text": "grounding model this one the the one",
+    "start": 3658.92,
+    "duration": 3.8
+  },
+  {
+    "text": "that converts the cor to coordinates",
+    "start": 3661.28,
+    "duration": 4.28
+  },
+  {
+    "text": "that that are going to come out",
+    "start": 3662.72,
+    "duration": 6.04
+  },
+  {
+    "text": "soon uh someone asked how feasible is",
+    "start": 3665.56,
+    "duration": 5.4
+  },
+  {
+    "text": "this on iOS without making calls to",
+    "start": 3668.76,
+    "duration": 7.28
+  },
+  {
+    "text": "external LMS oh um well you talk about",
+    "start": 3670.96,
+    "duration": 6.68
+  },
+  {
+    "text": "an external",
+    "start": 3676.04,
+    "duration": 5.44
+  },
+  {
+    "text": "llm this this this one here the OS Atlas",
+    "start": 3677.64,
+    "duration": 7.4
+  },
+  {
+    "text": "one uh is is only seven uh 7 billion",
+    "start": 3681.48,
+    "duration": 5.96
+  },
+  {
+    "text": "parameters and and what that basically",
+    "start": 3685.04,
+    "duration": 6.88
+  },
+  {
+    "text": "means uh is that it&#39;s it&#39;s feasible to",
+    "start": 3687.44,
+    "duration": 9.0
+  },
+  {
+    "text": "run it on device um and even so even",
+    "start": 3691.92,
+    "duration": 6.72
+  },
+  {
+    "text": "furthermore there&#39;s um grounding models",
+    "start": 3696.44,
+    "duration": 4.16
+  },
+  {
+    "text": "that are two billion",
+    "start": 3698.64,
+    "duration": 4.16
+  },
+  {
+    "text": "parameters I find this one works the",
+    "start": 3700.6,
+    "duration": 4.64
+  },
+  {
+    "text": "best but if you want to run this on",
+    "start": 3702.8,
+    "duration": 5.08
+  },
+  {
+    "text": "device uh you could use that and then",
+    "start": 3705.24,
+    "duration": 4.64
+  },
+  {
+    "text": "you could use you know any llm that you",
+    "start": 3707.88,
+    "duration": 4.48
+  },
+  {
+    "text": "choose on device so it is it is feasible",
+    "start": 3709.88,
+    "duration": 5.36
+  },
+  {
+    "text": "and it&#39;s getting more feasible uh every",
+    "start": 3712.36,
+    "duration": 4.68
+  },
+  {
+    "text": "day",
+    "start": 3715.24,
+    "duration": 3.36
+  },
+  {
+    "text": "can you make it work on a remote PC",
+    "start": 3717.04,
+    "duration": 5.52
+  },
+  {
+    "text": "using team viewer sure um you could um",
+    "start": 3718.6,
+    "duration": 6.4
+  },
+  {
+    "text": "do something like that um the e2b",
+    "start": 3722.56,
+    "duration": 6.28
+  },
+  {
+    "text": "sandboxes don&#39;t um uh I&#39;m not sure if if",
+    "start": 3725.0,
+    "duration": 5.04
+  },
+  {
+    "text": "you could do it on that but that would",
+    "start": 3728.84,
+    "duration": 2.88
+  },
+  {
+    "text": "be super interesting to",
+    "start": 3730.04,
+    "duration": 6.08
+  },
+  {
+    "text": "see all right um we are running uh out",
+    "start": 3731.72,
+    "duration": 5.96
+  },
+  {
+    "text": "of time we&#39;re going to push it a bit",
+    "start": 3736.12,
+    "duration": 3.64
+  },
+  {
+    "text": "over today because we&#39;re just we&#39;re so",
+    "start": 3737.68,
+    "duration": 5.4
+  },
+  {
+    "text": "close uh and um we really have to make",
+    "start": 3739.76,
+    "duration": 7.08
+  },
+  {
+    "text": "this uh this agent work",
+    "start": 3743.08,
+    "duration": 7.52
+  },
+  {
+    "text": "so let&#39;s go back to the llm",
+    "start": 3746.84,
+    "duration": 7.96
+  },
+  {
+    "text": "call here um where we had these uh this",
+    "start": 3750.6,
+    "duration": 5.48
+  },
+  {
+    "text": "function",
+    "start": 3754.8,
+    "duration": 5.12
+  },
+  {
+    "text": "right so as we&#39;ve done in our Json agent",
+    "start": 3756.08,
+    "duration": 5.56
+  },
+  {
+    "text": "and in our browser agent we&#39;re going to",
+    "start": 3759.92,
+    "duration": 4.32
+  },
+  {
+    "text": "define a function that can be called",
+    "start": 3761.64,
+    "duration": 5.52
+  },
+  {
+    "text": "we&#39;ll call it click Mouse and we&#39;ll say",
+    "start": 3764.24,
+    "duration": 5.72
+  },
+  {
+    "text": "click on an item on the",
+    "start": 3767.16,
+    "duration": 5.68
+  },
+  {
+    "text": "screen here I want uh not the",
+    "start": 3769.96,
+    "duration": 6.12
+  },
+  {
+    "text": "coordinates uh uh llama won&#39;t do very",
+    "start": 3772.84,
+    "duration": 6.0
+  },
+  {
+    "text": "well at that they will do terribly I",
+    "start": 3776.08,
+    "duration": 4.76
+  },
+  {
+    "text": "want to say a description of what you",
+    "start": 3778.84,
+    "duration": 3.4
+  },
+  {
+    "text": "want to click",
+    "start": 3780.84,
+    "duration": 3.56
+  },
+  {
+    "text": "on all",
+    "start": 3782.24,
+    "duration": 4.08
+  },
+  {
+    "text": "right",
+    "start": 3784.4,
+    "duration": 7.36
+  },
+  {
+    "text": "and uh yeah that&#39;s uh that&#39;s it so let&#39;s",
+    "start": 3786.32,
+    "duration": 10.52
+  },
+  {
+    "text": "let&#39;s that&#39;s mostly it so let&#39;s uh undo",
+    "start": 3791.76,
+    "duration": 8.04
+  },
+  {
+    "text": "that let&#39;s add those tools uh back into",
+    "start": 3796.84,
+    "duration": 5.56
+  },
+  {
+    "text": "the code",
+    "start": 3799.8,
+    "duration": 6.68
+  },
+  {
+    "text": "and I want to",
+    "start": 3802.4,
+    "duration": 6.28
+  },
+  {
+    "text": "let let&#39;s come up with a with a prompt",
+    "start": 3806.48,
+    "duration": 4.24
+  },
+  {
+    "text": "that makes sense so I&#39;m going to start",
+    "start": 3808.68,
+    "duration": 4.08
+  },
+  {
+    "text": "by saying I&#39;m going to put the image",
+    "start": 3810.72,
+    "duration": 5.12
+  },
+  {
+    "text": "first um and then I&#39;m going to",
+    "start": 3812.76,
+    "duration": 8.24
+  },
+  {
+    "text": "say here are the contents of the",
+    "start": 3815.84,
+    "duration": 5.16
+  },
+  {
+    "text": "screen the objective",
+    "start": 3821.72,
+    "duration": 3.96
+  },
+  {
+    "text": "[Music]",
+    "start": 3824.12,
+    "duration": 5.28
+  },
+  {
+    "text": "is check the weather using the web",
+    "start": 3825.68,
+    "duration": 6.08
+  },
+  {
+    "text": "browser um I put the image first because",
+    "start": 3829.4,
+    "duration": 4.84
+  },
+  {
+    "text": "I really wanted to uh focus on the",
+    "start": 3831.76,
+    "duration": 4.84
+  },
+  {
+    "text": "objective which I put last I&#39;m afraid if",
+    "start": 3834.24,
+    "duration": 4.28
+  },
+  {
+    "text": "I put the objective first then it will",
+    "start": 3836.6,
+    "duration": 4.4
+  },
+  {
+    "text": "get uh it might get more more likely to",
+    "start": 3838.52,
+    "duration": 5.44
+  },
+  {
+    "text": "be distracted by the image that&#39;s just",
+    "start": 3841.0,
+    "duration": 4.04
+  },
+  {
+    "text": "my my",
+    "start": 3843.96,
+    "duration": 4.64
+  },
+  {
+    "text": "thinking so let&#39;s run",
+    "start": 3845.04,
+    "duration": 7.56
+  },
+  {
+    "text": "this and I think the screenshot",
+    "start": 3848.6,
+    "duration": 9.28
+  },
+  {
+    "text": "here let&#39;s see let&#39;s see okay so uh",
+    "start": 3852.6,
+    "duration": 7.4
+  },
+  {
+    "text": "let&#39;s print this and then we also want",
+    "start": 3857.88,
+    "duration": 5.4
+  },
+  {
+    "text": "to print the tool tool use",
+    "start": 3860.0,
+    "duration": 6.52
+  },
+  {
+    "text": "right tool",
+    "start": 3863.28,
+    "duration": 7.24
+  },
+  {
+    "text": "calls let&#39;s see okay we got a tool",
+    "start": 3866.52,
+    "duration": 7.44
+  },
+  {
+    "text": "call and this looks perfect so the the",
+    "start": 3870.52,
+    "duration": 6.04
+  },
+  {
+    "text": "name of the action is Click Mouse and",
+    "start": 3873.96,
+    "duration": 5.64
+  },
+  {
+    "text": "the arguments are",
+    "start": 3876.56,
+    "duration": 8.64
+  },
+  {
+    "text": "location web browser oh I yeah location",
+    "start": 3879.6,
+    "duration": 8.56
+  },
+  {
+    "text": "I I I changed this to query um for my",
+    "start": 3885.2,
+    "duration": 4.12
+  },
+  {
+    "text": "code that seems to make a little bit",
+    "start": 3888.16,
+    "duration": 2.08
+  },
+  {
+    "text": "more",
+    "start": 3889.32,
+    "duration": 5.24
+  },
+  {
+    "text": "sense but it worked perfectly right so",
+    "start": 3890.24,
+    "duration": 6.2
+  },
+  {
+    "text": "um",
+    "start": 3894.56,
+    "duration": 4.2
+  },
+  {
+    "text": "what what do we need to do to finish",
+    "start": 3896.44,
+    "duration": 6.56
+  },
+  {
+    "text": "this uh this Loop right to to to close",
+    "start": 3898.76,
+    "duration": 8.12
+  },
+  {
+    "text": "the agent Loop uh so that it can uh",
+    "start": 3903.0,
+    "duration": 6.56
+  },
+  {
+    "text": "basically decide what to click click on",
+    "start": 3906.88,
+    "duration": 7.6
+  },
+  {
+    "text": "it decide again right maybe click on the",
+    "start": 3909.56,
+    "duration": 6.64
+  },
+  {
+    "text": "maybe click on the I the web browser",
+    "start": 3914.48,
+    "duration": 4.64
+  },
+  {
+    "text": "icon look at the screen again see what",
+    "start": 3916.2,
+    "duration": 5.88
+  },
+  {
+    "text": "changed uh then maybe click on the URL",
+    "start": 3919.12,
+    "duration": 5.64
+  },
+  {
+    "text": "bar right then come back maybe type the",
+    "start": 3922.08,
+    "duration": 6.36
+  },
+  {
+    "text": "URL that it wants to go to so how do we",
+    "start": 3924.76,
+    "duration": 6.84
+  },
+  {
+    "text": "um how do we close that Loop the same",
+    "start": 3928.44,
+    "duration": 5.76
+  },
+  {
+    "text": "way that we&#39;ve done in the past two",
+    "start": 3931.6,
+    "duration": 6.24
+  },
+  {
+    "text": "lessons I will",
+    "start": 3934.2,
+    "duration": 6.48
+  },
+  {
+    "text": "take all of this",
+    "start": 3937.84,
+    "duration": 4.72
+  },
+  {
+    "text": "here all",
+    "start": 3940.68,
+    "duration": 5.24
+  },
+  {
+    "text": "right and let&#39;s",
+    "start": 3942.56,
+    "duration": 6.08
+  },
+  {
+    "text": "add so we have all this that we&#39;ve",
+    "start": 3945.92,
+    "duration": 4.8
+  },
+  {
+    "text": "written so",
+    "start": 3948.64,
+    "duration": 7.88
+  },
+  {
+    "text": "far let&#39;s put this uh into a loop um",
+    "start": 3950.72,
+    "duration": 7.88
+  },
+  {
+    "text": "we&#39;ll start we&#39;ll we&#39;ll give it a chat",
+    "start": 3956.52,
+    "duration": 4.04
+  },
+  {
+    "text": "history actually going to make this",
+    "start": 3958.6,
+    "duration": 3.8
+  },
+  {
+    "text": "empty uh to",
+    "start": 3960.56,
+    "duration": 4.32
+  },
+  {
+    "text": "start and",
+    "start": 3962.4,
+    "duration": 7.2
+  },
+  {
+    "text": "then we&#39;re going to have uh a loop so",
+    "start": 3964.88,
+    "duration": 6.48
+  },
+  {
+    "text": "I&#39;ll just do like while",
+    "start": 3969.6,
+    "duration": 4.96
+  },
+  {
+    "text": "true um I need to put I need to paste a",
+    "start": 3971.36,
+    "duration": 5.48
+  },
+  {
+    "text": "lot of code into this Loop because we",
+    "start": 3974.56,
+    "duration": 4.76
+  },
+  {
+    "text": "are um getting this screenshot and we",
+    "start": 3976.84,
+    "duration": 5.48
+  },
+  {
+    "text": "want to get this screenshot every",
+    "start": 3979.32,
+    "duration": 5.68
+  },
+  {
+    "text": "time I prefer to copy and paste just so",
+    "start": 3982.32,
+    "duration": 5.56
+  },
+  {
+    "text": "you all can look back at the code and",
+    "start": 3985.0,
+    "duration": 5.48
+  },
+  {
+    "text": "follow through as I wrote",
+    "start": 3987.88,
+    "duration": 7.72
+  },
+  {
+    "text": "it and so this is normous amount of code",
+    "start": 3990.48,
+    "duration": 7.28
+  },
+  {
+    "text": "getting the screenshot but we wrote it",
+    "start": 3995.6,
+    "duration": 4.44
+  },
+  {
+    "text": "quite quickly getting the screenshot and",
+    "start": 3997.76,
+    "duration": 4.36
+  },
+  {
+    "text": "then",
+    "start": 4000.04,
+    "duration": 5.8
+  },
+  {
+    "text": "here um asking",
+    "start": 4002.12,
+    "duration": 6.72
+  },
+  {
+    "text": "the the",
+    "start": 4005.84,
+    "duration": 4.72
+  },
+  {
+    "text": "LM",
+    "start": 4008.84,
+    "duration": 3.88
+  },
+  {
+    "text": "right",
+    "start": 4010.56,
+    "duration": 5.36
+  },
+  {
+    "text": "and then uh we&#39;re getting the tools out",
+    "start": 4012.72,
+    "duration": 6.28
+  },
+  {
+    "text": "right so then what we&#39;ve done before is",
+    "start": 4015.92,
+    "duration": 7.6
+  },
+  {
+    "text": "we check um we want to check if there",
+    "start": 4019.0,
+    "duration": 6.64
+  },
+  {
+    "text": "any tool calls right",
+    "start": 4023.52,
+    "duration": 5.16
+  },
+  {
+    "text": "so that so we we check the tool calls",
+    "start": 4025.64,
+    "duration": 6.28
+  },
+  {
+    "text": "okay running the tool we check for okay",
+    "start": 4028.68,
+    "duration": 7.4
+  },
+  {
+    "text": "this AI is doing good job today um",
+    "start": 4031.92,
+    "duration": 8.24
+  },
+  {
+    "text": "getting the first tool call makes sense",
+    "start": 4036.08,
+    "duration": 6.84
+  },
+  {
+    "text": "getting the function name from that this",
+    "start": 4040.16,
+    "duration": 7.24
+  },
+  {
+    "text": "we&#39;ve done uh all this before",
+    "start": 4042.92,
+    "duration": 7.16
+  },
+  {
+    "text": "and then we&#39;re just going to check if",
+    "start": 4047.4,
+    "duration": 4.4
+  },
+  {
+    "text": "the function",
+    "start": 4050.08,
+    "duration": 6.04
+  },
+  {
+    "text": "name is equal to click element",
+    "start": 4051.8,
+    "duration": 7.12
+  },
+  {
+    "text": "right then the",
+    "start": 4056.12,
+    "duration": 6.64
+  },
+  {
+    "text": "query uh it almost got this right but",
+    "start": 4058.92,
+    "duration": 7.28
+  },
+  {
+    "text": "this comes out as a um as you can see",
+    "start": 4062.76,
+    "duration": 5.88
+  },
+  {
+    "text": "above just kind of fine detail it comes",
+    "start": 4066.2,
+    "duration": 6.52
+  },
+  {
+    "text": "out as a Json string so we need to",
+    "start": 4068.64,
+    "duration": 7.08
+  },
+  {
+    "text": "actually import",
+    "start": 4072.72,
+    "duration": 7.52
+  },
+  {
+    "text": "here we need to import",
+    "start": 4075.72,
+    "duration": 7.64
+  },
+  {
+    "text": "Json and we need",
+    "start": 4080.24,
+    "duration": 6.84
+  },
+  {
+    "text": "to we need to",
+    "start": 4083.36,
+    "duration": 6.96
+  },
+  {
+    "text": "json. loads we need to parse this and",
+    "start": 4087.08,
+    "duration": 4.88
+  },
+  {
+    "text": "then get the query out of",
+    "start": 4090.32,
+    "duration": 6.56
+  },
+  {
+    "text": "it um same stuff we&#39;ve been doing uh the",
+    "start": 4091.96,
+    "duration": 7.24
+  },
+  {
+    "text": "past few lessons I just am speeding",
+    "start": 4096.88,
+    "duration": 6.0
+  },
+  {
+    "text": "through it uh right now so if this",
+    "start": 4099.2,
+    "duration": 5.56
+  },
+  {
+    "text": "doesn&#39;t make sense to someone who&#39;s",
+    "start": 4102.88,
+    "duration": 3.6
+  },
+  {
+    "text": "watching go back back and watch our",
+    "start": 4104.76,
+    "duration": 6.32
+  },
+  {
+    "text": "lesson on um making a Json uh based",
+    "start": 4106.48,
+    "duration": 7.32
+  },
+  {
+    "text": "agent",
+    "start": 4111.08,
+    "duration": 5.84
+  },
+  {
+    "text": "so here uh we got that now we just need",
+    "start": 4113.8,
+    "duration": 7.84
+  },
+  {
+    "text": "to rewrite the rewrite this code here",
+    "start": 4116.92,
+    "duration": 6.96
+  },
+  {
+    "text": "right uh into a",
+    "start": 4121.64,
+    "duration": 5.04
+  },
+  {
+    "text": "function so I&#39;m going",
+    "start": 4123.88,
+    "duration": 7.52
+  },
+  {
+    "text": "to copy this let&#39;s say move this code",
+    "start": 4126.68,
+    "duration": 9.04
+  },
+  {
+    "text": "down here and I can copy all of this and",
+    "start": 4131.4,
+    "duration": 6.0
+  },
+  {
+    "text": "put this into",
+    "start": 4135.72,
+    "duration": 6.2
+  },
+  {
+    "text": "a just going to put it into a function",
+    "start": 4137.4,
+    "duration": 6.16
+  },
+  {
+    "text": "called",
+    "start": 4141.92,
+    "duration": 3.64
+  },
+  {
+    "text": "def",
+    "start": 4143.56,
+    "duration": 7.52
+  },
+  {
+    "text": "um get Mouse uh get coordinates okay for",
+    "start": 4145.56,
+    "duration": 7.36
+  },
+  {
+    "text": "a",
+    "start": 4151.08,
+    "duration": 4.6
+  },
+  {
+    "text": "query and then I&#39;m going to return the",
+    "start": 4152.92,
+    "duration": 5.36
+  },
+  {
+    "text": "coordinates so just refactoring that",
+    "start": 4155.68,
+    "duration": 8.28
+  },
+  {
+    "text": "code um into a function that we can",
+    "start": 4158.28,
+    "duration": 5.68
+  },
+  {
+    "text": "reuse so so we have the query here we&#39;re",
+    "start": 4164.12,
+    "duration": 5.56
+  },
+  {
+    "text": "going to get the",
+    "start": 4167.4,
+    "duration": 6.96
+  },
+  {
+    "text": "coordinates and um once we have that",
+    "start": 4169.68,
+    "duration": 5.8
+  },
+  {
+    "text": "let&#39;s",
+    "start": 4174.36,
+    "duration": 4.12
+  },
+  {
+    "text": "say I&#39;ll keep the naming the same result",
+    "start": 4175.48,
+    "duration": 6.2
+  },
+  {
+    "text": "X result",
+    "start": 4178.48,
+    "duration": 6.6
+  },
+  {
+    "text": "y now we have those coordinates ah",
+    "start": 4181.68,
+    "duration": 6.4
+  },
+  {
+    "text": "perfect the next thing to do is to move",
+    "start": 4185.08,
+    "duration": 5.48
+  },
+  {
+    "text": "the mouse those coordinates uh and then",
+    "start": 4188.08,
+    "duration": 3.56
+  },
+  {
+    "text": "to",
+    "start": 4190.56,
+    "duration": 3.52
+  },
+  {
+    "text": "click right",
+    "start": 4191.64,
+    "duration": 4.6
+  },
+  {
+    "text": "so this",
+    "start": 4194.08,
+    "duration": 3.96
+  },
+  {
+    "text": "and then if there&#39;s no tool",
+    "start": 4196.24,
+    "duration": 4.48
+  },
+  {
+    "text": "calls uh we want to break we want to end",
+    "start": 4198.04,
+    "duration": 7.84
+  },
+  {
+    "text": "the loop end the the endless loop so",
+    "start": 4200.72,
+    "duration": 8.12
+  },
+  {
+    "text": "this what this code should",
+    "start": 4205.88,
+    "duration": 6.96
+  },
+  {
+    "text": "do take a screenshot of what&#39;s Happening",
+    "start": 4208.84,
+    "duration": 6.0
+  },
+  {
+    "text": "uh in the desktop",
+    "start": 4212.84,
+    "duration": 5.0
+  },
+  {
+    "text": "environment pass that screenshot to the",
+    "start": 4214.84,
+    "duration": 6.8
+  },
+  {
+    "text": "llm ask it what to do",
+    "start": 4217.84,
+    "duration": 8.32
+  },
+  {
+    "text": "next and uh finally um",
+    "start": 4221.64,
+    "duration": 6.68
+  },
+  {
+    "text": "it&#39;s going to well there&#39;s only one",
+    "start": 4226.16,
+    "duration": 3.44
+  },
+  {
+    "text": "thing that there&#39;s only one option that",
+    "start": 4228.32,
+    "duration": 4.4
+  },
+  {
+    "text": "it has right which is to click the",
+    "start": 4229.6,
+    "duration": 6.2
+  },
+  {
+    "text": "mouse um and then it&#39;s going to pass the",
+    "start": 4232.72,
+    "duration": 5.8
+  },
+  {
+    "text": "argument pass the parameter what it",
+    "start": 4235.8,
+    "duration": 6.52
+  },
+  {
+    "text": "wants uh what it wants to click on",
+    "start": 4238.52,
+    "duration": 7.4
+  },
+  {
+    "text": "so uh let&#39;s print this",
+    "start": 4242.32,
+    "duration": 7.84
+  },
+  {
+    "text": "query let&#39;s print this and we&#39;re",
+    "start": 4245.92,
+    "duration": 7.4
+  },
+  {
+    "text": "printing out the results of the LM",
+    "start": 4250.16,
+    "duration": 6.84
+  },
+  {
+    "text": "so um yeah one what we haven&#39;t added yet",
+    "start": 4253.32,
+    "duration": 6.56
+  },
+  {
+    "text": "is the history is the the lm&#39;s the",
+    "start": 4257.0,
+    "duration": 6.44
+  },
+  {
+    "text": "agents memory or the chat",
+    "start": 4259.88,
+    "duration": 8.76
+  },
+  {
+    "text": "history that would be um pretty pretty",
+    "start": 4263.44,
+    "duration": 8.92
+  },
+  {
+    "text": "simple um to add in and there&#39;s some",
+    "start": 4268.64,
+    "duration": 5.64
+  },
+  {
+    "text": "different ways you could add it but",
+    "start": 4272.36,
+    "duration": 5.16
+  },
+  {
+    "text": "actually I think for now for now let&#39;s",
+    "start": 4274.28,
+    "duration": 6.48
+  },
+  {
+    "text": "just um let&#39;s just leave that",
+    "start": 4277.52,
+    "duration": 6.32
+  },
+  {
+    "text": "out cool let&#39;s and let&#39;s just run",
+    "start": 4280.76,
+    "duration": 7.2
+  },
+  {
+    "text": "it okay so the sandbox has has timed out",
+    "start": 4283.84,
+    "duration": 7.92
+  },
+  {
+    "text": "GNA start that again",
+    "start": 4287.96,
+    "duration": 3.8
+  },
+  {
+    "text": "here and run",
+    "start": 4294.0,
+    "duration": 7.92
+  },
+  {
+    "text": "this check the results we got a",
+    "start": 4297.8,
+    "duration": 6.12
+  },
+  {
+    "text": "screenshot I wanted to click the web",
+    "start": 4301.92,
+    "duration": 3.76
+  },
+  {
+    "text": "browser",
+    "start": 4303.92,
+    "duration": 5.04
+  },
+  {
+    "text": "okay um to",
+    "start": 4305.68,
+    "duration": 5.52
+  },
+  {
+    "text": "click okay so a lot of things are",
+    "start": 4308.96,
+    "duration": 7.84
+  },
+  {
+    "text": "happening here let&#39;s let&#39;s see if",
+    "start": 4311.2,
+    "duration": 5.6
+  },
+  {
+    "text": "um let&#39;s let&#39;s",
+    "start": 4317.52,
+    "duration": 5.92
+  },
+  {
+    "text": "see okay so so a lot a lot is happening",
+    "start": 4320.24,
+    "duration": 6.24
+  },
+  {
+    "text": "the clicking is not happening okay so",
+    "start": 4323.44,
+    "duration": 6.12
+  },
+  {
+    "text": "that&#39;s that&#39;s what we need uh to see",
+    "start": 4326.48,
+    "duration": 5.44
+  },
+  {
+    "text": "this uh this is",
+    "start": 4329.56,
+    "duration": 6.72
+  },
+  {
+    "text": "not this is not getting uh printed for",
+    "start": 4331.92,
+    "duration": 7.12
+  },
+  {
+    "text": "some reason",
+    "start": 4336.28,
+    "duration": 6.56
+  },
+  {
+    "text": "so let&#39;s just debug that really",
+    "start": 4339.04,
+    "duration": 7.36
+  },
+  {
+    "text": "quickly we got the the tool calls",
+    "start": 4342.84,
+    "duration": 6.88
+  },
+  {
+    "text": "here okay so we have if tool",
+    "start": 4346.4,
+    "duration": 7.36
+  },
+  {
+    "text": "calls um get the first tool call else",
+    "start": 4349.72,
+    "duration": 6.56
+  },
+  {
+    "text": "break so we know this is happening and",
+    "start": 4353.76,
+    "duration": 7.08
+  },
+  {
+    "text": "the fun the the function name uh should",
+    "start": 4356.28,
+    "duration": 8.4
+  },
+  {
+    "text": "here is Click element is that the same",
+    "start": 4360.84,
+    "duration": 5.2
+  },
+  {
+    "text": "one that I",
+    "start": 4364.68,
+    "duration": 3.96
+  },
+  {
+    "text": "used",
+    "start": 4366.04,
+    "duration": 7.52
+  },
+  {
+    "text": "um in the the schema above click Mouse",
+    "start": 4368.64,
+    "duration": 7.28
+  },
+  {
+    "text": "Okay so that&#39;s",
+    "start": 4373.56,
+    "duration": 5.36
+  },
+  {
+    "text": "that&#39;s not the same okay let&#39;s let&#39;s try",
+    "start": 4375.92,
+    "duration": 4.8
+  },
+  {
+    "text": "running this again and this is running",
+    "start": 4378.92,
+    "duration": 5.4
+  },
+  {
+    "text": "super fast um",
+    "start": 4380.72,
+    "duration": 6.0
+  },
+  {
+    "text": "so let&#39;s do that so it&#39;s probably going",
+    "start": 4384.32,
+    "duration": 4.96
+  },
+  {
+    "text": "to run a few times before it&#39;s probably",
+    "start": 4386.72,
+    "duration": 3.96
+  },
+  {
+    "text": "the cycle is probably going to go a few",
+    "start": 4389.28,
+    "duration": 4.48
+  },
+  {
+    "text": "times before the web browser even even",
+    "start": 4390.68,
+    "duration": 8.04
+  },
+  {
+    "text": "opens um let&#39;s see so here we have uh",
+    "start": 4393.76,
+    "duration": 6.8
+  },
+  {
+    "text": "click Mouse okay let&#39;s try running that",
+    "start": 4398.72,
+    "duration": 4.84
+  },
+  {
+    "text": "again",
+    "start": 4400.56,
+    "duration": 3.0
+  },
+  {
+    "text": "yeah it&#39;s running um really fast so we",
+    "start": 4405.96,
+    "duration": 6.84
+  },
+  {
+    "text": "have the",
+    "start": 4410.4,
+    "duration": 2.4
+  },
+  {
+    "text": "icon okay location um the query the",
+    "start": 4413.2,
+    "duration": 7.0
+  },
+  {
+    "text": "query uh I think I need to up I think I",
+    "start": 4417.28,
+    "duration": 6.48
+  },
+  {
+    "text": "didn&#39;t run this again",
+    "start": 4420.2,
+    "duration": 10.12
+  },
+  {
+    "text": "here it should be um query not location",
+    "start": 4423.76,
+    "duration": 6.56
+  },
+  {
+    "text": "right okay and let me just put in a",
+    "start": 4430.96,
+    "duration": 5.96
+  },
+  {
+    "text": "little",
+    "start": 4434.52,
+    "duration": 8.2
+  },
+  {
+    "text": "delay after clicking um sleep one one",
+    "start": 4436.92,
+    "duration": 9.76
+  },
+  {
+    "text": "second yeah let&#39;s do this PO",
+    "start": 4442.72,
+    "duration": 7.2
+  },
+  {
+    "text": "time let&#39;s just put in a little tiny",
+    "start": 4446.68,
+    "duration": 4.96
+  },
+  {
+    "text": "delay",
+    "start": 4449.92,
+    "duration": 5.72
+  },
+  {
+    "text": "um so it actually can wait for something",
+    "start": 4451.64,
+    "duration": 6.88
+  },
+  {
+    "text": "to happen after it",
+    "start": 4455.64,
+    "duration": 2.88
+  },
+  {
+    "text": "clicks okay internet browser okay so",
+    "start": 4459.44,
+    "duration": 6.24
+  },
+  {
+    "text": "it&#39;s trying to click on that",
+    "start": 4462.28,
+    "duration": 4.68
+  },
+  {
+    "text": "then wait a",
+    "start": 4465.68,
+    "duration": 4.28
+  },
+  {
+    "text": "second",
+    "start": 4466.96,
+    "duration": 3.0
+  },
+  {
+    "text": "okay okay the mouse is moved okay let&#39;s",
+    "start": 4470.76,
+    "duration": 6.2
+  },
+  {
+    "text": "try to click it",
+    "start": 4474.76,
+    "duration": 4.52
+  },
+  {
+    "text": "again all right okay we&#39;re seeing Signs",
+    "start": 4476.96,
+    "duration": 3.4
+  },
+  {
+    "text": "of Life",
+    "start": 4479.28,
+    "duration": 5.72
+  },
+  {
+    "text": "here um it&#39;s still trying to click okay",
+    "start": 4480.36,
+    "duration": 8.92
+  },
+  {
+    "text": "um now it&#39;s clicking on something else",
+    "start": 4485.0,
+    "duration": 6.0
+  },
+  {
+    "text": "okay it&#39;s still",
+    "start": 4489.28,
+    "duration": 4.56
+  },
+  {
+    "text": "going now we haven&#39;t given it the",
+    "start": 4491.0,
+    "duration": 7.04
+  },
+  {
+    "text": "ability uh to type yet and so the next",
+    "start": 4493.84,
+    "duration": 8.76
+  },
+  {
+    "text": "step here uh would be to go back up to",
+    "start": 4498.04,
+    "duration": 6.64
+  },
+  {
+    "text": "these",
+    "start": 4502.6,
+    "duration": 6.56
+  },
+  {
+    "text": "um uh uh to to this uh these functions",
+    "start": 4504.68,
+    "duration": 6.84
+  },
+  {
+    "text": "that we&#39;ve written and then to add",
+    "start": 4509.16,
+    "duration": 6.76
+  },
+  {
+    "text": "another uh function uh for typing right",
+    "start": 4511.52,
+    "duration": 7.64
+  },
+  {
+    "text": "so if you have clicking uh and you have",
+    "start": 4515.92,
+    "duration": 5.84
+  },
+  {
+    "text": "typing um that then you have the the",
+    "start": 4519.16,
+    "duration": 5.28
+  },
+  {
+    "text": "most important ones then you could go",
+    "start": 4521.76,
+    "duration": 6.08
+  },
+  {
+    "text": "and add and other additional ones like",
+    "start": 4524.44,
+    "duration": 5.64
+  },
+  {
+    "text": "um like running shell commands um",
+    "start": 4527.84,
+    "duration": 4.4
+  },
+  {
+    "text": "writing to the file system any tools",
+    "start": 4530.08,
+    "duration": 4.4
+  },
+  {
+    "text": "that you that you want your agent to",
+    "start": 4532.24,
+    "duration": 5.68
+  },
+  {
+    "text": "have but um and then of course you would",
+    "start": 4534.48,
+    "duration": 5.52
+  },
+  {
+    "text": "you would also want to go in and add",
+    "start": 4537.92,
+    "duration": 4.64
+  },
+  {
+    "text": "some memory here um so it has a little",
+    "start": 4540.0,
+    "duration": 5.16
+  },
+  {
+    "text": "bit of context um like we&#39;ve done in the",
+    "start": 4542.56,
+    "duration": 4.08
+  },
+  {
+    "text": "past lesson so has a little bit of",
+    "start": 4545.16,
+    "duration": 4.52
+  },
+  {
+    "text": "context uh of what it&#39;s done uh in the",
+    "start": 4546.64,
+    "duration": 5.56
+  },
+  {
+    "text": "past and and add that memory to the",
+    "start": 4549.68,
+    "duration": 5.4
+  },
+  {
+    "text": "messages um each so the so that get get",
+    "start": 4552.2,
+    "duration": 4.24
+  },
+  {
+    "text": "added to the message each time you call",
+    "start": 4555.08,
+    "duration": 4.64
+  },
+  {
+    "text": "the LM um it&#39;s it&#39;s up to you how you",
+    "start": 4556.44,
+    "duration": 4.92
+  },
+  {
+    "text": "want to implement",
+    "start": 4559.72,
+    "duration": 4.64
+  },
+  {
+    "text": "that",
+    "start": 4561.36,
+    "duration": 3.0
+  },
+  {
+    "text": "so that&#39;s it um someone asked should we",
+    "start": 4564.96,
+    "duration": 5.04
+  },
+  {
+    "text": "do something similar to await for it to",
+    "start": 4567.64,
+    "duration": 5.56
+  },
+  {
+    "text": "take uh the screenshot so with the with",
+    "start": 4570.0,
+    "duration": 5.6
+  },
+  {
+    "text": "the await that I put up",
+    "start": 4573.2,
+    "duration": 4.16
+  },
+  {
+    "text": "here",
+    "start": 4575.6,
+    "duration": 5.32
+  },
+  {
+    "text": "um with the await that I put uh the",
+    "start": 4577.36,
+    "duration": 8.24
+  },
+  {
+    "text": "Sleep um that I put here",
+    "start": 4580.92,
+    "duration": 6.4
+  },
+  {
+    "text": "yeah I just wanted it to have a little",
+    "start": 4585.6,
+    "duration": 3.72
+  },
+  {
+    "text": "bit of sleep after it clicked before it",
+    "start": 4587.32,
+    "duration": 5.2
+  },
+  {
+    "text": "takes the next screenshot um otherwise",
+    "start": 4589.32,
+    "duration": 5.48
+  },
+  {
+    "text": "it&#39;ll be like um check check check check",
+    "start": 4592.52,
+    "duration": 5.04
+  },
+  {
+    "text": "check um while the web browser is still",
+    "start": 4594.8,
+    "duration": 5.92
+  },
+  {
+    "text": "opening and that&#39;s just um you know that",
+    "start": 4597.56,
+    "duration": 5.0
+  },
+  {
+    "text": "that&#39;s just like kind",
+    "start": 4600.72,
+    "duration": 3.88
+  },
+  {
+    "text": "of",
+    "start": 4602.56,
+    "duration": 6.12
+  },
+  {
+    "text": "um yeah that&#39;s kind of excessive um and",
+    "start": 4604.6,
+    "duration": 5.96
+  },
+  {
+    "text": "it will just making a ton of unnecessary",
+    "start": 4608.68,
+    "duration": 3.6
+  },
+  {
+    "text": "llm",
+    "start": 4610.56,
+    "duration": 6.16
+  },
+  {
+    "text": "calls so um that",
+    "start": 4612.28,
+    "duration": 9.36
+  },
+  {
+    "text": "is that is it for today um and if you&#39;ve",
+    "start": 4616.72,
+    "duration": 7.92
+  },
+  {
+    "text": "made it this far we we all got through",
+    "start": 4621.64,
+    "duration": 7.24
+  },
+  {
+    "text": "this uh together um it&#39;s pretty amazing",
+    "start": 4624.64,
+    "duration": 7.28
+  },
+  {
+    "text": "uh what we&#39;ve been able to uh accomplish",
+    "start": 4628.88,
+    "duration": 5.88
+  },
+  {
+    "text": "so far see see what we got to right we",
+    "start": 4631.92,
+    "duration": 8.64
+  },
+  {
+    "text": "got to um an agent that can do this",
+    "start": 4634.76,
+    "duration": 8.92
+  },
+  {
+    "text": "right an agent that can do all of this",
+    "start": 4640.56,
+    "duration": 5.24
+  },
+  {
+    "text": "um just by",
+    "start": 4643.68,
+    "duration": 6.8
+  },
+  {
+    "text": "uh basic um Python Programming um with",
+    "start": 4645.8,
+    "duration": 7.84
+  },
+  {
+    "text": "the with the open AI specific",
+    "start": 4650.48,
+    "duration": 5.76
+  },
+  {
+    "text": "specification API but using completely",
+    "start": 4653.64,
+    "duration": 5.72
+  },
+  {
+    "text": "open- Source llms we haven&#39;t uh needed",
+    "start": 4656.24,
+    "duration": 6.32
+  },
+  {
+    "text": "to use any um proprietary llms this",
+    "start": 4659.36,
+    "duration": 6.0
+  },
+  {
+    "text": "whole time we haven&#39;t needed to use any",
+    "start": 4662.56,
+    "duration": 5.4
+  },
+  {
+    "text": "extra libraries or Frameworks in order",
+    "start": 4665.36,
+    "duration": 4.08
+  },
+  {
+    "text": "to uh make our",
+    "start": 4667.96,
+    "duration": 3.76
+  },
+  {
+    "text": "agents uh We&#39;ve we&#39;ve just been doing",
+    "start": 4669.44,
+    "duration": 6.36
+  },
+  {
+    "text": "this with um you know with uh pure and",
+    "start": 4671.72,
+    "duration": 9.32
+  },
+  {
+    "text": "raw python code so uh congrats uh to",
+    "start": 4675.8,
+    "duration": 8.24
+  },
+  {
+    "text": "everyone who made it this far um if you",
+    "start": 4681.04,
+    "duration": 5.68
+  },
+  {
+    "text": "are just joining us um definitely go",
+    "start": 4684.04,
+    "duration": 6.44
+  },
+  {
+    "text": "back and check the earlier AI agent Camp",
+    "start": 4686.72,
+    "duration": 7.32
+  },
+  {
+    "text": "lessons we we might end up uh doing this",
+    "start": 4690.48,
+    "duration": 6.16
+  },
+  {
+    "text": "again if if people are asking for",
+    "start": 4694.04,
+    "duration": 9.6
+  },
+  {
+    "text": "it um but but so far um this is it now I",
+    "start": 4696.64,
+    "duration": 8.88
+  },
+  {
+    "text": "mentioned at the beginning of this",
+    "start": 4703.64,
+    "duration": 4.88
+  },
+  {
+    "text": "lesson uh that I wanted to say something",
+    "start": 4705.52,
+    "duration": 6.36
+  },
+  {
+    "text": "about about what&#39;s next oh yeah harsh is",
+    "start": 4708.52,
+    "duration": 5.48
+  },
+  {
+    "text": "asking about the the streaming the",
+    "start": 4711.88,
+    "duration": 4.2
+  },
+  {
+    "text": "sandbox UI you can check my blog post",
+    "start": 4714.0,
+    "duration": 4.68
+  },
+  {
+    "text": "for that I I&#39;ve I&#39;ve uh written the FFM",
+    "start": 4716.08,
+    "duration": 4.4
+  },
+  {
+    "text": "Peg commands in",
+    "start": 4718.68,
+    "duration": 3.88
+  },
+  {
+    "text": "there um so I just want to talk a little",
+    "start": 4720.48,
+    "duration": 4.76
+  },
+  {
+    "text": "bit quickly about um what&#39;s next for you",
+    "start": 4722.56,
+    "duration": 8.32
+  },
+  {
+    "text": "all so um we had uh four kind of little",
+    "start": 4725.24,
+    "duration": 9.52
+  },
+  {
+    "text": "projects so far uh the projects were cre",
+    "start": 4730.88,
+    "duration": 5.64
+  },
+  {
+    "text": "create a react agent in",
+    "start": 4734.76,
+    "duration": 4.44
+  },
+  {
+    "text": "Python uh the the next one was create a",
+    "start": 4736.52,
+    "duration": 5.92
+  },
+  {
+    "text": "Json agent the next one was create a",
+    "start": 4739.2,
+    "duration": 5.56
+  },
+  {
+    "text": "code execution agent and then the fourth",
+    "start": 4742.44,
+    "duration": 6.52
+  },
+  {
+    "text": "one was to create a browser use agent so",
+    "start": 4744.76,
+    "duration": 6.04
+  },
+  {
+    "text": "um you don&#39;t need to create something",
+    "start": 4748.96,
+    "duration": 4.96
+  },
+  {
+    "text": "crazy um you can you can just be using",
+    "start": 4750.8,
+    "duration": 5.56
+  },
+  {
+    "text": "the code that we uh wrote together in",
+    "start": 4753.92,
+    "duration": 5.32
+  },
+  {
+    "text": "class and just adding a new tool um or",
+    "start": 4756.36,
+    "duration": 5.68
+  },
+  {
+    "text": "making a Improvement or a",
+    "start": 4759.24,
+    "duration": 4.8
+  },
+  {
+    "text": "modification uh and then send those to",
+    "start": 4762.04,
+    "duration": 5.24
+  },
+  {
+    "text": "me or to the forms that ideally send it",
+    "start": 4764.04,
+    "duration": 4.72
+  },
+  {
+    "text": "to the forms that I send you via email",
+    "start": 4767.28,
+    "duration": 5.56
+  },
+  {
+    "text": "so that the the Tas can um uh the Tas",
+    "start": 4768.76,
+    "duration": 6.44
+  },
+  {
+    "text": "can um check those for you and give you",
+    "start": 4772.84,
+    "duration": 5.16
+  },
+  {
+    "text": "feedback some guys even post it on on",
+    "start": 4775.2,
+    "duration": 4.72
+  },
+  {
+    "text": "social media which is even better we&#39;ll",
+    "start": 4778.0,
+    "duration": 4.0
+  },
+  {
+    "text": "just comment uh directly on your on your",
+    "start": 4779.92,
+    "duration": 6.28
+  },
+  {
+    "text": "social media post and um even uh repost",
+    "start": 4782.0,
+    "duration": 8.16
+  },
+  {
+    "text": "them now if you&#39;ve done this um and you",
+    "start": 4786.2,
+    "duration": 6.84
+  },
+  {
+    "text": "get to the computer use agent um here&#39;s",
+    "start": 4790.16,
+    "duration": 5.68
+  },
+  {
+    "text": "what would be awesome um what you all",
+    "start": 4793.04,
+    "duration": 3.84
+  },
+  {
+    "text": "should",
+    "start": 4795.84,
+    "duration": 5.4
+  },
+  {
+    "text": "do um is you should check out um this",
+    "start": 4796.88,
+    "duration": 8.72
+  },
+  {
+    "text": "repository uh which I made um now I made",
+    "start": 4801.24,
+    "duration": 8.72
+  },
+  {
+    "text": "it uh working for e2b uh but this is uh",
+    "start": 4805.6,
+    "duration": 6.6
+  },
+  {
+    "text": "um I I created this uh from the ground",
+    "start": 4809.96,
+    "duration": 5.2
+  },
+  {
+    "text": "up and this is this is my uh computer",
+    "start": 4812.2,
+    "duration": 6.4
+  },
+  {
+    "text": "use agent right um and this is here you",
+    "start": 4815.16,
+    "duration": 5.92
+  },
+  {
+    "text": "can just see it uh see it running it&#39;s",
+    "start": 4818.6,
+    "duration": 4.88
+  },
+  {
+    "text": "it&#39;s really similar uh to what we",
+    "start": 4821.08,
+    "duration": 4.28
+  },
+  {
+    "text": "created today",
+    "start": 4823.48,
+    "duration": 3.92
+  },
+  {
+    "text": "this is even a bit this is even an old",
+    "start": 4825.36,
+    "duration": 6.16
+  },
+  {
+    "text": "an old version of it um and the it&#39;s",
+    "start": 4827.4,
+    "duration": 5.52
+  },
+  {
+    "text": "it&#39;s improved in the past couple of",
+    "start": 4831.52,
+    "duration": 5.36
+  },
+  {
+    "text": "weeks especially the the interface to it",
+    "start": 4832.92,
+    "duration": 6.16
+  },
+  {
+    "text": "um now it&#39;s got like colors and stuff",
+    "start": 4836.88,
+    "duration": 3.8
+  },
+  {
+    "text": "here in the in the logs and it has",
+    "start": 4839.08,
+    "duration": 3.0
+  },
+  {
+    "text": "detailed",
+    "start": 4840.68,
+    "duration": 3.96
+  },
+  {
+    "text": "logs um and it has as you can see it has",
+    "start": 4842.08,
+    "duration": 5.2
+  },
+  {
+    "text": "actually streaming right uh streaming",
+    "start": 4844.64,
+    "duration": 4.92
+  },
+  {
+    "text": "display like like harsh was",
+    "start": 4847.28,
+    "duration": 5.52
+  },
+  {
+    "text": "mentioning so my challenge to you all is",
+    "start": 4849.56,
+    "duration": 5.68
+  },
+  {
+    "text": "to um check it out this the source code",
+    "start": 4852.8,
+    "duration": 4.96
+  },
+  {
+    "text": "is not too",
+    "start": 4855.24,
+    "duration": 5.64
+  },
+  {
+    "text": "complicated um it&#39;s it&#39;s all separate uh",
+    "start": 4857.76,
+    "duration": 4.48
+  },
+  {
+    "text": "into different",
+    "start": 4860.88,
+    "duration": 4.0
+  },
+  {
+    "text": "components um the agent itself the agent",
+    "start": 4862.24,
+    "duration": 5.4
+  },
+  {
+    "text": "code itself is uh",
+    "start": 4864.88,
+    "duration": 5.44
+  },
+  {
+    "text": "only actually it&#39;s it&#39;s kind of long",
+    "start": 4867.64,
+    "duration": 4.48
+  },
+  {
+    "text": "because we have all these tools right",
+    "start": 4870.32,
+    "duration": 6.48
+  },
+  {
+    "text": "like rightclick double click um and I&#39;ve",
+    "start": 4872.12,
+    "duration": 7.36
+  },
+  {
+    "text": "kind of and typing but but in total it&#39;s",
+    "start": 4876.8,
+    "duration": 5.36
+  },
+  {
+    "text": "only around 200 something lines of code",
+    "start": 4879.48,
+    "duration": 6.36
+  },
+  {
+    "text": "uh for the agent itself The Prompt right",
+    "start": 4882.16,
+    "duration": 6.88
+  },
+  {
+    "text": "so um my challenge to anyone who made it",
+    "start": 4885.84,
+    "duration": 6.44
+  },
+  {
+    "text": "this far is to make a poll request um",
+    "start": 4889.04,
+    "duration": 6.36
+  },
+  {
+    "text": "and to improve something um the most",
+    "start": 4892.28,
+    "duration": 5.48
+  },
+  {
+    "text": "basic thing you could improve uh would",
+    "start": 4895.4,
+    "duration": 5.32
+  },
+  {
+    "text": "be to just um just integrate a new model",
+    "start": 4897.76,
+    "duration": 4.24
+  },
+  {
+    "text": "right so these are the models that we",
+    "start": 4900.72,
+    "duration": 3.24
+  },
+  {
+    "text": "have these are the models and inference",
+    "start": 4902.0,
+    "duration": 5.92
+  },
+  {
+    "text": "providers that we have um add in a new",
+    "start": 4903.96,
+    "duration": 6.64
+  },
+  {
+    "text": "model or provider uh that we don&#39;t",
+    "start": 4907.92,
+    "duration": 6.36
+  },
+  {
+    "text": "have um and that&#39;s um that&#39;s super easy",
+    "start": 4910.6,
+    "duration": 5.36
+  },
+  {
+    "text": "uh well it&#39;s easy if it follows the open",
+    "start": 4914.28,
+    "duration": 5.68
+  },
+  {
+    "text": "AI spec um I&#39;m I&#39;m fighting with uh the",
+    "start": 4915.96,
+    "duration": 5.68
+  },
+  {
+    "text": "anthropic one right now it&#39;s completely",
+    "start": 4919.96,
+    "duration": 4.24
+  },
+  {
+    "text": "different um but but there&#39;s a whole",
+    "start": 4921.64,
+    "duration": 5.0
+  },
+  {
+    "text": "variety of things you could probably",
+    "start": 4924.2,
+    "duration": 5.6
+  },
+  {
+    "text": "improve about my agent um that that I",
+    "start": 4926.64,
+    "duration": 5.36
+  },
+  {
+    "text": "created and if you don&#39;t know exactly",
+    "start": 4929.8,
+    "duration": 4.12
+  },
+  {
+    "text": "how to do it but you have an idea uh",
+    "start": 4932.0,
+    "duration": 3.0
+  },
+  {
+    "text": "message",
+    "start": 4933.92,
+    "duration": 3.8
+  },
+  {
+    "text": "me um could it could be as simple as",
+    "start": 4935.0,
+    "duration": 5.64
+  },
+  {
+    "text": "just adding a new adding a new model or",
+    "start": 4937.72,
+    "duration": 6.16
+  },
+  {
+    "text": "it could be something crazy um who knows",
+    "start": 4940.64,
+    "duration": 5.52
+  },
+  {
+    "text": "or you could add a tool like um like",
+    "start": 4943.88,
+    "duration": 3.84
+  },
+  {
+    "text": "reading and writing files from the file",
+    "start": 4946.16,
+    "duration": 3.36
+  },
+  {
+    "text": "system the main thing is that you&#39;re",
+    "start": 4947.72,
+    "duration": 3.44
+  },
+  {
+    "text": "actually able to test it and see whether",
+    "start": 4949.52,
+    "duration": 3.08
+  },
+  {
+    "text": "it works better or",
+    "start": 4951.16,
+    "duration": 6.08
+  },
+  {
+    "text": "not now once you&#39;ve done that um let me",
+    "start": 4952.6,
+    "duration": 7.24
+  },
+  {
+    "text": "know and for everyone who&#39;s made it",
+    "start": 4957.24,
+    "duration": 4.8
+  },
+  {
+    "text": "through this",
+    "start": 4959.84,
+    "duration": 7.16
+  },
+  {
+    "text": "course I will um I will personally uh",
+    "start": 4962.04,
+    "duration": 7.56
+  },
+  {
+    "text": "chat with you we",
+    "start": 4967.0,
+    "duration": 5.84
+  },
+  {
+    "text": "can uh you know we can have a call and I",
+    "start": 4969.6,
+    "duration": 7.0
+  },
+  {
+    "text": "will help you to improve uh uh improve",
+    "start": 4972.84,
+    "duration": 5.92
+  },
+  {
+    "text": "your portfolio and how to take all the",
+    "start": 4976.6,
+    "duration": 5.08
+  },
+  {
+    "text": "the work from this course uh and to to",
+    "start": 4978.76,
+    "duration": 5.92
+  },
+  {
+    "text": "to build a nice portfolio out of it and",
+    "start": 4981.68,
+    "duration": 4.88
+  },
+  {
+    "text": "when you&#39;ve done that I&#39;m happy to uh to",
+    "start": 4984.68,
+    "duration": 4.68
+  },
+  {
+    "text": "help you um introduce you to various",
+    "start": 4986.56,
+    "duration": 6.04
+  },
+  {
+    "text": "companies in the AI agent space",
+    "start": 4989.36,
+    "duration": 4.88
+  },
+  {
+    "text": "particularly here in San",
+    "start": 4992.6,
+    "duration": 4.32
+  },
+  {
+    "text": "Francisco um and maybe you know maybe",
+    "start": 4994.24,
+    "duration": 4.24
+  },
+  {
+    "text": "explore what kind of work or what kind",
+    "start": 4996.92,
+    "duration": 3.84
+  },
+  {
+    "text": "of career uh might be interesting for",
+    "start": 4998.48,
+    "duration": 6.48
+  },
+  {
+    "text": "you um in this in this space",
+    "start": 5000.76,
+    "duration": 9.04
+  },
+  {
+    "text": "so uh that&#39;s it looks like we we did it",
+    "start": 5004.96,
+    "duration": 4.84
+  },
+  {
+    "text": "today questions",
+    "start": 5010.12,
+    "duration": 4.04
+  },
+  {
+    "text": "thoughts yeah I&#39;m really glad that",
+    "start": 5028.28,
+    "duration": 6.88
+  },
+  {
+    "text": "um I&#39;m really glad that uh you you all",
+    "start": 5031.48,
+    "duration": 6.52
+  },
+  {
+    "text": "enjoyed it so much I wasn&#39;t sure when I",
+    "start": 5035.16,
+    "duration": 4.72
+  },
+  {
+    "text": "first made it that so many people were",
+    "start": 5038.0,
+    "duration": 4.16
+  },
+  {
+    "text": "going to",
+    "start": 5039.88,
+    "duration": 5.48
+  },
+  {
+    "text": "um we&#39;re going to",
+    "start": 5042.16,
+    "duration": 5.88
+  },
+  {
+    "text": "engage but um I&#39;m really happy that that",
+    "start": 5045.36,
+    "duration": 6.2
+  },
+  {
+    "text": "so many people did",
+    "start": 5048.04,
+    "duration": 7.52
+  },
+  {
+    "text": "um and um yeah we&#39;re still here and",
+    "start": 5051.56,
+    "duration": 5.28
+  },
+  {
+    "text": "we&#39;re still here learning together and",
+    "start": 5055.56,
+    "duration": 3.64
+  },
+  {
+    "text": "wow I learned uh I learned a",
+    "start": 5056.84,
+    "duration": 7.32
+  },
+  {
+    "text": "lot um from teaching this",
+    "start": 5059.2,
+    "duration": 4.96
+  },
+  {
+    "text": "so thanks to uh thanks to the Tas thanks",
+    "start": 5065.88,
+    "duration": 8.12
+  },
+  {
+    "text": "to Jonathan and",
+    "start": 5069.92,
+    "duration": 4.08
+  },
+  {
+    "text": "Buran yeah I think we lost him but",
+    "start": 5084.36,
+    "duration": 8.24
+  },
+  {
+    "text": "uh he was here for the first half of",
+    "start": 5088.88,
+    "duration": 6.84
+  },
+  {
+    "text": "this so thanks a lot to to Jonathan for",
+    "start": 5092.6,
+    "duration": 6.36
+  },
+  {
+    "text": "helping out or helping to check the the",
+    "start": 5095.72,
+    "duration": 7.4
+  },
+  {
+    "text": "assignments and um you can uh you can",
+    "start": 5098.96,
+    "duration": 6.36
+  },
+  {
+    "text": "find both of them on",
+    "start": 5103.12,
+    "duration": 5.16
+  },
+  {
+    "text": "uh on LinkedIn or Twitter we&#39;ll send out",
+    "start": 5105.32,
+    "duration": 6.52
+  },
+  {
+    "text": "a final email um later today and how you",
+    "start": 5108.28,
+    "duration": 5.4
+  },
+  {
+    "text": "can uh how you can you know stay in",
+    "start": 5111.84,
+    "duration": 6.52
+  },
+  {
+    "text": "touch with us so uh yeah if there&#39;s uh",
+    "start": 5113.68,
+    "duration": 7.0
+  },
+  {
+    "text": "no other questions then I really look",
+    "start": 5118.36,
+    "duration": 5.2
+  },
+  {
+    "text": "forward to seeing uh your assignments",
+    "start": 5120.68,
+    "duration": 5.04
+  },
+  {
+    "text": "and your PR",
+    "start": 5123.56,
+    "duration": 3.76
+  },
+  {
+    "text": "and remember to message me when you&#39;ve",
+    "start": 5125.72,
+    "duration": 5.2
+  },
+  {
+    "text": "when you finished everything um and um",
+    "start": 5127.32,
+    "duration": 7.48
+  },
+  {
+    "text": "yeah I&#39;ll I&#39;ll help you out however I",
+    "start": 5130.92,
+    "duration": 3.88
+  },
+  {
+    "text": "can",
+    "start": 5139.68,
+    "duration": 5.2
+  },
+  {
+    "text": "great all right see you",
+    "start": 5141.52,
+    "duration": 6.8
+  },
+  {
+    "text": "everyone bye guys",
+    "start": 5144.88,
+    "duration": 3.44
+  }
+]
