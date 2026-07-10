@@ -70,7 +70,7 @@
   margin: 0;
   background-color: #f6f8fa;
   color: #24292e;
-  border: 1px solid #d0d7de;
+  border: none;
   border-radius: var(--radius);
 }
 .prose pre code.hljs {
