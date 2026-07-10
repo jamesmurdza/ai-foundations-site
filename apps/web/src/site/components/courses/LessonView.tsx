@@ -356,7 +356,7 @@ export function LessonView({
           {media}
         </div>
         <div className="mx-auto mt-8 w-full max-w-[1800px] px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">{body}</div>
+          {body}
         </div>
       </>
     );
