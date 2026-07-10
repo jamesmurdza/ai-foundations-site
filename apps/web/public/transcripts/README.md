@@ -8,8 +8,15 @@ Cached YouTube caption data, one JSON file per video:
 ```
 
 Each file is a flat array of `{ "text": string, "start": number, "duration": number }`
-segments. The `.raw/` copies are the untouched YouTube captions; the top-level
-files are the LLM-cleaned versions (see `npm run clean:transcripts`).
+segments (seconds). The `.raw/` copies are the untouched YouTube captions; the
+top-level files are the LLM-cleaned versions.
+
+These are produced by two scripts (from `apps/web/`):
+
+```
+npm run fetch:transcripts -w apps/web -- <courseSlug>   # download raw captions from YouTube
+npm run clean:transcripts -w apps/web                   # punctuate + de-filler (backs up to .raw/)
+```
 
 Adding a new course? See **`docs/ADDING-A-YOUTUBE-COURSE.md`** for the full
-workflow (fetch → register directory in `Transcript.tsx` → clean → define course).
+workflow (define course → fetch → clean → register directory in `Transcript.tsx`).
