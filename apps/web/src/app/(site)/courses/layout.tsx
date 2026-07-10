@@ -7,7 +7,7 @@ export default function CoursesLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-clip bg-background">
       <Header />
       {children}
       <Footer />

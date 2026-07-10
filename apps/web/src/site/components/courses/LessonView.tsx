@@ -12,6 +12,8 @@ import type { Course, Lesson, ResolvedTab } from "@site/lib/courses";
 import { Transcript } from "@site/components/Transcript";
 import { Markdown } from "@site/components/Markdown";
 import { ResourceLink } from "@site/components/courses/ResourceLink";
+import { BackLink } from "@site/components/courses/BackLink";
+import { Section } from "@site/components/section";
 
 interface YTPlayer {
   getCurrentTime: () => number;
@@ -137,6 +139,10 @@ export function LessonView({
   const hasTranscript =
     tabs.some((t) => t.kind === "transcript") && Boolean(lesson.videoId);
   const active = contentTabs[activeTab];
+  // When the transcript is open we break the video + transcript out of the
+  // narrow reading column into a full-width "theater" layout (video left,
+  // transcript sidebar right), like a YouTube/Twitch watch page.
+  const theater = Boolean(lesson.videoId) && hasTranscript && transcriptOpen;
 
   // Previous / next lesson for the bottom navigation.
   const currentIndex = course.lessons.findIndex((l) => l.id === lesson.id);
@@ -171,125 +177,127 @@ export function LessonView({
     }
   };
 
-  return (
-    <div>
-      <div>
-        <div className="mb-6 flex items-center justify-between gap-3">
-          <div ref={menuRef} className="relative z-40 inline-block">
-          <button
-            type="button"
-            onClick={() => setMenuOpen((open) => !open)}
-            aria-haspopup="listbox"
-            aria-expanded={menuOpen}
-            className="group flex items-center gap-2 text-left rounded-lg -mx-2 px-2 py-1 hover:bg-slate-50 transition-colors"
-          >
-            <h1 className="text-lg sm:text-xl font-bold">{lesson.title}</h1>
-            <ChevronDown
-              className={`w-5 h-5 shrink-0 text-muted-foreground transition-transform ${menuOpen ? "rotate-180" : ""}`}
-            />
-          </button>
+  const backHref = `/courses/${course.slug}`;
 
-          {menuOpen && (
-            <div className="absolute z-40 mt-2 w-[min(28rem,calc(100vw-4rem))] max-h-[60vh] overflow-y-auto rounded-xl border bg-white p-2 shadow-lg">
-              {course.lessons.map((l, idx) => {
-                const isCurrent = l.id === lesson.id;
-                return (
-                  <Link
-                    key={l.id}
-                    href={`/courses/${course.slug}/${l.id}`}
-                    onClick={() => setMenuOpen(false)}
-                    aria-current={isCurrent ? "page" : undefined}
-                    className={`flex items-start gap-3 rounded-lg px-3 py-2 transition-colors ${
-                      isCurrent ? "bg-slate-100" : "hover:bg-slate-50"
-                    }`}
-                  >
-                    <span className="mt-0.5 w-5 shrink-0 text-sm text-muted-foreground tabular-nums">
-                      {isCurrent ? (
-                        <Check className="w-4 h-4 text-primary" />
-                      ) : (
-                        idx + 1
-                      )}
-                    </span>
-                    <span
-                      className={`text-sm leading-snug ${isCurrent ? "font-semibold" : ""}`}
-                    >
-                      {l.title}
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
-          )}
-          </div>
+  const header = (
+    <div className="flex items-center justify-between gap-3">
+      <div ref={menuRef} className="relative z-40 inline-block">
+        <button
+          type="button"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-haspopup="listbox"
+          aria-expanded={menuOpen}
+          className="group flex items-center gap-2 text-left rounded-lg -mx-2 px-2 py-1 hover:bg-muted transition-colors"
+        >
+          <h1 className="text-lg sm:text-xl font-bold">{lesson.title}</h1>
+          <ChevronDown
+            className={`w-5 h-5 shrink-0 text-muted-foreground transition-transform ${menuOpen ? "rotate-180" : ""}`}
+          />
+        </button>
 
-          {lesson.videoId && hasTranscript && !transcriptOpen && (
-            <button
-              type="button"
-              onClick={() => setTranscriptOpen(true)}
-              className="inline-flex shrink-0 items-center gap-2 rounded-lg border px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-            >
-              <PanelRightOpen className="h-4 w-4" />
-              Show transcript
-            </button>
-          )}
-        </div>
-
-        {lesson.videoId && (
-          <div className="flex flex-col md:flex-row md:items-stretch gap-4 lg:gap-6">
-            <div className="flex-1 min-w-0">
-              <div className="aspect-video w-full bg-black rounded-xl overflow-hidden border">
-                <iframe
-                  ref={playerRef}
-                  src={`https://www.youtube.com/embed/${lesson.videoId}?enablejsapi=1`}
-                  title={lesson.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="w-full h-full"
-                  style={{ border: 0 }}
-                />
-              </div>
-            </div>
-            {hasTranscript && transcriptOpen && (
-              <div className="w-full shrink-0 md:relative md:w-[300px] lg:w-[360px] xl:w-[440px]">
-                <Transcript
-                  videoId={lesson.videoId}
-                  onSeek={handleSeek}
-                  currentTime={currentTime}
-                  onCollapse={() => setTranscriptOpen(false)}
-                />
-              </div>
-            )}
-          </div>
-        )}
-
-        {contentTabs.length > 1 && (
-          <div
-            role="tablist"
-            aria-label="Lesson sections"
-            className="flex gap-1 overflow-x-auto overflow-y-hidden border-b mt-6"
-          >
-            {contentTabs.map((tab, idx) => {
-              const isActive = idx === activeTab;
+        {menuOpen && (
+          <div className="absolute z-40 mt-2 w-[min(28rem,calc(100vw-4rem))] max-h-[60vh] overflow-y-auto rounded-xl border bg-background p-2 shadow-lg">
+            {course.lessons.map((l, idx) => {
+              const isCurrent = l.id === lesson.id;
               return (
-                <button
-                  key={`${tab.type}-${idx}`}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  onClick={() => setActiveTab(idx)}
-                  className={`whitespace-nowrap px-4 py-2.5 text-sm font-medium border-b-2 -mb-px transition-colors ${
-                    isActive
-                      ? "border-primary text-primary"
-                      : "border-transparent text-muted-foreground hover:text-foreground hover:border-slate-200"
+                <Link
+                  key={l.id}
+                  href={`/courses/${course.slug}/${l.id}`}
+                  onClick={() => setMenuOpen(false)}
+                  aria-current={isCurrent ? "page" : undefined}
+                  className={`flex items-start gap-3 rounded-lg px-3 py-2 transition-colors ${
+                    isCurrent ? "bg-muted" : "hover:bg-muted"
                   }`}
                 >
-                  {tab.label}
-                </button>
+                  <span className="mt-0.5 w-5 shrink-0 text-sm text-muted-foreground tabular-nums">
+                    {isCurrent ? (
+                      <Check className="w-4 h-4 text-primary" />
+                    ) : (
+                      idx + 1
+                    )}
+                  </span>
+                  <span
+                    className={`text-sm leading-snug ${isCurrent ? "font-semibold" : ""}`}
+                  >
+                    {l.title}
+                  </span>
+                </Link>
               );
             })}
           </div>
         )}
       </div>
+
+      {lesson.videoId && hasTranscript && !transcriptOpen && (
+        <button
+          type="button"
+          onClick={() => setTranscriptOpen(true)}
+          className="inline-flex shrink-0 items-center gap-2 rounded-lg border px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+        >
+          <PanelRightOpen className="h-4 w-4" />
+          Show transcript
+        </button>
+      )}
+    </div>
+  );
+
+  const media = lesson.videoId ? (
+    <div className="flex flex-col gap-4 md:flex-row md:items-stretch lg:gap-6">
+      <div className="flex-1 min-w-0">
+        <div className="aspect-video w-full bg-black rounded-xl overflow-hidden border">
+          <iframe
+            ref={playerRef}
+            src={`https://www.youtube.com/embed/${lesson.videoId}?enablejsapi=1`}
+            title={lesson.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="w-full h-full"
+            style={{ border: 0 }}
+          />
+        </div>
+      </div>
+      {hasTranscript && transcriptOpen && (
+        <div className="w-full shrink-0 md:relative md:w-[340px] lg:w-[380px] xl:w-[460px]">
+          <Transcript
+            videoId={lesson.videoId}
+            onSeek={handleSeek}
+            currentTime={currentTime}
+            onCollapse={() => setTranscriptOpen(false)}
+          />
+        </div>
+      )}
+    </div>
+  ) : null;
+
+  const body = (
+    <>
+      {contentTabs.length > 1 && (
+        <div
+          role="tablist"
+          aria-label="Lesson sections"
+          className="flex gap-1 overflow-x-auto overflow-y-hidden border-b mt-6"
+        >
+          {contentTabs.map((tab, idx) => {
+            const isActive = idx === activeTab;
+            return (
+              <button
+                key={`${tab.type}-${idx}`}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => setActiveTab(idx)}
+                className={`whitespace-nowrap px-4 py-2.5 text-sm font-medium border-b-2 -mb-px transition-colors ${
+                  isActive
+                    ? "border-primary text-primary"
+                    : "border-transparent text-muted-foreground hover:text-foreground hover:border-slate-200"
+                }`}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       {active && (
         <div role="tabpanel" className="min-h-[8rem] pt-2">
@@ -305,7 +313,7 @@ export function LessonView({
           {prevLesson ? (
             <Link
               href={`/courses/${course.slug}/${prevLesson.id}`}
-              className="group flex items-center gap-2 rounded-lg border p-3 transition-colors hover:bg-slate-50 sm:max-w-[20rem]"
+              className="group flex items-center gap-2 rounded-lg border p-3 transition-colors hover:bg-muted sm:max-w-[20rem]"
             >
               <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-0.5" />
               <span className="text-sm font-medium sm:hidden">Back</span>
@@ -321,7 +329,7 @@ export function LessonView({
           {nextLesson && (
             <Link
               href={`/courses/${course.slug}/${nextLesson.id}`}
-              className="group flex items-center justify-between gap-3 rounded-lg border p-3 transition-colors hover:bg-slate-50 sm:max-w-[20rem] sm:justify-end sm:text-right"
+              className="group flex items-center justify-between gap-3 rounded-lg border p-3 transition-colors hover:bg-muted sm:max-w-[20rem] sm:justify-end sm:text-right"
             >
               <span className="text-sm font-medium sm:hidden">Next</span>
               <span className="hidden min-w-0 sm:block">
@@ -333,6 +341,34 @@ export function LessonView({
           )}
         </nav>
       )}
-    </div>
+    </>
+  );
+
+  // Theater layout: video + transcript span the full screen width like a
+  // YouTube/Twitch watch page. The reading content (tabs, description, nav)
+  // stays in a narrower column beneath the player.
+  if (theater) {
+    return (
+      <>
+        <div className="mx-auto flex w-full max-w-[1800px] flex-col gap-5 px-4 sm:px-6 lg:px-8 pt-8">
+          <BackLink href={backHref} label="Back to Course" />
+          {header}
+          {media}
+        </div>
+        <div className="mx-auto mt-8 w-full max-w-[1800px] px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">{body}</div>
+        </div>
+      </>
+    );
+  }
+
+  // Default layout: everything lives in the framed reading column.
+  return (
+    <Section className="mt-10 pt-8">
+      <BackLink href={backHref} label="Back to Course" />
+      <div className="mt-6">{header}</div>
+      {media && <div className="mt-6">{media}</div>}
+      {body}
+    </Section>
   );
 }
