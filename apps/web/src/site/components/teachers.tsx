@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { Section } from "@site/components/section";
+
 type Social = { youtube?: string; linkedin?: string; twitter?: string };
 
 type Teacher = {
@@ -64,9 +66,7 @@ const SOCIAL_ICONS: { key: keyof Social; src: string; alt: string }[] = [
 
 export function Teachers() {
   return (
-    <section>
-      <div className="container">
-        <div className="border-x border-t mt-28 px-6 md:px-12 pt-12 pb-12">
+    <Section>
         <div className="flex flex-col items-center text-center gap-3 max-w-2xl mx-auto mb-20">
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold">
             The Teachers
@@ -112,8 +112,6 @@ export function Teachers() {
             </div>
           ))}
         </div>
-        </div>
-      </div>
-    </section>
+    </Section>
   );
 }
