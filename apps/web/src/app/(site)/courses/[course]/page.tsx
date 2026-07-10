@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { getAllCourses, getCourse, youtubeThumbnail } from "@site/lib/courses";
 import { ResourceLink } from "@site/components/courses/ResourceLink";
 import { Header } from "@site/components/header";
+import { Footer } from "@site/components/footer";
 
 export function generateStaticParams() {
   return getAllCourses().map((course) => ({ course: course.slug }));
@@ -36,10 +37,10 @@ export default async function CoursePage({
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      {/* Course header */}
       <section>
         <div className="container">
-          {/* Breadcrumb / back link */}
-          <div className="border-x border-t px-6 md:px-12 py-4">
+          <div className="border-x border-t mt-10 flex flex-col gap-6 px-6 md:px-12 pt-8 pb-12">
             <Link
               href="/#courses"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -47,10 +48,6 @@ export default async function CoursePage({
               <ArrowLeft className="w-4 h-4" />
               Back to Courses
             </Link>
-          </div>
-
-          {/* Course header + lessons */}
-          <div className="border-x border-y flex flex-col gap-12 px-6 md:px-12 pt-12 pb-16">
             <div className="flex flex-col gap-4">
               <h1 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight text-balance">
                 {course.title}
@@ -66,7 +63,17 @@ export default async function CoursePage({
                 </div>
               )}
             </div>
+          </div>
+        </div>
+      </section>
 
+      {/* Lessons */}
+      <section>
+        <div className="container">
+          <div className="border-x border-t mt-28 flex flex-col gap-16 px-6 md:px-12 pt-12 pb-12">
+            <h2 className="font-heading text-2xl sm:text-4xl font-semibold tracking-tight">
+              Course lessons
+            </h2>
             <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
               {course.lessons.map((lesson, index) => (
                 <Link
@@ -122,6 +129,8 @@ export default async function CoursePage({
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

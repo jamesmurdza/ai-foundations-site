@@ -6,6 +6,7 @@ import { getAllCourses, getLesson } from "@site/lib/courses";
 import { getLessonTabs } from "@site/lib/courses/content";
 import { LessonView } from "@site/components/courses/LessonView";
 import { Header } from "@site/components/header";
+import { Footer } from "@site/components/footer";
 
 export function generateStaticParams() {
   return getAllCourses().flatMap((course) =>
@@ -45,11 +46,9 @@ export default async function LessonPage({
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-        <div
-          className={`mx-auto ${lesson.videoId ? "max-w-7xl" : "max-w-4xl"}`}
-        >
-          <div className="border-x border-t px-4 sm:px-6 md:px-8 py-4">
+      <section>
+        <div className="container">
+          <div className="border-x border-t mt-10 flex flex-col gap-8 px-6 md:px-12 pt-8 pb-12">
             <Link
               href={`/courses/${course.slug}`}
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -57,13 +56,13 @@ export default async function LessonPage({
               <ArrowLeft className="w-4 h-4" />
               Back to Course
             </Link>
-          </div>
 
-          <div className="border-x border-y px-4 sm:px-6 md:px-8 py-6 md:py-8">
             <LessonView course={course} lesson={lesson} tabs={tabs} />
           </div>
         </div>
-      </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }
