@@ -6,6 +6,7 @@ import { Button } from "@site/components/ui/button";
 import { getAllCourses, getLesson } from "@site/lib/courses";
 import { getLessonTabs } from "@site/lib/courses/content";
 import { LessonView } from "@site/components/courses/LessonView";
+import { Header } from "@site/components/header";
 
 export function generateStaticParams() {
   return getAllCourses().flatMap((course) =>
@@ -44,6 +45,7 @@ export default async function LessonPage({
 
   return (
     <div className="min-h-screen bg-muted/10">
+      <Header />
       <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-8">
         <div
           className={`mx-auto ${lesson.videoId ? "max-w-7xl" : "max-w-4xl"}`}

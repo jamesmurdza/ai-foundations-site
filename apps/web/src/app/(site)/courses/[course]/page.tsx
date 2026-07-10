@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@site/components/ui/button";
 import { getAllCourses, getCourse, youtubeThumbnail } from "@site/lib/courses";
 import { ResourceLink } from "@site/components/courses/ResourceLink";
+import { Header } from "@site/components/header";
 
 export function generateStaticParams() {
   return getAllCourses().map((course) => ({ course: course.slug }));
@@ -35,6 +36,7 @@ export default async function CoursePage({
 
   return (
     <div className="min-h-screen bg-muted/10">
+      <Header />
       <div className="container py-24">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-8">

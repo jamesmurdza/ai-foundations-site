@@ -17,14 +17,14 @@ export function Header() {
             <div className="flex items-center gap-4">
               <nav className="hidden items-center gap-8 md:flex">
                 {/* <NavItem href="/about" label="About" /> */}
-                <NavItem href="#courses" label="Courses" />
+                <NavItem href="/#courses" label="Courses" />
                 {/* <NavItem href="/workshops" label="Workshops" /> */}
               </nav>
               <MobileNavbar>
                 <div className="rounded-b-lg bg-background py-4 container text-foreground border mt-6">
                   <nav className="flex flex-col gap-1 pt-2">
                     {/* <MobileNavItem href="/about" label="About" /> */}
-                    <MobileNavItem href="#courses" label="Courses" />
+                    <MobileNavItem href="/#courses" label="Courses" />
                     {/* <MobileNavItem href="/workshops" label="Workshops" /> */}
                   </nav>
                 </div>
