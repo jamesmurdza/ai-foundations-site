@@ -2,9 +2,10 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { Button } from "@site/components/ui/button";
 import { getAllCourses, getCourse, youtubeThumbnail } from "@site/lib/courses";
 import { ResourceLink } from "@site/components/courses/ResourceLink";
+import { Header } from "@site/components/header";
+import { Footer } from "@site/components/footer";
 
 export function generateStaticParams() {
   return getAllCourses().map((course) => ({ course: course.slug }));
@@ -34,51 +35,63 @@ export default async function CoursePage({
   if (!course) notFound();
 
   return (
-    <div className="min-h-screen bg-muted/10">
-      <div className="container py-24">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-4 mb-8">
-            <Link href="/">
-              <Button variant="ghost" size="sm" className="gap-2">
-                <ArrowLeft className="w-4 h-4" />
-                Back to Home
-              </Button>
+    <div className="min-h-screen bg-background">
+      <Header />
+      {/* Course header */}
+      <section>
+        <div className="container">
+          <div className="border-x border-t mt-10 flex flex-col gap-6 px-6 md:px-12 pt-8 pb-12">
+            <Link
+              href="/#courses"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Courses
             </Link>
+            <div className="flex flex-col gap-4">
+              <h1 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight text-balance">
+                {course.title}
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+                {course.description}
+              </p>
+              {course.resources && course.resources.length > 0 && (
+                <div className="flex flex-wrap gap-x-6 gap-y-3 pt-2">
+                  {course.resources.map((resource) => (
+                    <ResourceLink key={resource.href} resource={resource} />
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="bg-white rounded-xl border shadow-sm p-8 mb-8">
-            <h1 className="text-4xl font-bold mb-4">{course.title}</h1>
-            <p className="text-lg text-muted-foreground mb-6">{course.description}</p>
-
-            {course.resources && course.resources.length > 0 && (
-              <div className="flex flex-col gap-4 mb-8">
-                {course.resources.map((resource) => (
-                  <ResourceLink key={resource.href} resource={resource} />
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="grid gap-6">
-            {course.lessons.map((lesson) => {
-              const colab = lesson.resources?.find((r) => r.type === "colab");
-              return (
+      {/* Lessons */}
+      <section>
+        <div className="container">
+          <div className="border-x border-t mt-28 flex flex-col gap-16 px-6 md:px-12 pt-12 pb-12">
+            <h2 className="font-heading text-2xl sm:text-4xl font-semibold tracking-tight">
+              Course lessons
+            </h2>
+            <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+              {course.lessons.map((lesson, index) => (
                 <Link
                   key={lesson.id}
                   href={`/courses/${course.slug}/${lesson.id}`}
-                  className="bg-white rounded-xl border shadow-sm hover:shadow-md transition-all p-4 flex flex-col sm:flex-row gap-4 sm:gap-6"
+                  className="group flex flex-col"
                 >
-                  {lesson.videoId && (
-                    <div className="relative w-full sm:w-64 aspect-video sm:aspect-auto sm:h-36 shrink-0 rounded-lg overflow-hidden">
+                  {lesson.videoId ? (
+                    <div className="relative aspect-video w-full overflow-hidden rounded-2xl border bg-muted">
                       <img
                         src={youtubeThumbnail(lesson.videoId)}
                         alt={lesson.title}
-                        className="w-full h-full object-cover"
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-12 h-12 bg-black/50 rounded-full flex items-center justify-center">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-black/50 transition-transform group-hover:scale-110">
                           <svg
-                            className="w-6 h-6 text-white"
+                            className="h-6 w-6 text-white"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >
@@ -87,27 +100,37 @@ export default async function CoursePage({
                         </div>
                       </div>
                       {lesson.duration && (
-                        <div className="absolute bottom-2 right-2 bg-black/70 px-2 py-1 rounded text-white text-sm">
+                        <div className="absolute bottom-2 right-2 rounded bg-black/70 px-2 py-1 text-sm text-white">
                           {lesson.duration}
                         </div>
                       )}
                     </div>
+                  ) : (
+                    <div className="flex aspect-video w-full items-center justify-center rounded-2xl border bg-muted/40 transition-colors group-hover:bg-muted/70">
+                      <span className="font-heading text-5xl font-semibold text-muted-foreground/30">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
                   )}
-                  <div className="flex-1 min-w-0">
-                    <h2 className="text-xl font-semibold mb-2">{lesson.title}</h2>
-                    <p className="text-muted-foreground">{lesson.summary}</p>
-                    {colab && (
-                      <div className="mt-4">
-                        <ResourceLink resource={colab} size="sm" />
-                      </div>
+
+                  <div className="mt-4 flex flex-col gap-1.5">
+                    <h2 className="font-heading text-lg font-semibold leading-snug group-hover:text-primary transition-colors">
+                      {lesson.title}
+                    </h2>
+                    {lesson.summary && (
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {lesson.summary}
+                      </p>
                     )}
                   </div>
                 </Link>
-              );
-            })}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }
