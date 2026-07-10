@@ -6,6 +6,7 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
+  PanelRightClose,
   PanelRightOpen,
 } from "lucide-react";
 import type { Course, Lesson, ResolvedTab } from "@site/lib/courses";
@@ -230,14 +231,19 @@ export function LessonView({
         )}
       </div>
 
-      {lesson.videoId && hasTranscript && !transcriptOpen && (
+      {lesson.videoId && hasTranscript && (
         <button
           type="button"
-          onClick={() => setTranscriptOpen(true)}
+          onClick={() => setTranscriptOpen((open) => !open)}
+          aria-label={transcriptOpen ? "Hide transcript" : "Show transcript"}
           className="inline-flex shrink-0 items-center gap-2 rounded-lg border px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
         >
-          <PanelRightOpen className="h-4 w-4" />
-          Show transcript
+          {transcriptOpen ? (
+            <PanelRightOpen className="h-4 w-4" />
+          ) : (
+            <PanelRightClose className="h-4 w-4" />
+          )}
+          {transcriptOpen ? "Hide transcript" : "Show transcript"}
         </button>
       )}
     </div>
@@ -264,7 +270,6 @@ export function LessonView({
             videoId={lesson.videoId}
             onSeek={handleSeek}
             currentTime={currentTime}
-            onCollapse={() => setTranscriptOpen(false)}
           />
         </div>
       )}

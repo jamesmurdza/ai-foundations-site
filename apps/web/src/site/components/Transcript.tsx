@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { PanelRightClose } from "lucide-react";
 
 interface TranscriptItem {
   text: string;
@@ -12,7 +11,6 @@ interface TranscriptProps {
   videoId: string;
   onSeek?: (seconds: number) => void;
   currentTime?: number;
-  onCollapse?: () => void;
 }
 
 // Universal HTML entity decoder (works on server and client)
@@ -37,7 +35,6 @@ export const Transcript: React.FC<TranscriptProps> = ({
   videoId,
   onSeek,
   currentTime,
-  onCollapse,
 }) => {
   const [transcript, setTranscript] = useState<TranscriptItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -214,22 +211,9 @@ export const Transcript: React.FC<TranscriptProps> = ({
   return (
     <div className="md:absolute md:inset-0 flex flex-col bg-background w-full font-sans border overflow-hidden">
       <div className="px-4 pt-4 pb-3 border-b">
-        <div className="mb-3 flex items-center justify-between gap-2">
-          <h3 className="font-heading text-lg font-semibold tracking-tight">
-            Transcript
-          </h3>
-          {onCollapse && (
-            <button
-              type="button"
-              onClick={onCollapse}
-              aria-label="Hide transcript"
-              title="Hide transcript"
-              className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-            >
-              <PanelRightClose className="h-4 w-4" />
-            </button>
-          )}
-        </div>
+        <h3 className="mb-3 font-heading text-lg font-semibold tracking-tight">
+          Transcript
+        </h3>
         <div className="relative flex items-center gap-2">
           <div className="relative flex-1">
             <svg
