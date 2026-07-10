@@ -23,6 +23,8 @@
 import { promises as fs } from "fs";
 import path from "path";
 
+import type Anthropic from "@anthropic-ai/sdk";
+
 import { anthropic, HAIKU_MODEL } from "@site/lib/anthropic";
 
 interface Segment {
@@ -102,16 +104,21 @@ async function cleanBatch(
   const userMessage = `Here are ${texts.length} caption fragments to clean. Return exactly ${texts.length} cleaned fragments.\n\n${numbered}`;
 
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-    const response = await anthropic.messages.create({
+    // `output_config` (structured outputs) isn't in this SDK version's types
+    // yet, so build the body loosely and cast to the non-streaming params type
+    // (which selects the overload that returns a Message, not a Stream).
+    const body = {
       model: HAIKU_MODEL,
       max_tokens: 8192,
       system: SYSTEM_PROMPT,
       messages: [{ role: "user", content: userMessage }],
-      // Structured output — guarantees a parseable { segments: string[] }.
+      // Structured output — guarantees a parseable { segments: [...] }.
       output_config: {
         format: { type: "json_schema", schema: OUTPUT_SCHEMA },
       },
-    } as Parameters<typeof anthropic.messages.create>[0]);
+    } as unknown as Anthropic.MessageCreateParamsNonStreaming;
+
+    const response = await anthropic.messages.create(body);
 
     usage.input += response.usage.input_tokens;
     usage.output += response.usage.output_tokens;
