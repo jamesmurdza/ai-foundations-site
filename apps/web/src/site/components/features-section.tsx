@@ -1,12 +1,15 @@
 import { FeatureCard } from "@site/components/feature-card";
+import { Section } from "@site/components/section";
 import Link from "next/link";
 
 export function Features() {
   return (
-    <section className="relative bg-background" id="courses">
-      <div className="container">
-        <div className="border-x border-t mt-28 flex flex-col gap-16 px-6 md:px-12 pt-12 pb-12">
-          <div className="flex w-full flex-col lg:flex-row lg:items-end justify-between gap-8">
+    <Section
+      id="courses"
+      outerClassName="relative bg-background"
+      className="flex flex-col gap-16"
+    >
+      <div className="flex w-full flex-col lg:flex-row lg:items-end justify-between gap-8">
             <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left shrink-0">
               Our courses
             </h2>
@@ -34,8 +37,6 @@ export function Features() {
               />
             </Link>
           </div>
-        </div>
-      </div>
-    </section>
+    </Section>
   );
 }

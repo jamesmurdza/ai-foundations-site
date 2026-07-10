@@ -1,10 +1,9 @@
 import { TestimonialCard } from "@site/components/testimonial-card";
+import { Section } from "@site/components/section";
 
 export function Testimonials() {
   return (
-    <section className="bg-muted/10">
-      <div className="container">
-        <div className="border-x border-t mt-28 flex flex-col items-center gap-16 px-6 md:px-12 pt-12 pb-12">
+    <Section outerClassName="bg-muted/10" className="flex flex-col items-center gap-16">
         <div className="flex flex-col items-center text-center gap-3 max-w-2xl mx-auto">
           <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold">
             What people say
@@ -33,8 +32,6 @@ export function Testimonials() {
             username="patterntrader"
           />
         </div>
-        </div>
-      </div>
-    </section>
+    </Section>
   );
 }
