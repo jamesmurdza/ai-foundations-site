@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { Button } from "@site/components/ui/button";
 import { getAllCourses, getLesson } from "@site/lib/courses";
 import { getLessonTabs } from "@site/lib/courses/content";
 import { LessonView } from "@site/components/courses/LessonView";
@@ -44,18 +43,19 @@ export default async function LessonPage({
   const tabs = getLessonTabs(course.slug, lesson);
 
   return (
-    <div className="min-h-screen bg-muted/10">
+    <div className="min-h-screen bg-background">
       <Header />
       <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-8">
         <div
           className={`mx-auto ${lesson.videoId ? "max-w-7xl" : "max-w-4xl"}`}
         >
           <div className="flex items-center gap-4 mb-8">
-            <Link href={`/courses/${course.slug}`}>
-              <Button variant="ghost" size="sm" className="gap-2">
-                <ArrowLeft className="w-4 h-4" />
-                Back to Course
-              </Button>
+            <Link
+              href={`/courses/${course.slug}`}
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Course
             </Link>
           </div>
 
