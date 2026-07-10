@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { PanelRightClose } from "lucide-react";
 
 interface TranscriptItem {
   text: string;
@@ -11,6 +12,7 @@ interface TranscriptProps {
   videoId: string;
   onSeek?: (seconds: number) => void;
   currentTime?: number;
+  onCollapse?: () => void;
 }
 
 // Universal HTML entity decoder (works on server and client)
@@ -35,6 +37,7 @@ export const Transcript: React.FC<TranscriptProps> = ({
   videoId,
   onSeek,
   currentTime,
+  onCollapse,
 }) => {
   const [transcript, setTranscript] = useState<TranscriptItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -209,15 +212,28 @@ export const Transcript: React.FC<TranscriptProps> = ({
   const matchCounter = { n: 0 };
 
   return (
-    <div className="md:absolute md:inset-0 flex flex-col bg-white rounded-2xl w-full font-sans border border-slate-100 shadow-sm overflow-hidden">
-      <div className="px-4 pt-4 pb-3 border-b border-slate-100">
-        <h3 className="font-bold text-xl mb-3 text-gray-900 tracking-tight">
-          Transcript
-        </h3>
+    <div className="md:absolute md:inset-0 flex flex-col bg-background rounded-xl w-full font-sans border overflow-hidden">
+      <div className="px-4 pt-4 pb-3 border-b">
+        <div className="mb-3 flex items-center justify-between gap-2">
+          <h3 className="font-heading text-lg font-semibold tracking-tight">
+            Transcript
+          </h3>
+          {onCollapse && (
+            <button
+              type="button"
+              onClick={onCollapse}
+              aria-label="Hide transcript"
+              title="Hide transcript"
+              className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <PanelRightClose className="h-4 w-4" />
+            </button>
+          )}
+        </div>
         <div className="relative flex items-center gap-2">
           <div className="relative flex-1">
             <svg
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
               width="16"
               height="16"
               fill="none"
@@ -234,10 +250,10 @@ export const Transcript: React.FC<TranscriptProps> = ({
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={handleSearchKeyDown}
               placeholder="Search transcript..."
-              className="w-full rounded-lg border border-slate-200 bg-slate-50 py-2 pl-9 pr-16 text-sm text-gray-900 placeholder:text-slate-400 focus:border-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
+              className="w-full rounded-lg border bg-muted/50 py-2 pl-9 pr-16 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
             />
             {query && (
-              <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs tabular-nums text-slate-400">
+              <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs tabular-nums text-muted-foreground">
                 {totalMatches > 0 ? `${safeMatch + 1}/${totalMatches}` : "0/0"}
               </span>
             )}
@@ -247,7 +263,7 @@ export const Transcript: React.FC<TranscriptProps> = ({
               onClick={gotoPrev}
               disabled={totalMatches === 0}
               aria-label="Previous match"
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-40 disabled:hover:bg-transparent"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border text-muted-foreground hover:bg-muted disabled:opacity-40 disabled:hover:bg-transparent"
             >
               <svg
                 width="16"
@@ -264,7 +280,7 @@ export const Transcript: React.FC<TranscriptProps> = ({
               onClick={gotoNext}
               disabled={totalMatches === 0}
               aria-label="Next match"
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-40 disabled:hover:bg-transparent"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border text-muted-foreground hover:bg-muted disabled:opacity-40 disabled:hover:bg-transparent"
             >
               <svg
                 width="16"
@@ -309,8 +325,8 @@ export const Transcript: React.FC<TranscriptProps> = ({
                     }
                   }}
                   className={`cursor-pointer rounded transition-colors duration-100
-                    ${isActive ? "bg-primary/10" : ""}
-                    text-gray-700 hover:text-gray-950
+                    ${isActive ? "bg-primary/10 text-foreground" : ""}
+                    text-muted-foreground hover:text-foreground
                   `}
                 >
                   {renderChunk(text, matchCounter)}
