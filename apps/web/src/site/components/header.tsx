@@ -5,11 +5,15 @@ import { Button } from "@site/components/ui/button";
 import { MobileNavbar } from "@site/components/mobile-navbar";
 import { MobileNavItem } from "@site/components/mobile-nav-item";
 
-export function Header() {
+export function Header({ wide = false }: { wide?: boolean }) {
   return (
     <header>
-      <div className="container">
-        <div className="border-x px-6">
+      <div
+        className={
+          wide ? "mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-8" : "container"
+        }
+      >
+        <div className={wide ? "" : "border-x px-6"}>
           <div className="flex justify-between items-center w-full py-4 border-b">
             <Link href="/" className="flex items-center gap-3">
               <span className="font-heading text-xl font-bold">AI Foundations</span>

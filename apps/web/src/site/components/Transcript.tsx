@@ -212,7 +212,7 @@ export const Transcript: React.FC<TranscriptProps> = ({
   const matchCounter = { n: 0 };
 
   return (
-    <div className="md:absolute md:inset-0 flex flex-col bg-background rounded-xl w-full font-sans border overflow-hidden">
+    <div className="md:absolute md:inset-0 flex flex-col bg-background w-full font-sans border overflow-hidden">
       <div className="px-4 pt-4 pb-3 border-b">
         <div className="mb-3 flex items-center justify-between gap-2">
           <h3 className="font-heading text-lg font-semibold tracking-tight">

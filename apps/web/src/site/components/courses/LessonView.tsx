@@ -14,6 +14,8 @@ import { Markdown } from "@site/components/Markdown";
 import { ResourceLink } from "@site/components/courses/ResourceLink";
 import { BackLink } from "@site/components/courses/BackLink";
 import { Section } from "@site/components/section";
+import { Header } from "@site/components/header";
+import { Footer } from "@site/components/footer";
 
 interface YTPlayer {
   getCurrentTime: () => number;
@@ -350,6 +352,7 @@ export function LessonView({
   if (theater) {
     return (
       <>
+        <Header wide />
         <div className="mx-auto flex w-full max-w-[1800px] flex-col gap-5 px-4 sm:px-6 lg:px-8 pt-8">
           <BackLink href={backHref} label="Back to Course" />
           {header}
@@ -358,17 +361,22 @@ export function LessonView({
         <div className="mx-auto mt-8 w-full max-w-[1800px] px-4 sm:px-6 lg:px-8">
           {body}
         </div>
+        <Footer wide />
       </>
     );
   }
 
   // Default layout: everything lives in the framed reading column.
   return (
-    <Section className="mt-10 pt-8">
-      <BackLink href={backHref} label="Back to Course" />
-      <div className="mt-6">{header}</div>
-      {media && <div className="mt-6">{media}</div>}
-      {body}
-    </Section>
+    <>
+      <Header />
+      <Section className="mt-10 pt-8">
+        <BackLink href={backHref} label="Back to Course" />
+        <div className="mt-6">{header}</div>
+        {media && <div className="mt-6">{media}</div>}
+        {body}
+      </Section>
+      <Footer />
+    </>
   );
 }
