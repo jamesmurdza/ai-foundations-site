@@ -5,6 +5,8 @@ import { ResourceLink } from "@site/components/courses/ResourceLink";
 import { Section } from "@site/components/section";
 import { BackLink } from "@site/components/courses/BackLink";
 import { LessonCard } from "@site/components/courses/LessonCard";
+import { Header } from "@site/components/header";
+import { Footer } from "@site/components/footer";
 
 export function generateStaticParams() {
   return getAllCourses().map((course) => ({ course: course.slug }));
@@ -35,6 +37,7 @@ export default async function CoursePage({
 
   return (
     <>
+      <Header />
       <Section className="mt-10 flex flex-col gap-6 pt-8">
         <BackLink href="/#courses" label="Back to Courses" />
         <div className="flex flex-col gap-4">
@@ -69,6 +72,7 @@ export default async function CoursePage({
           ))}
         </div>
       </Section>
+      <Footer />
     </>
   );
 }
