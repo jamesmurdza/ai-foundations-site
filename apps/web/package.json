@@ -11,6 +11,7 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "seed:tinysend": "node --env-file=.env.local --import tsx src/portal/scripts/seed-tinysend-ledger.ts",
+    "clean:transcripts": "node --env-file=.env.local --import tsx src/portal/scripts/clean-transcripts.ts",
     "test": "vitest run",
     "test:e2e": "playwright test"
   },

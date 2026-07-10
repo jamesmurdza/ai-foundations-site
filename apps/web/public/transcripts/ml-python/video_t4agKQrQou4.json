@@ -1,11 +1,11 @@
 [
   {
-    "text": "oh um so today&#39;s going to be a fun day",
+    "text": "Oh, so today's going to be a fun day.",
     "start": 1.32,
     "duration": 5.88
   },
   {
-    "text": "um we&#39;re just going to go through each",
+    "text": "We're just going to go through each",
     "start": 4.84,
     "duration": 4.36
   },
@@ -15,17 +15,17 @@
     "duration": 4.88
   },
   {
-    "text": "linear regression um some small examples",
+    "text": "linear regression, some small examples",
     "start": 9.2,
     "duration": 5.56
   },
   {
-    "text": "of how you can use uh linear regression",
+    "text": "of how you can use linear regression",
     "start": 12.08,
     "duration": 5.2
   },
   {
-    "text": "machine learning models and doesn&#39;t",
+    "text": "machine learning models, and it doesn't",
     "start": 14.76,
     "duration": 4.36
   },
@@ -42,3045 +42,3045 @@
   {
     "text": "interesting results or if you got caught",
     "start": 20.8,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "up on some bugs um that&#39;s part of the",
+    "text": "up on some bugs—that's part of the",
     "start": 22.56,
     "duration": 6.72
   },
   {
-    "text": "fun and part of the learning um so yeah",
+    "text": "fun and part of the learning. So yeah,",
     "start": 25.8,
     "duration": 5.08
   },
   {
-    "text": "we&#39;ll just uh",
+    "text": "we'll just get started right away.",
     "start": 29.28,
     "duration": 3.32
   },
   {
-    "text": "we&#39;ll just get started right away so we",
+    "text": "We have time for people to demo",
     "start": 30.88,
     "duration": 3.92
   },
   {
-    "text": "have we have time for people to demo",
+    "text": "their little models, and",
     "start": 32.6,
     "duration": 4.88
   },
   {
-    "text": "their little um their little models and",
+    "text": "after you get to show",
     "start": 34.8,
     "duration": 5.24
   },
   {
-    "text": "every after after you you get to show",
+    "text": "for a few minutes, someone else will",
     "start": 37.48,
-    "duration": 4.0
+    "duration": 4
   },
   {
-    "text": "for a few minutes someone else will",
+    "text": "maybe get to ask a question or two.",
     "start": 40.04,
     "duration": 4.04
   },
   {
-    "text": "maybe get to ask a question or or two",
+    "text": "",
     "start": 41.48,
     "duration": 5.52
   },
   {
-    "text": "people if we have time",
+    "text": "",
     "start": 44.08,
     "duration": 6.84
   },
   {
-    "text": "so say um yeah bless you let&#39;s say uh",
-    "start": 47.0,
+    "text": "Yeah, Bradden, are you ready?",
+    "start": 47,
     "duration": 8.8
   },
   {
-    "text": "bradden are you ready sure sweet should",
+    "text": "Sure, sweet. Should",
     "start": 50.92,
     "duration": 6.48
   },
   {
-    "text": "I share my screen oh yeah you have an",
+    "text": "I share my screen? Oh yeah, you have an",
     "start": 55.8,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "option to share",
+    "text": "option to share.",
     "start": 57.4,
     "duration": 3.4
   },
   {
-    "text": "um um let&#39;s",
+    "text": "",
     "start": 69.88,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "see",
+    "text": "",
     "start": 72.88,
-    "duration": 3.0
+    "duration": 3
   },
   {
-    "text": "oh um let me one",
+    "text": "Let me one second—I'm just going to pull",
     "start": 76.28,
     "duration": 6.08
   },
   {
-    "text": "second I&#39;m just going to pull",
+    "text": "up the data set that I'm using so you",
     "start": 82.4,
     "duration": 7.04
   },
   {
-    "text": "up the data set that I&#39;m using so you",
+    "text": "guys can see what it actually is.",
     "start": 86.32,
     "duration": 5.68
   },
   {
-    "text": "guys can see see what it actually is",
+    "text": "Give me a second. What data set did you use?",
     "start": 89.44,
     "duration": 4.44
   },
   {
-    "text": "give me a yeah what what data set did",
-    "start": 92.0,
+    "text": "",
+    "start": 92,
     "duration": 4.08
   },
   {
-    "text": "you",
+    "text": "It's the schools that you put in the",
     "start": 93.88,
     "duration": 2.2
   },
   {
-    "text": "use um it&#39;s",
+    "text": "GitHub. Was it the academic one?",
     "start": 96.76,
     "duration": 6.84
   },
   {
-    "text": "the schools that you put in the",
+    "text": "",
     "start": 99.24,
     "duration": 4.36
   },
   {
-    "text": "GitHub the was it the academic",
+    "text": "Yeah, the student performance.",
     "start": 103.72,
     "duration": 6.68
   },
   {
-    "text": "one yeah the student performance yeah it",
+    "text": "Yeah, it should be. Oh, that's great because",
     "start": 107.88,
     "duration": 5.8
   },
   {
-    "text": "should be oh that&#39;s that&#39;s great because",
+    "text": "that's the one that we were just working on.",
     "start": 110.4,
     "duration": 5.2
   },
   {
-    "text": "that&#39;s the one that we were",
+    "text": "Anyway, it was something like in Brazil, I think.",
     "start": 113.68,
     "duration": 5.96
   },
   {
-    "text": "just okay anyways it was the something",
+    "text": "",
     "start": 115.6,
     "duration": 4.88
   },
   {
-    "text": "like",
+    "text": "",
     "start": 119.64,
     "duration": 4.8
   },
   {
-    "text": "in Brazil I think",
+    "text": "",
     "start": 120.48,
     "duration": 3.96
   },
   {
-    "text": "somewhere um we can&#39;t see the data set",
+    "text": "We can't see the data set yet.",
     "start": 125.4,
     "duration": 8.68
   },
   {
-    "text": "yet oh yeah now now I see I&#39;m I&#39;m",
+    "text": "Oh yeah, now I see. I'm saying you",
     "start": 127.72,
     "duration": 6.36
   },
   {
-    "text": "saying you",
+    "text": "guys, are you still there?",
     "start": 136.08,
     "duration": 5.32
   },
   {
-    "text": "guys BR are you still",
+    "text": "",
     "start": 138.36,
     "duration": 4.88
   },
   {
-    "text": "there oh",
+    "text": "Oh, good. We almost lost you for a second.",
     "start": 141.4,
     "duration": 5.96
   },
   {
-    "text": "good we almost lost you for a",
+    "text": "",
     "start": 143.24,
     "duration": 4.12
   },
   {
-    "text": "second so I&#39;m I&#39;m looking at oh yeah",
+    "text": "So I'm looking at—oh yeah, here it is. Cool, give me",
     "start": 147.4,
     "duration": 5.68
   },
   {
-    "text": "here it is cool give",
+    "text": "a second. Do you want someone else to go and",
     "start": 150.92,
     "duration": 4.44
   },
   {
-    "text": "me do you want someone else to go and",
+    "text": "then I'll figure that out and go?",
     "start": 153.08,
     "duration": 5.28
   },
   {
-    "text": "then I&#39;ll figure that out and go oh",
+    "text": "Oh yeah, are you having an issue?",
     "start": 155.36,
     "duration": 5.72
   },
   {
-    "text": "yeah are you having an",
+    "text": "",
     "start": 158.36,
     "duration": 2.72
   },
   {
-    "text": "issue I don&#39;t",
+    "text": "I don't know. All right, Bren appears to be lagging, so",
     "start": 161.52,
     "duration": 3.36
   },
   {
-    "text": "know all",
+    "text": "",
     "start": 169.2,
     "duration": 6.72
   },
   {
-    "text": "right okay Bren appears to be lagging so",
+    "text": "let's say Felix.",
     "start": 171.04,
     "duration": 7.4
   },
   {
-    "text": "uh let&#39;s say",
+    "text": "All right, let's try. Give me one second.",
     "start": 175.92,
     "duration": 6.8
   },
   {
-    "text": "Felix all right let&#39;s try",
+    "text": "So I wanted to use some real world data set, so I",
     "start": 178.44,
     "duration": 8.48
   },
   {
-    "text": "um give me one second so I um I wanted",
+    "text": "tried to find some data on some open data platform for the",
     "start": 182.72,
     "duration": 8.96
   },
   {
-    "text": "to um use some real world data set so I",
+    "text": "",
     "start": 186.92,
     "duration": 7.08
   },
   {
-    "text": "uh Tred to find some data on the like",
+    "text": "",
     "start": 191.68,
     "duration": 5.64
   },
   {
-    "text": "some some open data platform for the",
-    "start": 194.0,
+    "text": "",
+    "start": 194,
     "duration": 6.2
   },
   {
-    "text": "city of soul in Korea uh where I where I",
+    "text": "City of Seoul in Korea where I live, and I found this dataset that they share.",
     "start": 197.32,
     "duration": 7.48
   },
   {
-    "text": "live and um I found this data set um",
+    "text": "It's public for the public bikes.",
     "start": 200.2,
     "duration": 6.84
   },
   {
-    "text": "that they share it&#39;s it&#39;s the public for",
+    "text": "They have a lot of data in there, including the registrations, new member registrations.",
     "start": 204.8,
     "duration": 4.64
   },
   {
-    "text": "the public bikes um they have a lot of",
+    "text": "",
     "start": 207.04,
     "duration": 6.4
   },
   {
-    "text": "uh of data in there um including the",
+    "text": "I tried to predict the number of registrations by the age group of the new members because there's a very strong correlation there.",
     "start": 209.44,
     "duration": 7.04
   },
   {
-    "text": "registrations um new new uh new member",
+    "text": "",
     "start": 213.44,
     "duration": 7.4
   },
   {
-    "text": "registrations um and so I tried to",
+    "text": "",
     "start": 216.48,
     "duration": 8.76
   },
   {
-    "text": "predict the number of um registrations",
+    "text": "",
     "start": 220.84,
     "duration": 8.36
   },
   {
-    "text": "by the the age of the age group of the",
+    "text": "I already saw it in the data, so nothing too crazy.",
     "start": 225.24,
     "duration": 6.64
   },
   {
-    "text": "uh new members because there is a very",
+    "text": "",
     "start": 229.2,
     "duration": 5.44
   },
   {
-    "text": "strong correlation there I already s um",
+    "text": "",
     "start": 231.88,
     "duration": 6.84
   },
   {
-    "text": "in the data so nothing too crazy but um",
+    "text": "There are people signing up, registering as new members to use the bikes.",
     "start": 234.64,
     "duration": 5.96
   },
   {
-    "text": "so there are people signing up like",
+    "text": "",
     "start": 238.72,
     "duration": 5.64
   },
   {
-    "text": "registering as new members to use the",
+    "text": "",
     "start": 240.6,
     "duration": 7.68
   },
   {
-    "text": "bikes and that&#39;s the right exactly yeah",
+    "text": "That's right, exactly.",
     "start": 244.36,
     "duration": 8.24
   },
   {
-    "text": "so let me try to share my",
+    "text": "So let me try to share my screen.",
     "start": 248.28,
     "duration": 7.48
   },
   {
-    "text": "screen I think it&#39;s this one let me know",
+    "text": "I think it's this one—let me know if you can see the screen.",
     "start": 252.6,
     "duration": 5.16
   },
   {
-    "text": "if you can see the",
+    "text": "",
     "start": 255.76,
     "duration": 4.24
   },
   {
-    "text": "screen yeah we got",
+    "text": "Yeah, we got it.",
     "start": 257.76,
     "duration": 6.08
   },
   {
-    "text": "it yeah so um as I said there&#39;s nothing",
-    "start": 260.0,
+    "text": "So as I said, there's nothing crazy—there's not even that much data, but I think it works.",
+    "start": 260,
     "duration": 6.08
   },
   {
-    "text": "crazy there&#39;s not even that much data",
+    "text": "",
     "start": 263.84,
     "duration": 4.92
   },
   {
-    "text": "but I think it works um so this is just",
+    "text": "This is just the exploratory data analysis in the dataset that I uploaded.",
     "start": 266.08,
     "duration": 6.64
   },
   {
-    "text": "the the Eda right um um in the data set",
+    "text": "",
     "start": 268.76,
     "duration": 7.28
   },
   {
-    "text": "that I uploaded I I kind of um uploaded",
+    "text": "I uploaded only part of the data—it's just the month, the age group.",
     "start": 272.72,
     "duration": 5.48
   },
   {
-    "text": "only part of the data so it&#39;s just the",
+    "text": "",
     "start": 276.04,
     "duration": 5.28
   },
   {
-    "text": "the month uh the age group um and I I",
+    "text": "I changed it a little bit; before there were some other characters in there, but this is basically teenagers, people in their 20s, 30s, 40s, 50s, and so on until 80s.",
     "start": 278.2,
     "duration": 4.68
   },
   {
-    "text": "changed a little bit before there was",
+    "text": "",
     "start": 281.32,
     "duration": 3.32
   },
   {
-    "text": "some some other characters in there but",
+    "text": "",
     "start": 282.88,
     "duration": 5.28
   },
   {
-    "text": "this is basically um teenagers this is",
+    "text": "",
     "start": 284.64,
     "duration": 6.96
   },
   {
-    "text": "people in their 20s in their 30s 40s 50s",
+    "text": "",
     "start": 288.16,
     "duration": 6.64
   },
   {
-    "text": "and so on until 80s and then there&#39;s the",
+    "text": "And then there's the count of new users in different months for every month of the year 2023.",
     "start": 291.6,
     "duration": 5.76
   },
   {
-    "text": "count of new users in different",
+    "text": "",
     "start": 294.8,
     "duration": 6.04
   },
   {
-    "text": "months um for every every month of the",
+    "text": "",
     "start": 297.36,
     "duration": 5.84
   },
   {
-    "text": "year",
+    "text": "",
     "start": 300.84,
     "duration": 2.36
   },
   {
-    "text": "2023 and then um I",
+    "text": "I put that in the model—there's a kind of a plot of the data here.",
     "start": 303.8,
     "duration": 7.6
   },
   {
-    "text": "basically put that in the model there&#39;s",
+    "text": "",
     "start": 307.88,
     "duration": 6.52
   },
   {
-    "text": "a kind of a plot of the data here as you",
+    "text": "As you can see, there's not as much data; there's some overlapping data.",
     "start": 311.4,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "can see there&#39;s some not as much data",
+    "text": "",
     "start": 314.4,
     "duration": 8.88
   },
   {
-    "text": "there&#39;s some of the um the data is over",
+    "text": "",
     "start": 317.4,
     "duration": 8.44
   },
   {
-    "text": "overlapping but",
+    "text": "I tried to train a model on this, and then you have this kind of linear regression here.",
     "start": 323.28,
     "duration": 5.8
   },
   {
-    "text": "um I try I tried to train a model on",
+    "text": "",
     "start": 325.84,
     "duration": 7.56
   },
   {
-    "text": "this and then you have this kind of a um",
+    "text": "",
     "start": 329.08,
     "duration": 7.12
   },
   {
-    "text": "linear regression here um and you can",
+    "text": "You can see that as age goes up, the number of new members goes down.",
     "start": 333.4,
     "duration": 7.04
   },
   {
-    "text": "see that as age goes up the number of",
+    "text": "",
     "start": 336.2,
     "duration": 8.32
   },
   {
-    "text": "new members goes down um it&#39;s not a",
+    "text": "It's not a perfect fit; actually, as you can see here, the number of new members in the ages 10 to 19 is lower.",
     "start": 340.44,
     "duration": 6.36
   },
   {
-    "text": "perfect fit I think actually as you can",
+    "text": "",
     "start": 344.52,
     "duration": 6.4
   },
   {
-    "text": "see here the um reg just um the number",
+    "text": "",
     "start": 346.8,
     "duration": 8.16
   },
   {
-    "text": "of new members in the years of like 10",
+    "text": "",
     "start": 350.92,
     "duration": 7.96
   },
   {
-    "text": "to 20 is uh or 10 to 19 is is is lower",
+    "text": "",
     "start": 354.96,
     "duration": 5.68
   },
   {
-    "text": "so actually the",
+    "text": "Actually, people in their 20s are the highest new joiners, but on average it works.",
     "start": 358.88,
     "duration": 4.36
   },
   {
-    "text": "people in their 20s are the highest um",
+    "text": "",
     "start": 360.64,
     "duration": 7.36
   },
   {
-    "text": "new joiners but um on average it kind of",
+    "text": "",
     "start": 363.24,
     "duration": 8.4
   },
   {
-    "text": "works and so um that&#39;s the the near",
-    "start": 368.0,
+    "text": "So that's the linear regression, and then we have the evaluation of the error.",
+    "start": 368,
     "duration": 7.56
   },
   {
-    "text": "regression and then we have this um",
+    "text": "",
     "start": 371.64,
     "duration": 8.24
   },
   {
-    "text": "evaluation of the the era and so this",
+    "text": "",
     "start": 375.56,
     "duration": 8.32
   },
   {
-    "text": "one is a little bit tricky for me to um",
+    "text": "This one is a little bit tricky for me to interpret.",
     "start": 379.88,
     "duration": 6.12
   },
   {
-    "text": "interpret and actually I I asked James",
+    "text": "Actually, I asked James about it yesterday, I think, and maybe we can talk about this later because I wasn't sure which line represents what.",
     "start": 383.88,
     "duration": 4.56
   },
   {
-    "text": "about it yesterday I think and maybe we",
-    "start": 386.0,
+    "text": "",
+    "start": 386,
     "duration": 4.72
   },
   {
-    "text": "can talk about this later because um I",
+    "text": "",
     "start": 388.44,
     "duration": 5.04
   },
   {
-    "text": "wasn&#39;t sure which line represents what",
+    "text": "",
     "start": 390.72,
     "duration": 7.2
   },
   {
-    "text": "um but I think um how I interpret it is",
+    "text": "I interpret it as the blue line being the actual numbers,",
     "start": 393.48,
     "duration": 8.04
   },
   {
-    "text": "that the blue line is the um the actual",
+    "text": "",
     "start": 397.92,
     "duration": 5.68
   },
   {
-    "text": "numbers and then the the Orange Line",
+    "text": "and the orange line would be the predicted values.",
     "start": 401.52,
     "duration": 5.28
   },
   {
-    "text": "would be the predicted values I&#39;m not",
+    "text": "",
     "start": 403.6,
     "duration": 6.6
   },
   {
-    "text": "sure but um so and then the difference",
+    "text": "The difference is the error.",
     "start": 406.8,
     "duration": 7.56
   },
   {
-    "text": "basically is the it&#39;s the error right um",
+    "text": "",
     "start": 410.2,
     "duration": 8.08
   },
   {
-    "text": "yeah oh yeah one thing I missed is you",
+    "text": "One thing I missed is I predicted the new members for the age of 33,",
     "start": 414.36,
-    "duration": 8.0
+    "duration": 8
   },
   {
-    "text": "can I here I I predicted the new members",
+    "text": "",
     "start": 418.28,
     "duration": 8.08
   },
   {
-    "text": "for the age of 33 and then um the",
+    "text": "",
     "start": 422.36,
     "duration": 6.48
   },
   {
-    "text": "outcome was",
+    "text": "and the outcome was 3,495.",
     "start": 426.36,
     "duration": 4.12
   },
   {
-    "text": "3,495",
+    "text": "",
     "start": 428.84,
     "duration": 3.88
   },
   {
-    "text": "so yeah you could use this to",
+    "text": "So you could use this to approximately predict the number of new joiners at a certain age.",
     "start": 430.48,
     "duration": 4.32
   },
   {
-    "text": "approximately predict the number of new",
+    "text": "",
     "start": 432.72,
     "duration": 6.24
   },
   {
-    "text": "joiners in a certain of a certain",
+    "text": "",
     "start": 434.8,
     "duration": 6.2
   },
   {
-    "text": "age that&#39;s",
+    "text": "",
     "start": 438.96,
     "duration": 5.4
   },
   {
-    "text": "it nice Felix I really like how you used",
-    "start": 441.0,
+    "text": "Nice, Felix. I really like how you used real world data and found a dataset for something interesting to you.",
+    "start": 441,
     "duration": 5.56
   },
   {
-    "text": "um I really like how you use real world",
+    "text": "",
     "start": 444.36,
     "duration": 4.36
   },
   {
-    "text": "data and you went out and you found a",
+    "text": "",
     "start": 446.56,
     "duration": 3.36
   },
   {
-    "text": "data set for something that was",
+    "text": "",
     "start": 448.72,
     "duration": 4.84
   },
   {
-    "text": "interesting for you um was it easy to",
+    "text": "Was it easy to import that data you found?",
     "start": 449.92,
     "duration": 6.96
   },
   {
-    "text": "import that data that you",
+    "text": "",
     "start": 453.56,
-    "duration": 7.0
+    "duration": 7
   },
   {
-    "text": "found um importing it was okay I I was",
+    "text": "Importing it was okay. I wasn't sure at first how to get data into this Collab notebook,",
     "start": 456.88,
     "duration": 6.56
   },
   {
-    "text": "not sure at first how to get data into",
+    "text": "",
     "start": 460.56,
     "duration": 6.84
   },
   {
-    "text": "this um yeah into this collab notebook",
+    "text": "",
     "start": 463.44,
     "duration": 6.72
   },
   {
-    "text": "but I I managed to kind of Mount my my",
+    "text": "but I managed to mount my Google Drive to it, so that worked fine.",
     "start": 467.4,
     "duration": 5.36
   },
   {
-    "text": "Google Drive to it so so that was that",
+    "text": "",
     "start": 470.16,
     "duration": 4.8
   },
   {
-    "text": "that worked fine can you show that part",
+    "text": "",
     "start": 472.76,
     "duration": 4.16
   },
   {
-    "text": "um oh yeah",
+    "text": "Can you show that part?",
     "start": 474.96,
     "duration": 5.2
   },
   {
-    "text": "sure I think it&#39;s it&#39;s it says it&#39;s",
+    "text": "",
     "start": 476.92,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "disconnected now here but basically what",
+    "text": "Sure. It says it's disconnected now, but basically what I did was I searched how to do it on the internet.",
     "start": 480.16,
     "duration": 6.68
   },
   {
-    "text": "I did is um yeah I just searched how to",
+    "text": "",
     "start": 482.92,
     "duration": 5.76
   },
   {
-    "text": "do it on the internet so basically you",
+    "text": "Basically, you can import the drive,",
     "start": 486.84,
     "duration": 4.72
   },
   {
-    "text": "can um import",
+    "text": "",
     "start": 488.68,
     "duration": 6.44
   },
   {
-    "text": "the the drive and then you",
+    "text": "and then you can navigate to the folder where you put the CSV file,",
     "start": 491.56,
     "duration": 6.76
   },
   {
-    "text": "can let it navigate to the to the",
+    "text": "",
     "start": 495.12,
     "duration": 5.96
   },
   {
-    "text": "founder uh to the folder right where you",
+    "text": "",
     "start": 498.32,
     "duration": 6.68
   },
   {
-    "text": "um you put the the CSV file and then it",
+    "text": "and then it can actually work with it.",
     "start": 501.08,
     "duration": 5.84
   },
   {
-    "text": "can actually work with",
-    "start": 505.0,
-    "duration": 5.0
+    "text": "",
+    "start": 505,
+    "duration": 5
   },
   {
-    "text": "it does anyone have any",
+    "text": "Does anyone have any questions about Felix's model that he trained?",
     "start": 506.92,
     "duration": 6.2
   },
   {
-    "text": "questions about Felix&#39;s um the model",
-    "start": 510.0,
+    "text": "",
+    "start": 510,
     "duration": 4.32
   },
   {
-    "text": "that Felix",
+    "text": "",
     "start": 513.12,
     "duration": 4.84
   },
   {
-    "text": "trained wait Felix you mind uh copy",
+    "text": "Felix, do you mind copying and pasting that from Google Collab to the chat?",
     "start": 514.32,
     "duration": 6.68
   },
   {
-    "text": "pasting that uh from Google collab and",
+    "text": "",
     "start": 517.96,
     "duration": 6.12
   },
   {
-    "text": "that that part to the chat really",
-    "start": 521.0,
+    "text": "",
+    "start": 521,
     "duration": 7.32
   },
   {
-    "text": "quick sure um this part here yeah that",
+    "text": "Sure. This part here.",
     "start": 524.08,
     "duration": 6.16
   },
   {
-    "text": "one and then the next one that&#39;s I think",
+    "text": "",
     "start": 528.32,
     "duration": 3.88
   },
   {
-    "text": "that&#39;s the that&#39;s the main one the other",
+    "text": "And then the next one. I think that's the main one.",
     "start": 530.24,
     "duration": 3.8
   },
   {
-    "text": "one is just kind of checking if it&#39;s",
+    "text": "",
     "start": 532.2,
     "duration": 8.28
   },
   {
-    "text": "there oh um yeah okay sure I if you if",
+    "text": "The other one is just checking if it's there.",
     "start": 534.04,
     "duration": 9.28
   },
   {
-    "text": "you want I can probably also share the I",
+    "text": "",
     "start": 540.48,
     "duration": 4.52
   },
   {
-    "text": "don&#39;t know if I can still find it but I",
+    "text": "I can probably also share it. I don't know if I can still find it, but I found it online somewhere on Stack Overflow or something.",
     "start": 543.32,
     "duration": 5.48
   },
   {
-    "text": "I just found it online somewhere in a",
-    "start": 545.0,
+    "text": "",
+    "start": 545,
     "duration": 5.6
   },
   {
-    "text": "yeah yeah overflow or something like",
+    "text": "",
     "start": 548.8,
     "duration": 5.6
   },
   {
-    "text": "that okay Felix I I&#39;ll talk about the",
+    "text": "Okay, Felix. I'll talk about the different ways someone can import data into Collab.",
     "start": 550.6,
     "duration": 6.4
   },
   {
-    "text": "different ways uh someone can import",
+    "text": "",
     "start": 554.4,
     "duration": 3.84
   },
   {
-    "text": "data into",
-    "start": 557.0,
+    "text": "",
+    "start": 557,
     "duration": 3.72
   },
   {
-    "text": "collab um there there are multiple ways",
+    "text": "There are multiple ways.",
     "start": 558.24,
     "duration": 4.28
   },
   {
-    "text": "the one that you have used it basically",
+    "text": "",
     "start": 560.72,
     "duration": 5.6
   },
   {
-    "text": "mounts your Google Drive um and then you",
+    "text": "The one you used basically mounts your Google Drive,",
     "start": 562.52,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "can access whatever is stored in your",
+    "text": "and then you can access whatever is stored in your",
     "start": 566.32,
     "duration": 5.84
   },
   {
-    "text": "Google Drive so so you can naate to the",
+    "text": "Google Drive so you can navigate to the Google Drive and copy files from there.",
     "start": 568.52,
     "duration": 5.96
   },
   {
-    "text": "to the goog Drive can copy files from",
+    "text": "",
     "start": 572.16,
     "duration": 5.88
   },
   {
-    "text": "there you can usually when data sets are",
+    "text": "You can usually do this when data sets are small.",
     "start": 574.48,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "small what we do is we don&#39;t Mount the",
+    "text": "What we do is we don't mount the drives because the data is small; we can just upload them on the fly.",
     "start": 578.04,
     "duration": 5.4
   },
   {
-    "text": "drives because um the data is small we",
+    "text": "",
     "start": 580.48,
     "duration": 5.96
   },
   {
-    "text": "can just upload them on the fly so you",
+    "text": "",
     "start": 583.44,
     "duration": 5.4
   },
   {
-    "text": "can do that but when data sets becomes",
+    "text": "But when data sets become huge, for instance you're working with some imagery data where it is 5GB or 10GB, that would become much more difficult to upload the files directly to the cloud.",
     "start": 586.44,
     "duration": 3.96
   },
   {
-    "text": "huge for instance you&#39;re working with",
+    "text": "",
     "start": 588.84,
     "duration": 5.08
   },
   {
-    "text": "some uh imagery data where it is 5gb or",
+    "text": "",
     "start": 590.4,
     "duration": 6.56
   },
   {
-    "text": "10gb that would becomes much difficult",
+    "text": "",
     "start": 593.92,
     "duration": 6.32
   },
   {
-    "text": "to upload the files directly to the cab",
+    "text": "So what we do is we mount our drive.",
     "start": 596.96,
     "duration": 6.04
   },
   {
-    "text": "so what we do is we Mount our Drive um",
+    "text": "Mounting a drive is simply like plugging your flash drive into a computer where that storage becomes accessible.",
     "start": 600.24,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "mounting a drive is just simply it&#39;s",
-    "start": 603.0,
+    "text": "",
+    "start": 603,
     "duration": 4.36
   },
   {
-    "text": "like plugging your flash drive into a",
+    "text": "",
     "start": 605.24,
     "duration": 3.76
   },
   {
-    "text": "computer where that storage didn&#39;t",
+    "text": "",
     "start": 607.36,
     "duration": 2.72
   },
   {
-    "text": "become",
-    "start": 609.0,
+    "text": "",
+    "start": 609,
     "duration": 3.36
   },
   {
-    "text": "accessible so what you are doing here is",
+    "text": "So what you are doing here is that you are mounting the drive and then you can access whatever is stored there.",
     "start": 610.08,
     "duration": 4.24
   },
   {
-    "text": "that you are mounting the drive and then",
+    "text": "",
     "start": 612.36,
     "duration": 4.88
   },
   {
-    "text": "you can access whatever stored there um",
+    "text": "In the beginning, Nishant, what you were showing—I think I spotted the problem, but then the screen went away.",
     "start": 614.32,
     "duration": 5.56
   },
   {
-    "text": "in the beginning uh",
+    "text": "",
     "start": 617.24,
     "duration": 5.24
   },
   {
-    "text": "Nishant what what you were showing I I",
+    "text": "I'm not sure, but I think your files were zipped, so you need to unzip them before you can load them using pandas or something.",
     "start": 619.88,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "think I spotted the the problem but then",
+    "text": "",
     "start": 622.48,
     "duration": 5.48
   },
   {
-    "text": "the screen went away I&#39;m not sure but I",
+    "text": "That's what I saw, but I'm not sure.",
     "start": 625.88,
     "duration": 4.68
   },
   {
-    "text": "think your files were were zipped so you",
+    "text": "We'll talk about that. And Felix, the last plot that you showed—can you scroll down to it again?",
     "start": 627.96,
     "duration": 4.68
   },
   {
-    "text": "need to unzip them before you can load",
+    "text": "",
     "start": 630.56,
     "duration": 3.56
   },
   {
-    "text": "them using pandas or something that&#39;s",
+    "text": "",
     "start": 632.64,
     "duration": 3.2
   },
   {
-    "text": "what I saw but I&#39;m not sure we&#39;ll talk",
+    "text": "",
     "start": 634.12,
     "duration": 4.32
   },
   {
-    "text": "about that and Felix the last plot that",
+    "text": "",
     "start": 635.84,
     "duration": 7.08
   },
   {
-    "text": "you showed uh can you scroll down to it",
+    "text": "",
     "start": 638.44,
     "duration": 8.32
   },
   {
-    "text": "again this one yeah so here this this",
+    "text": "This one—yeah, so here, this code I just added we added this just for testing.",
     "start": 642.92,
     "duration": 7.6
   },
   {
-    "text": "code I just added um we added this just",
+    "text": "It's not something someone usually evaluates this way, but what's happening here is we take the predictions and we sort them.",
     "start": 646.76,
     "duration": 6.64
   },
   {
-    "text": "for testing it&#39;s not like it&#39;s not",
+    "text": "",
     "start": 650.52,
     "duration": 5.08
   },
   {
-    "text": "someone doesn&#39;t usually evaluate it this",
+    "text": "",
     "start": 653.4,
     "duration": 4.6
   },
   {
-    "text": "way but what What&#39;s Happening Here is we",
+    "text": "Because if you plot them without sorting them, it would be fluctuating and there won't be an order.",
     "start": 655.6,
     "duration": 5.2
   },
   {
-    "text": "take the predictions and we sort them",
-    "start": 658.0,
+    "text": "",
+    "start": 658,
     "duration": 6.08
   },
   {
-    "text": "because if you plot them without sorting",
+    "text": "",
     "start": 660.8,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "them it would be basically fluctuating",
+    "text": "",
     "start": 664.08,
     "duration": 4.28
   },
   {
-    "text": "and like it won&#39;t there won&#39;t be an",
+    "text": "",
     "start": 666.8,
     "duration": 3.92
   },
   {
-    "text": "order so what we do here is that we sort",
+    "text": "So what we do here is that we sort first the predictions of the model and then we sort the true values, and then we plot them using a line chart so that we can see if the trend is being followed by the model correctly.",
     "start": 668.36,
     "duration": 4.32
   },
   {
-    "text": "first the predictions of the model and",
+    "text": "",
     "start": 670.72,
     "duration": 4.56
   },
   {
-    "text": "then we sort the true uh values and then",
+    "text": "",
     "start": 672.68,
     "duration": 4.68
   },
   {
-    "text": "we plot them using a line chart so that",
+    "text": "",
     "start": 675.28,
     "duration": 3.6
   },
   {
-    "text": "we can see if the trend is being",
+    "text": "",
     "start": 677.36,
     "duration": 4.32
   },
   {
-    "text": "followed by the model correctly so the",
+    "text": "",
     "start": 678.88,
     "duration": 4.48
   },
   {
-    "text": "blue one by default when you plot",
+    "text": "The blue one, by default when you plot something in matplotlib, the default color is blue, so the first one is blue, which is the prediction of the model.",
     "start": 681.68,
     "duration": 3.8
   },
   {
-    "text": "something in met the default color that",
+    "text": "",
     "start": 683.36,
     "duration": 4.08
   },
   {
-    "text": "they assigned to it is blue so the first",
+    "text": "",
     "start": 685.48,
     "duration": 4.56
   },
   {
-    "text": "one is blue um which is the prediction",
+    "text": "",
     "start": 687.44,
     "duration": 5.24
   },
   {
-    "text": "of the model and then the second one",
+    "text": "Then the second one, which is orange, is the test output, which is the true output.",
     "start": 690.04,
     "duration": 4.64
   },
   {
-    "text": "with which is Orange is white test which",
+    "text": "",
     "start": 692.68,
     "duration": 4.12
   },
   {
-    "text": "is the true output but still uh if you",
+    "text": "But still, if you would like to be sure about it, you can add colors to the plot manually, or you can even label them saying this is the true output, this is the predicted output.",
     "start": 694.68,
     "duration": 4.44
   },
   {
-    "text": "would like to be sure about it you can",
+    "text": "",
     "start": 696.8,
     "duration": 4.2
   },
   {
-    "text": "add colors to the plot manually where",
+    "text": "",
     "start": 699.12,
     "duration": 3.76
   },
   {
-    "text": "you can then or you can even label them",
-    "start": 701.0,
+    "text": "",
+    "start": 701,
     "duration": 4.28
   },
   {
-    "text": "saying this is the true output this is",
+    "text": "James would show you how to do that.",
     "start": 702.88,
     "duration": 4.48
   },
   {
-    "text": "the predicted output James would show",
+    "text": "",
     "start": 705.28,
     "duration": 5.4
   },
   {
-    "text": "you those how how to do that um the",
+    "text": "",
     "start": 707.36,
     "duration": 5.16
   },
   {
-    "text": "question that I wanted to ask was so you",
+    "text": "The question that I wanted to ask was: are you using the age groups in order to predict the number of registrations?",
     "start": 710.68,
     "duration": 4.04
   },
   {
-    "text": "are using the age groups in order to",
+    "text": "",
     "start": 712.52,
     "duration": 7.32
   },
   {
-    "text": "predict um the number of registrations",
+    "text": "",
     "start": 714.72,
     "duration": 8.56
   },
   {
-    "text": "so the age groups the the feature",
+    "text": "So the age groups become a categorical feature.",
     "start": 719.84,
     "duration": 5.24
   },
   {
-    "text": "basically becomes a categorical feature",
+    "text": "",
     "start": 723.28,
     "duration": 4.72
   },
   {
-    "text": "what I saw because you have the age",
+    "text": "What I saw is that you have the age group of 20 and then 30s and then so on, so it is not a continuous or numeric feature; it is rather a categorical feature.",
     "start": 725.08,
     "duration": 5.4
   },
   {
-    "text": "group of 20 and then 30s and then and so",
-    "start": 728.0,
+    "text": "",
+    "start": 728,
     "duration": 7.72
   },
   {
-    "text": "on so it is it is not a um continuous or",
+    "text": "",
     "start": 730.48,
     "duration": 7.2
   },
   {
-    "text": "numeric feature it is rather categorical",
+    "text": "",
     "start": 735.72,
     "duration": 3.92
   },
   {
-    "text": "feature so using categorical feature in",
+    "text": "So using a categorical feature in order to regress a value is interesting.",
     "start": 737.68,
     "duration": 4.08
   },
   {
-    "text": "order to regress a value that&#39;s",
+    "text": "",
     "start": 739.64,
     "duration": 4.6
   },
   {
-    "text": "interesting um now I saw the trend it",
+    "text": "Now I saw the trend was going downwards and the line was falling there correctly, so I think it was a good demonstration of linear regression.",
     "start": 741.76,
     "duration": 4.32
   },
   {
-    "text": "was going downwards and the line was",
+    "text": "",
     "start": 744.24,
     "duration": 4.76
   },
   {
-    "text": "falling there correctly so I think yeah",
+    "text": "",
     "start": 746.08,
     "duration": 3.6
   },
   {
-    "text": "uh",
-    "start": 749.0,
+    "text": "",
+    "start": 749,
     "duration": 3.16
   },
   {
-    "text": "I mean it was a it was a good",
+    "text": "It was interesting.",
     "start": 749.68,
     "duration": 4.72
   },
   {
-    "text": "demonstration of linear regression it",
+    "text": "",
     "start": 752.16,
     "duration": 3.92
   },
   {
-    "text": "was",
+    "text": "",
     "start": 754.4,
     "duration": 4.4
   },
   {
-    "text": "interesting yeah so so I think it&#39;s not",
+    "text": "So I think it's not the perfect case, but for me, because James was asking if it was difficult, actually the most difficult part was finding data that can work with linear regression.",
     "start": 756.08,
     "duration": 5.36
   },
   {
-    "text": "the perfect maybe not the perfect um",
+    "text": "",
     "start": 758.8,
     "duration": 6.08
   },
   {
-    "text": "case but for me because James was asking",
+    "text": "",
     "start": 761.44,
     "duration": 5.48
   },
   {
-    "text": "if it was difficult actually the most",
+    "text": "",
     "start": 764.88,
     "duration": 4.84
   },
   {
-    "text": "difficult part was Finding data that",
+    "text": "There's a lot of data out there, but a lot of it only becomes useful if you use multiple linear regression or something more sophisticated.",
     "start": 766.92,
     "duration": 5.32
   },
   {
-    "text": "that can uh work with linear regression",
+    "text": "",
     "start": 769.72,
     "duration": 4.08
   },
   {
-    "text": "because there&#39;s a lot of data out there",
+    "text": "",
     "start": 772.24,
     "duration": 4.32
   },
   {
-    "text": "but a lot of uh a lot of it only becomes",
+    "text": "",
     "start": 773.8,
     "duration": 5.88
   },
   {
-    "text": "useful if you use multiple linear",
+    "text": "",
     "start": 776.56,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "regression or or like some something",
+    "text": "",
     "start": 779.68,
     "duration": 3.6
   },
   {
-    "text": "more sophisticated because otherwise",
+    "text": "Otherwise it's obvious already in the data, usually in the plot.",
     "start": 781.56,
     "duration": 5.12
   },
   {
-    "text": "it&#39;s kind of obvious already in the data",
+    "text": "",
     "start": 783.28,
     "duration": 6.52
   },
   {
-    "text": "usually yeah in the plot um but",
+    "text": "",
     "start": 786.68,
     "duration": 4.88
   },
   {
-    "text": "nonetheless it&#39;s interesting you know as",
+    "text": "Nonetheless, it's interesting as a training case.",
     "start": 789.8,
     "duration": 5.2
   },
   {
-    "text": "a just as a as a training as a uh study",
+    "text": "",
     "start": 791.56,
     "duration": 6.88
   },
   {
-    "text": "case cool yeah so the the goal was just",
-    "start": 795.0,
+    "text": "Cool, yeah, so the goal was just to show you how to take a code and then modify it such that it becomes useful for your own use case.",
+    "start": 795,
     "duration": 7.44
   },
   {
-    "text": "like um to show you um or to that you",
+    "text": "",
     "start": 798.44,
     "duration": 7.36
   },
   {
-    "text": "can see for yourself how to um take a",
+    "text": "",
     "start": 802.44,
     "duration": 5.72
   },
   {
-    "text": "code and then modify it such that it",
+    "text": "",
     "start": 805.8,
     "duration": 5.56
   },
   {
-    "text": "becomes useful for your own uh use case",
+    "text": "",
     "start": 808.16,
     "duration": 6.04
   },
   {
-    "text": "so even though if the if you don&#39;t find",
+    "text": "So even though if you don't find correct data or if it is not something very useful, that's perfectly fine; at least you now know how to take an algorithm and apply it and get some predictions.",
     "start": 811.36,
     "duration": 4.76
   },
   {
-    "text": "correct data or if it is not something",
+    "text": "",
     "start": 814.2,
     "duration": 3.72
   },
   {
-    "text": "very useful that&#39;s perfectly fine at",
+    "text": "",
     "start": 816.12,
     "duration": 4.2
   },
   {
-    "text": "least you now know how to take an",
+    "text": "",
     "start": 817.92,
     "duration": 5.12
   },
   {
-    "text": "algorithm and apply it and get some",
+    "text": "",
     "start": 820.32,
     "duration": 4.88
   },
   {
-    "text": "predictions uh what would be different",
+    "text": "What would be different in other cases: instead of using linear regression, you will be importing from scikit-learn.",
     "start": 823.04,
     "duration": 4.04
   },
   {
-    "text": "in other cases at the instead of using",
+    "text": "",
     "start": 825.2,
     "duration": 3.4
   },
   {
-    "text": "linear regression you will be importing",
+    "text": "",
     "start": 827.08,
     "duration": 3.68
   },
   {
-    "text": "let&#39;s saym from the pyit lar the rest of",
+    "text": "",
     "start": 828.6,
     "duration": 4.96
   },
   {
-    "text": "the code stays the same or if you want",
+    "text": "The rest of the code stays the same, or if you want to use XGBoost, you import it the same way, you train it the same way, you evaluate it the same way.",
     "start": 830.76,
     "duration": 4.92
   },
   {
-    "text": "to use somewhat more like you can use XG",
+    "text": "",
     "start": 833.56,
     "duration": 4.04
   },
   {
-    "text": "boost you import it the same way you",
+    "text": "",
     "start": 835.68,
     "duration": 3.6
   },
   {
-    "text": "train it the same way you elate it the",
+    "text": "",
     "start": 837.6,
     "duration": 3.6
   },
   {
-    "text": "same way so everything stays the same in",
+    "text": "",
     "start": 839.28,
     "duration": 3.8
   },
   {
-    "text": "case of new networks the only thing that",
+    "text": "So everything stays the same.",
     "start": 841.2,
     "duration": 3.76
   },
   {
-    "text": "would be different would be that instead",
+    "text": "",
     "start": 843.08,
     "duration": 3.6
   },
   {
-    "text": "of importing linear aggression from Psy",
+    "text": "In the case of neural networks, the only thing that would be different would be that instead of importing linear regression from scikit-learn, you will be using TensorFlow to construct your own neural network.",
     "start": 844.96,
     "duration": 3.16
   },
   {
-    "text": "line you will be using tensorflow to",
+    "text": "",
     "start": 846.68,
     "duration": 4.24
   },
   {
-    "text": "construct your own new network um but",
+    "text": "",
     "start": 848.12,
     "duration": 5.44
   },
   {
-    "text": "that&#39;s the like the the general workflow",
+    "text": "But that's the general workflow, and the majority of the code stays the same.",
     "start": 850.92,
     "duration": 4.72
   },
   {
-    "text": "and the majority of the code stays the",
+    "text": "",
     "start": 853.56,
     "duration": 5.24
   },
   {
-    "text": "same that&#39;s why Focus is not too much on",
+    "text": "",
     "start": 855.64,
     "duration": 4.84
   },
   {
-    "text": "coding things from scratch because there",
+    "text": "That's why the focus is not too much on coding things from scratch, because there are tons of code available online.",
     "start": 858.8,
     "duration": 3.48
   },
   {
-    "text": "are tons of codes available online the",
+    "text": "",
     "start": 860.48,
     "duration": 4.12
   },
   {
-    "text": "goal is just to show you how to make use",
+    "text": "The goal is just to show you how to make use of it.",
     "start": 862.28,
     "duration": 5.92
   },
   {
-    "text": "of them in order to um so that you can",
+    "text": "Of them in order so that you can solve your own problem with it and make good use of it.",
     "start": 864.6,
     "duration": 6.96
   },
   {
-    "text": "solve your own problem with it and make",
+    "text": "",
     "start": 868.2,
     "duration": 4.8
   },
   {
-    "text": "good use of",
+    "text": "",
     "start": 871.56,
     "duration": 4.16
   },
   {
-    "text": "it Bren are you good to go now want to",
-    "start": 873.0,
+    "text": "Bren, are you good to go now? Want to try again?",
+    "start": 873,
     "duration": 5.6
   },
   {
-    "text": "try again yeah I&#39;m good okay let&#39;s go",
+    "text": "Yeah, I'm good. Okay, let's go to Broski over here.",
     "start": 875.72,
     "duration": 5.4
   },
   {
-    "text": "to Broski over",
+    "text": "",
     "start": 878.6,
     "duration": 6.88
   },
   {
-    "text": "here okay let me share my",
+    "text": "Okay, let me share my screen.",
     "start": 881.12,
     "duration": 4.36
   },
   {
-    "text": "screen um yeah so the data set that I",
+    "text": "Yeah, so the dataset that I was using is the student performance dataset.",
     "start": 887.68,
     "duration": 5.4
   },
   {
-    "text": "was using is the student performance",
+    "text": "It's one of the ones that J put on the GitHub.",
     "start": 891.36,
     "duration": 3.44
   },
   {
-    "text": "data set it&#39;s one of the ones that J put",
+    "text": "So yeah, I just read through that.",
     "start": 893.08,
     "duration": 5.6
   },
   {
-    "text": "on the GitHub um so yeah I kind of just",
+    "text": "It was actually easy to import because they have code right here that just tells you how to do it.",
     "start": 894.8,
     "duration": 4.96
   },
   {
-    "text": "read through that this it was actually",
+    "text": "",
     "start": 898.68,
     "duration": 2.76
   },
   {
-    "text": "easy to import because they have code",
+    "text": "",
     "start": 899.76,
     "duration": 3.56
   },
   {
-    "text": "right here that just tells you how to do",
+    "text": "",
     "start": 901.44,
     "duration": 5.44
   },
   {
-    "text": "it um so you can just kind of run this",
+    "text": "So you can just run this code.",
     "start": 903.32,
     "duration": 5.96
   },
   {
-    "text": "code it&#39;s like a python package that you",
+    "text": "It's a Python package that you can import.",
     "start": 906.88,
     "duration": 3.28
   },
   {
-    "text": "can",
+    "text": "",
     "start": 909.28,
     "duration": 5.16
   },
   {
-    "text": "import um but yeah so the data has it&#39;s",
+    "text": "But yeah, so the data has—it's basically trying to map a bunch of different features about a student's home life and their academic habits to their grades in school essentially.",
     "start": 910.16,
     "duration": 6.96
   },
   {
-    "text": "basically trying to map um like a bunch",
+    "text": "",
     "start": 914.44,
     "duration": 3.84
   },
   {
-    "text": "of different features about like a",
+    "text": "",
     "start": 917.12,
     "duration": 3.28
   },
   {
-    "text": "student&#39;s like home life and like their",
+    "text": "",
     "start": 918.28,
     "duration": 5.6
   },
   {
-    "text": "academic kind of habits um to like their",
+    "text": "",
     "start": 920.4,
     "duration": 5.48
   },
   {
-    "text": "grades in school",
+    "text": "",
     "start": 923.88,
     "duration": 5.88
   },
   {
-    "text": "essentially um so",
+    "text": "",
     "start": 925.88,
     "duration": 5.48
   },
   {
-    "text": "yeah I guess like here&#39;s the first few",
+    "text": "So yeah, I guess here's the first few lines.",
     "start": 929.76,
     "duration": 3.08
   },
   {
-    "text": "lines it has like things like their sex",
+    "text": "It has things like their sex, their age, how big their family is, their mom and father's job, how much free time they have, how much time they study, and things like that.",
     "start": 931.36,
     "duration": 4.4
   },
   {
-    "text": "their age um how big their family is um",
+    "text": "",
     "start": 932.84,
     "duration": 4.64
   },
   {
-    "text": "their mom mother and father&#39;s job how",
+    "text": "",
     "start": 935.76,
     "duration": 3.12
   },
   {
-    "text": "much free time they have how much time",
+    "text": "",
     "start": 937.48,
     "duration": 2.84
   },
   {
-    "text": "they study and things like that and then",
+    "text": "",
     "start": 938.88,
     "duration": 4.8
   },
   {
-    "text": "it Maps it to their grades which is over",
+    "text": "And then it maps it to their grades, which is over here.",
     "start": 940.32,
     "duration": 6.36
   },
   {
-    "text": "here",
+    "text": "",
     "start": 943.68,
-    "duration": 3.0
+    "duration": 3
   },
   {
-    "text": "um yeah so honestly I was well first of",
-    "start": 947.0,
+    "text": "Yeah, so honestly, first of all, there's a lot of things in the data that were strings, not actually integers or Boolean values, so I had to remove them so they didn't interfere with the plot or whatever.",
+    "start": 947,
     "duration": 7.84
   },
   {
-    "text": "all there&#39;s a lot of things in the data",
+    "text": "",
     "start": 952.44,
     "duration": 5.4
   },
   {
-    "text": "that were kind of like strings like not",
+    "text": "",
     "start": 954.84,
     "duration": 4.92
   },
   {
-    "text": "actually integers or like B Valu so I",
+    "text": "",
     "start": 957.84,
     "duration": 3.92
   },
   {
-    "text": "kind of just had to remove so that they",
+    "text": "",
     "start": 959.76,
     "duration": 3.6
   },
   {
-    "text": "didn&#39;t interfere with like the plot or",
+    "text": "",
     "start": 961.76,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "whatever yeah and then yeah like there",
+    "text": "Yeah, and then there was not a lot of highly correlated values.",
     "start": 963.36,
     "duration": 5.92
   },
   {
-    "text": "was not a lot of like high correlated",
+    "text": "That's the first thing I noticed here.",
     "start": 966.76,
     "duration": 3.92
   },
   {
-    "text": "Valu that&#39;s like the first thing I know",
+    "text": "The most significant thing is really the failures—basically, how many classes they failed—which impacts their grades.",
     "start": 969.28,
     "duration": 5.36
   },
   {
-    "text": "I noticed here um like the most I guess",
+    "text": "I think that's self-explanatory, but that's the most correlated thing, and everything else is very low or almost not correlated.",
     "start": 970.68,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "the most significant thing is really the",
+    "text": "",
     "start": 974.64,
     "duration": 4.44
   },
   {
-    "text": "failures so like basically how many",
+    "text": "",
     "start": 976.68,
     "duration": 3.84
   },
   {
-    "text": "classes they failed to impact their",
+    "text": "",
     "start": 979.08,
     "duration": 3.48
   },
   {
-    "text": "grades I think that&#39;s kind of like",
+    "text": "",
     "start": 980.52,
     "duration": 3.6
   },
   {
-    "text": "self-explanatory but that&#39;s like the",
+    "text": "",
     "start": 982.56,
     "duration": 2.72
   },
   {
-    "text": "most correlated thing and everything",
+    "text": "",
     "start": 984.12,
     "duration": 4.24
   },
   {
-    "text": "else is kind of very low or almost not",
+    "text": "",
     "start": 985.28,
     "duration": 4.56
   },
   {
-    "text": "correlated",
+    "text": "",
     "start": 988.36,
     "duration": 4.44
   },
   {
-    "text": "um at least with the grades over here so",
+    "text": "At least with the grades over here.",
     "start": 989.84,
     "duration": 6.24
   },
   {
-    "text": "what I actually chose to analyze is um",
+    "text": "So what I actually chose to analyze is this field here, which is called D, which is daily alcohol consumption.",
     "start": 992.8,
     "duration": 5.24
   },
   {
-    "text": "this field here which is called D which",
+    "text": "",
     "start": 996.08,
     "duration": 4.2
   },
   {
-    "text": "is a daily alcohol content or daily",
+    "text": "",
     "start": 998.04,
     "duration": 4.48
   },
   {
-    "text": "alcohol consumption so I tried to map",
+    "text": "So I tried to map that to what their performance is in their first class.",
     "start": 1000.28,
     "duration": 4.24
   },
   {
-    "text": "that to what their performance is in",
+    "text": "",
     "start": 1002.52,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "their first their first class um so yeah",
+    "text": "",
     "start": 1004.52,
     "duration": 8.16
   },
   {
-    "text": "that&#39;s my X that&#39;s my my target which is",
+    "text": "Yeah, that's my X, and that's my target, which is this column.",
     "start": 1008.52,
     "duration": 7.08
   },
   {
-    "text": "this and this column",
+    "text": "",
     "start": 1012.68,
     "duration": 6.88
   },
   {
-    "text": "here so yeah the M the",
+    "text": "",
     "start": 1015.6,
     "duration": 7.08
   },
   {
-    "text": "the like the data was actually quite",
+    "text": "The data was actually quite categorical.",
     "start": 1019.56,
     "duration": 5.64
   },
   {
-    "text": "categorical as um the saying like it&#39;s",
+    "text": "As the saying goes, it's not really",
     "start": 1022.68,
     "duration": 3.76
   },
   {
-    "text": "they basically it&#39;s not really",
+    "text": "a continuous flow of data or a continuous",
     "start": 1025.2,
     "duration": 3.28
   },
   {
-    "text": "continuous flow of data or a continuous",
+    "text": "stream; it's more like they map something",
     "start": 1026.44,
     "duration": 4.72
   },
   {
-    "text": "stream it&#39;s more like they map something",
+    "text": "to a value between one and five, so it's either on a bunch of overlapping lines.",
     "start": 1028.48,
     "duration": 5.04
   },
   {
-    "text": "to like a value between one and five so",
+    "text": "It's not the best thing to train on.",
     "start": 1031.16,
     "duration": 5.52
   },
   {
-    "text": "it&#39;s either on it&#39;s like it&#39;s a bunch of",
+    "text": "What are the axes there?",
     "start": 1033.52,
     "duration": 6.08
   },
   {
-    "text": "overlapping lines so it&#39;s not the best",
+    "text": "I know you didn't change them.",
     "start": 1036.68,
     "duration": 5.36
   },
   {
-    "text": "thing to to train on and what are the",
+    "text": "Yeah, so the X-axis is their daily",
     "start": 1039.6,
     "duration": 4.84
   },
   {
-    "text": "axes there I know you didn&#39;t change them",
+    "text": "alcohol consumption, so it's between one",
     "start": 1042.04,
     "duration": 5.2
   },
   {
-    "text": "yeah so this xaxis is their daily",
+    "text": "and five, and then the Y-axis is",
     "start": 1044.44,
     "duration": 4.96
   },
   {
-    "text": "alcohol consumption so it&#39;s between one",
+    "text": "their grade in their first period course",
     "start": 1047.24,
     "duration": 5.44
   },
   {
-    "text": "and five uhhuh and then the Y AIS is",
+    "text": "or their first period class.",
     "start": 1049.4,
     "duration": 6.08
   },
   {
-    "text": "their grade in their first period course",
+    "text": "Is that one between one and five",
     "start": 1052.68,
     "duration": 4.88
   },
   {
-    "text": "or their first period class so is that",
+    "text": "shots of alcohol?",
     "start": 1055.48,
     "duration": 4.16
   },
   {
-    "text": "one is that one one between one and five",
+    "text": "We can check the dataset if you",
     "start": 1057.56,
     "duration": 3.8
   },
   {
-    "text": "shots of",
+    "text": "want.",
     "start": 1059.64,
     "duration": 5.96
   },
   {
-    "text": "alcohol we can check the data set if you",
+    "text": "Workday, yeah workday is a numeric value between one and five; one",
     "start": 1061.36,
     "duration": 8.88
   },
   {
-    "text": "want um workday yeah workday altion",
+    "text": "is very low, five is very high.",
     "start": 1065.6,
     "duration": 6.28
   },
   {
-    "text": "numeric value between one and five one",
+    "text": "It doesn't actually give you much more detail than that.",
     "start": 1070.24,
     "duration": 4.04
   },
   {
-    "text": "of very low five is very high it doesn&#39;t",
+    "text": "Yeah, and then this is a linear",
     "start": 1071.88,
     "duration": 6.76
   },
   {
-    "text": "actually give you much more detail than",
+    "text": "regression I trained.",
     "start": 1074.28,
     "duration": 4.36
   },
   {
-    "text": "but yeah and then yeah this is a linear",
+    "text": "It's almost a horizontal line, but you",
     "start": 1079.4,
     "duration": 7.12
   },
   {
-    "text": "regression I trained so I mean it&#39;s",
+    "text": "can see you're slightly better off",
     "start": 1083.84,
     "duration": 5.28
   },
   {
-    "text": "almost a horizontal line but like you",
+    "text": "if you don't consume alcohol and you're",
     "start": 1086.52,
     "duration": 5.48
   },
   {
-    "text": "can see like you&#39;re slightly better off",
+    "text": "slightly worse if you do, but it's not a significant thing.",
     "start": 1089.12,
     "duration": 5.04
   },
   {
-    "text": "if you don&#39;t consume alcohol and you&#39;re",
-    "start": 1092.0,
+    "text": "I guess you can drink as much as you want, really.",
+    "start": 1092,
     "duration": 4.64
   },
   {
-    "text": "slightly worse if you",
+    "text": "Actually, I'll get to it at the",
     "start": 1094.16,
     "duration": 6.2
   },
   {
-    "text": "do but it&#39;s not a significant thing so I",
+    "text": "end.",
     "start": 1096.64,
     "duration": 5.4
   },
   {
-    "text": "guess you can drink as much as you want",
+    "text": "Yeah, so I predicted the value",
     "start": 1100.36,
     "duration": 5.2
   },
   {
-    "text": "really actually I com on there but I&#39;ll",
+    "text": "if you consume the maximum amount",
     "start": 1102.04,
     "duration": 5.56
   },
   {
-    "text": "get to it at the",
+    "text": "of alcohol in a day, and you would get",
     "start": 1105.56,
     "duration": 5.56
   },
   {
-    "text": "end uh um yeah so I predicted the value",
+    "text": "about a 10.",
     "start": 1107.6,
     "duration": 5.52
   },
   {
-    "text": "if you consume like the maximum amount",
+    "text": "I don't know what scale they're",
     "start": 1111.12,
     "duration": 5.08
   },
   {
-    "text": "of alcohol in a day um and you would get",
+    "text": "grading on either, but first period grade is between zero and",
     "start": 1113.12,
     "duration": 5.16
   },
   {
-    "text": "about 10 I don&#39;t know what scale they&#39;re",
+    "text": "20, so you get about a 50 if you drink",
     "start": 1116.2,
     "duration": 4.76
   },
   {
-    "text": "grading on either so I don&#39;t know what I",
+    "text": "every day.",
     "start": 1118.28,
     "duration": 4.8
   },
   {
-    "text": "guess I",
+    "text": "Yeah, that's about it for this plot.",
     "start": 1120.96,
     "duration": 6.08
   },
   {
-    "text": "can first period grade between zero and",
+    "text": "I don't really understand what this says.",
     "start": 1123.08,
     "duration": 6.68
   },
   {
-    "text": "20 so you get about a 50 if you drink",
+    "text": "I think the video is saying that this orange line was a",
     "start": 1127.04,
     "duration": 4.56
   },
   {
-    "text": "every day",
+    "text": "predicted value and then this was the",
     "start": 1129.76,
     "duration": 3.88
   },
   {
-    "text": "apparently",
+    "text": "actual value or something.",
     "start": 1131.6,
     "duration": 4.64
   },
   {
-    "text": "um yeah I",
+    "text": "But yeah, I guess that's",
     "start": 1133.64,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "mean that&#39;s about it this plot",
+    "text": "about it.",
     "start": 1136.24,
     "duration": 5.84
   },
   {
-    "text": "I don&#39;t really I don&#39;t I don&#39;t really",
+    "text": "Well, I guess what I learned",
     "start": 1139.64,
     "duration": 4.8
   },
   {
-    "text": "understand what this says um I think the",
+    "text": "here is that the structure of the data that you're using",
     "start": 1142.08,
     "duration": 4.52
   },
   {
-    "text": "video saying that this orange line was a",
+    "text": "to train the model is very important because",
     "start": 1144.44,
     "duration": 4.32
   },
   {
-    "text": "predicted value and then this was the",
+    "text": "I don't think training a model on",
     "start": 1146.6,
     "duration": 4.32
   },
   {
-    "text": "actual Valu or",
+    "text": "categorical data or data that overlaps a lot is a really",
     "start": 1148.76,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "something um but yeah I guess that&#39;s",
+    "text": "useful form or really useful thing to do",
     "start": 1150.92,
     "duration": 4.84
   },
   {
-    "text": "about it well I guess what I learned",
+    "text": "when you're trying linear regression",
     "start": 1153.76,
     "duration": 6.08
   },
   {
-    "text": "here is like data like the I guess the",
+    "text": "because you're not really getting",
     "start": 1155.76,
     "duration": 5.8
   },
   {
-    "text": "structure of the data that you&#39;re using",
+    "text": "",
     "start": 1159.84,
     "duration": 3.48
   },
   {
-    "text": "to train the model is very important cuz",
+    "text": "",
     "start": 1161.56,
     "duration": 4.24
   },
   {
-    "text": "like I don&#39;t think training a model on",
+    "text": "",
     "start": 1163.32,
     "duration": 4.48
   },
   {
-    "text": "categorical data or like data that kind",
+    "text": "",
     "start": 1165.8,
     "duration": 5.36
   },
   {
-    "text": "of overlaps a lot is a really like",
+    "text": "",
     "start": 1167.8,
     "duration": 5.96
   },
   {
-    "text": "useful form or really useful thing to do",
+    "text": "",
     "start": 1171.16,
     "duration": 4.28
   },
   {
-    "text": "when you&#39;re trying leing regression",
+    "text": "",
     "start": 1173.76,
     "duration": 3.24
   },
   {
-    "text": "because it&#39;s like you&#39;re not really",
+    "text": "",
     "start": 1175.44,
     "duration": 4.36
   },
   {
-    "text": "getting a lot of insight um that&#39;s just",
-    "start": 1177.0,
+    "text": "Getting a lot of insight—that's just my intuition.",
+    "start": 1177,
     "duration": 4.72
   },
   {
-    "text": "my kind of",
+    "text": "",
     "start": 1179.8,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "intuition good point yeah that makes",
+    "text": "Good point, yeah, that makes sense.",
     "start": 1181.72,
     "duration": 6.4
   },
   {
-    "text": "sense uh because the categories as you",
+    "text": "Because the categories, as you can see, for alcohol consumption of grade one, the quantity one, you have a wide distribution of the grades, and then for two it is also distributed across.",
     "start": 1184.8,
     "duration": 6.84
   },
   {
-    "text": "can see for alcohol consumption of grade",
+    "text": "",
     "start": 1188.12,
     "duration": 7.12
   },
   {
-    "text": "one of one the quantity one you have a",
+    "text": "",
     "start": 1191.64,
     "duration": 5.88
   },
   {
-    "text": "wide distribution of the grades and then",
+    "text": "",
     "start": 1195.24,
     "duration": 4.24
   },
   {
-    "text": "for two it is also",
+    "text": "",
     "start": 1197.52,
     "duration": 5.24
   },
   {
-    "text": "distribute it across um which is simply",
+    "text": "Which simply means that even if someone is consuming alcohol of one, two, three, four, or five, your grades are fluctuating across the whole axis.",
     "start": 1199.48,
     "duration": 6.24
   },
   {
-    "text": "means that even if someone is consuming",
+    "text": "",
     "start": 1202.76,
     "duration": 6.52
   },
   {
-    "text": "alcohol of one two three or four or five",
+    "text": "",
     "start": 1205.72,
     "duration": 6.08
   },
   {
-    "text": "your grades are fluctuating across the",
+    "text": "",
     "start": 1209.28,
     "duration": 5.96
   },
   {
-    "text": "whole AIS so it&#39;s not a it&#39;s not telling",
+    "text": "So it's not telling you something very significant, but although I see a downward trend—which is a slight downward trend—the regression line is picking on that.",
     "start": 1211.8,
     "duration": 6.48
   },
   {
-    "text": "you something very significant but",
+    "text": "",
     "start": 1215.24,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "although I see a downward Trend which is",
+    "text": "",
     "start": 1218.28,
     "duration": 4.84
   },
   {
-    "text": "kind of a a slight downward Trend which",
+    "text": "",
     "start": 1221.24,
     "duration": 3.8
   },
   {
-    "text": "is kind of ination line is kind of",
+    "text": "",
     "start": 1223.12,
     "duration": 5.72
   },
   {
-    "text": "picking on that so",
+    "text": "Yeah, that's okay, I guess.",
     "start": 1225.04,
     "duration": 6.72
   },
   {
-    "text": "yeah that that&#39;s okay I guess that that",
+    "text": "",
     "start": 1228.84,
     "duration": 5.56
   },
   {
-    "text": "works uh the the plot that you are",
+    "text": "The plot that you are confused about, let me try to explain it once more.",
     "start": 1231.76,
     "duration": 4.88
   },
   {
-    "text": "confused about let me try to explain it",
+    "text": "",
     "start": 1234.4,
     "duration": 6.4
   },
   {
-    "text": "once more so you get um on the test set",
+    "text": "On the test set you have some true values that you have set aside, and then on the features—the features you have used—the model predicted something for those as well.",
     "start": 1236.64,
-    "duration": 7.0
+    "duration": 7
   },
   {
-    "text": "you have some True Values",
+    "text": "",
     "start": 1240.8,
     "duration": 6.08
   },
   {
-    "text": "um which you have set aside and then on",
+    "text": "",
     "start": 1243.64,
     "duration": 5.52
   },
   {
-    "text": "the and then on the features like the",
+    "text": "",
     "start": 1246.88,
     "duration": 3.84
   },
   {
-    "text": "features you have used and the model",
+    "text": "You have the true values for them, and then the model predicted values for them.",
     "start": 1249.16,
     "duration": 3.8
   },
   {
-    "text": "predicted something for those as well so",
+    "text": "",
     "start": 1250.72,
     "duration": 3.92
   },
   {
-    "text": "you have the True Values for them and",
+    "text": "",
     "start": 1252.96,
     "duration": 3.96
   },
   {
-    "text": "then the model predicted values for them",
+    "text": "",
     "start": 1254.64,
     "duration": 5.76
   },
   {
-    "text": "if you so one way to computed um to to",
+    "text": "One way to compute how the model is performing is to compute a numeric value—RMSE, MSE, et cetera—which can give you a quantitative analysis.",
     "start": 1256.92,
     "duration": 5.36
   },
   {
-    "text": "see how the model is performing is to",
+    "text": "",
     "start": 1260.4,
     "duration": 5.24
   },
   {
-    "text": "compute a numeric value RMS C Ms C that",
+    "text": "",
     "start": 1262.28,
     "duration": 5.4
   },
   {
-    "text": "kind of things which can give you a",
+    "text": "",
     "start": 1265.64,
     "duration": 5.24
   },
   {
-    "text": "quantitative analysis but if you want to",
+    "text": "",
     "start": 1267.68,
     "duration": 6.64
   },
   {
-    "text": "see uh visually if the line is if the",
+    "text": "But if you want to see visually if the prediction, if the true values are being followed by the linear regression and how closely it follows those, a good way to plot is a line chart.",
     "start": 1270.88,
     "duration": 5.84
   },
   {
-    "text": "prediction um if the True Values are",
+    "text": "",
     "start": 1274.32,
     "duration": 4.36
   },
   {
-    "text": "being followed by the linear regression",
+    "text": "",
     "start": 1276.72,
     "duration": 5.4
   },
   {
-    "text": "like how closely it follows those uh a",
+    "text": "",
     "start": 1278.68,
     "duration": 6.28
   },
   {
-    "text": "good way to plot is a line chart now if",
+    "text": "",
     "start": 1282.12,
     "duration": 5.56
   },
   {
-    "text": "you try to plot a line chart without",
+    "text": "Now if you try to plot a line chart without sorting the values, the values would be fluctuating a lot, even though you can do that.",
     "start": 1284.96,
     "duration": 5.72
   },
   {
-    "text": "sorting the values the the values would",
+    "text": "",
     "start": 1287.68,
     "duration": 4.88
   },
   {
-    "text": "be fluctuating a lot even though you can",
+    "text": "",
     "start": 1290.68,
     "duration": 4.44
   },
   {
-    "text": "do that the the the linear regression",
+    "text": "The linear regression line would also be correspondingly fluctuating with it, but what I was doing was, if I sorted them, there would be a rising trend, and then I was trying to see if the linear regression line is following that.",
     "start": 1292.56,
     "duration": 4.56
   },
   {
-    "text": "line would also be correspondingly",
+    "text": "",
     "start": 1295.12,
     "duration": 4.88
   },
   {
-    "text": "fluctuating with it uh but what I was",
+    "text": "",
     "start": 1297.12,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "doing just was that if I sought them",
-    "start": 1300.0,
+    "text": "",
+    "start": 1300,
     "duration": 6.08
   },
   {
-    "text": "there would be a rising Trend and then I",
+    "text": "",
     "start": 1303.12,
     "duration": 5.48
   },
   {
-    "text": "was kind of trying to see if the linear",
+    "text": "",
     "start": 1306.08,
     "duration": 5.64
   },
   {
-    "text": "regression line is following that thing",
+    "text": "",
     "start": 1308.6,
     "duration": 4.64
   },
   {
-    "text": "the important thing about this chart is",
+    "text": "The important thing about this chart is that the x-axis doesn't matter—this could be in any order.",
     "start": 1311.72,
     "duration": 3.88
   },
   {
-    "text": "that the X like the x axis doesn&#39;t",
+    "text": "",
     "start": 1313.24,
     "duration": 4.88
   },
   {
-    "text": "matter like this could be in any order",
+    "text": "",
     "start": 1315.6,
     "duration": 3.52
   },
   {
-    "text": "it&#39;s",
+    "text": "",
     "start": 1318.12,
     "duration": 2.92
   },
   {
-    "text": "just let&#39;s just see the difference",
+    "text": "It's just to see the difference between the two lines at each point.",
     "start": 1319.12,
     "duration": 5.84
   },
   {
-    "text": "between the two lines at each point so",
+    "text": "",
     "start": 1321.04,
     "duration": 7.32
   },
   {
-    "text": "if it was a perfect prediction they the",
+    "text": "So if it was a perfect prediction, one line would be sitting on top of the other one.",
     "start": 1324.96,
     "duration": 4.84
   },
   {
-    "text": "the one line would be sitting on top of",
+    "text": "",
     "start": 1328.36,
     "duration": 6.2
   },
   {
-    "text": "the other one yeah I see did anyone else",
+    "text": "Yeah, I see. Did anyone else use the same academic dataset as well?",
     "start": 1329.8,
     "duration": 9.08
   },
   {
-    "text": "use the same academic data set as",
+    "text": "",
     "start": 1334.56,
     "duration": 4.32
   },
   {
-    "text": "well um Nissan you you Ed the same data",
+    "text": "Nissan, you used the same data.",
     "start": 1339.52,
     "duration": 5.48
   },
   {
-    "text": "set too right",
+    "text": "Set too right.",
     "start": 1343.04,
     "duration": 6.32
   },
   {
-    "text": "yeah um so maybe we can um look at yours",
-    "start": 1345.0,
+    "text": "Yeah, so maybe we can look at yours next.",
+    "start": 1345,
     "duration": 5.76
   },
   {
-    "text": "next actually bran there&#39;s one more",
+    "text": "Actually, Bran, there's one more thing I wanted to—can you share that again?",
     "start": 1349.36,
     "duration": 3.12
   },
   {
-    "text": "thing I wanted to can you uh share that",
+    "text": "",
     "start": 1350.76,
     "duration": 5.64
   },
   {
-    "text": "again just one more I just one comment",
+    "text": "Just one more comment on your graph.",
     "start": 1352.48,
     "duration": 7.44
   },
   {
-    "text": "um on your on your graph so there&#39;s",
+    "text": "So there's actually a famous web comic called XKCD.",
     "start": 1356.4,
     "duration": 6.36
   },
   {
-    "text": "actually",
+    "text": "",
     "start": 1359.92,
     "duration": 6.52
   },
   {
-    "text": "um uh yeah let&#39;s look at the the actual",
+    "text": "I don't know if anyone's read it before, but one of the comics explains that when you're programming, a little bit of alcohol makes you a better programmer up to a certain point, and then it's actually a non-linear relationship where a little bit of alcohol helps and then a lot more makes you a lot worse.",
     "start": 1362.76,
     "duration": 6.32
   },
   {
-    "text": "regression graph yeah so there&#39;s",
+    "text": "",
     "start": 1366.44,
     "duration": 5.52
   },
   {
-    "text": "actually this is not this is just a fun",
+    "text": "Actually, I think this graph confirms that because you see that you're getting better performance after a couple of drinks, and then after more, there's degradation.",
     "start": 1369.08,
     "duration": 5.36
   },
   {
-    "text": "comment but there&#39;s actually a famous um",
+    "text": "",
     "start": 1371.96,
     "duration": 4.4
   },
   {
-    "text": "web comic called",
+    "text": "",
     "start": 1374.44,
     "duration": 4.08
   },
   {
-    "text": "XKCD um I don&#39;t know if anyone&#39;s right",
+    "text": "",
     "start": 1376.36,
     "duration": 3.2
   },
   {
-    "text": "read it",
+    "text": "",
     "start": 1378.52,
     "duration": 5.16
   },
   {
-    "text": "before um but one of the comics explains",
+    "text": "",
     "start": 1379.56,
     "duration": 6.52
   },
   {
-    "text": "that when you&#39;re programming um a little",
+    "text": "",
     "start": 1383.68,
     "duration": 4.8
   },
   {
-    "text": "bit of alcohol makes you a better",
+    "text": "",
     "start": 1386.08,
     "duration": 4.92
   },
   {
-    "text": "programmer up to a certain point and",
+    "text": "",
     "start": 1388.48,
     "duration": 6.16
   },
   {
-    "text": "then it&#39;s so it&#39;s actually a a a",
-    "start": 1391.0,
+    "text": "",
+    "start": 1391,
     "duration": 6.8
   },
   {
-    "text": "non-linear um where a little bit of",
+    "text": "",
     "start": 1394.64,
     "duration": 5.04
   },
   {
-    "text": "alcohol helps and then a lot more makes",
+    "text": "",
     "start": 1397.8,
     "duration": 4.4
   },
   {
-    "text": "you a lot worse so actually I think this",
+    "text": "",
     "start": 1399.68,
     "duration": 5.12
   },
   {
-    "text": "graph actually confirms that because you",
+    "text": "",
     "start": 1402.2,
     "duration": 5.2
   },
   {
-    "text": "see that you&#39;re actually getting better",
+    "text": "",
     "start": 1404.8,
     "duration": 5.52
   },
   {
-    "text": "performance after a couple of drinks and",
+    "text": "",
     "start": 1407.4,
     "duration": 6.48
   },
   {
-    "text": "then after you know more further there&#39;s",
+    "text": "",
     "start": 1410.32,
     "duration": 6.52
   },
   {
-    "text": "degradation so that&#39;s could be we don&#39;t",
+    "text": "That could be it, but we don't really have the control case here—we don't have a student who doesn't drink at all.",
     "start": 1413.88,
     "duration": 4.2
   },
   {
-    "text": "really have the we don&#39;t have the",
+    "text": "",
     "start": 1416.84,
     "duration": 2.84
   },
   {
-    "text": "control case here like we don&#39;t have a",
+    "text": "",
     "start": 1418.08,
     "duration": 3.36
   },
   {
-    "text": "student who doesn&#39;t drink at all like",
+    "text": "",
     "start": 1419.68,
     "duration": 3.88
   },
   {
-    "text": "it&#39;s all like some all them drink a",
+    "text": "It's like all of them drink at least a little bit.",
     "start": 1421.44,
     "duration": 3.72
   },
   {
-    "text": "little at least a little bit we can&#39;t",
+    "text": "",
     "start": 1423.56,
     "duration": 4.8
   },
   {
-    "text": "really like normal performance that&#39;s a",
+    "text": "We can't really compare to normal performance.",
     "start": 1425.16,
     "duration": 4.96
   },
   {
-    "text": "good",
+    "text": "That's a good point.",
     "start": 1428.36,
     "duration": 4.88
   },
   {
-    "text": "point anyways um that&#39;s that&#39;s all I",
+    "text": "Anyway, that's all I wanted to point out about this graph, and maybe we could—maybe, Nan, if we just want to for a few minutes, you could show where you got stuck.",
     "start": 1430.12,
     "duration": 6.4
   },
   {
-    "text": "wanted to point out about this graph and",
+    "text": "",
     "start": 1433.24,
     "duration": 6.96
   },
   {
-    "text": "maybe we could maybe Nan if um if we",
+    "text": "",
     "start": 1436.52,
     "duration": 5.2
   },
   {
-    "text": "just want to for a few minutes you could",
+    "text": "",
     "start": 1440.2,
     "duration": 3.72
   },
   {
-    "text": "show your you could show where you got",
+    "text": "",
     "start": 1441.72,
     "duration": 6.4
   },
   {
-    "text": "stuck um and since Braden has done this",
+    "text": "And since Braden has done this one as well, maybe he can get you back on the right track.",
     "start": 1443.92,
     "duration": 9.68
   },
   {
-    "text": "one as well maybe he can he can show",
+    "text": "",
     "start": 1448.12,
     "duration": 9.44
   },
   {
-    "text": "you get you back on the right",
+    "text": "",
     "start": 1453.6,
     "duration": 3.96
   },
   {
-    "text": "track ookie doie",
+    "text": "Okay.",
     "start": 1462.64,
     "duration": 8.2
   },
   {
-    "text": "Okay uh so I was doing uh what um Felix",
+    "text": "So I was doing what Felix was doing, trying to extract it from the drive.",
     "start": 1466.16,
     "duration": 6.84
   },
   {
-    "text": "was doing trying to extract it from the",
+    "text": "",
     "start": 1470.84,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "drive mhm",
-    "start": 1473.0,
-    "duration": 6.0
+    "text": "And not—well, I'm not really sure how.",
+    "start": 1473,
+    "duration": 6
   },
   {
-    "text": "and not well I&#39;m not really sure how how",
+    "text": "",
     "start": 1475.84,
     "duration": 7.64
   },
   {
-    "text": "did you get to pet do what",
-    "start": 1479.0,
+    "text": "How did you get to set up what is for that?",
+    "start": 1479,
     "duration": 4.48
   },
   {
-    "text": "is for thaten how did you Bren how did",
+    "text": "",
     "start": 1483.76,
     "duration": 5.24
   },
   {
-    "text": "you import the data into the into the",
-    "start": 1487.0,
+    "text": "How did you, Bren, how did you import the data into the notebook?",
+    "start": 1487,
     "duration": 6.12
   },
   {
-    "text": "notebook so if you go to the like the",
-    "start": 1489.0,
-    "duration": 7.0
+    "text": "",
+    "start": 1489,
+    "duration": 7
   },
   {
-    "text": "data set like the actual link that James",
+    "text": "So if you go to the dataset like the actual link that James put in the GitHub, okay?",
     "start": 1493.12,
     "duration": 6.08
   },
   {
-    "text": "put in the the GitHub okay so I think",
-    "start": 1496.0,
+    "text": "",
+    "start": 1496,
     "duration": 4.6
   },
   {
-    "text": "bradden&#39;s suggesting an entirely",
+    "text": "So I think Braden's suggesting an entirely different way of doing it.",
     "start": 1499.2,
     "duration": 3.4
   },
   {
-    "text": "different way of doing it yeah like I I",
+    "text": "",
     "start": 1500.6,
     "duration": 3.24
   },
   {
-    "text": "didn&#39;t I didn&#39;t bother with like",
+    "text": "Yeah, I didn't bother with downloading it.",
     "start": 1502.6,
     "duration": 2.96
   },
   {
-    "text": "downloading",
+    "text": "",
     "start": 1503.84,
     "duration": 5.32
   },
   {
-    "text": "it you just there a python package that",
+    "text": "You just—there's a Python package that has the dataset in it, and then you can import the Python package and then",
     "start": 1505.56,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "has the data set in it and then you can",
+    "text": "",
     "start": 1509.16,
     "duration": 2.96
   },
   {
-    "text": "import the python package and then",
+    "text": "",
     "start": 1510.56,
     "duration": 3.48
   },
   {
-    "text": "basically use the data set from there",
+    "text": "Use the data set from there.",
     "start": 1512.12,
     "duration": 6.52
   },
   {
-    "text": "that&#39;s what I sense oh okay so oh you",
+    "text": "That's what I sense.",
     "start": 1514.04,
     "duration": 8.36
   },
   {
-    "text": "Lally just yeah I see yeah you just run",
+    "text": "Okay, so you just run that you run both those lines of code or both those scripts, and then you can use a data set from there.",
     "start": 1518.64,
     "duration": 5.92
   },
   {
-    "text": "that you run both those lines of code or",
+    "text": "",
     "start": 1522.4,
     "duration": 4.16
   },
   {
-    "text": "both those scripts and then you can use",
+    "text": "",
     "start": 1524.56,
     "duration": 4.32
   },
   {
-    "text": "a data set from there",
+    "text": "",
     "start": 1526.56,
     "duration": 7.44
   },
   {
-    "text": "okay which um which variables did you",
+    "text": "Okay, which variables did you have specific variables that you wanted to look into?",
     "start": 1528.88,
     "duration": 6.6
   },
   {
-    "text": "have specific variables that you wanted",
-    "start": 1534.0,
+    "text": "",
+    "start": 1534,
     "duration": 3.8
   },
   {
-    "text": "to look",
+    "text": "",
     "start": 1535.48,
     "duration": 2.32
   },
   {
-    "text": "into me yeah or you or you&#39;re still or",
+    "text": "Me, yeah, or you're still trying to get the data imported?",
     "start": 1537.92,
     "duration": 4.8
   },
   {
-    "text": "you&#39;re just trying to get the data",
+    "text": "",
     "start": 1541.52,
     "duration": 3.8
   },
   {
-    "text": "imported I was trying to I I got the",
+    "text": "I was trying to get the code. I'm pretty sure this one is the one that was working, and then I got the head and all that stuff, but then I deleted a few things because I thought it wasn't working because of that and put it back in.",
     "start": 1542.72,
     "duration": 4.64
   },
   {
-    "text": "code I&#39;m pretty sure like this this one",
+    "text": "",
     "start": 1545.32,
     "duration": 3.56
   },
   {
-    "text": "is the one that was",
+    "text": "",
     "start": 1547.36,
     "duration": 4.36
   },
   {
-    "text": "working and then I got the head and all",
+    "text": "",
     "start": 1548.88,
     "duration": 5.76
   },
   {
-    "text": "that stuff but then I deleted a few",
+    "text": "",
     "start": 1551.72,
     "duration": 4.4
   },
   {
-    "text": "stuff because I thought it was not",
+    "text": "",
     "start": 1554.64,
     "duration": 4.68
   },
   {
-    "text": "working because of that and was repac it",
+    "text": "",
     "start": 1556.12,
     "duration": 4.96
   },
   {
-    "text": "back in which features were you",
+    "text": "Which features were you interested in in the data?",
     "start": 1559.32,
     "duration": 3.36
   },
   {
-    "text": "interested in in the",
+    "text": "",
     "start": 1561.08,
     "duration": 4.64
   },
   {
-    "text": "data uh I was doing the head the tail",
+    "text": "I was doing the head, the tail, and then I did the first 10, and then I did the linear regression.",
     "start": 1562.68,
     "duration": 5.12
   },
   {
-    "text": "and then I did the first 10 and then I",
+    "text": "",
     "start": 1565.72,
     "duration": 5.44
   },
   {
-    "text": "did the linear aggression okay uh cool",
+    "text": "",
     "start": 1567.8,
     "duration": 7.44
   },
   {
-    "text": "yeah so see if you can get that um fixed",
+    "text": "Okay, cool, yeah, so see if you can get that fixed in yours.",
     "start": 1571.16,
     "duration": 8.24
   },
   {
-    "text": "in yours yeah um let me know like we can",
+    "text": "Yeah, let me know, we can just have a separate call and I'll help you to make sure that it's good.",
     "start": 1575.24,
     "duration": 5.64
   },
   {
-    "text": "we can just have a call a separate call",
+    "text": "",
     "start": 1579.4,
     "duration": 3.32
   },
   {
-    "text": "and I&#39;ll I&#39;ll help you to make sure that",
+    "text": "",
     "start": 1580.88,
     "duration": 5.6
   },
   {
-    "text": "it&#39;s U maybe James I&#39;ll I&#39;ll uh talk",
+    "text": "Maybe James, I'll talk about it at the end if that's okay.",
     "start": 1582.72,
     "duration": 6.28
   },
   {
-    "text": "about it at the end uh",
+    "text": "",
     "start": 1586.48,
     "duration": 6.16
   },
   {
-    "text": "um if if that&#39;s okay I&#39;ll show you how",
-    "start": 1589.0,
+    "text": "I'll show you how to fix this: there's just a slight problem—the file is actually zipped.",
+    "start": 1589,
     "duration": 7.2
   },
   {
-    "text": "to this is just a slight problem that",
+    "text": "",
     "start": 1592.64,
     "duration": 5.2
   },
   {
-    "text": "nant is doing the file is actually",
+    "text": "",
     "start": 1596.2,
     "duration": 3.6
   },
   {
-    "text": "zipped you have to unzip it you can do",
+    "text": "You have to unzip it by running a Linux command in the terminal, just preceding it with an exclamation sign.",
     "start": 1597.84,
     "duration": 4.4
   },
   {
-    "text": "that uh by running a Linux command in",
+    "text": "",
     "start": 1599.8,
     "duration": 5.4
   },
   {
-    "text": "the terminal yeah just proceeding it",
+    "text": "",
     "start": 1602.24,
     "duration": 5.8
   },
   {
-    "text": "with an exclamation sign so cab is",
+    "text": "",
     "start": 1605.2,
     "duration": 4.6
   },
   {
-    "text": "providing you jupyter notebook layout",
+    "text": "Colab is providing you a Jupyter Notebook layout—Jupyter Notebook not just for Python code, but can also understand Linux or bash commands.",
     "start": 1608.04,
     "duration": 4.28
   },
   {
-    "text": "jupyter notebook uh not just FR python",
+    "text": "",
     "start": 1609.8,
     "duration": 5.6
   },
   {
-    "text": "coded can also understand Linux or B",
+    "text": "",
     "start": 1612.32,
     "duration": 5.08
   },
   {
-    "text": "commands all you need to do is to just",
+    "text": "All you need to do is just proceed with the exclamation sign, and that tells it it's a bash command, and you can unzip files using it.",
     "start": 1615.4,
     "duration": 4.08
   },
   {
-    "text": "proceed with the exclamation sign and",
+    "text": "",
     "start": 1617.4,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "that knows that it&#39;s a b command and you",
+    "text": "",
     "start": 1619.48,
     "duration": 5.52
   },
   {
-    "text": "can unzip files using it um and then",
+    "text": "",
     "start": 1622.4,
-    "duration": 4.0
+    "duration": 4
   },
   {
-    "text": "make use of",
-    "start": 1625.0,
-    "duration": 5.0
+    "text": "",
+    "start": 1625,
+    "duration": 5
   },
   {
-    "text": "it yeah so there&#39;s a I think today we&#39;ve",
+    "text": "So there's a—I think today we've already gone over three different ways to import data into Colab, and basically anyone who got stuck in the past few days was texting me, and they had this issue.",
     "start": 1626.4,
     "duration": 5.2
   },
   {
-    "text": "already gone over three different ways",
-    "start": 1630.0,
+    "text": "",
+    "start": 1630,
     "duration": 4.84
   },
   {
-    "text": "to import data into collab and basically",
+    "text": "",
     "start": 1631.6,
     "duration": 4.88
   },
   {
-    "text": "anyone who got stuck in the past few",
+    "text": "",
     "start": 1634.84,
     "duration": 6.24
   },
   {
-    "text": "days was texting me had to this issue so",
+    "text": "",
     "start": 1636.48,
     "duration": 5.56
   },
   {
-    "text": "one of the reasons why we&#39;re doing",
+    "text": "So one of the reasons why we're doing something simple for the first project is so everyone gets familiar with data processing, which is the most boring part but always ends up taking more time.",
     "start": 1641.08,
     "duration": 2.68
   },
   {
-    "text": "something simple for the first project",
+    "text": "",
     "start": 1642.04,
     "duration": 4.92
   },
   {
-    "text": "so everyone gets familiar with data",
+    "text": "",
     "start": 1643.76,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "processing which is the most boring part",
+    "text": "",
     "start": 1646.96,
     "duration": 4.76
   },
   {
-    "text": "but then always ends up more",
+    "text": "",
     "start": 1648.76,
     "duration": 8.44
   },
   {
-    "text": "time yeah so okay",
+    "text": "",
     "start": 1651.72,
     "duration": 8.44
   },
   {
-    "text": "um um Soul which uh which data set did",
+    "text": "Okay, so which data set did you use?",
     "start": 1657.2,
     "duration": 5.16
   },
   {
-    "text": "you",
+    "text": "",
     "start": 1660.16,
     "duration": 2.2
   },
   {
-    "text": "use so I cannot hear",
+    "text": "I cannot hear you.",
     "start": 1664.12,
     "duration": 6.04
   },
   {
-    "text": "you okay",
+    "text": "",
     "start": 1667.36,
     "duration": 7.32
   },
   {
-    "text": "now now can you hear me yeah okay so I",
+    "text": "Okay, now can you hear me? Yeah, okay, so",
     "start": 1670.16,
     "duration": 6.08
   },
   {
-    "text": "use the",
+    "text": "Use the diabetes",
     "start": 1674.68,
     "duration": 7.48
   },
   {
-    "text": "diabetes diabetes one yeah um however I",
+    "text": "dataset. Yeah, however, I",
     "start": 1676.24,
     "duration": 7.88
   },
   {
-    "text": "I got a stock at the beginning with the",
+    "text": "got stuck at the beginning with the",
     "start": 1682.16,
     "duration": 5.28
   },
   {
-    "text": "import of the of the data set I was very",
+    "text": "import of the dataset. I was very",
     "start": 1684.12,
     "duration": 5.84
   },
   {
-    "text": "very late yesterday I know it&#39;s funny",
+    "text": "very late yesterday. I know it's funny.",
     "start": 1687.44,
     "duration": 7.04
   },
   {
-    "text": "it&#39;s funny because I was trying to um to",
+    "text": "It's funny because I was trying to",
     "start": 1689.96,
     "duration": 7.24
   },
   {
-    "text": "I ask Chad GPT to",
+    "text": "ask ChatGPT to",
     "start": 1694.48,
     "duration": 5.72
   },
   {
-    "text": "unip uh the file and then he asked me",
+    "text": "unzip the file, and then it asked me",
     "start": 1697.2,
     "duration": 4.24
   },
   {
-    "text": "like hey would you like to perform",
+    "text": "if I'd like to perform",
     "start": 1700.2,
     "duration": 4.48
   },
   {
-    "text": "linear regression to it I was like well",
+    "text": "linear regression on it. I was like, well,",
     "start": 1701.44,
     "duration": 6.72
   },
   {
-    "text": "yeah let&#39;s test it out and then and then",
+    "text": "yeah, let's test it out. And then",
     "start": 1704.68,
     "duration": 6.8
   },
   {
-    "text": "at the end I end up uh honestly I was",
+    "text": "at the end I ended up honestly",
     "start": 1708.16,
     "duration": 6.4
   },
   {
-    "text": "like I can it&#39;s very late I can just get",
+    "text": "saying, it's very late, I can just get",
     "start": 1711.48,
     "duration": 6.52
   },
   {
-    "text": "until here I can use CH GPT to help me",
+    "text": "until here. I can use ChatGPT to help me",
     "start": 1714.56,
     "duration": 5.12
   },
   {
-    "text": "out to work the linear regression",
-    "start": 1718.0,
+    "text": "work on the linear regression",
+    "start": 1718,
     "duration": 3.16
   },
   {
-    "text": "because what I was interesting is to",
+    "text": "because what I was interested in is to",
     "start": 1719.68,
     "duration": 4.2
   },
   {
-    "text": "find which is the correlation that was",
+    "text": "find which correlations were",
     "start": 1721.16,
     "duration": 5.04
   },
@@ -3090,3167 +3090,3167 @@
     "duration": 4.36
   },
   {
-    "text": "are taking into account all the all the",
+    "text": "take into account all the features. Right, because normally what is",
     "start": 1726.2,
     "duration": 4.4
   },
   {
-    "text": "features right because normally what is",
+    "text": "very obvious is that higher",
     "start": 1728.24,
     "duration": 5.2
   },
   {
-    "text": "very obvious is that glucose uh higher",
+    "text": "glucose levels make it more probable that",
     "start": 1730.6,
     "duration": 5.6
   },
   {
-    "text": "the level of glucose more probable that",
+    "text": "you're going to have diabetes. For",
     "start": 1733.44,
     "duration": 4.2
   },
   {
-    "text": "you&#39;re going to have diabetes for",
+    "text": "example,",
     "start": 1736.2,
     "duration": 2.44
   },
   {
-    "text": "example",
+    "text": "140 people out of",
     "start": 1737.64,
     "duration": 2.92
   },
   {
-    "text": "140 people out of",
+    "text": "192 that had high glucose had",
     "start": 1738.64,
     "duration": 4.92
   },
   {
-    "text": "192 that had high glucose they had",
+    "text": "diabetes. However, when you take into",
     "start": 1740.56,
     "duration": 5.12
   },
   {
-    "text": "diabetes however when you take into",
+    "text": "account",
     "start": 1743.56,
     "duration": 5.6
   },
   {
-    "text": "account huh do you have a chart ER yeah",
+    "text": "other factors. Do you have a chart? Yeah,",
     "start": 1745.68,
     "duration": 6.68
   },
   {
-    "text": "I was working into into it give me give",
+    "text": "I was working on it. Give me a",
     "start": 1749.16,
     "duration": 4.04
   },
   {
-    "text": "me a",
+    "text": "second. Let me link it.",
     "start": 1752.36,
     "duration": 5.8
   },
   {
-    "text": "second let me rink it",
+    "text": "So you got through it",
     "start": 1753.2,
     "duration": 7.44
   },
   {
-    "text": "uh so you got through you got through it",
+    "text": "using ChatGPT's code interpreter. Is",
     "start": 1758.16,
     "duration": 4.8
   },
   {
-    "text": "using uh chat gpt&#39;s code interpreter is",
+    "text": "that right? Yeah, it's a bit weird because",
     "start": 1760.64,
     "duration": 5.72
   },
   {
-    "text": "that right yeah it&#39;s a bit weird because",
+    "text": "sometimes it says I cannot do anything,",
     "start": 1762.96,
     "duration": 5.36
   },
   {
-    "text": "sometimes it says I cannot do anything",
+    "text": "and then another time it says yeah, of course.",
     "start": 1766.36,
     "duration": 3.64
   },
   {
-    "text": "and then another 10 say yeah of course",
+    "text": "But let's see if someone",
     "start": 1768.32,
-    "duration": 5.0
-  },
-  {
-    "text": "it is but let&#39;s see let&#39;s see if Soul",
-    "start": 1770.0,
-    "duration": 5.48
+    "duration": 5
   },
   {
     "text": "can get through the whole course without",
+    "start": 1770,
+    "duration": 5.48
+  },
+  {
+    "text": "writing a single line",
     "start": 1773.32,
     "duration": 4.2
   },
   {
-    "text": "writing a single line",
+    "text": "of code. I'm not proud of it, but",
     "start": 1775.48,
     "duration": 6.12
   },
   {
-    "text": "of I I&#39;m I&#39;m not proud proud of it but",
+    "text": "anyway, let me share the",
     "start": 1777.52,
     "duration": 6.72
   },
   {
-    "text": "anyway let me share the",
+    "text": "screen.",
     "start": 1781.6,
     "duration": 4.4
   },
   {
-    "text": "screen",
+    "text": "Let me know",
     "start": 1784.24,
     "duration": 6.12
   },
   {
-    "text": "um let&#39;s see let me know",
-    "start": 1786.0,
+    "text": "when you can see it. Better? Yeah, you can see. Okay, so",
+    "start": 1786,
     "duration": 7.08
   },
   {
-    "text": "when let me let me know when you can see",
+    "text": "I was analyzing this heatmap. Yeah, and then",
     "start": 1790.36,
     "duration": 7.2
   },
   {
-    "text": "it better yeah you can see okay so okay",
+    "text": "I was noticing which were the main",
     "start": 1793.08,
     "duration": 8.32
   },
   {
-    "text": "I I was like uh",
+    "text": "features. And it caught",
     "start": 1797.56,
     "duration": 8.44
   },
   {
-    "text": "analyzing this hit map yeah and then I I",
+    "text": "my attention: diabetes pedigree function,",
     "start": 1801.4,
     "duration": 6.76
   },
   {
-    "text": "was noticing like which were the main",
-    "start": 1806.0,
+    "text": "which is basically genetic inheritance",
+    "start": 1806,
     "duration": 6.68
   },
   {
-    "text": "features of it um and I it C it called",
+    "text": "of",
     "start": 1808.16,
     "duration": 7.36
   },
   {
-    "text": "my attention diabetes P degree function",
+    "text": "diabetes. Did you drag a CSV",
     "start": 1812.68,
     "duration": 5.6
   },
   {
-    "text": "which is basically genetic inheritance",
+    "text": "onto ChatGPT, for example? Yeah, yeah, yeah,",
     "start": 1815.52,
     "duration": 3.84
   },
   {
-    "text": "of",
+    "text": "well, not CSV. It was a ZIP.",
     "start": 1818.28,
     "duration": 4.28
   },
   {
-    "text": "diabetes and did you did you drag a CSV",
+    "text": "Okay, ZIP. And inside it helped me",
     "start": 1819.36,
     "duration": 6.32
   },
   {
-    "text": "onto chat GPT for example yeah yeah yeah",
+    "text": "bring it down. But let me",
     "start": 1822.56,
     "duration": 6.2
   },
   {
-    "text": "well not not CSV it was a sip",
+    "text": "show you the feature chart where it",
     "start": 1825.68,
     "duration": 7.04
   },
   {
-    "text": "okay Z and inside it help me out",
+    "text": "is. Okay, here it is. This is the relation",
     "start": 1828.76,
     "duration": 7.44
   },
   {
-    "text": "to yeah to bring it down but let me let",
+    "text": "between glucose and the",
     "start": 1832.72,
     "duration": 6.88
   },
   {
-    "text": "me show you the the F chart where it",
+    "text": "",
     "start": 1836.2,
     "duration": 7.88
   },
   {
-    "text": "is okay here it is this is the relation",
+    "text": "",
     "start": 1839.6,
     "duration": 7.28
   },
   {
-    "text": "between glucose and the",
+    "text": "",
     "start": 1844.08,
     "duration": 6.08
   },
   {
-    "text": "outcome I don&#39;t know if you can see",
+    "text": "I don't know if you can see it well.",
     "start": 1846.88,
     "duration": 6.64
   },
   {
-    "text": "it well",
+    "text": "",
     "start": 1850.16,
     "duration": 5.68
   },
   {
-    "text": "yeah okay so I thought that this",
+    "text": "Yeah, okay, so I thought that this relation was the most obvious one because when I look into it, like 140 people out of 192 have diabetes with higher glucose level.",
     "start": 1853.52,
     "duration": 5.72
   },
   {
-    "text": "relation was the most obvious one",
+    "text": "",
     "start": 1855.84,
     "duration": 7.88
   },
   {
-    "text": "because when I look into it like 140",
+    "text": "",
     "start": 1859.24,
     "duration": 6.52
   },
   {
-    "text": "people out of",
+    "text": "",
     "start": 1863.72,
     "duration": 5.64
   },
   {
-    "text": "192 have diabetes with higher glucose",
+    "text": "",
     "start": 1865.76,
     "duration": 4.8
   },
   {
-    "text": "level",
+    "text": "",
     "start": 1869.36,
     "duration": 4.32
   },
   {
-    "text": "right but when I was looking into the",
+    "text": "But when I was looking into the numbers, when I was looking at the correlation matrix, I know if you can see it here.",
     "start": 1870.56,
     "duration": 5.56
   },
   {
-    "text": "numbers let me see if I",
+    "text": "",
     "start": 1873.68,
     "duration": 4.64
   },
   {
-    "text": "can uh when I was looking at the",
+    "text": "",
     "start": 1876.12,
     "duration": 4.64
   },
   {
-    "text": "correlation",
+    "text": "",
     "start": 1878.32,
     "duration": 5.64
   },
   {
-    "text": "Matrix I know if you can see it here",
+    "text": "",
     "start": 1880.76,
     "duration": 4.96
   },
   {
-    "text": "yeah",
+    "text": "",
     "start": 1883.96,
     "duration": 5.6
   },
   {
-    "text": "um wait wait give me a second",
+    "text": "Wait, wait, give me a second.",
     "start": 1885.72,
     "duration": 7.16
   },
   {
-    "text": "me let me see where I can show you",
+    "text": "Let me see where I can show you better.",
     "start": 1889.56,
     "duration": 6.6
   },
   {
-    "text": "better so basically just just to clarify",
+    "text": "Just to clarify, you have a data set where it shows glucose level in the person's body as the independent variable and the dependent variable is whether or not they have diabetes, right?",
     "start": 1892.88,
     "duration": 6.04
   },
   {
-    "text": "you have a data set where it shows a",
+    "text": "",
     "start": 1896.16,
     "duration": 5.4
   },
   {
-    "text": "glucose level in the person&#39;s body as",
+    "text": "",
     "start": 1898.92,
     "duration": 4.68
   },
   {
-    "text": "the independent variable and the",
+    "text": "",
     "start": 1901.56,
     "duration": 3.6
   },
   {
-    "text": "dependent variable is whether or not",
+    "text": "",
     "start": 1903.6,
     "duration": 4.76
   },
   {
-    "text": "they have diabetes right yeah well that",
+    "text": "Yeah, well that was the feature I chose to show the linear correlation because that was the most obvious one in the beginning, and then I started working out which were other more interesting correlation features.",
     "start": 1905.16,
     "duration": 5.6
   },
   {
-    "text": "was the feature I choose to show the",
+    "text": "",
     "start": 1908.36,
     "duration": 4.24
   },
   {
-    "text": "linear correlation because that was the",
+    "text": "",
     "start": 1910.76,
     "duration": 4.04
   },
   {
-    "text": "most obvious one in the beginning and",
+    "text": "",
     "start": 1912.6,
     "duration": 4.6
   },
   {
-    "text": "then I start working out like which were",
+    "text": "",
     "start": 1914.8,
     "duration": 5.2
   },
   {
-    "text": "other or like more interesting",
+    "text": "",
     "start": 1917.2,
     "duration": 6.48
   },
   {
-    "text": "correlation features yeah and let&#39;s let",
-    "start": 1920.0,
-    "duration": 7.0
+    "text": "Yeah, and let me show you something else here.",
+    "start": 1920,
+    "duration": 7
   },
   {
-    "text": "me let me show you something else here",
+    "text": "One moment.",
     "start": 1923.68,
     "duration": 7.24
   },
   {
-    "text": "one one moment let let me change this",
-    "start": 1927.0,
+    "text": "Let me change this chat.",
+    "start": 1927,
     "duration": 6.12
   },
   {
-    "text": "chat you go back to that could you go",
+    "text": "Could you go back to that last chart, that line chart that you had?",
     "start": 1930.92,
     "duration": 3.92
   },
   {
-    "text": "back to that last chart that line chart",
+    "text": "",
     "start": 1933.12,
     "duration": 3.92
   },
   {
-    "text": "that you had I just wanted to point",
+    "text": "I just wanted to point something out while we had that open.",
     "start": 1934.84,
     "duration": 4.64
   },
   {
-    "text": "something out just just while we had",
+    "text": "",
     "start": 1937.04,
     "duration": 4.6
   },
   {
-    "text": "that",
+    "text": "",
     "start": 1939.48,
     "duration": 5.24
   },
   {
-    "text": "open um yeah yeah that",
+    "text": "",
     "start": 1941.64,
     "duration": 7.36
   },
   {
-    "text": "one yeah yeah make it a bit larger",
+    "text": "Yeah, yeah, make it a bit larger.",
     "start": 1944.72,
     "duration": 6.96
   },
   {
-    "text": "so I think nid and I are actually really",
-    "start": 1949.0,
+    "text": "So I think Nid and I are actually really happy that you chose this because this is really what do you think, Nid?",
+    "start": 1949,
     "duration": 6.08
   },
   {
-    "text": "happy that you chose this because this",
+    "text": "",
     "start": 1951.68,
     "duration": 5.68
   },
   {
-    "text": "is a really all what do you think N I",
+    "text": "I think this is a pretty bad data set for linear correlation, but it's a really good data set for what we want to do next week.",
     "start": 1955.08,
     "duration": 4.56
   },
   {
-    "text": "think this is a pretty like it&#39;s not a",
+    "text": "",
     "start": 1957.36,
-    "duration": 4.0
+    "duration": 4
   },
   {
-    "text": "great data set it&#39;s a bad data set for",
+    "text": "",
     "start": 1959.64,
     "duration": 4.24
   },
   {
-    "text": "linear correlation for um but it&#39;s a",
+    "text": "",
     "start": 1961.36,
     "duration": 3.8
   },
   {
-    "text": "really good data set for what we want to",
+    "text": "",
     "start": 1963.88,
     "duration": 3.2
   },
   {
-    "text": "do next",
+    "text": "",
     "start": 1965.16,
     "duration": 5.4
   },
   {
-    "text": "week yeah",
+    "text": "",
     "start": 1967.08,
     "duration": 5.96
   },
   {
-    "text": "so it&#39;s a classification basically the",
+    "text": "So it's a classification basically.",
     "start": 1970.56,
     "duration": 6.04
   },
   {
-    "text": "outcome is either a zero or a one yeah",
+    "text": "The outcome is either a zero or a one.",
     "start": 1973.04,
     "duration": 6.32
   },
   {
-    "text": "so um",
+    "text": "Yeah.",
     "start": 1976.6,
     "duration": 5.52
   },
   {
-    "text": "for classification we modify linear",
+    "text": "So for classification, we modify linear regression a little bit.",
     "start": 1979.36,
     "duration": 5.32
   },
   {
-    "text": "regression uh a little bit we apply some",
+    "text": "We apply some nonlinearity which squashes the output of linear regression between zero and one.",
     "start": 1982.12,
     "duration": 4.68
   },
   {
-    "text": "nonlinearity which squashes the output",
+    "text": "",
     "start": 1984.68,
     "duration": 5.84
   },
   {
-    "text": "of linear aggression between zero and",
+    "text": "",
     "start": 1986.8,
-    "duration": 7.0
+    "duration": 7
   },
   {
-    "text": "one so it would be a perfect example to",
+    "text": "So it would be a perfect example to go over for the next algorithm, which is logistic regression.",
     "start": 1990.52,
     "duration": 6.16
   },
   {
-    "text": "go over for the next algorithm which is",
+    "text": "",
     "start": 1993.8,
     "duration": 5.12
   },
   {
-    "text": "logistic",
+    "text": "",
     "start": 1996.68,
     "duration": 5.12
   },
   {
-    "text": "regression and I&#39;ll show you why linear",
+    "text": "And I'll show you why linear regression is not a good idea to do classification.",
     "start": 1998.92,
     "duration": 5.6
   },
   {
-    "text": "regression is not a good idea to do",
+    "text": "",
     "start": 2001.8,
     "duration": 6.16
   },
   {
-    "text": "classification so it&#39;s not like um it&#39;s",
+    "text": "It's not possible using linear regression.",
     "start": 2004.52,
     "duration": 5.16
   },
   {
-    "text": "not possible using linear regression you",
+    "text": "",
     "start": 2007.96,
     "duration": 3.72
   },
   {
-    "text": "can have an attempt but you&#39;ll see what",
+    "text": "Can have an attempt, but you'll see what are the problems with it and why we need to modify or come up with something different, which would suit categorical data where the outcome is from some categories—either binary category or more than binary categories.",
     "start": 2009.68,
     "duration": 4.44
   },
   {
-    "text": "are the problems with it and why do we",
+    "text": "",
     "start": 2011.68,
     "duration": 5.92
   },
   {
-    "text": "need to then uh modify or come up with",
+    "text": "",
     "start": 2014.12,
     "duration": 6.6
   },
   {
-    "text": "something different which would suit um",
+    "text": "",
     "start": 2017.6,
     "duration": 5.4
   },
   {
-    "text": "categorical data where outcome is from",
+    "text": "",
     "start": 2020.72,
     "duration": 4.32
   },
   {
-    "text": "some categories either binary category",
-    "start": 2023.0,
-    "duration": 5.0
+    "text": "",
+    "start": 2023,
+    "duration": 5
   },
   {
-    "text": "or more than binary",
+    "text": "",
     "start": 2025.04,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "categories there&#39;s no way you could have",
-    "start": 2028.0,
+    "text": "There's no way you could have known that, which I find funny.",
+    "start": 2028,
     "duration": 3.92
   },
   {
-    "text": "there&#39;s no way you could have known that",
+    "text": "",
     "start": 2030.04,
     "duration": 6.16
   },
   {
-    "text": "which I mean I I find that funny like",
+    "text": "How the binary part of B—like just zero or one—it was a bit weird at the beginning, but this is what I really want to show you guys.",
     "start": 2031.92,
     "duration": 7.36
   },
   {
-    "text": "how the binary part of B like just zero",
+    "text": "",
     "start": 2036.2,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "or one so H so it was a bit weird at the",
+    "text": "",
     "start": 2039.28,
     "duration": 5.48
   },
   {
-    "text": "beginning but this is wait what I really",
+    "text": "I found very interesting.",
     "start": 2042.2,
     "duration": 5.72
   },
   {
-    "text": "want to show you guys I found very",
+    "text": "",
     "start": 2044.76,
     "duration": 6.68
   },
   {
-    "text": "interesting let&#39;s see if I can",
+    "text": "",
     "start": 2047.92,
     "duration": 8.52
   },
   {
-    "text": "oh damn it let&#39;s see how here it",
+    "text": "Let's see how here it is.",
     "start": 2051.44,
     "duration": 6.64
   },
   {
-    "text": "is",
+    "text": "",
     "start": 2056.44,
     "duration": 5.64
   },
   {
-    "text": "um linear model",
+    "text": "Linear model evaluation.",
     "start": 2058.08,
     "duration": 6.04
   },
   {
-    "text": "evaluation give me a",
+    "text": "",
     "start": 2062.08,
     "duration": 6.52
   },
   {
-    "text": "second let&#39;s see if is this one uh uh",
+    "text": "Okay, so here's the other part.",
     "start": 2064.12,
     "duration": 8.32
   },
   {
-    "text": "yeah okay so here here&#39;s the the other",
+    "text": "",
     "start": 2068.6,
     "duration": 5.64
   },
   {
-    "text": "part so when I was doing the linear",
+    "text": "When I was doing the linear regression, what I noticed is when you are looking at separate features—of course, glucose is the most obvious one and keeps going down—but when you have a correlation of the features, actually what I will start noticing is that diabetes pedigree function is the highest one when you take into account all the features together.",
     "start": 2072.44,
     "duration": 4.6
   },
   {
-    "text": "regression what I what I notice is like",
+    "text": "",
     "start": 2074.24,
     "duration": 5.6
   },
   {
-    "text": "when you are looking at separate uh",
+    "text": "",
     "start": 2077.04,
     "duration": 5.4
   },
   {
-    "text": "features itself of course glucose is the",
+    "text": "",
     "start": 2079.84,
     "duration": 5.72
   },
   {
-    "text": "most obvious one and he keeping on going",
+    "text": "",
     "start": 2082.44,
     "duration": 4.92
   },
   {
-    "text": "this lineing down but when you have",
+    "text": "",
     "start": 2085.56,
     "duration": 4.32
   },
   {
-    "text": "interpret when you have a COR",
+    "text": "",
     "start": 2087.36,
     "duration": 6.16
   },
   {
-    "text": "um a correlation of the features",
+    "text": "",
     "start": 2089.88,
     "duration": 6.44
   },
   {
-    "text": "actually what I will start noticing is",
+    "text": "",
     "start": 2093.52,
     "duration": 5.88
   },
   {
-    "text": "that diabetes p degree function is the",
+    "text": "",
     "start": 2096.32,
     "duration": 5.16
   },
   {
-    "text": "highest one when you take into account",
+    "text": "",
     "start": 2099.4,
     "duration": 4.32
   },
   {
-    "text": "all the features",
+    "text": "",
     "start": 2101.48,
     "duration": 5.52
   },
   {
-    "text": "together so so I found that",
+    "text": "So I found that interesting, which is why I asked you to create this chart for me to be able to show you that.",
     "start": 2103.72,
     "duration": 5.24
   },
   {
-    "text": "interesting that&#39;s why I asked you to",
-    "start": 2107.0,
+    "text": "",
+    "start": 2107,
     "duration": 4.32
   },
   {
-    "text": "create this this this chart for me to be",
+    "text": "",
     "start": 2108.96,
     "duration": 7.16
   },
   {
-    "text": "able to show you that guys um and yeah",
+    "text": "And there were many more things I explored, but this is what I found—this is the feature I found that has the most interesting correlation.",
     "start": 2111.32,
     "duration": 6.6
   },
   {
-    "text": "well there was many more things I",
+    "text": "",
     "start": 2116.12,
     "duration": 3.96
   },
   {
-    "text": "explored to it but this is what I found",
+    "text": "",
     "start": 2117.92,
     "duration": 4.32
   },
   {
-    "text": "this this is the feature I found that",
+    "text": "",
     "start": 2120.08,
     "duration": 4.56
   },
   {
-    "text": "has the most interesting correlation was",
+    "text": "It was less obvious but the most important one when you have all the features.",
     "start": 2122.24,
     "duration": 4.56
   },
   {
-    "text": "less obvious but the most important one",
+    "text": "",
     "start": 2124.64,
     "duration": 4.2
   },
   {
-    "text": "when you all the",
+    "text": "",
     "start": 2126.8,
     "duration": 3.76
   },
   {
-    "text": "features and do you know how to",
+    "text": "Do you know how to calculate that feature—pedigree function?",
     "start": 2128.84,
     "duration": 3.6
   },
   {
-    "text": "calculate that",
+    "text": "",
     "start": 2130.56,
     "duration": 4.68
   },
   {
-    "text": "feature uh pedigree",
+    "text": "",
     "start": 2132.44,
     "duration": 4.56
   },
   {
-    "text": "function",
+    "text": "",
     "start": 2135.24,
     "duration": 4.6
   },
   {
-    "text": "basically what what I assume that he was",
-    "start": 2137.0,
+    "text": "What I assume was being calculated is, in simple words, you take into account all the features, and when you take into account all the features, the people that have this high diabetes pedigree function, taking into account the rest, are the ones that tend to have likely the outcome of diabetes when it's higher.",
+    "start": 2137,
     "duration": 5.12
   },
   {
-    "text": "uh calculating",
+    "text": "",
     "start": 2139.84,
     "duration": 5.92
   },
   {
-    "text": "is in in my simple words it is like yeah",
+    "text": "",
     "start": 2142.12,
     "duration": 5.96
   },
   {
-    "text": "you take into account all the features",
+    "text": "",
     "start": 2145.76,
     "duration": 3.72
   },
   {
-    "text": "and then when you take into account all",
+    "text": "",
     "start": 2148.08,
     "duration": 3.16
   },
   {
-    "text": "the features the people that have this",
+    "text": "",
     "start": 2149.48,
     "duration": 4.56
   },
   {
-    "text": "high high diabetes pedigree function",
+    "text": "",
     "start": 2151.24,
     "duration": 5.56
   },
   {
-    "text": "taking into account the rest uh is the",
+    "text": "",
     "start": 2154.04,
     "duration": 5.16
   },
   {
-    "text": "ones to tend to have",
+    "text": "",
     "start": 2156.8,
     "duration": 4.2
   },
   {
-    "text": "likely the outcome of",
+    "text": "",
     "start": 2159.2,
     "duration": 4.88
   },
   {
-    "text": "diabetes when it&#39;s higher I&#39;m looking at",
-    "start": 2161.0,
+    "text": "",
+    "start": 2161,
     "duration": 6.08
   },
   {
-    "text": "it now it says it indicates um it&#39;s a",
+    "text": "I'm looking at it now—it says it indicates a function which scores the likelihood of",
     "start": 2164.08,
     "duration": 4.44
   },
   {
-    "text": "function which scores likelihood of",
+    "text": "",
     "start": 2167.08,
     "duration": 5.04
   },
   {
-    "text": "diabetes based on family history exactly",
+    "text": "Diabetes based on family history exactly, and it has the correlation coefficient.",
     "start": 2168.52,
     "duration": 6.68
   },
   {
-    "text": "exactly and it has the the these are the",
+    "text": "",
     "start": 2172.12,
     "duration": 7.36
   },
   {
-    "text": "correlation coefficient those ones here",
+    "text": "These are the ones here, and actually this one here shows us the linear regression coefficient.",
     "start": 2175.2,
     "duration": 8.28
   },
   {
-    "text": "and actually this this one",
+    "text": "",
     "start": 2179.48,
     "duration": 7.8
   },
   {
-    "text": "here uh shows us like the linear",
+    "text": "",
     "start": 2183.48,
     "duration": 6.2
   },
   {
-    "text": "regression coefficient to it is the",
+    "text": "It is the highest one when you look at the T correlation, but anyway.",
     "start": 2187.28,
     "duration": 5.12
   },
   {
-    "text": "highest one when you look the the T",
+    "text": "",
     "start": 2189.68,
     "duration": 5.92
   },
   {
-    "text": "correlation but anyway",
+    "text": "",
     "start": 2192.4,
     "duration": 7.08
   },
   {
-    "text": "well thanks thanks all it&#39;s really um",
+    "text": "Well, thanks. It's really impressive that you managed to get that far and very resourceful.",
     "start": 2195.6,
     "duration": 5.88
   },
   {
-    "text": "impressive that you managed to get that",
+    "text": "",
     "start": 2199.48,
     "duration": 3.52
   },
   {
-    "text": "that far and very",
+    "text": "",
     "start": 2201.48,
     "duration": 4.52
   },
   {
-    "text": "resourceful you we will make sure that",
-    "start": 2203.0,
+    "text": "We will make sure that for the next one that you're able to import all the files so you can work with Python directly.",
+    "start": 2203,
     "duration": 5.92
   },
   {
-    "text": "for the next one that you&#39;re able to",
-    "start": 2206.0,
+    "text": "",
+    "start": 2206,
     "duration": 5.28
   },
   {
-    "text": "import all the files so you can work",
+    "text": "",
     "start": 2208.92,
     "duration": 4.08
   },
   {
-    "text": "with the python",
+    "text": "",
     "start": 2211.28,
     "duration": 4.84
   },
   {
-    "text": "directly thank you James are you going",
-    "start": 2213.0,
+    "text": "Thank you, James. Are you going to do the multiple multivariate regression now?",
+    "start": 2213,
     "duration": 5.2
   },
   {
-    "text": "to do the multiple",
+    "text": "",
     "start": 2216.12,
     "duration": 4.28
   },
   {
-    "text": "multiv regression",
+    "text": "",
     "start": 2218.2,
     "duration": 6.68
   },
   {
-    "text": "now uh yeah so I&#39;m going to",
+    "text": "Yeah, so I'm going to do that, and if we have a bit of time I may go over that quickly.",
     "start": 2220.4,
     "duration": 4.48
   },
   {
-    "text": "do go and then um if we have a oh yeah",
+    "text": "",
     "start": 2225.24,
     "duration": 6.24
   },
   {
-    "text": "sorry I did I forgot about",
+    "text": "",
     "start": 2229.24,
     "duration": 5.6
   },
   {
-    "text": "it he&#39;s still there as",
+    "text": "",
     "start": 2231.48,
     "duration": 8.16
   },
   {
-    "text": "nor if we have a bit of time I may go",
+    "text": "",
     "start": 2234.84,
     "duration": 6.76
   },
   {
-    "text": "over that quickly",
+    "text": "",
     "start": 2239.64,
     "duration": 5.52
   },
   {
-    "text": "yeah so that can move on to the logistic",
+    "text": "Yeah, so we can move on to the logistic regression.",
     "start": 2241.6,
     "duration": 5.4
   },
   {
-    "text": "well on Thursday we",
+    "text": "Well, on Thursday we",
     "start": 2245.16,
     "duration": 5.2
   },
   {
     "text": "[Music]",
-    "start": 2247.0,
+    "start": 2247,
     "duration": 3.36
   },
   {
-    "text": "right yeah so the data set that I used",
+    "text": "Right, yeah. So the data set that I used was the California housing prices.",
     "start": 2251.4,
     "duration": 6.04
   },
   {
-    "text": "was the California housing prices",
+    "text": "",
     "start": 2254.2,
     "duration": 8.24
   },
   {
-    "text": "um so let me just share my",
+    "text": "So let me just share my screen.",
     "start": 2257.44,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "screen there we",
+    "text": "",
     "start": 2272.72,
     "duration": 6.2
   },
   {
-    "text": "go okay yeah so the California Housing",
+    "text": "Okay, yeah. So the California Housing data set.",
     "start": 2275.2,
     "duration": 9.2
   },
   {
-    "text": "data set so I there we go isn&#39;t this the",
+    "text": "So I there we go. Isn't this the one we are using?",
     "start": 2278.92,
     "duration": 6.48
   },
   {
-    "text": "one we",
+    "text": "",
     "start": 2284.4,
     "duration": 4.16
   },
   {
-    "text": "using uh",
+    "text": "",
     "start": 2285.4,
     "duration": 6.2
   },
   {
-    "text": "What uh I&#39;m asking Jim isn&#39;t this the",
+    "text": "What? I'm asking Jim, isn't this the one we are using? I think there were multiple housing data sets, right?",
     "start": 2288.56,
     "duration": 4.68
   },
   {
-    "text": "one we are",
+    "text": "",
     "start": 2291.6,
     "duration": 4.88
   },
   {
-    "text": "using I think there was multiple housing",
+    "text": "",
     "start": 2293.24,
     "duration": 7.64
   },
   {
-    "text": "data sets right okay yeah they were yeah",
+    "text": "",
     "start": 2296.48,
     "duration": 5.76
   },
   {
-    "text": "I think this is actually a different",
+    "text": "Okay, yeah, they were. Yeah, I think this is actually a different housing data set than the one we have.",
     "start": 2300.88,
     "duration": 3.04
   },
   {
-    "text": "housing data set than the one we have",
+    "text": "",
     "start": 2302.24,
     "duration": 5.48
   },
   {
-    "text": "I&#39;m pretty sure okay",
+    "text": "",
     "start": 2303.92,
     "duration": 3.8
   },
   {
-    "text": "uh so I did a bit of uh research as to",
+    "text": "So I did a bit of research as to how exactly one approaches a data set, and here I'm testing out different things and finding out what different commands do in pandas.",
     "start": 2308.48,
     "duration": 5.64
   },
   {
-    "text": "how exactly one approaches a data set",
+    "text": "",
     "start": 2311.84,
     "duration": 5.96
   },
   {
-    "text": "and um here our meet like testing out",
+    "text": "",
     "start": 2314.12,
     "duration": 6.08
   },
   {
-    "text": "different things and uh finding out what",
+    "text": "",
     "start": 2317.8,
     "duration": 6.8
   },
   {
-    "text": "different commands do in",
+    "text": "",
     "start": 2320.2,
     "duration": 7.32
   },
   {
-    "text": "pandas and uh further",
+    "text": "",
     "start": 2324.6,
     "duration": 6.68
   },
   {
-    "text": "down I pretty much asked J gbt how to",
+    "text": "Further down I pretty much asked ChatGPT how to start off and apply linear regression onto the data. Yeah, so first it said you have to remove the duplicates and the single-valued columns, and also need to remove outliers.",
     "start": 2327.52,
     "duration": 7.12
   },
   {
-    "text": "start off and um you know apply linear",
+    "text": "",
     "start": 2331.28,
     "duration": 6.32
   },
   {
-    "text": "regression onto the data yeah so first",
+    "text": "",
     "start": 2334.64,
-    "duration": 4.0
+    "duration": 4
   },
   {
-    "text": "it said you have to remove the",
+    "text": "",
     "start": 2337.6,
-    "duration": 3.0
+    "duration": 3
   },
   {
-    "text": "duplicates and the single valed columns",
+    "text": "",
     "start": 2338.64,
     "duration": 5.92
   },
   {
-    "text": "and um also need to remove outliers so",
+    "text": "",
     "start": 2340.6,
     "duration": 5.48
   },
   {
-    "text": "that&#39;s what I&#39;m doing over here in these",
+    "text": "That's what I'm doing over here in these three or four cells, and further down there is also an object called ocean proximity over here which has distances between the ocean and the",
     "start": 2344.56,
     "duration": 5.64
   },
   {
-    "text": "three uh three four um",
+    "text": "",
     "start": 2346.08,
     "duration": 8.96
   },
   {
-    "text": "cells and uh further down uh there is",
+    "text": "",
     "start": 2350.2,
     "duration": 7.44
   },
   {
-    "text": "also like a an object called ocean",
+    "text": "",
     "start": 2355.04,
     "duration": 4.92
   },
   {
-    "text": "proximity over here which has uh",
+    "text": "",
     "start": 2357.64,
     "duration": 5.16
   },
   {
-    "text": "distances between the ocean and the uh",
+    "text": "",
     "start": 2359.96,
     "duration": 5.36
   },
   {
-    "text": "the land and because it&#39;s an object we",
+    "text": "The land is an object, and because it's an object, we have to reduce that into—I think ChatGPT said that it needs to be reduced into a single value columns instead of an object so the model can easily work with it.",
     "start": 2362.8,
     "duration": 5.8
   },
   {
-    "text": "have to uh reduce that into it&#39;s I think",
+    "text": "",
     "start": 2365.32,
     "duration": 5.2
   },
   {
-    "text": "CH G said that it needs to be reduced",
+    "text": "",
     "start": 2368.6,
     "duration": 4.64
   },
   {
-    "text": "into a single value columns instead of a",
+    "text": "",
     "start": 2370.52,
     "duration": 5.08
   },
   {
-    "text": "object so the model can easily work with",
+    "text": "",
     "start": 2373.24,
     "duration": 5.8
   },
   {
-    "text": "it uh so that&#39;s what I&#39;ve done here did",
+    "text": "That's what I've done here. Did you create an entirely new notebook from scratch?",
     "start": 2375.6,
     "duration": 6.56
   },
   {
-    "text": "you create an entirely new notebook from",
+    "text": "",
     "start": 2379.04,
     "duration": 7.12
   },
   {
-    "text": "scratch uh yeah",
+    "text": "Yeah.",
     "start": 2382.16,
     "duration": 6.48
   },
   {
-    "text": "okay um yeah you don&#39;t have to do that",
+    "text": "Okay, you don't have to do that, just so you know, but that's cool.",
     "start": 2386.16,
     "duration": 4.92
   },
   {
-    "text": "just so you know but that&#39;s cool yeah I",
+    "text": "",
     "start": 2388.64,
     "duration": 5.08
   },
   {
-    "text": "was just trying to like you know uh",
+    "text": "I was just trying because Google Collab is good and all, but I usually work offline on—oh okay, yes, you work in Jupyter.",
     "start": 2391.08,
     "duration": 5.2
   },
   {
-    "text": "because Google collab is good and all",
+    "text": "",
     "start": 2393.72,
     "duration": 6.72
   },
   {
-    "text": "but I I usually work offline on oh okay",
+    "text": "",
     "start": 2396.28,
     "duration": 6.28
   },
   {
-    "text": "yes you work in Jupiter okay yeah you",
+    "text": "",
     "start": 2400.44,
     "duration": 4.48
   },
   {
-    "text": "could have downloaded The Notebook and",
+    "text": "Okay, you could have downloaded the notebook and worked with it in VS Code as well if you want to.",
     "start": 2402.56,
     "duration": 5.6
   },
   {
-    "text": "worked with it uh in the v sare as well",
+    "text": "",
     "start": 2404.92,
     "duration": 6.96
   },
   {
-    "text": "if you want to uh this is",
+    "text": "This is Jupyter.",
     "start": 2408.16,
     "duration": 7.16
   },
   {
-    "text": "jupit oh yeah um well just he&#39;s just",
+    "text": "Yeah, well, he's just saying that if you want to next time, you can also—okay, okay, you can also use our notebook in Jupyter.",
     "start": 2411.88,
     "duration": 5.48
   },
   {
-    "text": "saying that if you want to next time you",
+    "text": "",
     "start": 2415.32,
     "duration": 3.96
   },
   {
-    "text": "can also okay okay you can also use our",
+    "text": "",
     "start": 2417.36,
     "duration": 4.96
   },
   {
-    "text": "notebook uh in",
+    "text": "",
     "start": 2419.28,
     "duration": 3.04
   },
   {
-    "text": "Jupiter please keep going yeah so so",
+    "text": "Please keep going.",
     "start": 2424.12,
     "duration": 6.72
   },
   {
-    "text": "further on uh from there this is where",
+    "text": "So further on from there, this is where the linear regression Theta n is applied.",
     "start": 2427.56,
     "duration": 7.28
   },
   {
-    "text": "uh the linear regression uh um Theta n",
+    "text": "",
     "start": 2430.84,
     "duration": 6.92
   },
   {
-    "text": "is applied uh this j i pry gave I was",
+    "text": "ChatGPT gave—I was trying to understand what exactly it is doing, but going back to querying ChatGPT a bit more, I understood what exactly it's doing here.",
     "start": 2434.84,
     "duration": 4.4
   },
   {
-    "text": "trying to understand what exactly it is",
+    "text": "",
     "start": 2437.76,
     "duration": 5.24
   },
   {
-    "text": "doing but uh going back to the uh like",
+    "text": "",
     "start": 2439.24,
     "duration": 5.48
   },
   {
-    "text": "questioning jgpt a bit more I understood",
-    "start": 2443.0,
+    "text": "",
+    "start": 2443,
     "duration": 4.2
   },
   {
-    "text": "what exactly it&#39;s doing",
+    "text": "",
     "start": 2444.72,
     "duration": 6.88
   },
   {
-    "text": "here and uh further on it is uh we are",
+    "text": "Further on, we are doing a dot transform operation on the data by dividing it into train and test sets.",
     "start": 2447.2,
     "duration": 7.16
   },
   {
-    "text": "doing a DOT transform operation on the",
+    "text": "",
     "start": 2451.6,
     "duration": 5.84
   },
   {
-    "text": "data that is by dividing into train",
+    "text": "",
     "start": 2454.36,
     "duration": 6.56
   },
   {
-    "text": "train set in the test set and after that",
+    "text": "",
     "start": 2457.44,
     "duration": 6.52
   },
   {
-    "text": "we are applying the root mean squared uh",
+    "text": "After that, we are applying the root mean squared error calculation on the values.",
     "start": 2460.92,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "root mean squared error um like",
+    "text": "",
     "start": 2463.96,
     "duration": 5.12
   },
   {
-    "text": "detection on uh not detection like",
+    "text": "",
     "start": 2466.92,
     "duration": 3.68
   },
   {
-    "text": "calculating the values",
+    "text": "",
     "start": 2469.08,
     "duration": 4.76
   },
   {
-    "text": "basically and then finally we uh fitting",
+    "text": "Then finally, we are fitting the linear regression model using the data that we have just transformed and the target data that we want to use.",
     "start": 2470.6,
     "duration": 5.36
   },
   {
-    "text": "the linear regression model using the",
+    "text": "",
     "start": 2473.84,
     "duration": 4.2
   },
   {
-    "text": "data that we have just transformed and",
+    "text": "",
     "start": 2475.96,
     "duration": 5.6
   },
   {
-    "text": "the target data that we want to",
+    "text": "",
     "start": 2478.04,
     "duration": 6.8
   },
   {
-    "text": "use and this is a bit more of that exact",
+    "text": "This is a bit more of that exact thing, and this part of it I didn't know what exactly it was doing, but then I Googled a bunch of questions and understood what it's doing.",
     "start": 2481.56,
     "duration": 6.08
   },
   {
-    "text": "thing and this is totally charging like",
+    "text": "",
     "start": 2484.84,
     "duration": 3.96
   },
   {
-    "text": "this part of it I didn&#39;t know what",
+    "text": "",
     "start": 2487.64,
     "duration": 3.16
   },
   {
-    "text": "exactly is it doing but then I uh like",
+    "text": "",
     "start": 2488.8,
     "duration": 3.28
   },
   {
-    "text": "Googled a bunch of questions and",
+    "text": "",
     "start": 2490.8,
     "duration": 3.64
   },
   {
-    "text": "understood what it&#39;s doing so here it&#39;s",
+    "text": "",
     "start": 2492.08,
     "duration": 5.72
   },
   {
-    "text": "showing the different uh error uh error",
+    "text": "So here it's showing the different error differences between the actual data and what linear regression has given.",
     "start": 2494.44,
     "duration": 6.48
   },
   {
-    "text": "differences between the actual data and",
+    "text": "",
     "start": 2497.8,
     "duration": 6.6
   },
   {
-    "text": "the what linear regression has given and",
+    "text": "",
     "start": 2500.92,
     "duration": 7.2
   },
   {
-    "text": "finally here&#39;s the output so the actual",
+    "text": "Finally, here's the output: the actual cost of the housing and then here's what it predicted in the regression.",
     "start": 2504.4,
     "duration": 7.08
   },
   {
-    "text": "um cost of the housing and then here&#39;s",
+    "text": "",
     "start": 2508.12,
     "duration": 5.8
   },
   {
-    "text": "what it predicted in the regression and",
+    "text": "",
     "start": 2511.48,
     "duration": 4.8
   },
   {
-    "text": "here is the error that is there so this",
+    "text": "Here is the error that is there.",
     "start": 2513.92,
     "duration": 5.32
   },
   {
-    "text": "is pretty much what I",
+    "text": "This is pretty much what I—cool, well nice job that you managed to get everything working from scratch.",
     "start": 2516.28,
     "duration": 2.96
   },
   {
-    "text": "cool well nice job that you managed to",
+    "text": "",
     "start": 2519.28,
     "duration": 6.72
   },
   {
-    "text": "um get everything working um from",
+    "text": "",
     "start": 2522.24,
     "duration": 8.84
   },
   {
-    "text": "scratch um let me just show you really",
-    "start": 2526.0,
+    "text": "",
+    "start": 2526,
     "duration": 7.8
   },
   {
-    "text": "quickly how you can",
+    "text": "Let me just show you really quickly how you can actually download that into—",
     "start": 2531.08,
     "duration": 7.72
   },
   {
-    "text": "actually um download that into into",
+    "text": "",
     "start": 2533.8,
     "duration": 7.64
   },
   {
-    "text": "Jupiter if you want to for next",
+    "text": "Jupiter, if you want to for next time you can just use this and then you can file—can you see yeah?",
     "start": 2538.8,
     "duration": 5.24
   },
   {
-    "text": "time you can just",
+    "text": "",
     "start": 2541.44,
     "duration": 6.4
   },
   {
-    "text": "use like this and then you can",
+    "text": "To file download, and you can do this.",
     "start": 2544.04,
     "duration": 9.08
   },
   {
-    "text": "file can you see yeah to file download",
+    "text": "",
     "start": 2547.84,
     "duration": 7.52
   },
   {
-    "text": "and you can do this",
+    "text": "",
     "start": 2553.12,
     "duration": 4.4
   },
   {
-    "text": "so um or we can just send you the",
+    "text": "Or we can just send you the notebook, but it's okay to do it from scratch,",
     "start": 2555.36,
     "duration": 4.72
   },
   {
-    "text": "notebook but I mean it&#39;s it&#39;s okay to do",
+    "text": "",
     "start": 2557.52,
     "duration": 4.8
   },
   {
-    "text": "it um from scratch but",
+    "text": "",
     "start": 2560.08,
     "duration": 5.28
   },
   {
-    "text": "um um it might just be it might take",
+    "text": "but it might just take you more time and you might have to figure out a lot of things.",
     "start": 2562.32,
     "duration": 4.56
   },
   {
-    "text": "take you more time and you might have to",
+    "text": "",
     "start": 2565.36,
     "duration": 4.16
   },
   {
-    "text": "figure out a lot of",
+    "text": "",
     "start": 2566.88,
     "duration": 2.64
   },
   {
-    "text": "things yeah I did hear you you have",
+    "text": "Yeah, I did hear you—you have done stuff that is, you have covered lots of things that we were planning to be covering over the coming session.",
     "start": 2570.36,
     "duration": 7.48
   },
   {
-    "text": "done uh you have done stuff that is like",
+    "text": "",
     "start": 2574.48,
     "duration": 5.6
   },
   {
-    "text": "you have C lots of things that we were",
+    "text": "",
     "start": 2577.84,
     "duration": 4.28
   },
   {
-    "text": "planning to be cing over the coming",
+    "text": "",
     "start": 2580.08,
     "duration": 4.8
   },
   {
-    "text": "session so I won&#39;t get into them right",
+    "text": "So I won't get into them right now because that would be—I'd have to make the case for why we do the things that you have already done.",
     "start": 2582.12,
     "duration": 7.64
   },
   {
-    "text": "now uh because that would be um I I&#39;d",
+    "text": "",
     "start": 2584.88,
     "duration": 7.48
   },
   {
-    "text": "have to like make the case for why we do",
+    "text": "",
     "start": 2589.76,
     "duration": 5.44
   },
   {
-    "text": "the things that you have already done so",
+    "text": "Let's cover them in the future sessions.",
     "start": 2592.36,
     "duration": 6.08
   },
   {
-    "text": "let&#39;s cover them in the future sessions",
+    "text": "",
     "start": 2595.2,
     "duration": 6.88
   },
   {
-    "text": "uh but yeah you you like you you can um",
+    "text": "Yeah, you can ask ChatGPT to code the algorithms—that's a good thing to do because you sometimes would have to write the code from scratch for some problems, but majority of the problems someone would have already done.",
     "start": 2598.44,
     "duration": 7.28
   },
   {
-    "text": "ask jgpt to uh codee the",
+    "text": "",
     "start": 2602.08,
     "duration": 5.44
   },
   {
-    "text": "algorithms that&#39;s a good good thing to",
+    "text": "",
     "start": 2605.72,
     "duration": 4.28
   },
   {
-    "text": "do because not you you you sometimes you",
+    "text": "",
     "start": 2607.52,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "would have to uh write the code from",
-    "start": 2610.0,
+    "text": "",
+    "start": 2610,
     "duration": 4.88
   },
   {
-    "text": "scratch for some problems majority of",
+    "text": "",
     "start": 2612.52,
     "duration": 4.04
   },
   {
-    "text": "the problems to someone would have",
+    "text": "",
     "start": 2614.88,
-    "duration": 4.0
+    "duration": 4
   },
   {
-    "text": "already done so I think a better",
+    "text": "I think a better strategy would be to take someone's code and then try to modify it so that you don't make mistakes, which you don't know.",
     "start": 2616.56,
     "duration": 5.8
   },
   {
-    "text": "strategy would be to take someone&#39;s code",
+    "text": "",
     "start": 2618.88,
     "duration": 5.84
   },
   {
-    "text": "and then try to modify it so that you",
+    "text": "",
     "start": 2622.36,
     "duration": 6.24
   },
   {
-    "text": "can um you don&#39;t make mistakes which you",
+    "text": "",
     "start": 2624.72,
     "duration": 5.92
   },
   {
-    "text": "don&#39;t know because T GPT although it&#39;s a",
+    "text": "ChatGPT, although it's a very good coder, can compute stuff for you, but since you don't know the premises of what you're trying to solve, it can be doing things that are totally not required or make you go ways which you shouldn't be going.",
     "start": 2628.6,
     "duration": 5.04
   },
   {
-    "text": "very good coder um like it can pute",
+    "text": "",
     "start": 2630.64,
     "duration": 5.76
   },
   {
-    "text": "stuff for you but since you don&#39;t know",
+    "text": "",
     "start": 2633.64,
     "duration": 4.4
   },
   {
-    "text": "the premises of what you are trying to",
+    "text": "",
     "start": 2636.4,
     "duration": 4.2
   },
   {
-    "text": "solve you can it can be doing things",
+    "text": "",
     "start": 2638.04,
     "duration": 5.8
   },
   {
-    "text": "that are totally not required or make",
+    "text": "",
     "start": 2640.6,
     "duration": 5.56
   },
   {
-    "text": "you go ways which you shouldn&#39;t be going",
+    "text": "",
     "start": 2643.84,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "so that&#39;s why um the the goal here is",
+    "text": "So that's why the goal here is that we provide you the notebook and you try to modify it to see if you can make it work for your own problem.",
     "start": 2646.16,
     "duration": 5.36
   },
   {
-    "text": "that we provide you the notebook and you",
+    "text": "",
     "start": 2649.84,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "try to modify it to see uh if you can",
+    "text": "",
     "start": 2651.52,
     "duration": 6.4
   },
   {
-    "text": "make it work for your own",
+    "text": "",
     "start": 2654.84,
     "duration": 3.08
   },
   {
-    "text": "problem okay before James you introduce",
+    "text": "Okay, before James you introduce the multivariate regression, there are just a few things that I quickly want to talk about.",
     "start": 2658.24,
     "duration": 5.44
   },
   {
-    "text": "the multivariate regression there are",
+    "text": "",
     "start": 2661.76,
     "duration": 3.6
   },
   {
-    "text": "just a few things that I quickly want to",
+    "text": "",
     "start": 2663.68,
     "duration": 5.84
   },
   {
-    "text": "talk about um um first thing",
+    "text": "First thing is the data standardization, which becomes crucial when you are doing multivariate regression.",
     "start": 2665.36,
     "duration": 7.12
   },
   {
-    "text": "is the data",
+    "text": "",
     "start": 2669.52,
     "duration": 5.72
   },
   {
-    "text": "standardization which is becomes crucial",
+    "text": "",
     "start": 2672.48,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "when you are doing multivariate",
+    "text": "",
     "start": 2675.24,
     "duration": 3.24
   },
   {
-    "text": "regression you see my screen right yeah",
+    "text": "You see my screen, right?",
     "start": 2687.6,
     "duration": 5.68
   },
   {
-    "text": "no we we do only have 10 minutes left",
+    "text": "Yeah, no, we only have 10 minutes left, but yeah, take your time.",
     "start": 2690.8,
     "duration": 6.36
   },
   {
-    "text": "but um but yeah take your time you know",
+    "text": "",
     "start": 2693.28,
     "duration": 5.84
   },
   {
-    "text": "okay maybe you can then C that in the",
+    "text": "Okay, maybe you can cover that in the next session—I think it won't take much time.",
     "start": 2697.16,
-    "duration": 4.0
+    "duration": 4
   },
   {
-    "text": "next session I think it won&#39;t take much",
+    "text": "",
     "start": 2699.12,
     "duration": 6.08
   },
   {
-    "text": "time um before I begin with the logistic",
+    "text": "Before I begin with the logistic regression, what do you say?",
     "start": 2701.16,
     "duration": 6.16
   },
   {
-    "text": "regression what do you",
+    "text": "",
     "start": 2705.2,
     "duration": 4.48
   },
   {
-    "text": "say",
+    "text": "",
     "start": 2707.32,
     "duration": 4.56
   },
   {
-    "text": "um yeah I think",
+    "text": "Yeah, I think I don't want to assign people to do a multivariate regression.",
     "start": 2709.68,
     "duration": 5.6
   },
   {
-    "text": "like I don&#39;t want to assign people to do",
+    "text": "",
     "start": 2711.88,
     "duration": 6.6
   },
   {
-    "text": "um a multivariate regression basically",
+    "text": "",
     "start": 2715.28,
     "duration": 5.8
   },
   {
-    "text": "we just want to show you how you can um",
+    "text": "We just want to show you how you can add more variables into your linear regression to make it more accurate.",
     "start": 2718.48,
     "duration": 3.96
   },
   {
-    "text": "basically we just want to show you how",
+    "text": "",
     "start": 2721.08,
     "duration": 4.36
   },
   {
-    "text": "you can um add more variables into your",
+    "text": "",
     "start": 2722.44,
     "duration": 4.56
   },
   {
-    "text": "linear regression to make it more ACC",
+    "text": "",
     "start": 2725.44,
     "duration": 4.08
   },
   {
-    "text": "through it um so for example maybe the",
-    "start": 2727.0,
+    "text": "For example, maybe the students' grades are based on how much they drink and how much they exercise.",
+    "start": 2727,
     "duration": 4.52
   },
   {
-    "text": "students grades are based off of how",
+    "text": "",
     "start": 2729.52,
     "duration": 3.76
   },
   {
-    "text": "much they drink and how much they",
+    "text": "",
     "start": 2731.52,
     "duration": 4.48
   },
   {
-    "text": "exercise um we just want to be able to",
+    "text": "",
     "start": 2733.28,
     "duration": 4.8
   },
   {
-    "text": "show you how to do that um but yeah I",
-    "start": 2736.0,
+    "text": "We just want to show you how to do that, but I think if we can do it in 15 minutes right now, then it's probably fine.",
+    "start": 2736,
     "duration": 4.24
   },
   {
-    "text": "think if we can do it in 15 minutes",
+    "text": "",
     "start": 2738.08,
     "duration": 4.28
   },
   {
-    "text": "right now then it&#39;s it&#39;s probably fine",
+    "text": "",
     "start": 2740.24,
     "duration": 3.68
   },
   {
-    "text": "and then next I mean next session we&#39;re",
+    "text": "Next session we're going to get into more complicated, more sophisticated stuff.",
     "start": 2742.36,
     "duration": 4.04
   },
   {
-    "text": "going to get on to more complicated more",
+    "text": "",
     "start": 2743.92,
     "duration": 5.4
   },
   {
-    "text": "sophisticated stuff if that makes",
+    "text": "",
     "start": 2746.4,
     "duration": 5.08
   },
   {
-    "text": "sense me add",
+    "text": "",
     "start": 2749.32,
     "duration": 6.12
   },
   {
-    "text": "you okay um so let&#39;s consider this",
+    "text": "So let's consider this hypothetical data.",
     "start": 2751.48,
     "duration": 7.4
   },
   {
-    "text": "hypothetical data if you want to do U",
+    "text": "If you want to do multi-regression, you're going to have multiple such features.",
     "start": 2755.44,
     "duration": 5.8
   },
   {
-    "text": "multi regression you&#39;re going to have",
+    "text": "",
     "start": 2758.88,
     "duration": 5.44
   },
   {
-    "text": "multiple such features currently what",
+    "text": "",
     "start": 2761.24,
     "duration": 4.92
   },
   {
-    "text": "Jim showed you in the beginning one is",
+    "text": "Currently, what Jim showed you in the beginning is that he used area in order to predict the price.",
     "start": 2764.32,
     "duration": 3.6
   },
   {
-    "text": "that he used area in order to predict",
+    "text": "",
     "start": 2766.16,
     "duration": 6.12
   },
   {
-    "text": "the price um but um what if you want to",
+    "text": "",
     "start": 2767.92,
     "duration": 8.16
   },
   {
-    "text": "use more than one feature now there&#39;s a",
+    "text": "But what if you want to use more than one feature?",
     "start": 2772.28,
     "duration": 6.44
   },
   {
-    "text": "concept called like can anyone tell",
+    "text": "There's a concept called—can anyone tell me what peculiarity do you see in this data, in these two features particularly?",
     "start": 2776.08,
     "duration": 6.44
   },
   {
-    "text": "me what uh pecularity do you see in this",
+    "text": "",
     "start": 2778.72,
     "duration": 8.12
   },
   {
-    "text": "data in these two features particularly",
+    "text": "",
     "start": 2782.52,
     "duration": 4.32
   },
   {
-    "text": "in these two just a general",
+    "text": "What do you see? Is there not something odd here between these two features?",
     "start": 2790.68,
     "duration": 5.6
   },
   {
-    "text": "thought sorry what was your",
-    "start": 2794.0,
+    "text": "",
+    "start": 2794,
     "duration": 4.96
   },
   {
-    "text": "question question is what do you",
+    "text": "",
     "start": 2796.28,
     "duration": 6.8
   },
   {
-    "text": "see uh not something odd here between",
+    "text": "",
     "start": 2798.96,
     "duration": 6.4
   },
   {
-    "text": "these two features we have area we have",
+    "text": "We have area, we have number of rooms.",
     "start": 2803.08,
     "duration": 5.56
   },
   {
-    "text": "number of rooms uh the like the area is",
+    "text": "The area is—go ahead.",
     "start": 2805.36,
     "duration": 7.12
   },
   {
-    "text": "go ahead Sor I was going to say the one",
+    "text": "",
     "start": 2808.64,
     "duration": 6.2
   },
   {
-    "text": "with more area had less rooms which",
+    "text": "",
     "start": 2812.48,
     "duration": 5.6
   },
   {
-    "text": "might be intuitively strange",
+    "text": "I was going to say the one with more area had fewer rooms, which might be intuitively strange.",
     "start": 2814.84,
     "duration": 7.36
   },
   {
-    "text": "okay and what were you saying s oh",
+    "text": "",
     "start": 2818.08,
     "duration": 8.16
   },
   {
-    "text": "exactly it has like L area more rooms",
+    "text": "Exactly, it has less area, more rooms, higher price.",
     "start": 2822.2,
     "duration": 8.24
   },
   {
-    "text": "higher price does it okay yeah that",
+    "text": "",
     "start": 2826.24,
     "duration": 5.88
   },
   {
-    "text": "might be something that was completely",
+    "text": "",
     "start": 2830.44,
     "duration": 4.84
   },
   {
-    "text": "by coincidence because I just threw the",
+    "text": "",
     "start": 2832.12,
     "duration": 5.64
   },
   {
-    "text": "these numbers um the point that I was",
+    "text": "",
     "start": 2835.28,
     "duration": 3.4
   },
   {
-    "text": "trying",
+    "text": "",
     "start": 2837.76,
     "duration": 4.2
   },
   {
-    "text": "to you people to notice is that the",
+    "text": "The point that I was trying to get people to notice is that the scale of these two features is very different.",
     "start": 2838.68,
     "duration": 5.64
   },
   {
-    "text": "scale of these two features is is very",
+    "text": "",
     "start": 2841.96,
     "duration": 4.64
   },
   {
-    "text": "different so this one is varying between",
+    "text": "",
     "start": 2844.32,
     "duration": 3.88
   },
   {
-    "text": "four four digit",
+    "text": "This one is varying between four-digit numbers, and this one is varying in just one digit.",
     "start": 2846.6,
     "duration": 4.44
   },
   {
-    "text": "numbers and this one is varying in in",
+    "text": "",
     "start": 2848.2,
     "duration": 5.28
   },
   {
-    "text": "just one digit",
+    "text": "",
     "start": 2851.04,
     "duration": 5.28
   },
   {
-    "text": "right so if you are trying to do linear",
+    "text": "So if you are trying to do linear regression on it, in this case the output, the hypothesis function would become W1 X1 and W2 X2 + B.",
     "start": 2853.48,
     "duration": 5.2
   },
   {
-    "text": "regression on it um in this case the",
+    "text": "",
     "start": 2856.32,
     "duration": 5.12
   },
   {
-    "text": "output the hypothesis function would",
+    "text": "",
     "start": 2858.68,
     "duration": 3.84
   },
   {
-    "text": "become",
+    "text": "",
     "start": 2861.44,
     "duration": 3.56
   },
   {
-    "text": "W1 let&#39;s call it",
+    "text": "",
     "start": 2862.52,
     "duration": 5.64
   },
   {
-    "text": "X1 and let&#39;s call it",
-    "start": 2865.0,
+    "text": "",
+    "start": 2865,
     "duration": 10.16
   },
   {
-    "text": "X2 X1 + W2 X2 + B so previously when we",
+    "text": "",
     "start": 2868.16,
     "duration": 9.72
   },
   {
-    "text": "were using one feature you just had y =",
+    "text": "Previously, when we were using one feature, you just had y = WX + B.",
     "start": 2875.16,
     "duration": 5.96
   },
   {
-    "text": "to WX + P now you have two features X1",
+    "text": "",
     "start": 2877.88,
     "duration": 6.96
   },
   {
-    "text": "and X2 that&#39;s why we have W1 and W2 now",
+    "text": "Now you have two features, X1 and X2, that's why we have W1 and W2.",
     "start": 2881.12,
     "duration": 5.4
   },
   {
-    "text": "if you want to train this them You&#39; have",
+    "text": "Now if you want to train this, you'll have to update the values not just for W and B.",
     "start": 2884.84,
     "duration": 4.04
   },
   {
-    "text": "to update the values not just for w and",
+    "text": "",
     "start": 2886.52,
     "duration": 5.92
   },
   {
-    "text": "B but also for W1 W2 and W uh and B",
+    "text": "But also for W1, W2, and B,",
     "start": 2888.88,
     "duration": 5.92
   },
   {
-    "text": "story stays the same um the grading",
+    "text": "the story stays the same; the grading",
     "start": 2892.44,
     "duration": 4.16
   },
   {
-    "text": "descent equation stays the same so if",
+    "text": "descent equation stays the same. So if",
     "start": 2894.8,
     "duration": 4.48
   },
   {
-    "text": "you want to update the value for W1 the",
+    "text": "you want to update the value for W1, the",
     "start": 2896.6,
     "duration": 4.92
   },
   {
-    "text": "equation says W1 minus Alpha times the",
+    "text": "equation says W1 minus alpha times the",
     "start": 2899.28,
     "duration": 3.88
   },
   {
-    "text": "terity of the cost function with respect",
+    "text": "derivative of the cost function with respect",
     "start": 2901.52,
     "duration": 4.8
   },
   {
-    "text": "to W1 if you want to do it for W2 you do",
+    "text": "to W1. If you want to do it for W2, you do",
     "start": 2903.16,
     "duration": 5.96
   },
   {
-    "text": "it I just replace W1 with two so if I",
+    "text": "it by replacing W1 with two. So if I",
     "start": 2906.32,
     "duration": 5.24
   },
   {
-    "text": "plug in I here this",
+    "text": "plug in I here, this",
     "start": 2909.12,
     "duration": 6.92
   },
   {
-    "text": "becomes wi IUS Alpha * dj/ DWI where I",
+    "text": "becomes Wi minus alpha times dJ/dWi, where I",
     "start": 2911.56,
     "duration": 8.28
   },
   {
-    "text": "could be one or two and then you do the",
+    "text": "could be one or two, and then you do the",
     "start": 2916.04,
     "duration": 5.36
   },
   {
-    "text": "same for the",
+    "text": "same for the bias.",
     "start": 2919.84,
     "duration": 5.24
   },
   {
-    "text": "Byrum so the the the story stays the",
+    "text": "So the story stays the same. The problem here is because the",
     "start": 2921.4,
     "duration": 5.88
   },
   {
-    "text": "same uh the problem here is because the",
+    "text": "scale of these two features are very",
     "start": 2925.08,
     "duration": 3.72
   },
   {
-    "text": "scale of these two features are very",
+    "text": "different. Linear regression is just a mathematical formula",
     "start": 2927.28,
     "duration": 3.6
   },
   {
-    "text": "different and linear regression is you",
+    "text": "which computes an output. The contribution at the output would",
     "start": 2928.8,
     "duration": 4.04
   },
   {
-    "text": "can see it&#39;s just a mathematical formula",
+    "text": "be coming from a majority of the",
     "start": 2930.88,
     "duration": 6.84
   },
   {
-    "text": "which computes an output um the",
+    "text": "contribution from this region because it is area one, and area",
     "start": 2932.84,
     "duration": 5.64
   },
   {
-    "text": "the",
+    "text": "has numbers which are very large, and this",
     "start": 2937.72,
     "duration": 3.32
   },
   {
-    "text": "contribution at the output that would be",
+    "text": "one, because it is the number of rooms X2,",
     "start": 2938.48,
     "duration": 4.32
   },
   {
-    "text": "coming there would be a majority of the",
+    "text": "it is a small",
     "start": 2941.04,
     "duration": 4.28
   },
   {
-    "text": "chunk coming from this region from this",
+    "text": "number. So even if the area stays the",
     "start": 2942.8,
     "duration": 5.36
   },
   {
-    "text": "time because it is the area one and area",
+    "text": "same (3156) and for one house the number of",
     "start": 2945.32,
     "duration": 5.32
   },
   {
-    "text": "has numbers which are very huge and this",
+    "text": "rooms were three, and then for a",
     "start": 2948.16,
     "duration": 5.56
   },
   {
-    "text": "one because it is the number of rooms X2",
+    "text": "different house with the same area,",
     "start": 2950.64,
     "duration": 5.88
   },
   {
-    "text": "it is just um it&#39;s wearing it&#39;s a small",
+    "text": "the number of rooms was, let's say, nine,",
     "start": 2953.72,
     "duration": 5.64
   },
   {
-    "text": "number so even if the area stays the",
+    "text": "we obviously think that the",
     "start": 2956.52,
     "duration": 4.2
   },
   {
-    "text": "same like",
+    "text": "house with nine rooms should cost way",
     "start": 2959.36,
     "duration": 4.6
   },
   {
-    "text": "3156 and for one house the number of",
+    "text": "more than the house with",
     "start": 2960.72,
     "duration": 5.12
   },
   {
-    "text": "wounds were three and then for a",
+    "text": "three rooms. But because the numbers are so small, the",
     "start": 2963.96,
     "duration": 3.12
   },
   {
-    "text": "different house for the same same area",
+    "text": "difference in the price would not be",
     "start": 2965.84,
     "duration": 3.88
   },
   {
-    "text": "the number of rooms was let&#39;s say nine",
+    "text": "very high. Because of this number, because of the scale of it, even though",
     "start": 2967.08,
     "duration": 5.72
   },
   {
-    "text": "we obviously think that the the the the",
+    "text": "we think it should be high, it's not high.",
     "start": 2969.72,
     "duration": 5.16
   },
   {
-    "text": "house with nine rooms should cost way",
+    "text": "In other words, the algorithm is paying more",
     "start": 2972.8,
     "duration": 5.2
   },
   {
-    "text": "more than what the uh house with with",
+    "text": "attention to this feature than that",
     "start": 2974.88,
     "duration": 6.68
   },
   {
-    "text": "three with three rooms were there but",
-    "start": 2978.0,
+    "text": "feature. It's thinking that this one is",
+    "start": 2978,
     "duration": 7.8
   },
   {
-    "text": "because the the numbers is so small the",
+    "text": "something more important than that one.",
     "start": 2981.56,
-    "duration": 7.0
+    "duration": 7
   },
   {
-    "text": "difference in the price would not be",
+    "text": "Why? Because the number is high, and it's",
     "start": 2985.8,
     "duration": 6.4
   },
   {
-    "text": "very high um because of this number",
+    "text": "just a mathematical formula. So we cannot",
     "start": 2988.56,
     "duration": 5.36
   },
   {
-    "text": "because of the scale of it even though",
+    "text": "just directly take these features and",
     "start": 2992.2,
     "duration": 3.4
   },
   {
-    "text": "we think it should be high it&#39;s not high",
+    "text": "feed them to the algorithm. We first have to normalize their scale",
     "start": 2993.92,
     "duration": 3.32
   },
   {
-    "text": "in other words get the is paying more",
+    "text": "in order to bring them into a common",
     "start": 2995.6,
     "duration": 3.04
   },
   {
-    "text": "attention to this feature than that",
+    "text": "scale. Not change the values of them,",
     "start": 2997.24,
     "duration": 3.92
   },
   {
-    "text": "feature it&#39;s thinking that this one is",
+    "text": "of course, but change the scale of it so",
     "start": 2998.64,
     "duration": 4.28
   },
   {
-    "text": "something more important than that one",
+    "text": "that they vary on the same scale. This is",
     "start": 3001.16,
     "duration": 3.76
   },
   {
-    "text": "why because the number is high and it&#39;s",
+    "text": "called data normalization. There are two",
     "start": 3002.92,
     "duration": 4.6
   },
   {
-    "text": "just a mathematical formula so we cannot",
+    "text": "ways you can do that. One is the term",
     "start": 3004.92,
     "duration": 5.64
   },
   {
-    "text": "just directly um take these features and",
+    "text": "that is given to it, which is called data",
     "start": 3007.52,
     "duration": 5.48
   },
   {
-    "text": "feed them to or algorith them we just we",
+    "text": "normalization, and the second one is",
     "start": 3010.56,
     "duration": 5.72
   },
   {
-    "text": "first have to um normalize their scale",
-    "start": 3013.0,
+    "text": "called standardization.",
+    "start": 3013,
     "duration": 5.32
   },
   {
-    "text": "in order to bring them into a common",
+    "text": "",
     "start": 3016.28,
     "duration": 5.2
   },
   {
-    "text": "scale not uh change the values of them",
+    "text": "",
     "start": 3018.32,
     "duration": 5.84
   },
   {
-    "text": "of course but change the scale of it so",
+    "text": "",
     "start": 3021.48,
     "duration": 4.56
   },
   {
-    "text": "that they vary on the same scale this is",
+    "text": "",
     "start": 3024.16,
     "duration": 3.52
   },
   {
-    "text": "called Data normalization there are two",
+    "text": "",
     "start": 3026.04,
     "duration": 5.88
   },
   {
-    "text": "ways you can do that one is um the term",
+    "text": "",
     "start": 3027.68,
     "duration": 7.84
   },
   {
-    "text": "that is given to it is called data",
+    "text": "",
     "start": 3031.92,
     "duration": 3.6
   },
   {
-    "text": "normalization and the second one is",
+    "text": "",
     "start": 3036.8,
     "duration": 4.88
   },
   {
-    "text": "called",
+    "text": "",
     "start": 3039.08,
     "duration": 2.6
   },
   {
-    "text": "standardization",
+    "text": "",
     "start": 3042.96,
     "duration": 4.76
   },
   {
-    "text": "standardization so let&#39;s look at the",
+    "text": "Standardization: let's look at the standardization one.",
     "start": 3045.72,
     "duration": 3.56
   },
   {
-    "text": "standardization one this is one we&#39;ll be",
+    "text": "This is one we'll be using, even though you can try that one as well.",
     "start": 3047.72,
     "duration": 3.48
   },
   {
-    "text": "using even though you can try that one",
+    "text": "",
     "start": 3049.28,
     "duration": 5.24
   },
   {
-    "text": "as well so what it does is it takes um",
+    "text": "So what it does is it takes the value in the column—in this case, since we're talking about the area column, which is X1—so it's going to the X1 column, pick values in it, and modify them in this way.",
     "start": 3051.2,
     "duration": 5.72
   },
   {
-    "text": "the value and the column fun in since",
+    "text": "",
     "start": 3054.52,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "we&#39;re talking about the area column um",
+    "text": "",
     "start": 3056.92,
     "duration": 6.16
   },
   {
-    "text": "which is X1 so it&#39;s going to the X1",
+    "text": "",
     "start": 3059.52,
     "duration": 6.68
   },
   {
-    "text": "column it&#39;s picking values in it and it",
+    "text": "",
     "start": 3063.08,
     "duration": 5.36
   },
   {
-    "text": "is modifying them in this way so let&#39;s",
+    "text": "Let's pick a value: X11, where this top one represents the first example in the data.",
     "start": 3066.2,
     "duration": 5.52
   },
   {
-    "text": "pick a value",
+    "text": "",
     "start": 3068.44,
     "duration": 7.08
   },
   {
-    "text": "um X11 where this top one represents the",
+    "text": "You can think of it as this one.",
     "start": 3071.72,
     "duration": 6.56
   },
   {
-    "text": "first example in the in the data you can",
+    "text": "",
     "start": 3075.52,
     "duration": 4.68
   },
   {
-    "text": "think of it as this",
+    "text": "",
     "start": 3078.28,
-    "duration": 5.0
+    "duration": 5
   },
   {
-    "text": "one um and what it is doing it is",
+    "text": "What it is doing is subtracting from it the mean of the column—so mean represented by μ of X1—and then it is dividing it by the standard deviation represented by σ of X1.",
     "start": 3080.2,
     "duration": 4.8
   },
   {
-    "text": "subtracting from it the mean of the",
+    "text": "",
     "start": 3083.28,
     "duration": 6.52
   },
   {
-    "text": "column so mean represented by mu of X1",
-    "start": 3085.0,
+    "text": "",
+    "start": 3085,
     "duration": 6.52
   },
   {
-    "text": "and then it is dividing it by the",
+    "text": "",
     "start": 3089.8,
     "duration": 2.76
   },
   {
-    "text": "standard",
+    "text": "",
     "start": 3091.52,
     "duration": 4.88
   },
   {
-    "text": "deviation represented by Sigma uh of",
+    "text": "",
     "start": 3092.56,
     "duration": 7.84
   },
   {
-    "text": "X1 and it is doing this for the entire",
+    "text": "It is doing this for the entire entries of that column, so it's not just doing it for X11; it's doing it for whatever number of values you have.",
     "start": 3096.4,
     "duration": 6.24
   },
   {
-    "text": "entries of that column so it&#39;s not just",
+    "text": "",
     "start": 3100.4,
     "duration": 5.88
   },
   {
-    "text": "doing it for X1 one it&#39;s doing it for",
+    "text": "",
     "start": 3102.64,
     "duration": 5.4
   },
   {
-    "text": "whatever whatever number of values you",
+    "text": "",
     "start": 3106.28,
     "duration": 5.2
   },
   {
-    "text": "have the result of it is you&#39;ll see that",
+    "text": "The result of it is you'll see that instead of the values varying between these high numbers, they then become values varying between some small negative number and some small positive number.",
     "start": 3108.04,
     "duration": 6.28
   },
   {
-    "text": "instead of the values being varying",
+    "text": "",
     "start": 3111.48,
     "duration": 5.84
   },
   {
-    "text": "between the these high numbers they then",
+    "text": "",
     "start": 3114.32,
     "duration": 6.64
   },
   {
-    "text": "become um wearing between some small",
+    "text": "",
     "start": 3117.32,
     "duration": 4.64
   },
   {
-    "text": "negative",
+    "text": "",
     "start": 3120.96,
     "duration": 4.32
   },
   {
-    "text": "number and some small positive number",
+    "text": "The relation stays the same—so remember, we are not changing the data; you cannot interfere with the data, but you have reduced its scale so that now they can vary between a small negative number and a small positive number.",
     "start": 3121.96,
     "duration": 4.92
   },
   {
-    "text": "the relation stays the same so remember",
+    "text": "",
     "start": 3125.28,
     "duration": 3.64
   },
   {
-    "text": "we are not changing the data it would",
+    "text": "",
     "start": 3126.88,
     "duration": 4.28
   },
   {
-    "text": "you cannot interfere with the data but",
+    "text": "",
     "start": 3128.92,
     "duration": 4.08
   },
   {
-    "text": "you have reduced its scale so that now",
+    "text": "",
     "start": 3131.16,
     "duration": 3.6
   },
   {
-    "text": "they can vary between a small negative",
-    "start": 3133.0,
+    "text": "",
+    "start": 3133,
     "duration": 4.16
   },
   {
-    "text": "number and small positive number you do",
+    "text": "You do this for the area, and you also do this for the number of rooms as well and whatever other features you might have—you do this for all of them so that your scale remains the same.",
     "start": 3134.76,
     "duration": 4.32
   },
   {
-    "text": "this for the area and you also do this",
+    "text": "",
     "start": 3137.16,
     "duration": 4.56
   },
   {
-    "text": "for the number of rooms SC as well and",
+    "text": "",
     "start": 3139.08,
     "duration": 5.08
   },
   {
-    "text": "uh whatever other feature you might have",
+    "text": "",
     "start": 3141.72,
     "duration": 5.24
   },
   {
-    "text": "you do this for all of them so so that",
+    "text": "When you are doing linear regression on it, it doesn't bias towards a particular feature more than any other feature.",
     "start": 3144.16,
     "duration": 5.84
   },
   {
-    "text": "your scale Remains the Same and when you",
+    "text": "",
     "start": 3146.96,
     "duration": 5.56
   },
   {
-    "text": "are doing linear regression on it um it",
-    "start": 3150.0,
+    "text": "",
+    "start": 3150,
     "duration": 5.88
   },
   {
-    "text": "doesn&#39;t pay it doesn&#39;t bias towards a",
+    "text": "",
     "start": 3152.52,
     "duration": 6.36
   },
   {
-    "text": "particular feature more than any other",
+    "text": "",
     "start": 3155.88,
     "duration": 6.32
   },
   {
-    "text": "feature so that&#39;s what um jams would",
+    "text": "So that's what Jams would show you in the next session quickly, just showing you how to do standardization in the code—it's simple.",
     "start": 3158.88,
     "duration": 5.88
   },
   {
-    "text": "show you in the in the next uh session",
+    "text": "",
     "start": 3162.2,
     "duration": 4.72
   },
   {
-    "text": "quickly just showing you how to do",
+    "text": "",
     "start": 3164.76,
     "duration": 4.84
   },
   {
-    "text": "standardization in the code it&#39;s simple",
+    "text": "There are tools for it; you don't have to worry too much about it.",
     "start": 3166.92,
     "duration": 5.76
   },
   {
-    "text": "is the tools for it um you don&#39;t have to",
+    "text": "",
     "start": 3169.6,
     "duration": 4.36
   },
   {
-    "text": "you don&#39;t have to worry too much about",
+    "text": "",
     "start": 3172.68,
     "duration": 4.4
   },
   {
-    "text": "it yeah I&#39;ll do it um I&#39;ll it now we",
+    "text": "I'll do it now—we still have five minutes.",
     "start": 3173.96,
     "duration": 4.2
   },
   {
-    "text": "still have five",
+    "text": "",
     "start": 3177.08,
     "duration": 5.56
   },
   {
-    "text": "minutes okay so just so you can quickly",
+    "text": "Okay, so just so you can quickly do that, Jam?",
     "start": 3178.16,
     "duration": 9.12
   },
   {
-    "text": "do that jam yeah that&#39;ll be great um so",
+    "text": "Yeah, that'll be great, so that next time we can move on to something better.",
     "start": 3182.64,
     "duration": 7.36
   },
   {
-    "text": "that next time we can move on to",
+    "text": "",
     "start": 3187.28,
     "duration": 6.04
   },
   {
-    "text": "something better so this is the um the",
-    "start": 3190.0,
+    "text": "So this is the course materials here, and here under the mini project we just did, we actually had two notebooks, but we just ask you to do the...",
+    "start": 3190,
     "duration": 7.32
   },
   {
-    "text": "course materials here and here under the",
+    "text": "",
     "start": 3193.32,
     "duration": 6.12
   },
   {
-    "text": "mini project we just did we actually had",
+    "text": "",
     "start": 3197.32,
     "duration": 4.24
   },
   {
-    "text": "two notebooks but we just ask you to do",
+    "text": "",
     "start": 3199.44,
     "duration": 3.52
   },
   {
-    "text": "the",
+    "text": "",
     "start": 3201.56,
     "duration": 4.12
   },
   {
-    "text": "oh here we actually under the mini",
+    "text": "Oh, here we actually, under the mini...",
     "start": 3202.96,
     "duration": 4.8
   },
   {
-    "text": "project two books so we asked you just",
+    "text": "Project two books, so we asked you to do the first one.",
     "start": 3205.68,
     "duration": 4.32
   },
   {
-    "text": "to um do the first",
+    "text": "",
     "start": 3207.76,
     "duration": 5.84
   },
   {
-    "text": "one and I&#39;ll just show you this is the",
-    "start": 3210.0,
+    "text": "I'll just show you this is the one that you just did just now.",
+    "start": 3210,
     "duration": 5.52
   },
   {
-    "text": "one that this is the one that you just",
+    "text": "",
     "start": 3213.6,
     "duration": 5.76
   },
   {
-    "text": "did just now and when",
+    "text": "When we chose the feature that we wanted to do a linear regression on, we did something like this with the double brackets, but this is just NumPy how you can select one column out of a data frame with lots of different columns.",
     "start": 3215.52,
     "duration": 8.08
   },
   {
-    "text": "we um chose the feature that we wanted",
+    "text": "",
     "start": 3219.36,
     "duration": 6.04
   },
   {
-    "text": "to do",
+    "text": "",
     "start": 3223.6,
     "duration": 4.96
   },
   {
-    "text": "a uh linear regression on we did",
+    "text": "",
     "start": 3225.4,
     "duration": 5.56
   },
   {
-    "text": "something like this that&#39;s kind of weird",
+    "text": "",
     "start": 3228.56,
     "duration": 4.72
   },
   {
-    "text": "with the double brackets but this is",
+    "text": "",
     "start": 3230.96,
     "duration": 6.64
   },
   {
-    "text": "just numpy how you can select one column",
+    "text": "",
     "start": 3233.28,
-    "duration": 9.0
+    "duration": 9
   },
   {
-    "text": "out of a data data frame with um lots of",
+    "text": "",
     "start": 3237.6,
     "duration": 6.52
   },
   {
-    "text": "uh lots of different",
+    "text": "",
     "start": 3242.28,
     "duration": 5.92
   },
   {
-    "text": "columns so that&#39;s that&#39;s how we did it",
+    "text": "That's how we did it before.",
     "start": 3244.12,
     "duration": 6.52
   },
   {
-    "text": "before and now I&#39;m going to show you",
+    "text": "Now I'm going to show you with the multivariant regression how we will do it differently because now we want to select multiple columns.",
     "start": 3248.2,
     "duration": 5.8
   },
   {
-    "text": "with the multivariant",
+    "text": "",
     "start": 3250.64,
     "duration": 5.96
   },
   {
-    "text": "regression how we will do it differently",
-    "start": 3254.0,
+    "text": "",
+    "start": 3254,
     "duration": 5.4
   },
   {
-    "text": "because now we want to select actual",
+    "text": "",
     "start": 3256.6,
-    "duration": 7.0
+    "duration": 7
   },
   {
-    "text": "actually multiple uh columns",
+    "text": "",
     "start": 3259.4,
     "duration": 7.04
   },
   {
-    "text": "so and um yeah feel free to go look at",
+    "text": "Feel free to go look at the code afterwards.",
     "start": 3263.6,
     "duration": 4.08
   },
   {
-    "text": "the code",
+    "text": "",
     "start": 3266.44,
     "duration": 4.92
   },
   {
-    "text": "afterwards so what I&#39;ve done here",
+    "text": "What I've done here is I've taken houses, which is the data frame.",
     "start": 3267.68,
     "duration": 6.48
   },
   {
-    "text": "is um is I&#39;ve",
+    "text": "",
     "start": 3271.36,
     "duration": 5.88
   },
   {
-    "text": "taken uh houses which is the the data",
+    "text": "Before I would have been doing something like this is the column that I want.",
     "start": 3274.16,
     "duration": 6.36
   },
   {
-    "text": "frame and before I would have been doing",
+    "text": "",
     "start": 3277.24,
     "duration": 5.8
   },
   {
-    "text": "something like you know this is the",
+    "text": "",
     "start": 3280.52,
     "duration": 6.76
   },
   {
-    "text": "column that I want here but now actually",
+    "text": "But now instead of just selecting one, I'm just removing the ones that I don't want because it's very rare that you would actually want to use every single feature in the raw data.",
     "start": 3283.04,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "instead of just selecting one I&#39;m just",
+    "text": "",
     "start": 3287.28,
     "duration": 4.72
   },
   {
-    "text": "removing the ones that I don&#39;t want um",
+    "text": "",
     "start": 3289.04,
     "duration": 4.56
   },
   {
-    "text": "because it&#39;s very rare that you would",
-    "start": 3292.0,
+    "text": "",
+    "start": 3292,
     "duration": 4.52
   },
   {
-    "text": "actually want to use every single",
+    "text": "",
     "start": 3293.6,
     "duration": 6.24
   },
   {
-    "text": "feature in the Raw data um you&#39;ll have",
+    "text": "You'll have stuff like the ID, the date, and you definitely don't want to train it dependent on the dependent variable because that's the one we're trying to predict.",
     "start": 3296.52,
     "duration": 4.96
   },
   {
-    "text": "stuff like the",
+    "text": "",
     "start": 3299.84,
     "duration": 4.52
   },
   {
-    "text": "ID the the",
+    "text": "",
     "start": 3301.48,
     "duration": 5.64
   },
   {
-    "text": "date and you definitely don&#39;t want to",
+    "text": "",
     "start": 3304.36,
     "duration": 5.8
   },
   {
-    "text": "train it on the um dependent on the",
+    "text": "",
     "start": 3307.12,
     "duration": 5.16
   },
   {
-    "text": "dependent variable um because that&#39;s the",
+    "text": "",
     "start": 3310.16,
     "duration": 3.88
   },
   {
-    "text": "one we&#39;re trying to predict so we we",
+    "text": "",
     "start": 3312.28,
     "duration": 3.32
   },
   {
-    "text": "take those",
+    "text": "So we take those out.",
     "start": 3314.04,
-    "duration": 8.0
+    "duration": 8
   },
   {
-    "text": "out and yeah so this that results in a",
+    "text": "In this case I decide to just keep everything else.",
     "start": 3315.6,
     "duration": 8.16
   },
   {
-    "text": "slightly slightly smaller one in this",
+    "text": "",
     "start": 3322.04,
     "duration": 5.44
   },
   {
-    "text": "case I decide to just keep everything",
+    "text": "",
     "start": 3323.76,
     "duration": 7.32
   },
   {
-    "text": "else um if you want you can choose if",
+    "text": "If you want, you can also do something like this where you just select the ones that you want to keep instead of the ones you want to remove, but getting a bit into the details here.",
     "start": 3327.48,
     "duration": 7.72
   },
   {
-    "text": "you want you can also do something like",
+    "text": "",
     "start": 3331.08,
     "duration": 7.68
   },
   {
-    "text": "um you can also do something like",
+    "text": "",
     "start": 3335.2,
-    "duration": 7.0
+    "duration": 7
   },
   {
-    "text": "this where you just select the",
+    "text": "",
     "start": 3338.76,
     "duration": 5.96
   },
   {
-    "text": "ones that you want to keep instead of",
+    "text": "",
     "start": 3342.2,
     "duration": 4.32
   },
   {
-    "text": "the ones you want to remove but getting",
+    "text": "",
     "start": 3344.72,
     "duration": 5.12
   },
   {
-    "text": "a bit into the details here so",
+    "text": "",
     "start": 3346.52,
     "duration": 6.6
   },
   {
-    "text": "then after that um the important thing",
+    "text": "Then after that, the important thing is what was just said: if we try to train this model without standardizing data, it's going to be way skewed towards certain features that have larger magnitudes.",
     "start": 3349.84,
     "duration": 6.12
   },
   {
-    "text": "is what na just said like if we try and",
+    "text": "",
     "start": 3353.12,
     "duration": 5.12
   },
   {
-    "text": "train this model without standardizing",
+    "text": "",
     "start": 3355.96,
     "duration": 5.36
   },
   {
-    "text": "data it&#39;s going to be way skewed towards",
+    "text": "",
     "start": 3358.24,
     "duration": 6.88
   },
   {
-    "text": "certain features that have larger",
+    "text": "",
     "start": 3361.32,
     "duration": 7.88
   },
   {
-    "text": "magnitudes um so yeah that&#39;s why I said",
+    "text": "That's why I said I could do this in a few minutes because this is literally the code for that.",
     "start": 3365.12,
     "duration": 5.44
   },
   {
-    "text": "I could do this in a few minutes because",
+    "text": "",
     "start": 3369.2,
     "duration": 3.76
   },
   {
-    "text": "this is this is literally the the code",
+    "text": "",
     "start": 3370.56,
     "duration": 5.16
   },
   {
-    "text": "for that we take X which is this whole",
+    "text": "We take X, which is this whole data frame, this table, and then we put it through fit.",
     "start": 3372.96,
     "duration": 6.64
   },
   {
-    "text": "data data frame here this table and then",
+    "text": "",
     "start": 3375.72,
     "duration": 6.56
   },
   {
-    "text": "we put it through um fit",
+    "text": "",
     "start": 3379.6,
     "duration": 6.24
   },
   {
-    "text": "transform so that is something that you",
+    "text": "Transform so that is something that you can look up: standard scaler.",
     "start": 3382.28,
     "duration": 6.6
   },
   {
-    "text": "know you can look up um standard",
+    "text": "",
     "start": 3385.84,
     "duration": 6.08
   },
   {
-    "text": "standard scaler but it&#39;s it&#39;s just what",
+    "text": "But it's just what was said—for each feature, it takes every value, subtracts the mean, and then divides it by the standard deviation.",
     "start": 3388.88,
     "duration": 8.12
   },
   {
-    "text": "n um just said for each",
+    "text": "",
     "start": 3391.92,
     "duration": 8.84
   },
   {
-    "text": "feature um it takes every value um it",
-    "start": 3397.0,
+    "text": "",
+    "start": 3397,
     "duration": 6.28
   },
   {
-    "text": "subtracts the mean and then I believe it",
+    "text": "",
     "start": 3400.76,
     "duration": 5.6
   },
   {
-    "text": "divides it by the the range of value",
+    "text": "",
     "start": 3403.28,
     "duration": 4.88
   },
   {
-    "text": "standard deviation oh the standard",
+    "text": "",
     "start": 3406.36,
     "duration": 5.2
   },
   {
-    "text": "deviation thank you so in that s in that",
+    "text": "In that sense, they're all normalized by that really simple formula.",
     "start": 3408.16,
-    "duration": 6.0
+    "duration": 6
   },
   {
-    "text": "sense they&#39;re all um they&#39;re all",
+    "text": "",
     "start": 3411.56,
     "duration": 5.76
   },
   {
-    "text": "normalized by that really simple",
+    "text": "",
     "start": 3414.16,
     "duration": 4.92
   },
   {
-    "text": "formula and",
+    "text": "",
     "start": 3417.32,
     "duration": 4.52
   },
   {
-    "text": "then the the rest of the TR the training",
+    "text": "Then the rest of the training is exactly the same, so you just do—we take the X normalized now instead of the X, normalize it, and we do a train-test split on that and pass that into the same fit function.",
     "start": 3419.08,
     "duration": 8.04
   },
   {
-    "text": "is exactly the same so you just do um we",
+    "text": "",
     "start": 3421.84,
     "duration": 8.08
   },
   {
-    "text": "we take the X Norm now instead of the X",
+    "text": "",
     "start": 3427.12,
     "duration": 5.4
   },
   {
-    "text": "normalize and we do a train T split on",
+    "text": "",
     "start": 3429.92,
     "duration": 6.2
   },
   {
-    "text": "that and we pass that into the same fit",
+    "text": "",
     "start": 3432.52,
     "duration": 6.8
   },
   {
-    "text": "function and what we what we end up with",
+    "text": "",
     "start": 3436.12,
     "duration": 4.16
   },
   {
-    "text": "is",
+    "text": "What we end up with is a new model that takes into account all those variables.",
     "start": 3439.32,
     "duration": 3.56
   },
   {
-    "text": "um as we end up with you know a new",
+    "text": "",
     "start": 3440.28,
     "duration": 4.92
   },
   {
-    "text": "model that takes into account all those",
+    "text": "",
     "start": 3442.88,
     "duration": 4.96
   },
   {
-    "text": "variables and if would just look at the",
+    "text": "If we just look at the single variable model performance here, we were getting something like root mean squared error of 267,000.",
     "start": 3445.2,
     "duration": 4.68
   },
   {
-    "text": "the single variable model performance",
+    "text": "",
     "start": 3447.84,
     "duration": 4.84
   },
   {
-    "text": "here we were getting something like root",
+    "text": "",
     "start": 3449.88,
     "duration": 6.88
   },
   {
-    "text": "mean squared error of um",
+    "text": "",
     "start": 3452.68,
     "duration": 8.12
   },
   {
-    "text": "267,000 and here get",
+    "text": "Here we get 198,000 once we've done the multivariate.",
     "start": 3456.76,
     "duration": 7.2
   },
   {
-    "text": "198,000 once we&#39;ve done the multivariat",
+    "text": "",
     "start": 3460.8,
     "duration": 5.84
   },
   {
-    "text": "so that&#39;s good that means that that it&#39;s",
+    "text": "So that's good—that means it's improved.",
     "start": 3463.96,
     "duration": 6.44
   },
   {
-    "text": "improved it hasn&#39;t drastically changed",
+    "text": "",
     "start": 3466.64,
     "duration": 5.48
   },
   {
-    "text": "it by an order of magnitude but we&#39;ve",
+    "text": "It hasn't drastically changed it by an order of magnitude, but we've gotten a significant improvement in the performance of the model by adding more variables.",
     "start": 3470.4,
     "duration": 3.84
   },
   {
-    "text": "gotten you know an a significant",
+    "text": "",
     "start": 3472.12,
     "duration": 3.48
   },
   {
-    "text": "Improvement in the performance of the",
+    "text": "",
     "start": 3474.24,
     "duration": 4.68
   },
   {
-    "text": "model by adding uh more more",
+    "text": "",
     "start": 3475.6,
     "duration": 5.6
   },
   {
-    "text": "variables does that make",
+    "text": "Does that make sense?",
     "start": 3478.92,
     "duration": 5.76
   },
   {
-    "text": "sense yeah yeah",
+    "text": "Yeah, yeah.",
     "start": 3481.2,
     "duration": 6.32
   },
   {
-    "text": "cool so feel free to play around with",
+    "text": "Cool, so feel free to play around with that with your models.",
     "start": 3484.68,
     "duration": 4.88
   },
   {
-    "text": "that with your models um but next time",
+    "text": "",
     "start": 3487.52,
     "duration": 5.32
   },
   {
-    "text": "we&#39;re not going to um share more um or",
+    "text": "But next time we're not going to share more or present more—we're going to go into the next kind of regression so that we can get to the fun stuff, which is deep learning as fast as possible.",
     "start": 3489.56,
     "duration": 5.12
   },
   {
-    "text": "present more we&#39;re going to just go into",
+    "text": "",
     "start": 3492.84,
     "duration": 4.28
   },
   {
-    "text": "the next kind of",
+    "text": "",
     "start": 3494.68,
     "duration": 5.52
   },
   {
-    "text": "regression um so that we can get to the",
+    "text": "",
     "start": 3497.12,
     "duration": 5.16
   },
   {
-    "text": "fun stuff which is the Deep learning as",
+    "text": "",
     "start": 3500.2,
     "duration": 4.04
   },
   {
-    "text": "fast as",
+    "text": "",
     "start": 3502.28,
     "duration": 5.84
   },
   {
-    "text": "possible sounds good",
+    "text": "Sounds good.",
     "start": 3504.24,
     "duration": 3.88
   },
   {
-    "text": "okay thank you sounds",
+    "text": "Okay, thank you.",
     "start": 3508.32,
     "duration": 3.36
   },
   {
-    "text": "good you were asking me something oh",
+    "text": "Sounds good—you were asking me something?",
     "start": 3512.12,
     "duration": 5.64
   },
   {
-    "text": "just did you have anything to add no no",
+    "text": "I just did. Did you have anything to add?",
     "start": 3514.76,
     "duration": 9.16
   },
   {
-    "text": "so we&#39;ll meet next time all right thanks",
+    "text": "No, no, so we'll meet next time.",
     "start": 3517.76,
     "duration": 8.64
   },
   {
-    "text": "guys",
+    "text": "All right, thanks guys.",
     "start": 3523.92,
     "duration": 5.24
   },
   {
-    "text": "goodbye see you next time bye",
+    "text": "Goodbye, see you next time.",
     "start": 3526.4,
     "duration": 6.08
   },
   {
-    "text": "guys bye-bye",
+    "text": "Bye guys, bye-bye.",
     "start": 3529.16,
     "duration": 3.32
   }
