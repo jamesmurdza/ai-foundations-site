@@ -1,7 +1,13 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Check, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Check,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  PanelRightOpen,
+} from "lucide-react";
 import type { Course, Lesson, ResolvedTab } from "@site/lib/courses";
 import { Transcript } from "@site/components/Transcript";
 import { Markdown } from "@site/components/Markdown";
@@ -52,6 +58,7 @@ export function LessonView({
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState(0);
+  const [transcriptOpen, setTranscriptOpen] = useState(true);
   // Current playback time (seconds)
   const [currentTime, setCurrentTime] = useState(0);
 
@@ -216,8 +223,8 @@ export function LessonView({
 
         {lesson.videoId && (
           <div className="flex flex-col md:flex-row md:items-stretch gap-4 lg:gap-6">
-            <div className="flex-1 min-w-0">
-              <div className="aspect-video w-full bg-black rounded-lg overflow-hidden">
+            <div className="flex flex-1 min-w-0 flex-col gap-3">
+              <div className="aspect-video w-full bg-black rounded-xl overflow-hidden border">
                 <iframe
                   ref={playerRef}
                   src={`https://www.youtube.com/embed/${lesson.videoId}?enablejsapi=1`}
@@ -228,13 +235,24 @@ export function LessonView({
                   style={{ border: 0 }}
                 />
               </div>
+              {hasTranscript && !transcriptOpen && (
+                <button
+                  type="button"
+                  onClick={() => setTranscriptOpen(true)}
+                  className="inline-flex items-center gap-2 self-start rounded-lg border px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                >
+                  <PanelRightOpen className="h-4 w-4" />
+                  Show transcript
+                </button>
+              )}
             </div>
-            {hasTranscript && (
+            {hasTranscript && transcriptOpen && (
               <div className="w-full shrink-0 md:relative md:w-[300px] lg:w-[360px] xl:w-[440px]">
                 <Transcript
                   videoId={lesson.videoId}
                   onSeek={handleSeek}
                   currentTime={currentTime}
+                  onCollapse={() => setTranscriptOpen(false)}
                 />
               </div>
             )}

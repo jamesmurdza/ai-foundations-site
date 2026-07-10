@@ -5,6 +5,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   allowedDevOrigins: [
     "3000-49ddbbf7-6b4b-476e-864c-d27cd456e7dc.daytonaproxy01.net",
+    "3000-76d88180-c438-4e45-8a0f-0d490a1efcad.daytonaproxy01.net",
   ],
   images: {
     remotePatterns: [
