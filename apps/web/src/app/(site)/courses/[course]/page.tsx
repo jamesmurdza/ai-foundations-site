@@ -70,14 +70,14 @@ export default async function CoursePage({
           </div>
 
           {/* Lessons */}
-          <div className="border-x border-y divide-y">
+          <div className="border-x border-y px-4 md:px-8 py-6 flex flex-col gap-2">
             {course.lessons.map((lesson) => {
               const colab = lesson.resources?.find((r) => r.type === "colab");
               return (
                 <Link
                   key={lesson.id}
                   href={`/courses/${course.slug}/${lesson.id}`}
-                  className="group flex flex-col sm:flex-row gap-4 sm:gap-6 px-6 md:px-12 py-6 transition-colors hover:bg-muted/40"
+                  className="group flex flex-col sm:flex-row gap-4 sm:gap-6 rounded-xl p-4 transition-colors hover:bg-muted/50"
                 >
                   {lesson.videoId && (
                     <div className="relative w-full sm:w-64 aspect-video sm:aspect-auto sm:h-36 shrink-0 rounded-lg overflow-hidden border">

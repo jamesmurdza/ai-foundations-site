@@ -165,7 +165,7 @@ export function LessonView({
   };
 
   return (
-    <div className="rounded-xl border bg-background p-5 sm:p-6 md:p-8">
+    <div>
       <div>
         <div ref={menuRef} className="relative z-40 mb-6 inline-block">
           <button

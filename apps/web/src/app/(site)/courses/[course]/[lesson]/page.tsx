@@ -45,11 +45,11 @@ export default async function LessonPage({
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-8">
+      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         <div
           className={`mx-auto ${lesson.videoId ? "max-w-7xl" : "max-w-4xl"}`}
         >
-          <div className="flex items-center gap-4 mb-8">
+          <div className="border-x border-t px-4 sm:px-6 md:px-8 py-4">
             <Link
               href={`/courses/${course.slug}`}
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -59,7 +59,9 @@ export default async function LessonPage({
             </Link>
           </div>
 
-          <LessonView course={course} lesson={lesson} tabs={tabs} />
+          <div className="border-x border-y px-4 sm:px-6 md:px-8 py-6 md:py-8">
+            <LessonView course={course} lesson={lesson} tabs={tabs} />
+          </div>
         </div>
       </div>
     </div>
