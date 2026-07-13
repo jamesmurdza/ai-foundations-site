@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { NavItem } from "@site/components/nav-item";
-import { Button } from "@site/components/ui/button";
 import { MobileNavbar } from "@site/components/mobile-navbar";
 import { MobileNavItem } from "@site/components/mobile-nav-item";
 
@@ -25,13 +24,11 @@ export function Header({ wide = false }: { wide?: boolean }) {
                 {/* <NavItem href="/workshops" label="Workshops" /> */}
               </nav>
               <MobileNavbar>
-                <div className="rounded-b-lg bg-background py-4 container text-foreground border mt-6">
-                  <nav className="flex flex-col gap-1 pt-2">
-                    {/* <MobileNavItem href="/about" label="About" /> */}
-                    <MobileNavItem href="/#courses" label="Courses" />
-                    {/* <MobileNavItem href="/workshops" label="Workshops" /> */}
-                  </nav>
-                </div>
+                <nav className="flex flex-col gap-1 border-b bg-background p-4 text-foreground shadow-lg">
+                  {/* <MobileNavItem href="/about" label="About" /> */}
+                  <MobileNavItem href="/#courses" label="Courses" />
+                  {/* <MobileNavItem href="/workshops" label="Workshops" /> */}
+                </nav>
               </MobileNavbar>
             </div>
           </div>
