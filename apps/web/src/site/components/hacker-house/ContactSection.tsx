@@ -1,15 +1,29 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@site/lib/gsap";
 import { Button } from "@site/components/ui/button";
 
-const EMAIL = "summerschool@aifoundations.school";
+// Email is assembled in JS (never emitted as a plain address or mailto: in the
+// server-rendered HTML) to reduce scraping by spam bots.
+const EMAIL_USER = "summerschool";
+const EMAIL_DOMAIN = "aifoundations.school";
+const OBFUSCATED = `${EMAIL_USER} [at] ${EMAIL_DOMAIN.replace(".", " [dot] ")}`;
 
 export function ContactSection() {
   registerGsap();
   const root = useRef<HTMLElement>(null);
+  const [display, setDisplay] = useState(OBFUSCATED);
+
+  useEffect(() => {
+    setDisplay(`${EMAIL_USER}@${EMAIL_DOMAIN}`);
+  }, []);
+
+  const openEmail = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.href = `mailto:${EMAIL_USER}@${EMAIL_DOMAIN}`;
+  };
 
   useGSAP(
     () => {
@@ -45,15 +59,22 @@ export function ContactSection() {
             in touch and we&apos;ll tell you everything.
           </p>
           <div className="hh-contact mt-8">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 h-12">
-              <a href={`mailto:${EMAIL}`}>Email us</a>
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white px-8 h-12"
+            >
+              <a href="#" onClick={openEmail}>
+                Email us
+              </a>
             </Button>
             <p className="mt-4 text-sm text-muted-foreground">
               <a
-                href={`mailto:${EMAIL}`}
+                href="#"
+                onClick={openEmail}
                 className="font-medium text-foreground underline underline-offset-4 hover:text-primary"
               >
-                {EMAIL}
+                {display}
               </a>
             </p>
           </div>
