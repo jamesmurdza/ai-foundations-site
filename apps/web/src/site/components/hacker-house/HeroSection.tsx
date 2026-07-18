@@ -55,8 +55,8 @@ export function HeroSection() {
                   An inclusive living and learning community.
                 </p>
                 <p className="hh-sub mt-6 text-base md:text-lg text-white/85 max-w-2xl leading-relaxed">
-                  AI Foundations invites people of all ages to join an in-person
-                  community of learners with a focus on software development and AI.
+                  AI Foundations invites learners of all ages to join an in-person
+                  community focused on personal growth and lifelong learning.
                 </p>
               </div>
               <div className="hh-meta flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
