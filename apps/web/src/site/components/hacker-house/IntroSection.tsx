@@ -34,15 +34,7 @@ export function IntroSection() {
     <section ref={root} className="py-24 md:py-32 border-t">
       <div className="container">
         <div className="mx-2 md:mx-10 px-6 md:px-12">
-          <div className="text-center mb-12">
-            <p className="hh-intro text-sm uppercase tracking-[0.2em] text-primary mb-3">
-              What it is
-            </p>
-            <h2 className="hh-intro font-heading text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mx-auto">
-              Learn and teach for four weeks in Bandung.
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto items-center">
             <figure className="hh-intro relative aspect-[4/3] overflow-hidden border">
               <img
                 src="/images/summer-school/accommodation-balcony.avif"
@@ -51,6 +43,9 @@ export function IntroSection() {
               />
             </figure>
             <div className="hh-intro flex flex-col justify-center">
+              <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight mb-5">
+                Learn and teach for four weeks in Bandung.
+              </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 The AI Summer School is our first pop-up school: 12 people will
                 live together in Bandung, Indonesia while simultaneously learning
