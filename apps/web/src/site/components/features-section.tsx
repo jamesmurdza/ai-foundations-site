@@ -14,7 +14,7 @@ export function Features() {
               Online courses
             </h2>
             <p className="text-xl text-muted-foreground flex-1 lg:text-right">
-              We teach free courses to the public, online and in person.
+              We teach free courses to the public.
             </p>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 grid-cols-1">

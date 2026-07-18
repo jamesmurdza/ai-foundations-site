@@ -15,11 +15,11 @@ export function PopupSchools() {
           Pop-up schools
         </h2>
         <p className="text-xl text-muted-foreground flex-1 lg:text-right">
-          In-person schools where we live, learn, and build together.
+          In-person schools where we live and learn together.
         </p>
       </div>
       <Link href="/summer-school" className="group block">
-        <div className="relative w-full h-80 md:h-[26rem] rounded-2xl overflow-hidden">
+        <div className="relative w-full h-72 md:h-80 rounded-2xl overflow-hidden">
           <Image
             src="/images/summer-school/venue-aerial.png"
             alt="AI Summer School in Bandung, Indonesia"
