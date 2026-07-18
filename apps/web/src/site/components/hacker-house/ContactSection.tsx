@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@site/lib/gsap";
-import { Button } from "@site/components/ui/button";
 
 // Email is assembled in JS (never emitted as a plain address or mailto: in the
 // server-rendered HTML) to reduce scraping by spam bots.
@@ -46,20 +45,17 @@ export function ContactSection() {
       <div className="container">
         <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12 text-center">
           <p className="hh-contact text-lg text-muted-foreground leading-relaxed">
-            Have a question or want to hear more about the AI Summer School? Get
-            in touch:
-          </p>
-          <div className="hh-contact mt-8">
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white px-8 h-12"
+            Have a question or want to hear more about the AI Summer School? Send
+            us{" "}
+            <a
+              href="#"
+              onClick={openEmail}
+              className="font-medium text-foreground underline underline-offset-4 hover:text-primary"
             >
-              <a href="#" onClick={openEmail}>
-                Email us
-              </a>
-            </Button>
-          </div>
+              an email
+            </a>
+            .
+          </p>
         </div>
       </div>
     </section>
