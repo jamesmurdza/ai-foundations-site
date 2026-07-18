@@ -43,7 +43,7 @@ export function MentorsSection() {
       <div className="container">
         <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12 text-center">
           <h2 className="hh-mentor font-heading text-3xl md:text-4xl font-semibold tracking-tight mb-10">
-            Mentors
+            Community
           </h2>
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-8">
             {MENTORS.map((m) => (
