@@ -7,11 +7,11 @@ import { gsap, registerGsap } from "@site/lib/gsap";
 const TOPICS = [
   "AI engineering",
   "UI/UX design",
-  "open source collaboration",
+  "Open source collaboration",
   "LLM evaluation",
   "AI safety",
   "Technology and society",
-  "career development",
+  "Career development",
 ];
 
 export function TopicsSection() {
