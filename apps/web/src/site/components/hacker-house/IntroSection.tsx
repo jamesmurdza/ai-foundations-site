@@ -31,9 +31,9 @@ export function IntroSection() {
   );
 
   return (
-    <section ref={root} className="py-16 md:py-20 border-t">
+    <section ref={root}>
       <div className="container">
-        <div className="mx-2 md:mx-10 px-6 md:px-12">
+        <div className="border-x border-t mt-12 px-6 md:px-12 pt-12 pb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto items-center">
             <figure className="hh-intro relative aspect-[4/3] overflow-hidden border order-1 md:order-2">
               <img
