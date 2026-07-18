@@ -27,7 +27,7 @@ export function TopicsSection() {
             </figure>
             <div className="hh-topic order-2">
               <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-                Explore your interests
+                Explore and discover new interests
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Four weeks of daily discussions, workshops, one-on-one time with
