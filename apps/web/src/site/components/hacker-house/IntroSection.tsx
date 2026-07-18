@@ -31,7 +31,7 @@ export function IntroSection() {
   );
 
   return (
-    <section ref={root} className="py-24 md:py-32 border-t">
+    <section ref={root} className="py-16 md:py-20 border-t">
       <div className="container">
         <div className="mx-2 md:mx-10 px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto items-center">

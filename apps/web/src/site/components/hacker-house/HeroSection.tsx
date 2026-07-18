@@ -37,7 +37,7 @@ export function HeroSection() {
   );
 
   return (
-    <section ref={root} className="relative pt-12 pb-24 overflow-hidden">
+    <section ref={root} className="relative pt-12 pb-12 overflow-hidden">
       <div className="container">
         <div className="border-x px-6 md:px-12 pt-6 pb-16">
           {/* Everything overlaid inside the image */}
