@@ -19,7 +19,7 @@ export function HeroSection() {
           { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" },
         );
         gsap.fromTo(
-          [".hh-eyebrow", ".hh-tagline", ".hh-sub", ".hh-meta"],
+          [".hh-tagline", ".hh-sub", ".hh-meta"],
           { y: 14, opacity: 0 },
           {
             y: 0,
@@ -48,21 +48,20 @@ export function HeroSection() {
               className="absolute inset-0 object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/35" />
-            <figcaption className="relative z-10 flex flex-col items-center text-center px-6 py-12 text-white">
-              <p className="hh-eyebrow text-sm uppercase tracking-[0.2em] text-white/85 mb-5">
-                Summer School
-              </p>
-              <h1 className="hh-headline font-heading font-semibold tracking-tight text-balance max-w-4xl text-5xl sm:text-6xl md:text-7xl leading-[1.05] mb-5 drop-shadow-sm">
-                AI Summer School
-              </h1>
-              <p className="hh-tagline text-2xl md:text-3xl font-heading font-semibold tracking-tight text-white max-w-2xl leading-tight">
-                An inclusive living and learning community.
-              </p>
-              <p className="hh-sub mt-6 text-base md:text-lg text-white/85 max-w-2xl leading-relaxed">
-                AI Foundations invites people of all ages to join an in-person
-                community of learners with a focus on software development and AI.
-              </p>
-              <div className="hh-meta mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
+            <figcaption className="absolute inset-0 z-10 flex flex-col px-6 py-10 text-white">
+              <div className="flex-1 flex flex-col items-center justify-center text-center">
+                <h1 className="hh-headline font-heading font-semibold tracking-tight text-balance max-w-4xl text-5xl sm:text-6xl md:text-7xl leading-[1.05] mb-5 drop-shadow-sm">
+                  AI Summer School
+                </h1>
+                <p className="hh-tagline text-2xl md:text-3xl font-heading font-semibold tracking-tight text-white max-w-2xl leading-tight">
+                  An inclusive living and learning community.
+                </p>
+                <p className="hh-sub mt-6 text-base md:text-lg text-white/85 max-w-2xl leading-relaxed">
+                  AI Foundations invites people of all ages to join an in-person
+                  community of learners with a focus on software development and AI.
+                </p>
+              </div>
+              <div className="hh-meta flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
                 <span className="flex items-center gap-2 text-white/90">
                   <MapPin className="w-4 h-4 flex-shrink-0" />
                   <span className="font-medium">West Java, Indonesia</span>
