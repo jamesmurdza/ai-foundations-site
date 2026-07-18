@@ -37,8 +37,9 @@ export function HeroSection() {
   );
 
   return (
-    <section ref={root} className="relative overflow-hidden">
-      <figure className="relative overflow-hidden min-h-[560px] md:min-h-[640px] flex items-center justify-center">
+    <section ref={root} className="relative pt-10 overflow-hidden">
+      <div className="container">
+        <figure className="relative overflow-hidden min-h-[560px] md:min-h-[640px] flex items-center justify-center">
             <img
               src="/images/summer-school/venue-aerial.png"
               alt="Aerial view of a lush green forested hillside in West Java with a wooden viewing walkway"
@@ -69,7 +70,8 @@ export function HeroSection() {
                 </span>
               </div>
             </figcaption>
-      </figure>
+        </figure>
+      </div>
     </section>
   );
 }
