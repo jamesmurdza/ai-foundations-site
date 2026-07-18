@@ -69,7 +69,7 @@ export function MentorsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${m.name} on LinkedIn`}
-                className="hh-mentor flex flex-col items-center gap-3"
+                className="hh-mentor flex flex-col items-center gap-2"
               >
                 <div className="relative w-24 h-24 rounded-full overflow-hidden border">
                   <Image
@@ -80,7 +80,7 @@ export function MentorsSection() {
                     className="object-cover"
                   />
                 </div>
-                <p className="font-medium">{m.name}</p>
+                <p className="font-medium text-lg">{m.name}</p>
               </a>
             ))}
           </div>
