@@ -9,8 +9,7 @@ const MENTORS = [
   { name: "James", img: "/images/James.jpg" },
   { name: "Burhan", img: "/images/Burhan.jpg" },
   { name: "Fleo", img: "/images/FleoMae.jpg" },
-  { name: "Taniya", img: "/images/default-avatar.png" },
-  { name: "Harsh", img: "/images/default-avatar.png" },
+  { name: "Taniya", img: "/images/Taniya.avif" },
 ];
 
 export function MentorsSection() {
