@@ -54,11 +54,11 @@ export function TopicsSection() {
               <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight mb-6">
                 Explore your interests
               </h2>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2.5">
                 {TOPICS.map((topic) => (
                   <span
                     key={topic}
-                    className="rounded-full border border-primary/30 bg-primary/5 px-5 py-2 font-heading text-base font-medium text-primary"
+                    className="rounded-full border bg-secondary px-3.5 py-1.5 text-sm font-medium text-foreground"
                   >
                     {topic}
                   </span>
