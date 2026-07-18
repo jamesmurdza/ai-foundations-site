@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@site/lib/gsap";
@@ -40,10 +41,13 @@ export function HeroSection() {
     <section ref={root} className="relative pt-10 overflow-hidden">
       <div className="container">
         <figure className="relative overflow-hidden min-h-[560px] md:min-h-[640px] flex items-center justify-center">
-            <img
-              src="/images/summer-school/hero-path.png"
+            <Image
+              src="/images/summer-school/hero-path.avif"
               alt="Aerial view of a wooden walkway and stairs winding through a lush green forested hillside"
-              className="absolute inset-0 object-cover w-full h-full"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/30 to-black/25" />
             <figcaption className="absolute inset-0 z-10 flex flex-col px-6 py-10 text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.7)]">

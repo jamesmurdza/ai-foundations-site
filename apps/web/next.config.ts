@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
     "3000-76d88180-c438-4e45-8a0f-0d490a1efcad.daytonaproxy01.net",
   ],
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       { protocol: "https", hostname: "avatars.githubusercontent.com" },
       { protocol: "https", hostname: "github.com" },

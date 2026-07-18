@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@site/lib/gsap";
@@ -46,10 +47,12 @@ export function TopicsSection() {
         <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <figure className="hh-topic relative aspect-[4/3] overflow-hidden border order-1">
-              <img
-                src="/images/summer-school/interests-workshop.png"
+              <Image
+                src="/images/summer-school/interests-workshop.avif"
                 alt="A room of learners working at laptops around wooden tables, greenery overhead"
-                className="object-cover w-full h-full"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
             </figure>
             <div className="hh-topic order-2">

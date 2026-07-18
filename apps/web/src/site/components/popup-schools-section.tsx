@@ -21,9 +21,10 @@ export function PopupSchools() {
       <Link href="/summer-school" className="group block">
         <div className="relative w-full h-72 md:h-80 rounded-2xl overflow-hidden">
           <Image
-            src="/images/summer-school/popup-banner.png"
+            src="/images/summer-school/popup-banner.avif"
             alt="AI Summer School in Bandung, Indonesia"
             fill
+            sizes="(max-width: 1280px) 100vw, 1200px"
             className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
