@@ -47,7 +47,7 @@ export function ContactSection() {
         <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12 text-center">
           <p className="hh-contact text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Have a question or want to hear more about the AI Summer School? Get
-            in touch and we&apos;ll tell you everything.
+            in touch.
           </p>
           <div className="hh-contact mt-8">
             <Button
