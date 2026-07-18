@@ -14,8 +14,8 @@ export default function HomePage() {
     <>
       <Header />
       <Hero />
-      <Features />
       <PopupSchools />
+      <Features />
 
       <Testimonials />
       <Teachers />

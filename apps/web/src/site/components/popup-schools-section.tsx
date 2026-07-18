@@ -15,7 +15,7 @@ export function PopupSchools() {
           Pop-up schools
         </h2>
         <p className="text-xl text-muted-foreground flex-1 lg:text-right">
-          In-person schools where we live, learn, and build together.
+          In-person schools where we live and learn together.
         </p>
       </div>
       <Link href="/summer-school" className="group block">
