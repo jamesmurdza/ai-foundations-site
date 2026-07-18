@@ -49,10 +49,10 @@ export function HeroSection() {
             <figcaption className="absolute inset-0 z-10 flex flex-col px-6 py-10 text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.7)]">
               <div className="flex-1 flex flex-col items-center justify-center text-center">
                 <p className="hh-tagline font-heading font-semibold tracking-tight text-xl md:text-2xl text-white/90 mb-4">
-                  AI Summer School
-                </p>
-                <h1 className="hh-headline font-heading font-semibold tracking-tight text-balance max-w-4xl text-4xl sm:text-5xl md:text-6xl leading-[1.08]">
                   An inclusive living and learning community
+                </p>
+                <h1 className="hh-headline font-heading font-semibold tracking-tight text-balance max-w-4xl text-5xl sm:text-6xl md:text-7xl leading-[1.05]">
+                  AI Summer School
                 </h1>
                 <p className="hh-sub mt-6 text-lg md:text-xl text-white max-w-2xl leading-relaxed">
                   AI Foundations invites learners of all ages to join an in-person
