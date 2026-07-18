@@ -1,38 +1,8 @@
-"use client";
-
 import Image from "next/image";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap, registerGsap } from "@site/lib/gsap";
 
 export function IntroSection() {
-  registerGsap();
-  const root = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.from(".hh-intro", {
-          scrollTrigger: {
-            trigger: root.current,
-            start: "top 75%",
-            once: true,
-          },
-          y: 40,
-          opacity: 0,
-          duration: 0.7,
-          ease: "power3.out",
-          stagger: 0.12,
-        });
-      });
-      return () => mm.revert();
-    },
-    { scope: root },
-  );
-
   return (
-    <section ref={root}>
+    <section id="about" className="scroll-mt-24">
       <div className="container">
         <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">

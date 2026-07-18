@@ -1,44 +1,9 @@
-"use client";
-
 import Image from "next/image";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap, registerGsap } from "@site/lib/gsap";
 import { MapPin, Calendar } from "lucide-react";
 
 export function HeroSection() {
-  registerGsap();
-  const root = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.fromTo(
-          ".hh-headline",
-          { y: 14, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" },
-        );
-        gsap.fromTo(
-          [".hh-tagline", ".hh-sub", ".hh-meta"],
-          { y: 14, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            ease: "power3.out",
-            stagger: 0.08,
-            delay: 0.3,
-          },
-        );
-      });
-      return () => mm.revert();
-    },
-    { scope: root },
-  );
-
   return (
-    <section ref={root} className="relative pt-10 overflow-hidden">
+    <section className="relative pt-10 overflow-hidden">
       <div className="container">
         <figure className="relative overflow-hidden min-h-[560px] md:min-h-[640px] flex items-center justify-center">
             <Image

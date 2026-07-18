@@ -1,9 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap, registerGsap } from "@site/lib/gsap";
 
 const TOPICS = [
   "AI engineering",
@@ -16,33 +11,8 @@ const TOPICS = [
 ];
 
 export function TopicsSection() {
-  registerGsap();
-  const root = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.from(".hh-topic", {
-          scrollTrigger: {
-            trigger: root.current,
-            start: "top 75%",
-            once: true,
-          },
-          y: 30,
-          opacity: 0,
-          duration: 0.6,
-          ease: "power3.out",
-          stagger: 0.08,
-        });
-      });
-      return () => mm.revert();
-    },
-    { scope: root },
-  );
-
   return (
-    <section ref={root}>
+    <section id="interests" className="scroll-mt-24">
       <div className="container">
         <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
