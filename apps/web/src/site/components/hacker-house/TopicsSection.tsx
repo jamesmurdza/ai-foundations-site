@@ -41,8 +41,8 @@ export function TopicsSection() {
   return (
     <section ref={root}>
       <div className="container">
-        <div className="border-x border-t mt-12 px-6 md:px-12 pt-12 pb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto items-center">
+        <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <figure className="hh-topic relative aspect-[4/3] overflow-hidden border order-1">
               <img
                 src="/images/summer-school/interests-workshop.png"
