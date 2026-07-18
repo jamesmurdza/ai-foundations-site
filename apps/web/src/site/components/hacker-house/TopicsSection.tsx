@@ -51,9 +51,13 @@ export function TopicsSection() {
               />
             </figure>
             <div className="hh-topic order-2">
-              <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight mb-6">
+              <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight mb-4">
                 Explore your interests
               </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                The summer school consists of daily discussions, workshops, and
+                time to learn one-on-one from experienced AI engineers.
+              </p>
               <div className="flex flex-wrap gap-2.5">
                 {TOPICS.map((topic) => (
                   <span
