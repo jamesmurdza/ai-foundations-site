@@ -41,7 +41,7 @@ export function ContactSection() {
   );
 
   return (
-    <section ref={root}>
+    <section ref={root} id="contact" className="scroll-mt-24">
       <div className="container">
         <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12 text-center">
           <h2 className="hh-contact font-heading text-2xl md:text-3xl font-semibold tracking-tight mb-3">

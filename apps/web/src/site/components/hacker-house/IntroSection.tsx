@@ -32,7 +32,7 @@ export function IntroSection() {
   );
 
   return (
-    <section ref={root}>
+    <section ref={root} id="about" className="scroll-mt-24">
       <div className="container">
         <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
