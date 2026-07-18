@@ -41,8 +41,8 @@ export function HeroSection() {
       <div className="container">
         <figure className="relative overflow-hidden min-h-[560px] md:min-h-[640px] flex items-center justify-center">
             <img
-              src="/images/summer-school/venue-aerial.png"
-              alt="Aerial view of a lush green forested hillside in West Java with a wooden viewing walkway"
+              src="/images/summer-school/hero-path.png"
+              alt="Aerial view of a wooden walkway and stairs winding through a lush green forested hillside"
               className="absolute inset-0 object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/30 to-black/25" />
