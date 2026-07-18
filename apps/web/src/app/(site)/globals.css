@@ -56,30 +56,6 @@
 }
 
 /* ---------------------------------------------------------------------------
-   Summer School — gentle floating animation for the topic "bubble map".
-   CSS-only (no JS). Each bubble sets its own animation-delay/duration inline.
-   Disabled under prefers-reduced-motion.
---------------------------------------------------------------------------- */
-@keyframes ss-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-14px);
-  }
-}
-.ss-bubble-float {
-  animation: ss-float 6s ease-in-out infinite;
-  will-change: transform;
-}
-@media (prefers-reduced-motion: reduce) {
-  .ss-bubble-float {
-    animation: none;
-  }
-}
-
-/* ---------------------------------------------------------------------------
    Code block syntax highlighting (rehype-highlight / highlight.js).
    Applied to fenced code blocks rendered by the <Markdown> component. Inline
    code keeps its own muted-pill styling and is never highlighted.
