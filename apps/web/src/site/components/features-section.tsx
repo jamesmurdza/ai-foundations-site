@@ -11,7 +11,7 @@ export function Features() {
     >
       <div className="flex w-full flex-col lg:flex-row lg:items-end justify-between gap-8">
             <h2 className="font-heading tracking-tight sm:text-4xl text-2xl text-balance font-semibold text-left shrink-0">
-              Our courses
+              Online courses
             </h2>
             <p className="text-xl text-muted-foreground flex-1 lg:text-right">
               We teach free courses to the public, online and in person.
