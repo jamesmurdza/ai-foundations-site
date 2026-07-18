@@ -1,5 +1,4 @@
 import { Brain, Code, CircuitBoard, Sparkle } from "lucide-react";
-import Link from "next/link";
 
 import { Button } from "@site/components/ui/button";
 import { BannerAnimation } from "@site/components/BannerAnimation";
@@ -8,22 +7,7 @@ export function Hero() {
   return (
     <section>
       <div className="container">
-        <div className="border-x border-t-0 px-4 py-3 flex justify-center">
-          <Link
-            href="/summer-school"
-            className="group inline-flex items-center gap-2 text-sm hover:text-primary/80 transition-colors"
-          >
-            <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-muted-foreground">
-              <span className="font-medium text-foreground">Applications open:</span>{" "}
-              4-week Summer School — applications open
-            </span>
-            <span className="text-primary group-hover:translate-x-0.5 transition-transform">
-              →
-            </span>
-          </Link>
-        </div>
-        <div className="flex flex-col items-center gap-6 pt-20 pb-2 mb-4 border border-t-0 relative">
+        <div className="flex flex-col items-center gap-6 pt-20 pb-2 mb-4 border relative">
           <h1 className="text-center font-heading font-semibold tracking-tight text-balance max-w-3xl md:text-7xl text-5xl sm:text-6xl">
             Learn AI From the Ground Up
           </h1>
