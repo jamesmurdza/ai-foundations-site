@@ -21,6 +21,11 @@ const MENTORS = [
     img: "/images/taniya-souza.avif",
     url: "https://taniyasouza.vercel.app/",
   },
+  {
+    name: "Victor",
+    img: "/images/victor.avif",
+    url: "https://www.hamz.at/",
+  },
 ];
 
 export function MentorsSection() {
