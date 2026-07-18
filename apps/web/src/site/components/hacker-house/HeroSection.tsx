@@ -64,7 +64,7 @@ export function HeroSection() {
               <div className="hh-meta flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
                 <span className="flex items-center gap-2 text-white/90">
                   <MapPin className="w-4 h-4 flex-shrink-0" />
-                  <span className="font-medium">West Java, Indonesia</span>
+                  <span className="font-medium">Bandung, Indonesia</span>
                 </span>
                 <span className="flex items-center gap-2 text-white/90">
                   <Calendar className="w-4 h-4 flex-shrink-0" />
