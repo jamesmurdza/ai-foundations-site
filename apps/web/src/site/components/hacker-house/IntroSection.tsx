@@ -45,8 +45,8 @@ export function IntroSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
             <figure className="hh-intro relative aspect-[4/3] overflow-hidden border">
               <img
-                src="/images/summer-school/community-workshop.png"
-                alt="A room of learners working at laptops around wooden tables, greenery overhead"
+                src="/images/summer-school/accommodation-balcony.avif"
+                alt="A calm wooden balcony with natural-wood tables, potted plants and string lights surrounded by greenery"
                 className="object-cover w-full h-full"
               />
             </figure>

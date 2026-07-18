@@ -51,6 +51,13 @@ export function TopicsSection() {
               What you&apos;ll explore
             </h2>
           </div>
+          <figure className="hh-topic relative aspect-[16/9] overflow-hidden border max-w-4xl mx-auto mb-12">
+            <img
+              src="/images/summer-school/community-workshop.png"
+              alt="A room of learners working at laptops around wooden tables, greenery overhead"
+              className="object-cover w-full h-full"
+            />
+          </figure>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-border border max-w-4xl mx-auto">
             {TOPICS.map((topic) => (
               <div
