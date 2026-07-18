@@ -9,12 +9,12 @@ const MENTORS = [
   {
     name: "James",
     img: "/images/James.jpg",
-    url: "https://www.linkedin.com/in/jamesmurdza",
+    url: "https://jamesmurdza.com/",
   },
   {
     name: "Burhan",
     img: "/images/Burhan.jpg",
-    url: "https://www.linkedin.com/in/burhankhatri/",
+    url: "https://www.burhankhatri.com/",
   },
   {
     name: "Fleo",
@@ -24,7 +24,7 @@ const MENTORS = [
   {
     name: "Taniya",
     img: "/images/taniya-souza.avif",
-    url: "https://www.linkedin.com/in/taniya-souza-284167203/",
+    url: "https://taniyasouza.vercel.app/",
   },
 ];
 
