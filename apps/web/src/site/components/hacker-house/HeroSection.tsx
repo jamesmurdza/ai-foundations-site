@@ -45,6 +45,7 @@ export function HeroSection() {
               alt="Aerial view of a lush green forested hillside in West Java with a wooden viewing walkway"
               className="absolute inset-0 object-cover w-full h-full"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/30 to-black/25" />
             <figcaption className="absolute inset-0 z-10 flex flex-col px-6 py-10 text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.7)]">
               <div className="flex-1 flex flex-col items-center justify-center text-center">
                 <p className="hh-tagline font-heading font-semibold tracking-tight text-xl md:text-2xl text-white/90 mb-4">
