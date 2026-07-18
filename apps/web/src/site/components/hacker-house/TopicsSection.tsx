@@ -5,11 +5,13 @@ import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@site/lib/gsap";
 
 const TOPICS = [
-  "AI agents",
+  "AI engineering",
   "UI/UX design",
   "open source collaboration",
-  "AI evals",
-  "AI ethics",
+  "LLM evaluation",
+  "AI safety",
+  "Technology and society",
+  "career development",
 ];
 
 export function TopicsSection() {
