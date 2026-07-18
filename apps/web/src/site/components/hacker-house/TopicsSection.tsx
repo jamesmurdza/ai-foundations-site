@@ -57,8 +57,8 @@ export function TopicsSection() {
                 Explore your interests
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                The summer school consists of daily discussions, workshops, and
-                time to learn one-on-one from experienced AI engineers.
+                Four weeks of daily discussions, workshops, one-on-one time with
+                AI professionals, and time to relax and reflect in nature.
               </p>
               <div className="flex flex-wrap gap-2.5">
                 {TOPICS.map((topic) => (
