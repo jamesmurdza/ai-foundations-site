@@ -45,25 +45,25 @@ export function HeroSection() {
               alt="Aerial view of a lush green forested hillside in West Java with a wooden viewing walkway"
               className="absolute inset-0 object-cover w-full h-full"
             />
-            <figcaption className="absolute inset-0 z-10 flex flex-col px-6 py-10 text-white">
+            <figcaption className="absolute inset-0 z-10 flex flex-col px-6 py-10 text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.7)]">
               <div className="flex-1 flex flex-col items-center justify-center text-center">
-                <h1 className="hh-headline font-heading font-semibold tracking-tight text-balance max-w-4xl text-5xl sm:text-6xl md:text-7xl leading-[1.05] mb-5 drop-shadow-sm">
+                <p className="hh-tagline font-heading font-semibold tracking-tight text-xl md:text-2xl text-white/90 mb-4">
                   AI Summer School
-                </h1>
-                <p className="hh-tagline text-2xl md:text-3xl font-heading font-semibold tracking-tight text-white max-w-2xl leading-tight">
-                  An inclusive living and learning community.
                 </p>
-                <p className="hh-sub mt-6 text-base md:text-lg text-white/85 max-w-2xl leading-relaxed">
+                <h1 className="hh-headline font-heading font-semibold tracking-tight text-balance max-w-4xl text-4xl sm:text-5xl md:text-6xl leading-[1.08]">
+                  An inclusive living and learning community
+                </h1>
+                <p className="hh-sub mt-6 text-lg md:text-xl text-white max-w-2xl leading-relaxed">
                   AI Foundations invites learners of all ages to join an in-person
                   community focused on personal growth and lifelong learning.
                 </p>
               </div>
               <div className="hh-meta flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
-                <span className="flex items-center gap-2 text-white/90">
+                <span className="flex items-center gap-2 text-white">
                   <MapPin className="w-4 h-4 flex-shrink-0" />
                   <span className="font-medium">Bandung, Indonesia</span>
                 </span>
-                <span className="flex items-center gap-2 text-white/90">
+                <span className="flex items-center gap-2 text-white">
                   <Calendar className="w-4 h-4 flex-shrink-0" />
                   <span className="font-medium">27th July – 21st August 2026</span>
                 </span>
