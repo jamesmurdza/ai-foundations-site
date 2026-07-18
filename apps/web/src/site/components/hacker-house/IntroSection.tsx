@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@site/lib/gsap";
@@ -36,10 +37,12 @@ export function IntroSection() {
         <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <figure className="hh-intro relative aspect-[4/3] overflow-hidden border order-1 md:order-2">
-              <img
+              <Image
                 src="/images/summer-school/accommodation-balcony.avif"
                 alt="A calm wooden balcony with natural-wood tables, potted plants and string lights surrounded by greenery"
-                className="object-cover w-full h-full"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
             </figure>
             <div className="hh-intro flex flex-col justify-center order-2 md:order-1">
