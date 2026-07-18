@@ -44,7 +44,7 @@ export function IntroSection() {
             </figure>
             <div className="hh-intro flex flex-col justify-center">
               <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight mb-5">
-                Learn and teach for four weeks in Bandung.
+                Learn and teach for four weeks in West Java, Indonesia
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 The AI Summer School is our first pop-up school: 12 people will
