@@ -39,13 +39,8 @@ export function HeroSection() {
   return (
     <section ref={root} className="relative pt-12 pb-24 overflow-hidden">
       <div className="container">
-        <div className="border-x px-6 md:px-12 pt-16 pb-16">
-          {/* Large title above the image */}
-          <h1 className="hh-headline font-heading font-semibold tracking-tight text-balance text-center max-w-4xl mx-auto text-5xl sm:text-6xl md:text-7xl leading-[1.05] mb-10">
-            AI Summer School
-          </h1>
-
-          {/* Everything else overlaid inside the image */}
+        <div className="border-x px-6 md:px-12 pt-6 pb-16">
+          {/* Everything overlaid inside the image */}
           <figure className="relative overflow-hidden border min-h-[560px] md:min-h-[640px] flex items-center justify-center">
             <img
               src="/images/summer-school/venue-aerial.png"
@@ -57,6 +52,9 @@ export function HeroSection() {
               <p className="hh-eyebrow text-sm uppercase tracking-[0.2em] text-white/85 mb-5">
                 Summer School
               </p>
+              <h1 className="hh-headline font-heading font-semibold tracking-tight text-balance max-w-4xl text-5xl sm:text-6xl md:text-7xl leading-[1.05] mb-5 drop-shadow-sm">
+                AI Summer School
+              </h1>
               <p className="hh-tagline text-2xl md:text-3xl font-heading font-semibold tracking-tight text-white max-w-2xl leading-tight">
                 An inclusive living and learning community.
               </p>
