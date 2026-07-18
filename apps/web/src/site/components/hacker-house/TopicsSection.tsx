@@ -5,12 +5,11 @@ import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@site/lib/gsap";
 
 const TOPICS = [
-  "Building Agents from Scratch",
-  "Voice Agents",
-  "UI/UX Design",
-  "Open Source Development",
-  "Portfolio Development",
-  "AI Evals",
+  "AI agents",
+  "UI/UX design",
+  "open source collaboration",
+  "AI evals",
+  "AI ethics",
 ];
 
 export function TopicsSection() {
@@ -53,18 +52,16 @@ export function TopicsSection() {
             </figure>
             <div className="hh-topic order-2">
               <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight mb-6">
-                What you&apos;ll explore
+                Explore your interests
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border border">
+              <div className="flex flex-wrap gap-3">
                 {TOPICS.map((topic) => (
-                  <div
+                  <span
                     key={topic}
-                    className="bg-background p-5 flex items-center justify-center text-center min-h-[110px]"
+                    className="rounded-full border border-primary/30 bg-primary/5 px-5 py-2 font-heading text-base font-medium text-primary"
                   >
-                    <h3 className="font-heading text-lg font-semibold tracking-tight">
-                      {topic}
-                    </h3>
-                  </div>
+                    {topic}
+                  </span>
                 ))}
               </div>
             </div>
