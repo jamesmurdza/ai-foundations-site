@@ -6,6 +6,7 @@ import { Footer } from "@site/components/footer";
 import { HeroSection } from "@site/components/hacker-house/HeroSection";
 import { IntroSection } from "@site/components/hacker-house/IntroSection";
 import { TopicsSection } from "@site/components/hacker-house/TopicsSection";
+import { MentorsSection } from "@site/components/hacker-house/MentorsSection";
 import { ContactSection } from "@site/components/hacker-house/ContactSection";
 
 const OG_IMAGE = "https://aifoundations.school/og/summer-school.png";
@@ -52,6 +53,7 @@ export default function HackerHousePage() {
         <HeroSection />
         <IntroSection />
         <TopicsSection />
+        <MentorsSection />
         <ContactSection />
       </main>
       <Footer />
