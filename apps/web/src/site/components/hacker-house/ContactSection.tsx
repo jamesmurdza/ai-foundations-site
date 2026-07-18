@@ -53,7 +53,7 @@ export function ContactSection() {
             <a
               href="#"
               onClick={openEmail}
-              className="inline-block font-medium text-foreground underline underline-offset-4 transition-transform duration-200 hover:scale-95"
+              className="font-medium text-foreground underline underline-offset-4 transition-opacity duration-200 hover:opacity-70"
             >
               an email
             </a>

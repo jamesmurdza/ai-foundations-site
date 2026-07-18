@@ -69,7 +69,7 @@ export function MentorsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${m.name} on LinkedIn`}
-                className="hh-mentor flex flex-col items-center gap-3 transition-transform duration-200 hover:scale-95"
+                className="hh-mentor flex flex-col items-center gap-3 transition-opacity duration-200 hover:opacity-70"
               >
                 <div className="relative w-28 h-28 rounded-full overflow-hidden border">
                   <Image
