@@ -45,7 +45,7 @@ export function ContactSection() {
     <section ref={root}>
       <div className="container">
         <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12 text-center">
-          <p className="hh-contact text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="hh-contact text-lg text-muted-foreground leading-relaxed">
             Have a question or want to hear more about the AI Summer School? Get
             in touch:
           </p>
