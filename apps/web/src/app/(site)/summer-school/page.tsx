@@ -4,18 +4,15 @@ import { Header } from "@site/components/header";
 import { Footer } from "@site/components/footer";
 
 import { HeroSection } from "@site/components/hacker-house/HeroSection";
-import { WhatIsItSection } from "@site/components/hacker-house/WhatIsItSection";
+import { IntroSection } from "@site/components/hacker-house/IntroSection";
+import { TopicsBubbleMap } from "@site/components/hacker-house/TopicsBubbleMap";
 import { DetailsSection } from "@site/components/hacker-house/DetailsSection";
-import { WhoItsForSection } from "@site/components/hacker-house/WhoItsForSection";
-import { HostsSection } from "@site/components/hacker-house/HostsSection";
-import { ApplySection } from "@site/components/hacker-house/ApplySection";
-import { FaqSection } from "@site/components/hacker-house/FaqSection";
 
 const OG_IMAGE = "https://aifoundations.school/og/summer-school.png";
 const PAGE_URL = "https://aifoundations.school/summer-school";
-const PAGE_TITLE = "Summer School — AI Foundations";
+const PAGE_TITLE = "AI Summer School — AI Foundations";
 const PAGE_DESCRIPTION =
-  "A 4-week, in-person summer school for builders who want to improve their portfolio. College students welcome.";
+  "An inclusive living and learning community. A 4-week, in-person AI Summer School in West Java, Indonesia, 27 July – 21 August 2026.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -53,12 +50,9 @@ export default function HackerHousePage() {
       <Header />
       <main>
         <HeroSection />
-        <WhatIsItSection />
+        <IntroSection />
+        <TopicsBubbleMap />
         <DetailsSection />
-        <WhoItsForSection />
-        <HostsSection />
-        <ApplySection />
-        <FaqSection />
       </main>
       <Footer />
     </>
