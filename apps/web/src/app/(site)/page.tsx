@@ -1,5 +1,6 @@
 import { Header } from "@site/components/header";
 import { Hero } from "@site/components/hero";
+import { PopupSchools } from "@site/components/popup-schools-section";
 import { Features } from "@site/components/features-section";
 
 import { Testimonials } from "@site/components/testimonials";
@@ -13,6 +14,7 @@ export default function HomePage() {
     <>
       <Header />
       <Hero />
+      <PopupSchools />
       <Features />
 
       <Testimonials />
