@@ -71,12 +71,12 @@ export function MentorsSection() {
                 aria-label={`${m.name} on LinkedIn`}
                 className="hh-mentor group flex flex-col items-center gap-3"
               >
-                <div className="relative w-28 h-28 rounded-full overflow-hidden border transition-transform duration-300 group-hover:scale-105">
+                <div className="relative w-24 h-24 rounded-full overflow-hidden border transition-transform duration-300 group-hover:scale-105">
                   <Image
                     src={m.img}
                     alt={m.name}
                     fill
-                    sizes="112px"
+                    sizes="96px"
                     className="object-cover"
                   />
                 </div>
