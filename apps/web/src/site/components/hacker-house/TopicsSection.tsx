@@ -44,14 +44,14 @@ export function TopicsSection() {
       <div className="container">
         <div className="mx-2 md:mx-10 px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto items-center">
-            <figure className="hh-topic relative aspect-[4/3] overflow-hidden border order-1 md:order-2">
+            <figure className="hh-topic relative aspect-[4/3] overflow-hidden border order-1">
               <img
                 src="/images/summer-school/community-workshop.png"
                 alt="A room of learners working at laptops around wooden tables, greenery overhead"
                 className="object-cover w-full h-full"
               />
             </figure>
-            <div className="hh-topic order-2 md:order-1">
+            <div className="hh-topic order-2">
               <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight mb-6">
                 What you&apos;ll explore
               </h2>

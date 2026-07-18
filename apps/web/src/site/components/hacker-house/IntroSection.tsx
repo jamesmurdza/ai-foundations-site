@@ -35,14 +35,14 @@ export function IntroSection() {
       <div className="container">
         <div className="mx-2 md:mx-10 px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto items-center">
-            <figure className="hh-intro relative aspect-[4/3] overflow-hidden border">
+            <figure className="hh-intro relative aspect-[4/3] overflow-hidden border order-1 md:order-2">
               <img
                 src="/images/summer-school/accommodation-balcony.avif"
                 alt="A calm wooden balcony with natural-wood tables, potted plants and string lights surrounded by greenery"
                 className="object-cover w-full h-full"
               />
             </figure>
-            <div className="hh-intro flex flex-col justify-center">
+            <div className="hh-intro flex flex-col justify-center order-2 md:order-1">
               <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight mb-5">
                 Learn and teach for four weeks in West Java, Indonesia
               </h2>
