@@ -69,9 +69,9 @@ export function MentorsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${m.name} on LinkedIn`}
-                className="hh-mentor group flex flex-col items-center gap-3"
+                className="hh-mentor flex flex-col items-center gap-3 transition-opacity duration-200 hover:opacity-70"
               >
-                <div className="relative w-28 h-28 rounded-full overflow-hidden border transition-transform duration-300 group-hover:scale-105">
+                <div className="relative w-28 h-28 rounded-full overflow-hidden border">
                   <Image
                     src={m.img}
                     alt={m.name}
@@ -80,9 +80,7 @@ export function MentorsSection() {
                     className="object-cover"
                   />
                 </div>
-                <p className="font-medium group-hover:text-primary transition-colors">
-                  {m.name}
-                </p>
+                <p className="font-medium">{m.name}</p>
               </a>
             ))}
           </div>
