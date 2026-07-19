@@ -31,6 +31,11 @@ const MENTORS = [
     img: "/images/madhoolika.avif",
     url: "https://www.linkedin.com/in/madhoolika/",
   },
+  {
+    name: "Abdul",
+    img: "/images/abdul.avif",
+    url: "https://www.abdulrehmann.com/",
+  },
 ];
 
 export function MentorsSection() {
