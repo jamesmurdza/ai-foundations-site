@@ -26,6 +26,11 @@ const MENTORS = [
     img: "/images/victor.avif",
     url: "https://www.hamz.at/",
   },
+  {
+    name: "Madhoolika",
+    img: "/images/madhoolika.avif",
+    url: "https://www.linkedin.com/in/madhoolika/",
+  },
 ];
 
 export function MentorsSection() {
