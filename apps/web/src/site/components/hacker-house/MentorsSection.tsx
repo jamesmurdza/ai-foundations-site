@@ -44,7 +44,7 @@ const MENTORS = [
   {
     name: "Wildan",
     img: "/images/wildan.avif",
-    url: "https://www.instagram.com/wildanniam_/",
+    url: "https://wildan-portfolio-six.vercel.app/",
   },
   {
     name: "Momina",
