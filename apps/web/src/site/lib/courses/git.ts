@@ -1,10 +1,11 @@
 import type { Course } from "./types";
 
-// A text-only course: every lesson has no video, just a single markdown tab
-// read from content/courses/git/<id>/lesson.md.
 export const git: Course = {
   slug: "git",
   title: "Git & GitHub for Beginners",
+  shortTitle: "Git & GitHub",
+  // TODO: add this image before registering the course in index.ts
+  thumbnail: "/images/git.png",
   description:
     "Learn version control from scratch. Understand why Git exists, then work " +
     "through staging, history, branching, merging, remotes, GitHub and pull " +
@@ -17,7 +18,8 @@ export const git: Course = {
     {
       id: "intro",
       title: "Introduction to Git",
-      summary: "Why Git exists, what version control means, and how Git differs from GitHub.",
+      summary:
+        "Why Git exists, what version control means, and how Git differs from GitHub.",
       tabs: [{ type: "lesson" }],
     },
     {
@@ -35,49 +37,57 @@ export const git: Course = {
     {
       id: "staging-committing",
       title: "Staging and Committing",
-      summary: "Initialise a project and save versions with the add and commit workflow.",
+      summary:
+        "Initialise a project and save versions with the add and commit workflow.",
       tabs: [{ type: "lesson" }],
     },
     {
       id: "reading-history",
       title: "Reading History",
-      summary: "Explore your project's timeline with log and inspect changes with diff.",
+      summary:
+        "Explore your project's timeline with log and inspect changes with diff.",
       tabs: [{ type: "lesson" }],
     },
     {
       id: "undoing-changes",
       title: "Undoing Changes",
-      summary: "Safely undo work at every stage: unstaged, staged and committed.",
+      summary:
+        "Safely undo work at every stage: unstaged, staged and committed.",
       tabs: [{ type: "lesson" }],
     },
     {
       id: "branching",
       title: "Branching",
-      summary: "Work on new ideas safely on separate branches without touching main.",
+      summary:
+        "Work on new ideas safely on separate branches without touching main.",
       tabs: [{ type: "lesson" }],
     },
     {
       id: "merging",
       title: "Merging",
-      summary: "Bring branch changes back together and resolve merge conflicts.",
+      summary:
+        "Bring branch changes back together and resolve merge conflicts.",
       tabs: [{ type: "lesson" }],
     },
     {
       id: "lazygit",
       title: "Using LazyGit",
-      summary: "A visual terminal interface for the Git commands you already know.",
+      summary:
+        "A visual terminal interface for the Git commands you already know.",
       tabs: [{ type: "lesson" }],
     },
     {
       id: "remotes",
       title: "Working with Remotes",
-      summary: "Store a copy of your project elsewhere and sync with push and pull.",
+      summary:
+        "Store a copy of your project elsewhere and sync with push and pull.",
       tabs: [{ type: "lesson" }],
     },
     {
       id: "github",
       title: "GitHub",
-      summary: "Create a GitHub account and repository, then push your work online.",
+      summary:
+        "Create a GitHub account and repository, then push your work online.",
       tabs: [{ type: "lesson" }],
     },
     {

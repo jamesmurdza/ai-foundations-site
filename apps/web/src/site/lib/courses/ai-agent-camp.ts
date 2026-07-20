@@ -3,6 +3,8 @@ import type { Course } from "./types";
 export const aiAgentCamp: Course = {
   slug: "ai-agent-camp",
   title: "AI Agent Camp (Python)",
+  shortTitle: "AI Agents in Python",
+  thumbnail: "/images/python.png",
   description:
     "Learn to build AI Agents with Python through this comprehensive course. " +
     "Master the fundamentals of AI Agents, LLMs, and create your own intelligent systems.",

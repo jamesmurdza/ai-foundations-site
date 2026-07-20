@@ -1,8 +1,11 @@
 import { FeatureCard } from "@site/components/feature-card";
 import { Section } from "@site/components/section";
+import { getAllCourses } from "@site/lib/courses";
 import Link from "next/link";
 
 export function Features() {
+  const courses = getAllCourses();
+
   return (
     <Section
       id="courses"
@@ -18,24 +21,18 @@ export function Features() {
             </p>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 grid-cols-1">
-            <Link href="/courses/ml-python" className="block h-full">
-              <FeatureCard
-                image="/images/machinelearning.png"
-                title="Machine Learning Fundamentals"
-              />
-            </Link>
-            <Link href="/courses/ai-agent-camp" className="block h-full">
-              <FeatureCard
-                image="/images/python.png"
-                title="AI Agents in Python"
-              />
-            </Link>
-            <Link href="/courses/minecraft-ai" className="block h-full">
-              <FeatureCard
-                image="/images/minecraft.png"
-                title="Hacking Minecraft with AI"
-              />
-            </Link>
+            {courses.map((course) => (
+              <Link
+                key={course.slug}
+                href={`/courses/${course.slug}`}
+                className="block h-full"
+              >
+                <FeatureCard
+                  image={course.thumbnail}
+                  title={course.shortTitle ?? course.title}
+                />
+              </Link>
+            ))}
           </div>
     </Section>
   );
