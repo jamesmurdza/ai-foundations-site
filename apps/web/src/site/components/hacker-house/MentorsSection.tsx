@@ -46,6 +46,11 @@ const MENTORS = [
     img: "/images/wildan.avif",
     url: "https://www.instagram.com/wildanniam_/",
   },
+  {
+    name: "Momina",
+    img: "/images/momina.avif",
+    url: "https://www.linkedin.com/in/mominaali/",
+  },
 ];
 
 export function MentorsSection() {
