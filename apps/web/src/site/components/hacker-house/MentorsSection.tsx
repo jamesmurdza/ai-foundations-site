@@ -56,6 +56,11 @@ const MENTORS = [
     img: "/images/nurlin.avif",
     url: "https://www.linkedin.com/in/nurlin-amelia-chelsi-ngadi-7966942b2/",
   },
+  {
+    name: "Alif",
+    img: "/images/alif.avif",
+    url: "https://www.linkedin.com/in/alifmslmabdrhmn/",
+  },
 ];
 
 export function MentorsSection() {
