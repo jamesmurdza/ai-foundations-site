@@ -36,6 +36,16 @@ const MENTORS = [
     img: "/images/abdul.avif",
     url: "https://www.abdulrehmann.com/",
   },
+  {
+    name: "Harsh",
+    img: "/images/harsh.avif",
+    url: "https://synacktra.com/",
+  },
+  {
+    name: "Wildan",
+    img: "/images/wildan.avif",
+    url: "https://www.instagram.com/wildanniam_/",
+  },
 ];
 
 export function MentorsSection() {
