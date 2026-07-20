@@ -51,6 +51,11 @@ const MENTORS = [
     img: "/images/momina.avif",
     url: "https://www.linkedin.com/in/mominaali/",
   },
+  {
+    name: "Nurlin",
+    img: "/images/nurlin.avif",
+    url: "https://www.linkedin.com/in/nurlin-amelia-chelsi-ngadi-7966942b2/",
+  },
 ];
 
 export function MentorsSection() {
