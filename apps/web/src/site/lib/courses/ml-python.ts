@@ -3,6 +3,8 @@ import type { Course } from "./types";
 export const mlPython: Course = {
   slug: "ml-python",
   title: "Machine Learning in Python",
+  shortTitle: "Machine Learning Fundamentals",
+  thumbnail: "/images/machinelearning.png",
   description:
     "Learn Machine Learning with Python through this comprehensive course. " +
     "Master the fundamentals and advanced concepts with hands-on projects.",

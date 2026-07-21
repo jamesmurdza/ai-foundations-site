@@ -12,7 +12,7 @@ export type {
   ResourceType,
 } from "./types";
 
-const COURSES: Course[] = [aiAgentCamp, mlPython, minecraftAi];
+const COURSES: Course[] = [mlPython, aiAgentCamp, minecraftAi];
 
 export function getAllCourses(): Course[] {
   return COURSES;

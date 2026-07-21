@@ -5,6 +5,7 @@ const REPO = "https://github.com/synacktraa/hacking-minecraft";
 export const minecraftAi: Course = {
   slug: "minecraft-ai",
   title: "Hacking Minecraft with AI",
+  thumbnail: "/images/minecraft.png",
   description:
     "Build intelligent Minecraft bots with TypeScript — from a simple follower " +
     "to a Claude-controlled agent via MCP.",

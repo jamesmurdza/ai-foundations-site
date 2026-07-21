@@ -42,6 +42,8 @@ export interface Lesson {
 export interface Course {
   slug: string;
   title: string;
+  shortTitle?: string;
+  thumbnail: string;
   description: string;
   metaTitle?: string;
   metaDescription?: string;
