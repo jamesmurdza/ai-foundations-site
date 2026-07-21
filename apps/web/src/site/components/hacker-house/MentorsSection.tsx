@@ -61,6 +61,11 @@ const MENTORS = [
     img: "/images/alif.avif",
     url: "https://www.linkedin.com/in/alifmslmabdrhmn/",
   },
+  {
+    name: "Nayla",
+    img: "/images/nayla.avif",
+    url: "https://www.linkedin.com/in/nayla-aqila-argia-241637322/",
+  },
 ];
 
 export function MentorsSection() {
