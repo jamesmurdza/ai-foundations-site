@@ -1,3 +1,53 @@
+# Welcome to the Course
+
+Before anything else, here is what you are getting into.
+
+This course teaches you Git from nothing. No prior experience is assumed. If you have never opened a terminal in your life, you are in the right place.
+
+### What You Will Build
+
+You will not build software. You will build a poem.
+
+Across every lesson you will work on one file called `poem.txt`. It starts as two lines. By the end it is a finished poem, stored safely online, with a full history of every change you made along the way.
+
+Using one small file for everything means you are never learning Git and learning a project at the same time. The poem stays simple so Git can stay the focus.
+
+### What You Will Be Able to Do
+
+By the end of this course you will be able to save versions of your work and return to any of them, undo almost any mistake, work on separate ideas without breaking anything, put your project online, collaborate with other people through Pull Requests, and read a Git error message and know what to do about it.
+
+That is the full working knowledge most people use every day.
+
+### What You Need
+
+You need a computer running Windows, macOS, or Linux. You need an internet connection. That is all.
+
+Everything else gets installed in the next two lessons.
+
+### How the Course Is Structured
+
+The course is in three phases.
+
+**Phase 1** covers the foundations. Saving your work, reading your history, and undoing mistakes. This is the part you will use every single day.
+
+**Phase 2** covers working with others. Branches, merging, GitHub, and Pull Requests.
+
+**Phase 3** covers advanced tools. Rebasing, cherry picking, worktrees, and automation. These are optional. You will grow into them.
+
+### How to Follow Along
+
+Type the commands yourself. Do not copy and paste, and do not just watch.
+
+Git becomes familiar through your hands, not your eyes. The poem is short on purpose so that typing it out costs you very little time.
+
+One more thing before you start. You cannot permanently break anything in this course. That is the entire point of Git, and it is worth remembering the first time something goes wrong.
+
+[//]: # (TODO: 🎥 VIDEO: short course trailer showing the poem growing and the final history in git log)
+
+---
+
+## Introduction to Git
+
 When working on any kind of project, whether it's a document, code, a business plan, or even design, there's one common problem almost everyone faces: **managing changes**.
 
 You might start with one version of your work, make updates, and later realize that something has gone wrong. At that point, you wish you could go back to how things were before. To avoid losing progress, many people end up creating multiple copies of the same file, using names like:

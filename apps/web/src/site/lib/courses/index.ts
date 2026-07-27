@@ -2,6 +2,7 @@ import type { Course, Lesson } from "./types";
 import { aiAgentCamp } from "./ai-agent-camp";
 import { mlPython } from "./ml-python";
 import { minecraftAi } from "./minecraft-ai";
+import { git } from "./git";
 
 export type {
   Course,
@@ -12,7 +13,7 @@ export type {
   ResourceType,
 } from "./types";
 
-const COURSES: Course[] = [mlPython, aiAgentCamp, minecraftAi];
+const COURSES: Course[] = [mlPython, aiAgentCamp, minecraftAi, git];
 
 export function getAllCourses(): Course[] {
   return COURSES;

@@ -1,12 +1,21 @@
+## Staging and Committing
+
 Now that Git is installed and set up, the next step is to understand how Git actually tracks and saves your work.
 
 At this point, think of Git as a system that does not automatically save everything you do. Instead, it gives you control over what gets saved and when.
 
-## Creating Your First Project
+### Creating Your First Project
 
-Start by creating a simple file with some text in it. In this course, we will use a file called `poem.txt`. For example:
+Start by creating a simple file with some text in it. In this course, we will use a file called `poem.txt`.
 
-> 🖼️ _Image: I will add an image here showing the poem.txt_
+Here is what to put inside `poem.txt` when you first create it:
+
+```
+I started small with just a line
+A quiet thought, a simple sign
+```
+
+![poem.txt open in the editor with its first two lines](/images/git/staging-committing/poem-initial.png)
 
 You can create it in any way you prefer, but the important thing is that you have a file with some text inside.
 
@@ -32,9 +41,11 @@ ls
 
 This lists all the files and folders at your current location. Use it to confirm you are in the right place.
 
-> 🎥 _Video: I will add a video here explaining the terminal_
+[//]: # (TODO: 🎥 VIDEO: short terminal tour covering cd, ls, and finding your project folder)
 
 Once you are inside your project folder, you are ready to continue.
+
+---
 
 Once your file is ready and your terminal is open inside the correct folder, run:
 
@@ -42,11 +53,11 @@ Once your file is ready and your terminal is open inside the correct folder, run
 git init
 ```
 
-> 🖼️ _Image: I will add an image here showing git init_
+![terminal showing the git init confirmation message](/images/git/staging-committing/git-init.png)
 
 This command turns your folder into a Git project. From this moment, Git begins to watch what happens inside this folder.
 
-## Understanding How Git Sees Your Work
+### Understanding How Git Sees Your Work
 
 Git organizes your work into three main areas.
 
@@ -56,11 +67,11 @@ Git organizes your work into three main areas.
 
 A simple way to think about it is this:
 
-You write in your file (working directory), you choose what to save (staging area), and then Git stores it as a version (repository).
+You write in your file(working directory), you choose what to save(staging area), and then Git stores it as a version(repository).
 
-## Checking the State of Your Project
+### Checking the State of Your Project
 
-To check the state of your project, use `git status`. It helps you see what files Git is tracking, what has changed, and what is ready to be saved.
+To check the state of your project, use `git status` It helps you see what files Git is tracking, what has changed, and what is ready to be saved.
 
 To see what Git is tracking, run:
 
@@ -79,9 +90,9 @@ Git uses four simple states to describe where a file stands:
 
 You will see each of these states as you work through the course.
 
-> 🖼️ _Image: I will add an image here showing the git status_
+![git status showing poem.txt as untracked](/images/git/staging-committing/git-status-untracked.png)
 
-## Staging Your File
+### Staging Your File
 
 Before Git can save your file, you need to tell it what to include. This process is called **staging**.
 
@@ -90,8 +101,6 @@ To stage your file, run:
 ```bash
 git add poem.txt
 ```
-
-> 🖼️ _Image: I will add an image here showing the git add_
 
 If you want to stage everything in the folder, you can use:
 
@@ -103,7 +112,7 @@ Staging does not save your work yet. It only prepares it.
 
 Think of it as selecting items before clicking a save button.
 
-## Making Your First Commit
+### Making Your First Commit
 
 Once your file is staged, you can save it using a commit.
 
@@ -117,15 +126,18 @@ The text inside the quotes is called the **commit message**. It describes what c
 
 A commit is a **saved version of your project at a specific moment**. It acts like a checkpoint that you can always return to.
 
-> 🖼️ _Image: I will add an image here showing the git commit_
+![git commit output showing files changed](/images/git/staging-committing/git-commit-output.png)
 
-## Making Changes and Saving Again
+### Making Changes and Saving Again
 
-Now open `poem.txt` and make a change. You can add a new line to your poem or edit an existing one.
+Now open `poem.txt` and add the next stanza at the end of the file:
 
-> 🖼️ _Image: I will add an image with the updated poem_
+```
+I wrote it down, then changed a word
+It felt unsure, it felt absurd
+```
 
-After saving the file, run:
+After saving, run:
 
 ```bash
 git status
@@ -133,22 +145,22 @@ git status
 
 You will notice that Git now shows the file as **modified**. This means something has changed since your last saved version.
 
-> 🖼️ _Image: I will add an image here showing the modified status_
+![git status showing poem.txt as modified](/images/git/staging-committing/git-status-modified.png)
 
 To save this new version, repeat the same process:
 
 ```bash
 git add poem.txt
-git commit -m "update poem with new line"
+git commit -m "add second stanza"
 ```
 
-> 🖼️ _Image: I will add an image here showing the new output_
+[//]: # (TODO: 🎞️ GIF: the whole loop in one take, edit poem.txt, git add, git status, git commit)
 
 Each commit creates a new version of your work.
 
-> 💡 You would notice the message in our terminal is getting longer and it contains details we no longer need. To fix this, you need to run `clear` to clean the messages.
+> You would notice the message in our terminal is getting longer and it contains details we no longer need. To fix this, you need to run `clear` to clean the messages.
 
-## Why Staging Exists
+### Why Staging Exists
 
 You might wonder why Git does not just save everything automatically.
 
@@ -158,7 +170,7 @@ Staging allows you to choose exactly what goes into each version. This becomes v
 
 For now, just understand that staging helps you prepare clean and meaningful saves.
 
-## Writing Good Commit Messages
+### Writing Good Commit Messages
 
 Every commit includes a message that describes what was changed.
 
@@ -178,9 +190,11 @@ Avoid messages like:
 - change
 - stuff
 
-> 💡 A useful rule is to describe what changed, not why. Keep it short and easy to understand.
+> Git already records exactly which lines changed. You can see that at any time. What Git cannot record is your reason for making the change. When the reason is not obvious, put it in the message. Something like `shorten opening line so it reads better out loud` is far more useful later than `update poem`.
 
-## A Simple Introduction to Conventional Commits
+Keep the message short. One clear line is enough.
+
+### A Simple Introduction to Conventional Commits
 
 As you continue learning, you may see commit messages written like this:
 
@@ -193,10 +207,10 @@ For now, you do not need to master it. Just focus on writing clear messages.
 
 So far, the pattern has been to edit your file in the working area, stage the changes you want to save, and commit them to create a version. Each commit becomes a checkpoint you can return to at any time.
 
-## Key Takeaways
+### Key Takeaways
 
 - `git init` turns your folder into a Git project
 - `git status` shows the current status of your project
 - `git add` stages a file and `git commit -m "message"` saves it as a version
 - Every commit is a checkpoint you can always return to
-- Write clear commit messages that describe what changed
+- Write clear commit messages that explain the reason for the change

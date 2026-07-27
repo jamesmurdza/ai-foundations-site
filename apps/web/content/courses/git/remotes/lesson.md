@@ -36,7 +36,7 @@ To confirm the connection worked, run:
 git remote -v
 ```
 
-> 🖼️ _Image: terminal showing git remote -v output with the remote URL listed_
+[//]: # (TODO: 🖼️ Image: terminal showing git remote -v output with the remote URL listed)
 
 This shows the address Git will use when you push or pull.
 
@@ -48,7 +48,7 @@ To send your commits to the remote for the first time, run:
 git push -u origin main
 ```
 
-> 🖼️ _Image: terminal showing git push -u origin main output_
+[//]: # (TODO: 🖼️ Image: terminal showing git push -u origin main output)
 
 This uploads everything on your `main` branch to the remote. The `-u` flag links your local `main` branch to the remote one so that future pushes and pulls are shorter.
 
@@ -66,7 +66,7 @@ If something changes on the remote, you can bring those changes down to your loc
 git pull
 ```
 
-> 🖼️ _Image: terminal showing git pull output_
+[//]: # (TODO: 🖼️ Image: terminal showing git pull output)
 
 This is useful when you work from multiple computers or when someone else has made changes.
 
@@ -88,7 +88,7 @@ To push, press `P` (uppercase).
 
 To pull, press `p` (lowercase).
 
-> 🖼️ _Image: pushing and pulling using LazyGit_
+[//]: # (TODO: 🖼️ Image: pushing and pulling using LazyGit)
 
 LazyGit shows you the remote name and branch you are syncing with, so you can always confirm before sending or receiving.
 
