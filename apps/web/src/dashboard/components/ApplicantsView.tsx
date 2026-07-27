@@ -13,6 +13,7 @@ import {
 import { ALL_REGIONS, countryOf, regionOf } from "@dashboard/lib/geo";
 import type { AdminStatus, Application } from "@dashboard/lib/types";
 import { withBase } from "@dashboard/lib/paths";
+import { useVisiblePoll } from "./useVisiblePoll";
 
 type UnreadByApp = Record<string, { total: number; mentioned: number }>;
 type CommentCountMap = Record<string, number>;
@@ -230,17 +231,16 @@ export function ApplicantsView({ initial }: { initial: ListPayload }) {
         knownIdsRef.current = new Set(snap.apps.map((a) => a.id));
       }
     }
-    refresh(false);
-    const id = window.setInterval(() => refresh(true), POLL_MS);
-    const onVis = () => {
-      if (document.visibilityState === "visible") refresh(true);
-    };
-    document.addEventListener("visibilitychange", onVis);
-    return () => {
-      window.clearInterval(id);
-      document.removeEventListener("visibilitychange", onVis);
-    };
-  }, [refresh, initial.fetchedAt]);
+  }, [initial.fetchedAt]);
+
+  // The poller owns the first fetch too — but that one must not raise the "new
+  // applicants" badge, it's just reconciling against the server-rendered list.
+  const firstPollRef = useRef(true);
+  const pollRefresh = useCallback(() => {
+    refresh(!firstPollRef.current);
+    firstPollRef.current = false;
+  }, [refresh]);
+  useVisiblePoll(pollRefresh, { visibleMs: POLL_MS, hiddenMs: null });
 
   const toggleStar = useCallback(
     (id: string) => {

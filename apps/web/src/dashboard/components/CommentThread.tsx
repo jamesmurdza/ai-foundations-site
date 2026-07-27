@@ -10,6 +10,7 @@ import {
 
 import type { Comment } from "@dashboard/lib/comments";
 import { withBase } from "@dashboard/lib/paths";
+import { useVisiblePoll } from "./useVisiblePoll";
 
 const POLL_MS = 5000;
 
@@ -163,15 +164,7 @@ export function CommentThread({
     }
   }, [applicationId]);
 
-  useEffect(() => {
-    const id = window.setInterval(refresh, POLL_MS);
-    const onFocus = () => refresh();
-    window.addEventListener("focus", onFocus);
-    return () => {
-      window.clearInterval(id);
-      window.removeEventListener("focus", onFocus);
-    };
-  }, [refresh]);
+  useVisiblePoll(refresh, { visibleMs: POLL_MS, hiddenMs: null });
 
   function recomputeMention(text: string, cursor: number) {
     const trigger = findMentionTrigger(text, cursor);

@@ -4,6 +4,7 @@ import Link from "@dashboard/components/Link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { withBase } from "@dashboard/lib/paths";
+import { useVisiblePoll } from "./useVisiblePoll";
 
 type Mention = {
   commentId: string;
@@ -53,7 +54,15 @@ type ActivityPayload = {
 type ToastEntry = Mention & { shownAt: number };
 type Tab = "mentions" | "activity";
 
-const POLL_MS = 10_000;
+// Cadence while you're looking at the dashboard. 10s bought nothing over 30s
+// for a mention badge and cost 3x the requests.
+const POLL_MS = 30_000;
+// Hidden tabs keep a slow poll so desktop notifications for @mentions still
+// arrive when the dashboard is in the background — that path only fires while
+// the tab is hidden (see the Notification block in refresh()). Set this to null
+// to stop polling out of view entirely: cheapest for the database, but it
+// silently disables those notifications.
+const HIDDEN_POLL_MS: number | null = 15 * 60_000;
 const TOAST_TTL_MS = 8_000;
 const MAX_TOASTS = 4;
 
@@ -244,18 +253,7 @@ export function NotificationsBell() {
     setPermission(readPermission());
   }, []);
 
-  useEffect(() => {
-    refresh();
-    const id = window.setInterval(refresh, POLL_MS);
-    const onVis = () => {
-      if (document.visibilityState === "visible") refresh();
-    };
-    document.addEventListener("visibilitychange", onVis);
-    return () => {
-      window.clearInterval(id);
-      document.removeEventListener("visibilitychange", onVis);
-    };
-  }, [refresh]);
+  useVisiblePoll(refresh, { visibleMs: POLL_MS, hiddenMs: HIDDEN_POLL_MS });
 
   useEffect(() => {
     if (toasts.length === 0) return;
