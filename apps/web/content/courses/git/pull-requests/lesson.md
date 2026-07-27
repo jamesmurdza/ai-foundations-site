@@ -40,7 +40,7 @@ git switch main
 git pull
 ```
 
-> 🖼️ _Image: terminal confirming switch to main and pull output_
+[//]: # (TODO: 🖼️ Image: terminal confirming switch to main and pull output)
 
 ### Step 2: Create a New Branch
 
@@ -51,13 +51,13 @@ git branch add-final-stanza
 git switch add-final-stanza
 ```
 
-> 🖼️ _Image: terminal confirming creation of and switch to add-final-stanza branch_
+[//]: # (TODO: 🖼️ Image: terminal confirming creation of and switch to add-final-stanza branch)
 
 ### Step 3: Edit poem.txt
 
 Open `poem.txt` and add a new stanza at the end.
 
-> 🖼️ _Image: poem.txt open in editor with the new stanza added_
+[//]: # (TODO: 🖼️ Image: poem.txt open in editor with the new stanza added)
 
 After the edit, your file should look like this:
 
@@ -79,7 +79,7 @@ git add poem.txt
 git commit -m "add final stanza to poem"
 ```
 
-> 🖼️ _Image: terminal after staging and committing the new stanza_
+[//]: # (TODO: 🖼️ Image: terminal after staging and committing the new stanza)
 
 ### Step 5: Push the Branch
 
@@ -89,7 +89,7 @@ Send the branch to GitHub:
 git push -u origin add-final-stanza
 ```
 
-> 🖼️ _Image: terminal showing git push output for the new branch_
+[//]: # (TODO: 🖼️ Image: terminal showing git push output for the new branch)
 
 Your branch is now on GitHub, but the `main` branch has not changed yet.
 
@@ -97,24 +97,24 @@ Your branch is now on GitHub, but the `main` branch has not changed yet.
 
 Go to your repository on GitHub. You will see a banner that says your branch was recently pushed and offers a button to open a Pull Request. Click it.
 
-> 🖼️ _Image: GitHub repository page showing the "Compare and pull request" banner_
+[//]: # (TODO: 🖼️ Image: GitHub repository page showing the "Compare and pull request" banner)
 
 You will be taken to the Pull Request creation screen. Fill in:
 
 - A short title describing the change, for example: `add final stanza to poem`
 - An optional description if you want to explain the change
 
-> 🖼️ _Image: Pull Request creation screen on GitHub showing the title field and description_
+[//]: # (TODO: 🖼️ Image: Pull Request creation screen on GitHub showing the title field and description)
 
 Click **Create pull request**.
 
-> 🖼️ _Image: the newly created Pull Request page on GitHub_
+[//]: # (TODO: 🖼️ Image: the newly created Pull Request page on GitHub)
 
 ### Step 7: Review the Changes
 
 On the Pull Request page, click the **Files changed** tab. This shows exactly what was added or removed.
 
-> 🖼️ _Image: Pull Request Files Changed tab showing the new stanza highlighted in green_
+[//]: # (TODO: 🖼️ Image: Pull Request Files Changed tab showing the new stanza highlighted in green)
 
 Lines added appear in green. Lines removed appear in red. This view makes it easy to see what the change actually does before merging.
 
@@ -124,9 +124,9 @@ This is the review step. In a team setting, this is where collaborators can leav
 
 Go back to the main tab of the Pull Request. When you are ready, click **Merge pull request** and then **Confirm merge**.
 
-> 🖼️ _Image: Merge pull request button visible on GitHub_
+[//]: # (TODO: 🖼️ Image: Merge pull request button visible on GitHub)
 
-> 🖼️ _Image: confirmation screen after clicking Merge pull request_
+[//]: # (TODO: 🖼️ Image: confirmation screen after clicking Merge pull request)
 
 The changes are now part of `main`. GitHub will show a message confirming the merge.
 
@@ -139,7 +139,7 @@ git switch main
 git pull
 ```
 
-> 🖼️ _Image: terminal showing git pull after the merge, with the new commit listed_
+[//]: # (TODO: 🖼️ Image: terminal showing git pull after the merge, with the new commit listed)
 
 Open `poem.txt` locally. The final stanza is now part of `main`.
 
@@ -183,7 +183,7 @@ gh pr create
 
 The CLI will ask for a title and description. After you confirm, the Pull Request is created on GitHub.
 
-> 🖼️ _Image: terminal showing gh pr create prompts and successful output_
+[//]: # (TODO: 🖼️ Image: terminal showing gh pr create prompts and successful output)
 
 To check out a Pull Request locally (for example, to review someone else's changes before merging), run:
 
@@ -193,7 +193,7 @@ gh pr checkout <number>
 
 Replace `<number>` with the Pull Request number, which you can see on GitHub.
 
-> 🖼️ _Image: terminal showing gh pr checkout switching to the Pull Request branch_
+[//]: # (TODO: 🖼️ Image: terminal showing gh pr checkout switching to the Pull Request branch)
 
 This is useful when reviewing work from a teammate.
 

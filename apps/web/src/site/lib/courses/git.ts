@@ -4,7 +4,6 @@ export const git: Course = {
   slug: "git",
   title: "Git & GitHub for Beginners",
   shortTitle: "Git & GitHub",
-  // TODO: add this image before registering the course in index.ts
   thumbnail: "/images/git.png",
   description:
     "Learn version control from scratch. Understand why Git exists, then work " +
@@ -19,7 +18,7 @@ export const git: Course = {
       id: "intro",
       title: "Introduction to Git",
       summary:
-        "Why Git exists, what version control means, and how Git differs from GitHub.",
+        "What this course covers, why Git exists, and how it differs from GitHub.",
       tabs: [{ type: "lesson" }],
     },
     {
@@ -31,7 +30,8 @@ export const git: Course = {
     {
       id: "setup",
       title: "Setting Up Git",
-      summary: "Tell Git who you are by configuring your name and email.",
+      summary:
+        "Configure your name, email, default branch name and editor.",
       tabs: [{ type: "lesson" }],
     },
     {
@@ -42,17 +42,24 @@ export const git: Course = {
       tabs: [{ type: "lesson" }],
     },
     {
+      id: "ignoring-files",
+      title: "Ignoring Files",
+      summary:
+        "Use .gitignore to keep secrets, system files and build folders out of your history.",
+      tabs: [{ type: "lesson" }],
+    },
+    {
       id: "reading-history",
       title: "Reading History",
       summary:
-        "Explore your project's timeline with log and inspect changes with diff.",
+        "Explore your project's timeline with log, diff and diff --staged.",
       tabs: [{ type: "lesson" }],
     },
     {
       id: "undoing-changes",
       title: "Undoing Changes",
       summary:
-        "Safely undo work at every stage: unstaged, staged and committed.",
+        "Restore, reset, revert and amend — safely undo work at every stage.",
       tabs: [{ type: "lesson" }],
     },
     {
@@ -66,7 +73,7 @@ export const git: Course = {
       id: "merging",
       title: "Merging",
       summary:
-        "Bring branch changes back together and resolve merge conflicts.",
+        "Bring branch changes back together, resolve conflicts and clean up.",
       tabs: [{ type: "lesson" }],
     },
     {

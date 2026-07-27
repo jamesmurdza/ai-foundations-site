@@ -18,7 +18,7 @@ GitHub is free to use and is where most developers store their work.
 
 Go to GitHub and create a free account.
 
-> 🖼️ _Image: GitHub homepage with sign up button visible_
+[//]: # (TODO: 🖼️ Image: GitHub homepage with sign up button visible)
 
 Click **Sign up** and fill in:
 
@@ -26,11 +26,11 @@ Click **Sign up** and fill in:
 - A username (this will be visible to others, choose something simple)
 - A password
 
-> 🖼️ _Image: GitHub signup form_
+[//]: # (TODO: 🖼️ Image: GitHub signup form)
 
 Follow the steps to verify your email. Once that is done, your account is ready.
 
-> 🖼️ _Image: GitHub dashboard after signing in_
+[//]: # (TODO: 🖼️ Image: GitHub dashboard after signing in)
 
 ### Step 2: Create a New Repository
 
@@ -38,20 +38,20 @@ A repository on GitHub is where your project will live. Think of it as a folder 
 
 From your GitHub dashboard, click **New** or the plus icon at the top right and select **New repository**.
 
-> 🖼️ _Image: GitHub new repository button_
+[//]: # (TODO: 🖼️ Image: GitHub new repository button)
 
 Fill in the details:
 
 - **Repository name:** give it a simple name that matches your project, for example `my-poem`
 - **Visibility:** choose **Public** if you want others to see it, or **Private** if you want to keep it to yourself
 
-> 🖼️ _Image: repository creation form with name and visibility options_
+[//]: # (TODO: 🖼️ Image: repository creation form with name and visibility options)
 
 **Important:** do not check the box that says "Initialize this repository with a README." You already have a local project with commits. If you add a README here, GitHub will create a commit you do not have locally, and that will cause a conflict when you try to push.
 
 Click **Create repository**.
 
-> 🖼️ _Image: empty repository page on GitHub with the push instructions visible_
+[//]: # (TODO: 🖼️ Image: empty repository page on GitHub with the push instructions visible)
 
 ### Step 3: Connect Your Local Project
 
@@ -63,7 +63,7 @@ Copy the `git remote add origin` command and run it in your terminal inside your
 git remote add origin https://github.com/your-username/my-poem.git
 ```
 
-> 🖼️ _Image: terminal after running git remote add origin_
+[//]: # (TODO: 🖼️ Image: terminal after running git remote add origin)
 
 This connects your local project to the GitHub repository. They are now linked.
 
@@ -75,7 +75,7 @@ Now send your commits to GitHub:
 git push -u origin main
 ```
 
-> 🎥 _Video: terminal showing the push completing with progress output_
+[//]: # (TODO: 🎥 Video: terminal showing the push completing with progress output)
 
 Git will upload your project. If this is your first time pushing, you may be asked to log in to GitHub. Follow the prompts to authenticate.
 
@@ -83,11 +83,11 @@ Git will upload your project. If this is your first time pushing, you may be ask
 
 Go back to your browser and refresh the repository page.
 
-> 🖼️ _Image: GitHub repository page showing poem.txt uploaded_
+[//]: # (TODO: 🖼️ Image: GitHub repository page showing poem.txt uploaded)
 
 Your `poem.txt` file is now visible. Click on it to see the contents.
 
-> 🖼️ _Image: poem.txt file contents viewed on GitHub_
+[//]: # (TODO: 🖼️ Image: poem.txt file contents viewed on GitHub)
 
 This is your project living on the internet, safely stored and accessible from any device.
 
@@ -101,7 +101,7 @@ git commit -m "add new line to poem"
 git push
 ```
 
-> 🖼️ _Image: terminal showing git push after the new commit_
+[//]: # (TODO: 🖼️ Image: terminal showing git push after the new commit)
 
 Refresh GitHub. The new line is there. Your remote is now in sync with your local project.
 
@@ -113,7 +113,7 @@ If you ever make a change directly on GitHub (for example by editing a file in t
 git pull
 ```
 
-> 🖼️ _Image: terminal showing git pull fetching the change made on GitHub_
+[//]: # (TODO: 🖼️ Image: terminal showing git pull fetching the change made on GitHub)
 
 Your local `poem.txt` will update to match whatever is on the remote.
 
@@ -123,7 +123,7 @@ After connecting your remote, LazyGit shows you the remote status alongside your
 
 To push from LazyGit, press `P`. To pull, press `p`.
 
-> 🎥 _Video: pushing to GitHub from LazyGit after a new commit_
+[//]: # (TODO: 🎥 Video: pushing to GitHub from LazyGit after a new commit)
 
 The same results happen. The commands run in the background. LazyGit just gives you a cleaner way to trigger them.
 
