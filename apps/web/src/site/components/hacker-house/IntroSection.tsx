@@ -10,8 +10,8 @@ export function IntroSection() {
     <section id="about" className="scroll-mt-24">
       <div className="container">
         <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12">
-          <div className="hh-intro flex flex-col gap-8 md:gap-12">
-            <figure className="relative aspect-video w-full overflow-hidden border">
+          <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 md:gap-16 items-center">
+            <figure className="hh-intro relative aspect-video overflow-hidden border order-1 md:order-2">
               <video
                 className="absolute inset-0 h-full w-full object-cover"
                 src={INTRO_VIDEO_URL}
@@ -22,7 +22,7 @@ export function IntroSection() {
                 aria-label="Learn and teach for four weeks in West Java, Indonesia"
               />
             </figure>
-            <div className="flex flex-col justify-center max-w-3xl">
+            <div className="hh-intro flex flex-col justify-center order-2 md:order-1">
               <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight mb-5">
                 Learn and teach for four weeks in West Java, Indonesia
               </h2>
