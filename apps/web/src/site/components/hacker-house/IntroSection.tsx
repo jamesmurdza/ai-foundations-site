@@ -1,7 +1,6 @@
-// Public base URL for the Cloudflare R2 "ai-foundations" bucket.
-// TODO: switch to the mix46.com custom domain once it's connected to the
-// bucket via R2 > Settings > Custom Domains (currently returns CF error 1014).
-const R2_PUBLIC_BASE = "https://pub-e770d246579e447597c97d09a9904a9c.r2.dev";
+// Public base URL for the Cloudflare R2 "ai-foundations" bucket
+// (custom domain connected to the bucket via R2 > Settings > Custom Domains).
+const R2_PUBLIC_BASE = "https://mix46.com";
 const INTRO_VIDEO_URL = `${R2_PUBLIC_BASE}/${encodeURIComponent(
   "AI Summer School The First Week.mp4",
 )}`;
