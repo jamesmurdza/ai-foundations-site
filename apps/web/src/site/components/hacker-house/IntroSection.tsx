@@ -1,7 +1,11 @@
-// URL of the mp4 hosted in the Cloudflare (R2) bucket.
-// Replace with the public URL for your bucket/object.
-const INTRO_VIDEO_URL =
-  "https://REPLACE_ME.r2.dev/summer-school/intro.mp4";
+// Public base URL for the Cloudflare R2 "ai-foundations" bucket.
+// Enable public access on the bucket (R2 > Settings > Public Development URL)
+// and paste the resulting "https://pub-<hash>.r2.dev" domain here — or use a
+// custom domain if you've attached one.
+const R2_PUBLIC_BASE = "https://pub-REPLACE_ME.r2.dev";
+const INTRO_VIDEO_URL = `${R2_PUBLIC_BASE}/${encodeURIComponent(
+  "AI Summer School The First Week.mp4",
+)}`;
 
 export function IntroSection() {
   return (
