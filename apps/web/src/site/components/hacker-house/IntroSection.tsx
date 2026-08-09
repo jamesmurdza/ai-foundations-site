@@ -18,9 +18,7 @@ export function IntroSection() {
                 className="absolute inset-0 h-full w-full object-cover"
                 src={INTRO_VIDEO_URL}
                 poster="/images/summer-school/accommodation-balcony.avif"
-                autoPlay
-                muted
-                loop
+                controls
                 playsInline
                 preload="metadata"
                 aria-label="Learn and teach for four weeks in West Java, Indonesia"
