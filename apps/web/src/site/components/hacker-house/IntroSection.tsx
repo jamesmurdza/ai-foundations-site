@@ -10,8 +10,8 @@ export function IntroSection() {
     <section id="about" className="scroll-mt-24">
       <div className="container">
         <div className="border-t mt-12 px-6 md:px-12 pt-12 pb-12">
-          <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-8 md:gap-16 items-center">
-            <figure className="hh-intro relative aspect-video overflow-hidden border order-1 md:order-2">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
+            <figure className="hh-intro relative h-[350px] aspect-video shrink-0 max-w-full overflow-hidden border order-1 md:order-2">
               <video
                 className="absolute inset-0 h-full w-full object-cover"
                 src={INTRO_VIDEO_URL}
