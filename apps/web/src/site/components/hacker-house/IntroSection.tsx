@@ -2,7 +2,7 @@
 // Enable public access on the bucket (R2 > Settings > Public Development URL)
 // and paste the resulting "https://pub-<hash>.r2.dev" domain here — or use a
 // custom domain if you've attached one.
-const R2_PUBLIC_BASE = "https://pub-REPLACE_ME.r2.dev";
+const R2_PUBLIC_BASE = "https://pub-e770d246579e447597c97d09a9904a9c.r2.dev";
 const INTRO_VIDEO_URL = `${R2_PUBLIC_BASE}/${encodeURIComponent(
   "AI Summer School The First Week.mp4",
 )}`;
