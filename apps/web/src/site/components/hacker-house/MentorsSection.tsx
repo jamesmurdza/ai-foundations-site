@@ -29,7 +29,7 @@ const MENTORS = [
   {
     name: "Madhoolika",
     img: "/images/madhoolika.avif",
-    url: "https://www.linkedin.com/in/madhoolika/",
+    url: "https://madhoolikab.lovable.app/",
   },
   {
     name: "Abdul",
@@ -49,22 +49,22 @@ const MENTORS = [
   {
     name: "Momina",
     img: "/images/momina.avif",
-    url: "https://www.linkedin.com/in/mominaali/",
+    url: "https://portfolio-git-agent-steel-river-79jf-mominaali1s-projects.vercel.app/",
   },
   {
     name: "Nurlin",
     img: "/images/nurlin.avif",
-    url: "https://www.linkedin.com/in/nurlin-amelia-chelsi-ngadi-7966942b2/",
+    url: "https://motota-bridge-global.lovable.app/",
   },
   {
     name: "Alif",
     img: "/images/alif.avif",
-    url: "https://www.linkedin.com/in/alifmslmabdrhmn/",
+    url: "https://alifolioo.netlify.app/",
   },
   {
     name: "Nayla",
     img: "/images/nayla.avif",
-    url: "https://www.linkedin.com/in/nayla-aqila-argia-241637322/",
+    url: "https://portfolionaylargia.netlify.app/",
   },
 ];
 
@@ -83,7 +83,7 @@ export function MentorsSection() {
                 href={m.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${m.name} on LinkedIn`}
+                aria-label={`${m.name}'s website`}
                 className="hh-mentor flex flex-col items-center gap-3 transition-opacity duration-200 hover:opacity-70"
               >
                 <div className="relative w-28 h-28 rounded-full overflow-hidden border">
